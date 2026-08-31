@@ -1,5 +1,11 @@
 # Hex Grid
 
+**Status: implemented.** `GridModel` lives at
+`Assets/Scripts/Grid/GridModel.cs`, covered by EditMode tests in
+`Assets/Tests/EditMode/GridModelOccupancyTests.cs` and
+`GridModelNeighborsTests.cs`/`GridModelWorldPositionTests.cs`. The sketch
+below now describes the actual shipped shape, not just a plan.
+
 ## Decision
 
 Hex grid with alternating row offset (each bubble touches up to 6
@@ -17,28 +23,42 @@ wouldn't look or feel like the source material.
 ## Implementation sketch
 
 - `GridModel` stores cells keyed by **offset coordinates** `(row, col)`,
-  where odd/even rows are visually shifted but stored as plain integer
-  columns (avoids needing full axial/cube hex-coordinate math for a
-  shooter-style grid, which — unlike a board game — never needs diagonal
-  movement, only "which cells are adjacent").
-- Each cell holds: `bool IsOccupied`, `BubbleColor Color` (enum).
-- `GetNeighbors(row, col)` returns the up-to-6 adjacent cells, accounting
-  for the row's offset direction (even rows and odd rows compute their
-  neighbor offsets differently — this is the one place hex-grid math
-  actually shows up).
-- World-space position of a cell = grid origin + `col * bubbleWidth +
-  (row % 2 == 0 ? 0 : bubbleWidth / 2)` horizontally, `row * rowHeight`
-  vertically (`rowHeight` is slightly less than `bubbleWidth` for hex
-  packing — roughly `bubbleWidth * 0.866` (sin 60°)).
+  backed by a `bool[,]` occupancy array and a `BubbleColor[,]` color array
+  sized `rows x cols`. Odd/even rows are visually shifted but stored as
+  plain integer columns (avoids needing full axial/cube hex-coordinate math
+  for a shooter-style grid, which — unlike a board game — never needs
+  diagonal movement, only "which cells are adjacent").
+- `PlaceBubble(row, col, color)` / `ClearCell(row, col)` / `IsOccupied` /
+  `GetColor` are the occupancy API.
+- `GetNeighbors(row, col)` returns the up-to-6 adjacent cells as
+  `List<(int Row, int Col)>`, clipped to grid bounds. Implemented as a
+  static even-row/odd-row offset table (`EvenRowOffsets`/`OddRowOffsets`)
+  plus a bounds check, rather than one long branching method — this is the
+  one place hex-grid math actually shows up, and keeping it as small
+  composed functions (candidate offsets → bounds filter) made it easy to
+  unit-test each row parity and the corner-clipping case separately.
+- `GetWorldPosition(row, col)` returns a `Vector2`: `x = col * cellWidth +
+  (row % 2 == 0 ? 0 : cellWidth * 0.5f)`, `y = row * cellWidth *
+  0.8660254f` (`0.8660254` = sin 60°, for hex row packing). `cellWidth` is
+  an optional constructor parameter (default `1`), so tests can use simple
+  round numbers.
 - Rendering is a separate component that listens for grid changes and
   instantiates/pools bubble sprites at each occupied cell's world position —
-  `GridModel` itself has no Unity dependencies, so it can be unit-tested
-  without a scene.
+  `GridModel` itself has no Unity dependencies beyond `Vector2`, so it can
+  be unit-tested without a scene. The current renderer
+  (`GridDebugRenderer`, `BubbleColorPalette`, `CircleSpriteFactory`) is a
+  temporary Milestone-1 stand-in that generates a plain circle sprite in
+  code and spawns one `GameObject` per bubble directly — it proved the grid
+  math visually, but isn't the pooled/event-driven rendering layer the rest
+  of this doc describes; expect it to be replaced once real bubble art and
+  the match/pop events exist.
 
 ## Open questions / tuning knobs
 
 - Exact grid width (columns per row) for the target phone aspect ratio —
-  needs a device/resolution decision, tune once placeholder art is in.
+  needs a device/resolution decision, tune once placeholder art is in. The
+  debug renderer's 8x8 default is an arbitrary placeholder for visual
+  testing, not a decision.
 - Whether the grid needs to support a "half bubble" edge case for the
   offset rows at the board's left/right boundary (classic games either wall
   it off or allow it — pick during implementation once it's visible).

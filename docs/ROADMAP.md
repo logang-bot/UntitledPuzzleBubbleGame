@@ -5,13 +5,17 @@ brainstorming session · ⏳ not yet scoped.
 
 ## Phase 0 — Project setup
 
-- [ ] `git init` this project and make an initial commit (currently not a
-      git repo — do this before writing much code, so history exists from
-      the start).
-- [ ] Create folder conventions under `Assets/`: `Scripts/`, `Prefabs/`,
-      `Art/`, `ScriptableObjects/`, `Scenes/`.
+- [x] `git init` this project and make an initial commit.
+- [x] Create folder conventions under `Assets/`: `Scripts/`, `Prefabs/`,
+      `Art/`, `ScriptableObjects/`, `Scenes/` (plus `Tests/` for EditMode
+      tests, added once testing started).
+- [x] `.gitignore` / `.gitattributes` set up for Unity (standard ignores,
+      line-ending normalization, and a `Screenshots/` ignore for Editor/MCP
+      debug captures).
 - [ ] Import a free placeholder sprite pack for bubbles/UI (e.g.
-      [Kenney.nl](https://kenney.nl/) — "Puzzle Pack" or similar).
+      [Kenney.nl](https://kenney.nl/) — "Puzzle Pack" or similar). Not
+      needed yet — the Milestone 1 debug renderer draws plain circles
+      generated in code instead, see below.
 - [ ] Confirm the existing URP 2D template settings are suitable (project
       already uses Unity 6000.5.1f1 with the 2D URP template — no changes
       expected here, just a sanity check once real content exists).
@@ -21,7 +25,14 @@ brainstorming session · ⏳ not yet scoped.
 See `features/core-gameplay/`. Suggested build order — each milestone should
 be playable/testable on its own before moving to the next:
 
-1. **Hex grid data model** + static debug rendering of a board.
+1. **Hex grid data model** + static debug rendering of a board. ✅ **Done.**
+   `GridModel` (occupancy, hex-neighbor lookup, world position) is
+   implemented and unit-tested (`Assets/Scripts/Grid/`,
+   `Assets/Tests/EditMode/`), with a temporary `GridDebugRenderer` that
+   fills a board with random-colored circles (generated in code, no art
+   asset needed) to visually confirm the hex packing. `GridDebugRenderer`
+   is a Milestone-1 stand-in, not the final rendering layer described in
+   `architecture/overview.md`.
    → [`hex-grid.md`](features/core-gameplay/hex-grid.md)
 2. **Shooter + aim input** (touch drag) with kinematic trajectory preview
    (including wall bounces).

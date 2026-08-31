@@ -44,11 +44,25 @@ bubble reacting to `OnBubblesPopped`, or battle mode turning
 ## Folder conventions (`Assets/`)
 
 - `Scripts/` — all C# code, organized by the components above (e.g.
-  `Scripts/Grid/`, `Scripts/Shooter/`, `Scripts/Gameplay/`).
+  `Scripts/Grid/`, `Scripts/Shooter/`, `Scripts/Gameplay/`), under a single
+  `Game` assembly (`Scripts/Game.asmdef`).
+- `Tests/EditMode/` — Unity Test Framework tests for pure C# logic, under a
+  `Game.EditModeTests` assembly that references `Game`. See Testing below.
 - `Prefabs/` — bubble prefab, UI prefabs, etc.
 - `Art/` — placeholder and (later) real sprites.
 - `ScriptableObjects/` — level generation difficulty configs, color palettes.
 - `Scenes/` — gameplay scene(s).
+- `Screenshots/` — gitignored; Editor/MCP debug captures land here.
+
+## Code style
+
+Files stay under ~200 lines and function/method bodies under ~7 lines with
+at most 3 parameters (group extras into a tuple or small type, as
+`GridModel.GetNeighbors`'s internals do). Comments explain non-obvious
+*why* (e.g. the hex-offset math), never restate what a well-named symbol
+already says. This is enforced by the `general-code-style` Claude Code
+plugin, not by a Unity analyzer — keep it in mind when writing code outside
+that workflow too.
 
 ## Trajectory: kinematic simulation, not Rigidbody2D physics
 
@@ -60,3 +74,45 @@ matches exactly where the bubble goes — real physics engines have enough
 non-determinism (fixed timestep quantization, collision resolution order)
 that a physics-simulated preview can occasionally diverge from the real
 shot, which is fatal for a game where precision aiming is the whole point.
+
+## Testing
+
+Pure C# logic (`GridModel` and friends) is covered by Unity Test Framework
+**EditMode** tests under `Assets/Tests/EditMode/`, split into a `Game`
+runtime assembly and a `Game.EditModeTests` test assembly (see their
+`.asmdef` files).
+
+There are two ways to run them — pick based on whether the Editor is
+already open, since **they conflict with each other** (Unity refuses to
+open the same project twice):
+
+- **Editor closed**: run `.\run-edittests.ps1` at the project root
+  (PowerShell). It wraps a Unity batch-mode invocation and works around two
+  quirks discovered while setting this up:
+  - `-runTests` must **not** be combined with `-quit` — the test runner
+    quits on its own when done, and `-quit` makes Unity exit before tests
+    run.
+  - Unity clears its own project `Temp/` folder on a clean shutdown, so
+    results/logs must be written outside it (the script uses `$env:TEMP`)
+    or they get deleted before you can read them.
+  - The script also polls for the results file rather than trusting the
+    launched process to block, because Unity's own process hands off to a
+    child process and returns early.
+- **Editor already open** (e.g. via the Unity MCP bridge, see Tooling
+  below, or just working in the Editor UI): use
+  **Window > General > Test Runner**, or have an MCP-connected agent call
+  the `run_tests`/`get_test_job` tools against the live instance. A batch
+  run started while the Editor has the project open will hang/fail with
+  "another Unity instance is running with this project open".
+
+## Tooling: Unity MCP bridge
+
+This project has the [Unity MCP](https://github.com/CoplayDev/unity-mcp)
+bridge installed (`com.coplaydev.unity-mcp` in `Packages/manifest.json`),
+which lets an MCP-connected agent drive an open Unity Editor directly —
+creating/inspecting GameObjects, managing scenes, entering Play mode,
+taking screenshots, and running tests. It got added automatically the
+first time the project was opened (via a global Claude Code + Unity
+integration), not as a manual dependency choice. Useful in practice for
+verifying anything that needs an actual scene (rendering, prefabs) rather
+than pure-logic unit tests.
