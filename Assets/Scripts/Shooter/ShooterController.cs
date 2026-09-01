@@ -70,8 +70,13 @@ namespace Game.Shooter
         private void UpdateFireInput()
         {
             if (fireZone.IsPressed && !_firePressedLastFrame)
-                OnFireRequested?.Invoke(_shooterOrigin, _aimAngleDegrees);
+                Fire();
             _firePressedLastFrame = fireZone.IsPressed;
+        }
+
+        public void Fire()
+        {
+            OnFireRequested?.Invoke(_shooterOrigin, _aimAngleDegrees);
         }
 
         private void DrawPreview()

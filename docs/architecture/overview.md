@@ -28,7 +28,7 @@ popped") without editing the core systems themselves.
 | `MatchResolver` | Pure query class (no mutation): given a newly-placed bubble's cell, flood-fills same-color neighbors to find what pops (`FindMatchGroup`); separately finds bubbles disconnected from the ceiling row (`FindFloatingCells`). |
 | `MatchProcessor` | Subscribes to `GameBoard.OnBubblePlaced`, calls `MatchResolver`, and drives `GameBoard.PopCells`/`DropCells` — see `features/core-gameplay/matching-and-popping.md`. |
 | `LevelGenerator` | Produces a `GridModel` populated for a given level/difficulty (color count, density, row count knobs). |
-| `GameStateManager` | Owns the shot timer, ceiling descent timer, and win/loss checks; the "referee" that ties the other systems together and raises high-level events like `OnLevelWon` / `OnLevelLost`. |
+| `GameStateManager` | Owns the shot timer (✅ implemented), ceiling descent timer, and win/loss checks; the "referee" that ties the other systems together and raises high-level events like `OnLevelWon` / `OnLevelLost`. |
 
 Rendering (turning `GridModel` cells into actual bubble sprites/prefabs) is a
 separate, thin layer that listens to grid-change events rather than being
@@ -40,7 +40,10 @@ part of the model — keeps the data model testable without needing a scene.
 - `OnBubblesPopped(cells, color)` — ✅ implemented, on `GameBoard`.
 - `OnClusterDropped(cells)` — ✅ implemented, on `GameBoard`.
 - `OnRowPushedDown()` — not yet implemented (Milestone 7).
-- `OnShotTimerExpired()` — not yet implemented (Milestone 6).
+- `OnFireRequested(origin, angle)` — ✅ implemented, on `ShooterController`.
+  Milestone 6 routes both manual and auto-fire through this single event
+  (via `ShooterController.Fire()`) rather than adding a separate
+  `OnShotTimerExpired()` event as originally sketched.
 - `OnLevelWon()` / `OnLevelLost()` — not yet implemented (Milestone 8).
 
 These are the seams Phase 2/3 will subscribe to later (e.g. a superpower

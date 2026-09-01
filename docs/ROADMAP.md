@@ -119,7 +119,21 @@ be playable/testable on its own before moving to the next:
 5. **Floating cluster detection** (bubbles disconnected from the ceiling
    after a pop) + drop. ✅ **Done** — see Milestone 4 above.
 6. **Shot timer** — countdown per turn, auto-fires at current aim on
-   expiry.
+   expiry. ✅ **Done** (shot timer only — ceiling descent from the same doc
+   is deferred to Milestone 7). `ShotTimer` is a pure C# countdown class
+   (`Assets/Scripts/Gameplay/`), unit-tested like `FloodFill`/`MatchResolver`.
+   `GameStateManager` (the "referee" slot reserved in
+   `architecture/overview.md`) ticks it and calls `shooterController.Fire()`
+   on expiry — a small `ShooterController` refactor that extracts the
+   `OnFireRequested` invoke into a public `Fire()` method, callable by both
+   a manual press and the auto-fire path. `GameStateManager` resets the
+   timer only in response to `OnFireRequested`, so manual and auto fire
+   share one reset path instead of two that could drift apart — this
+   replaces the originally-sketched `OnShotTimerExpired()` event, which
+   turned out unnecessary. Duration is 8s. `ShotTimerDisplay` shows a
+   numeric countdown ("4"→"1"), hidden until `ShotTimeRemaining <= 4f`,
+   built at runtime and anchored off the fire zone the same way
+   `FiredBubbleController`'s next-bubble indicator is.
    → [`shot-timer-and-ceiling-descent.md`](features/core-gameplay/shot-timer-and-ceiling-descent.md)
 7. **Ceiling descent timer** — pushes a new row down at a fixed interval;
    interval shortens with difficulty.
