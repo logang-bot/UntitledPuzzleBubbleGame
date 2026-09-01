@@ -91,12 +91,14 @@ namespace Game.Grid
 
         /// <summary>
         /// World-space position of a cell's center, in hex-packed rows (see docs/features/core-gameplay/hex-grid.md).
+        /// Row 0 is the ceiling (y = 0, the board's anchor); increasing row moves down
+        /// toward the shooter, so y decreases with row.
         /// </summary>
         public Vector2 GetWorldPosition(int row, int col)
         {
             var xOffset = row % 2 == 0 ? 0f : _cellWidth * 0.5f;
             var x = col * _cellWidth + xOffset;
-            var y = row * HexGridMath.RowHeight(_cellWidth);
+            var y = -row * HexGridMath.RowHeight(_cellWidth);
             return new Vector2(x, y);
         }
     }

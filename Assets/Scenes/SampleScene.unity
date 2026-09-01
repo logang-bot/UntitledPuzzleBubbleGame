@@ -174,6 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 218697390}
   - component: {fileID: 218697389}
+  - component: {fileID: 218697391}
   m_Layer: 0
   m_Name: GameBoard
   m_TagString: Untagged
@@ -211,6 +212,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &218697391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218697388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9590fdba1c4e64b4bb0d8f2b4977cbb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Game.Grid.MatchProcessor
+  gameBoard: {fileID: 218697389}
 --- !u!1 &1078805872
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Game::Game.Shooter.ShooterController
   gameBoard: {fileID: 218697389}
   maxAimAngleDegrees: 60
-  rotateSpeedDegreesPerSecond: 90
+  rotateSpeedDegreesPerSecond: 25
   maxBounces: 10
   lineWidth: 0.08
   lineMaterial: {fileID: 2100000, guid: 5fce35da1e14a404c932824c754854f0, type: 2}
@@ -390,6 +404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Game::Game.Shooter.FiredBubbleController
   gameBoard: {fileID: 218697389}
   shooterController: {fileID: 1078805873}
+  fireZoneRect: {fileID: 1587367401}
   bubbleSpeed: 8
 --- !u!1 &1088561271
 GameObject:

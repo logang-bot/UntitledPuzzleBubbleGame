@@ -41,12 +41,17 @@ wouldn't look or feel like the source material.
   composed functions (candidate offsets → bounds filter) made it easy to
   unit-test each row parity and the corner-clipping case separately.
 - `GetWorldPosition(row, col)` returns a `Vector2`: `x = col * cellWidth +
-  (row % 2 == 0 ? 0 : cellWidth * 0.5f)`, `y = row * HexGridMath.RowHeight
+  (row % 2 == 0 ? 0 : cellWidth * 0.5f)`, `y = -row * HexGridMath.RowHeight
   (cellWidth)` (row-height factor `0.8660254f` = sin 60°, for hex row
   packing — lives in `HexGridMath` so `PlayfieldSizer` can reuse the same
-  constant, see `screen-fit-and-difficulty-scaling.md`). `cellWidth` is an
-  optional constructor parameter (default `1`), so tests can use simple
-  round numbers.
+  constant, see `screen-fit-and-difficulty-scaling.md`). **Row 0 is the
+  ceiling** (`y = 0`, the board's anchor); increasing row moves down toward
+  the shooter, so `y` decreases with row — `GameBoard` positions its
+  transform at the top of the screen accordingly. This direction was
+  actually backwards until Milestone 4/5 (see `matching-and-popping.md`),
+  where it was caught because it would have broken floating-cluster
+  detection. `cellWidth` is an optional constructor parameter (default `1`),
+  so tests can use simple round numbers.
 - Rendering is a separate component that listens for grid changes and
   instantiates/pools bubble sprites at each occupied cell's world position —
   `GridModel` itself has no Unity dependencies beyond `Vector2`, so it can

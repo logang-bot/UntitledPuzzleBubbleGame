@@ -1,5 +1,11 @@
 # Matching & Popping
 
+**Status: implemented.** Covers Milestones 4 and 5 together — built in one
+pass, since both center on the same flood-fill traversal. `FloodFill` and
+`MatchResolver` live at `Assets/Scripts/Grid/`, fully unit-tested
+(`Assets/Tests/EditMode/FloodFillTests.cs`,
+`MatchResolverMatchGroupTests.cs`, `MatchResolverFloatingCellsTests.cs`).
+
 ## Decision
 
 Standard Puzzle Bobble matching: when a fired bubble snaps into a grid cell,
@@ -10,25 +16,49 @@ top row) fall and are also cleared.
 
 ## Implementation sketch
 
-`MatchResolver`, given the cell the new bubble just landed in:
+- **`FloodFill.Run(grid, seeds, include)`** (`Assets/Scripts/Grid/FloodFill.cs`)
+  is the one generic BFS helper the original sketch called for — pure, static,
+  no Unity dependency. It starts from any number of seed cells and expands
+  through `GridModel.GetNeighbors` only into cells satisfying `include`, so
+  the same function serves both flood-fills below with different predicates.
+- **`MatchResolver`** (`Assets/Scripts/Grid/MatchResolver.cs`) is a static,
+  pure query class (mirrors `BubbleLandingResolver`'s style — no grid
+  mutation, just answers):
+  - `FindMatchGroup(grid, placedCell)`: flood-fills from `placedCell` through
+    same-color occupied neighbors; returns the group if `Count >= 3`, else an
+    empty set.
+  - `FindFloatingCells(grid)`: flood-fills from every occupied **row 0**
+    cell (row 0 is the ceiling — see `hex-grid.md`) through any occupied
+    neighbor; returns every occupied cell *not* in that reachable set.
+- **`GameBoard`** owns the actual mutation and events, mirroring its existing
+  `PlaceBubble`/`OnBubblePlaced` pattern: `PopCells(cells, color)` and
+  `DropCells(cells)` each clear the given cells via `Grid.ClearCell` and
+  raise `OnBubblesPopped`/`OnClusterDropped`. Kept on `GameBoard` rather than
+  a `MatchResolver` MonoBehaviour so it stays the single event source for
+  every grid-state change.
+- **`MatchProcessor`** (`Assets/Scripts/Grid/MatchProcessor.cs`) is the thin
+  MonoBehaviour hook-in: it subscribes to `GameBoard.OnBubblePlaced`, calls
+  `MatchResolver.FindMatchGroup`, and if non-empty, calls `GameBoard.PopCells`
+  followed by a `FindFloatingCells`/`DropCells` check. Listening to the
+  general placement event (rather than wiring straight into
+  `FiredBubbleController.Land()`) means any future placement source
+  (superpower effect, garbage row) gets matching for free. This is safe
+  because `GameBoard.Awake`'s initial random fill calls `Grid.PlaceBubble`
+  directly, bypassing the event, so the debug board never auto-pops on load.
+- **`GridDebugRenderer`** now tracks its spawned sprites in a
+  `Dictionary<(int Row, int Col), GameObject>` and reacts to both events: a
+  pop destroys the sprite instantly; a drop instead adds a `FallingBubble`
+  component (`Assets/Scripts/Grid/FallingBubble.cs` — simple constant-gravity
+  fall, self-destroys after a short duration) so a disconnected bubble
+  visibly falls rather than vanishing like a match.
 
-1. **Match check**: flood-fill from that cell through same-color neighbors
-   (`GridModel.GetNeighbors`). If the connected same-color group size is
-   `>= 3`, mark all of them for popping. If `< 3`, the bubble just stays —
-   no pop, turn ends normally.
-2. **Pop**: clear those cells in `GridModel`, raise `OnBubblesPopped(cells,
-   color)` for the rendering layer to animate/destroy the sprites.
-3. **Floating cluster check** (only runs if step 2 popped anything): from
-   every occupied cell in the **top row**, flood-fill through all occupied
-   neighbors to find every cell reachable from the ceiling. Any occupied
-   cell *not* in that reachable set is floating — clear it too and raise
-   `OnClusterDropped(cells)` (rendering layer can animate these falling
-   instead of just popping, for the classic "chain reaction" feel).
-
-Both flood-fills reuse the same `GridModel.GetNeighbors` traversal — worth
-writing one generic flood-fill helper (`FloodFill(startCell, predicate)`)
-that both the match check and the ceiling-reachability check call with
-different predicates (same-color vs. any-occupied).
+**Bug found and fixed while building this**: `firing-and-snapping.md` and
+`BubbleLandingResolver` always assumed row 0 is the ceiling, but
+`GameBoard`'s positioning/fill code had it backwards (row 0 rendered at the
+bottom, always empty). Harmless before now, but it would have made
+`FindFloatingCells`'s ceiling-row seed set almost always empty, dropping the
+entire board on every pop. Fixed at the source — see `hex-grid.md` and the
+Milestone 4/5 write-up in `docs/ROADMAP.md` for the full account.
 
 ## Open questions / tuning knobs
 
@@ -37,3 +67,6 @@ different predicates (same-color vs. any-occupied).
   not decided yet, tune once there's a HUD to show it.
 - Whether combo/chain bonuses exist for consecutive matches — out of scope
   for the first playable version, revisit after Phase 1 milestone 8.
+- Pop and drop currently look different (instant vs. falling) but neither
+  has a distinct sound/particle effect yet — revisit once there's real art
+  and audio.

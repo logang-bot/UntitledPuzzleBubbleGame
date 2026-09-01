@@ -75,12 +75,23 @@ against. Both problems needed solving together.
 - **`FiredBubbleController`** (`Assets/Scripts/Shooter/FiredBubbleController.cs`)
   subscribes to `ShooterController.OnFireRequested`. On fire it builds the
   truncated path, spawns a temporary flying-bubble `GameObject` (reusing
-  `CircleSpriteFactory`/`BubbleColorPalette`, random color), and moves it
-  along the path each `Update`. On reaching the end it destroys the flying
-  bubble and calls `BubbleLandingResolver` + `GameBoard.PlaceBubble` — the
-  permanent rendered sprite then comes from `GridDebugRenderer` reacting to
-  `OnBubblePlaced`, the same rendering path every other bubble on the board
-  uses (including the initial fill).
+  `CircleSpriteFactory`/`BubbleColorPalette`), and moves it along the path
+  each `Update`. On reaching the end it destroys the flying bubble and calls
+  `BubbleLandingResolver` + `GameBoard.PlaceBubble` — the permanent rendered
+  sprite then comes from `GridDebugRenderer` reacting to `OnBubblePlaced`,
+  the same rendering path every other bubble on the board uses (including
+  the initial fill).
+- **Next-bubble indicator** (added while testing `matching-and-popping.md` —
+  without it there was no way to plan a shot toward a match): the fired
+  bubble's color is no longer randomized at the moment of firing. Instead
+  `FiredBubbleController` pre-rolls the next shot's color and shows it as a
+  small UI `Image` anchored to the left of the fire-zone square (same
+  `RectTransform` anchors/pivot as the fire zone, offset by its half-width
+  plus a margin — a UI element rather than a world-space sprite, since a
+  Screen Space Overlay canvas always draws over world sprites regardless of
+  sorting order, which hid an earlier world-space attempt). On fire, that
+  pre-rolled color becomes `_color` and the indicator hides; on landing, a
+  new color is rolled and the indicator reappears with it.
 
 ## Open questions / tuning knobs
 

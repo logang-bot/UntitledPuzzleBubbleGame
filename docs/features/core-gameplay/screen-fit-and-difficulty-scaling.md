@@ -72,10 +72,13 @@ discrete, row-based descent/grid model at all — it only changes what number
   bit us during implementation: the debug renderer initially rendered
   nothing because its old hand-placed position from the fixed-size-camera
   era put the board entirely above the new dynamic frustum).
-  `filledRows` is clamped to the computed row count. Row 0 is the
-  bottom-most row (the shooter's line); higher row indices are toward the
-  ceiling. `FillWithRandomBubbles` fills the top `filledRows` rows (nearest
-  the ceiling), leaving the bottom rows empty — matching the actual game's
+  `filledRows` is clamped to the computed row count. Row 0 is the ceiling;
+  higher row indices are toward the shooter's line (bottom) — this direction
+  was actually backwards until a bug found while building
+  `matching-and-popping.md` (Milestone 4/5) got it fixed; see the Milestone
+  4/5 write-up in `docs/ROADMAP.md` for the full account. `FillWithRandomBubbles`
+  fills rows `0..filledRows-1` (nearest the ceiling), leaving the
+  higher-numbered rows near the shooter empty — matching the actual game's
   initial state (board near the ceiling, empty shooting lane below it)
   rather than filling from the shooter's line upward. `GridDebugRenderer`
   no longer owns any of this — it just renders whatever `GameBoard` holds

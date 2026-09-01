@@ -65,9 +65,10 @@ scope boundary at the time.
 ## Open questions / tuning knobs
 
 - Min/max aim angle and rotation speed — implemented as serialized fields on
-  `ShooterController` (`maxAimAngleDegrees = 60`, `rotateSpeedDegreesPerSecond
-  = 90`), but the actual values are still a feel decision to tune once
-  playable, not final.
+  `ShooterController` (`maxAimAngleDegrees = 60`, `rotateSpeedDegreesPerSecond`).
+  The rotation speed has already been tuned down twice during playtesting
+  (90 → 45 → 25) for smoother, more controllable aiming; still not
+  necessarily final.
 - ~~Bubble travel speed once fired (instant vs. animated)~~ — **decided in
   Milestone 3:** animated (`FiredBubbleController.bubbleSpeed`), not
   instant. See `firing-and-snapping.md`. The exact speed value is still a

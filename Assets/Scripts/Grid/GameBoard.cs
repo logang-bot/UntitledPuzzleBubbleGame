@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game.Grid
@@ -16,6 +17,8 @@ namespace Game.Grid
         [SerializeField] private int filledRows = 4;
 
         public event Action<int, int> OnBubblePlaced;
+        public event Action<IReadOnlyCollection<(int Row, int Col)>, BubbleColor> OnBubblesPopped;
+        public event Action<IReadOnlyCollection<(int Row, int Col)>> OnClusterDropped;
 
         public GridModel Grid { get; private set; }
         public Shooter.BoardBounds Bounds { get; private set; }
@@ -28,7 +31,7 @@ namespace Game.Grid
             var rows = FitCameraAndComputeRows(camera);
             Grid = new GridModel(rows, cols, cellWidth);
             Bounds = Shooter.BoardBoundsCalculator.Compute(camera.transform.position, cols * cellWidth, camera.orthographicSize);
-            ShooterOrigin = new Vector2(camera.transform.position.x, transform.position.y);
+            ShooterOrigin = new Vector2(camera.transform.position.x, camera.transform.position.y - camera.orthographicSize + cellWidth * 0.5f);
             FillWithRandomBubbles(rows);
         }
 
@@ -36,6 +39,23 @@ namespace Game.Grid
         {
             Grid.PlaceBubble(row, col, color);
             OnBubblePlaced?.Invoke(row, col);
+        }
+
+        public void PopCells(IReadOnlyCollection<(int Row, int Col)> cells, BubbleColor color)
+        {
+            ClearCells(cells);
+            OnBubblesPopped?.Invoke(cells, color);
+        }
+
+        public void DropCells(IReadOnlyCollection<(int Row, int Col)> cells)
+        {
+            ClearCells(cells);
+            OnClusterDropped?.Invoke(cells);
+        }
+
+        private void ClearCells(IReadOnlyCollection<(int Row, int Col)> cells)
+        {
+            foreach (var cell in cells) Grid.ClearCell(cell.Row, cell.Col);
         }
 
         private int FitCameraAndComputeRows(Camera camera)
@@ -48,16 +68,17 @@ namespace Game.Grid
 
         private void PositionBoard(Camera camera)
         {
+            // Anchored at the ceiling (top of screen): row 0's local y is 0 (see
+            // GridModel.GetWorldPosition), so this transform.position IS row 0's world position.
             var x = camera.transform.position.x - (cols - 1) * cellWidth * 0.5f;
-            var y = camera.transform.position.y - camera.orthographicSize + cellWidth * 0.5f;
+            var y = camera.transform.position.y + camera.orthographicSize - cellWidth * 0.5f;
             transform.position = new Vector3(x, y, transform.position.z);
         }
 
         private void FillWithRandomBubbles(int rows)
         {
             var filled = Mathf.Min(filledRows, rows);
-            var startRow = rows - filled;
-            for (var row = startRow; row < rows; row++)
+            for (var row = 0; row < filled; row++)
                 for (var col = 0; col < cols; col++)
                     Grid.PlaceBubble(row, col, BubbleColorPalette.Random());
         }

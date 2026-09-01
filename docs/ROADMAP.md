@@ -73,10 +73,51 @@ be playable/testable on its own before moving to the next:
    into `ShooterController.OnFireRequested`.
    → [`firing-and-snapping.md`](features/core-gameplay/firing-and-snapping.md)
 4. **Match detection** (3+ connected same-color bubbles via flood fill) +
-   popping.
+   popping. ✅ **Done**, together with Milestone 5 (built in the same pass,
+   since the design doc treats them as one flood-fill-based component).
+   `FloodFill` (generic BFS over `GridModel`) and `MatchResolver`
+   (`FindMatchGroup`/`FindFloatingCells`) are static, pure logic classes in
+   `Assets/Scripts/Grid/`, unit-tested, following the `BubbleLandingResolver`
+   precedent. `GameBoard` gained `OnBubblesPopped`/`OnClusterDropped` events
+   and `PopCells`/`DropCells` methods — kept on `GameBoard` rather than a new
+   `MatchResolver` MonoBehaviour, so it stays the single event source for all
+   grid-state changes (consistent with `OnBubblePlaced`). A new
+   `MatchProcessor` listens to `OnBubblePlaced` (rather than being wired
+   directly into `FiredBubbleController.Land()`), so matching/dropping
+   applies to any future placement source, not just fired bubbles —
+   confirmed safe since `GameBoard.Awake`'s initial fill calls
+   `Grid.PlaceBubble` directly, bypassing the event. `GridDebugRenderer` now
+   tracks its spawned sprites and reacts to both events: a pop destroys
+   instantly, while a drop adds a new `FallingBubble` component (simple
+   constant-gravity fall) so a bubble that loses its connection to the
+   ceiling visibly falls instead of vanishing like a match.
    → [`matching-and-popping.md`](features/core-gameplay/matching-and-popping.md)
+   - **Row-direction bug found and fixed.** `firing-and-snapping.md` and
+     `BubbleLandingResolver` always assumed row 0 is the ceiling, but
+     `GameBoard`'s actual positioning/fill code had it backwards — row 0
+     rendered at the bottom near the shooter (always empty in practice),
+     while real board content lived near `Rows-1`. Harmless before now
+     (`BubbleLandingResolver`'s row-0 fallback path is rarely reachable
+     since the initial fill blocks most straight-up shots), but it would
+     have made `MatchResolver.FindFloatingCells` drop the entire board on
+     every pop, since its ceiling-row seed set would almost always be
+     empty. Fixed at the source: `GridModel.GetWorldPosition` now returns
+     `y = -row * RowHeight` (row 0 = y = 0 = the ceiling anchor), and
+     `GameBoard.PositionBoard`/`FillWithRandomBubbles`/`ShooterOrigin` were
+     updated to match (anchor at the top, fill from row 0 down, shooter
+     origin computed independently of the now-top-anchored transform).
+     Verified with a live Play-mode check (occupied rows, world Y vs.
+     camera bounds) and a screenshot before trusting the fix. Updated
+     `GridModelWorldPositionTests` and three `OccupancyCollisionTests`
+     scenarios that had hard-coded the old (wrong) direction.
+   - **Shooter tweaks needed to actually test this.** Manually verifying
+     matches required knowing which color was about to fire and being able
+     to aim precisely, so two small `Shooter`-side changes landed alongside
+     this milestone rather than as separate work: a "next bubble" indicator
+     (see `firing-and-snapping.md`) and a rotation-speed retune (`90 → 45 →
+     25`, see `shooter-and-trajectory.md`).
 5. **Floating cluster detection** (bubbles disconnected from the ceiling
-   after a pop) + drop.
+   after a pop) + drop. ✅ **Done** — see Milestone 4 above.
 6. **Shot timer** — countdown per turn, auto-fires at current aim on
    expiry.
    → [`shot-timer-and-ceiling-descent.md`](features/core-gameplay/shot-timer-and-ceiling-descent.md)

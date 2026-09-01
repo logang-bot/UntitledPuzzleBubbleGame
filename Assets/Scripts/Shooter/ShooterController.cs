@@ -17,7 +17,7 @@ namespace Game.Shooter
     {
         [SerializeField] private GameBoard gameBoard;
         [SerializeField] private float maxAimAngleDegrees = 60f;
-        [SerializeField] private float rotateSpeedDegreesPerSecond = 90f;
+        [SerializeField] private float rotateSpeedDegreesPerSecond = 25f;
         [SerializeField] private int maxBounces = 10;
         [SerializeField] private float lineWidth = 0.08f;
         [SerializeField] private Material lineMaterial;

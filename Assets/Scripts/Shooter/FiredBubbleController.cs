@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Game.Grid;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Game.Shooter
 {
@@ -15,7 +16,13 @@ namespace Game.Shooter
     {
         [SerializeField] private GameBoard gameBoard;
         [SerializeField] private ShooterController shooterController;
+        [SerializeField] private RectTransform fireZoneRect;
         [SerializeField] private float bubbleSpeed = 8f;
+
+        // The indicator is a UI element (not a world-space sprite) so it can be anchored
+        // directly to the left of the fire-zone square, at the same height, on the same Canvas.
+        private const float IndicatorSize = 60f;
+        private const float IndicatorMargin = 15f;
 
         private TrajectoryPredictor _predictor;
         private List<Vector2> _path;
@@ -23,11 +30,37 @@ namespace Game.Shooter
         private int _segmentIndex;
         private GameObject _flyingBubble;
         private BubbleColor _color;
+        private BubbleColor _nextColor;
+        private GameObject _nextBubbleIndicator;
 
         private void Start()
         {
             _predictor = new TrajectoryPredictor(gameBoard.Bounds);
             shooterController.OnFireRequested += HandleFireRequested;
+            _nextColor = BubbleColorPalette.Random();
+            _nextBubbleIndicator = SpawnIndicator();
+        }
+
+        private GameObject SpawnIndicator()
+        {
+            var indicator = new GameObject("NextBubbleIndicator", typeof(RectTransform));
+            var rect = (RectTransform)indicator.transform;
+            ConfigureIndicatorRect(rect);
+            var image = indicator.AddComponent<Image>();
+            image.sprite = CircleSpriteFactory.CreateWhiteCircle();
+            image.color = BubbleColorPalette.ToColor(_nextColor);
+            return indicator;
+        }
+
+        private void ConfigureIndicatorRect(RectTransform rect)
+        {
+            rect.SetParent(fireZoneRect.parent, worldPositionStays: false);
+            rect.anchorMin = fireZoneRect.anchorMin;
+            rect.anchorMax = fireZoneRect.anchorMax;
+            rect.pivot = fireZoneRect.pivot;
+            rect.sizeDelta = new Vector2(IndicatorSize, IndicatorSize);
+            var xOffset = fireZoneRect.sizeDelta.x * 0.5f + IndicatorSize * 0.5f + IndicatorMargin;
+            rect.anchoredPosition = fireZoneRect.anchoredPosition + new Vector2(-xOffset, 0f);
         }
 
         private void OnDestroy()
@@ -47,7 +80,8 @@ namespace Game.Shooter
             _path = truncated.Points;
             _struckCell = truncated.StruckCell;
             _segmentIndex = 1;
-            _color = BubbleColorPalette.Random();
+            _color = _nextColor;
+            _nextBubbleIndicator.SetActive(false);
             _flyingBubble = SpawnFlyingBubble(origin);
         }
 
@@ -81,6 +115,14 @@ namespace Game.Shooter
             _flyingBubble = null;
             var landingCell = BubbleLandingResolver.ResolveLandingCell(BoardSpace(), _path[^1], _struckCell);
             if (landingCell != null) gameBoard.PlaceBubble(landingCell.Value.Row, landingCell.Value.Col, _color);
+            PrepareNextBubble();
+        }
+
+        private void PrepareNextBubble()
+        {
+            _nextColor = BubbleColorPalette.Random();
+            _nextBubbleIndicator.GetComponent<Image>().color = BubbleColorPalette.ToColor(_nextColor);
+            _nextBubbleIndicator.SetActive(true);
         }
 
         private (GridModel Grid, Vector2 Origin) BoardSpace()
