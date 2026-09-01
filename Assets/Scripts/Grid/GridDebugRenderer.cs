@@ -1,75 +1,46 @@
-using System;
 using UnityEngine;
 
 namespace Game.Grid
 {
     /// <summary>
-    /// Milestone 1 debug view: fills a GridModel with a few rows of random
-    /// bubbles and renders them as plain circles. Stand-in for the real
-    /// grid view until placeholder/real art and level generation exist.
+    /// Event-driven bubble rendering: draws whatever GameBoard already holds at
+    /// Start, then spawns one more sprite each time OnBubblePlaced fires. Still
+    /// the Milestone-1 plain-circle debug visuals, and no sprite pooling yet —
+    /// nothing removes bubbles until Milestone 4/5 (see
+    /// docs/features/core-gameplay/hex-grid.md).
     /// </summary>
     public class GridDebugRenderer : MonoBehaviour
     {
-        [SerializeField] private int cols = 8;
-        [SerializeField] private float cellWidth = 1f;
-        [SerializeField] private int filledRows = 4;
+        [SerializeField] private GameBoard gameBoard;
+
+        private Sprite _sprite;
 
         private void Start()
         {
-            var rows = FitCameraAndComputeRows();
-            var grid = new GridModel(rows, cols, cellWidth);
-            FillWithRandomBubbles(grid, rows);
-            RenderBubbles(grid, rows);
+            _sprite = CircleSpriteFactory.CreateWhiteCircle();
+            foreach (var cell in gameBoard.Grid.OccupiedCells())
+                SpawnBubble(cell);
+            gameBoard.OnBubblePlaced += OnBubblePlaced;
         }
 
-        private int FitCameraAndComputeRows()
+        private void OnDestroy()
         {
-            var boardWidth = cols * cellWidth;
-            var camera = Camera.main;
-            camera.orthographicSize = PlayfieldSizer.OrthographicSizeForWidth(boardWidth, Screen.width, Screen.height);
-            PositionBoard(camera);
-            return PlayfieldSizer.RowsForWorldHeight(camera.orthographicSize * 2f, cellWidth);
+            gameBoard.OnBubblePlaced -= OnBubblePlaced;
         }
 
-        private void PositionBoard(Camera camera)
+        private void OnBubblePlaced(int row, int col)
         {
-            var x = camera.transform.position.x - (cols - 1) * cellWidth * 0.5f;
-            var y = camera.transform.position.y - camera.orthographicSize + cellWidth * 0.5f;
-            transform.position = new Vector3(x, y, transform.position.z);
+            SpawnBubble((row, col));
         }
 
-        private void FillWithRandomBubbles(GridModel grid, int rows)
-        {
-            var filled = Mathf.Min(filledRows, rows);
-            var startRow = rows - filled;
-            for (var row = startRow; row < rows; row++)
-                for (var col = 0; col < cols; col++)
-                    grid.PlaceBubble(row, col, RandomColor());
-        }
-
-        private static BubbleColor RandomColor()
-        {
-            var values = (BubbleColor[])Enum.GetValues(typeof(BubbleColor));
-            return values[UnityEngine.Random.Range(0, values.Length)];
-        }
-
-        private void RenderBubbles(GridModel grid, int rows)
-        {
-            var sprite = CircleSpriteFactory.CreateWhiteCircle();
-            for (var row = 0; row < rows; row++)
-                for (var col = 0; col < cols; col++)
-                    if (grid.IsOccupied(row, col))
-                        SpawnBubble(grid, sprite, (row, col));
-        }
-
-        private void SpawnBubble(GridModel grid, Sprite sprite, (int Row, int Col) cell)
+        private void SpawnBubble((int Row, int Col) cell)
         {
             var bubble = new GameObject($"Bubble_{cell.Row}_{cell.Col}");
-            bubble.transform.SetParent(transform);
-            bubble.transform.localPosition = grid.GetWorldPosition(cell.Row, cell.Col);
+            bubble.transform.SetParent(gameBoard.transform);
+            bubble.transform.localPosition = gameBoard.Grid.GetWorldPosition(cell.Row, cell.Col);
             var spriteRenderer = bubble.AddComponent<SpriteRenderer>();
-            spriteRenderer.sprite = sprite;
-            spriteRenderer.color = BubbleColorPalette.ToColor(grid.GetColor(cell.Row, cell.Col));
+            spriteRenderer.sprite = _sprite;
+            spriteRenderer.color = BubbleColorPalette.ToColor(gameBoard.Grid.GetColor(cell.Row, cell.Col));
         }
     }
 }

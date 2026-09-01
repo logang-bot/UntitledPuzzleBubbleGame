@@ -29,7 +29,10 @@ wouldn't look or feel like the source material.
   for a shooter-style grid, which — unlike a board game — never needs
   diagonal movement, only "which cells are adjacent").
 - `PlaceBubble(row, col, color)` / `ClearCell(row, col)` / `IsOccupied` /
-  `GetColor` are the occupancy API.
+  `GetColor` are the occupancy API, plus `OccupiedCells()` (enumerates all
+  occupied cells) and `Rows`/`Cols` properties — both added in Milestone 3
+  when `OccupancyCollision` needed to check a fired bubble's path against
+  every occupied cell (see `firing-and-snapping.md`).
 - `GetNeighbors(row, col)` returns the up-to-6 adjacent cells as
   `List<(int Row, int Col)>`, clipped to grid bounds. Implemented as a
   static even-row/odd-row offset table (`EvenRowOffsets`/`OddRowOffsets`)
@@ -47,13 +50,16 @@ wouldn't look or feel like the source material.
 - Rendering is a separate component that listens for grid changes and
   instantiates/pools bubble sprites at each occupied cell's world position —
   `GridModel` itself has no Unity dependencies beyond `Vector2`, so it can
-  be unit-tested without a scene. The current renderer
-  (`GridDebugRenderer`, `BubbleColorPalette`, `CircleSpriteFactory`) is a
-  temporary Milestone-1 stand-in that generates a plain circle sprite in
-  code and spawns one `GameObject` per bubble directly — it proved the grid
-  math visually, but isn't the pooled/event-driven rendering layer the rest
-  of this doc describes; expect it to be replaced once real bubble art and
-  the match/pop events exist.
+  be unit-tested without a scene. `GridDebugRenderer` (still generating
+  plain circle sprites via `BubbleColorPalette`/`CircleSpriteFactory`, no
+  real art yet) became genuinely event-driven in Milestone 3: it renders
+  whatever `GameBoard` already holds once at `Start`, then reacts to
+  `GameBoard.OnBubblePlaced` for every bubble added afterward, instead of
+  owning the grid and doing a one-shot fill itself (see
+  `firing-and-snapping.md`). It still has no sprite pooling and no way to
+  *remove* a sprite — nothing has cleared a cell yet — so it still counts
+  as a debug stand-in; expect pooling and pop/drop handling once
+  `matching-and-popping.md` (Milestone 4) exists.
 
 ## Open questions / tuning knobs
 

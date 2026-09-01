@@ -2,9 +2,11 @@
 
 **Status: implemented.** `PlayfieldSizer` and `HexGridMath` live at
 `Assets/Scripts/Grid/`, covered by EditMode tests in
-`Assets/Tests/EditMode/PlayfieldSizerTests.cs`. `GridDebugRenderer` uses
-them to size the camera and grid at runtime instead of a hardcoded 8x8
-board.
+`Assets/Tests/EditMode/PlayfieldSizerTests.cs`. `GameBoard` uses them to
+size the camera and grid at runtime instead of a hardcoded 8x8 board — this
+was `GridDebugRenderer`'s job in Milestone 1, moved to `GameBoard` in
+Milestone 3 when a single shared board owner became necessary (see
+`firing-and-snapping.md`).
 
 ## Decision
 
@@ -60,7 +62,7 @@ discrete, row-based descent/grid model at all — it only changes what number
     equal `boardWidth`.
   - `RowsForWorldHeight(worldHeight, cellWidth)` → row count that fits
     (floored, since rows are discrete).
-- `GridDebugRenderer` calls these from `Start()`: sets `Camera.main
+- `GameBoard` calls these from `Awake()`: sets `Camera.main
   .orthographicSize` from the fixed `cols`/`cellWidth` board width and the
   live `Screen.width`/`Screen.height`, then positions itself relative to
   the camera (horizontally centered, bottom row anchored near the bottom
@@ -75,7 +77,9 @@ discrete, row-based descent/grid model at all — it only changes what number
   ceiling. `FillWithRandomBubbles` fills the top `filledRows` rows (nearest
   the ceiling), leaving the bottom rows empty — matching the actual game's
   initial state (board near the ceiling, empty shooting lane below it)
-  rather than filling from the shooter's line upward.
+  rather than filling from the shooter's line upward. `GridDebugRenderer`
+  no longer owns any of this — it just renders whatever `GameBoard` holds
+  (see `firing-and-snapping.md`).
 
 ## Tablets — explicitly out of scope for now
 
@@ -90,10 +94,9 @@ real target.
 
 ## Open questions / tuning knobs
 
-- Exact column count (`cols` on `GridDebugRenderer`, and later on whatever
-  replaces it) is still a "tune once real art exists" value, same as
-  before — this doc only settles *how* width/height are matched to the
-  device, not the final number. See `hex-grid.md`.
+- Exact column count (`cols` on `GameBoard`) is still a "tune once real art
+  exists" value, same as before — this doc only settles *how* width/height
+  are matched to the device, not the final number. See `hex-grid.md`.
 - Whether the board needs a top/bottom safety margin beyond a single
   bubble radius once the shooter and HUD exist (Milestones 2 and 10) — the
   current bottom-anchor offset is a first approximation, not tuned against

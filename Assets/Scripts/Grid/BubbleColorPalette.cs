@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +16,10 @@ namespace Game.Grid
             { BubbleColor.Purple, new Color(0.6f, 0.2f, 0.8f) },
         };
 
+        private static readonly BubbleColor[] AllColors = (BubbleColor[])Enum.GetValues(typeof(BubbleColor));
+
         public static Color ToColor(BubbleColor color) => Colors[color];
+
+        public static BubbleColor Random() => AllColors[UnityEngine.Random.Range(0, AllColors.Length)];
     }
 }

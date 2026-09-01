@@ -26,6 +26,9 @@ namespace Game.Grid
         private readonly bool[,] _occupied;
         private readonly BubbleColor[,] _colors;
 
+        public int Rows => _rows;
+        public int Cols => _cols;
+
         public GridModel(int rows, int cols, float cellWidth = 1f)
         {
             _rows = rows;
@@ -54,6 +57,14 @@ namespace Game.Grid
         public void ClearCell(int row, int col)
         {
             _occupied[row, col] = false;
+        }
+
+        public IEnumerable<(int Row, int Col)> OccupiedCells()
+        {
+            for (var row = 0; row < _rows; row++)
+                for (var col = 0; col < _cols; col++)
+                    if (_occupied[row, col])
+                        yield return (row, col);
         }
 
         /// <summary>

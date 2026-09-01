@@ -55,15 +55,23 @@ be playable/testable on its own before moving to the next:
    during implementation. `TrajectoryPredictor`, `BoardBoundsCalculator`,
    `HoldInputZone`, and `ShooterController` are implemented, with the pure
    math unit-tested (`Assets/Scripts/Shooter/`, `Assets/Tests/EditMode/`).
-   Firing itself is **not** built — `ShooterController` raises
-   `OnFireRequested` with no subscriber yet, which is Milestone 3's hook-in
-   point. Known tech debt: `ShooterController` and `GridDebugRenderer` each
-   have their own `cols`/`cellWidth` fields instead of sharing one board
-   config; worth fixing when Milestone 3 replaces `GridDebugRenderer` and
-   needs real occupied-cell awareness for snapping anyway.
+   Firing itself was **not** built yet at this point — `ShooterController`
+   raised `OnFireRequested` with no subscriber, which became Milestone 3's
+   hook-in point. Known tech debt at the time: `ShooterController` and
+   `GridDebugRenderer` each had their own `cols`/`cellWidth` fields instead
+   of sharing one board config — ~~resolved in Milestone 3~~ by introducing
+   `GameBoard` as the single shared owner (see below).
    → [`shooter-and-trajectory.md`](features/core-gameplay/shooter-and-trajectory.md)
 3. **Firing a bubble** — move it along the previewed path, snap to the
-   nearest empty grid cell on collision.
+   nearest empty grid cell on collision. ✅ **Done.** `GameBoard` is now the
+   single shared owner of the `GridModel`/bounds (resolving the
+   `ShooterController`/`GridDebugRenderer` cols/cellWidth duplication
+   tech debt from Milestone 2). `OccupancyCollision` truncates the
+   trajectory at the first occupied cell so the preview and the fired
+   bubble always agree, `BubbleLandingResolver` picks the nearest empty
+   cell, and `FiredBubbleController` animates the fired bubble and hooks
+   into `ShooterController.OnFireRequested`.
+   → [`firing-and-snapping.md`](features/core-gameplay/firing-and-snapping.md)
 4. **Match detection** (3+ connected same-color bubbles via flood fill) +
    popping.
    → [`matching-and-popping.md`](features/core-gameplay/matching-and-popping.md)

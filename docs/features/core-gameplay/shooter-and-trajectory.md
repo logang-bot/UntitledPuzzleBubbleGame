@@ -1,14 +1,16 @@
 # Shooter & Trajectory
 
-**Status: implemented (Milestone 2 scope only).** `TrajectoryPredictor`,
+**Status: implemented (Milestone 2 scope).** `TrajectoryPredictor`,
 `BoardBounds`, `BoardBoundsCalculator`, `HoldInputZone`, and
 `ShooterController` live at `Assets/Scripts/Shooter/`, with the pure-math
 pieces covered by EditMode tests in `Assets/Tests/EditMode/`
 (`BoardBoundsCalculatorTests.cs`, `TrajectoryPredictorStraightShotTests.cs`,
 `TrajectoryPredictorWallBounceTests.cs`,
-`TrajectoryPredictorTerminationTests.cs`). Actually firing/moving/snapping a
-bubble is Milestone 3 and is **not** implemented yet — see "Implementation
-sketch" below for the exact scope boundary.
+`TrajectoryPredictorTerminationTests.cs`). Firing/moving/snapping a bubble
+(Milestone 3) is now implemented on top of this — see
+[`firing-and-snapping.md`](firing-and-snapping.md) — but the "Implementation
+sketch" below is left as originally written, describing Milestone 2's exact
+scope boundary at the time.
 
 ## Decision
 
@@ -66,7 +68,9 @@ sketch" below for the exact scope boundary.
   `ShooterController` (`maxAimAngleDegrees = 60`, `rotateSpeedDegreesPerSecond
   = 90`), but the actual values are still a feel decision to tune once
   playable, not final.
-- Bubble travel speed once fired (instant vs. animated) — a feel decision,
-  test both.
+- ~~Bubble travel speed once fired (instant vs. animated)~~ — **decided in
+  Milestone 3:** animated (`FiredBubbleController.bubbleSpeed`), not
+  instant. See `firing-and-snapping.md`. The exact speed value is still a
+  feel value to tune, though.
 - Whether to cap preview line length/bounce count for visual clarity on a
   small phone screen (a preview with many bounces can get cluttered).

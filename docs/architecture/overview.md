@@ -17,9 +17,13 @@ popped") without editing the core systems themselves.
 
 | Component | Responsibility |
 |---|---|
-| `GridModel` | Owns the hex grid data (which cell holds which color, empty vs. occupied). No rendering, no Unity physics — pure data + queries (neighbors, flood fill). |
-| `ShooterController` | Rotates the aim angle at a fixed speed while an on-screen rotate zone is held (arcade-style, not drag-to-angle — see `features/core-gameplay/shooter-and-trajectory.md`), tells `TrajectoryPredictor` to simulate for the preview, and raises `OnFireRequested` on a fire-zone press for Milestone 3 to fire bubbles. |
-| `TrajectoryPredictor` | Given a start point and aim angle, simulates the kinematic path (straight line + wall-bounce reflections) and returns points for both the preview line and the actual fired bubble to follow. |
+| `GridModel` | Owns the hex grid data (which cell holds which color, empty vs. occupied). No rendering, no Unity physics — pure data + queries (neighbors, flood fill, occupied-cell enumeration). |
+| `GameBoard` | Single shared owner of the `GridModel` instance, camera-fit board geometry, and `BoardBounds` — everything else (shooter, renderer, fired-bubble logic) reads board state through this rather than computing its own. Raises `OnBubblePlaced`. |
+| `ShooterController` | Rotates the aim angle at a fixed speed while an on-screen rotate zone is held (arcade-style, not drag-to-angle — see `features/core-gameplay/shooter-and-trajectory.md`), tells `TrajectoryPredictor` to simulate for the preview, and raises `OnFireRequested` on a fire-zone press. |
+| `TrajectoryPredictor` | Given a start point and aim angle, simulates the kinematic path (straight line + wall-bounce reflections only — no occupancy) and returns points for both the preview line and the actual fired bubble to follow. |
+| `OccupancyCollision` | Truncates a raw `TrajectoryPredictor` path at the first occupied cell it touches, so the preview and the fired bubble both stop at the same point (see `features/core-gameplay/firing-and-snapping.md`). |
+| `BubbleLandingResolver` | Picks the nearest empty cell to a truncated path's contact point for a fired bubble to snap into. |
+| `FiredBubbleController` | Subscribes to `OnFireRequested`, animates the fired bubble along the truncated path, and places it on `GameBoard` when it lands. |
 | `MatchResolver` | Given a newly-placed bubble's grid cell, flood-fills same-color neighbors, decides what pops, and detects floating (disconnected) clusters afterward. |
 | `LevelGenerator` | Produces a `GridModel` populated for a given level/difficulty (color count, density, row count knobs). |
 | `GameStateManager` | Owns the shot timer, ceiling descent timer, and win/loss checks; the "referee" that ties the other systems together and raises high-level events like `OnLevelWon` / `OnLevelLost`. |

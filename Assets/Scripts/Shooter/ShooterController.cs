@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using Game.Grid;
 using UnityEngine;
 
@@ -8,14 +7,15 @@ namespace Game.Shooter
     /// <summary>
     /// Fixed-speed rotating gun (arcade Puzzle Bobble-style): holding the
     /// rotate zones turns the aim angle at a constant rate; the fire zone
-    /// raises OnFireRequested with no subscriber yet (Milestone 3 hooks in
-    /// there). See docs/features/core-gameplay/shooter-and-trajectory.md.
+    /// raises OnFireRequested, consumed by FiredBubbleController. The preview
+    /// line is occupancy-truncated the same way as the fired bubble's path, so
+    /// they can never disagree. See
+    /// docs/features/core-gameplay/firing-and-snapping.md.
     /// </summary>
     [RequireComponent(typeof(LineRenderer))]
     public class ShooterController : MonoBehaviour
     {
-        [SerializeField] private int cols = 8;
-        [SerializeField] private float cellWidth = 1f;
+        [SerializeField] private GameBoard gameBoard;
         [SerializeField] private float maxAimAngleDegrees = 60f;
         [SerializeField] private float rotateSpeedDegreesPerSecond = 90f;
         [SerializeField] private int maxBounces = 10;
@@ -26,6 +26,7 @@ namespace Game.Shooter
         [SerializeField] private HoldInputZone fireZone;
 
         public event Action<Vector2, float> OnFireRequested;
+        public int MaxBounces => maxBounces;
 
         private LineRenderer _lineRenderer;
         private TrajectoryPredictor _predictor;
@@ -40,7 +41,8 @@ namespace Game.Shooter
 
         private void Start()
         {
-            InitializeBoardGeometry();
+            _shooterOrigin = gameBoard.ShooterOrigin;
+            _predictor = new TrajectoryPredictor(gameBoard.Bounds);
         }
 
         private void Update()
@@ -56,21 +58,6 @@ namespace Game.Shooter
             _lineRenderer.material = lineMaterial != null ? lineMaterial : new Material(Shader.Find("Universal Render Pipeline/Unlit"));
             _lineRenderer.widthMultiplier = lineWidth;
             _lineRenderer.useWorldSpace = true;
-        }
-
-        private void InitializeBoardGeometry()
-        {
-            var camera = Camera.main;
-            var boardWidth = cols * cellWidth;
-            camera.orthographicSize = PlayfieldSizer.OrthographicSizeForWidth(boardWidth, Screen.width, Screen.height);
-            _shooterOrigin = ShooterOrigin(camera);
-            _predictor = new TrajectoryPredictor(BoardBoundsCalculator.Compute(camera.transform.position, boardWidth, camera.orthographicSize));
-        }
-
-        private Vector2 ShooterOrigin(Camera camera)
-        {
-            var pos = camera.transform.position;
-            return new Vector2(pos.x, pos.y - camera.orthographicSize + cellWidth * 0.5f);
         }
 
         private void UpdateAimAngle()
@@ -89,7 +76,9 @@ namespace Game.Shooter
 
         private void DrawPreview()
         {
-            List<Vector2> points = _predictor.Simulate(_shooterOrigin, _aimAngleDegrees, maxBounces);
+            var rawPoints = _predictor.Simulate(_shooterOrigin, _aimAngleDegrees, maxBounces);
+            var board = (gameBoard.Grid, (Vector2)gameBoard.transform.position);
+            var points = OccupancyCollision.Truncate(rawPoints, board, gameBoard.CellWidth).Points;
             _lineRenderer.positionCount = points.Count;
             for (var i = 0; i < points.Count; i++)
                 _lineRenderer.SetPosition(i, points[i]);
