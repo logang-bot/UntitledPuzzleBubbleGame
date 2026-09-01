@@ -38,9 +38,11 @@ wouldn't look or feel like the source material.
   composed functions (candidate offsets → bounds filter) made it easy to
   unit-test each row parity and the corner-clipping case separately.
 - `GetWorldPosition(row, col)` returns a `Vector2`: `x = col * cellWidth +
-  (row % 2 == 0 ? 0 : cellWidth * 0.5f)`, `y = row * cellWidth *
-  0.8660254f` (`0.8660254` = sin 60°, for hex row packing). `cellWidth` is
-  an optional constructor parameter (default `1`), so tests can use simple
+  (row % 2 == 0 ? 0 : cellWidth * 0.5f)`, `y = row * HexGridMath.RowHeight
+  (cellWidth)` (row-height factor `0.8660254f` = sin 60°, for hex row
+  packing — lives in `HexGridMath` so `PlayfieldSizer` can reuse the same
+  constant, see `screen-fit-and-difficulty-scaling.md`). `cellWidth` is an
+  optional constructor parameter (default `1`), so tests can use simple
   round numbers.
 - Rendering is a separate component that listens for grid changes and
   instantiates/pools bubble sprites at each occupied cell's world position —
@@ -55,10 +57,11 @@ wouldn't look or feel like the source material.
 
 ## Open questions / tuning knobs
 
-- Exact grid width (columns per row) for the target phone aspect ratio —
-  needs a device/resolution decision, tune once placeholder art is in. The
-  debug renderer's 8x8 default is an arbitrary placeholder for visual
-  testing, not a decision.
+- Exact column count is still a "tune once placeholder art is in" value —
+  but *how* it maps to a real device is now decided: column count is fixed
+  and device-independent, matched to screen width via the camera, while
+  row count is computed dynamically from screen height. See
+  `screen-fit-and-difficulty-scaling.md`.
 - Whether the grid needs to support a "half bubble" edge case for the
   offset rows at the board's left/right boundary (classic games either wall
   it off or allow it — pick during implementation once it's visible).

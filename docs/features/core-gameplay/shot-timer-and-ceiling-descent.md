@@ -40,6 +40,11 @@ deliberately separate systems with different triggers.
 - Raises `OnShotTimerExpired()` and `OnRowPushedDown()` respectively for
   other systems (UI countdown display, board-push animation) to react to.
 
+This discrete "always exactly one row" push is unchanged by and compatible
+with the device-independent screen-fit scheme — see
+`screen-fit-and-difficulty-scaling.md` for how row capacity and starting
+row count are derived per device without touching the descent step itself.
+
 ## Open questions / tuning knobs
 
 - Exact shot timer duration (e.g. 5-8 seconds is typical for the genre —

@@ -24,7 +24,15 @@ later for special/milestone levels once the core loop is proven fun.
     easier to find matches).
   - **Density** — what fraction of the starting rows are filled vs. left
     empty gaps.
-  - **Row count** — how many rows of bubbles the level starts with.
+  - **Headroom rows** — empty rows between the initial board's bottom edge
+    and the shooter's line, *not* a raw starting row count. The initial
+    board is placed at the top (near the ceiling); headroom is the empty
+    space below it that the player starts with. Actual
+    starting row count is `PlayfieldRows - HeadroomRows(level)`, where
+    `PlayfieldRows` comes from the device's screen fit (see
+    `screen-fit-and-difficulty-scaling.md`). This keeps the number of
+    ceiling-pushes before reaching the shooter's line consistent across
+    every phone, regardless of how many rows actually fit on screen.
   - **Ceiling descent interval** (see `shot-timer-and-ceiling-descent.md`)
     — generated/looked-up alongside the board layout since it's also a
     per-level difficulty value.

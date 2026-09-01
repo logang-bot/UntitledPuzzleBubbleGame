@@ -19,6 +19,12 @@ brainstorming session · ⏳ not yet scoped.
 - [ ] Confirm the existing URP 2D template settings are suitable (project
       already uses Unity 6000.5.1f1 with the 2D URP template — no changes
       expected here, just a sanity check once real content exists).
+- [x] Player Settings default orientation set to Portrait (landscape
+      autorotate disabled) to match the portrait-only design (see
+      `battle-mode/overview.md` and
+      `core-gameplay/screen-fit-and-difficulty-scaling.md`). Build target
+      is still `StandaloneWindows64` for now — switching to Android/iOS is
+      deferred to Milestone 11's device build.
 
 ## Phase 1 — Core single-player bubble shooter ✅ (design complete)
 
@@ -34,6 +40,14 @@ be playable/testable on its own before moving to the next:
    is a Milestone-1 stand-in, not the final rendering layer described in
    `architecture/overview.md`.
    → [`hex-grid.md`](features/core-gameplay/hex-grid.md)
+   - **Screen fit & device-independent difficulty scaling — decided and
+     implemented.** Board fills the full phone screen in width and height
+     (no letterbox bars) via a fixed-column/match-width camera plus a
+     dynamically computed row count, with ceiling-descent fairness
+     preserved across devices via a headroom-rows difficulty knob (for
+     Milestone 9's `LevelGenerator`). Unblocks Milestone 2's need for real
+     board bounds. Tablets explicitly out of scope for now.
+     → [`screen-fit-and-difficulty-scaling.md`](features/core-gameplay/screen-fit-and-difficulty-scaling.md)
 2. **Shooter + aim input** (touch drag) with kinematic trajectory preview
    (including wall bounces).
    → [`shooter-and-trajectory.md`](features/core-gameplay/shooter-and-trajectory.md)

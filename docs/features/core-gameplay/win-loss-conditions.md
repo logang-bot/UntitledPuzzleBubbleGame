@@ -32,5 +32,9 @@ condition, which pairs naturally with the ceiling-descent pressure.
   (not the primary loss condition, just a guard against a pathological
   infinite level) — likely unnecessary given the ceiling always advances,
   revisit only if playtesting reveals a stalemate case.
-- Exact "shooter's line" Y position/row threshold for the loss check —
-  depends on final grid sizing (see `hex-grid.md` open questions).
+- The "shooter's line" is row index `0` (the bottom-most row, per
+  `GridDebugRenderer`'s row-to-world-position convention: row 0 sits at the
+  bottom of the screen, row `PlayfieldRows - 1` near the ceiling) —
+  consistent across every device by construction, since `PlayfieldRows` is
+  derived from the device's screen fit rather than a fixed magic value.
+  See `screen-fit-and-difficulty-scaling.md`.

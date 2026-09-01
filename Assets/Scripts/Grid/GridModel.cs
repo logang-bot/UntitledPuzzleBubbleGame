@@ -6,8 +6,6 @@ namespace Game.Grid
 {
     public class GridModel
     {
-        private const float RowHeightFactor = 0.8660254f;
-
         private static readonly (int Row, int Col)[] EvenRowOffsets =
         {
             (0, -1), (0, 1),
@@ -87,7 +85,7 @@ namespace Game.Grid
         {
             var xOffset = row % 2 == 0 ? 0f : _cellWidth * 0.5f;
             var x = col * _cellWidth + xOffset;
-            var y = row * _cellWidth * RowHeightFactor;
+            var y = row * HexGridMath.RowHeight(_cellWidth);
             return new Vector2(x, y);
         }
     }
