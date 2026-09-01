@@ -48,8 +48,19 @@ be playable/testable on its own before moving to the next:
      Milestone 9's `LevelGenerator`). Unblocks Milestone 2's need for real
      board bounds. Tablets explicitly out of scope for now.
      → [`screen-fit-and-difficulty-scaling.md`](features/core-gameplay/screen-fit-and-difficulty-scaling.md)
-2. **Shooter + aim input** (touch drag) with kinematic trajectory preview
-   (including wall bounces).
+2. **Shooter + aim input** with kinematic trajectory preview (including wall
+   bounces). ✅ **Done.** Aiming turned out to be a fixed-speed rotating gun
+   (arcade Puzzle Bobble style, via on-screen hold zones) rather than
+   drag-to-angle — the original write-up here was wrong and got corrected
+   during implementation. `TrajectoryPredictor`, `BoardBoundsCalculator`,
+   `HoldInputZone`, and `ShooterController` are implemented, with the pure
+   math unit-tested (`Assets/Scripts/Shooter/`, `Assets/Tests/EditMode/`).
+   Firing itself is **not** built — `ShooterController` raises
+   `OnFireRequested` with no subscriber yet, which is Milestone 3's hook-in
+   point. Known tech debt: `ShooterController` and `GridDebugRenderer` each
+   have their own `cols`/`cellWidth` fields instead of sharing one board
+   config; worth fixing when Milestone 3 replaces `GridDebugRenderer` and
+   needs real occupied-cell awareness for snapping anyway.
    → [`shooter-and-trajectory.md`](features/core-gameplay/shooter-and-trajectory.md)
 3. **Firing a bubble** — move it along the previewed path, snap to the
    nearest empty grid cell on collision.

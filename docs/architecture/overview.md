@@ -18,7 +18,7 @@ popped") without editing the core systems themselves.
 | Component | Responsibility |
 |---|---|
 | `GridModel` | Owns the hex grid data (which cell holds which color, empty vs. occupied). No rendering, no Unity physics — pure data + queries (neighbors, flood fill). |
-| `ShooterController` | Reads touch input, tracks aim angle, tells `TrajectoryPredictor` to simulate, fires bubbles. |
+| `ShooterController` | Rotates the aim angle at a fixed speed while an on-screen rotate zone is held (arcade-style, not drag-to-angle — see `features/core-gameplay/shooter-and-trajectory.md`), tells `TrajectoryPredictor` to simulate for the preview, and raises `OnFireRequested` on a fire-zone press for Milestone 3 to fire bubbles. |
 | `TrajectoryPredictor` | Given a start point and aim angle, simulates the kinematic path (straight line + wall-bounce reflections) and returns points for both the preview line and the actual fired bubble to follow. |
 | `MatchResolver` | Given a newly-placed bubble's grid cell, flood-fills same-color neighbors, decides what pops, and detects floating (disconnected) clusters afterward. |
 | `LevelGenerator` | Produces a `GridModel` populated for a given level/difficulty (color count, density, row count knobs). |
