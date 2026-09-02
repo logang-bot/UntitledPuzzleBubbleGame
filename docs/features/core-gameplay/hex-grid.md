@@ -73,6 +73,14 @@ wouldn't look or feel like the source material.
   and device-independent, matched to screen width via the camera, while
   row count is computed dynamically from screen height. See
   `screen-fit-and-difficulty-scaling.md`.
-- Whether the grid needs to support a "half bubble" edge case for the
-  offset rows at the board's left/right boundary (classic games either wall
-  it off or allow it — pick during implementation once it's visible).
+- ~~Whether the grid needs to support a "half bubble" edge case for the
+  offset rows at the board's left/right boundary~~ **Resolved.** Odd rows'
+  half-cell shift (`GridModel.GetWorldPosition`) was clipping their
+  rightmost bubble against the camera's right edge, since `GameBoard` only
+  ever fit the camera/bounds to the even-row footprint (`cols * cellWidth`).
+  Fixed by widening the fitted width to include the half-cell overhang
+  (`HexGridMath.BoardWidthWithOffsetMargin`/`BoardOriginXOffset`, used by
+  `GameBoard`) rather than walling off a column — every row stays fully
+  visible, at the cost of a tiny (device-independent, imperceptible)
+  bubble-size reduction versus the un-clipped math. Found while verifying
+  the Milestone 6 shot timer live in Play mode.
