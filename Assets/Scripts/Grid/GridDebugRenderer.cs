@@ -25,6 +25,7 @@ namespace Game.Grid
             gameBoard.OnBubblePlaced += OnBubblePlaced;
             gameBoard.OnBubblesPopped += OnBubblesPopped;
             gameBoard.OnClusterDropped += OnClusterDropped;
+            gameBoard.OnRowPushedDown += OnRowPushedDown;
         }
 
         private void OnDestroy()
@@ -32,6 +33,7 @@ namespace Game.Grid
             gameBoard.OnBubblePlaced -= OnBubblePlaced;
             gameBoard.OnBubblesPopped -= OnBubblesPopped;
             gameBoard.OnClusterDropped -= OnClusterDropped;
+            gameBoard.OnRowPushedDown -= OnRowPushedDown;
         }
 
         private void OnBubblePlaced(int row, int col)
@@ -51,6 +53,16 @@ namespace Game.Grid
             foreach (var cell in cells)
                 if (_bubbles.Remove(cell, out var bubble))
                     bubble.AddComponent<FallingBubble>();
+        }
+
+        private void OnRowPushedDown(bool wasLastRowOccupied)
+        {
+            foreach (var bubble in _bubbles.Values)
+                Destroy(bubble);
+            _bubbles.Clear();
+
+            foreach (var cell in gameBoard.Grid.OccupiedCells())
+                SpawnBubble(cell);
         }
 
         private void SpawnBubble((int Row, int Col) cell)

@@ -660,7 +660,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1224280796
 Canvas:
   m_ObjectHideFlags: 0
@@ -1005,7 +1005,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Game::Game.Gameplay.GameStateManager
   shooterController: {fileID: 1078805873}
+  gameBoard: {fileID: 218697389}
   shotTimeSeconds: 8
+  ceilingDropIntervalSeconds: 20
 --- !u!4 &2047843252
 Transform:
   m_ObjectHideFlags: 0

@@ -25,16 +25,46 @@ deliberately separate systems with different triggers.
   See `Assets/Scripts/Gameplay/ShotTimer.cs`, `GameStateManager.cs`, and
   `ShotTimerDisplay.cs`.
 
-## Ceiling descent
+## Ceiling descent ✅ Implemented (Milestone 7)
 
 - Independent of the shot timer and of how many shots have been taken.
 - On a fixed interval, the entire board pushes down one row and a new row
   of bubbles is added at the top.
 - The interval **shortens at higher levels/difficulty** — early levels give
-  more breathing room, later levels apply more pressure.
+  more breathing room, later levels apply more pressure. Not tied to a
+  difficulty config yet (Milestone 9's `LevelGenerator` doesn't exist), so
+  for now it's a single `[SerializeField] ceilingDropIntervalSeconds` on
+  `GameStateManager` (default 20s) — a tuning knob, not a curve.
 - This is the primary way a level can be lost (see
   `win-loss-conditions.md`): if the pushed-down board reaches the shooter's
-  line, the game ends.
+  line, the game ends. The actual loss/game-over flow is Milestone 8 — not
+  built yet. This milestone only produces the signal that flow will need:
+  `GameBoard.OnRowPushedDown(bool wasLastRowOccupied)` fires after every
+  push, `wasLastRowOccupied` reporting whether the row about to be
+  discarded (the shooter's line, `GridModel.Rows - 1`) held any bubbles
+  right before the shift. `GameStateManager` currently just logs it.
+- Implementation deviates from the sketch below in two ways: the push
+  logic reuses `ShotTimer` for the countdown (no separate
+  `CeilingDescentTimer` class — `GameStateManager` calls `Reset()` itself
+  right after `Tick()` reports expiry, rather than `ShotTimer`
+  self-resetting), and there's no separate `OnShotTimerExpired()`-style
+  wrapper event — the row-shift mutation and its event live on
+  `GameBoard` (`GridModel.PushRowsDown` does the array shift,
+  `GameBoard.PushRowDown()` calls it, refills row 0, and raises
+  `OnRowPushedDown`), consistent with the Milestone 4 precedent that
+  grid-mutating operations are the single event source on `GameBoard`.
+  See `Assets/Scripts/Grid/GridModel.cs`, `GameBoard.cs`,
+  `Assets/Scripts/Gameplay/GameStateManager.cs`.
+- Verified in Play mode: board grows downward one row per interval, each
+  push visibly shifts every existing bubble down (including the hex
+  half-cell x-offset that comes with the row-parity change) and adds a
+  fresh random row at the ceiling; `GridDebugRenderer` handles this by
+  destroying and rebuilding all tracked sprites from `GameBoard.Grid` on
+  `OnRowPushedDown` rather than incrementally re-keying, since it's an
+  explicitly disposable Milestone-1 stand-in. Ran the board to full
+  saturation (136/136 cells on a 17x8 grid) with no index errors, and
+  confirmed `OnRowPushedDown` reports `wasLastRowOccupied = true`
+  repeatedly once the bottom row started staying occupied.
 
 ## Implementation sketch
 

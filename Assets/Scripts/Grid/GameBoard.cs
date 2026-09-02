@@ -19,6 +19,7 @@ namespace Game.Grid
         public event Action<int, int> OnBubblePlaced;
         public event Action<IReadOnlyCollection<(int Row, int Col)>, BubbleColor> OnBubblesPopped;
         public event Action<IReadOnlyCollection<(int Row, int Col)>> OnClusterDropped;
+        public event Action<bool> OnRowPushedDown;
 
         public GridModel Grid { get; private set; }
         public Shooter.BoardBounds Bounds { get; private set; }
@@ -54,6 +55,13 @@ namespace Game.Grid
             OnClusterDropped?.Invoke(cells);
         }
 
+        public void PushRowDown()
+        {
+            Grid.PushRowsDown(out var wasLastRowOccupied);
+            RefillRow(0);
+            OnRowPushedDown?.Invoke(wasLastRowOccupied);
+        }
+
         private void ClearCells(IReadOnlyCollection<(int Row, int Col)> cells)
         {
             foreach (var cell in cells) Grid.ClearCell(cell.Row, cell.Col);
@@ -82,8 +90,13 @@ namespace Game.Grid
         {
             var filled = Mathf.Min(filledRows, rows);
             for (var row = 0; row < filled; row++)
-                for (var col = 0; col < cols; col++)
-                    Grid.PlaceBubble(row, col, BubbleColorPalette.Random());
+                RefillRow(row);
+        }
+
+        private void RefillRow(int row)
+        {
+            for (var col = 0; col < cols; col++)
+                Grid.PlaceBubble(row, col, BubbleColorPalette.Random());
         }
     }
 }

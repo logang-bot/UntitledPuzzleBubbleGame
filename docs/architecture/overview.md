@@ -18,7 +18,7 @@ popped") without editing the core systems themselves.
 | Component | Responsibility |
 |---|---|
 | `GridModel` | Owns the hex grid data (which cell holds which color, empty vs. occupied). No rendering, no Unity physics — pure data + queries (neighbors, flood fill, occupied-cell enumeration). |
-| `GameBoard` | Single shared owner of the `GridModel` instance, camera-fit board geometry, and `BoardBounds` — everything else (shooter, renderer, fired-bubble logic) reads board state through this rather than computing its own. Raises `OnBubblePlaced`, and (via `PopCells`/`DropCells`) `OnBubblesPopped`/`OnClusterDropped`. |
+| `GameBoard` | Single shared owner of the `GridModel` instance, camera-fit board geometry, and `BoardBounds` — everything else (shooter, renderer, fired-bubble logic) reads board state through this rather than computing its own. Raises `OnBubblePlaced`, (via `PopCells`/`DropCells`) `OnBubblesPopped`/`OnClusterDropped`, and (via `PushRowDown`) `OnRowPushedDown`. |
 | `ShooterController` | Rotates the aim angle at a fixed speed while an on-screen rotate zone is held (arcade-style, not drag-to-angle — see `features/core-gameplay/shooter-and-trajectory.md`), tells `TrajectoryPredictor` to simulate for the preview, and raises `OnFireRequested` on a fire-zone press. |
 | `TrajectoryPredictor` | Given a start point and aim angle, simulates the kinematic path (straight line + wall-bounce reflections only — no occupancy) and returns points for both the preview line and the actual fired bubble to follow. |
 | `OccupancyCollision` | Truncates a raw `TrajectoryPredictor` path at the first occupied cell it touches, so the preview and the fired bubble both stop at the same point (see `features/core-gameplay/firing-and-snapping.md`). |
@@ -28,7 +28,7 @@ popped") without editing the core systems themselves.
 | `MatchResolver` | Pure query class (no mutation): given a newly-placed bubble's cell, flood-fills same-color neighbors to find what pops (`FindMatchGroup`); separately finds bubbles disconnected from the ceiling row (`FindFloatingCells`). |
 | `MatchProcessor` | Subscribes to `GameBoard.OnBubblePlaced`, calls `MatchResolver`, and drives `GameBoard.PopCells`/`DropCells` — see `features/core-gameplay/matching-and-popping.md`. |
 | `LevelGenerator` | Produces a `GridModel` populated for a given level/difficulty (color count, density, row count knobs). |
-| `GameStateManager` | Owns the shot timer (✅ implemented), ceiling descent timer, and win/loss checks; the "referee" that ties the other systems together and raises high-level events like `OnLevelWon` / `OnLevelLost`. |
+| `GameStateManager` | Owns the shot timer and ceiling descent timer, and the win/loss checks (✅ all implemented) — the "referee" that ties the other systems together and raises `OnLevelWon` / `OnLevelLost`. |
 
 Rendering (turning `GridModel` cells into actual bubble sprites/prefabs) is a
 separate, thin layer that listens to grid-change events rather than being
@@ -39,12 +39,16 @@ part of the model — keeps the data model testable without needing a scene.
 - `OnBubblePlaced(cell)` — ✅ implemented, on `GameBoard`.
 - `OnBubblesPopped(cells, color)` — ✅ implemented, on `GameBoard`.
 - `OnClusterDropped(cells)` — ✅ implemented, on `GameBoard`.
-- `OnRowPushedDown()` — not yet implemented (Milestone 7).
+- `OnRowPushedDown(bool wasLastRowOccupied)` — ✅ implemented, on
+  `GameBoard`. The payload reports whether the shooter's line was occupied
+  right before the shift, discarded by it — the signal Milestone 8's loss
+  check will consume; `GameStateManager` currently only logs it.
 - `OnFireRequested(origin, angle)` — ✅ implemented, on `ShooterController`.
   Milestone 6 routes both manual and auto-fire through this single event
   (via `ShooterController.Fire()`) rather than adding a separate
   `OnShotTimerExpired()` event as originally sketched.
-- `OnLevelWon()` / `OnLevelLost()` — not yet implemented (Milestone 8).
+- `OnLevelWon()` / `OnLevelLost()` — ✅ implemented, on `GameStateManager`
+  (Milestone 8).
 
 These are the seams Phase 2/3 will subscribe to later (e.g. a superpower
 bubble reacting to `OnBubblesPopped`, or battle mode turning

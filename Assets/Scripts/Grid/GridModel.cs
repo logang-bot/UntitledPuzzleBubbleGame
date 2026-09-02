@@ -28,6 +28,7 @@ namespace Game.Grid
 
         public int Rows => _rows;
         public int Cols => _cols;
+        public bool IsEmpty => !OccupiedCells().Any();
 
         public GridModel(int rows, int cols, float cellWidth = 1f)
         {
@@ -100,6 +101,43 @@ namespace Game.Grid
             var x = col * _cellWidth + xOffset;
             var y = -row * HexGridMath.RowHeight(_cellWidth);
             return new Vector2(x, y);
+        }
+
+        /// <summary>
+        /// Shifts every row's contents down by one (row r takes row r-1's contents)
+        /// and clears row 0 for the caller to refill. Whatever occupied the last row
+        /// before the shift is discarded — those bubbles had already reached the
+        /// shooter's line — and reported via wasLastRowOccupied.
+        /// </summary>
+        public void PushRowsDown(out bool wasLastRowOccupied)
+        {
+            wasLastRowOccupied = RowHasAnyOccupied(_rows - 1);
+            for (var row = _rows - 1; row > 0; row--)
+                CopyRow(sourceRow: row - 1, destRow: row);
+            ClearRow(0);
+        }
+
+        private bool RowHasAnyOccupied(int row)
+        {
+            for (var col = 0; col < _cols; col++)
+                if (_occupied[row, col])
+                    return true;
+            return false;
+        }
+
+        private void CopyRow(int sourceRow, int destRow)
+        {
+            for (var col = 0; col < _cols; col++)
+            {
+                _occupied[destRow, col] = _occupied[sourceRow, col];
+                _colors[destRow, col] = _colors[sourceRow, col];
+            }
+        }
+
+        private void ClearRow(int row)
+        {
+            for (var col = 0; col < _cols; col++)
+                _occupied[row, col] = false;
         }
     }
 }

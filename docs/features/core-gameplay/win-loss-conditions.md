@@ -14,17 +14,32 @@ condition, which pairs naturally with the ceiling-descent pressure.
 
 ## Implementation sketch
 
-- `GameStateManager` checks for the win condition after every pop/cluster
-  drop resolves (subscribe to `OnBubblesPopped`/`OnClusterDropped` and check
-  `GridModel.IsEmpty` after both have finished for that turn).
-- Checks for the loss condition after every `OnRowPushedDown()` — compare
-  the lowest occupied row's world-space Y position (or row index) against
-  the shooter line's position.
-- On win: raise `OnLevelWon()`, stop both timers, show level-complete UI,
-  advance to the next level (re-run `LevelGenerator` for `levelNumber + 1`).
-- On loss: raise `OnLevelLost()`, stop both timers, show game-over UI
-  (retry same level / back to menu — exact UX TBD when the HUD/menu flow is
-  built).
+✅ **Done as of Milestone 8** (win/loss detection and stopping; UI and
+level-advance are still open, see below).
+
+- `GridModel.IsEmpty` (unit-tested) is the pure check the win condition
+  needed — true when `OccupiedCells()` is empty.
+- `GameStateManager` checks the win condition after every pop/cluster drop
+  resolves — it subscribes to `GameBoard.OnBubblesPopped`/`OnClusterDropped`
+  and checks `gameBoard.Grid.IsEmpty` after each.
+- Checks the loss condition on every `OnRowPushedDown(bool
+  wasLastRowOccupied)` (✅ implemented as of Milestone 7, see
+  `shot-timer-and-ceiling-descent.md`) — the event's payload already *is*
+  the loss signal (whether the shooter's line held any bubbles right
+  before the shift discarded them), computed during the row shift in
+  `GridModel.PushRowsDown`. `HandleRowPushedDown` now acts on
+  `wasLastRowOccupied` instead of only logging it.
+- Both routes go through a shared `EndGame(raiseEvent, logMessage)` helper:
+  guards against double-firing via an `_isGameOver` flag (also checked at
+  the top of `Update`, so both timers stop ticking — no separate "stop
+  timer" call needed on `ShotTimer` itself), disables `ShooterController`
+  (`shooterController.enabled = false`) so the player can't keep
+  aiming/firing after the game has ended, logs, then raises
+  `OnLevelWon`/`OnLevelLost`.
+- **Not yet built**: level-complete/game-over UI, and "advance to the next
+  level" — both wait on Milestone 9's `LevelGenerator` and Milestone 10's
+  HUD, since there's no next level to generate yet and no UI layer to show
+  a screen on.
 
 ## Open questions / tuning knobs
 

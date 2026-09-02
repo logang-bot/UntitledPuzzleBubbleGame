@@ -136,9 +136,31 @@ be playable/testable on its own before moving to the next:
    `FiredBubbleController`'s next-bubble indicator is.
    → [`shot-timer-and-ceiling-descent.md`](features/core-gameplay/shot-timer-and-ceiling-descent.md)
 7. **Ceiling descent timer** — pushes a new row down at a fixed interval;
-   interval shortens with difficulty.
+   interval shortens with difficulty. ✅ **Done** (fixed interval only —
+   difficulty scaling is deferred to Milestone 9's `LevelGenerator`).
+   `GridModel.PushRowsDown` shifts row contents down in place and reports
+   whether the shooter's line (`Rows - 1`) was occupied before the shift;
+   `GameBoard.PushRowDown()` calls it, refills row 0 with random bubbles,
+   and raises `OnRowPushedDown(bool wasLastRowOccupied)` — the single hook
+   Milestone 8's loss check will consume. `GameStateManager` reuses
+   `ShotTimer` for the countdown (resetting it itself on expiry, rather
+   than a separate self-resetting timer class) and currently only logs
+   `wasLastRowOccupied`; no game-over flow yet. `GridDebugRenderer` reacts
+   by destroying and rebuilding all its sprites from `GameBoard.Grid`
+   rather than re-keying incrementally, since it's still the disposable
+   Milestone-1 stand-in.
+   → [`shot-timer-and-ceiling-descent.md`](features/core-gameplay/shot-timer-and-ceiling-descent.md)
 8. **Win/loss conditions** — board cleared = win, ceiling reaches the
-   shooter line = loss.
+   shooter line = loss. ✅ **Done.** `GridModel.IsEmpty` (unit-tested) added
+   as the pure check the win condition needed. `GameStateManager` now
+   subscribes to `GameBoard.OnBubblesPopped`/`OnClusterDropped` and checks
+   `IsEmpty` after each; `HandleRowPushedDown` acts on
+   `wasLastRowOccupied` instead of only logging it. Both routes go through
+   a shared `EndGame` helper that guards against double-firing, stops both
+   timers (`Update` no-ops once `_isGameOver` is set), logs, and raises the
+   new `OnLevelWon`/`OnLevelLost` events. No level-complete/game-over UI or
+   "advance to next level" yet — those wait on Milestone 9's
+   `LevelGenerator` and Milestone 10's HUD.
    → [`win-loss-conditions.md`](features/core-gameplay/win-loss-conditions.md)
 9. **Procedural level generator** with difficulty knobs (color count,
    density, row count).
