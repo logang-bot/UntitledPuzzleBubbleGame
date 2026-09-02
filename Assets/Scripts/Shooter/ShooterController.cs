@@ -42,6 +42,26 @@ namespace Game.Shooter
         private void Start()
         {
             _shooterOrigin = gameBoard.ShooterOrigin;
+            RebuildPredictor();
+            gameBoard.OnRowPushedDown += HandleBoardChanged;
+            gameBoard.OnLevelLoaded += HandleBoardChanged;
+        }
+
+        private void OnDestroy()
+        {
+            gameBoard.OnRowPushedDown -= HandleBoardChanged;
+            gameBoard.OnLevelLoaded -= HandleBoardChanged;
+        }
+
+        // gameBoard.Bounds.CeilingY advances with the wall (see
+        // GameBoard.RecomputeBounds); TrajectoryPredictor takes a snapshot of
+        // it in its constructor, so it must be rebuilt whenever Bounds changes
+        // or the preview would keep simulating shots against the old boundary.
+        private void HandleBoardChanged(bool wasLastRowOccupied) => RebuildPredictor();
+        private void HandleBoardChanged(int levelNumber) => RebuildPredictor();
+
+        private void RebuildPredictor()
+        {
             _predictor = new TrajectoryPredictor(gameBoard.Bounds);
         }
 
@@ -83,10 +103,18 @@ namespace Game.Shooter
         {
             var rawPoints = _predictor.Simulate(_shooterOrigin, _aimAngleDegrees, maxBounces);
             var board = (gameBoard.Grid, (Vector2)gameBoard.transform.position);
-            var points = OccupancyCollision.Truncate(rawPoints, board, gameBoard.CellWidth).Points;
+            var truncated = OccupancyCollision.Truncate(rawPoints, board, gameBoard.CellWidth);
+            var targetCenter = StruckCellCenter(truncated.StruckCell, board);
+            var points = PreviewPointsCalculator.TrimToSurface(truncated.Points, targetCenter, gameBoard.CellWidth);
             _lineRenderer.positionCount = points.Count;
             for (var i = 0; i < points.Count; i++)
                 _lineRenderer.SetPosition(i, points[i]);
+        }
+
+        private static Vector2? StruckCellCenter((int Row, int Col)? struckCell, (GridModel Grid, Vector2 Origin) board)
+        {
+            if (struckCell == null) return null;
+            return board.Grid.GetWorldPosition(struckCell.Value.Row, struckCell.Value.Col) + board.Origin;
         }
     }
 }

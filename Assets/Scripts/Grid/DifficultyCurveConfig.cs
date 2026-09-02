@@ -27,12 +27,28 @@ namespace Game.Grid
         [SerializeField, Min(0f)] private float minCeilingIntervalSeconds = 8f;
         [SerializeField] private float ceilingIntervalDecreasePerLevel = 0.75f;
 
-        public DifficultyConfig ForLevel(int levelNumber) => new DifficultyConfig
+        [SerializeField, Range(0f, 1f)] private float level1Density = 0.35f;
+        [SerializeField, Min(0)] private int level1HeadroomRows = 9;
+
+        public DifficultyConfig ForLevel(int levelNumber) => levelNumber == 1
+            ? Level1Config()
+            : new DifficultyConfig
+            {
+                ColorCount = ColorCountForLevel(levelNumber),
+                Density = DensityForLevel(levelNumber),
+                HeadroomRows = HeadroomRowsForLevel(levelNumber),
+                CeilingDropIntervalSeconds = CeilingIntervalForLevel(levelNumber),
+            };
+
+        // Level 1 gets its own density/headroom, deliberately isolated from the
+        // start* ramp fields so lowering it for easier testing doesn't also
+        // soften every later level's starting point.
+        private DifficultyConfig Level1Config() => new DifficultyConfig
         {
-            ColorCount = ColorCountForLevel(levelNumber),
-            Density = DensityForLevel(levelNumber),
-            HeadroomRows = HeadroomRowsForLevel(levelNumber),
-            CeilingDropIntervalSeconds = CeilingIntervalForLevel(levelNumber),
+            ColorCount = startColorCount,
+            Density = level1Density,
+            HeadroomRows = level1HeadroomRows,
+            CeilingDropIntervalSeconds = startCeilingIntervalSeconds,
         };
 
         private int ColorCountForLevel(int levelNumber) =>

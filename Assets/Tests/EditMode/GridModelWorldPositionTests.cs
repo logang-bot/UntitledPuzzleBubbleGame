@@ -57,5 +57,30 @@ namespace Game.Tests
 
             Assert.That(fartherFromCeiling.y, Is.LessThan(nearCeiling.y));
         }
+
+        [Test]
+        public void GetWorldPosition_SameBubbleAfterOnePush_XIsUnchangedYDropsByOneRowHeight()
+        {
+            var grid = new GridModel(rows: 6, cols: 3, cellWidth: 1f);
+            var before = grid.GetWorldPosition(row: 2, col: 1);
+
+            grid.PushRowsDown(out _);
+            var after = grid.GetWorldPosition(row: 3, col: 1); // same bubble, now one row lower
+
+            Assert.That(after.x, Is.EqualTo(before.x).Within(Tolerance));
+            Assert.That(after.y, Is.EqualTo(before.y - HexGridMath.RowHeight(1f)).Within(Tolerance));
+        }
+
+        [Test]
+        public void GetWorldPosition_SameBubbleAfterThreePushes_XIsStillUnchanged()
+        {
+            var grid = new GridModel(rows: 8, cols: 3, cellWidth: 1f);
+            var before = grid.GetWorldPosition(row: 2, col: 1);
+
+            for (var i = 0; i < 3; i++) grid.PushRowsDown(out _);
+            var after = grid.GetWorldPosition(row: 5, col: 1); // same bubble, three rows lower
+
+            Assert.That(after.x, Is.EqualTo(before.x).Within(Tolerance));
+        }
     }
 }

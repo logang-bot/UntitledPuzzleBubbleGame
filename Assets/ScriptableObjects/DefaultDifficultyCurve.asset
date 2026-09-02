@@ -24,3 +24,5 @@ MonoBehaviour:
   startCeilingIntervalSeconds: 20
   minCeilingIntervalSeconds: 8
   ceilingIntervalDecreasePerLevel: 0.75
+  level1Density: 0.35
+  level1HeadroomRows: 9

@@ -9,11 +9,14 @@ namespace Game.Shooter
     /// </summary>
     public static class BoardBoundsCalculator
     {
-        public static BoardBounds Compute(Vector2 cameraPosition, float boardWidth, float orthographicSize)
+        // ceilingHeight is the band reserved at the screen's top edge for the
+        // ceiling visual (see CeilingRenderer) - a shot's ceiling boundary is
+        // row 0's top edge, which sits that much below the screen's actual top.
+        public static BoardBounds Compute(Vector2 cameraPosition, float boardWidth, float orthographicSize, float ceilingHeight)
         {
             var leftWallX = cameraPosition.x - boardWidth * 0.5f;
             var rightWallX = cameraPosition.x + boardWidth * 0.5f;
-            var ceilingY = cameraPosition.y + orthographicSize;
+            var ceilingY = cameraPosition.y + orthographicSize - ceilingHeight;
             return new BoardBounds(leftWallX, rightWallX, ceilingY);
         }
     }

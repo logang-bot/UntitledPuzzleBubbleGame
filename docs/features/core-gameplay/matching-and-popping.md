@@ -27,9 +27,10 @@ top row) fall and are also cleared.
   - `FindMatchGroup(grid, placedCell)`: flood-fills from `placedCell` through
     same-color occupied neighbors; returns the group if `Count >= 3`, else an
     empty set.
-  - `FindFloatingCells(grid)`: flood-fills from every occupied **row 0**
-    cell (row 0 is the ceiling — see `hex-grid.md`) through any occupied
-    neighbor; returns every occupied cell *not* in that reachable set.
+  - `FindFloatingCells(grid)`: flood-fills from every occupied cell in the
+    **topmost currently-occupied row** (not hardcoded row 0 — see "Bug found
+    and fixed" below) through any occupied neighbor; returns every occupied
+    cell *not* in that reachable set.
 - **`GameBoard`** owns the actual mutation and events, mirroring its existing
   `PlaceBubble`/`OnBubblePlaced` pattern: `PopCells(cells, color)` and
   `DropCells(cells)` each clear the given cells via `Grid.ClearCell` and
@@ -59,6 +60,26 @@ bottom, always empty). Harmless before now, but it would have made
 `FindFloatingCells`'s ceiling-row seed set almost always empty, dropping the
 entire board on every pop. Fixed at the source — see `hex-grid.md` and the
 Milestone 4/5 write-up in `docs/ROADMAP.md` for the full account.
+
+**Second bug found and fixed, later**: once the ceiling-descent push
+(`shot-timer-and-ceiling-descent.md`) stopped refilling row 0 on every
+advance, row 0 started legitimately sitting empty for stretches of real
+play — not a bug in itself, just the wall having pushed past it with no new
+bubble landed there yet. But `FindFloatingCells` still hardcoded its seed
+set to `cell.Row == 0`, so the instant row 0 was empty, *every* remaining
+bubble on the board — including ones with a perfectly good connection to
+each other, "above" whatever had just been popped — was flagged as floating
+and dropped on the next pop. Reported as "even bubbles above the matched
+pattern are falling." Fixed by seeding from the **topmost occupied row**
+instead of a hardcoded 0: nothing can be floating in the gap between the
+wall and that row, since by definition nothing occupies it (if something
+did, it would be the topmost row instead). For a freshly generated level
+this is always row 0 (`LevelGenerator`'s `RescueRowZeroIfOrphaned` guarantees
+that), so behavior is unchanged until a push actually empties it.
+`MatchResolverFloatingCellsTests.cs` has dedicated cases for a row-0-empty
+board (topmost row anchors correctly) and for a genuinely disconnected
+island below that row (still correctly dropped) to guard against
+regressing either direction.
 
 ## Open questions / tuning knobs
 

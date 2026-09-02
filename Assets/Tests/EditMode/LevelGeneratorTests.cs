@@ -139,5 +139,44 @@ namespace Game.Tests
                         $"level {levelNumber}, cell ({cell.Row},{cell.Col}) formed a match of 3+");
             }
         }
+
+        [Test]
+        public void Generate_AnyDensityAndHeadroom_NeverLeavesFloatingCells()
+        {
+            var densities = new[] { 0.15f, 0.3f, 0.5f, 0.7f, 0.9f };
+            var headroomOptions = new[] { 0, 2, 5 };
+
+            foreach (var density in densities)
+                foreach (var headroom in headroomOptions)
+                    for (var levelNumber = 1; levelNumber <= 20; levelNumber++)
+                    {
+                        var grid = new GridModel(rows: 10, cols: 8);
+                        var config = new DifficultyConfig { ColorCount = 4, Density = density, HeadroomRows = headroom };
+
+                        LevelGenerator.Generate(grid, levelNumber, config);
+
+                        CollectionAssert.IsEmpty(MatchResolver.FindFloatingCells(grid),
+                            $"density={density}, headroom={headroom}, level={levelNumber} left floating cells");
+                    }
+        }
+
+        [Test]
+        public void Generate_WhenGridEndsUpNonEmpty_RowZeroIsAlwaysOccupied()
+        {
+            var config = new DifficultyConfig { ColorCount = 4, Density = 0.4f, HeadroomRows = 2 };
+
+            for (var levelNumber = 1; levelNumber <= 200; levelNumber++)
+            {
+                var grid = new GridModel(rows: 10, cols: 8);
+                LevelGenerator.Generate(grid, levelNumber, config);
+
+                if (grid.IsEmpty) continue;
+
+                var rowZeroOccupied = false;
+                for (var col = 0; col < grid.Cols; col++)
+                    if (grid.IsOccupied(0, col)) rowZeroOccupied = true;
+                Assert.That(rowZeroOccupied, Is.True, $"level {levelNumber} had bubbles but none in row 0");
+            }
+        }
     }
 }

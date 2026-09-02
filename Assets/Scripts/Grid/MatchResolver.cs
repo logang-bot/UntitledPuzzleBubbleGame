@@ -19,11 +19,20 @@ namespace Game.Grid
             return group.Count >= MinMatchSize ? group : new HashSet<(int Row, int Col)>();
         }
 
+        // Row 0 is the ceiling's fixed position, but a ceiling-descent push
+        // never refills it (see shot-timer-and-ceiling-descent.md), so it can
+        // legitimately sit empty mid-game. Nothing can float in the resulting
+        // gap - by definition, whatever row is topmost has nothing physically
+        // between it and the wall - so that row anchors connectivity whenever
+        // row 0 itself has nothing in it.
         public static HashSet<(int Row, int Col)> FindFloatingCells(GridModel grid)
         {
-            var ceilingCells = grid.OccupiedCells().Where(cell => cell.Row == 0);
+            var occupied = grid.OccupiedCells().ToList();
+            if (occupied.Count == 0) return new HashSet<(int Row, int Col)>();
+            var topRow = occupied.Min(cell => cell.Row);
+            var ceilingCells = occupied.Where(cell => cell.Row == topRow);
             var reachable = FloodFill.Run(grid, ceilingCells, cell => grid.IsOccupied(cell.Row, cell.Col));
-            return grid.OccupiedCells().Where(cell => !reachable.Contains(cell)).ToHashSet();
+            return occupied.Where(cell => !reachable.Contains(cell)).ToHashSet();
         }
 
         private static bool SameColor(GridModel grid, (int Row, int Col) cell, BubbleColor color)

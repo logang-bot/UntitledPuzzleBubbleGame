@@ -35,10 +35,24 @@ namespace Game.Shooter
 
         private void Start()
         {
-            _predictor = new TrajectoryPredictor(gameBoard.Bounds);
+            RebuildPredictor();
             shooterController.OnFireRequested += HandleFireRequested;
+            gameBoard.OnRowPushedDown += HandleBoardChanged;
+            gameBoard.OnLevelLoaded += HandleBoardChanged;
             _nextColor = BubbleColorPalette.Random();
             _nextBubbleIndicator = SpawnIndicator();
+        }
+
+        // gameBoard.Bounds.CeilingY advances with the wall (see
+        // GameBoard.RecomputeBounds); TrajectoryPredictor takes a snapshot of
+        // it in its constructor, so it must be rebuilt whenever Bounds changes
+        // or a fired bubble would keep simulating against the old boundary.
+        private void HandleBoardChanged(bool wasLastRowOccupied) => RebuildPredictor();
+        private void HandleBoardChanged(int levelNumber) => RebuildPredictor();
+
+        private void RebuildPredictor()
+        {
+            _predictor = new TrajectoryPredictor(gameBoard.Bounds);
         }
 
         private GameObject SpawnIndicator()
@@ -66,6 +80,8 @@ namespace Game.Shooter
         private void OnDestroy()
         {
             shooterController.OnFireRequested -= HandleFireRequested;
+            gameBoard.OnRowPushedDown -= HandleBoardChanged;
+            gameBoard.OnLevelLoaded -= HandleBoardChanged;
         }
 
         private void Update()
@@ -113,7 +129,7 @@ namespace Game.Shooter
         {
             Destroy(_flyingBubble);
             _flyingBubble = null;
-            var landingCell = BubbleLandingResolver.ResolveLandingCell(BoardSpace(), _path[^1], _struckCell);
+            var landingCell = BubbleLandingResolver.ResolveLandingCell(BoardSpace(), _path[^1], _struckCell, gameBoard.CellWidth);
             if (landingCell != null) gameBoard.PlaceBubble(landingCell.Value.Row, landingCell.Value.Col, _color);
             PrepareNextBubble();
         }

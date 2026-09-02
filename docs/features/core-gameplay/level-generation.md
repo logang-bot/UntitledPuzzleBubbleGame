@@ -38,8 +38,31 @@ question below, not yet tuned by playtesting.
 fixed `filledRows`/`FillWithRandomBubbles`, and exposes the resolved
 `CurrentDifficulty` so `GameStateManager` can read
 `CeilingDropIntervalSeconds` for the ceiling timer (see
-`shot-timer-and-ceiling-descent.md`) and `GameBoard.RefillRow` (ceiling
-descent's per-row refill) can stay within the level's color count.
+`shot-timer-and-ceiling-descent.md`).
+
+### Floating-cell cleanup ✅ Done
+
+Because each cell's density roll is independent, `Generate` could produce
+bubbles with no path back to row 0 — invisible at level start (they render
+like any other bubble) but wrong per the game's own connectivity rule, and
+never checked until some unrelated later pop happened to trigger a full-board
+scan. `Generate` now finishes with `MatchResolver.FindFloatingCells` and
+clears whatever it returns, so a level can never start with an already-
+disconnected bubble. If row 0 itself happens to roll entirely empty (and the
+level isn't genuinely meant to be empty — i.e. something *was* generated
+below it), `RescueRowZeroIfOrphaned` force-places one bubble there first, via
+the same anti-instant-match placement the rest of generation uses, so the
+cleanup pass has something to anchor to instead of wiping the whole level.
+
+### Level 1 override ✅ Done
+
+Level 1 is otherwise just the difficulty curve's zero point — `(levelNumber
+- 1) == 0` drops every ramp term, so it used the same `start*` fields levels
+2+ ramp up from. `DifficultyCurveConfig` now short-circuits `ForLevel(1)` to
+its own `level1Density`/`level1HeadroomRows` fields (sparser than
+`startDensity`/`startHeadroomRows`), deliberately isolated from the ramp so
+easing level 1 for testing doesn't also soften every later level's starting
+point.
 
 ### Implementation sketch (original, for reference)
 
@@ -98,3 +121,10 @@ means gaps are expected.
   **still needs playtesting and adjustment**, not yet done.
 - RNG seeding: resolved as `new System.Random(levelNumber)` — the level
   number itself is the seed, no separate seed field stored.
+
+## Open questions
+
+- `RescueRowZeroIfOrphaned` only guarantees row 0 isn't the reason a level
+  gets wiped empty; it doesn't try to maximize how much of the rest of the
+  board survives the floating-cell cleanup. Revisit if playtesting turns up
+  levels that feel unexpectedly sparse.

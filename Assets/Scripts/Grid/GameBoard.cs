@@ -14,6 +14,7 @@ namespace Game.Grid
     {
         [SerializeField] private int cols = 8;
         [SerializeField] private float cellWidth = 1f;
+        [SerializeField] private float ceilingHeight = 1f;
         [SerializeField] private int levelNumber = 1;
         [SerializeField] private DifficultyCurveConfig difficultyCurve;
 
@@ -27,18 +28,20 @@ namespace Game.Grid
         public Shooter.BoardBounds Bounds { get; private set; }
         public Vector2 ShooterOrigin { get; private set; }
         public float CellWidth => cellWidth;
+        public int Cols => cols;
+        public float CeilingHeight => ceilingHeight;
         public DifficultyConfig CurrentDifficulty { get; private set; }
         public int LevelNumber => levelNumber;
 
         private int _rows;
+        private Camera _camera;
 
         private void Awake()
         {
-            var camera = Camera.main;
+            _camera = Camera.main;
             var boardWidth = HexGridMath.BoardWidthWithOffsetMargin(cols, cellWidth);
-            _rows = FitCameraAndComputeRows(camera, boardWidth);
-            Bounds = Shooter.BoardBoundsCalculator.Compute(camera.transform.position, boardWidth, camera.orthographicSize);
-            ShooterOrigin = new Vector2(camera.transform.position.x, camera.transform.position.y - camera.orthographicSize + cellWidth * 0.5f);
+            _rows = FitCameraAndComputeRows(_camera, boardWidth);
+            ShooterOrigin = new Vector2(_camera.transform.position.x, _camera.transform.position.y - _camera.orthographicSize + cellWidth * 0.5f);
             LoadLevel(levelNumber);
         }
 
@@ -47,7 +50,19 @@ namespace Game.Grid
             levelNumber = newLevelNumber;
             CurrentDifficulty = difficultyCurve.ForLevel(levelNumber);
             Grid = LevelGenerator.Generate(new GridModel(_rows, cols, cellWidth), levelNumber, CurrentDifficulty);
+            RecomputeBounds();
             OnLevelLoaded?.Invoke(levelNumber);
+        }
+
+        // The wall's advance grows the reserved ceiling band by one row height
+        // per push (see CeilingRenderer), so an unobstructed shot must stop
+        // that much sooner too - otherwise it would sail past the wall's
+        // actual current position into space that no longer exists.
+        private void RecomputeBounds()
+        {
+            var boardWidth = HexGridMath.BoardWidthWithOffsetMargin(cols, cellWidth);
+            var advancedCeilingHeight = ceilingHeight + Grid.RowsPushed * HexGridMath.RowHeight(cellWidth);
+            Bounds = Shooter.BoardBoundsCalculator.Compute(_camera.transform.position, boardWidth, _camera.orthographicSize, advancedCeilingHeight);
         }
 
         public void PlaceBubble(int row, int col, BubbleColor color)
@@ -71,7 +86,7 @@ namespace Game.Grid
         public void PushRowDown()
         {
             Grid.PushRowsDown(out var wasLastRowOccupied);
-            RefillRow(0);
+            RecomputeBounds();
             OnRowPushedDown?.Invoke(wasLastRowOccupied);
         }
 
@@ -84,25 +99,23 @@ namespace Game.Grid
         {
             camera.orthographicSize = PlayfieldSizer.OrthographicSizeForWidth(boardWidth, Screen.width, Screen.height);
             PositionBoard(camera);
-            return PlayfieldSizer.RowsForWorldHeight(camera.orthographicSize * 2f, cellWidth);
+            var availableHeight = camera.orthographicSize * 2f - ceilingHeight;
+            return PlayfieldSizer.RowsForWorldHeight(availableHeight, cellWidth);
         }
 
         private void PositionBoard(Camera camera)
         {
-            // Anchored at the ceiling (top of screen): row 0's local y is 0 (see
-            // GridModel.GetWorldPosition), so this transform.position IS row 0's world position.
+            // Anchored so row 0's top edge (local y = cellWidth * 0.5, see
+            // GridModel.GetWorldPosition) touches the bottom of the reserved
+            // ceilingHeight band at the screen's actual top edge - row 0 itself
+            // sits ceilingHeight below that, leaving room for CeilingRenderer's
+            // band rather than row 0 sharing the screen's top edge directly.
             // x is offset by HexGridMath.BoardOriginXOffset rather than the plain column
             // center, since odd rows' half-cell shift makes the occupied footprint
             // wider than cols*cellWidth (see BoardWidthWithOffsetMargin) and off-center.
             var x = camera.transform.position.x - HexGridMath.BoardOriginXOffset(cols, cellWidth);
-            var y = camera.transform.position.y + camera.orthographicSize - cellWidth * 0.5f;
+            var y = camera.transform.position.y + camera.orthographicSize - ceilingHeight - cellWidth * 0.5f;
             transform.position = new Vector3(x, y, transform.position.z);
-        }
-
-        private void RefillRow(int row)
-        {
-            for (var col = 0; col < cols; col++)
-                Grid.PlaceBubble(row, col, BubbleColorPalette.Random(CurrentDifficulty.ColorCount));
         }
     }
 }

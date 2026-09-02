@@ -19,10 +19,13 @@ namespace Game.Gameplay
     /// </summary>
     public class GameStateManager : MonoBehaviour
     {
+        private enum CeilingState { Countdown, Warning }
+
         [SerializeField] private ShooterController shooterController;
         [SerializeField] private GameBoard gameBoard;
         [SerializeField] private ScoreTracker scoreTracker;
         [SerializeField] private ShotsFiredCounter shotsFiredCounter;
+        [SerializeField] private CameraShake cameraShake;
         [SerializeField] private float shotTimeSeconds = 8f;
 
         public event Action OnLevelWon;
@@ -32,6 +35,8 @@ namespace Game.Gameplay
 
         private ShotTimer _shotTimer;
         private ShotTimer _ceilingTimer;
+        private CeilingState _ceilingState = CeilingState.Countdown;
+        private bool _landingOccurredDuringWarning;
         private bool _isGameOver;
 
         private void Awake()
@@ -46,6 +51,7 @@ namespace Game.Gameplay
             gameBoard.OnRowPushedDown += HandleRowPushedDown;
             gameBoard.OnBubblesPopped += HandleBoardCellsCleared;
             gameBoard.OnClusterDropped += HandleBoardCellsCleared;
+            gameBoard.OnBubblePlaced += HandleBubblePlaced;
         }
 
         private void OnDestroy()
@@ -54,6 +60,7 @@ namespace Game.Gameplay
             gameBoard.OnRowPushedDown -= HandleRowPushedDown;
             gameBoard.OnBubblesPopped -= HandleBoardCellsCleared;
             gameBoard.OnClusterDropped -= HandleBoardCellsCleared;
+            gameBoard.OnBubblePlaced -= HandleBubblePlaced;
         }
 
         private void Update()
@@ -62,16 +69,52 @@ namespace Game.Gameplay
 
             if (_shotTimer.Tick(Time.deltaTime)) shooterController.Fire();
 
-            if (_ceilingTimer.Tick(Time.deltaTime))
-            {
-                _ceilingTimer.Reset();
-                gameBoard.PushRowDown();
-            }
+            TickCeiling();
+        }
+
+        private void TickCeiling()
+        {
+            if (_ceilingState == CeilingState.Countdown) TickCeilingCountdown();
+            else TickCeilingWarning();
+        }
+
+        private void TickCeilingCountdown()
+        {
+            if (!_ceilingTimer.Tick(Time.deltaTime)) return;
+            _ceilingState = CeilingState.Warning;
+            cameraShake.StartShaking();
+        }
+
+        // The board only advances once the player has landed a bubble after the
+        // warning starts, not the instant the timer expires - HandleBubblePlaced
+        // just flags that a landing happened; the actual push runs from here, one
+        // frame later, so it never races MatchProcessor's own OnBubblePlaced handling.
+        private void TickCeilingWarning()
+        {
+            if (!_landingOccurredDuringWarning) return;
+            _landingOccurredDuringWarning = false;
+            cameraShake.StopShaking();
+            gameBoard.PushRowDown();
+            _ceilingTimer.Reset();
+            _ceilingState = CeilingState.Countdown;
+        }
+
+        private void StopCeilingWarning()
+        {
+            if (_ceilingState != CeilingState.Warning) return;
+            cameraShake.StopShaking();
+            _ceilingState = CeilingState.Countdown;
+            _landingOccurredDuringWarning = false;
         }
 
         private void HandleFireRequested(Vector2 origin, float angleDegrees)
         {
             _shotTimer.Reset();
+        }
+
+        private void HandleBubblePlaced(int row, int col)
+        {
+            if (_ceilingState == CeilingState.Warning) _landingOccurredDuringWarning = true;
         }
 
         private void HandleRowPushedDown(bool wasLastRowOccupied)
@@ -94,6 +137,7 @@ namespace Game.Gameplay
             if (_isGameOver) return;
             _isGameOver = true;
             shooterController.enabled = false;
+            StopCeilingWarning();
             Debug.Log(logMessage);
             raiseEvent?.Invoke();
         }
@@ -114,6 +158,7 @@ namespace Game.Gameplay
         {
             gameBoard.LoadLevel(levelNumber);
             _shotTimer.Reset();
+            StopCeilingWarning();
             _ceilingTimer = new ShotTimer(gameBoard.CurrentDifficulty.CeilingDropIntervalSeconds);
             shooterController.enabled = true;
             _isGameOver = false;

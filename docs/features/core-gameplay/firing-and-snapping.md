@@ -54,7 +54,14 @@ against. Both problems needed solving together.
   returning which cell was struck (or `null` if the path reaches its
   original wall/ceiling endpoint unobstructed).
   `ShooterController.DrawPreview` and `FiredBubbleController` both call
-  this with the same inputs, so they mechanically cannot disagree.
+  this with the same inputs, so they mechanically cannot disagree. Note the
+  truncated endpoint is the future bubble's *center* (exactly `cellWidth`
+  from the struck cell's center) — correct for `FiredBubbleController`,
+  whose flying bubble is a same-radius disc and so visually touches once
+  centered there, but `DrawPreview`'s bare `LineRenderer` tip has no radius
+  of its own and would stop a full bubble-radius short of the target's
+  rendered edge. See `PreviewPointsCalculator.TrimToSurface`
+  (`Assets/Scripts/Shooter/PreviewPointsCalculator.cs`) below.
   `GridModel.GetWorldPosition` is board-**local** (relative to `GameBoard`'s
   own transform, not Unity world space — see `hex-grid.md`), while
   trajectory points are true world space, so both `OccupancyCollision` and
@@ -66,12 +73,60 @@ against. Both problems needed solving together.
   all defaulted to a zero origin). `OccupancyCollisionTests` and
   `BubbleLandingResolverTests` each have a dedicated non-zero-origin case
   to guard against regressing this.
-- **`BubbleLandingResolver.ResolveLandingCell(grid, contactPoint, struckCell)`**
+- **`BubbleLandingResolver.ResolveLandingCell(grid, contactPoint, struckCell, cellWidth)`**
   (`Assets/Scripts/Grid/BubbleLandingResolver.cs`) picks the landing cell:
-  the nearest unoccupied neighbor of the struck cell, or — if the path was
-  unobstructed and hit the ceiling instead — the nearest unoccupied cell in
-  row 0 by x-position. Returns `null` if no empty candidate exists (board
-  nearly full); see "Open questions" below.
+  the nearest unoccupied neighbor of any occupied cell within
+  `cellWidth * 1.3` of the contact point (not just the struck cell — see bug
+  note below), or — if the path was unobstructed and hit the ceiling instead
+  — the nearest unoccupied cell in row `grid.RowsPushed` (the current
+  effective ceiling row, *not* hardcoded row 0 — see `hex-grid.md`) by
+  x-position. Every neighbor candidate is also filtered to `row >=
+  grid.RowsPushed`, since rows behind the advanced wall are permanently
+  vacated and could otherwise still be picked by raw distance alone.
+  Returns `null` if no empty candidate exists (board nearly full); see
+  "Open questions" below.
+
+### Bug found and fixed: mis-snapping to the wrong pocket
+
+Restricting landing candidates to only the struck cell's own neighbors (the
+original design) meant a shot could visibly nestle into a pocket bounded
+mostly by a *different* nearby bubble than the one `OccupancyCollision`
+happened to register contact with first (by time along the trajectory) —
+the resolver would then snap to the nearest cell adjacent to the wrong
+bubble instead. Fixed by gathering every occupied cell within
+`cellWidth * 1.3` of the contact point (not just the struck cell) and
+considering all of their unoccupied neighbors together. `1.3` sits strictly
+between the hex lattice's first-ring (`1.0x`) and second-ring (`~1.73x`)
+distances, so it catches a second touching bubble without reaching a full
+ring further out.
+
+### Bug found and fixed: preview line stopping short of the bubble it's aiming at
+
+- **`ShooterController.DrawPreview`** (`Assets/Scripts/Shooter/ShooterController.cs`)
+  draws the occupancy-truncated path with a `LineRenderer`. Its raw endpoint
+  is the struck cell's future center — visually a full bubble-radius short
+  of the target's rendered edge, since the line has no radius of its own
+  (unlike the flying bubble, a real disc). Fixed by
+  **`PreviewPointsCalculator.TrimToSurface(truncatedPoints, targetCenter, cellWidth)`**
+  (`Assets/Scripts/Shooter/PreviewPointsCalculator.cs`), a small pure
+  function `DrawPreview` runs the truncated points through before handing
+  them to the `LineRenderer`: when there's a struck cell, it moves the
+  final point directly toward the struck cell's actual world-space center
+  until it's exactly `cellWidth * 0.5` away, landing precisely on the
+  bubble's surface. Purely cosmetic — `OccupancyCollision`,
+  `BubbleLandingResolver`, and `FiredBubbleController` are untouched, so
+  where a shot actually truncates/lands is unchanged.
+  **Second bug found and fixed**: the first attempt extended the endpoint
+  further along the *incoming segment's direction* instead of toward the
+  actual center — correct only for a head-on shot, where the ray happens to
+  pass through the target's center. For an angled/grazing hit (the ray
+  merely grazes the `cellWidth`-radius circle around the center, not
+  passing through it), extending along the ray direction over/undershoots
+  the true surface point, so the gap reappeared at an angle. Fixed by
+  computing the direction from the endpoint straight to the struck cell's
+  known center (`GameBoard.Grid.GetWorldPosition(row, col) + Origin`) and
+  moving along *that* instead — geometrically correct at any approach
+  angle, since it no longer depends on the incoming ray at all.
 - **`FiredBubbleController`** (`Assets/Scripts/Shooter/FiredBubbleController.cs`)
   subscribes to `ShooterController.OnFireRequested`. On fire it builds the
   truncated path, spawns a temporary flying-bubble `GameObject` (reusing

@@ -25,10 +25,16 @@ namespace Game.Grid
         private readonly float _cellWidth;
         private readonly bool[,] _occupied;
         private readonly BubbleColor[,] _colors;
+        private int _rowsPushed;
 
         public int Rows => _rows;
         public int Cols => _cols;
         public bool IsEmpty => !OccupiedCells().Any();
+
+        // Rows 0..RowsPushed-1 have been permanently vacated by the wall's
+        // advance (see GameBoard.PushRowDown) - nothing can ever occupy them
+        // again, so this is the effective "row 0" for placement purposes.
+        public int RowsPushed => _rowsPushed;
 
         public GridModel(int rows, int cols, float cellWidth = 1f)
         {
@@ -79,15 +85,26 @@ namespace Game.Grid
                 .ToList();
         }
 
-        private static IEnumerable<(int Row, int Col)> CandidateNeighbors(int row, int col)
+        private IEnumerable<(int Row, int Col)> CandidateNeighbors(int row, int col)
         {
-            var offsets = row % 2 == 0 ? EvenRowOffsets : OddRowOffsets;
+            var offsets = IsShiftedRow(row) ? OddRowOffsets : EvenRowOffsets;
             return offsets.Select(offset => (row + offset.Row, col + offset.Col));
         }
 
         private bool IsInBounds(int row, int col)
         {
             return row >= 0 && row < _rows && col >= 0 && col < _cols;
+        }
+
+        // PushRowsDown shifts every bubble's storage row by +1 without touching
+        // its data, which would flip raw row%2 parity on every push and make
+        // the whole pattern visibly jog sideways. Basing parity on (row +
+        // _rowsPushed) instead keeps it invariant across a push - both row and
+        // _rowsPushed advance by 1 together, so their sum's parity doesn't
+        // change - while still matching raw row%2 whenever _rowsPushed is 0.
+        private bool IsShiftedRow(int row)
+        {
+            return (row + _rowsPushed) % 2 != 0;
         }
 
         /// <summary>
@@ -97,7 +114,7 @@ namespace Game.Grid
         /// </summary>
         public Vector2 GetWorldPosition(int row, int col)
         {
-            var xOffset = row % 2 == 0 ? 0f : _cellWidth * 0.5f;
+            var xOffset = IsShiftedRow(row) ? _cellWidth * 0.5f : 0f;
             var x = col * _cellWidth + xOffset;
             var y = -row * HexGridMath.RowHeight(_cellWidth);
             return new Vector2(x, y);
@@ -115,6 +132,7 @@ namespace Game.Grid
             for (var row = _rows - 1; row > 0; row--)
                 CopyRow(sourceRow: row - 1, destRow: row);
             ClearRow(0);
+            _rowsPushed++;
         }
 
         private bool RowHasAnyOccupied(int row)

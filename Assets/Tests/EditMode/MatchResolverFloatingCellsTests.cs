@@ -44,15 +44,34 @@ namespace Game.Tests
         }
 
         [Test]
-        public void FindFloatingCells_RowZeroFullyCleared_ReturnsAllRemainingOccupiedCells()
+        public void FindFloatingCells_RowZeroEmpty_TreatsTopmostOccupiedRowAsTheCeiling()
         {
+            // Row 0 legitimately stays empty after a ceiling-descent push (see
+            // shot-timer-and-ceiling-descent.md) - nothing refills it anymore.
+            // The topmost row that IS occupied has nothing physically between
+            // it and the wall, so it must anchor connectivity just like row 0
+            // normally would, or a pop anywhere would wrongly drop everything.
             var grid = new GridModel(rows: 5, cols: 5);
             grid.PlaceBubble(1, 2, BubbleColor.Red);
             grid.PlaceBubble(2, 2, BubbleColor.Red);
 
             var floating = MatchResolver.FindFloatingCells(grid);
 
-            var expected = new List<(int Row, int Col)> { (1, 2), (2, 2) };
+            CollectionAssert.IsEmpty(floating);
+        }
+
+        [Test]
+        public void FindFloatingCells_RowZeroEmptyWithIslandBelowTopmostRow_ReturnsOnlyTheIsland()
+        {
+            var grid = new GridModel(rows: 6, cols: 5);
+            grid.PlaceBubble(1, 0, BubbleColor.Red); // topmost occupied row - the effective ceiling
+            grid.PlaceBubble(1, 1, BubbleColor.Red);
+            grid.PlaceBubble(4, 3, BubbleColor.Blue); // disconnected island, unrelated to the row above
+            grid.PlaceBubble(4, 4, BubbleColor.Blue);
+
+            var floating = MatchResolver.FindFloatingCells(grid);
+
+            var expected = new List<(int Row, int Col)> { (4, 3), (4, 4) };
             CollectionAssert.AreEquivalent(expected, floating);
         }
 

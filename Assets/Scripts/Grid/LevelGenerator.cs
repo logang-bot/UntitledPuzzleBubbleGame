@@ -1,3 +1,5 @@
+using System.Linq;
+
 namespace Game.Grid
 {
     /// <summary>
@@ -12,7 +14,34 @@ namespace Game.Grid
             var initialRowCount = InitialRowCount(grid, config);
             for (var row = 0; row < initialRowCount; row++)
                 FillRow(grid, row, config, rng);
+            RescueRowZeroIfOrphaned(grid, config, rng);
+            ClearFloatingCells(grid);
             return grid;
+        }
+
+        // Row 0's per-cell density roll can come up entirely empty by chance,
+        // which would disconnect every bubble below it from the ceiling and
+        // have ClearFloatingCells wipe the whole level. Force one bubble into
+        // row 0 to rescue them - but only when there's something below worth
+        // rescuing; a genuinely empty level (e.g. zero density) stays empty.
+        private static void RescueRowZeroIfOrphaned(GridModel grid, DifficultyConfig config, System.Random rng)
+        {
+            if (grid.Cols == 0 || RowHasAnyOccupied(grid, row: 0) || !grid.OccupiedCells().Any()) return;
+            var col = rng.Next(0, grid.Cols);
+            PlaceWithoutInstantMatch(grid, (0, col), config, rng);
+        }
+
+        private static bool RowHasAnyOccupied(GridModel grid, int row)
+        {
+            for (var col = 0; col < grid.Cols; col++)
+                if (grid.IsOccupied(row, col)) return true;
+            return false;
+        }
+
+        private static void ClearFloatingCells(GridModel grid)
+        {
+            foreach (var cell in MatchResolver.FindFloatingCells(grid))
+                grid.ClearCell(cell.Row, cell.Col);
         }
 
         private static int InitialRowCount(GridModel grid, DifficultyConfig config) =>
