@@ -21,6 +21,8 @@ namespace Game.Gameplay
     {
         [SerializeField] private ShooterController shooterController;
         [SerializeField] private GameBoard gameBoard;
+        [SerializeField] private ScoreTracker scoreTracker;
+        [SerializeField] private ShotsFiredCounter shotsFiredCounter;
         [SerializeField] private float shotTimeSeconds = 8f;
 
         public event Action OnLevelWon;
@@ -94,6 +96,27 @@ namespace Game.Gameplay
             shooterController.enabled = false;
             Debug.Log(logMessage);
             raiseEvent?.Invoke();
+        }
+
+        public void RetryLevel()
+        {
+            scoreTracker.ResetScore();
+            shotsFiredCounter.ResetCount();
+            ResumeWithLevel(gameBoard.LevelNumber);
+        }
+
+        public void AdvanceToNextLevel()
+        {
+            ResumeWithLevel(gameBoard.LevelNumber + 1);
+        }
+
+        private void ResumeWithLevel(int levelNumber)
+        {
+            gameBoard.LoadLevel(levelNumber);
+            _shotTimer.Reset();
+            _ceilingTimer = new ShotTimer(gameBoard.CurrentDifficulty.CeilingDropIntervalSeconds);
+            shooterController.enabled = true;
+            _isGameOver = false;
         }
     }
 }

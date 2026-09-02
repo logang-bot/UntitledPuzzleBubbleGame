@@ -26,6 +26,7 @@ namespace Game.Grid
             gameBoard.OnBubblesPopped += OnBubblesPopped;
             gameBoard.OnClusterDropped += OnClusterDropped;
             gameBoard.OnRowPushedDown += OnRowPushedDown;
+            gameBoard.OnLevelLoaded += OnLevelLoaded;
         }
 
         private void OnDestroy()
@@ -34,6 +35,7 @@ namespace Game.Grid
             gameBoard.OnBubblesPopped -= OnBubblesPopped;
             gameBoard.OnClusterDropped -= OnClusterDropped;
             gameBoard.OnRowPushedDown -= OnRowPushedDown;
+            gameBoard.OnLevelLoaded -= OnLevelLoaded;
         }
 
         private void OnBubblePlaced(int row, int col)
@@ -56,6 +58,16 @@ namespace Game.Grid
         }
 
         private void OnRowPushedDown(bool wasLastRowOccupied)
+        {
+            RebuildAll();
+        }
+
+        private void OnLevelLoaded(int levelNumber)
+        {
+            RebuildAll();
+        }
+
+        private void RebuildAll()
         {
             foreach (var bubble in _bubbles.Values)
                 Destroy(bubble);

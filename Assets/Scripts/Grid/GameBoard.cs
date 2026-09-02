@@ -21,22 +21,33 @@ namespace Game.Grid
         public event Action<IReadOnlyCollection<(int Row, int Col)>, BubbleColor> OnBubblesPopped;
         public event Action<IReadOnlyCollection<(int Row, int Col)>> OnClusterDropped;
         public event Action<bool> OnRowPushedDown;
+        public event Action<int> OnLevelLoaded;
 
         public GridModel Grid { get; private set; }
         public Shooter.BoardBounds Bounds { get; private set; }
         public Vector2 ShooterOrigin { get; private set; }
         public float CellWidth => cellWidth;
         public DifficultyConfig CurrentDifficulty { get; private set; }
+        public int LevelNumber => levelNumber;
+
+        private int _rows;
 
         private void Awake()
         {
             var camera = Camera.main;
             var boardWidth = HexGridMath.BoardWidthWithOffsetMargin(cols, cellWidth);
-            var rows = FitCameraAndComputeRows(camera, boardWidth);
-            CurrentDifficulty = difficultyCurve.ForLevel(levelNumber);
-            Grid = LevelGenerator.Generate(new GridModel(rows, cols, cellWidth), levelNumber, CurrentDifficulty);
+            _rows = FitCameraAndComputeRows(camera, boardWidth);
             Bounds = Shooter.BoardBoundsCalculator.Compute(camera.transform.position, boardWidth, camera.orthographicSize);
             ShooterOrigin = new Vector2(camera.transform.position.x, camera.transform.position.y - camera.orthographicSize + cellWidth * 0.5f);
+            LoadLevel(levelNumber);
+        }
+
+        public void LoadLevel(int newLevelNumber)
+        {
+            levelNumber = newLevelNumber;
+            CurrentDifficulty = difficultyCurve.ForLevel(levelNumber);
+            Grid = LevelGenerator.Generate(new GridModel(_rows, cols, cellWidth), levelNumber, CurrentDifficulty);
+            OnLevelLoaded?.Invoke(levelNumber);
         }
 
         public void PlaceBubble(int row, int col, BubbleColor color)

@@ -196,7 +196,25 @@ be playable/testable on its own before moving to the next:
      keeping an instant-popping placement.
    → [`level-generation.md`](features/core-gameplay/level-generation.md)
 10. **Minimal HUD** (score, shots fired, level indicator) + level-complete
-    and game-over screens.
+    and game-over screens. ✅ **Done.** No scoring system existed before
+    this milestone; `ScoreCalculator` (pure, unit-tested) adds a weighted
+    formula — quadratic per-match-size for pops, flat higher per-bubble for
+    cascade drops — accumulated by `ScoreTracker`. `ShotsFiredCounter`
+    tallies `ShooterController.OnFireRequested`. `HudDisplay` shows all
+    three as a bottom bar anchored just above the fire zone (the board
+    fills the full screen with no letterbox, so a top/floating overlay
+    would sit on top of ceiling bubbles). `GameBoard.LoadLevel(int)` (new)
+    lets a level be regenerated after the initial load; `GameStateManager`
+    gained `RetryLevel()`/`AdvanceToNextLevel()`, turning the previously
+    one-way `_isGameOver` latch into a real resume path — retry reloads
+    the *same* level (deterministic seed) and resets score/shots, advance
+    loads `LevelNumber + 1` and keeps score. `LevelResultScreen` is one
+    component for both outcomes (win/lose panels are structurally
+    identical), introducing the project's first `UnityEngine.UI.Button`.
+    Verified end-to-end in Play Mode via Unity MCP (`execute_code`
+    driving fire/pop/push-row/button-click, screenshots confirming the
+    HUD and result panels).
+    → [`hud-and-level-flow.md`](features/core-gameplay/hud-and-level-flow.md)
 11. **First playable build on a physical device** — verify touch input
     feels right and performance is acceptable.
 

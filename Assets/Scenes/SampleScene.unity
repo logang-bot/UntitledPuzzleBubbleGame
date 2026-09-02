@@ -986,6 +986,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2047843252}
   - component: {fileID: 2047843251}
+  - component: {fileID: 2047843256}
+  - component: {fileID: 2047843255}
+  - component: {fileID: 2047843254}
+  - component: {fileID: 2047843253}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1007,6 +1011,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Game::Game.Gameplay.GameStateManager
   shooterController: {fileID: 1078805873}
   gameBoard: {fileID: 218697389}
+  scoreTracker: {fileID: 2047843256}
+  shotsFiredCounter: {fileID: 2047843255}
   shotTimeSeconds: 8
 --- !u!4 &2047843252
 Transform:
@@ -1023,6 +1029,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2047843253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047843250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c86f70d05200cf247a34b2d0ee85ea9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Game.Gameplay.LevelResultScreen
+  gameStateManager: {fileID: 2047843251}
+  canvasRect: {fileID: 1224280797}
+--- !u!114 &2047843254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047843250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 113d2de8acaf25e4294c264a057fafa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Game.Gameplay.HudDisplay
+  scoreTracker: {fileID: 2047843256}
+  shotsFiredCounter: {fileID: 2047843255}
+  gameBoard: {fileID: 218697389}
+  anchorRect: {fileID: 1587367401}
+--- !u!114 &2047843255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047843250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a523b535940a5d40a3daab6cd9b95b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Game.Gameplay.ShotsFiredCounter
+  shooterController: {fileID: 1078805873}
+--- !u!114 &2047843256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047843250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4dbe5b33504b6a49866097e6c333eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Game.Gameplay.ScoreTracker
+  gameBoard: {fileID: 218697389}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
