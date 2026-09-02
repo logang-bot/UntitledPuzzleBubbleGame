@@ -22,7 +22,6 @@ namespace Game.Gameplay
         [SerializeField] private ShooterController shooterController;
         [SerializeField] private GameBoard gameBoard;
         [SerializeField] private float shotTimeSeconds = 8f;
-        [SerializeField] private float ceilingDropIntervalSeconds = 20f;
 
         public event Action OnLevelWon;
         public event Action OnLevelLost;
@@ -36,11 +35,11 @@ namespace Game.Gameplay
         private void Awake()
         {
             _shotTimer = new ShotTimer(shotTimeSeconds);
-            _ceilingTimer = new ShotTimer(ceilingDropIntervalSeconds);
         }
 
         private void Start()
         {
+            _ceilingTimer = new ShotTimer(gameBoard.CurrentDifficulty.CeilingDropIntervalSeconds);
             shooterController.OnFireRequested += HandleFireRequested;
             gameBoard.OnRowPushedDown += HandleRowPushedDown;
             gameBoard.OnBubblesPopped += HandleBoardCellsCleared;

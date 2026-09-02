@@ -196,7 +196,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Game::Game.Grid.GameBoard
   cols: 8
   cellWidth: 1
-  filledRows: 4
+  levelNumber: 1
+  difficultyCurve: {fileID: 11400000, guid: 5fac640bd8eade041b6712160578970b, type: 2}
 --- !u!4 &218697390
 Transform:
   m_ObjectHideFlags: 0
@@ -1007,7 +1008,6 @@ MonoBehaviour:
   shooterController: {fileID: 1078805873}
   gameBoard: {fileID: 218697389}
   shotTimeSeconds: 8
-  ceilingDropIntervalSeconds: 20
 --- !u!4 &2047843252
 Transform:
   m_ObjectHideFlags: 0

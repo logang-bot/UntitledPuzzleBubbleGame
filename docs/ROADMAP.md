@@ -163,7 +163,37 @@ be playable/testable on its own before moving to the next:
    `LevelGenerator` and Milestone 10's HUD.
    → [`win-loss-conditions.md`](features/core-gameplay/win-loss-conditions.md)
 9. **Procedural level generator** with difficulty knobs (color count,
-   density, row count).
+   density, row count). ✅ **Done.**
+   `LevelGenerator.Generate(GridModel, int levelNumber, DifficultyConfig)`
+   (`Assets/Scripts/Grid/`) fills `grid.Rows - HeadroomRows` initial rows,
+   gating each cell on a per-cell density roll and restricting color choice
+   to `BubbleColorPalette.AllColors[0..ColorCount)`, seeded via
+   `System.Random(levelNumber)` for determinism. `DifficultyCurveConfig` (a
+   `ScriptableObject`, asset at
+   `Assets/ScriptableObjects/DefaultDifficultyCurve.asset`) resolves a
+   `DifficultyConfig` per level via simple linear ramps — explicitly a rough
+   placeholder curve pending playtesting (see `level-generation.md`'s open
+   questions). `GameBoard.Awake` now calls `LevelGenerator.Generate` instead of the old
+   fixed `filledRows`/`FillWithRandomBubbles`, and owns `levelNumber` and
+   `CurrentDifficulty`; `GameStateManager`'s ceiling-descent `ShotTimer` is
+   now constructed in `Start()` (not `Awake()`, since it needs
+   `GameBoard.CurrentDifficulty`, which Unity doesn't guarantee is set
+   before `GameStateManager.Awake()` runs) from
+   `CurrentDifficulty.CeilingDropIntervalSeconds` instead of a hardcoded
+   `20f`. Ceiling-descent row refill (`GameBoard.RefillRow`) also now
+   respects the level's color count.
+   - **Anti-pre-pop constraint pass, corrected during TDD.** The original
+     plan's "reroll up to 8 times" approach turned out unsound: a
+     same-color neighbor can itself already belong to a larger connected
+     group elsewhere on the board, so with a low color count (tested down
+     to `ColorCount=2`) *every* available color can trigger an instant
+     match at a given cell, not just some. Caught by an EditMode stress
+     test generating 100 levels at `ColorCount=2`/`Density=1` and
+     asserting no `MatchResolver.FindMatchGroup` result is non-empty.
+     Fixed by exhaustively trying every color in `[0, ColorCount)`
+     (bounded by `ColorCount` itself, not a fixed attempt cap) and, in the
+     genuinely-unavoidable case, leaving the cell empty rather than
+     keeping an instant-popping placement.
    → [`level-generation.md`](features/core-gameplay/level-generation.md)
 10. **Minimal HUD** (score, shots fired, level indicator) + level-complete
     and game-over screens.

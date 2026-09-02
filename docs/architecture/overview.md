@@ -27,7 +27,7 @@ popped") without editing the core systems themselves.
 | `FloodFill` | Generic BFS over `GridModel` from any number of seed cells, expanding only through cells satisfying a caller-supplied predicate. Shared by both of `MatchResolver`'s checks. |
 | `MatchResolver` | Pure query class (no mutation): given a newly-placed bubble's cell, flood-fills same-color neighbors to find what pops (`FindMatchGroup`); separately finds bubbles disconnected from the ceiling row (`FindFloatingCells`). |
 | `MatchProcessor` | Subscribes to `GameBoard.OnBubblePlaced`, calls `MatchResolver`, and drives `GameBoard.PopCells`/`DropCells` — see `features/core-gameplay/matching-and-popping.md`. |
-| `LevelGenerator` | Produces a `GridModel` populated for a given level/difficulty (color count, density, row count knobs). |
+| `LevelGenerator` | ✅ Implemented (Milestone 9). Static pure-logic class: fills an existing `GridModel` for a given level/difficulty (color count, density, headroom-row knobs from `DifficultyCurveConfig`), seeded by level number for determinism. See `features/core-gameplay/level-generation.md`. |
 | `GameStateManager` | Owns the shot timer and ceiling descent timer, and the win/loss checks (✅ all implemented) — the "referee" that ties the other systems together and raises `OnLevelWon` / `OnLevelLost`. |
 
 Rendering (turning `GridModel` cells into actual bubble sprites/prefabs) is a

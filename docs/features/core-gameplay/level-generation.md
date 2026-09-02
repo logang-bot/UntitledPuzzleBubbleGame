@@ -14,10 +14,35 @@ needing a level editor or manual design pass, which fits building Phase 1 as
 a single solo developer newer to Unity. Hand-authoring can be revisited
 later for special/milestone levels once the core loop is proven fun.
 
-## Implementation sketch
+## Implementation ✅ Done (Milestone 9)
 
-- `LevelGenerator.Generate(int levelNumber, DifficultyConfig config)` →
-  returns a populated `GridModel`.
+`LevelGenerator.Generate(GridModel grid, int levelNumber, DifficultyConfig
+config)` (`Assets/Scripts/Grid/LevelGenerator.cs`) — a static, pure-logic
+class in the `FloodFill`/`MatchResolver` style — fills an already-sized
+`GridModel` (constructed by `GameBoard.Awake`, which already knows the
+device-fit row/col count and `cellWidth`) rather than building the grid
+itself, so `LevelGenerator` stays free of rendering concerns. Seeded via
+`new System.Random(levelNumber)` — the level number doubles directly as the
+seed, resolving the open question below in favor of the simplest option (no
+separate stored seed field).
+
+`DifficultyCurveConfig` (`Assets/Scripts/Grid/DifficultyCurveConfig.cs`) is
+the `ScriptableObject` per-difficulty-tier config the sketch below
+anticipated, resolved via `ForLevel(int levelNumber) → DifficultyConfig`.
+The shipped asset is `Assets/ScriptableObjects/DefaultDifficultyCurve.asset`,
+assigned to `GameBoard`'s `difficultyCurve` field. Every ramp in it is a
+straightforward linear curve — a deliberate placeholder per the open
+question below, not yet tuned by playtesting.
+
+`GameBoard.Awake` now calls `LevelGenerator.Generate` instead of the old
+fixed `filledRows`/`FillWithRandomBubbles`, and exposes the resolved
+`CurrentDifficulty` so `GameStateManager` can read
+`CeilingDropIntervalSeconds` for the ceiling timer (see
+`shot-timer-and-ceiling-descent.md`) and `GameBoard.RefillRow` (ceiling
+descent's per-row refill) can stay within the level's color count.
+
+### Implementation sketch (original, for reference)
+
 - Difficulty knobs (likely a `ScriptableObject` per difficulty tier, or a
   curve keyed by level number):
   - **Color count** — how many distinct bubble colors are in play (fewer =
@@ -44,11 +69,32 @@ later for special/milestone levels once the core loop is proven fun.
   (guaranteeing at least the color count present is reachable/poppable is
   usually enough — full solvability proofs are out of scope for Phase 1).
 
-## Open questions / tuning knobs
+### Anti-pre-pop constraint: corrected during implementation
 
-- The exact difficulty curve (how color count/density/row count scale
-  across levels 1, 5, 10, 20...) — needs playtesting, start with a rough
-  linear ramp and adjust.
-- Whether to seed the RNG per level (so a given level number always
-  generates the same board) — recommended for consistency/debugging, cheap
-  to add (store the seed, not the generated grid).
+The constraint pass reuses `MatchResolver.FindMatchGroup` directly against
+each newly-placed cell (rather than a hand-rolled same-color-neighbor count)
+since a local neighbor-count heuristic is provably weaker — a connected
+same-color run can form as a path where the new cell only directly touches
+one prior neighbor, yet the full flood-filled group is still ≥3.
+
+The first implementation attempt (reroll the color up to a fixed 8 times)
+turned out unsound and was caught by an EditMode test generating 100 levels
+at `ColorCount=2`/`Density=1` and asserting every occupied cell's match
+group is empty: a same-color neighbor can itself already belong to a
+*larger* connected group elsewhere on the board (not just be a lone cell),
+so at low color counts **every** available color can trigger an instant
+match at a given cell — not just some, as the original reasoning assumed.
+Fixed by exhaustively trying every color in `[0, ColorCount)` (bounded by
+`ColorCount` itself, not a fixed attempt cap) and, in the genuinely
+unavoidable case, leaving that cell empty rather than keeping an
+instant-popping placement — an acceptable outcome since density < 1 already
+means gaps are expected.
+
+## Open questions / tuning knobs — resolved
+
+- The exact difficulty curve (how color count/density/headroom/ceiling
+  interval scale across levels) started as a rough linear ramp
+  (`DifficultyCurveConfig`'s Inspector-tunable fields) per the plan here —
+  **still needs playtesting and adjustment**, not yet done.
+- RNG seeding: resolved as `new System.Random(levelNumber)` — the level
+  number itself is the seed, no separate seed field stored.

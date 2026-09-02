@@ -31,10 +31,17 @@ deliberately separate systems with different triggers.
 - On a fixed interval, the entire board pushes down one row and a new row
   of bubbles is added at the top.
 - The interval **shortens at higher levels/difficulty** — early levels give
-  more breathing room, later levels apply more pressure. Not tied to a
-  difficulty config yet (Milestone 9's `LevelGenerator` doesn't exist), so
-  for now it's a single `[SerializeField] ceilingDropIntervalSeconds` on
-  `GameStateManager` (default 20s) — a tuning knob, not a curve.
+  more breathing room, later levels apply more pressure. ✅ **Tied to
+  difficulty as of Milestone 9**: `GameStateManager` now constructs the
+  ceiling `ShotTimer` in `Start()` (not `Awake()`, since it needs
+  `GameBoard.CurrentDifficulty`, only set once `GameBoard.Awake()` has run —
+  Unity doesn't guarantee `Awake` ordering across scripts, only that all
+  `Awake`s finish before any `Start`) from
+  `gameBoard.CurrentDifficulty.CeilingDropIntervalSeconds`, replacing the
+  old hardcoded `[SerializeField] ceilingDropIntervalSeconds` field. See
+  `level-generation.md` for the `DifficultyCurveConfig` curve that produces
+  this value (still a rough placeholder linear ramp, level 1 = 20s to match
+  the old default, floor of 8s).
 - This is the primary way a level can be lost (see
   `win-loss-conditions.md`): if the pushed-down board reaches the shooter's
   line, the game ends. The actual loss/game-over flow is Milestone 8 — not
@@ -89,8 +96,10 @@ row count are derived per device without touching the descent step itself.
 
 - Shot timer duration is 8s for now — may need retuning after more
   playtesting.
-- Ceiling descent interval curve by level/difficulty (start value, floor
-  value, how quickly it tightens).
+- Ceiling descent interval curve by level/difficulty is now implemented
+  (`DifficultyCurveConfig`, Milestone 9 — see `level-generation.md`), but
+  the actual start/floor values and how quickly it tightens are still an
+  untuned placeholder linear ramp, not validated by playtesting.
 - Whether the ceiling descent timer should visually warn the player a
   couple seconds before dropping (common in the genre to reduce
   frustration) — worth adding once the core loop is playable.

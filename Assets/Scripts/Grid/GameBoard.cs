@@ -14,7 +14,8 @@ namespace Game.Grid
     {
         [SerializeField] private int cols = 8;
         [SerializeField] private float cellWidth = 1f;
-        [SerializeField] private int filledRows = 4;
+        [SerializeField] private int levelNumber = 1;
+        [SerializeField] private DifficultyCurveConfig difficultyCurve;
 
         public event Action<int, int> OnBubblePlaced;
         public event Action<IReadOnlyCollection<(int Row, int Col)>, BubbleColor> OnBubblesPopped;
@@ -25,16 +26,17 @@ namespace Game.Grid
         public Shooter.BoardBounds Bounds { get; private set; }
         public Vector2 ShooterOrigin { get; private set; }
         public float CellWidth => cellWidth;
+        public DifficultyConfig CurrentDifficulty { get; private set; }
 
         private void Awake()
         {
             var camera = Camera.main;
             var boardWidth = HexGridMath.BoardWidthWithOffsetMargin(cols, cellWidth);
             var rows = FitCameraAndComputeRows(camera, boardWidth);
-            Grid = new GridModel(rows, cols, cellWidth);
+            CurrentDifficulty = difficultyCurve.ForLevel(levelNumber);
+            Grid = LevelGenerator.Generate(new GridModel(rows, cols, cellWidth), levelNumber, CurrentDifficulty);
             Bounds = Shooter.BoardBoundsCalculator.Compute(camera.transform.position, boardWidth, camera.orthographicSize);
             ShooterOrigin = new Vector2(camera.transform.position.x, camera.transform.position.y - camera.orthographicSize + cellWidth * 0.5f);
-            FillWithRandomBubbles(rows);
         }
 
         public void PlaceBubble(int row, int col, BubbleColor color)
@@ -86,17 +88,10 @@ namespace Game.Grid
             transform.position = new Vector3(x, y, transform.position.z);
         }
 
-        private void FillWithRandomBubbles(int rows)
-        {
-            var filled = Mathf.Min(filledRows, rows);
-            for (var row = 0; row < filled; row++)
-                RefillRow(row);
-        }
-
         private void RefillRow(int row)
         {
             for (var col = 0; col < cols; col++)
-                Grid.PlaceBubble(row, col, BubbleColorPalette.Random());
+                Grid.PlaceBubble(row, col, BubbleColorPalette.Random(CurrentDifficulty.ColorCount));
         }
     }
 }
