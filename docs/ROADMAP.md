@@ -72,6 +72,17 @@ be playable/testable on its own before moving to the next:
    cell, and `FiredBubbleController` animates the fired bubble and hooks
    into `ShooterController.OnFireRequested`.
    → [`firing-and-snapping.md`](features/core-gameplay/firing-and-snapping.md)
+   - **Two playtesting bugs found and fixed, well after this milestone
+     first shipped.** A mis-snapping bug (a shot could visibly nestle into
+     a pocket bounded by a bubble other than the one it technically
+     contacted first, and land in the wrong slot) and a preview-line bug (a
+     "ghost aura" gap between the aim line's tip and the bubble it was
+     aiming at, worse at an angle — the line was drawn to a bubble's future
+     *center*, then an initial fix extrapolated along the incoming ray
+     instead of aiming at the bubble's actual center, which only happened
+     to work for head-on shots). Both fixed in `BubbleLandingResolver`/the
+     new `PreviewPointsCalculator` — see `firing-and-snapping.md` for the
+     full root causes.
 4. **Match detection** (3+ connected same-color bubbles via flood fill) +
    popping. ✅ **Done**, together with Milestone 5 (built in the same pass,
    since the design doc treats them as one flood-fill-based component).
@@ -140,16 +151,36 @@ be playable/testable on its own before moving to the next:
    difficulty scaling is deferred to Milestone 9's `LevelGenerator`).
    `GridModel.PushRowsDown` shifts row contents down in place and reports
    whether the shooter's line (`Rows - 1`) was occupied before the shift;
-   `GameBoard.PushRowDown()` calls it, refills row 0 with random bubbles,
-   and raises `OnRowPushedDown(bool wasLastRowOccupied)` — the single hook
-   Milestone 8's loss check will consume. `GameStateManager` reuses
-   `ShotTimer` for the countdown (resetting it itself on expiry, rather
-   than a separate self-resetting timer class) and currently only logs
+   `GameBoard.PushRowDown()` calls it and raises
+   `OnRowPushedDown(bool wasLastRowOccupied)` — the single hook Milestone
+   8's loss check will consume. `GameStateManager` reuses `ShotTimer` for
+   the countdown (resetting it itself on expiry, rather than a separate
+   self-resetting timer class) and currently only logs
    `wasLastRowOccupied`; no game-over flow yet. `GridDebugRenderer` reacts
    by destroying and rebuilding all its sprites from `GameBoard.Grid`
    rather than re-keying incrementally, since it's still the disposable
    Milestone-1 stand-in.
    → [`shot-timer-and-ceiling-descent.md`](features/core-gameplay/shot-timer-and-ceiling-descent.md)
+   - **Reworked after playtesting, well after this milestone's original
+     scope** — three bugs found and fixed in sequence, each well after
+     Phase 1 first shipped: (1) `PushRowDown()` used to refill row 0 with a
+     fresh random row every push (the sentence above described this at the
+     time) — that was itself the bug: it silently injected bubbles the
+     player never placed and overwrote the level's curated pattern within a
+     few pushes. Removed entirely; a push now purely shifts existing rows
+     down, nothing more. (2) Removing that refill exposed a hex row-parity
+     bug (bubbles jogging sideways on every push) and a ceiling-connectivity
+     bug (a pop anywhere could drop the *entire* board, since the
+     "connected to ceiling" check hardcoded row 0 as the seed, and row 0
+     now legitimately sits empty for stretches of play). (3) The wall's own
+     *visual* advance was still missing even after (1)/(2): bubbles moved
+     down correctly, but the ceiling band and the shot's stopping boundary
+     never did, so new shots could land in space "behind" where the wall
+     had already advanced to. A warning-gated trigger (`CameraShake` +
+     landing-gated advance, instead of pushing the instant the timer
+     expires) was added in the same pass. Full account, root causes, and
+     fixes for all of this live in `shot-timer-and-ceiling-descent.md`,
+     `hex-grid.md`, and `matching-and-popping.md` — not repeated here.
 8. **Win/loss conditions** — board cleared = win, ceiling reaches the
    shooter line = loss. ✅ **Done.** `GridModel.IsEmpty` (unit-tested) added
    as the pure check the win condition needed. `GameStateManager` now
@@ -180,8 +211,13 @@ be playable/testable on its own before moving to the next:
    `GameBoard.CurrentDifficulty`, which Unity doesn't guarantee is set
    before `GameStateManager.Awake()` runs) from
    `CurrentDifficulty.CeilingDropIntervalSeconds` instead of a hardcoded
-   `20f`. Ceiling-descent row refill (`GameBoard.RefillRow`) also now
-   respects the level's color count.
+   `20f`. (Ceiling-descent row refill — `GameBoard.RefillRow` — used to
+   respect the level's color count here too; the whole refill was later
+   found to be a bug and removed, see Milestone 7's update above.) A
+   level-1-only override (`level1Density`/`level1HeadroomRows` on
+   `DifficultyCurveConfig`) was added afterward as well, isolated from the
+   `start*` ramp fields so easing level 1 for testing doesn't soften every
+   later level's starting point too — see `level-generation.md`.
    - **Anti-pre-pop constraint pass, corrected during TDD.** The original
      plan's "reroll up to 8 times" approach turned out unsound: a
      same-color neighbor can itself already belong to a larger connected

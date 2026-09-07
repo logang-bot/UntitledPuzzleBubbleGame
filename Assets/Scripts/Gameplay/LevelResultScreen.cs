@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Game.Gameplay
@@ -57,6 +58,12 @@ namespace Game.Gameplay
             onAction();
         }
 
+        private void HandleMenuClicked()
+        {
+            _panel.SetActive(false);
+            SceneManager.LoadScene("MainMenu");
+        }
+
         private void BuildPanel()
         {
             _panel = new GameObject("LevelResultPanel", typeof(RectTransform));
@@ -64,7 +71,20 @@ namespace Game.Gameplay
             _panel.AddComponent<Image>().color = new Color(0f, 0f, 0f, 0.75f);
             _messageText = SpawnMessageText();
             _actionButton = SpawnActionButton(out _buttonLabel);
+            SpawnMenuButton().onClick.AddListener(HandleMenuClicked);
             _panel.SetActive(false);
+        }
+
+        private Button SpawnMenuButton()
+        {
+            var buttonObj = new GameObject("MenuButton", typeof(RectTransform));
+            var rect = (RectTransform)buttonObj.transform;
+            rect.SetParent(_panel.transform, worldPositionStays: false);
+            rect.anchorMin = rect.anchorMax = new Vector2(0.5f, 0.22f);
+            rect.sizeDelta = new Vector2(ButtonWidth, ButtonHeight * 0.75f);
+            buttonObj.AddComponent<Image>().color = Color.white;
+            SpawnButtonLabel(buttonObj.transform).text = "Menu";
+            return buttonObj.AddComponent<Button>();
         }
 
         private Text SpawnMessageText()
