@@ -18,9 +18,10 @@ namespace Game.Shooter
         public static (List<Vector2> Points, (int Row, int Col)? StruckCell) Truncate(
             List<Vector2> rawPoints, (GridModel Grid, Vector2 Origin) board, float cellWidth)
         {
+            var occupied = MaterializeOccupiedWorldPositions(board);
             for (var i = 0; i < rawPoints.Count - 1; i++)
             {
-                var hit = FirstContactOnSegment((rawPoints[i], rawPoints[i + 1]), board, cellWidth);
+                var hit = FirstContactOnSegment((rawPoints[i], rawPoints[i + 1]), occupied, cellWidth);
                 if (hit == null) continue;
                 var (contactPoint, struckCell) = hit.Value;
                 return (TruncatedPath(rawPoints, i, contactPoint), struckCell);
@@ -35,17 +36,30 @@ namespace Game.Shooter
             return points;
         }
 
+        /// <summary>
+        /// Fetched once per Truncate call instead of once per segment - GridModel.OccupiedCells()
+        /// is a full rows*cols scan via an allocating iterator, and re-running it per segment
+        /// (up to maxBounces+1 times per frame) was the dominant per-frame cost of the preview line.
+        /// </summary>
+        private static List<((int Row, int Col) Cell, Vector2 Pos)> MaterializeOccupiedWorldPositions(
+            (GridModel Grid, Vector2 Origin) board)
+        {
+            var positions = new List<((int Row, int Col) Cell, Vector2 Pos)>();
+            foreach (var cell in board.Grid.OccupiedCells())
+                positions.Add((cell, board.Grid.GetWorldPosition(cell.Row, cell.Col) + board.Origin));
+            return positions;
+        }
+
         private static (Vector2 ContactPoint, (int Row, int Col) StruckCell)? FirstContactOnSegment(
-            (Vector2 Start, Vector2 End) segment, (GridModel Grid, Vector2 Origin) board, float cellWidth)
+            (Vector2 Start, Vector2 End) segment, List<((int Row, int Col) Cell, Vector2 Pos)> occupied, float cellWidth)
         {
             (Vector2 Point, (int Row, int Col) Cell, float T)? nearest = null;
-            foreach (var cell in board.Grid.OccupiedCells())
+            foreach (var entry in occupied)
             {
-                var cellWorldPos = board.Grid.GetWorldPosition(cell.Row, cell.Col) + board.Origin;
-                var contact = SegmentCircleContact(segment, cellWorldPos, cellWidth);
+                var contact = SegmentCircleContact(segment, entry.Pos, cellWidth);
                 if (contact == null) continue;
                 if (nearest == null || contact.Value.T < nearest.Value.T)
-                    nearest = (contact.Value.Point, cell, contact.Value.T);
+                    nearest = (contact.Value.Point, entry.Cell, contact.Value.T);
             }
             return nearest == null ? null : (nearest.Value.Point, nearest.Value.Cell);
         }

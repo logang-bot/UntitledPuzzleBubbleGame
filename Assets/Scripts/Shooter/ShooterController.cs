@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Game.Grid;
 using UnityEngine;
 
@@ -8,9 +9,12 @@ namespace Game.Shooter
     /// Fixed-speed rotating gun (arcade Puzzle Bobble-style): holding the
     /// rotate zones turns the aim angle at a constant rate; the fire zone
     /// raises OnFireRequested, consumed by FiredBubbleController. The preview
-    /// line is occupancy-truncated the same way as the fired bubble's path, so
-    /// they can never disagree. See
-    /// docs/features/core-gameplay/firing-and-snapping.md.
+    /// line is always the raw, occupancy-unaware kinematic path - a direct,
+    /// zero-lag function of the aim angle - and relies on opaque bubble
+    /// sprites (sortingOrder above the line's) to visually occlude it where a
+    /// shot would actually stop. LandingIndicator separately shows the
+    /// occupancy-truncated, fire-time-accurate landing cell. See
+    /// docs/features/core-gameplay/shooter-and-trajectory.md.
     /// </summary>
     [RequireComponent(typeof(LineRenderer))]
     public class ShooterController : MonoBehaviour
@@ -30,6 +34,7 @@ namespace Game.Shooter
 
         private LineRenderer _lineRenderer;
         private TrajectoryPredictor _predictor;
+        private LandingIndicator _landingIndicator;
         private Vector2 _shooterOrigin;
         private float _aimAngleDegrees;
         private bool _firePressedLastFrame;
@@ -43,6 +48,7 @@ namespace Game.Shooter
         {
             _shooterOrigin = gameBoard.ShooterOrigin;
             RebuildPredictor();
+            _landingIndicator = new LandingIndicator();
             gameBoard.OnRowPushedDown += HandleBoardChanged;
             gameBoard.OnLevelLoaded += HandleBoardChanged;
         }
@@ -51,6 +57,7 @@ namespace Game.Shooter
         {
             gameBoard.OnRowPushedDown -= HandleBoardChanged;
             gameBoard.OnLevelLoaded -= HandleBoardChanged;
+            _landingIndicator.Destroy();
         }
 
         // gameBoard.Bounds.CeilingY advances with the wall (see
@@ -72,12 +79,18 @@ namespace Game.Shooter
             DrawPreview();
         }
 
+        /// <summary>
+        /// sortingOrder -1 puts the line behind bubbles (implicit order 0,
+        /// same convention as CeilingRenderer), so opaque bubble sprites
+        /// occlude it exactly where a shot would stop, with no truncation math.
+        /// </summary>
         private void ConfigureLineRenderer()
         {
             _lineRenderer = GetComponent<LineRenderer>();
             _lineRenderer.material = lineMaterial != null ? lineMaterial : new Material(Shader.Find("Universal Render Pipeline/Unlit"));
             _lineRenderer.widthMultiplier = lineWidth;
             _lineRenderer.useWorldSpace = true;
+            _lineRenderer.sortingOrder = -1;
         }
 
         private void UpdateAimAngle()
@@ -102,19 +115,24 @@ namespace Game.Shooter
         private void DrawPreview()
         {
             var rawPoints = _predictor.Simulate(_shooterOrigin, _aimAngleDegrees, maxBounces);
-            var board = (gameBoard.Grid, (Vector2)gameBoard.transform.position);
-            var truncated = OccupancyCollision.Truncate(rawPoints, board, gameBoard.CellWidth);
-            var targetCenter = StruckCellCenter(truncated.StruckCell, board);
-            var points = PreviewPointsCalculator.TrimToSurface(truncated.Points, targetCenter, gameBoard.CellWidth);
+            SetLineRendererPoints(rawPoints);
+            UpdateLandingIndicator(rawPoints);
+        }
+
+        private void SetLineRendererPoints(List<Vector2> points)
+        {
             _lineRenderer.positionCount = points.Count;
             for (var i = 0; i < points.Count; i++)
                 _lineRenderer.SetPosition(i, points[i]);
         }
 
-        private static Vector2? StruckCellCenter((int Row, int Col)? struckCell, (GridModel Grid, Vector2 Origin) board)
+        private void UpdateLandingIndicator(List<Vector2> rawPoints)
         {
-            if (struckCell == null) return null;
-            return board.Grid.GetWorldPosition(struckCell.Value.Row, struckCell.Value.Col) + board.Origin;
+            var board = (gameBoard.Grid, Origin: (Vector2)gameBoard.transform.position);
+            var truncated = OccupancyCollision.Truncate(rawPoints, board, gameBoard.CellWidth);
+            var landingCell = BubbleLandingResolver.ResolveLandingCell(board, truncated.Points[^1], truncated.StruckCell, gameBoard.CellWidth);
+            if (landingCell == null) { _landingIndicator.Hide(); return; }
+            _landingIndicator.Show(gameBoard.Grid.GetWorldPosition(landingCell.Value.Row, landingCell.Value.Col) + board.Origin);
         }
     }
 }

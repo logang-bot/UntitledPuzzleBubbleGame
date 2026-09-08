@@ -81,8 +81,10 @@ be playable/testable on its own before moving to the next:
      *center*, then an initial fix extrapolated along the incoming ray
      instead of aiming at the bubble's actual center, which only happened
      to work for head-on shots). Both fixed in `BubbleLandingResolver`/the
-     new `PreviewPointsCalculator` — see `firing-and-snapping.md` for the
-     full root causes.
+     (since superseded) `PreviewPointsCalculator` — see
+     `firing-and-snapping.md` for the full root causes and the later
+     redesign that replaced `PreviewPointsCalculator` with an occlusion-based
+     line plus a separate `LandingIndicator`.
 4. **Match detection** (3+ connected same-color bubbles via flood fill) +
    popping. ✅ **Done**, together with Milestone 5 (built in the same pass,
    since the design doc treats them as one flood-fill-based component).
@@ -251,8 +253,8 @@ be playable/testable on its own before moving to the next:
     driving fire/pop/push-row/button-click, screenshots confirming the
     HUD and result panels).
     → [`hud-and-level-flow.md`](features/core-gameplay/hud-and-level-flow.md)
-11. **First playable build on a physical device** — verify touch input
-    feels right and performance is acceptable.
+11. **First playable build on a physical device.** ✅ **Done.** Tested on a
+    real device.
 
 ## Phase 2 — Superpowers system 🚧 (placeholder)
 

@@ -1,22 +1,28 @@
 # Firing and Snapping
 
 **Status: implemented.** `GameBoard`, `OccupancyCollision`,
-`BubbleLandingResolver`, and `FiredBubbleController` live at
-`Assets/Scripts/Grid/` and `Assets/Scripts/Shooter/`, with the pure-math
-pieces covered by EditMode tests in `Assets/Tests/EditMode/`
-(`OccupancyCollisionTests.cs`, `BubbleLandingResolverTests.cs`,
-`GridModelOccupiedCellsTests.cs`, `GridModelDimensionsTests.cs`). This is
-Milestone 3 from `docs/ROADMAP.md`.
+`BubbleLandingResolver`, `FiredBubbleController`, and (added later, see
+"Redesign" below) `LandingIndicator` live at `Assets/Scripts/Grid/` and
+`Assets/Scripts/Shooter/`, with the pure-math pieces covered by EditMode
+tests in `Assets/Tests/EditMode/` (`OccupancyCollisionTests.cs`,
+`BubbleLandingResolverTests.cs`, `GridModelOccupiedCellsTests.cs`,
+`GridModelDimensionsTests.cs`). `LandingIndicator` itself is thin Unity
+rendering glue (a `SpriteRenderer` wrapper), consistent with
+`GridDebugRenderer`/`CeilingRenderer` being untested today, so it has no
+dedicated test file. This is Milestone 3 from `docs/ROADMAP.md`.
 
 ## Decision
 
 - A fired bubble travels **animated**, not instant — it moves along the
   trajectory's segments frame-by-frame (`Vector2.MoveTowards`), so wall
   bounces stay visible and it reads as a real shot.
-- The preview line and the fired bubble share one occupancy-truncated path,
-  computed by the same call on both sides — this preserves the project's
-  core invariant that the preview must never disagree with where a shot
-  actually lands (`architecture/overview.md`).
+- The **landing indicator** (not the trajectory line — see "Redesign" below)
+  and the fired bubble share one occupancy-truncated path, computed by the
+  same call on both sides — this preserves the project's core invariant that
+  the shown landing cell must never disagree with where a shot actually
+  lands (`architecture/overview.md`). The trajectory line itself is
+  deliberately *not* occupancy-truncated, so it stays a pure, zero-lag
+  function of the aim angle; see "Redesign" below for why.
 - On landing, the bubble snaps to the **nearest empty cell**, not the exact
   contact point — matching the classic Puzzle Bobble feel described in
   `hex-grid.md`.
@@ -53,15 +59,17 @@ against. Both problems needed solving together.
   when their centers are `cellWidth` apart), truncating the path there and
   returning which cell was struck (or `null` if the path reaches its
   original wall/ceiling endpoint unobstructed).
-  `ShooterController.DrawPreview` and `FiredBubbleController` both call
-  this with the same inputs, so they mechanically cannot disagree. Note the
+  `ShooterController.UpdateLandingIndicator` and `FiredBubbleController` both
+  call this with the same inputs, so the shown landing cell and where a shot
+  actually lands mechanically cannot disagree. The trajectory *line* itself
+  no longer calls this at all - see "Redesign: decoupling the preview line
+  from occupancy truncation" below. Note the
   truncated endpoint is the future bubble's *center* (exactly `cellWidth`
   from the struck cell's center) — correct for `FiredBubbleController`,
   whose flying bubble is a same-radius disc and so visually touches once
-  centered there, but `DrawPreview`'s bare `LineRenderer` tip has no radius
-  of its own and would stop a full bubble-radius short of the target's
-  rendered edge. See `PreviewPointsCalculator.TrimToSurface`
-  (`Assets/Scripts/Shooter/PreviewPointsCalculator.cs`) below.
+  centered there, and used identically by `LandingIndicator` to place the
+  ghost bubble at the resolved landing cell's own center (not this raw
+  contact point).
   `GridModel.GetWorldPosition` is board-**local** (relative to `GameBoard`'s
   own transform, not Unity world space — see `hex-grid.md`), while
   trajectory points are true world space, so both `OccupancyCollision` and
@@ -100,33 +108,50 @@ between the hex lattice's first-ring (`1.0x`) and second-ring (`~1.73x`)
 distances, so it catches a second touching bubble without reaching a full
 ring further out.
 
-### Bug found and fixed: preview line stopping short of the bubble it's aiming at
+### Bug found and fixed (twice), then redesigned: preview line stopping short / feeling laggy near bubbles
 
-- **`ShooterController.DrawPreview`** (`Assets/Scripts/Shooter/ShooterController.cs`)
-  draws the occupancy-truncated path with a `LineRenderer`. Its raw endpoint
-  is the struck cell's future center — visually a full bubble-radius short
-  of the target's rendered edge, since the line has no radius of its own
-  (unlike the flying bubble, a real disc). Fixed by
-  **`PreviewPointsCalculator.TrimToSurface(truncatedPoints, targetCenter, cellWidth)`**
-  (`Assets/Scripts/Shooter/PreviewPointsCalculator.cs`), a small pure
-  function `DrawPreview` runs the truncated points through before handing
-  them to the `LineRenderer`: when there's a struck cell, it moves the
-  final point directly toward the struck cell's actual world-space center
-  until it's exactly `cellWidth * 0.5` away, landing precisely on the
-  bubble's surface. Purely cosmetic — `OccupancyCollision`,
-  `BubbleLandingResolver`, and `FiredBubbleController` are untouched, so
-  where a shot actually truncates/lands is unchanged.
-  **Second bug found and fixed**: the first attempt extended the endpoint
-  further along the *incoming segment's direction* instead of toward the
-  actual center — correct only for a head-on shot, where the ray happens to
-  pass through the target's center. For an angled/grazing hit (the ray
-  merely grazes the `cellWidth`-radius circle around the center, not
-  passing through it), extending along the ray direction over/undershoots
-  the true surface point, so the gap reappeared at an angle. Fixed by
-  computing the direction from the endpoint straight to the struck cell's
-  known center (`GameBoard.Grid.GetWorldPosition(row, col) + Origin`) and
-  moving along *that* instead — geometrically correct at any approach
-  angle, since it no longer depends on the incoming ray at all.
+First attempt: `ShooterController.DrawPreview` drew the occupancy-truncated
+path with a `LineRenderer`. Its raw endpoint was the struck cell's future
+center — visually a full bubble-radius short of the target's rendered edge,
+since the line has no radius of its own (unlike the flying bubble, a real
+disc). Fixed by `PreviewPointsCalculator.TrimToSurface`, a small pure
+function that moved the truncated endpoint straight toward the struck
+cell's actual center until exactly `cellWidth * 0.5` away, landing on the
+bubble's rendered surface (a second bug in that first attempt — extending
+along the incoming ray direction instead of straight at the center — was
+also found and fixed; it undershot/overshot at any angled, non-head-on hit).
+
+That approach was **fully superseded** after real-device and in-Editor
+testing found the truncated-and-trimmed line's *speed* visibly kinked near
+packed ceiling bubbles (looked/felt laggy) even though the aim angle itself
+was changing at a perfectly constant rate. Root cause: `OccupancyCollision`'s
+"nearest struck circle" selection is provably continuous in *position* at
+the exact angle where the ray hands off from one touching bubble to its
+neighbor (both candidate circles' contact points coincide there), but its
+*velocity* has a kink at that same point — a real geometric property of
+following the envelope of tangent circles, not a bug in the truncation math.
+A chase-based smoother (tried first) could only trade added lag for
+smoothness against a target whose speed is genuinely kinked; it didn't
+remove the kink.
+
+**Current design:** the trajectory line no longer calls `OccupancyCollision`
+at all. `ShooterController.DrawPreview` renders `TrajectoryPredictor.Simulate`'s
+raw, occupancy-unaware output directly — a pure, continuous, zero-lag
+function of `_aimAngleDegrees`, with no kink possible by construction. The
+line's `LineRenderer.sortingOrder` is set to `-1` (same convention as
+`CeilingRenderer`, behind bubbles' implicit `sortingOrder = 0`), so opaque
+bubble sprites visually occlude it wherever a shot would actually stop —
+landing at essentially the same "touches the bubble's rendered edge" look
+`TrimToSurface` used to compute explicitly, but via rendering instead of
+geometry, so there's nothing to trim or smooth. The discrete "which cell
+would this land in" information moved to a new **`LandingIndicator`**
+(`Assets/Scripts/Shooter/LandingIndicator.cs`) — a small ghost-bubble
+`SpriteRenderer` positioned every frame from `OccupancyCollision.Truncate` +
+`BubbleLandingResolver.ResolveLandingCell` (identical to what
+`FiredBubbleController.Land` uses, so it can't disagree with a real shot).
+It's allowed to pop discretely between candidate cells with no smoothing —
+a snapping discrete marker reads as normal; a continuously-tracked line
+whose speed visibly changes does not.
 - **`FiredBubbleController`** (`Assets/Scripts/Shooter/FiredBubbleController.cs`)
   subscribes to `ShooterController.OnFireRequested`. On fire it builds the
   truncated path, spawns a temporary flying-bubble `GameObject` (reusing
