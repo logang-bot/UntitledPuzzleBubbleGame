@@ -36,27 +36,35 @@ namespace Game.Grid
         private static IEnumerable<(int Row, int Col)> UnoccupiedNeighborsOfNearbyCells(
             (GridModel Grid, Vector2 Origin) board, Vector2 contactPoint, float cellWidth)
         {
-            return NearbyOccupiedCells(board, contactPoint, cellWidth)
-                .SelectMany(cell => UnoccupiedNeighbors(board.Grid, cell))
-                .Distinct();
+            var result = new HashSet<(int Row, int Col)>();
+            foreach (var cell in NearbyOccupiedCells(board, contactPoint, cellWidth))
+                foreach (var neighbor in UnoccupiedNeighbors(board.Grid, cell))
+                    result.Add(neighbor);
+            return result;
         }
 
-        private static IEnumerable<(int Row, int Col)> NearbyOccupiedCells(
+        private static List<(int Row, int Col)> NearbyOccupiedCells(
             (GridModel Grid, Vector2 Origin) board, Vector2 contactPoint, float cellWidth)
         {
             var maxDistance = cellWidth * NearbyContactDistanceFactor;
-            return board.Grid.OccupiedCells()
-                .Where(cell => Vector2.Distance(board.Grid.GetWorldPosition(cell.Row, cell.Col) + board.Origin, contactPoint) <= maxDistance);
+            var result = new List<(int Row, int Col)>();
+            foreach (var cell in board.Grid.OccupiedCells())
+                if (Vector2.Distance(board.Grid.GetWorldPosition(cell.Row, cell.Col) + board.Origin, contactPoint) <= maxDistance)
+                    result.Add(cell);
+            return result;
         }
 
         // Excludes anything behind the advanced wall (row < RowsPushed): those
         // rows are permanently vacated (see GridModel.RowsPushed) and could
         // otherwise still be picked as "nearest" by raw distance alone, even
         // though nothing can physically occupy them anymore.
-        private static IEnumerable<(int Row, int Col)> UnoccupiedNeighbors(GridModel grid, (int Row, int Col) cell)
+        private static List<(int Row, int Col)> UnoccupiedNeighbors(GridModel grid, (int Row, int Col) cell)
         {
-            return grid.GetNeighbors(cell.Row, cell.Col)
-                .Where(c => !grid.IsOccupied(c.Row, c.Col) && c.Row >= grid.RowsPushed);
+            var result = new List<(int Row, int Col)>();
+            foreach (var neighbor in grid.GetNeighbors(cell.Row, cell.Col))
+                if (!grid.IsOccupied(neighbor.Row, neighbor.Col) && neighbor.Row >= grid.RowsPushed)
+                    result.Add(neighbor);
+            return result;
         }
 
         private static IEnumerable<(int Row, int Col)> UnoccupiedEffectiveCeilingRowCells(GridModel grid)
@@ -70,10 +78,16 @@ namespace Game.Grid
         private static (int Row, int Col)? NearestTo(
             IEnumerable<(int Row, int Col)> candidates, (GridModel Grid, Vector2 Origin) board, Vector2 contactPoint)
         {
-            var ordered = candidates
-                .OrderBy(c => Vector2.Distance(board.Grid.GetWorldPosition(c.Row, c.Col) + board.Origin, contactPoint))
-                .ToList();
-            return ordered.Count == 0 ? null : ordered[0];
+            (int Row, int Col)? nearest = null;
+            var nearestDistance = float.MaxValue;
+            foreach (var candidate in candidates)
+            {
+                var distance = Vector2.Distance(board.Grid.GetWorldPosition(candidate.Row, candidate.Col) + board.Origin, contactPoint);
+                if (distance >= nearestDistance) continue;
+                nearest = candidate;
+                nearestDistance = distance;
+            }
+            return nearest;
         }
     }
 }

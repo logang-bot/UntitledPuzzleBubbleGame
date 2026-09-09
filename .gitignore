@@ -62,6 +62,11 @@ sysinfo.txt
 *.unitypackage
 *.app
 
+# Native (CMake/Gradle) Android build scratch directory - short name is
+# intentional (Gradle/AGP uses it to keep native build paths under
+# Windows' MAX_PATH), regenerated fully on every Android build
+/.utmp/
+
 # Crashlytics generated file
 crashlytics-build.properties
 

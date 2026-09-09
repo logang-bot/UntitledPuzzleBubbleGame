@@ -6,7 +6,7 @@ deliberately separate systems with different triggers.
 
 ## Shot timer ✅ Implemented (Milestone 6)
 
-- Each turn, an 8-second countdown runs. Rather than a depleting gauge
+- Each turn, a 12-second countdown runs. Rather than a depleting gauge
   visible the whole time, a numeric countdown ("4", "3", "2", "1") only
   appears in the final 4 seconds — enough warning without cluttering the
   screen during normal aiming.
@@ -157,7 +157,9 @@ row count are derived per device without touching the descent step itself.
 
 ## Open questions / tuning knobs
 
-- Shot timer duration is 8s for now — may need retuning after more
+- Shot timer duration is 12s (raised from 8s to comfortably fit the
+  landing settle animation's more playful pacing — see
+  `firing-and-snapping.md`) — may need further retuning after more
   playtesting.
 - Ceiling descent interval curve by level/difficulty is now implemented
   (`DifficultyCurveConfig`, Milestone 9 — see `level-generation.md`), but

@@ -32,7 +32,12 @@ wouldn't look or feel like the source material.
   `GetColor` are the occupancy API, plus `OccupiedCells()` (enumerates all
   occupied cells) and `Rows`/`Cols` properties — both added in Milestone 3
   when `OccupancyCollision` needed to check a fired bubble's path against
-  every occupied cell (see `firing-and-snapping.md`).
+  every occupied cell (see `firing-and-snapping.md`). `OccupiedCells()`
+  caches its result, invalidated only by `PlaceBubble`/`ClearCell`/
+  `PushRowsDown` (the only three cells-changed points) — added after
+  playtesting found repeated per-frame rescans during aiming were the
+  dominant cost behind laggy-feeling input; see `firing-and-snapping.md`'s
+  "Performance found and fixed" note.
 - `GetNeighbors(row, col)` returns the up-to-6 adjacent cells as
   `List<(int Row, int Col)>`, clipped to grid bounds. Implemented as a
   static even-row/odd-row offset table (`EvenRowOffsets`/`OddRowOffsets`)

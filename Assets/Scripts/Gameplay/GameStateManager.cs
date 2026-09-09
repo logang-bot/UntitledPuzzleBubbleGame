@@ -26,7 +26,7 @@ namespace Game.Gameplay
         [SerializeField] private ScoreTracker scoreTracker;
         [SerializeField] private ShotsFiredCounter shotsFiredCounter;
         [SerializeField] private CameraShake cameraShake;
-        [SerializeField] private float shotTimeSeconds = 8f;
+        [SerializeField] private float shotTimeSeconds = 12f;
 
         public event Action OnLevelWon;
         public event Action OnLevelLost;

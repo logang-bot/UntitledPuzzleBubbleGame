@@ -32,6 +32,7 @@ popped") without editing the core systems themselves.
 | `GameStateManager` | Owns the shot timer and ceiling descent timer, and the win/loss checks (✅ all implemented) — the "referee" that ties the other systems together and raises `OnLevelWon` / `OnLevelLost`. Also runs the ceiling-push warning state machine (camera shake, gated on the next landed bubble rather than firing the instant the timer expires). |
 | `CameraShake` | Hand-rolled camera jitter, started/stopped by `GameStateManager` as the ceiling-push warning. See `features/core-gameplay/shot-timer-and-ceiling-descent.md`. |
 | `CeilingRenderer` | Draws the solid ceiling/wall band and grows it by one row height on every push, so the wall's visual footprint actually advances instead of only the bubbles moving. See `features/core-gameplay/hex-grid.md`. |
+| `FrameRateInitializer` | Pins `Application.targetFrameRate` at startup so frame pacing is deterministic across Android devices instead of left to platform defaults. See "Frame pacing" below. |
 
 Rendering (turning `GridModel` cells into actual bubble sprites/prefabs) is a
 separate, thin layer that listens to grid-change events rather than being
@@ -90,6 +91,20 @@ matches exactly where the bubble goes — real physics engines have enough
 non-determinism (fixed timestep quantization, collision resolution order)
 that a physics-simulated preview can occasionally diverge from the real
 shot, which is fatal for a game where precision aiming is the whole point.
+
+## Frame pacing: explicit target frame rate, not device/VSync defaults
+
+Found during real-device playtesting (general "not smooth" feeling,
+separate from the aim-preview lag fixed in
+`features/core-gameplay/firing-and-snapping.md`): the project never called
+`Application.targetFrameRate`, and `QualitySettings` had inconsistent
+`vSyncCount` across quality tiers (0 on Very Low/Low, 1 on Medium-Ultra).
+Since VSync overrides `targetFrameRate` on most platforms, this meant frame
+pacing depended on which quality tier was active and the device's own
+refresh rate, rather than being consistent. Fixed by disabling VSync
+(`vSyncCount = 0`) on every quality tier and adding `FrameRateInitializer`
+(`Assets/Scripts/Bootstrap/`), a single-purpose `MonoBehaviour` that sets
+`Application.targetFrameRate = 60` in `Awake`.
 
 ## Testing
 

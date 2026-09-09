@@ -13,6 +13,7 @@ namespace Game.Gameplay
     {
         [SerializeField] private GameStateManager gameStateManager;
         [SerializeField] private RectTransform fireZoneRect;
+        [SerializeField] private RectTransform rotateRightZoneRect;
         [SerializeField] private float warningThresholdSeconds = 4f;
 
         private const float DisplaySize = 60f;
@@ -45,8 +46,20 @@ namespace Game.Gameplay
             rect.anchorMax = fireZoneRect.anchorMax;
             rect.pivot = fireZoneRect.pivot;
             rect.sizeDelta = new Vector2(DisplaySize, DisplaySize);
-            var xOffset = fireZoneRect.sizeDelta.x * 0.5f + DisplaySize * 0.5f + DisplayMargin;
-            rect.anchoredPosition = fireZoneRect.anchoredPosition + new Vector2(xOffset, 0f);
+            rect.anchoredPosition = fireZoneRect.anchoredPosition + new Vector2(RightOffset(), 0f);
+        }
+
+        // A bigger offset moves the display closer to the rotate-right zone, so
+        // it's capped at whatever clears that zone, not floored by it - Constant
+        // Pixel Size means a fixed margin tuned for one screen width isn't safe
+        // on a narrower one once either zone's size changes.
+        private float RightOffset()
+        {
+            var fireZoneOffset = fireZoneRect.sizeDelta.x * 0.5f + DisplaySize * 0.5f + DisplayMargin;
+            var canvasHalfWidth = ((RectTransform)fireZoneRect.parent).rect.width * 0.5f;
+            var rotateZoneInnerEdge = canvasHalfWidth - rotateRightZoneRect.sizeDelta.x - Mathf.Abs(rotateRightZoneRect.anchoredPosition.x);
+            var maxSafeOffset = rotateZoneInnerEdge - DisplaySize * 0.5f - DisplayMargin;
+            return Mathf.Min(fireZoneOffset, maxSafeOffset);
         }
 
         private void Update()

@@ -69,6 +69,12 @@ scope boundary at the time.
   The rotation speed has already been tuned down twice during playtesting
   (90 → 45 → 25) for smoother, more controllable aiming; still not
   necessarily final.
+- Rotate-left/rotate-right zone size: enlarged from 150×150 to 220×220
+  (Constant Pixel Size Canvas, so these are literal on-screen pixels) after
+  real-device playtesting found them too small to comfortably thumb-hit.
+  The fire-zone stayed at 120×120. See `firing-and-snapping.md`'s
+  next-bubble-indicator note for how the adjacent labels avoid overlap now
+  that the zones can change size.
 - ~~Bubble travel speed once fired (instant vs. animated)~~ — **decided in
   Milestone 3:** animated (`FiredBubbleController.bubbleSpeed`), not
   instant. See `firing-and-snapping.md`. The exact speed value is still a

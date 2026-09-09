@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Game.Grid;
+using Game.Settings;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,12 +18,14 @@ namespace Game.Shooter
         [SerializeField] private GameBoard gameBoard;
         [SerializeField] private ShooterController shooterController;
         [SerializeField] private RectTransform fireZoneRect;
+        [SerializeField] private RectTransform rotateLeftZoneRect;
         [SerializeField] private float bubbleSpeed = 8f;
 
         // The indicator is a UI element (not a world-space sprite) so it can be anchored
         // directly to the left of the fire-zone square, at the same height, on the same Canvas.
         private const float IndicatorSize = 60f;
         private const float IndicatorMargin = 15f;
+        private const float SettleDurationSeconds = 0.18f;
 
         private TrajectoryPredictor _predictor;
         private List<Vector2> _path;
@@ -32,6 +35,10 @@ namespace Game.Shooter
         private BubbleColor _color;
         private BubbleColor _nextColor;
         private GameObject _nextBubbleIndicator;
+        private Vector2 _settleFrom;
+        private Vector2 _settleTo;
+        private (int Row, int Col)? _settleCell;
+        private float _settleElapsed;
 
         private void Start()
         {
@@ -73,8 +80,20 @@ namespace Game.Shooter
             rect.anchorMax = fireZoneRect.anchorMax;
             rect.pivot = fireZoneRect.pivot;
             rect.sizeDelta = new Vector2(IndicatorSize, IndicatorSize);
-            var xOffset = fireZoneRect.sizeDelta.x * 0.5f + IndicatorSize * 0.5f + IndicatorMargin;
-            rect.anchoredPosition = fireZoneRect.anchoredPosition + new Vector2(-xOffset, 0f);
+            rect.anchoredPosition = fireZoneRect.anchoredPosition + new Vector2(-LeftOffset(), 0f);
+        }
+
+        // A bigger offset moves the indicator closer to the rotate-left zone, so
+        // it's capped at whatever clears that zone, not floored by it - Constant
+        // Pixel Size means a fixed margin tuned for one screen width isn't safe
+        // on a narrower one once either zone's size changes.
+        private float LeftOffset()
+        {
+            var fireZoneOffset = fireZoneRect.sizeDelta.x * 0.5f + IndicatorSize * 0.5f + IndicatorMargin;
+            var canvasHalfWidth = ((RectTransform)fireZoneRect.parent).rect.width * 0.5f;
+            var rotateZoneInnerEdge = canvasHalfWidth - rotateLeftZoneRect.sizeDelta.x - Mathf.Abs(rotateLeftZoneRect.anchoredPosition.x);
+            var maxSafeOffset = rotateZoneInnerEdge - IndicatorSize * 0.5f - IndicatorMargin;
+            return Mathf.Min(fireZoneOffset, maxSafeOffset);
         }
 
         private void OnDestroy()
@@ -86,7 +105,35 @@ namespace Game.Shooter
 
         private void Update()
         {
-            if (_flyingBubble != null) AdvanceTowardNextPoint();
+            if (_settleCell != null) AdvanceSettle();
+            else if (_flyingBubble != null) AdvanceTowardNextPoint();
+        }
+
+        private void AdvanceSettle()
+        {
+            _settleElapsed += Time.deltaTime;
+            var t = Mathf.Clamp01(_settleElapsed / SettleDurationSeconds);
+            var style = GameSettings.LandingAnimationStyle;
+            _flyingBubble.transform.position = Vector2.LerpUnclamped(_settleFrom, _settleTo, BubbleSettleMotion.Ease(style, t));
+            var scale = BubbleSettleMotion.SquashScale(style, t);
+            _flyingBubble.transform.localScale = new Vector3(scale.x, scale.y, 1f);
+            if (t >= 1f) Land(_settleCell);
+        }
+
+        private void Land((int Row, int Col)? landingCell)
+        {
+            Destroy(_flyingBubble);
+            _flyingBubble = null;
+            _settleCell = null;
+            if (landingCell != null) gameBoard.PlaceBubble(landingCell.Value.Row, landingCell.Value.Col, _color);
+            PrepareNextBubble();
+        }
+
+        private void PrepareNextBubble()
+        {
+            _nextColor = BubbleColorPalette.Random();
+            _nextBubbleIndicator.GetComponent<Image>().color = BubbleColorPalette.ToColor(_nextColor);
+            _nextBubbleIndicator.SetActive(true);
         }
 
         private void HandleFireRequested(Vector2 origin, float angleDegrees)
@@ -122,23 +169,17 @@ namespace Game.Shooter
         private void AdvanceToNextSegmentOrLand()
         {
             _segmentIndex++;
-            if (_segmentIndex >= _path.Count) Land();
+            if (_segmentIndex >= _path.Count) BeginSettle();
         }
 
-        private void Land()
+        private void BeginSettle()
         {
-            Destroy(_flyingBubble);
-            _flyingBubble = null;
             var landingCell = BubbleLandingResolver.ResolveLandingCell(BoardSpace(), _path[^1], _struckCell, gameBoard.CellWidth);
-            if (landingCell != null) gameBoard.PlaceBubble(landingCell.Value.Row, landingCell.Value.Col, _color);
-            PrepareNextBubble();
-        }
-
-        private void PrepareNextBubble()
-        {
-            _nextColor = BubbleColorPalette.Random();
-            _nextBubbleIndicator.GetComponent<Image>().color = BubbleColorPalette.ToColor(_nextColor);
-            _nextBubbleIndicator.SetActive(true);
+            if (landingCell == null) { Land(null); return; }
+            _settleFrom = _flyingBubble.transform.position;
+            _settleTo = gameBoard.Grid.GetWorldPosition(landingCell.Value.Row, landingCell.Value.Col) + (Vector2)gameBoard.transform.position;
+            _settleCell = landingCell;
+            _settleElapsed = 0f;
         }
 
         private (GridModel Grid, Vector2 Origin) BoardSpace()

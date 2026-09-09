@@ -156,11 +156,13 @@ whose speed visibly changes does not.
   subscribes to `ShooterController.OnFireRequested`. On fire it builds the
   truncated path, spawns a temporary flying-bubble `GameObject` (reusing
   `CircleSpriteFactory`/`BubbleColorPalette`), and moves it along the path
-  each `Update`. On reaching the end it destroys the flying bubble and calls
-  `BubbleLandingResolver` + `GameBoard.PlaceBubble` — the permanent rendered
-  sprite then comes from `GridDebugRenderer` reacting to `OnBubblePlaced`,
-  the same rendering path every other bubble on the board uses (including
-  the initial fill).
+  each `Update`. On reaching the end it resolves the landing cell via
+  `BubbleLandingResolver`, plays a short settle animation from the contact
+  point to that cell (see "Landing settle animation" below), then destroys
+  the flying bubble and calls `GameBoard.PlaceBubble` — the permanent
+  rendered sprite then comes from `GridDebugRenderer` reacting to
+  `OnBubblePlaced`, the same rendering path every other bubble on the board
+  uses (including the initial fill).
 - **Next-bubble indicator** (added while testing `matching-and-popping.md` —
   without it there was no way to plan a shot toward a match): the fired
   bubble's color is no longer randomized at the moment of firing. Instead
@@ -172,11 +174,112 @@ whose speed visibly changes does not.
   sorting order, which hid an earlier world-space attempt). On fire, that
   pre-rolled color becomes `_color` and the indicator hides; on landing, a
   new color is rolled and the indicator reappears with it.
+  **Offset made clearance-aware after the rotate zones grew** (see
+  `shooter-and-trajectory.md`'s tuning-knob note): the fire-zone-based
+  offset above is now only the *default* — `FiredBubbleController.LeftOffset()`
+  (and `ShotTimerDisplay.RightOffset()` for the mirrored countdown label
+  below) clamps it down to whatever clears the adjacent rotate zone's actual
+  size, because the Canvas uses Constant Pixel Size, so a fixed pixel margin
+  tuned for one screen width isn't safe on a narrower one once either zone's
+  size changes. Both read the rotate zone's own `RectTransform` (a new
+  serialized reference on each) rather than a hardcoded constant.
+
+### Performance found and fixed: redundant per-frame grid scans made aiming feel laggy
+
+Found during real-device playtesting (input felt laggy while holding a
+rotate zone, separate from the rotation math itself, which is cheap).
+Root cause: `ShooterController.DrawPreview` calls both
+`OccupancyCollision.Truncate` and `BubbleLandingResolver.ResolveLandingCell`
+every frame while aiming, and each **independently** re-scanned the entire
+grid via `GridModel.OccupiedCells()` (a full rows×cols nested loop) even
+though occupancy only changes when a bubble is placed/cleared or a row is
+pushed — not every frame. `BubbleLandingResolver` then filtered/sorted that
+result with LINQ (`.Where`, `.OrderBy().ToList()`) every frame too, allocating
+just to find one nearest cell. Fixed at the true source of truth:
+`GridModel` now caches its occupied-cell list, invalidated only at its three
+actual mutation points (`PlaceBubble`, `ClearCell`, `PushRowsDown`) — this
+also covers bubble placement from `FiredBubbleController.Land`, which isn't
+covered by the `OnRowPushedDown`/`OnLevelLoaded` events `ShooterController`
+and `FiredBubbleController` already subscribe to for rebuilding their
+`TrajectoryPredictor`, so the cache couldn't be keyed off those events
+instead. `BubbleLandingResolver`'s LINQ chains were also rewritten as manual
+single-pass loops, mirroring the "track the best candidate" pattern
+`OccupancyCollision.FirstContactOnSegment` already used in this codebase.
+
+### Landing settle animation
+
+The resolved landing cell's center is essentially never the same point as
+the flying bubble's raw flight-path contact point — most visibly when a
+straight-column shot into an offset row shifts one hex-cell to a side (by
+design, per `hex-grid.md`), but present to a smaller degree on every
+landing. Previously `FiredBubbleController.Land` destroyed the flying
+bubble and called `GameBoard.PlaceBubble` in the same instant, so this gap
+read as a micro-teleport. Fixed by inserting a settle step between the two:
+`AdvanceToNextSegmentOrLand` now calls `BeginSettle` instead of `Land`
+directly, which resolves the landing cell immediately (as before) but only
+records the from/to positions; `Update` then drives a new `AdvanceSettle`
+each frame, moving the flying bubble via `Vector2.LerpUnclamped` through an
+`EaseOutBack` curve (the standard cubic ease-out-back — overshoots 1 before
+settling back to it) over `SettleDurationSeconds`, only calling `Land` once
+that completes. **Decision: always plays**, even when the landing cell
+equals the contact point almost exactly — no special-casing for "was there
+a shift," so every landing gets the same small settle beat rather than an
+inconsistent one-off fix for just the visible-shift case. `Land` no longer
+resolves the cell itself; it takes the already-resolved cell and only
+destroys/places/rolls the next bubble, unchanged otherwise.
+
+**Made swappable, added later the same session.** The user wanted to
+compare the overshoot-bounce against a second "candy-crush" style without
+losing the first, so the easing/scale math moved out of
+`FiredBubbleController` into a new static `BubbleSettleMotion`
+(`Assets/Scripts/Shooter/BubbleSettleMotion.cs`) with two entry points —
+`Ease(style, t)` (position curve: `EaseOutBack` for `OvershootBounce`, a
+plain `EaseOutCubic` for `SquashPop`) and `SquashScale(style, t)` (a
+sine-based squash that widens x/flattens y, peaking at `t=0.5` and
+returning to `(1,1)` at `t=1`, composing with the position tween over the
+same duration with no separate phase-tracking; a no-op `Vector2.one` for
+`OvershootBounce`). `AdvanceSettle` now also sets `_flyingBubble.transform
+.localScale` each frame (built as an explicit `Vector3` with `z = 1f` — the
+implicit `Vector2`→`Vector3` conversion would silently zero `z`). The style
+itself is a new `LandingAnimationStyle` enum
+(`Assets/Scripts/Settings/LandingAnimationStyle.cs`) read fresh from a new
+`GameSettings` static class (`Assets/Scripts/Settings/GameSettings.cs`) —
+this project's first persisted preference, backed by `PlayerPrefs` with an
+explicit `Save()` call in the setter (matters more on mobile, where the OS
+can kill a suspended app without a clean-quit callback). Read fresh every
+settle frame rather than snapshotted once in `BeginSettle`, since the
+setting can't change mid-flight anyway (it's only changeable from a
+different scene). Switchable via a new **Settings screen**
+(`Assets/Scenes/SettingsMenu.unity` +
+`Assets/Scripts/Gameplay/SettingsMenuController.cs`, reached from a new
+"Settings" button on `MainMenuController`) — two labeled buttons ("Bounce"/
+"Squash"), the active one highlighted, same runtime-build-under-Canvas
+recipe as `MainMenuController`/`LevelResultScreen`.
+
+**Bug found and fixed: Settings screen showed a blank, full-screen colored
+panel.** `SettingsMenu.unity`'s Canvas was built by adding `Canvas`/
+`CanvasScaler`/`GraphicRaycaster` components directly (the `GameObject >
+UI > Canvas` menu command failed silently and was worked around this way)
+— but a bare `AddComponent<Canvas>()` defaults `renderMode` to **World
+Space** (`2`), not the **Screen Space - Overlay** (`0`) every other canvas
+in this project uses (that mode is normally set by the Editor's UI-creation
+wizard, which was bypassed here). In World Space, the Canvas became a
+literal 3D plane in front of the camera, and `SpawnButton`'s
+`RectTransform.sizeDelta` (280×90, meant as *pixels*) was instead
+interpreted as *world units* — large enough that the default-highlighted
+"Bounce" button alone filled/exceeded the entire camera view, reading as a
+single blank colored screen that changed color on click (since clicks
+anywhere were still landing on that oversized button). Fixed by setting
+`Canvas.renderMode = 0` on the existing Canvas; no button/script logic was
+ever wrong. Confirmed visually via `manage_camera` screenshots before and
+after. Any future scene built the same way (raw `AddComponent<Canvas>`
+rather than the Editor menu) needs this same explicit `renderMode` set.
 
 ## Open questions / tuning knobs
 
-- `FiredBubbleController.bubbleSpeed` is a feel value to tune once
-  playable, not final.
+- `FiredBubbleController.bubbleSpeed`, `SettleDurationSeconds` (default
+  `0.18f`), and `BubbleSettleMotion.SquashAmplitude` (default `0.25f`) are
+  feel values to tune once playable, not final.
 - `BubbleLandingResolver` returning `null` (no empty cell found near a
   nearly-full board) is currently a silent no-op — the fired bubble is
   destroyed without being placed. Revisit once Milestone 8 (win/loss /

@@ -195,7 +195,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Game::Game.Grid.CeilingRenderer
   gameBoard: {fileID: 218697389}
   color: {r: 0.2, g: 0.19, b: 0.22, a: 1}
-  heightInCells: 0.6
 --- !u!4 &79471720
 Transform:
   m_ObjectHideFlags: 0
@@ -243,6 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Game::Game.Grid.GameBoard
   cols: 8
   cellWidth: 1
+  ceilingHeight: 1
   levelNumber: 1
   difficultyCurve: {fileID: 11400000, guid: 5fac640bd8eade041b6712160578970b, type: 2}
 --- !u!4 &218697390
@@ -454,6 +454,7 @@ MonoBehaviour:
   gameBoard: {fileID: 218697389}
   shooterController: {fileID: 1078805873}
   fireZoneRect: {fileID: 1587367401}
+  rotateLeftZoneRect: {fileID: 1088561272}
   bubbleSpeed: 8
 --- !u!114 &1078805877
 MonoBehaviour:
@@ -469,6 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Game::Game.Gameplay.ShotTimerDisplay
   gameStateManager: {fileID: 2047843251}
   fireZoneRect: {fileID: 1587367401}
+  rotateRightZoneRect: {fileID: 1665991386}
   warningThresholdSeconds: 4
 --- !u!1 &1088561271
 GameObject:
@@ -506,7 +508,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 20, y: 20}
-  m_SizeDelta: {x: 150, y: 150}
+  m_SizeDelta: {x: 220, y: 220}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1088561273
 MonoBehaviour:
@@ -985,7 +987,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -20, y: 20}
-  m_SizeDelta: {x: 150, y: 150}
+  m_SizeDelta: {x: 220, y: 220}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1665991387
 MonoBehaviour:
@@ -1051,6 +1053,7 @@ GameObject:
   - component: {fileID: 2047843255}
   - component: {fileID: 2047843254}
   - component: {fileID: 2047843253}
+  - component: {fileID: 2047843257}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1075,7 +1078,7 @@ MonoBehaviour:
   scoreTracker: {fileID: 2047843256}
   shotsFiredCounter: {fileID: 2047843255}
   cameraShake: {fileID: 1133251884}
-  shotTimeSeconds: 8
+  shotTimeSeconds: 12
 --- !u!4 &2047843252
 Transform:
   m_ObjectHideFlags: 0
@@ -1121,6 +1124,8 @@ MonoBehaviour:
   shotsFiredCounter: {fileID: 2047843255}
   gameBoard: {fileID: 218697389}
   anchorRect: {fileID: 1587367401}
+  rotateLeftZoneRect: {fileID: 1088561272}
+  rotateRightZoneRect: {fileID: 1665991386}
 --- !u!114 &2047843255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1147,6 +1152,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Game::Game.Gameplay.ScoreTracker
   gameBoard: {fileID: 218697389}
+--- !u!114 &2047843257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047843250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57c7c5dcdc613a8478a1081e9fc6509d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Game.Bootstrap.FrameRateInitializer
+  targetFrameRate: 60
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

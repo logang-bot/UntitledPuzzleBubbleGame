@@ -85,6 +85,16 @@ be playable/testable on its own before moving to the next:
      `firing-and-snapping.md` for the full root causes and the later
      redesign that replaced `PreviewPointsCalculator` with an occlusion-based
      line plus a separate `LandingIndicator`.
+   - **Landing settle animation added, well after this milestone first
+     shipped.** The fired bubble used to teleport instantly from its
+     flight-path contact point to the resolved landing cell (most visible
+     on a straight-column shot into an offset row, which shifts one
+     hex-cell to a side by design). `FiredBubbleController` now plays a
+     short "slide + small overshoot bounce" (`EaseOutBack` easing) settle
+     motion between the two, always — no special-casing for whether there
+     was an actual shift. The shot timer was raised from 8s to 12s in the
+     same pass to fit the more playful pacing. See
+     `firing-and-snapping.md` and `shot-timer-and-ceiling-descent.md`.
 4. **Match detection** (3+ connected same-color bubbles via flood fill) +
    popping. ✅ **Done**, together with Milestone 5 (built in the same pass,
    since the design doc treats them as one flood-fill-based component).
@@ -143,7 +153,8 @@ be playable/testable on its own before moving to the next:
    timer only in response to `OnFireRequested`, so manual and auto fire
    share one reset path instead of two that could drift apart — this
    replaces the originally-sketched `OnShotTimerExpired()` event, which
-   turned out unnecessary. Duration is 8s. `ShotTimerDisplay` shows a
+   turned out unnecessary. Duration is 12s (raised from 8s alongside the
+   landing settle animation, see the note below). `ShotTimerDisplay` shows a
    numeric countdown ("4"→"1"), hidden until `ShotTimeRemaining <= 4f`,
    built at runtime and anchored off the fire zone the same way
    `FiredBubbleController`'s next-bubble indicator is.
@@ -255,6 +266,46 @@ be playable/testable on its own before moving to the next:
     → [`hud-and-level-flow.md`](features/core-gameplay/hud-and-level-flow.md)
 11. **First playable build on a physical device.** ✅ **Done.** Tested on a
     real device.
+    - **Playtesting pass found and fixed, after this milestone first
+      shipped.** Real-device testing found input felt laggy while aiming,
+      and the rotate zones were hard to thumb-hit. Root causes and fixes:
+      (1) `OccupancyCollision`/`BubbleLandingResolver` each independently
+      re-scanned the entire grid via `GridModel.OccupiedCells()` every
+      frame while aiming, plus LINQ allocations in the landing search —
+      fixed by caching `OccupiedCells()` in `GridModel` itself (invalidated
+      only at its actual mutation points) and rewriting the LINQ chains as
+      manual loops; see `firing-and-snapping.md`. (2) No
+      `Application.targetFrameRate` was set and `QualitySettings.vSyncCount`
+      was inconsistent across quality tiers, causing uneven frame pacing
+      independent of the aim-preview cost — fixed by disabling VSync
+      project-wide and adding `FrameRateInitializer`; see
+      `architecture/overview.md`'s "Frame pacing" section. (3) The
+      rotate-left/rotate-right touch zones grew from 150×150 to 220×220,
+      with the adjacent next-bubble/countdown labels' offsets made
+      clearance-aware so they can't end up overlapping the (now bigger)
+      zones on a narrow screen; see `shooter-and-trajectory.md` and
+      `firing-and-snapping.md`. (4) The score/level HUD labels (bottom bar
+      from Milestone 10), positioned near the screen edges directly above
+      the rotate zones, were still clearing only the fire zone's (shorter)
+      height, so they ended up sitting on top of the enlarged rotate zones
+      and eating some of their touches too — fixed the same way, by having
+      `HudDisplay` clear the tallest of all three bottom zones; see
+      `hud-and-level-flow.md`.
+    - **Settings screen added, to compare the landing settle animation
+      against a second style.** The overshoot-bounce settle animation
+      became swappable against a new "squash/pop" style (plain ease-out
+      slide + sine-based squash-then-rebound scale on arrival) via a new
+      `LandingAnimationStyle` enum read from a new `GameSettings` static
+      class — this project's first persisted preference, backed by
+      `PlayerPrefs`. A new `SettingsMenu.unity` scene (reached from a new
+      "Settings" button on the main menu) lets the player pick between the
+      two, live — this project's first screen outside Main Menu/gameplay/
+      result. A bug where the new scene's Canvas ended up in World Space
+      instead of Screen Space - Overlay (built by adding components
+      directly rather than via the Editor's UI menu) made it render as a
+      single oversized, full-screen button was found and fixed. See
+      `firing-and-snapping.md`'s "Landing settle animation" section for
+      the full split (`BubbleSettleMotion`), mechanics, and bug account.
 
 ## Phase 2 — Superpowers system 🚧 (placeholder)
 

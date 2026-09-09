@@ -26,6 +26,7 @@ namespace Game.Grid
         private readonly bool[,] _occupied;
         private readonly BubbleColor[,] _colors;
         private int _rowsPushed;
+        private List<(int Row, int Col)> _occupiedCellsCache;
 
         public int Rows => _rows;
         public int Cols => _cols;
@@ -59,19 +60,33 @@ namespace Game.Grid
         {
             _occupied[row, col] = true;
             _colors[row, col] = color;
+            InvalidateOccupiedCellsCache();
         }
 
         public void ClearCell(int row, int col)
         {
             _occupied[row, col] = false;
+            InvalidateOccupiedCellsCache();
         }
 
         public IEnumerable<(int Row, int Col)> OccupiedCells()
         {
+            return _occupiedCellsCache ??= ScanOccupiedCells();
+        }
+
+        private List<(int Row, int Col)> ScanOccupiedCells()
+        {
+            var cells = new List<(int Row, int Col)>();
             for (var row = 0; row < _rows; row++)
                 for (var col = 0; col < _cols; col++)
                     if (_occupied[row, col])
-                        yield return (row, col);
+                        cells.Add((row, col));
+            return cells;
+        }
+
+        private void InvalidateOccupiedCellsCache()
+        {
+            _occupiedCellsCache = null;
         }
 
         /// <summary>
@@ -133,6 +148,7 @@ namespace Game.Grid
                 CopyRow(sourceRow: row - 1, destRow: row);
             ClearRow(0);
             _rowsPushed++;
+            InvalidateOccupiedCellsCache();
         }
 
         private bool RowHasAnyOccupied(int row)

@@ -52,6 +52,15 @@
   a row anchored just above an existing bottom RectTransform (wired to the
   fire zone), following `ShotTimerDisplay`'s runtime-build/anchor recipe —
   legacy `UnityEngine.UI.Text`, no TMP, no prefab.
+  **Bug found and fixed:** the score/level labels sit near the screen edges
+  (`anchorX` 0.15/0.85), directly above the rotate zones, not the (narrower)
+  fire zone the bar's height was computed from — clearing only the fire
+  zone's top edge left them sitting on top of the taller rotate zones once
+  those grew (see `shooter-and-trajectory.md`'s tuning-knob note), silently
+  eating some of the zones' touches. Fixed by `HudDisplay.BarHeight()`
+  taking the max top edge across the fire zone and both rotate zones
+  (two new serialized `RectTransform` references) instead of only the fire
+  zone's.
 - `LevelResultScreen` is one component for both outcomes (win/lose panels
   are structurally identical — dim full-screen panel + message + one
   button), subscribing to `GameStateManager.OnLevelWon`/`OnLevelLost` and

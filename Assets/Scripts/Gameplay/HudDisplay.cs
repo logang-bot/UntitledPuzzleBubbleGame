@@ -17,6 +17,8 @@ namespace Game.Gameplay
         [SerializeField] private ShotsFiredCounter shotsFiredCounter;
         [SerializeField] private GameBoard gameBoard;
         [SerializeField] private RectTransform anchorRect;
+        [SerializeField] private RectTransform rotateLeftZoneRect;
+        [SerializeField] private RectTransform rotateRightZoneRect;
 
         private const float StatWidth = 160f;
         private const float StatHeight = 40f;
@@ -85,7 +87,19 @@ namespace Game.Gameplay
             rect.anchorMax = new Vector2(anchorX, 0f);
             rect.pivot = new Vector2(0.5f, 0f);
             rect.sizeDelta = new Vector2(StatWidth, StatHeight);
-            rect.anchoredPosition = new Vector2(0f, anchorRect.sizeDelta.y + StatMargin);
+            rect.anchoredPosition = new Vector2(0f, BarHeight());
+        }
+
+        // StatScore/StatLevel sit near the screen edges (anchorX 0.15/0.85), where
+        // the wider rotate zones reach higher than the fire zone this bar was
+        // originally anchored above - clearing only the fire zone's height left
+        // them sitting on top of the rotate zones once those grew, eating touches.
+        private float BarHeight()
+        {
+            var fireZoneTop = anchorRect.anchoredPosition.y + anchorRect.sizeDelta.y;
+            var leftZoneTop = rotateLeftZoneRect.anchoredPosition.y + rotateLeftZoneRect.sizeDelta.y;
+            var rightZoneTop = rotateRightZoneRect.anchoredPosition.y + rotateRightZoneRect.sizeDelta.y;
+            return Mathf.Max(fireZoneTop, Mathf.Max(leftZoneTop, rightZoneTop)) + StatMargin;
         }
     }
 }
