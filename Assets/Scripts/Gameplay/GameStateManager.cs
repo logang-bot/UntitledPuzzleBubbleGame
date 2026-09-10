@@ -38,6 +38,7 @@ namespace Game.Gameplay
         private CeilingState _ceilingState = CeilingState.Countdown;
         private bool _landingOccurredDuringWarning;
         private bool _isGameOver;
+        private float _freezeTimeRemaining;
 
         private void Awake()
         {
@@ -66,10 +67,25 @@ namespace Game.Gameplay
         private void Update()
         {
             if (_isGameOver) return;
+            if (TickFreeze()) return;
 
             if (_shotTimer.Tick(Time.deltaTime)) shooterController.Fire();
 
             TickCeiling();
+        }
+
+        private bool TickFreeze()
+        {
+            if (_freezeTimeRemaining <= 0f) return false;
+            _freezeTimeRemaining -= Time.deltaTime;
+            if (_freezeTimeRemaining <= 0f) Unfreeze();
+            return true;
+        }
+
+        private void Unfreeze()
+        {
+            _shotTimer.Resume();
+            _ceilingTimer.Resume();
         }
 
         private void TickCeiling()
@@ -152,6 +168,13 @@ namespace Game.Gameplay
         public void AdvanceToNextLevel()
         {
             ResumeWithLevel(gameBoard.LevelNumber + 1);
+        }
+
+        public void Freeze(float duration)
+        {
+            _shotTimer.Pause();
+            _ceilingTimer.Pause();
+            _freezeTimeRemaining = duration;
         }
 
         private void ResumeWithLevel(int levelNumber)

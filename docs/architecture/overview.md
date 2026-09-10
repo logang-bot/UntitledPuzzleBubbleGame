@@ -38,6 +38,34 @@ Rendering (turning `GridModel` cells into actual bubble sprites/prefabs) is a
 separate, thin layer that listens to grid-change events rather than being
 part of the model — keeps the data model testable without needing a scene.
 
+## Superpowers components (Phase 2) ✅ implemented
+
+Confirms the "hook in without editing core systems" claim above: this
+entire phase was added with zero changes to `GameBoard`'s public API,
+plus small, additive extensions to `ShotTimer`, `GameStateManager`, and
+`FiredBubbleController`. See
+`features/superpowers/specs/2026-09-10-superpowers-design.md` for the
+full design and implementation account.
+
+| Component | Responsibility |
+|---|---|
+| `SuperpowerId` / `SuperpowerDefinition` | Plain enum (`Freeze, Bomb, RowClear, Rainbow`) and a small `[Serializable]` data class (`Id`, `UnlockLevel`, `ChargesPerLevel`). |
+| `SuperpowerCatalog` | `ScriptableObject` holding the list of `SuperpowerDefinition`s — the per-ability equivalent of `DifficultyCurveConfig`. Default asset: `Assets/ScriptableObjects/DefaultSuperpowerCatalog.asset`. |
+| `SuperpowerProgress` | Static, `PlayerPrefs`-backed `HighestLevelReached`, following the `GameSettings` precedent — tracks the player's furthest level reached so an unlocked ability stays unlocked across level retries. |
+| `SuperpowerChargeTracker` | Pure C# class (no Unity dependency) owning per-level remaining charges for unlocked abilities — mirrors `LevelGenerator` taking a plain `DifficultyConfig` rather than the ScriptableObject wrapper directly. |
+| `HexRadius` | Pure BFS utility: all cells within N hex-steps of a center cell, used by `SuperpowerEffectResolver.ResolveBomb`. |
+| `SuperpowerEffectResolver` | Pure query class (no mutation, same shape as `MatchResolver`): given a landing cell, resolves the affected cell set per ability (Bomb radius, Row Clear, Rainbow same-color neighbor group via `FloodFill`). |
+| `SuperpowerController` | Owns charge state for unlocked abilities, resets on `GameBoard.OnLevelLoaded`, updates `SuperpowerProgress` on `GameStateManager.OnLevelWon`. `TryActivate(id)` either calls `GameStateManager.Freeze(duration)` (Freeze) or `FiredBubbleController.ArmSuperpower(id)` (the other three), guarded so a second aimed ability can't be armed while one is already armed or in flight. Raises `OnAbilitiesChanged` whenever unlocked/charge state changes. |
+| `SuperpowerEffectController` | Subscribes to `FiredBubbleController.OnSuperpowerLanded`, calls `SuperpowerEffectResolver`, groups the resolved cells by color, and calls `GameBoard.PopCells` once per color group — so `GameStateManager`'s win-check, `ScoreTracker`, and rendering all react through the exact same pipeline a normal match uses. |
+| `SuperpowerHud` | Builds one button per unlocked ability at runtime (same code-built pattern as `HudDisplay`), showing charge count and disabling at 0 charges; rebuilds on `SuperpowerController.OnAbilitiesChanged` (not just once in `Start()`, since Unity doesn't guarantee cross-component `Start()` ordering). |
+
+Small, additive extensions to existing Phase 1 files: `ShotTimer` gained
+`Pause()`/`Resume()`/`IsPaused`; `GameStateManager` gained
+`Freeze(float duration)` (pauses both its shot and ceiling timers);
+`FiredBubbleController` gained an armed-ability state
+(`ArmSuperpower(SuperpowerId)`, `HasArmedOrInFlightSuperpower`) and the
+`OnSuperpowerLanded` event.
+
 ## Events (initial set — expand as needed)
 
 - `OnBubblePlaced(cell)` — ✅ implemented, on `GameBoard`.
@@ -53,21 +81,33 @@ part of the model — keeps the data model testable without needing a scene.
   `OnShotTimerExpired()` event as originally sketched.
 - `OnLevelWon()` / `OnLevelLost()` — ✅ implemented, on `GameStateManager`
   (Milestone 8).
+- `OnSuperpowerLanded(SuperpowerId, (int Row, int Col) cell)` — ✅
+  implemented, on `FiredBubbleController` (Phase 2). Raised in place of
+  normal color placement when an armed superpower shot lands;
+  `SuperpowerEffectController` is the only subscriber.
+- `OnAbilitiesChanged()` — ✅ implemented, on `SuperpowerController`
+  (Phase 2). Raised whenever unlocked/charge state changes (level load,
+  activation); `SuperpowerHud` subscribes to know when to rebuild its
+  buttons.
 
-These are the seams Phase 2/3 will subscribe to later (e.g. a superpower
-bubble reacting to `OnBubblesPopped`, or battle mode turning
-`OnBubblesPopped` on one board into garbage rows added to the other).
+These are the seams Phase 3 (battle mode) can subscribe to later (e.g.
+turning `OnBubblesPopped` on one board into garbage rows added to the
+other) — Phase 2 (superpowers) already demonstrates the pattern working
+as intended, hooking in via `OnBubblePlaced`/`OnFireRequested`/`PopCells`
+with zero changes to `GameBoard`'s public API.
 
 ## Folder conventions (`Assets/`)
 
 - `Scripts/` — all C# code, organized by the components above (e.g.
-  `Scripts/Grid/`, `Scripts/Shooter/`, `Scripts/Gameplay/`), under a single
-  `Game` assembly (`Scripts/Game.asmdef`).
+  `Scripts/Grid/`, `Scripts/Shooter/`, `Scripts/Gameplay/`,
+  `Scripts/Superpowers/`), under a single `Game` assembly
+  (`Scripts/Game.asmdef`).
 - `Tests/EditMode/` — Unity Test Framework tests for pure C# logic, under a
   `Game.EditModeTests` assembly that references `Game`. See Testing below.
 - `Prefabs/` — bubble prefab, UI prefabs, etc.
 - `Art/` — placeholder and (later) real sprites.
-- `ScriptableObjects/` — level generation difficulty configs, color palettes.
+- `ScriptableObjects/` — level generation difficulty configs, color
+  palettes, superpower catalogs.
 - `Scenes/` — gameplay scene(s).
 - `Screenshots/` — gitignored; Editor/MCP debug captures land here.
 

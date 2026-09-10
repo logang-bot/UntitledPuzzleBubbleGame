@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using Game.Grid;
 using Game.Settings;
+using Game.Superpowers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +23,10 @@ namespace Game.Shooter
         [SerializeField] private RectTransform rotateLeftZoneRect;
         [SerializeField] private float bubbleSpeed = 8f;
 
+        public event Action<SuperpowerId, (int Row, int Col)> OnSuperpowerLanded;
+
+        public bool HasArmedOrInFlightSuperpower => _armedAbility.HasValue || _firedAbility.HasValue;
+
         // The indicator is a UI element (not a world-space sprite) so it can be anchored
         // directly to the left of the fire-zone square, at the same height, on the same Canvas.
         private const float IndicatorSize = 60f;
@@ -34,6 +40,8 @@ namespace Game.Shooter
         private GameObject _flyingBubble;
         private BubbleColor _color;
         private BubbleColor _nextColor;
+        private SuperpowerId? _armedAbility;
+        private SuperpowerId? _firedAbility;
         private GameObject _nextBubbleIndicator;
         private Vector2 _settleFrom;
         private Vector2 _settleTo;
@@ -109,6 +117,8 @@ namespace Game.Shooter
             else if (_flyingBubble != null) AdvanceTowardNextPoint();
         }
 
+        public void ArmSuperpower(SuperpowerId ability) => _armedAbility = ability;
+
         private void AdvanceSettle()
         {
             _settleElapsed += Time.deltaTime;
@@ -122,11 +132,24 @@ namespace Game.Shooter
 
         private void Land((int Row, int Col)? landingCell)
         {
+            if (_firedAbility.HasValue && landingCell.HasValue)
+            {
+                ClearFlyingBubble();
+                OnSuperpowerLanded?.Invoke(_firedAbility.Value, landingCell.Value);
+                _firedAbility = null;
+                PrepareNextBubble();
+                return;
+            }
+            ClearFlyingBubble();
+            if (landingCell != null) gameBoard.PlaceBubble(landingCell.Value.Row, landingCell.Value.Col, _color);
+            PrepareNextBubble();
+        }
+
+        private void ClearFlyingBubble()
+        {
             Destroy(_flyingBubble);
             _flyingBubble = null;
             _settleCell = null;
-            if (landingCell != null) gameBoard.PlaceBubble(landingCell.Value.Row, landingCell.Value.Col, _color);
-            PrepareNextBubble();
         }
 
         private void PrepareNextBubble()
@@ -144,6 +167,8 @@ namespace Game.Shooter
             _struckCell = truncated.StruckCell;
             _segmentIndex = 1;
             _color = _nextColor;
+            _firedAbility = _armedAbility;
+            _armedAbility = null;
             _nextBubbleIndicator.SetActive(false);
             _flyingBubble = SpawnFlyingBubble(origin);
         }

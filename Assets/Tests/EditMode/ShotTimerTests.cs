@@ -47,5 +47,29 @@ namespace Game.Tests
 
             Assert.That(timer.TimeRemaining, Is.EqualTo(8f).Within(Tolerance));
         }
+
+        [Test]
+        public void Tick_WhilePaused_DoesNotDecrementTimeRemaining()
+        {
+            var timer = new ShotTimer(10f);
+            timer.Pause();
+
+            timer.Tick(5f);
+
+            Assert.AreEqual(10f, timer.TimeRemaining);
+        }
+
+        [Test]
+        public void Tick_AfterResume_DecrementsAgain()
+        {
+            var timer = new ShotTimer(10f);
+            timer.Pause();
+            timer.Tick(5f);
+            timer.Resume();
+
+            timer.Tick(3f);
+
+            Assert.AreEqual(7f, timer.TimeRemaining);
+        }
     }
 }

@@ -9,6 +9,7 @@ namespace Game.Gameplay
     {
         public float Duration { get; }
         public float TimeRemaining { get; private set; }
+        public bool IsPaused { get; private set; }
 
         public ShotTimer(float duration)
         {
@@ -18,6 +19,7 @@ namespace Game.Gameplay
 
         public bool Tick(float deltaTime)
         {
+            if (IsPaused) return false;
             TimeRemaining -= deltaTime;
             return TimeRemaining <= 0f;
         }
@@ -26,5 +28,8 @@ namespace Game.Gameplay
         {
             TimeRemaining = Duration;
         }
+
+        public void Pause() => IsPaused = true;
+        public void Resume() => IsPaused = false;
     }
 }

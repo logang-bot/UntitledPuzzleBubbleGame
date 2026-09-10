@@ -307,19 +307,65 @@ be playable/testable on its own before moving to the next:
       `firing-and-snapping.md`'s "Landing settle animation" section for
       the full split (`BubbleSettleMotion`), mechanics, and bug account.
 
-## Phase 2 — Superpowers system 🚧 (placeholder)
+## Phase 2 — Superpowers system ✅ (implemented)
 
-Not yet designed. The plan is to brainstorm this once Phase 1 is playable,
-so the ability system can be designed against real match/pop events instead
-of speculative ones.
+Designed against the real Phase 1 codebase on 2026-09-10, implemented the
+same day via an 11-task plan. Four player-activated abilities (Freeze,
+Bomb, Row Clear, Rainbow), unlocked permanently as the player's highest
+level reached crosses per-ability thresholds, with fixed charges per
+level, shown on a new `SuperpowerHud`. Aimed abilities reuse the existing
+rotate-and-fire mechanic; all board effects route through the existing
+`GameBoard.PopCells`/event pipeline, so `GameStateManager`, `ScoreTracker`,
+etc. need no special-casing — `GameBoard`'s public API was not touched.
+Battle Mode interaction is explicitly deferred to Phase 3.
 
-Known constraints from the original idea (to be scoped properly in that
-session): special bubbles carrying multiple abilities (freeze the screen,
-blow up sections of bubbles, etc.); still open — how they're introduced
-(spawn rate vs. player-chosen loadout vs. unlock progression), and how they
-interact with the shot timer/ceiling descent.
+Two real bugs were found and fixed during implementation, well after the
+individual tasks that introduced them first "shipped" within the same
+implementation pass: (1) the new `FiredBubbleController.Land()` branch for
+an armed superpower shot didn't clean up the flying-bubble sprite, unlike
+the pre-existing normal-color path — fixed by extracting a shared
+`ClearFlyingBubble()` helper called from both branches. (2) `SuperpowerHud`
+built its button list once in `Start()`, with no guarantee
+`SuperpowerController.Start()` (which populates the unlock data) ran
+first — reproduced as the HUD silently showing no buttons depending on
+Unity's arbitrary script execution order. Fixed by adding a
+`SuperpowerController.OnAbilitiesChanged` event the HUD subscribes to and
+rebuilds from, in addition to its original build-on-`Start()` attempt.
 
-See [`features/superpowers/overview.md`](features/superpowers/overview.md).
+A final whole-branch review (after all 11 tasks individually passed their
+own review) found the shipped code never implemented the spec's stated
+"another ability already armed" guard — a player could double-arm aimed
+abilities, silently wasting a charge. Fixed with
+`FiredBubbleController.HasArmedOrInFlightSuperpower`, checked in
+`SuperpowerController.TryActivate` before any charge is consumed. The same
+review pass also made the `SuperpowerId` branching in `TryActivate` and
+`SuperpowerEffectController.ResolveAffectedCells` exhaustive (throwing on
+an unhandled value instead of silently doing nothing), so a careless future
+5th ability fails loudly instead of compiling clean and doing nothing.
+
+See [`features/superpowers/specs/2026-09-10-superpowers-design.md`](features/superpowers/specs/2026-09-10-superpowers-design.md)
+for the full spec (now carrying an "Implementation notes" section with the
+full account of the above), the plan at
+[`features/superpowers/plans/2026-09-10-superpowers-implementation.md`](features/superpowers/plans/2026-09-10-superpowers-implementation.md),
+and [`features/superpowers/overview.md`](features/superpowers/overview.md)
+for the original open questions (now answered).
+
+### Known follow-ups (untuned/non-blocking)
+
+- `GameStateManager.Freeze(0f)` or a negative duration would pause both
+  timers permanently (`TickFreeze` never reaches the point where it calls
+  `Unfreeze()`) — dormant, since `SuperpowerController.freezeDurationSeconds`
+  defaults to 5 in the Inspector; worth a one-line guard whenever this file
+  is next touched.
+- Two small member-ordering nits, introduced by the final-review fix pass
+  itself and left as-is since there's no further fix round in that
+  process: `SuperpowerController.ApplyActivation` (extracted to fix a
+  different line-length breach) is itself still slightly over this
+  project's function-body line cap, and `FiredBubbleController.ArmSuperpower`
+  sits among private methods instead of ahead of them.
+- Unlock levels (3/6/9/12), charges-per-level (1 for all four), and Bomb's
+  radius are all untuned placeholders pending playtesting — see the spec's
+  own "Open questions / tuning knobs" section.
 
 ## Phase 3 — Local split-screen battle mode 🚧 (placeholder)
 
