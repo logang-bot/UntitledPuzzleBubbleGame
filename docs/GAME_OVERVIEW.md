@@ -37,10 +37,18 @@ mode (not yet built).
   shake warns you just before it happens.
 - **Winning and losing**: clear the whole board to win a level; if the
   descending ceiling reaches your shooter line, you lose.
-- **Levels**: procedurally generated per level number (same level number
-  always produces the same layout), with difficulty — color count, bubble
-  density, starting row count, ceiling-descent speed — ramping up as you
-  progress. Early levels get extra "headroom" rows of breathing room.
+- **Levels**: the first five levels have hand-curated bubble patterns —
+  level 1 fills with separated single-color hexagonal blobs, level 2 with
+  vertical color stripes, level 3 with horizontal stripes, and levels 4-5
+  mix those patterns in horizontal bands. Level 6 onward falls back to
+  procedural generation (same level number always produces the same
+  layout), with difficulty — color count, bubble density, starting row
+  count, ceiling-descent speed — ramping up via an Inspector-editable
+  curve as you progress. Early levels get extra "headroom" rows of
+  breathing room.
+- **Level transitions**: bubbles build in with a staggered top-to-bottom
+  pop-in animation when a new level loads, instead of appearing all at
+  once. Mid-level ceiling pushes still happen instantly, on purpose.
 - **HUD**: score, shots fired, and current level shown in a bottom bar.
   Score rewards bigger matches and cascade drops more. A win/loss screen
   lets you retry the same level or advance to the next one.
@@ -90,5 +98,6 @@ Rainbow) can be armed at a time.
   full history of bugs found/fixed and decisions made per milestone.
 - [`architecture/overview.md`](architecture/overview.md) — code structure,
   components, and conventions.
-- `features/core-gameplay/` and `features/superpowers/` — the detailed
-  design docs behind everything summarized above.
+- `features/core-gameplay/`, `features/superpowers/`, and
+  `features/level-content/` — the detailed design docs behind everything
+  summarized above.

@@ -7,6 +7,16 @@ algorithm produces a starting `GridModel` for a given level number, driven
 by difficulty knobs. Hand-authored/milestone levels are an explicitly
 possible future addition, not part of Phase 1 — don't build toward them yet.
 
+**Update (2026-09-11):** levels 1-5 now use curated *pattern* recipes
+(hex blobs / stripes / mixes) instead of this generator's pure-random
+fill — still procedural in the sense that the layout is generated from a
+recipe + seed, not hand-placed cell-by-cell, but deliberately structured
+rather than uniformly random. `LevelGenerator` itself is unmodified and
+still handles every level without a curated recipe (level 6+ today). See
+`features/level-content/specs/2026-09-11-curated-levels-and-transitions-design.md`
+for the full design, and `architecture/overview.md`'s "Level-content
+components" section for the new classes involved.
+
 ## Why
 
 Procedural generation gets a large number of playable levels quickly without
@@ -30,8 +40,11 @@ separate stored seed field).
 the `ScriptableObject` per-difficulty-tier config the sketch below
 anticipated, resolved via `ForLevel(int levelNumber) → DifficultyConfig`.
 The shipped asset is `Assets/ScriptableObjects/DefaultDifficultyCurve.asset`,
-assigned to `GameBoard`'s `difficultyCurve` field. Every ramp in it is a
-straightforward linear curve — a deliberate placeholder per the open
+assigned to `GameBoard`'s `difficultyCurve` field. **Update (2026-09-11):**
+each of the four knobs is now an Inspector-editable Unity `AnimationCurve`
+(replacing the original hand-rolled linear-ramp formulas and the separate
+level-1 override, now just each curve's first keyframe), with a defensive
+clamp on the resolved value — a deliberate placeholder shape per the open
 question below, not yet tuned by playtesting.
 
 `GameBoard.Awake` now calls `LevelGenerator.Generate` instead of the old
@@ -54,15 +67,20 @@ below it), `RescueRowZeroIfOrphaned` force-places one bubble there first, via
 the same anti-instant-match placement the rest of generation uses, so the
 cleanup pass has something to anchor to instead of wiping the whole level.
 
-### Level 1 override ✅ Done
+### Level 1 override ✅ Done (superseded 2026-09-11)
 
-Level 1 is otherwise just the difficulty curve's zero point — `(levelNumber
-- 1) == 0` drops every ramp term, so it used the same `start*` fields levels
-2+ ramp up from. `DifficultyCurveConfig` now short-circuits `ForLevel(1)` to
-its own `level1Density`/`level1HeadroomRows` fields (sparser than
-`startDensity`/`startHeadroomRows`), deliberately isolated from the ramp so
-easing level 1 for testing doesn't also soften every later level's starting
-point.
+Level 1 used to need a special-cased branch in `ForLevel`, since `(levelNumber
+- 1) == 0` would otherwise drop every ramp term and reuse the same `start*`
+fields levels 2+ ramp up from. `DifficultyCurveConfig` short-circuited
+`ForLevel(1)` to its own `level1Density`/`level1HeadroomRows` fields
+(sparser than `startDensity`/`startHeadroomRows`), deliberately isolated
+from the ramp so easing level 1 for testing didn't also soften every later
+level's starting point.
+
+Once the knobs became `AnimationCurve`s (see above), this special case
+stopped being necessary — level 1's values are just each curve's first
+keyframe, authored directly instead of computed. The `level1*` override
+fields and the branch were removed entirely.
 
 ### Implementation sketch (original, for reference)
 

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0634ff3c656716478c25d8b48117cb0, type: 3}
+  m_Name: DefaultPatternLevelCatalog
+  m_EditorClassIdentifier: Game::Game.Grid.PatternLevelCatalog
+  plans:
+  - LevelNumber: 1
+    Regions: 00000000
+  - LevelNumber: 2
+    Regions: 01000000
+  - LevelNumber: 3
+    Regions: 02000000
+  - LevelNumber: 4
+    Regions: 0000000001000000
+  - LevelNumber: 5
+    Regions: 000000000100000002000000
+  hexBlobRadius: 2
+  hexBlobGapCells: 1
+  stripeWidth: 3
+  regionGapRows: 1

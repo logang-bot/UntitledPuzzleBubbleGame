@@ -12,17 +12,117 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd4ab9c5a5c26514aa87987727c73a2e, type: 3}
   m_Name: DefaultDifficultyCurve
   m_EditorClassIdentifier: Game::Game.Grid.DifficultyCurveConfig
-  startColorCount: 3
-  maxColorCount: 6
-  levelsPerColorIncrease: 5
-  startDensity: 0.55
-  maxDensity: 0.85
-  densityIncreasePerLevel: 0.02
-  startHeadroomRows: 6
-  minHeadroomRows: 3
-  levelsPerHeadroomDecrease: 3
-  startCeilingIntervalSeconds: 20
-  minCeilingIntervalSeconds: 8
-  ceilingIntervalDecreasePerLevel: 0.75
-  level1Density: 0.35
-  level1HeadroomRows: 9
+  colorCountCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 3
+      inSlope: 0
+      outSlope: 0.10344828
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 30
+      value: 6
+      inSlope: 0.10344828
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  densityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 0.35
+      inSlope: 0.20000002
+      outSlope: 0.20000002
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 2
+      value: 0.55
+      inSlope: 0.13125001
+      outSlope: 0.13125001
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 6
+      value: 0.8
+      inSlope: 0.034027778
+      outSlope: 0.034027778
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 15
+      value: 0.85
+      inSlope: 0.005555557
+      outSlope: 0.005555557
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  headroomRowsCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 9
+      inSlope: 0
+      outSlope: -0.6666667
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 10
+      value: 3
+      inSlope: -0.6666667
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  ceilingIntervalCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 20
+      inSlope: 0
+      outSlope: -0.6315789
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 20
+      value: 8
+      inSlope: -0.6315789
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

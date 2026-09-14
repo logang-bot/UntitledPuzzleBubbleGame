@@ -33,7 +33,10 @@
   Raises the new `OnLevelLoaded(int levelNumber)` event.
   `GridDebugRenderer` reacts the same way it already did for
   `OnRowPushedDown` — destroy all sprites, respawn from `GameBoard.Grid`
-  (extracted into a shared `RebuildAll()` helper).
+  (extracted into a shared `RebuildAll()` helper). **Update (2026-09-11):**
+  the two events now rebuild differently — `OnRowPushedDown` stays instant,
+  `OnLevelLoaded` plays a staggered build-in animation — see
+  `features/level-content/specs/2026-09-11-curated-levels-and-transitions-design.md`.
 - `GameStateManager` gained `RetryLevel()`/`AdvanceToNextLevel()`, both
   routed through a private `ResumeWithLevel(int)` that calls
   `gameBoard.LoadLevel`, resets both timers (the ceiling timer is

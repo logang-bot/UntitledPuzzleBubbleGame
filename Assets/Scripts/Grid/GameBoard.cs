@@ -17,6 +17,7 @@ namespace Game.Grid
         [SerializeField] private float ceilingHeight = 1f;
         [SerializeField] private int levelNumber = 1;
         [SerializeField] private DifficultyCurveConfig difficultyCurve;
+        [SerializeField] private PatternLevelCatalog patternCatalog;
 
         public event Action<int, int> OnBubblePlaced;
         public event Action<IReadOnlyCollection<(int Row, int Col)>, BubbleColor> OnBubblesPopped;
@@ -49,9 +50,18 @@ namespace Game.Grid
         {
             levelNumber = newLevelNumber;
             CurrentDifficulty = difficultyCurve.ForLevel(levelNumber);
-            Grid = LevelGenerator.Generate(new GridModel(_rows, cols, cellWidth), levelNumber, CurrentDifficulty);
+            Grid = GenerateGrid();
             RecomputeBounds();
             OnLevelLoaded?.Invoke(levelNumber);
+        }
+
+        private GridModel GenerateGrid()
+        {
+            var grid = new GridModel(_rows, cols, cellWidth);
+            var pattern = patternCatalog != null && patternCatalog.TryGetPlan(levelNumber, out var plan)
+                ? (plan, patternCatalog.Settings)
+                : ((LevelPatternPlan, PatternGenerationSettings)?)null;
+            return LevelContentGenerator.Generate(grid, levelNumber, CurrentDifficulty, pattern);
         }
 
         // The wall's advance grows the reserved ceiling band by one row height

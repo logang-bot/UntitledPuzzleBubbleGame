@@ -66,6 +66,40 @@ Small, additive extensions to existing Phase 1 files: `ShotTimer` gained
 (`ArmSuperpower(SuperpowerId)`, `HasArmedOrInFlightSuperpower`) and the
 `OnSuperpowerLanded` event.
 
+## Level-content components (curated patterns + transitions) ✅ implemented
+
+Layered on top of the existing `LevelGenerator`, which stays completely
+unmodified and still handles level 6+ (any level without a curated
+recipe). See
+`features/level-content/specs/2026-09-11-curated-levels-and-transitions-design.md`
+for the full design and implementation account.
+
+| Component | Responsibility |
+|---|---|
+| `PatternType` | Enum (`HexBlob, VerticalStripe, HorizontalStripe`). |
+| `LevelPatternPlan` | Small `[Serializable]` data class: `LevelNumber`, `Regions` (ordered `PatternType[]`, one per horizontal band). |
+| `PatternGenerationSettings` | Plain data class for the shared tunables (`HexBlobRadius`, `HexBlobGapCells`, `StripeWidth`, `RegionGapRows`). |
+| `PatternPlacementContext` | Groups `GridModel`/`PatternGenerationSettings`/`ColorCount`/`System.Random` for the placers below — mirrors `DifficultyConfig` taking plain data rather than a `ScriptableObject`. |
+| `HexBlobPlacer` | Fills a row band with separated, single-color hexagonal blobs (reuses `HexRadius` from Superpowers). Clamps its blob radius to whatever the band can actually hold, so a short band still places something instead of silently nothing. |
+| `StripePlacer` | Fills a row band solid with repeating same-width color stripes, vertical or horizontal. |
+| `PatternLevelGenerator` | Orchestrates `HexBlobPlacer`/`StripePlacer` across a `LevelPatternPlan`'s row bands, then bridges (not deletes) anything `MatchResolver.FindFloatingCells` finds disconnected — gap-separated blobs/bands are disconnected by design here, unlike `LevelGenerator`'s rare accidental case. |
+| `PatternLevelCatalog` | `ScriptableObject` holding the ordered `LevelPatternPlan` list (levels 1-5) and the shared `PatternGenerationSettings` tunables — the per-pattern equivalent of `DifficultyCurveConfig`. Default asset: `Assets/ScriptableObjects/DefaultPatternLevelCatalog.asset`. |
+| `LevelContentGenerator` | Routes to `PatternLevelGenerator` when the catalog has a plan for the level, otherwise falls through to the unmodified `LevelGenerator` — the single seam `GameBoard.GenerateGrid()` calls into. |
+| `BubbleSpawnMotion` | Pure ease-out-cubic scale-in function for the level-load build-in animation. |
+| `BubbleSpawnAnimator` | Small self-contained `MonoBehaviour`, added per spawned bubble on level load — same `Update()`-driven elapsed-time pattern as `FallingBubble`/`FiredBubbleController`'s settle motion, no tweening library. |
+
+`DifficultyCurveConfig`'s four knobs (`ColorCount`, `Density`,
+`HeadroomRows`, `CeilingDropIntervalSeconds`) changed from independent
+linear-ramp formulas to Inspector-editable `AnimationCurve`s, each
+evaluated at the level number and clamped to a safe range — the old
+level-1 special case is now just each curve's first keyframe. See
+`features/core-gameplay/level-generation.md`.
+
+`GridDebugRenderer`'s single `RebuildAll()` split into an instant path
+(kept for `OnRowPushedDown`, which should still read as abrupt) and an
+animated path (for `OnLevelLoaded`) that attaches a `BubbleSpawnAnimator`
+to each spawned bubble, delayed by its row.
+
 ## Events (initial set — expand as needed)
 
 - `OnBubblePlaced(cell)` — ✅ implemented, on `GameBoard`.

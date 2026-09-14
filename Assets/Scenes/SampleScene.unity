@@ -245,6 +245,7 @@ MonoBehaviour:
   ceilingHeight: 1
   levelNumber: 1
   difficultyCurve: {fileID: 11400000, guid: 5fac640bd8eade041b6712160578970b, type: 2}
+  patternCatalog: {fileID: 11400000, guid: 834dc0d8eb64812428594d386d1f3e8d, type: 2}
 --- !u!4 &218697390
 Transform:
   m_ObjectHideFlags: 0

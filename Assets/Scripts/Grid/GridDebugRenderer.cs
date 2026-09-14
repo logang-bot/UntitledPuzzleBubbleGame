@@ -16,12 +16,13 @@ namespace Game.Grid
 
         private readonly Dictionary<(int Row, int Col), GameObject> _bubbles = new();
         private Sprite _sprite;
+        private const float PerRowSpawnDelaySeconds = 0.05f;
 
         private void Start()
         {
             _sprite = CircleSpriteFactory.CreateWhiteCircle();
             foreach (var cell in gameBoard.Grid.OccupiedCells())
-                SpawnBubble(cell);
+                SpawnAnimatedBubble(cell);
             gameBoard.OnBubblePlaced += OnBubblePlaced;
             gameBoard.OnBubblesPopped += OnBubblesPopped;
             gameBoard.OnClusterDropped += OnClusterDropped;
@@ -59,25 +60,43 @@ namespace Game.Grid
 
         private void OnRowPushedDown(bool wasLastRowOccupied)
         {
-            RebuildAll();
+            RebuildAllInstant();
         }
 
         private void OnLevelLoaded(int levelNumber)
         {
-            RebuildAll();
+            RebuildAllAnimated();
         }
 
-        private void RebuildAll()
+        private void RebuildAllInstant()
         {
-            foreach (var bubble in _bubbles.Values)
-                Destroy(bubble);
-            _bubbles.Clear();
-
+            ClearAllBubbles();
             foreach (var cell in gameBoard.Grid.OccupiedCells())
                 SpawnBubble(cell);
         }
 
-        private void SpawnBubble((int Row, int Col) cell)
+        private void RebuildAllAnimated()
+        {
+            ClearAllBubbles();
+            foreach (var cell in gameBoard.Grid.OccupiedCells())
+                SpawnAnimatedBubble(cell);
+        }
+
+        private void ClearAllBubbles()
+        {
+            foreach (var bubble in _bubbles.Values)
+                Destroy(bubble);
+            _bubbles.Clear();
+        }
+
+        private void SpawnAnimatedBubble((int Row, int Col) cell)
+        {
+            var bubble = SpawnBubble(cell);
+            var animator = bubble.AddComponent<BubbleSpawnAnimator>();
+            animator.Configure(cell.Row * PerRowSpawnDelaySeconds);
+        }
+
+        private GameObject SpawnBubble((int Row, int Col) cell)
         {
             var bubble = new GameObject($"Bubble_{cell.Row}_{cell.Col}");
             bubble.transform.SetParent(gameBoard.transform);
@@ -86,6 +105,7 @@ namespace Game.Grid
             spriteRenderer.sprite = _sprite;
             spriteRenderer.color = BubbleColorPalette.ToColor(gameBoard.Grid.GetColor(cell.Row, cell.Col));
             _bubbles[cell] = bubble;
+            return bubble;
         }
     }
 }

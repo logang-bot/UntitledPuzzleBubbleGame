@@ -21,6 +21,10 @@ split-screen 2-player battle mode.
 - `features/superpowers/` — fully implemented (Phase 2). See
   `features/superpowers/specs/` for the design spec and
   `features/superpowers/plans/` for the implementation plan.
+- `features/level-content/` — fully implemented. Curated bubble patterns
+  for levels 1-5 and the level-transition build-in animation. See
+  `features/level-content/specs/` for the design spec and
+  `features/level-content/plans/` for the implementation plan.
 - `features/battle-mode/` — **placeholder only**. Not yet designed.
 
 ## How these docs work
