@@ -429,18 +429,98 @@ for the implementation plan.
   here) can overlap a new level's build-in animation if a level
   transition happens while one is still falling.
 
-## Phase 3 — Local split-screen battle mode 🚧 (placeholder)
+## Phase 3 — Local split-screen battle mode ✅ (implemented)
 
-Not yet designed. Depends on Phase 1's grid/shooter/match systems being
-solid enough to run as two simultaneous instances.
+Designed against the real Phase 1/2 codebase on 2026-09-15, implemented
+the same day via an 11-task plan (subagent-driven development). This is
+explicitly the first and simplest of several battle-mode variants
+planned — later variants get their own design sessions.
 
-Known constraints from the original idea (to be confirmed/expanded in that
-session): portrait orientation, screen split top/bottom, two independent
-boards, goal is to clear the opponent's board — most likely via a
-garbage-bubble mechanic where clearing bubbles sends rows to the opponent's
-board, in the style of the arcade version's versus mode.
+Two full instances of the existing Phase 1 stack run side by side, split
+top/bottom, Player 2's half rotated 180° for face-to-face tabletop play —
+achieved by rotating only the camera transform and a UI parent
+`RectTransform`, with zero changes to any of Phase 1's board-fit or
+trajectory math (both already rotation-invariant, reading only camera
+position and orthographic size). The autonomous ceiling-descent timer is
+replaced entirely: a new `Game.Battle` layer (attack economy, per-side
+outcome tracking, match settlement) converts each player's matches/
+cascades into rows pushed onto the *opponent's* board via the existing
+`GameBoard.PushRowDown()`. Losing and winning-by-clearing both reuse
+Phase 1's existing signals unchanged; a simultaneous-end case (both
+boards finish the same frame) resolves as a draw. Superpowers are
+disabled for this first variant.
 
-See [`features/battle-mode/overview.md`](features/battle-mode/overview.md).
+Two deliberate simplifications from the spec's literal wording turned
+out sound once building against the real generators: no new
+`BattleBoardConfig` class was needed — `LevelContentGenerator`/
+`LevelGenerator`/`PatternLevelGenerator` are already fully deterministic
+from a shared level number alone, so picking one random level number per
+match and loading it on both boards gives identical, varied content for
+free. And the Player 2 180° rotation, flagged in the spec as needing a
+feasibility spike, turned out fully specifiable in the implementation
+plan without one — `Camera.rect`/`transform.rotation` and a rotated UI
+parent `RectTransform` are both well-understood, orthogonal Unity
+mechanisms.
+
+**Three real bugs were found and fixed during the plan's final
+verification task**, well after the individual tasks first "shipped":
+(1) `PendingRowsMeter`'s accumulated attack value wasn't reset on
+Rematch — fixed with `PendingRowsMeter.Reset()`/
+`BattleAttackController.ResetForRematch()`, wired into
+`BattleMatchController.Rematch()`. (2) Battle Mode's boards spawned
+completely empty in real play — the boards reused the solo difficulty
+curve, whose headroom-row tuning (9 rows at level 1) exceeds Battle
+Mode's much shorter ~7-row boards, and the generators' existing,
+deliberately-tested "headroom exceeds playfield → empty grid" behavior
+correctly (if unhelpfully) kicked in. Fixed with a new
+`BattleDifficultyCurve.asset` (same `DifficultyCurveConfig` type, a low
+flat headroom curve) wired into both battle boards instead of the solo
+default — no changes to the shared, tested generator code. (3)
+`BattleAttackController` could push multiple rows onto the opponent in
+one synchronous loop with nothing stopping it once the board was already
+fully pushed, driving `GridModel.RowsPushed` past `Rows` and crashing
+`BubbleLandingResolver`. Fixed by bounding the push loop
+(`opponentBoard.Grid.RowsPushed < opponentBoard.Grid.Rows`) rather than
+touching the shared `GridModel`/`BubbleLandingResolver` code.
+
+A final whole-branch review (after all 11 tasks individually passed
+their own review) found two more real bugs, both the same "leftover
+per-match state survives Rematch" class as bug (1) above:
+`BattleAttackController.enabled = false` at match end was a structural
+no-op (the class has no `Update`/`OnEnable`/`OnDisable`, so Unity's
+`enabled` flag never actually stopped its event-driven attack banking —
+fixed with an explicit `if (!enabled) return;` guard in its handlers),
+and `BattleShotClock`'s internal timer wasn't reset on Rematch either (a
+regression against solo mode's own `GameStateManager.ResumeWithLevel`
+precedent for the identical transition — fixed with
+`BattleShotClock.ResetForRematch()`).
+
+See
+[`features/battle-mode/specs/2026-09-15-simple-attack-battle-mode-design.md`](features/battle-mode/specs/2026-09-15-simple-attack-battle-mode-design.md)
+(now carrying an "Implementation notes" section) for the full spec, and
+[`features/battle-mode/plans/2026-09-15-simple-attack-battle-mode-implementation.md`](features/battle-mode/plans/2026-09-15-simple-attack-battle-mode-implementation.md)
+for the implementation plan.
+
+### Known follow-ups (untuned/non-blocking)
+
+- `BattleAttackConfig`'s formula constants and `BattleDifficultyCurve`'s
+  headroom value are first-guess placeholders pending real 1v1
+  playtesting — same caveat as every other tunable config in this
+  project.
+- A narrow, deliberately-parked residual: one single-frame, non-recurring,
+  non-corrupting console exception can still occur at the exact instant
+  a board's wall is fully pushed (`RowsPushed == Rows`), since
+  `BubbleLandingResolver`'s indexing is already out of bounds at that
+  exact value and the losing side's shooter isn't disabled until a frame
+  later (by design, for simultaneous-draw detection). Fixing it fully
+  would mean touching shared `GridModel`/`BubbleLandingResolver`, or
+  reworking that deferred-disable timing — worth a look in a future
+  pass, doesn't affect match outcomes.
+- No battle-mode shot-timer countdown UI exists — `BattleShotClock`
+  exposes no `TimeRemaining` for a display to bind to, and none was
+  promised by the spec for this first variant. `ShotTimerDisplay` (solo
+  mode's equivalent) was excluded from the battle scene since it
+  hard-depends on the excluded `GameStateManager`.
 
 ## Later / not yet scoped ⏳
 

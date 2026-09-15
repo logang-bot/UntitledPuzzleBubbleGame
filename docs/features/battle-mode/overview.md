@@ -1,7 +1,13 @@
 # Local Split-Screen Battle Mode — Placeholder
 
-**Status: not yet designed.** This file exists to reserve the folder
-structure. Do not implement against this document — it is not a spec.
+**Status: first variant implemented.** The design session this file
+called for has happened, and the resulting spec has been implemented —
+see
+[`specs/2026-09-15-simple-attack-battle-mode-design.md`](specs/2026-09-15-simple-attack-battle-mode-design.md)
+(now carrying an "Implementation notes" section) for the actual spec and
+what shipped. This is explicitly the first and simplest of several
+battle-mode variants planned; later variants get their own design
+sessions. This file is kept for its historical context below.
 
 ## Origin idea
 
@@ -28,21 +34,29 @@ input handling for two simultaneous local players on one device, win/loss
 across two boards). Bring this back to a dedicated brainstorming session
 once Phase 1 is playable.
 
-## Known open questions for that session
+## Known open questions for that session (now answered)
 
 - Win condition mechanics: most likely a garbage-bubble exchange (clearing
   N bubbles sends rows to the opponent's board, arcade-versus-mode style)
   rather than literally "destroy all bubbles" via direct attack — needs
-  confirming.
+  confirming. → **Confirmed**, via a dedicated attack economy that
+  replaces the autonomous ceiling timer — see the spec.
 - Input handling: two players sharing one device (e.g. touch zones split by
   screen half) — needs its own input scheme, likely reusing Unity's Input
-  System but with two independent action maps/pointers.
+  System but with two independent action maps/pointers. → **Two
+  independent instances of the existing input stack**, with Player 2's
+  half rotated 180° for face-to-face tabletop play — see the spec's
+  "Screen layout & input" section.
 - Does the shot timer / ceiling descent from Phase 1 carry over unchanged,
   or does battle mode replace/modify them (e.g. no independent ceiling
-  descent per board, only garbage-driven pressure)?
+  descent per board, only garbage-driven pressure)? → **Shot timer kept
+  unchanged; ceiling-descent timer replaced entirely** by opponent-
+  triggered pushes.
 - Whether superpowers (see `../superpowers/overview.md`) are enabled in
-  this mode from the start, or added later.
+  this mode from the start, or added later. → **Disabled** for this first
+  variant.
 - Match length/pacing for a 1v1 session on mobile (should a match be short
-  enough for quick sessions?).
+  enough for quick sessions?). → **No artificial time limit**; the match
+  is bounded naturally by win/loss/draw conditions.
 
 See [`../../ROADMAP.md`](../../ROADMAP.md) — this is Phase 3.

@@ -35,11 +35,12 @@ namespace Game.Gameplay
         {
             SpawnButton(new MenuButtonSpec { Name = "PlayButton", Label = "Play", AnchorY = 0.58f, Interactable = true, OnClick = HandlePlayClicked });
             SpawnButton(new MenuButtonSpec { Name = "SettingsButton", Label = "Settings", AnchorY = 0.42f, Interactable = true, OnClick = HandleSettingsClicked });
-            SpawnButton(new MenuButtonSpec { Name = "TwoPlayerButton", Label = "2 Players (Coming Soon)", AnchorY = 0.26f, Interactable = false, OnClick = null });
+            SpawnButton(new MenuButtonSpec { Name = "TwoPlayerButton", Label = "2 Players", AnchorY = 0.26f, Interactable = true, OnClick = HandleBattleClicked });
         }
 
         private void HandlePlayClicked() => SceneManager.LoadScene(gameplaySceneName);
         private void HandleSettingsClicked() => SceneManager.LoadScene("SettingsMenu");
+        private void HandleBattleClicked() => SceneManager.LoadScene("BattleMode");
 
         private void SpawnButton(MenuButtonSpec spec)
         {

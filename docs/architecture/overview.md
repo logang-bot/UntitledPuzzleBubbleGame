@@ -100,6 +100,41 @@ level-1 special case is now just each curve's first keyframe. See
 animated path (for `OnLevelLoaded`) that attaches a `BubbleSpawnAnimator`
 to each spawned bubble, delayed by its row.
 
+## Battle mode components (Phase 3, simple attack variant) ✅ implemented
+
+Confirms the "hook in without editing core systems" claim above: this
+entire phase reuses Phase 1's public events unchanged, plus one small
+additive extension to `GameBoard` (see below) needed to run two
+simultaneous board instances. See
+`features/battle-mode/specs/2026-09-15-simple-attack-battle-mode-design.md`
+for the full design and implementation account.
+
+| Component | Responsibility |
+|---|---|
+| `PendingRowsMeter` | Pure C# class: accumulates fractional attack value and releases only whole rows, carrying the remainder forward — `GridModel.PushRowsDown` only moves whole rows. |
+| `BattleAttackConfig` | `ScriptableObject`: match-size/cascade-drop-count → attack value, deliberately decoupled from solo's `ScoreCalculator`. Default asset: `Assets/ScriptableObjects/DefaultBattleAttackConfig.asset`. |
+| `BattleAttackController` | Listens to *my* board's `OnBubblesPopped`/`OnClusterDropped`, banks attack value via `BattleAttackConfig`/`PendingRowsMeter`, and calls `PushRowDown()` on the *opponent's* `GameBoard` — the one new cross-board wiring this feature needs. |
+| `BattleEndReason` / `BattleSideOutcome` | Enum (`Cleared, WallReachedLine`) and a `MonoBehaviour` reusing solo mode's exact win/loss signals (`OnRowPushedDown`, `GridModel.IsEmpty`), scoped to one side, raising a one-shot `OnSideEnded` event. |
+| `BattleMatchResult` / `BattlePlayerSide` | Enum (`Player1Wins, Player2Wins, Draw`) and a `[Serializable]` grouping class bundling one side's `GameBoard`/`ShooterController`/`BattleShotClock`/`BattleAttackController`/`BattleSideOutcome`. |
+| `BattleMatchController` | Reconciles both sides' `OnSideEnded` signals into one authoritative result (same-frame endings resolve as a draw), picks one shared random level number for both boards each match, and drives Rematch. `[DefaultExecutionOrder(1000)]` so its `LoadLevel` calls run after every other component has subscribed to `OnLevelLoaded` — see the spec's implementation notes for the (already-hit-once, in Superpowers) bug class this avoids. |
+| `BattleShotClock` | Per-side shot timer only (no ceiling timer) — thin wrapper around the existing `ShotTimer`. |
+| `BattleResultScreen` | Win/lose/draw panel with Rematch, same runtime-built recipe as `LevelResultScreen`. |
+
+Small, additive extension to an existing Phase 1 file: `GameBoard` gained
+`targetCamera`/`viewportHeightFraction` fields, letting an instance
+target a specific camera and a fraction of the screen height instead of
+always using `Camera.main`/the full screen — default values reproduce
+solo mode's exact prior behavior untouched. No other Phase 1 file
+(`GridModel`, `MatchProcessor`, `ShooterController`,
+`BubbleLandingResolver`, etc.) was changed.
+
+Player 2's 180°-rotated half needed no coordinate-math changes anywhere:
+`GameBoard`'s board-fit math (`PositionBoard`, `BoardBoundsCalculator`,
+`ShooterOrigin`) only ever reads camera *position* and *orthographic
+size* — both rotation-invariant — so rotating only the physical camera
+transform (and, separately, a UI parent `RectTransform` for the touch
+zones) achieves the full visual/input mirror for free.
+
 ## Events (initial set — expand as needed)
 
 - `OnBubblePlaced(cell)` — ✅ implemented, on `GameBoard`.
@@ -124,11 +159,12 @@ to each spawned bubble, delayed by its row.
   activation); `SuperpowerHud` subscribes to know when to rebuild its
   buttons.
 
-These are the seams Phase 3 (battle mode) can subscribe to later (e.g.
-turning `OnBubblesPopped` on one board into garbage rows added to the
-other) — Phase 2 (superpowers) already demonstrates the pattern working
-as intended, hooking in via `OnBubblePlaced`/`OnFireRequested`/`PopCells`
-with zero changes to `GameBoard`'s public API.
+Phase 2 (superpowers) and Phase 3 (battle mode) both demonstrate this
+pattern working as intended: Phase 3 in particular hooks in via
+`OnBubblesPopped`/`OnClusterDropped`/`PushRowDown` for its cross-board
+attack wiring (see "Battle mode components" above), turning one board's
+pops into rows pushed onto the other, with zero changes to `GameBoard`'s
+public API beyond the one additive camera/viewport extension.
 
 ## Folder conventions (`Assets/`)
 

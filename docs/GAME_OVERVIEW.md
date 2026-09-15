@@ -12,7 +12,7 @@ mechanic was designed and built, see the relevant doc under `features/`.
 A Puzzle Bobble/Bust-a-Move-style single-player bubble shooter for mobile
 (portrait orientation), with two planned additions: bubbles with special
 "superpower" abilities (built), and a local split-screen 2-player battle
-mode (not yet built).
+mode (first variant built).
 
 ## Core gameplay loop
 
@@ -80,12 +80,33 @@ number of charges (currently 1) that refill each level — press its button
 in the HUD to use a charge. Only one aimed ability (Bomb/Row Clear/
 Rainbow) can be armed at a time.
 
+## Battle Mode
+
+A local split-screen 2-player versus mode (the first, simplest of
+several planned variants), reachable via "2 Players" on the main menu:
+
+- **Setup**: the phone lies flat between two players facing each other.
+  The screen splits top/bottom, each player's board filling their half,
+  with Player 2's half rendered upside-down (rotated 180°) so it reads
+  right-side-up from their side of the device — their touch controls are
+  mirrored to match.
+- **The core loop is otherwise identical to solo play** — same hex grid,
+  aiming, firing, matching, and shot timer (12s auto-fire) — played
+  independently and simultaneously by both players.
+- **No autonomous ceiling descent.** Instead, matching or dropping
+  bubbles on your own board pushes rows onto your *opponent's* board —
+  bigger matches and cascades push more rows.
+- **Winning, losing, and draws**: clear your own board to win instantly;
+  if your opponent's attacks push your wall to your shooter line, you
+  lose (they win). If both happen at the same instant, it's a draw. A
+  result screen offers "Rematch" (both boards regenerate with fresh,
+  matching content) or a return to the main menu.
+- **Superpowers are disabled** in this first variant.
+
+See `features/battle-mode/specs/2026-09-15-simple-attack-battle-mode-design.md`.
+
 ## Not yet built
 
-- **Battle Mode** — local split-screen 2-player versus mode. Only a
-  placeholder idea exists: portrait split top/bottom, two independent
-  boards, likely a garbage-bubble mechanic (clearing bubbles sends rows to
-  the opponent). Not designed in detail yet.
 - **Meta progression** — no level-select map, currency, or unlocks beyond
   the superpower level-thresholds above.
 - **Monetization** — no ads or IAP.
@@ -98,6 +119,6 @@ Rainbow) can be armed at a time.
   full history of bugs found/fixed and decisions made per milestone.
 - [`architecture/overview.md`](architecture/overview.md) — code structure,
   components, and conventions.
-- `features/core-gameplay/`, `features/superpowers/`, and
-  `features/level-content/` — the detailed design docs behind everything
-  summarized above.
+- `features/core-gameplay/`, `features/superpowers/`,
+  `features/level-content/`, and `features/battle-mode/` — the detailed
+  design docs behind everything summarized above.

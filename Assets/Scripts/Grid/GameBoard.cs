@@ -16,6 +16,8 @@ namespace Game.Grid
         [SerializeField] private float cellWidth = 1f;
         [SerializeField] private float ceilingHeight = 1f;
         [SerializeField] private int levelNumber = 1;
+        [SerializeField] private Camera targetCamera;
+        [SerializeField, Range(0f, 1f)] private float viewportHeightFraction = 1f;
         [SerializeField] private DifficultyCurveConfig difficultyCurve;
         [SerializeField] private PatternLevelCatalog patternCatalog;
 
@@ -39,7 +41,7 @@ namespace Game.Grid
 
         private void Awake()
         {
-            _camera = Camera.main;
+            _camera = targetCamera != null ? targetCamera : Camera.main;
             var boardWidth = HexGridMath.BoardWidthWithOffsetMargin(cols, cellWidth);
             _rows = FitCameraAndComputeRows(_camera, boardWidth);
             ShooterOrigin = new Vector2(_camera.transform.position.x, _camera.transform.position.y - _camera.orthographicSize + cellWidth * 0.5f);
@@ -107,7 +109,7 @@ namespace Game.Grid
 
         private int FitCameraAndComputeRows(Camera camera, float boardWidth)
         {
-            camera.orthographicSize = PlayfieldSizer.OrthographicSizeForWidth(boardWidth, Screen.width, Screen.height);
+            camera.orthographicSize = PlayfieldSizer.OrthographicSizeForWidth(boardWidth, Screen.width, Screen.height * viewportHeightFraction);
             PositionBoard(camera);
             var availableHeight = camera.orthographicSize * 2f - ceilingHeight;
             return PlayfieldSizer.RowsForWorldHeight(availableHeight, cellWidth);

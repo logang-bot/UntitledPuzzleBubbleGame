@@ -25,7 +25,9 @@ split-screen 2-player battle mode.
   for levels 1-5 and the level-transition build-in animation. See
   `features/level-content/specs/` for the design spec and
   `features/level-content/plans/` for the implementation plan.
-- `features/battle-mode/` — **placeholder only**. Not yet designed.
+- `features/battle-mode/` — first variant **fully implemented** (Phase 3).
+  See `features/battle-mode/specs/` for the design spec and
+  `features/battle-mode/plans/` for the implementation plan.
 
 ## How these docs work
 

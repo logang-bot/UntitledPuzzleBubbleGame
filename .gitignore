@@ -82,3 +82,7 @@ crashlytics-build.properties
 [Ss]creenshots/
 *.screenshot
 *.screenshot.png
+
+# Subagent-driven-development scratch workspace (ledgers, briefs, review
+# packages) - not project content, safe to delete once a plan is done.
+/.superpowers/
