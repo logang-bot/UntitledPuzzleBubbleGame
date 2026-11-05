@@ -32,6 +32,11 @@ namespace Game.Shooter
         public event Action<Vector2, float> OnFireRequested;
         public int MaxBounces => maxBounces;
 
+        // Blocks every fire path (manual press and external auto-fire timers
+        // calling Fire()) while aiming stays live - kept separate from
+        // `enabled`, which game-over/match-end flows already own.
+        public bool IsFireLocked { get; set; }
+
         private LineRenderer _lineRenderer;
         private TrajectoryPredictor _predictor;
         private LandingIndicator _landingIndicator;
@@ -109,6 +114,7 @@ namespace Game.Shooter
 
         public void Fire()
         {
+            if (IsFireLocked) return;
             OnFireRequested?.Invoke(_shooterOrigin, _aimAngleDegrees);
         }
 

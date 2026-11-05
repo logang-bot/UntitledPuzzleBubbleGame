@@ -19,18 +19,17 @@ namespace Game.Grid
             return group.Count >= MinMatchSize ? group : new HashSet<(int Row, int Col)>();
         }
 
-        // Row 0 is the ceiling's fixed position, but a ceiling-descent push
-        // never refills it (see shot-timer-and-ceiling-descent.md), so it can
-        // legitimately sit empty mid-game. Nothing can float in the resulting
-        // gap - by definition, whatever row is topmost has nothing physically
-        // between it and the wall - so that row anchors connectivity whenever
-        // row 0 itself has nothing in it.
+        // Only the row actually touching the wall (RowsPushed - the wall's
+        // advanced position, see GridModel.RowsPushed) anchors connectivity.
+        // Seeding from "whatever row is topmost" instead was a bug: popping a
+        // chunk that spanned the whole wall row turned the next row down into
+        // a stand-in ceiling, leaving everything hanging from it floating.
+        // See docs/features/core-gameplay/matching-and-popping.md.
         public static HashSet<(int Row, int Col)> FindFloatingCells(GridModel grid)
         {
             var occupied = grid.OccupiedCells().ToList();
             if (occupied.Count == 0) return new HashSet<(int Row, int Col)>();
-            var topRow = occupied.Min(cell => cell.Row);
-            var ceilingCells = occupied.Where(cell => cell.Row == topRow);
+            var ceilingCells = occupied.Where(cell => cell.Row == grid.RowsPushed);
             var reachable = FloodFill.Run(grid, ceilingCells, cell => grid.IsOccupied(cell.Row, cell.Col));
             return occupied.Where(cell => !reachable.Contains(cell)).ToHashSet();
         }

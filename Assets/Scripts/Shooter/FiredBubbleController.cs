@@ -48,6 +48,8 @@ namespace Game.Shooter
         private (int Row, int Col)? _settleCell;
         private float _settleElapsed;
 
+        public void ArmSuperpower(SuperpowerId ability) => _armedAbility = ability;
+
         private void Start()
         {
             RebuildPredictor();
@@ -116,8 +118,6 @@ namespace Game.Shooter
             if (_settleCell != null) AdvanceSettle();
             else if (_flyingBubble != null) AdvanceTowardNextPoint();
         }
-
-        public void ArmSuperpower(SuperpowerId ability) => _armedAbility = ability;
 
         private void AdvanceSettle()
         {

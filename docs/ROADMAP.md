@@ -352,17 +352,12 @@ for the original open questions (now answered).
 
 ### Known follow-ups (untuned/non-blocking)
 
-- `GameStateManager.Freeze(0f)` or a negative duration would pause both
-  timers permanently (`TickFreeze` never reaches the point where it calls
-  `Unfreeze()`) — dormant, since `SuperpowerController.freezeDurationSeconds`
-  defaults to 5 in the Inspector; worth a one-line guard whenever this file
-  is next touched.
-- Two small member-ordering nits, introduced by the final-review fix pass
-  itself and left as-is since there's no further fix round in that
-  process: `SuperpowerController.ApplyActivation` (extracted to fix a
-  different line-length breach) is itself still slightly over this
-  project's function-body line cap, and `FiredBubbleController.ArmSuperpower`
-  sits among private methods instead of ahead of them.
+- ~~`GameStateManager.Freeze(0f)` or a negative duration would pause both
+  timers permanently.~~ ✅ Fixed in the 2026-11-03 maintenance pass (see
+  below).
+- ~~Two small member-ordering nits (`ApplyActivation` over the line cap,
+  `ArmSuperpower` among private methods).~~ ✅ Fixed in the 2026-11-03
+  maintenance pass.
 - Unlock levels (3/6/9/12), charges-per-level (1 for all four), and Bomb's
   radius are all untuned placeholders pending playtesting — see the spec's
   own "Open questions / tuning knobs" section.
@@ -422,12 +417,11 @@ for the implementation plan.
   wherever a blob/band would otherwise be disconnected — an accepted
   trade-off, not a bug, but worth a look against real playtesting
   screenshots.
-- The shooter stays active during the ~1s level-load build-in animation,
-  so a fast player can fire into bubbles still mid-scale-in (visually
-  odd, not incorrect — the grid model is fully populated throughout).
-- Leftover `FallingBubble` sprites (pre-existing behavior, not introduced
-  here) can overlap a new level's build-in animation if a level
-  transition happens while one is still falling.
+- ~~The shooter stays active during the ~1s level-load build-in
+  animation.~~ ✅ Fixed in the 2026-11-03 maintenance pass. Firing is now
+  locked during the build-in, while aiming stays live.
+- ~~Leftover `FallingBubble` sprites can overlap a new level's build-in
+  animation.~~ ✅ Fixed in the 2026-11-03 maintenance pass.
 
 ## Phase 3 — Local split-screen battle mode ✅ (implemented)
 
@@ -507,24 +501,73 @@ for the implementation plan.
   headroom value are first-guess placeholders pending real 1v1
   playtesting — same caveat as every other tunable config in this
   project.
-- A narrow, deliberately-parked residual: one single-frame, non-recurring,
-  non-corrupting console exception can still occur at the exact instant
-  a board's wall is fully pushed (`RowsPushed == Rows`), since
-  `BubbleLandingResolver`'s indexing is already out of bounds at that
-  exact value and the losing side's shooter isn't disabled until a frame
-  later (by design, for simultaneous-draw detection). Fixing it fully
-  would mean touching shared `GridModel`/`BubbleLandingResolver`, or
-  reworking that deferred-disable timing — worth a look in a future
-  pass, doesn't affect match outcomes.
+- ~~A narrow, deliberately-parked residual: a single-frame console
+  exception at the exact instant a board's wall is fully pushed
+  (`RowsPushed == Rows`).~~ ✅ Fixed in the 2026-11-03 maintenance pass
+  with a single bounds check in `BubbleLandingResolver`. The deferred
+  disable timing is untouched.
 - No battle-mode shot-timer countdown UI exists — `BattleShotClock`
   exposes no `TimeRemaining` for a display to bind to, and none was
   promised by the spec for this first variant. `ShotTimerDisplay` (solo
   mode's equivalent) was excluded from the battle scene since it
   hard-depends on the excluded `GameStateManager`.
 
+## Maintenance pass (2026-11-03) ✅
+
+A bug-fix and cleanup pass covering one playtesting bug and the known
+follow-ups above. No new features. All 148 EditMode tests pass, and each
+fix was checked in Play mode via Unity MCP.
+
+- **Bubbles left floating after popping a chunk (playtesting bug).** The
+  player stacked bubbles beneath a same-color chunk that hung from the
+  wall, then popped the chunk. The stack stayed in mid-air instead of
+  falling.
+  - **Root cause:** `MatchResolver.FindFloatingCells` treated the topmost
+    occupied row as the ceiling. Once a pop cleared the whole
+    wall-adjacent row, the next row down became a fake ceiling.
+  - **Fix:** it now seeds from the row the wall actually touches,
+    `GridModel.RowsPushed`.
+  - It looked tied to the wall advancing only because push-triggering
+    landings coincide with pops, and the push rebuilds every sprite.
+  - Full account in
+    [`matching-and-popping.md`](features/core-gameplay/matching-and-popping.md)
+    ("Third bug").
+- **Superpower pops never dropped floating clusters** (found while tracing
+  the above). Bomb, Row Clear and Rainbow now run the same check through
+  a new shared `GameBoard.DropFloatingCells()`.
+- **Freeze guard.** `Freeze` ignores a duration ≤ 0. A freeze still
+  active at level end no longer carries into the next level
+  (`ClearFreeze` in `ResumeWithLevel`).
+- **Style nits.** `SuperpowerController.ApplyActivation` is back under the
+  line cap, and `FiredBubbleController.ArmSuperpower` now sits ahead of
+  the private methods.
+- **Battle Mode crash at a fully pushed wall.**
+  `BubbleLandingResolver.UnoccupiedEffectiveCeilingRowCells` returns no
+  candidates once `RowsPushed >= Rows`. This covers both the per-frame
+  preview and a bubble still in flight on the losing side.
+- **Level transitions:**
+  - New `ShooterBuildInGate` (wired into both scenes) plus
+    `ShooterController.IsFireLocked` block firing while
+    `GridDebugRenderer.IsBuildingIn` is true. This applies to solo level
+    loads and to Battle Mode match start and Rematch.
+  - Leftover `FallingBubble` sprites are now tracked and destroyed on
+    level load.
+
+Spec "Implementation notes" for
+[superpowers](features/superpowers/specs/2026-09-10-superpowers-design.md),
+[battle mode](features/battle-mode/specs/2026-09-15-simple-attack-battle-mode-design.md)
+and
+[level content](features/level-content/specs/2026-09-11-curated-levels-and-transitions-design.md)
+carry the details.
+
 ## Later / not yet scoped ⏳
 
 - Meta progression (level select map, currency, unlocks).
 - Monetization (ads/IAP) — architecture implications deferred until scope
   is chosen.
-- Real art pass — swap placeholder assets for final art.
+- Real art pass — swap placeholder assets for final art. **Now planned:**
+  16-bit pixel art with chibi cats and dogs, in 7 phases, running in
+  parallel with tuning. See
+  [`features/art/overview.md`](features/art/overview.md) and the
+  Claude Design prompt in
+  [`features/art/claude-design-prompt.md`](features/art/claude-design-prompt.md).

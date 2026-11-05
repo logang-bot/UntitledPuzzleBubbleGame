@@ -1064,6 +1064,7 @@ GameObject:
   - component: {fileID: 1583638276}
   - component: {fileID: 1583638273}
   - component: {fileID: 1583638275}
+  - component: {fileID: 1583638277}
   m_Layer: 0
   m_Name: Shooter
   m_TagString: Untagged
@@ -1248,6 +1249,20 @@ MonoBehaviour:
   rotateLeftZone: {fileID: 149271222}
   rotateRightZone: {fileID: 1473519979}
   fireZone: {fileID: 2081709653}
+--- !u!114 &1583638277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583638271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c798c09a400639d45bb403f0c2700a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Game.Shooter.ShooterBuildInGate
+  gridRenderer: {fileID: 208433426}
+  shooterController: {fileID: 1583638276}
 --- !u!1 &1703428792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,6 +1372,7 @@ GameObject:
   - component: {fileID: 1858251801}
   - component: {fileID: 1858251798}
   - component: {fileID: 1858251800}
+  - component: {fileID: 1858251802}
   m_Layer: 0
   m_Name: Shooter
   m_TagString: Untagged
@@ -1541,6 +1557,20 @@ MonoBehaviour:
   rotateLeftZone: {fileID: 497679991}
   rotateRightZone: {fileID: 956079054}
   fireZone: {fileID: 1322595352}
+--- !u!114 &1858251802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858251796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c798c09a400639d45bb403f0c2700a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Game.Shooter.ShooterBuildInGate
+  gridRenderer: {fileID: 1995558190}
+  shooterController: {fileID: 1858251801}
 --- !u!1 &1995558188
 GameObject:
   m_ObjectHideFlags: 0

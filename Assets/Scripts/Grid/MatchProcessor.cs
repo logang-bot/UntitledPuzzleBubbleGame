@@ -29,13 +29,7 @@ namespace Game.Grid
             var group = MatchResolver.FindMatchGroup(gameBoard.Grid, (row, col));
             if (group.Count == 0) return;
             gameBoard.PopCells(group, color);
-            DropFloatingCells();
-        }
-
-        private void DropFloatingCells()
-        {
-            var floaters = MatchResolver.FindFloatingCells(gameBoard.Grid);
-            if (floaters.Count > 0) gameBoard.DropCells(floaters);
+            gameBoard.DropFloatingCells();
         }
     }
 }

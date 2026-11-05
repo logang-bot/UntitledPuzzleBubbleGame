@@ -92,7 +92,10 @@ against. Both problems needed solving together.
   grid.RowsPushed`, since rows behind the advanced wall are permanently
   vacated and could otherwise still be picked by raw distance alone.
   Returns `null` if no empty candidate exists (board nearly full); see
-  "Open questions" below.
+  "Open questions" below. It also returns `null` once the wall has
+  advanced through every row (`RowsPushed >= Rows`, reachable in Battle
+  Mode), rather than indexing out of bounds. That was fixed 2026-11-03; see
+  the battle-mode spec's implementation notes.
 
 ### Bug found and fixed: mis-snapping to the wrong pocket
 

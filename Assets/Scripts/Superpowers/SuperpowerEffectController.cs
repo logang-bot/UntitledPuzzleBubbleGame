@@ -25,6 +25,7 @@ namespace Game.Superpowers
         private void HandleSuperpowerLanded(SuperpowerId id, (int Row, int Col) cell)
         {
             PopByColorGroup(ResolveAffectedCells(id, cell));
+            gameBoard.DropFloatingCells();
         }
 
         private HashSet<(int Row, int Col)> ResolveAffectedCells(SuperpowerId id, (int Row, int Col) cell)

@@ -88,6 +88,12 @@ namespace Game.Gameplay
             _ceilingTimer.Resume();
         }
 
+        private void ClearFreeze()
+        {
+            _freezeTimeRemaining = 0f;
+            Unfreeze();
+        }
+
         private void TickCeiling()
         {
             if (_ceilingState == CeilingState.Countdown) TickCeilingCountdown();
@@ -172,6 +178,7 @@ namespace Game.Gameplay
 
         public void Freeze(float duration)
         {
+            if (duration <= 0f) return;
             _shotTimer.Pause();
             _ceilingTimer.Pause();
             _freezeTimeRemaining = duration;
@@ -182,6 +189,7 @@ namespace Game.Gameplay
             gameBoard.LoadLevel(levelNumber);
             _shotTimer.Reset();
             StopCeilingWarning();
+            ClearFreeze();
             _ceilingTimer = new ShotTimer(gameBoard.CurrentDifficulty.CeilingDropIntervalSeconds);
             shooterController.enabled = true;
             _isGameOver = false;

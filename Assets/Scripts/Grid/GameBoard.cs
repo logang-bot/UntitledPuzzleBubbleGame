@@ -95,6 +95,12 @@ namespace Game.Grid
             OnClusterDropped?.Invoke(cells);
         }
 
+        public void DropFloatingCells()
+        {
+            var floaters = MatchResolver.FindFloatingCells(Grid);
+            if (floaters.Count > 0) DropCells(floaters);
+        }
+
         public void PushRowDown()
         {
             Grid.PushRowsDown(out var wasLastRowOccupied);

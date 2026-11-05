@@ -10,7 +10,7 @@ namespace Game.Grid
     /// </summary>
     public class BubbleSpawnAnimator : MonoBehaviour
     {
-        private const float ScaleInDurationSeconds = 0.25f;
+        public const float ScaleInDurationSeconds = 0.25f;
 
         private float _delayRemaining;
         private float _elapsed;

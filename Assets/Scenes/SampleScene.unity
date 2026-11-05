@@ -244,6 +244,8 @@ MonoBehaviour:
   cellWidth: 1
   ceilingHeight: 1
   levelNumber: 1
+  targetCamera: {fileID: 0}
+  viewportHeightFraction: 1
   difficultyCurve: {fileID: 11400000, guid: 5fac640bd8eade041b6712160578970b, type: 2}
   patternCatalog: {fileID: 11400000, guid: 834dc0d8eb64812428594d386d1f3e8d, type: 2}
 --- !u!4 &218697390
@@ -287,6 +289,7 @@ GameObject:
   - component: {fileID: 1078805873}
   - component: {fileID: 1078805876}
   - component: {fileID: 1078805877}
+  - component: {fileID: 1078805878}
   m_Layer: 0
   m_Name: Shooter
   m_TagString: Untagged
@@ -473,6 +476,20 @@ MonoBehaviour:
   fireZoneRect: {fileID: 1587367401}
   rotateRightZoneRect: {fileID: 1665991386}
   warningThresholdSeconds: 4
+--- !u!114 &1078805878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078805872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c798c09a400639d45bb403f0c2700a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Game.Shooter.ShooterBuildInGate
+  gridRenderer: {fileID: 14526685}
+  shooterController: {fileID: 1078805873}
 --- !u!1 &1088561271
 GameObject:
   m_ObjectHideFlags: 0

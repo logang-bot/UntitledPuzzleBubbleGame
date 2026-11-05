@@ -252,3 +252,28 @@ full (with the reasoning) in `../../../ROADMAP.md`'s Phase 2.5 entry:
   that the `AnimationCurve` refactor had dropped.
 
 All other decisions in this spec shipped as designed.
+
+**Transition follow-ups fixed (2026-11-03 maintenance pass).** Both
+known glitches from `ROADMAP.md`'s Phase 2.5 follow-ups are now fixed.
+
+- **Shooter was live during the build-in.**
+  - `GridDebugRenderer` now times its own build-in: (last occupied row ×
+    `PerRowSpawnDelaySeconds`) + `BubbleSpawnAnimator.ScaleInDurationSeconds`.
+    It exposes this as `IsBuildingIn`, covering both the first load in
+    `Start` and every `OnLevelLoaded`.
+  - A new `ShooterBuildInGate` (one per shooter, wired in `SampleScene`
+    and in both `BattleMode` sides) copies that flag into the new
+    `ShooterController.IsFireLocked` every frame. It polls rather than
+    subscribing, so the first level's build-in is never missed
+    regardless of `Start` order.
+  - `Fire()` no-ops while locked. This blocks manual fire, solo
+    auto-fire and Battle Mode's `BattleShotClock` alike. Aiming and the
+    preview stay live, so a player can line up the first shot while the
+    board builds in.
+  - The lock is deliberately separate from `enabled`, which the
+    game-over and match-end flows already own.
+- **Leftover `FallingBubble` sprites.** `GridDebugRenderer` stopped
+  tracking a sprite once it started falling, so a level reload never
+  cleared it. Falling sprites are now tracked in a list, pruned of
+  already-destroyed entries on each drop, and destroyed on
+  `OnLevelLoaded` only. Mid-level ceiling pushes still let falls finish.

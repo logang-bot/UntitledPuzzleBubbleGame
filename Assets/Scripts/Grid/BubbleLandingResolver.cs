@@ -67,8 +67,12 @@ namespace Game.Grid
             return result;
         }
 
+        // Once the wall has advanced through every row (RowsPushed == Rows,
+        // reachable in Battle Mode the instant a board loses), there is no
+        // ceiling row left to land in - indexing it would be out of bounds.
         private static IEnumerable<(int Row, int Col)> UnoccupiedEffectiveCeilingRowCells(GridModel grid)
         {
+            if (grid.RowsPushed >= grid.Rows) return Enumerable.Empty<(int Row, int Col)>();
             var row = grid.RowsPushed;
             return Enumerable.Range(0, grid.Cols)
                 .Select(col => (Row: row, Col: col))

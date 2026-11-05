@@ -28,9 +28,11 @@ top row) fall and are also cleared.
     same-color occupied neighbors; returns the group if `Count >= 3`, else an
     empty set.
   - `FindFloatingCells(grid)`: flood-fills from every occupied cell in the
-    **topmost currently-occupied row** (not hardcoded row 0 — see "Bug found
-    and fixed" below) through any occupied neighbor; returns every occupied
-    cell *not* in that reachable set.
+    **wall row, `grid.RowsPushed`**: the row actually touching the
+    advanced wall. That is neither a hardcoded row 0 nor "whatever row is
+    topmost" (see the second and third bugs below). It floods through any
+    occupied neighbor and returns every occupied cell *not* in that
+    reachable set.
 - **`GameBoard`** owns the actual mutation and events, mirroring its existing
   `PlaceBubble`/`OnBubblePlaced` pattern: `PopCells(cells, color)` and
   `DropCells(cells)` each clear the given cells via `Grid.ClearCell` and
@@ -40,7 +42,9 @@ top row) fall and are also cleared.
 - **`MatchProcessor`** (`Assets/Scripts/Grid/MatchProcessor.cs`) is the thin
   MonoBehaviour hook-in: it subscribes to `GameBoard.OnBubblePlaced`, calls
   `MatchResolver.FindMatchGroup`, and if non-empty, calls `GameBoard.PopCells`
-  followed by a `FindFloatingCells`/`DropCells` check. Listening to the
+  followed by `GameBoard.DropFloatingCells()`. That is the
+  `FindFloatingCells`/`DropCells` pair, moved onto `GameBoard` so superpower
+  pops share it (see the third bug below). Listening to the
   general placement event (rather than wiring straight into
   `FiredBubbleController.Land()`) means any future placement source
   (superpower effect, garbage row) gets matching for free. This is safe
@@ -79,7 +83,47 @@ that), so behavior is unchanged until a push actually empties it.
 `MatchResolverFloatingCellsTests.cs` has dedicated cases for a row-0-empty
 board (topmost row anchors correctly) and for a genuinely disconnected
 island below that row (still correctly dropped) to guard against
-regressing either direction.
+regressing either direction. The third bug below superseded this: the
+topmost-row rule itself turned out to be wrong.
+
+**Third bug found and fixed (2026-11-03, during playtesting).**
+
+*What happened.* On level 1, the player stacked bubbles beneath a large
+same-color chunk that hung from the wall, then popped the chunk. The
+stacked bubbles stayed floating in mid-air.
+
+*Root cause.* The second fix assumed that nothing can float in the gap
+between the wall and the topmost row. That's false, because the gap is
+open air. If a pop removed *every* bubble in the wall-adjacent row, the
+next row down became the "topmost row" and was treated as a stand-in
+ceiling. Everything hanging from it stayed put.
+
+*Fix.* Seed from the row the wall actually touches, `GridModel.RowsPushed`.
+That property didn't exist yet when the second fix was made;
+`BubbleLandingResolver` and `CeilingRenderer` already used it as the
+effective ceiling.
+
+*Why it looked tied to the wall advancing.* Pop and push never interleave.
+`MatchProcessor`'s pop/drop pass runs synchronously inside `PlaceBubble`,
+and the warning-gated push runs a frame later. The landings that trigger a
+push are exactly the shots fired during the warning, and the push rebuilds
+all sprites from the grid. That makes the floaters obvious at that moment.
+
+*Tests.* The two tests where row 0 is empty now empty it the way real play
+does, via `PushRowsDown`. Two new cases reproduce the report directly: the
+wall row fully cleared, before and after a push.
+
+*Level generation is unaffected.*
+`PatternLevelGenerator.ConnectFloatingCellsToCeiling` bridges stems to row
+0, which equals `RowsPushed` at generation time. Levels 1-6 were checked in
+Play mode and generate with zero floaters.
+
+**Related gap found in the same pass.** Superpower pops
+(`SuperpowerEffectController`) called `GameBoard.PopCells` but never ran
+the floating-cluster check. Bomb, Row Clear and Rainbow could therefore
+leave disconnected bubbles hanging, whatever the anchor rule. Fixed by
+moving `MatchProcessor`'s drop step onto `GameBoard.DropFloatingCells()`
+and calling it after a superpower's pops too.
 
 ## Open questions / tuning knobs
 

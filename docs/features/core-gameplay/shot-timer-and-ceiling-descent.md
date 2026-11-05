@@ -23,7 +23,11 @@ deliberately separate systems with different triggers.
   `OnFireRequested` — `GameStateManager` resets the timer only from that
   event, so there's one reset path instead of two that could drift apart.
   See `Assets/Scripts/Gameplay/ShotTimer.cs`, `GameStateManager.cs`, and
-  `ShotTimerDisplay.cs`.
+  `ShotTimerDisplay.cs`. `Fire()` no-ops while
+  `ShooterController.IsFireLocked` is set, which is during a level's
+  build-in animation (added 2026-11-03; see the level-content spec). The
+  shot timer is reset to its full duration on every level load anyway, so
+  in practice the lock only affects manual presses.
 
 ## Ceiling descent ✅ Implemented (Milestone 7), reworked into a warning-gated push
 

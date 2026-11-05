@@ -46,20 +46,13 @@ namespace Game.Superpowers
 
         private void ApplyActivation(SuperpowerId id)
         {
-            switch (id)
-            {
-                case SuperpowerId.Freeze:
-                    gameStateManager.Freeze(freezeDurationSeconds);
-                    break;
-                case SuperpowerId.Bomb:
-                case SuperpowerId.RowClear:
-                case SuperpowerId.Rainbow:
-                    firedBubbleController.ArmSuperpower(id);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(id), id, null);
-            }
+            if (id == SuperpowerId.Freeze) gameStateManager.Freeze(freezeDurationSeconds);
+            else if (IsAimedAbility(id)) firedBubbleController.ArmSuperpower(id);
+            else throw new ArgumentOutOfRangeException(nameof(id), id, null);
         }
+
+        private static bool IsAimedAbility(SuperpowerId id) =>
+            id is SuperpowerId.Bomb or SuperpowerId.RowClear or SuperpowerId.Rainbow;
 
         private void HandleLevelLoaded(int levelNumber)
         {

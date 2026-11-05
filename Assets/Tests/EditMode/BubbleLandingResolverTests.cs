@@ -66,6 +66,20 @@ namespace Game.Tests
         }
 
         [Test]
+        public void ResolveLandingCell_NoStruckCellOnFullyPushedGrid_ReturnsNull()
+        {
+            var grid = new GridModel(rows: 3, cols: Cols, cellWidth: 1f);
+            grid.PushRowsDown(out _);
+            grid.PushRowsDown(out _);
+            grid.PushRowsDown(out _); // RowsPushed == Rows - no row left to land in
+            var contactPoint = grid.GetWorldPosition(2, 3);
+
+            var landing = BubbleLandingResolver.ResolveLandingCell((grid, NoOffset), contactPoint, null, CellWidth);
+
+            Assert.That(landing, Is.Null);
+        }
+
+        [Test]
         public void ResolveLandingCell_NearestNeighborIsBehindTheAdvancedWall_SkipsItForOneInFrontOfIt()
         {
             var grid = new GridModel(rows: 6, cols: Cols, cellWidth: 1f);

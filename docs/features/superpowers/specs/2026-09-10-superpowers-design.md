@@ -274,6 +274,27 @@ was discovered only once the pieces existed together.
   methods instead of ahead of them, per this project's public-before-
   private member-order convention. Both are purely cosmetic — no
   behavioral impact — and are candidates for a future small cleanup pass.
+  **Resolved in the 2026-11-03 maintenance pass.** `ApplyActivation` is
+  now an if/else-if/throw chain with a `IsAimedAbility(id)` helper, and it
+  still throws `ArgumentOutOfRangeException` on an unhandled id.
+  `ArmSuperpower` was moved ahead of the private methods.
+- **Freeze with a zero/negative duration (fixed 2026-11-03).**
+  `GameStateManager.Freeze(duration)` paused both timers and stored the
+  duration. With `duration <= 0`, `TickFreeze` returned early before ever
+  calling `Unfreeze()`, so the shot timer and ceiling timer stayed paused
+  forever. `Freeze` now ignores a non-positive duration.
+  - A second carry-over was fixed in the same pass. `Update` stops
+    ticking once the level ends, so a freeze still active at a win or loss
+    resumed into the next level. `ResumeWithLevel` now calls a
+    `ClearFreeze()` that zeroes the remaining time and unpauses both timers.
+- **Superpower pops left floating clusters (fixed 2026-11-03).**
+  `SuperpowerEffectController` popped cells via `GameBoard.PopCells` but
+  never ran the floating-cluster check that normal matches do. Bubbles
+  that a Bomb, Row Clear or Rainbow cut off from the wall therefore kept
+  hanging. It now calls the new `GameBoard.DropFloatingCells()` after
+  popping. That method is shared with `MatchProcessor`; see
+  `core-gameplay/matching-and-popping.md`. The drop goes through
+  `OnClusterDropped`, so scoring and the win check apply unchanged.
 
 ## Open questions / tuning knobs
 

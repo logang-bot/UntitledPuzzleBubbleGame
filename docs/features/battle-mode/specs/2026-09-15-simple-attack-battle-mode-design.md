@@ -253,6 +253,30 @@ state survives Rematch" class as the `PendingRowsMeter` bug above:
   `Rematch()` alongside the other two per-side resets via a small
   `ResetSideState(BattlePlayerSide side)` helper.
 
+**Maintenance pass (2026-11-03).**
+
+- **The parked `RowsPushed == Rows` exception is now fixed.** It had a
+  single source: `BubbleLandingResolver.UnoccupiedEffectiveCeilingRowCells`
+  indexing row `RowsPushed`. With the wall through every row,
+  `OccupancyCollision` finds nothing to hit, so this "no struck cell" path
+  is the one that always runs. Two callers reached it:
+  - the losing side's per-frame landing-indicator preview, during the
+    frame before `LateUpdate` disables it;
+  - a bubble the losing side already had in flight. `DisableSide` never
+    stops `FiredBubbleController`, so this was a second path the original
+    note missed.
+- **Fix: one bounds check.** The method returns no candidates once
+  `RowsPushed >= Rows`. `NearestTo` then yields null, which both callers
+  already handle: the indicator hides, and the bubble takes the existing
+  `Land(null)` path.
+- `GridModel` and the `LateUpdate`-deferred draw detection are untouched.
+- Covered by `ResolveLandingCell_NoStruckCellOnFullyPushedGrid_ReturnsNull`.
+  Also verified in Play mode with a fully pushed board, live previews and
+  a fired shot: zero console errors.
+- **Rematch now also fire-locks both shooters** during the board build-in
+  animation, via the new `ShooterBuildInGate` (one per side). See the
+  level-content spec's implementation notes.
+
 ## Open questions / tuning knobs
 
 - `BattleAttackConfig`'s formula constants (`popAttackPerBubble = 0.05`,
@@ -264,7 +288,5 @@ state survives Rematch" class as the `PendingRowsMeter` bug above:
   `[1, 5]` per match) rather than a deliberate choice — fine for now,
   worth revisiting once there's real playtesting feedback on whether all
   five curated patterns feel fair/fun in a competitive 1v1 context.
-- The parked `RowsPushed == Rows` single-frame exception noted above is
-  worth a proper fix in a future pass, once it's clear whether it's
-  worth reworking `BattleMatchController`'s disable timing or the shared
-  landing-resolution code.
+- ~~The parked `RowsPushed == Rows` single-frame exception noted above is
+  worth a proper fix in a future pass.~~ Fixed 2026-11-03, see above.
