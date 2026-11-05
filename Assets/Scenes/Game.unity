@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 218697390}
   - component: {fileID: 218697389}
   - component: {fileID: 218697391}
+  - component: {fileID: 218697392}
   m_Layer: 0
   m_Name: GameBoard
   m_TagString: Untagged
@@ -248,6 +249,20 @@ MonoBehaviour:
   viewportHeightFraction: 1
   difficultyCurve: {fileID: 11400000, guid: 5fac640bd8eade041b6712160578970b, type: 2}
   patternCatalog: {fileID: 11400000, guid: 834dc0d8eb64812428594d386d1f3e8d, type: 2}
+  startAtSavedSoloLevel: 1
+--- !u!114 &218697392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218697388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e24bcdc49954cacb83f0fb783244e21, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Game::Game.Flow.SoloRunRecorder
+  gameBoard: {fileID: 218697389}
 --- !u!4 &218697390
 Transform:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using Game.Flow;
 using Game.Settings;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -41,7 +42,7 @@ namespace Game.Gameplay
         private void SpawnBackButton()
         {
             var buttonObj = SpawnButton("BackButton", "Back", 0.7f);
-            buttonObj.GetComponent<Button>().onClick.AddListener(() => SceneManager.LoadScene("MainMenu"));
+            buttonObj.GetComponent<Button>().onClick.AddListener(() => SceneManager.LoadScene(SceneNames.MainMenu));
         }
 
         private Image SpawnStyleButton(StyleButtonSpec spec)

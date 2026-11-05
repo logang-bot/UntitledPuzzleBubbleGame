@@ -356,7 +356,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Game::Game.Gameplay.MainMenuController
   canvasRect: {fileID: 893555640}
-  gameplaySceneName: SampleScene
 --- !u!4 &574035471
 Transform:
   m_ObjectHideFlags: 0

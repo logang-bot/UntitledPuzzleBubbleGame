@@ -14,6 +14,20 @@ A Puzzle Bobble/Bust-a-Move-style single-player bubble shooter for mobile
 "superpower" abilities (built), and a local split-screen 2-player battle
 mode (first variant built).
 
+## Menus and your pets
+
+- **Main menu:** New Game, Continue, 2 Players and Settings. The title is
+  still a placeholder ("Untitled Pet Game").
+- **New Game** opens **pet customization**. You name your cat and your
+  dog, then pick a fur color (6 options) and a shape (4 options) for
+  each. Start saves them and begins a fresh run at level 1. Superpower
+  unlocks reset with the run.
+- **Continue** resumes the solo run at the level you were last on, even
+  after a game over. It's disabled until you've started a run.
+- The pets are saved, but the game doesn't show them yet. The
+  customization preview is a tinted placeholder shape until the art pass
+  adds real cat and dog sprites.
+
 ## Core gameplay loop
 
 - **The board** is a hex grid that fills the entire phone screen, width
@@ -111,7 +125,9 @@ See `features/battle-mode/specs/2026-09-15-simple-attack-battle-mode-design.md`.
   the superpower level-thresholds above.
 - **Monetization** — no ads or IAP.
 - **Real art** — bubbles and UI are still placeholder shapes generated in
-  code; no final art pass yet.
+  code. The art pass is planned in `features/art/overview.md`: 16-bit
+  arcade art for the board, and a Celeste-inspired atmospheric style for
+  the menus and the victory/game-over screens.
 
 ## See also
 
@@ -120,5 +136,6 @@ See `features/battle-mode/specs/2026-09-15-simple-attack-battle-mode-design.md`.
 - [`architecture/overview.md`](architecture/overview.md) — code structure,
   components, and conventions.
 - `features/core-gameplay/`, `features/superpowers/`,
-  `features/level-content/`, and `features/battle-mode/` — the detailed
+  `features/level-content/`, `features/battle-mode/`,
+  `features/game-flow/`, and `features/art/` — the detailed
   design docs behind everything summarized above.

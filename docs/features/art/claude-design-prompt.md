@@ -1,7 +1,9 @@
 # Claude Design prompt — Art Phase 1
 
 Paste everything below the line into Claude Design. See `overview.md` for
-the art roadmap this feeds into.
+the art roadmap this feeds into. This covers the **in-game** 16-bit
+direction only. The pre-game screens and result overlays have their own
+prompt in `claude-design-prompt-menus.md`; run that one after this one.
 
 ---
 
@@ -103,6 +105,17 @@ launcher, UI or backgrounds.
   - win pose and lose pose.
 - **Dog (player 2):** the same set of animations.
 - A **model sheet** for each: front view plus expressions.
+- **Players customize their pets**, so each species needs **4 shape
+  variants**, each with the full animation set:
+  - cat: round shorthair, fluffy longhair, slim pointy-eared, chonky;
+  - dog: floppy-eared pup, pointy-eared, fluffy, short-legged.
+- **Recolorable fur:** draw all fur with one **dedicated 4-shade ramp**
+  (darkest to lightest) that appears nowhere else in the sprite, so the
+  game can palette-swap it at runtime. Eyes, nose, outline and
+  accessories stay outside the ramp. Suggest 6 fur colorways per species
+  as 4-shade ramps:
+  - cat: ginger, cream, silver, midnight, cocoa, lilac;
+  - dog: golden, chocolate, cream, charcoal, rust, snow.
 
 ### 5. Board dressing
 - Left and right **side walls**: tileable vertically, 8–12 px wide.
@@ -119,7 +132,12 @@ launcher, UI or backgrounds.
   Keep them low-contrast and desaturated so bubbles stay readable on
   top.
 
-### 6. UI (pixel style, no baked text except on the title screen)
+### 6. In-game UI (pixel style, no baked text)
+
+The menus, pet customization, settings, and the victory/game-over/battle
+result overlays are a separate request in a different style
+(`claude-design-prompt-menus.md`). Only in-game UI belongs here.
+
 - **Touch buttons**, each 48×48 native with normal and pressed states:
   rotate-left, rotate-right and fire.
 - A **HUD bar** frame with icon slots for score, shots fired and level.
@@ -127,9 +145,7 @@ launcher, UI or backgrounds.
 - **Superpower buttons**, one icon per ability (Freeze, Bomb, Row
   Clear, Rainbow), with normal, pressed and disabled/empty states, plus
   charge pips.
-- A **result panel** frame, plus a win banner motif and a lose banner
-  motif (icons and decoration only; text is rendered by the game).
-- A generic **9-slice button** and **9-slice panel**.
+- A generic in-game **9-slice button** and **9-slice panel**.
 
 ## Presentation
 Show everything on one organized sheet per category. Include a **mockup

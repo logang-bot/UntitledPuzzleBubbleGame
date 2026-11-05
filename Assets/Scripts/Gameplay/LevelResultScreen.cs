@@ -1,4 +1,5 @@
 using System;
+using Game.Flow;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -61,7 +62,7 @@ namespace Game.Gameplay
         private void HandleMenuClicked()
         {
             _panel.SetActive(false);
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene(SceneNames.MainMenu);
         }
 
         private void BuildPanel()

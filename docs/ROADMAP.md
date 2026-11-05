@@ -560,14 +560,53 @@ and
 [level content](features/level-content/specs/2026-09-11-curated-levels-and-transitions-design.md)
 carry the details.
 
+## Phase 4 — Game flow & pet customization ✅ (implemented, placeholder UI)
+
+A proper front end for the game, ahead of the art pass. Details are in
+[`features/game-flow/overview.md`](features/game-flow/overview.md).
+
+- **Scene cleanup:**
+  - removed the unused URP template leftovers
+    (`Settings/Scenes/URP2DSceneTemplate.unity`,
+    `Settings/Lit2DSceneTemplate.scenetemplate`);
+  - renamed `SampleScene.unity` → `Game.unity`, keeping its GUID;
+  - the build order is now MainMenu, PetCustomization, Game, BattleMode,
+    SettingsMenu;
+  - scene names are centralized in `Flow/SceneNames`.
+- **Main menu:** a placeholder title plus New Game, Continue, 2 Players
+  and Settings. Continue stays disabled until a solo run exists.
+- **Pet customization (new scene):** the player names the cat and the
+  dog and picks a fur color (6) and a shape (4) for each, from
+  `DefaultPetAppearanceCatalog`. Start saves both pets, begins a fresh
+  run (level 1, superpower unlocks reset) and loads the game.
+- **Continue:** `SoloRunSave` and `SoloRunRecorder` remember the level
+  the player was last on. `GameBoard.startAtSavedSoloLevel`, ticked only
+  in `Game.unity`, opens there.
+- **Victory and game over:** unchanged (`LevelResultScreen`). Distinct
+  presentations come with the art pass.
+- **Shared runtime UI factory** (`UI/RuntimeUi`): the new screens build
+  their placeholder widgets through it.
+- **Tests:** `CyclicIndexTests` covers the picker wraparound and the
+  index clamping.
+
+### Known follow-ups
+- `SettingsMenuController` and `LevelResultScreen` still have their own
+  builder code. Move them onto `RuntimeUi` when they get skinned.
+- Pet names and appearance aren't shown in-game yet. That waits on the
+  art (Art Phases 4, 6b and 7).
+
 ## Later / not yet scoped ⏳
 
 - Meta progression (level select map, currency, unlocks).
 - Monetization (ads/IAP) — architecture implications deferred until scope
   is chosen.
 - Real art pass — swap placeholder assets for final art. **Now planned:**
-  16-bit pixel art with chibi cats and dogs, in 7 phases, running in
-  parallel with tuning. See
-  [`features/art/overview.md`](features/art/overview.md) and the
-  Claude Design prompt in
-  [`features/art/claude-design-prompt.md`](features/art/claude-design-prompt.md).
+  chibi cats and dogs in two pixel-art directions: 16-bit arcade for the
+  board and HUD, and a Celeste-inspired atmospheric style for the menus,
+  customization and result overlays. It runs in parallel with tuning.
+  See [`features/art/overview.md`](features/art/overview.md) and the
+  Claude Design prompts in
+  [`features/art/claude-design-prompt.md`](features/art/claude-design-prompt.md)
+  (in-game) and
+  [`features/art/claude-design-prompt-menus.md`](features/art/claude-design-prompt-menus.md)
+  (screens).

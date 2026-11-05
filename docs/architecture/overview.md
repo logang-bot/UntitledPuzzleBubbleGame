@@ -171,14 +171,21 @@ public API beyond the one additive camera/viewport extension.
 - `Scripts/` — all C# code, organized by the components above (e.g.
   `Scripts/Grid/`, `Scripts/Shooter/`, `Scripts/Gameplay/`,
   `Scripts/Superpowers/`), under a single `Game` assembly
-  (`Scripts/Game.asmdef`).
+  (`Scripts/Game.asmdef`). The front end adds:
+  - `Scripts/Flow/`: scene names and the solo-run save (Continue);
+  - `Scripts/Pets/`: pet profiles, the appearance catalog and the
+    customization screen;
+  - `Scripts/UI/`: `RuntimeUi`, the shared placeholder-uGUI factory.
+
+  See `features/game-flow/overview.md`.
 - `Tests/EditMode/` — Unity Test Framework tests for pure C# logic, under a
   `Game.EditModeTests` assembly that references `Game`. See Testing below.
 - `Prefabs/` — bubble prefab, UI prefabs, etc.
 - `Art/` — placeholder and (later) real sprites.
 - `ScriptableObjects/` — level generation difficulty configs, color
   palettes, superpower catalogs.
-- `Scenes/` — gameplay scene(s).
+- `Scenes/` — `MainMenu`, `PetCustomization`, `Game` (solo play),
+  `BattleMode` and `SettingsMenu`, in that build order.
 - `Screenshots/` — gitignored; Editor/MCP debug captures land here.
 
 ## Code style

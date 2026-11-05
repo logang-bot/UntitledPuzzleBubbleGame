@@ -20,6 +20,7 @@ namespace Game.Grid
         [SerializeField, Range(0f, 1f)] private float viewportHeightFraction = 1f;
         [SerializeField] private DifficultyCurveConfig difficultyCurve;
         [SerializeField] private PatternLevelCatalog patternCatalog;
+        [SerializeField] private bool startAtSavedSoloLevel;
 
         public event Action<int, int> OnBubblePlaced;
         public event Action<IReadOnlyCollection<(int Row, int Col)>, BubbleColor> OnBubblesPopped;
@@ -45,7 +46,7 @@ namespace Game.Grid
             var boardWidth = HexGridMath.BoardWidthWithOffsetMargin(cols, cellWidth);
             _rows = FitCameraAndComputeRows(_camera, boardWidth);
             ShooterOrigin = new Vector2(_camera.transform.position.x, _camera.transform.position.y - _camera.orthographicSize + cellWidth * 0.5f);
-            LoadLevel(levelNumber);
+            LoadLevel(startAtSavedSoloLevel ? Flow.SoloRunSave.CurrentLevel : levelNumber);
         }
 
         public void LoadLevel(int newLevelNumber)
