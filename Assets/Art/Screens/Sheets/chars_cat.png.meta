@@ -1,0 +1,2092 @@
+fileFormatVersion: 2
+guid: 3bee408435d903c4ead744faf0bd2349
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5731408182585157172
+    second: chars_cat_0
+  - first:
+      213: -6376597871083394558
+    second: chars_cat_1
+  - first:
+      213: -4576196170388117490
+    second: chars_cat_2
+  - first:
+      213: -5137569914949146646
+    second: chars_cat_3
+  - first:
+      213: -963827447309212788
+    second: chars_cat_4
+  - first:
+      213: -887296562730138338
+    second: chars_cat_5
+  - first:
+      213: -2098064285193106889
+    second: chars_cat_6
+  - first:
+      213: -2584166638605613320
+    second: chars_cat_7
+  - first:
+      213: -7912901825261391701
+    second: chars_cat_8
+  - first:
+      213: 3691293922323664904
+    second: chars_cat_9
+  - first:
+      213: -5177027376943460152
+    second: chars_cat_10
+  - first:
+      213: -3982469887115738494
+    second: chars_cat_11
+  - first:
+      213: 7533530165953112182
+    second: chars_cat_12
+  - first:
+      213: -5903521121709172087
+    second: chars_cat_13
+  - first:
+      213: 1641762664655572231
+    second: chars_cat_14
+  - first:
+      213: 381615681645533209
+    second: chars_cat_15
+  - first:
+      213: 799813571501217614
+    second: chars_cat_16
+  - first:
+      213: 945934159370691342
+    second: chars_cat_17
+  - first:
+      213: -5494357939154711239
+    second: chars_cat_18
+  - first:
+      213: 3817393065080343042
+    second: chars_cat_19
+  - first:
+      213: -3856545652328789027
+    second: chars_cat_20
+  - first:
+      213: 3336422389203513660
+    second: chars_cat_21
+  - first:
+      213: -3904406853418434192
+    second: chars_cat_22
+  - first:
+      213: 6062460200020736892
+    second: chars_cat_23
+  - first:
+      213: -3253803511311175965
+    second: chars_cat_24
+  - first:
+      213: 7818638199956105744
+    second: chars_cat_25
+  - first:
+      213: -3942353175367532121
+    second: chars_cat_26
+  - first:
+      213: 208207564247870905
+    second: chars_cat_27
+  - first:
+      213: 1962092849025368400
+    second: chars_cat_28
+  - first:
+      213: -665263159265170991
+    second: chars_cat_29
+  - first:
+      213: -114570195827137330
+    second: chars_cat_30
+  - first:
+      213: -6977774371010136798
+    second: chars_cat_31
+  - first:
+      213: -3416445282063746526
+    second: chars_cat_32
+  - first:
+      213: 6004790042339421299
+    second: chars_cat_33
+  - first:
+      213: -6466859599690698749
+    second: chars_cat_34
+  - first:
+      213: -8931126242275742730
+    second: chars_cat_35
+  - first:
+      213: -6307167401997435979
+    second: chars_cat_36
+  - first:
+      213: -6734222649599735705
+    second: chars_cat_37
+  - first:
+      213: -2782499001421030244
+    second: chars_cat_38
+  - first:
+      213: -5511355567604005476
+    second: chars_cat_39
+  - first:
+      213: -7002196557574536305
+    second: chars_cat_40
+  - first:
+      213: -1865926182316682933
+    second: chars_cat_41
+  - first:
+      213: 4897318734534071584
+    second: chars_cat_42
+  - first:
+      213: 4769311799406427475
+    second: chars_cat_43
+  - first:
+      213: 7265854812712447319
+    second: chars_cat_44
+  - first:
+      213: -3712358751984915816
+    second: chars_cat_45
+  - first:
+      213: 1656764301773632395
+    second: chars_cat_46
+  - first:
+      213: -4384341590842855264
+    second: chars_cat_47
+  - first:
+      213: -7049336599449210939
+    second: chars_cat_48
+  - first:
+      213: -1168660663552516629
+    second: chars_cat_49
+  - first:
+      213: -1513849683312308323
+    second: chars_cat_50
+  - first:
+      213: 9102590812448062411
+    second: chars_cat_51
+  - first:
+      213: -3273590857415074782
+    second: chars_cat_52
+  - first:
+      213: -7603353379058676348
+    second: chars_cat_53
+  - first:
+      213: -2697330434867764630
+    second: chars_cat_54
+  - first:
+      213: 210637697088048367
+    second: chars_cat_55
+  - first:
+      213: 3034722290120845593
+    second: chars_cat_56
+  - first:
+      213: -5246693293475907234
+    second: chars_cat_57
+  - first:
+      213: 8867128027271984969
+    second: chars_cat_58
+  - first:
+      213: -8250128638745792841
+    second: chars_cat_59
+  - first:
+      213: -5102135899294643234
+    second: chars_cat_60
+  - first:
+      213: 2461209213740172415
+    second: chars_cat_61
+  - first:
+      213: 2083786973656094484
+    second: chars_cat_62
+  - first:
+      213: 2586826325367252030
+    second: chars_cat_63
+  - first:
+      213: 8876921541406583815
+    second: chars_cat_64
+  - first:
+      213: 2375760963964159406
+    second: chars_cat_65
+  - first:
+      213: -7229928108658047320
+    second: chars_cat_66
+  - first:
+      213: 7983718222784414788
+    second: chars_cat_67
+  - first:
+      213: -294552806649427860
+    second: chars_cat_68
+  - first:
+      213: -5532531141701076509
+    second: chars_cat_69
+  - first:
+      213: -2375590909834612809
+    second: chars_cat_70
+  - first:
+      213: -3564181123933031931
+    second: chars_cat_71
+  - first:
+      213: 213250947888095664
+    second: chars_cat_72
+  - first:
+      213: -2014581100776046954
+    second: chars_cat_73
+  - first:
+      213: 2556731554884394542
+    second: chars_cat_74
+  - first:
+      213: -3381789684396557259
+    second: chars_cat_75
+  - first:
+      213: 4641974284760332824
+    second: chars_cat_76
+  - first:
+      213: 4253146192107242693
+    second: chars_cat_77
+  - first:
+      213: -6972628657150425939
+    second: chars_cat_78
+  - first:
+      213: 5684470210684234274
+    second: chars_cat_79
+  - first:
+      213: -8124341786946422503
+    second: chars_cat_80
+  - first:
+      213: 6147544579778997746
+    second: chars_cat_81
+  - first:
+      213: -1270832031378159647
+    second: chars_cat_82
+  - first:
+      213: -7899274730908696248
+    second: chars_cat_83
+  - first:
+      213: -7485002807422210654
+    second: chars_cat_84
+  - first:
+      213: 4962653621363605518
+    second: chars_cat_85
+  - first:
+      213: -4627494507455991638
+    second: chars_cat_86
+  - first:
+      213: -5803621448138361210
+    second: chars_cat_87
+  - first:
+      213: -2718115511099488201
+    second: chars_cat_88
+  - first:
+      213: -266782086774301121
+    second: chars_cat_89
+  - first:
+      213: -72287877110441379
+    second: chars_cat_90
+  - first:
+      213: 4493319134959465890
+    second: chars_cat_91
+  - first:
+      213: -2513589598156888724
+    second: chars_cat_92
+  - first:
+      213: 2688801328639199715
+    second: chars_cat_93
+  - first:
+      213: -6728706530349230357
+    second: chars_cat_94
+  - first:
+      213: -4711404634311740615
+    second: chars_cat_95
+  - first:
+      213: 3808929046966697273
+    second: chars_cat_96
+  - first:
+      213: -7989192968546488208
+    second: chars_cat_97
+  - first:
+      213: 5366140083218582892
+    second: chars_cat_98
+  - first:
+      213: -6434319462908107381
+    second: chars_cat_99
+  - first:
+      213: -3439680952503700064
+    second: chars_cat_100
+  - first:
+      213: 7023862126281541396
+    second: chars_cat_101
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cat_round_idle_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1232
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e07a693d39eed1840a773fbd891048f4
+      internalID: -297307435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_round_idle_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1232
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80170cf150b68ac4c81fd1fe46217504
+      internalID: 77277733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_round_idle_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 1232
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0054e27382254f439dc0f079384325f
+      internalID: -2135405628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_round_idle_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1232
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7cf474504a74a940a5013f9f9863401
+      internalID: -781166851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_round_happy_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1150
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c7ebd53718da0540b8894822ed15f39
+      internalID: -1754775577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_round_happy_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1150
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0472e074201deea4fad8148e6419f62a
+      internalID: 2088558263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_round_happy_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 1150
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf0e104f645fb7347a443467fa9675c3
+      internalID: 1616277429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_round_happy_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1150
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2a8725949e90e24387b0051beb87b49
+      internalID: 551621415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_round_cheer_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1068
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4e9a958d90ccc84a92b50ceef31a4b4
+      internalID: 346206229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_round_cheer_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1068
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e686d88711fa3e44a88a24cf7c6e175
+      internalID: -20687205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_round_cheer_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 1068
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42cad1e1d9d68c34fbf0f81fe11a2020
+      internalID: 1108037404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_round_cheer_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1068
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf4aa03cf249bf46913d8764fe78e7b
+      internalID: 516941615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_round_sad_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 986
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 570d67341a409974c82bdc440f056dda
+      internalID: 566891676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_round_sad_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 986
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a47a56344648b845933b87a2e19af59
+      internalID: -1353357771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_round_sad_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 986
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e1a1e093018e164cb437413ed84964e
+      internalID: -1256709488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_round_sad_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 986
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa621609369cce4fa1425ef00e10ce5
+      internalID: 1421879789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_round_draw_0
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 986
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e7e0394219dfd74baf344c49cd4c0c1
+      internalID: 1845657508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_round_draw_1
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 986
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf247e1e15a897c4e807e43fbb9651f4
+      internalID: 1645174147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_fluffy_idle_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 904
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 140fe61c03d0bae49b386d91cc97d3b2
+      internalID: -1998706516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_fluffy_idle_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 904
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b69bce185d9a584ea3ec288edf85260
+      internalID: 328908126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_fluffy_idle_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 904
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6b664bf296578b4595a7a81c0d25628
+      internalID: 1639615822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_fluffy_idle_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 904
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fba9eae0221a6b4fb23351b41bd7403
+      internalID: -1806653519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_fluffy_happy_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 822
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44895d1a44c0ab340822e0f6bb8a6115
+      internalID: 329701771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_fluffy_happy_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 822
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18bd80dbd3a067c4ca6249cb589f9db3
+      internalID: 2070953897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_fluffy_happy_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 822
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b164824d209a4fb4ea36bd42eb708ee0
+      internalID: -2031857387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_fluffy_happy_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 822
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 669a3625591fdf647b1fb1abe8c30662
+      internalID: 2064796966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_fluffy_cheer_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 740
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32c2c99c806593143baeb3368846e641
+      internalID: -495781128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_fluffy_cheer_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 740
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03e00829aa558154b8c9f61dccdc4778
+      internalID: -1298535031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_fluffy_cheer_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 740
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86a620ffa08e7242854630cdd41b7a4
+      internalID: -1032704238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_fluffy_cheer_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 740
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 689b8bf5ece619f4990b4e473ea0dcab
+      internalID: 1079848358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_fluffy_sad_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 658
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73fa7304dcb0eb84a9b07485ae83e0ec
+      internalID: 1849471918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_fluffy_sad_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 658
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 756cb4e3c0179b440af2334df212b44b
+      internalID: 920541552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_fluffy_sad_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 658
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 252e08ff21fd24140a5f08bebf62967f
+      internalID: 1634144739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_fluffy_sad_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 658
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c45c2a9b012780d4285f51d9535df856
+      internalID: 1448725619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_fluffy_draw_0
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 658
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e9bad4f658c49e4c8947ca0b5b03727
+      internalID: -351527727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_fluffy_draw_1
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 658
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f2a67ef15d17242bee131e93f85aeb
+      internalID: 1237481108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_slim_idle_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 576
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c07a4d98b4a53d47804a2e9baccd471
+      internalID: 786152884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_slim_idle_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 576
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dd7f8bce28716c4ab843aeb79106c16
+      internalID: 2129306468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_slim_idle_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 576
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24bb076ac0b60c24787fa8ca642d81d8
+      internalID: 1076330179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_slim_idle_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 576
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06b0f07317dbfd94685d174b072002e0
+      internalID: -1036442001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_slim_happy_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 494
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db812185f185a9e458fead9ca1b32fe6
+      internalID: 444834005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_slim_happy_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 494
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a143026477b6c894d9becfc277314b82
+      internalID: -1522120005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_slim_happy_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 494
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f302a5fc27472e745a4c8784a9bf7199
+      internalID: 883041362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_slim_happy_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 494
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b31946c2c3f68714ebd0a104d4e24a72
+      internalID: -2129530040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_slim_cheer_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 412
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b74a0549409c6fd4b980908adfb9a281
+      internalID: -1580443415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_slim_cheer_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 412
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b08e593f62ff17a4ca25c768d5abcfbb
+      internalID: -1604456136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_slim_cheer_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 412
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 871e7ae9a229a874f92b4c35c5b9d591
+      internalID: -1471551539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_slim_cheer_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 412
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f7979185f8bca646ad9cdd85822acff
+      internalID: 1095237780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_slim_sad_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 330
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6efcb056f04cd364497a6ec769ced916
+      internalID: 2041511923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_slim_sad_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 330
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f371965513559254bbb0d8fddd1f3802
+      internalID: 299845104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_slim_sad_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 330
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe442c94a3af05f47a4bf463848335c3
+      internalID: 808509234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_slim_sad_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 330
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8d1b3e7ef521b943a9481d6e5ba25f9
+      internalID: 509506173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_slim_draw_0
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 330
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3171abb007137d74cb619f00782e74fe
+      internalID: 1946019388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_slim_draw_1
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 330
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78d640d0c06e2f040b4eb775cc785bb0
+      internalID: -796717869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_chonk_idle_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 248
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1da69aa5cb0ddfc4e84d12cfe75a2ee8
+      internalID: 1643108409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_chonk_idle_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 248
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca0a65d2f697725469bc906f129740ea
+      internalID: -886090868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_chonk_idle_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 248
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b7a6b902b267546bcf669945829055
+      internalID: 2040854097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_chonk_idle_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 248
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d54750c60b03a7e4da1300555aae0679
+      internalID: 1046813021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_chonk_happy_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 166
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5f264b9d7562b648b390c33d4503423
+      internalID: -202490021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_chonk_happy_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 166
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e31b30c7a2284054786ac3bef9ab315b
+      internalID: 258812480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_chonk_happy_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 166
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a5df29563e6e3b4a9e25972b0ebfafe
+      internalID: -1186288246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_chonk_happy_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 166
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb1c42d971fd5c42bf33e768fc15cca
+      internalID: -1105752439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_chonk_cheer_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 84
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e1198d5dddf3624596f438a342b9d53
+      internalID: 1673821283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_chonk_cheer_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 84
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0b79286378128641b2a0724e58de7d0
+      internalID: 1841464500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_chonk_cheer_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 84
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 525e36c4f51a0e44aba70811a346a917
+      internalID: -1524271402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_chonk_cheer_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 84
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6b29b5440250c84ab955dd173d3a651
+      internalID: 55995494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_chonk_sad_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bd1c02633d6ef049bc5d426a77449fd
+      internalID: 1146317817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_chonk_sad_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 2
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c102da22f3862dd4da3aa5f2cdd28c64
+      internalID: 486314382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_chonk_sad_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 2
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1233e44afc4cae4683ccf588e6f3b15
+      internalID: -767339835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_chonk_sad_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 2
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52125b86817f2dc4f85e265543a3f2e0
+      internalID: 70524950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_chonk_draw_0
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 2
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ded8518ede562c41a328aad8770dfee
+      internalID: -431472510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_chonk_draw_1
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 2
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08d4865830f59354bb2ca4b5f38fd17b
+      internalID: 1803103955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 69c9884a50700b148b234154782c8908
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      cat_chonk_cheer_0: 1673821283
+      cat_chonk_cheer_1: 1841464500
+      cat_chonk_cheer_2: -1524271402
+      cat_chonk_cheer_3: 55995494
+      cat_chonk_draw_0: -431472510
+      cat_chonk_draw_1: 1803103955
+      cat_chonk_happy_0: -202490021
+      cat_chonk_happy_1: 258812480
+      cat_chonk_happy_2: -1186288246
+      cat_chonk_happy_3: -1105752439
+      cat_chonk_idle_0: 1643108409
+      cat_chonk_idle_1: -886090868
+      cat_chonk_idle_2: 2040854097
+      cat_chonk_idle_3: 1046813021
+      cat_chonk_sad_0: 1146317817
+      cat_chonk_sad_1: 486314382
+      cat_chonk_sad_2: -767339835
+      cat_chonk_sad_3: 70524950
+      cat_fluffy_cheer_0: -495781128
+      cat_fluffy_cheer_1: -1298535031
+      cat_fluffy_cheer_2: -1032704238
+      cat_fluffy_cheer_3: 1079848358
+      cat_fluffy_draw_0: -351527727
+      cat_fluffy_draw_1: 1237481108
+      cat_fluffy_happy_0: 329701771
+      cat_fluffy_happy_1: 2070953897
+      cat_fluffy_happy_2: -2031857387
+      cat_fluffy_happy_3: 2064796966
+      cat_fluffy_idle_0: -1998706516
+      cat_fluffy_idle_1: 328908126
+      cat_fluffy_idle_2: 1639615822
+      cat_fluffy_idle_3: -1806653519
+      cat_fluffy_sad_0: 1849471918
+      cat_fluffy_sad_1: 920541552
+      cat_fluffy_sad_2: 1634144739
+      cat_fluffy_sad_3: 1448725619
+      cat_round_cheer_0: 346206229
+      cat_round_cheer_1: -20687205
+      cat_round_cheer_2: 1108037404
+      cat_round_cheer_3: 516941615
+      cat_round_draw_0: 1845657508
+      cat_round_draw_1: 1645174147
+      cat_round_happy_0: -1754775577
+      cat_round_happy_1: 2088558263
+      cat_round_happy_2: 1616277429
+      cat_round_happy_3: 551621415
+      cat_round_idle_0: -297307435
+      cat_round_idle_1: 77277733
+      cat_round_idle_2: -2135405628
+      cat_round_idle_3: -781166851
+      cat_round_sad_0: 566891676
+      cat_round_sad_1: -1353357771
+      cat_round_sad_2: -1256709488
+      cat_round_sad_3: 1421879789
+      cat_slim_cheer_0: -1580443415
+      cat_slim_cheer_1: -1604456136
+      cat_slim_cheer_2: -1471551539
+      cat_slim_cheer_3: 1095237780
+      cat_slim_draw_0: 1946019388
+      cat_slim_draw_1: -796717869
+      cat_slim_happy_0: 444834005
+      cat_slim_happy_1: -1522120005
+      cat_slim_happy_2: 883041362
+      cat_slim_happy_3: -2129530040
+      cat_slim_idle_0: 786152884
+      cat_slim_idle_1: 2129306468
+      cat_slim_idle_2: 1076330179
+      cat_slim_idle_3: -1036442001
+      cat_slim_sad_0: 2041511923
+      cat_slim_sad_1: 299845104
+      cat_slim_sad_2: 808509234
+      cat_slim_sad_3: 509506173
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

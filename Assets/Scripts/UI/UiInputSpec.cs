@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Game.UI
 {
     public struct UiInputSpec
@@ -6,6 +8,6 @@ namespace Game.UI
         public string InitialText;
         public string Placeholder;
         public int CharacterLimit;
-        public UiPlacement Placement;
+        public RectInt Rect;
     }
 }

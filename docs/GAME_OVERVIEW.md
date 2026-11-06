@@ -16,17 +16,24 @@ mode (first variant built).
 
 ## Menus and your pets
 
-- **Main menu:** New Game, Continue, 2 Players and Settings. The title is
-  still a placeholder ("Untitled Pet Game").
-- **New Game** opens **pet customization**. You name your cat and your
-  dog, then pick a fur color (6 options) and a shape (4 options) for
-  each. Start saves them and begins a fresh run at level 1. Superpower
-  unlocks reset with the run.
+- **Main menu:** New Game, Continue, 2 Players and Settings, over a deep
+  space sky where galaxies and little cats and dogs drift by. The title
+  wordmark is still a placeholder ("Untitled Pet Game").
+- **New Game** opens **pet customization**, in two steps:
+  1. Choose which pet aims (cat or dog) and style it.
+  2. Style the other pet, the firer.
+
+  Each pet gets a name, a fur color (6 options) and a shape (4 options).
+  Start saves them and begins a fresh run at level 1. Superpower unlocks
+  reset with the run.
 - **Continue** resumes the solo run at the level you were last on, even
   after a game over. It's disabled until you've started a run.
-- The pets are saved, but the game doesn't show them yet. The
-  customization preview is a tinted placeholder shape until the art pass
-  adds real cat and dog sprites.
+- **Results:** clearing a level shows a celebration overlay. Losing knocks
+  the pets out: after a short pause, a Retry screen shows them napping.
+  Battle Mode shows win/lose banners, then each player's match stats.
+- The pets appear on the menus, customization and the Retry screen. The
+  in-game board doesn't show them yet; that comes with the in-game art
+  pass.
 
 ## Core gameplay loop
 

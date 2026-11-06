@@ -1,0 +1,22 @@
+{
+ "sheet": "transition",
+ "width": 3202,
+ "height": 637,
+ "sprites": [
+  {
+   "id": "transition_paw",
+   "name": "Paw-print iris",
+   "x": 2,
+   "y": 2,
+   "frameW": 318,
+   "frameH": 633,
+   "frames": 10,
+   "stepX": 320,
+   "fps": 20,
+   "pivot": "top-left",
+   "pivotX": 0,
+   "pivotY": 0,
+   "note": "318×633 (screen + bleed), place at (-24,-24). 10 frames at 20 fps = 0.5 s. Forward closes, reversed opens. Gold stepped rim"
+  }
+ ]
+}

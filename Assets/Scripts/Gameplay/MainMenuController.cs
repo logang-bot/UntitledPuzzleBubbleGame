@@ -1,54 +1,77 @@
-using System;
+using Game.Art;
 using Game.Flow;
+using Game.Menu;
+using Game.Pets;
 using Game.UI;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace Game.Gameplay
 {
     /// <summary>
-    /// Entry-point menu, lives in its own scene (MainMenu.unity). New Game
-    /// goes through pet customization; Continue resumes the saved solo run
-    /// and is disabled until one exists. See docs/features/game-flow/overview.md.
+    /// Entry-point menu, lives in its own scene (MainMenu.unity): the deep
+    /// space backdrop with drifting cosmos and pets, the logo and four
+    /// buttons. New Game goes through pet customization; Continue resumes
+    /// the saved solo run and is disabled until one exists. See
+    /// docs/features/game-flow/overview.md.
     /// </summary>
     public class MainMenuController : MonoBehaviour
     {
         [SerializeField] private RectTransform canvasRect;
+        [SerializeField] private MenuArtLibrary art;
+        [SerializeField] private PetAppearanceCatalog appearanceCatalog;
 
-        private const string PlaceholderTitle = "Untitled Pet Game";
-        private const int TitleFontSize = 56;
-        private static readonly Vector2 ButtonSize = new Vector2(320f, 90f);
+        private static readonly RectInt LogoRect = new RectInt(67, 32, 136, 94);
+        private const int ButtonX = 50;
+        private const int FirstButtonY = 390;
+        private const int ButtonPitch = 42;
+        private static readonly Vector2Int ButtonSize = new Vector2Int(170, 36);
+
+        private MenuUiFactory _ui;
 
         private void Start()
         {
-            SpawnTitle();
-            SpawnSceneButton("New Game", 0.58f, SceneNames.PetCustomization);
-            SpawnSceneButton("Continue", 0.46f, SceneNames.Game).interactable = SoloRunSave.HasRun;
-            SpawnSceneButton("2 Players", 0.34f, SceneNames.BattleMode);
-            SpawnSceneButton("Settings", 0.22f, SceneNames.SettingsMenu);
+            SceneTransition.Install(art);
+            PixelCanvas.Configure(canvasRect.GetComponent<Canvas>());
+            _ui = new MenuUiFactory(art);
+            var layers = NativeStage.Create(canvasRect);
+            SpaceBackdrop.Build(_ui, layers.Background, appearanceCatalog);
+            _ui.Sprite(layers.Stage, "logo_lockup", LogoRect);
+            SpawnButtons(layers.Stage);
         }
 
-        private void SpawnTitle()
+        private void SpawnButtons(RectTransform stage)
         {
-            var placement = UiPlacement.Stretch(new Vector2(0.05f, 0.72f), new Vector2(0.95f, 0.88f));
-            var title = RuntimeUi.CreateLabel(canvasRect, "Title", placement);
-            title.text = PlaceholderTitle;
-            title.fontSize = TitleFontSize;
-            title.color = Color.white;
+            SpawnSceneButton(stage, new MenuEntry("New Game", ButtonKind.Primary, SceneNames.PetCustomization), 0);
+            var resume = SpawnSceneButton(stage, new MenuEntry("Continue", ButtonKind.Secondary, SceneNames.Game), 1);
+            resume.SetInteractable(SoloRunSave.HasRun);
+            SpawnSceneButton(stage, new MenuEntry("2 Players", ButtonKind.Secondary, SceneNames.BattleMode), 2);
+            SpawnSceneButton(stage, new MenuEntry("Settings", ButtonKind.Secondary, SceneNames.SettingsMenu), 3);
         }
 
-        private Button SpawnSceneButton(string label, float anchorY, string sceneName)
+        private SkinnedButton SpawnSceneButton(RectTransform stage, MenuEntry entry, int row)
         {
-            return RuntimeUi.CreateButton(canvasRect, new UiButtonSpec
+            return _ui.Button(stage, new UiSkinButtonSpec
             {
-                Name = label.Replace(" ", "") + "Button",
-                Label = label,
-                Placement = UiPlacement.At(new Vector2(0.5f, anchorY), ButtonSize),
-                OnClick = LoadSceneAction(sceneName)
+                Name = entry.Label.Replace(" ", "") + "Button",
+                Kind = entry.Kind,
+                Label = entry.Label.ToUpperInvariant(),
+                Rect = new RectInt(ButtonX, FirstButtonY + row * ButtonPitch, ButtonSize.x, ButtonSize.y),
+                OnClick = () => SceneTransition.LoadScene(entry.SceneName)
             });
         }
 
-        private static Action LoadSceneAction(string sceneName) => () => SceneManager.LoadScene(sceneName);
+        private readonly struct MenuEntry
+        {
+            public readonly string Label;
+            public readonly ButtonKind Kind;
+            public readonly string SceneName;
+
+            public MenuEntry(string label, ButtonKind kind, string sceneName)
+            {
+                Label = label;
+                Kind = kind;
+                SceneName = sceneName;
+            }
+        }
     }
 }

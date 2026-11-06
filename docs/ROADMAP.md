@@ -560,7 +560,7 @@ and
 [level content](features/level-content/specs/2026-09-11-curated-levels-and-transitions-design.md)
 carry the details.
 
-## Phase 4 — Game flow & pet customization ✅ (implemented, placeholder UI)
+## Phase 4 — Game flow & pet customization ✅ (implemented, final screen art)
 
 A proper front end for the game, ahead of the art pass. Details are in
 [`features/game-flow/overview.md`](features/game-flow/overview.md).
@@ -589,11 +589,35 @@ A proper front end for the game, ahead of the art pass. Details are in
 - **Tests:** `CyclicIndexTests` covers the picker wraparound and the
   index clamping.
 
+### Screen art (Art Phases 1b, 2 and 6b, screens only) ✅
+- Every pre-game screen and result overlay is now skinned with the
+  Claude Design menu art:
+  - main menu;
+  - two-step aimer/firer customization;
+  - settings;
+  - victory overlay;
+  - knock-out → Retry screen;
+  - 2-player banners and stats;
+  - paw-iris transition.
+
+  See the "Screens: as built" section of
+  [`features/art/overview.md`](features/art/overview.md).
+- New tests:
+  - `FrameClockTests`
+  - `TransitionTimelineTests`
+  - `SpawnSlotTests`
+  - `CrossingPathTests`
+  - `FloaterPickTests`
+  - `CustomizationFlowTests`
+  - `MatchStatsTests`
+  - `ParticleMotionTests`
+
 ### Known follow-ups
-- `SettingsMenuController` and `LevelResultScreen` still have their own
-  builder code. Move them onto `RuntimeUi` when they get skinned.
 - Pet names and appearance aren't shown in-game yet. That waits on the
-  art (Art Phases 4, 6b and 7).
+  in-game art (Art Phases 4 and 7), as do the launcher pets on the
+  2-player result.
+- The HUD canvas still uses Constant Pixel Size. It moves to the pixel
+  canvas with Art Phase 6.
 
 ## Later / not yet scoped ⏳
 

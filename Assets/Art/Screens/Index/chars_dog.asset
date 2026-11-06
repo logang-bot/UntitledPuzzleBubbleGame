@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ed403eb00d2854991c32c815a2285e, type: 3}
+  m_Name: chars_dog
+  m_EditorClassIdentifier: Game::Game.Art.SpriteSheetIndex
+  entries:
+  - Id: dog_floppy_idle
+    Frames:
+    - {fileID: 559529242, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 1329965111, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -508065034, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 1428234343, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    Fps: 6
+  - Id: dog_floppy_happy
+    Frames:
+    - {fileID: 1643330284, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -2117583263, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -788408075, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -727280992, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    Fps: 10
+  - Id: dog_floppy_cheer
+    Frames:
+    - {fileID: -166549225, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 74914559, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 923396659, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 1638079319, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    Fps: 10
+  - Id: dog_floppy_sad
+    Frames:
+    - {fileID: -974367901, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 801958819, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 864655620, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 296880243, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    Fps: 4
+  - Id: dog_floppy_draw
+    Frames:
+    - {fileID: -537027834, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 541515111, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    Fps: 4
+  - Id: dog_pointy_idle
+    Frames:
+    - {fileID: -893922218, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 521856448, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -1344707658, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 949342797, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    Fps: 6
+  - Id: dog_pointy_happy
+    Frames:
+    - {fileID: -531287389, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 1770454764, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -1479546194, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -444663463, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    Fps: 10
+  - Id: dog_pointy_cheer
+    Frames:
+    - {fileID: -560691030, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 773053246, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 938759453, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -1596740925, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    Fps: 10
+  - Id: dog_pointy_sad
+    Frames:
+    - {fileID: 950697093, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -613815190, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -412672421, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 1785972018, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    Fps: 4
+  - Id: dog_pointy_draw
+    Frames:
+    - {fileID: 862104899, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 1730787512, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    Fps: 4
+  - Id: dog_fluffy_idle
+    Frames:
+    - {fileID: -2053667463, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -1775447025, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -1618735382, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 1172884090, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    Fps: 6
+  - Id: dog_fluffy_happy
+    Frames:
+    - {fileID: -1537528156, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -403067417, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 1232255500, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 177271614, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    Fps: 10
+  - Id: dog_fluffy_cheer
+    Frames:
+    - {fileID: -832893409, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 1133283804, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -2093962976, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 257850662, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    Fps: 10
+  - Id: dog_fluffy_sad
+    Frames:
+    - {fileID: -143940517, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 1070792887, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 818436270, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -968764226, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    Fps: 4
+  - Id: dog_fluffy_draw
+    Frames:
+    - {fileID: -108689611, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -1200214376, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    Fps: 4
+  - Id: dog_short_idle
+    Frames:
+    - {fileID: -562792715, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 970006859, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -1612316363, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -1908687082, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    Fps: 6
+  - Id: dog_short_happy
+    Frames:
+    - {fileID: -803780918, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -1808444327, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -1366491894, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -975769649, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    Fps: 10
+  - Id: dog_short_cheer
+    Frames:
+    - {fileID: 360886655, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -152416085, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -868800040, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 1595783284, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    Fps: 10
+  - Id: dog_short_sad
+    Frames:
+    - {fileID: 32585753, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -562661615, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 1676415173, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: 246673059, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    Fps: 4
+  - Id: dog_short_draw
+    Frames:
+    - {fileID: 1379455804, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    - {fileID: -928951297, guid: a62ea78064d369a478a98d4cc153a767, type: 3}
+    Fps: 4

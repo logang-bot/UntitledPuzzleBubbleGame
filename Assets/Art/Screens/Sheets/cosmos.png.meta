@@ -1,0 +1,719 @@
+fileFormatVersion: 2
+guid: 5fda717e562d5a140b4cb4da5d5fadc6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -342957106038319679
+    second: cosmos_0
+  - first:
+      213: 814916577572989729
+    second: cosmos_1
+  - first:
+      213: -1153467486560381714
+    second: cosmos_2
+  - first:
+      213: -7078520832998651800
+    second: cosmos_3
+  - first:
+      213: -4996091094222475130
+    second: cosmos_4
+  - first:
+      213: -8085357448377737078
+    second: cosmos_5
+  - first:
+      213: 8729187051294811094
+    second: cosmos_6
+  - first:
+      213: -7140633833770280108
+    second: cosmos_7
+  - first:
+      213: 2293497048578737933
+    second: cosmos_8
+  - first:
+      213: 7967481134049138606
+    second: cosmos_9
+  - first:
+      213: 8078449987091434902
+    second: cosmos_10
+  - first:
+      213: -761077668026525710
+    second: cosmos_11
+  - first:
+      213: 6023873341372486390
+    second: cosmos_12
+  - first:
+      213: 2988491527198606377
+    second: cosmos_13
+  - first:
+      213: 4417671011773265401
+    second: cosmos_14
+  - first:
+      213: 1375889854593866124
+    second: cosmos_15
+  - first:
+      213: -6462864241841209505
+    second: cosmos_16
+  - first:
+      213: -3409225852936182981
+    second: cosmos_17
+  - first:
+      213: 6400800774173438380
+    second: cosmos_18
+  - first:
+      213: -4127504220485231951
+    second: cosmos_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cos_milkyway_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 566
+        width: 380
+        height: 360
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 580c97ef6dd816b429e92b9484fb9873
+      internalID: 1717886637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_spiral_blue_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 334
+        width: 280
+        height: 230
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f91575baf12134e8ca88383f022a09
+      internalID: -156183665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_barred_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 102
+        width: 300
+        height: 230
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dce482cc8c2b9949827e4702995e4ab
+      internalID: -5050945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_spiral_violet_0
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 252
+        width: 110
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aeacf185ee37f741b42f107b4be5204
+      internalID: -1167252627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_ring_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 28
+        width: 100
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1549309c15746246b8c032f525b56cb
+      internalID: 1743841893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_edge_on_0
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 74
+        width: 96
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f24f2e11ad6331449b32423eeef188fa
+      internalID: 776820162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_elliptical_0
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 54
+        width: 46
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93ecc9ab0cab6a84ea477af62bc2b7ee
+      internalID: -1108899535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_planet_ringed_0
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 57
+        width: 86
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61c94adcc67f18c4b88885f6c75d1eea
+      internalID: 577783985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_planet_earth_0
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 69
+        width: 31
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e098385e984426e40b7625988d8d63bc
+      internalID: 853027967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_planet_ice_0
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 63
+        width: 37
+        height: 37
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35f74774cd844f94b8c7cd446fe377c9
+      internalID: 1607020002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_planet_gas_0
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 75
+        width: 49
+        height: 25
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a09204f771fccb846ad7389748f72d16
+      internalID: 1485976911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_moon_0
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 79
+        width: 21
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5257c274a45222d488bd2798833f490f
+      internalID: 1351053635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_planet_red_0
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 85
+        width: 15
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed7d9d034d942da4b9d50818de53de98
+      internalID: -1194692784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_comet_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 11
+        width: 46
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 282c2c82af3e10146afad54d922831cf
+      internalID: 1386785191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_comet_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 11
+        width: 46
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a828e01d852881c4eb080c64f84786df
+      internalID: 474964403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_comet_2
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 11
+        width: 46
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ebdb7bf8bd12434399c941e1d8bb7a2
+      internalID: 1163452917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_comet_3
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 11
+        width: 46
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 686ac88a63021234e97ee39935a55c30
+      internalID: 101537053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_shooting_star_0
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 2
+        width: 40
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81efb35858ed4414fbac01d45a2fd568
+      internalID: -886734901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_shooting_star_1
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 2
+        width: 40
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70bdb149bfa32fe43a59ffb6bf01412d
+      internalID: 139464028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_shooting_star_2
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 2
+        width: 40
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60370a0f25061c34dad9515b199e0c1e
+      internalID: -1613397796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_shooting_star_3
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 2
+        width: 40
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40bc4cf15bdd1aa48b8a41847d609d46
+      internalID: -1422272922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_shooting_star_4
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 2
+        width: 40
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9427baedca2f484f83e64f78877b3ef
+      internalID: 258092221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cos_shooting_star_5
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 2
+        width: 40
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db465c4588b2c3d4e8ec94e7a6ac2f82
+      internalID: 1962180317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 743807a681732d54fa3c115ffc70fef9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      cos_barred_0: -5050945
+      cos_comet_0: 1386785191
+      cos_comet_1: 474964403
+      cos_comet_2: 1163452917
+      cos_comet_3: 101537053
+      cos_edge_on_0: 776820162
+      cos_elliptical_0: -1108899535
+      cos_milkyway_0: 1717886637
+      cos_moon_0: 1351053635
+      cos_planet_earth_0: 853027967
+      cos_planet_gas_0: 1485976911
+      cos_planet_ice_0: 1607020002
+      cos_planet_red_0: -1194692784
+      cos_planet_ringed_0: 577783985
+      cos_ring_0: 1743841893
+      cos_shooting_star_0: -886734901
+      cos_shooting_star_1: 139464028
+      cos_shooting_star_2: -1613397796
+      cos_shooting_star_3: -1422272922
+      cos_shooting_star_4: 258092221
+      cos_shooting_star_5: 1962180317
+      cos_spiral_blue_0: -156183665
+      cos_spiral_violet_0: -1167252627
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

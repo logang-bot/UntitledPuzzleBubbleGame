@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9d4ab7da436ac45936fc8e8c868079, type: 3}
+  m_Name: MenuArtLibrary
+  m_EditorClassIdentifier: Game::Game.Art.MenuArtLibrary
+  sheets:
+  - {fileID: 11400000, guid: d79652610882d4a4ab14316e3c656558, type: 2}
+  - {fileID: 11400000, guid: 9f0cf9d16d08a2d4fa85cb0494bd0048, type: 2}
+  - {fileID: 11400000, guid: 7ab0d61f73358fe449a583bbfddb00ac, type: 2}
+  - {fileID: 11400000, guid: 52041ecec80f4d945b429e6a7bb12deb, type: 2}
+  - {fileID: 11400000, guid: f531e12e220583a4db7d73df676c12bc, type: 2}
+  - {fileID: 11400000, guid: 850ac926a41b45b44bb9ee7a3e9f21d1, type: 2}
+  - {fileID: 11400000, guid: afe07798e834631409aa92064bb980fc, type: 2}
+  - {fileID: 11400000, guid: 4baf22b94e86eb54f9cfec6e39f82407, type: 2}
+  - {fileID: 11400000, guid: f66dbcfdc50111044bc38f876eacfeb7, type: 2}
+  - {fileID: 11400000, guid: 1d79a47d82540aa4583e0c49685a7426, type: 2}
+  - {fileID: 11400000, guid: acef7c80ce842ec4b9491054abd88663, type: 2}
+  - {fileID: 11400000, guid: 06ff3a63e94ad8048b77b6adb1bd8174, type: 2}
+  captionFont: {fileID: 12800000, guid: 42979f06255aa6845a10be1a9ca9d2fc, type: 3}
+  smallFont: {fileID: 12800000, guid: 79e092c6af76b05469e626c1214fe456, type: 3}
+  furRecolorMaterial: {fileID: 2100000, guid: d6d94172881d03e409723978f51588fc, type: 2}

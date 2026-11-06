@@ -1,96 +1,120 @@
+using System.Collections.Generic;
+using Game.Art;
 using Game.Flow;
 using Game.UI;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace Game.Pets
 {
     /// <summary>
-    /// New Game's customization screen (PetCustomization.unity): name and
-    /// style the cat and dog, then Start saves both pets, begins a fresh solo
-    /// run and loads the Game scene. See docs/features/game-flow/overview.md.
+    /// New Game's customization screen (PetCustomization.unity), two steps:
+    /// step 1 picks and styles the aimer (CAT/DOG toggle), step 2 styles the
+    /// other pet, the firer. Start saves both pets and the aimer, begins a
+    /// fresh solo run and loads the Game scene. Back on step 2 returns to
+    /// step 1 keeping the edits. See docs/features/game-flow/overview.md.
     /// </summary>
     public class PetCustomizationController : MonoBehaviour
     {
         [SerializeField] private RectTransform canvasRect;
+        [SerializeField] private MenuArtLibrary art;
         [SerializeField] private PetAppearanceCatalog appearanceCatalog;
 
-        private const int TitleFontSize = 44;
-        private static readonly Vector2 StartButtonSize = new Vector2(320f, 90f);
-        private static readonly Vector2 BackButtonSize = new Vector2(180f, 70f);
+        private static readonly RectInt BackRect = new RectInt(10, 28, 26, 30);
+        private static readonly RectInt ToggleRect = new RectInt(40, 76, 190, 28);
+        private static readonly RectInt NextRect = new RectInt(35, 504, 200, 38);
+        private const int ToggleSegmentWidth = 91;
 
-        private PetEditorPanel _catPanel;
-        private PetEditorPanel _dogPanel;
-        private Button _startButton;
+        private readonly Dictionary<PetSpecies, PetProfile> _drafts = new();
+        private CustomizationFlow _flow;
+        private CustomizationHeader _header;
+        private SegmentedToggle _roleToggle;
+        private PetPanelView _panel;
+        private SkinnedButton _nextButton;
 
         private void Start()
         {
-            SpawnTitle();
-            _catPanel = SpawnPanel(PetSpecies.Cat, UiPlacement.Stretch(new Vector2(0.03f, 0.5f), new Vector2(0.97f, 0.82f)));
-            _dogPanel = SpawnPanel(PetSpecies.Dog, UiPlacement.Stretch(new Vector2(0.03f, 0.16f), new Vector2(0.97f, 0.48f)));
-            SpawnBackButton();
-            _startButton = SpawnStartButton();
-            _catPanel.OnNameChanged += RefreshStartButton;
-            _dogPanel.OnNameChanged += RefreshStartButton;
-            RefreshStartButton();
+            SceneTransition.Install(art);
+            PixelCanvas.Configure(canvasRect.GetComponent<Canvas>());
+            LoadDrafts();
+            var ui = new MenuUiFactory(art);
+            var layers = NativeStage.Create(canvasRect);
+            ui.Fill(layers.Background, "NightFill", MenuPalette.Night0).raycastTarget = false;
+            BuildScreen(ui, layers.Stage);
+            ShowStep();
         }
 
-        private void SpawnTitle()
+        private void LoadDrafts()
         {
-            var placement = UiPlacement.Stretch(new Vector2(0.05f, 0.84f), new Vector2(0.95f, 0.9f));
-            var title = RuntimeUi.CreateLabel(canvasRect, "Title", placement);
-            title.text = "Meet Your Pets";
-            title.fontSize = TitleFontSize;
-            title.color = Color.white;
+            _flow = new CustomizationFlow(PetProfileStore.LoadAimer());
+            _drafts[PetSpecies.Cat] = PetProfileStore.Load(PetSpecies.Cat);
+            _drafts[PetSpecies.Dog] = PetProfileStore.Load(PetSpecies.Dog);
         }
 
-        private PetEditorPanel SpawnPanel(PetSpecies species, UiPlacement placement)
+        private void BuildScreen(MenuUiFactory ui, RectTransform stage)
         {
-            return new PetEditorPanel(canvasRect, new PetEditorPanelSpec
-            {
-                Species = species,
-                Appearance = appearanceCatalog.For(species),
-                InitialProfile = PetProfileStore.Load(species),
-                Placement = placement
-            });
+            ui.Button(stage, new UiSkinButtonSpec { Name = "BackButton", Kind = ButtonKind.Back, Rect = BackRect, OnClick = HandleBack });
+            _header = new CustomizationHeader(ui, stage);
+            _roleToggle = new SegmentedToggle(ui, stage, new SegmentedToggleSpec { Name = "RoleToggle", Track = ToggleRect, SegmentWidth = ToggleSegmentWidth, Labels = new[] { "CAT", "DOG" } });
+            _roleToggle.OnSelected += HandleSpeciesToggled;
+            _panel = new PetPanelView(ui, stage, appearanceCatalog);
+            _panel.OnProfileChanged += HandleProfileChanged;
+            _nextButton = ui.Button(stage, new UiSkinButtonSpec { Name = "NextButton", Kind = ButtonKind.Primary, Label = "NEXT", Rect = NextRect, OnClick = HandleNext });
         }
 
-        private void SpawnBackButton()
+        private void ShowStep()
         {
-            RuntimeUi.CreateButton(canvasRect, new UiButtonSpec
-            {
-                Name = "BackButton",
-                Label = "Back",
-                Placement = UiPlacement.At(new Vector2(0.15f, 0.95f), BackButtonSize),
-                OnClick = () => SceneManager.LoadScene(SceneNames.MainMenu)
-            });
+            var edited = _flow.Edited;
+            _header.Show(_flow.Step, AimerDescription());
+            _roleToggle.Select(edited == PetSpecies.Cat ? 0 : 1);
+            _panel.Show(edited, _drafts[edited]);
+            _nextButton.SetLabel(_flow.Step == CustomizationStep.Aimer ? "NEXT" : "START");
+            RefreshNextButton();
         }
 
-        private Button SpawnStartButton()
+        private string AimerDescription()
         {
-            return RuntimeUi.CreateButton(canvasRect, new UiButtonSpec
-            {
-                Name = "StartButton",
-                Label = "Start",
-                Placement = UiPlacement.At(new Vector2(0.5f, 0.08f), StartButtonSize),
-                OnClick = HandleStartClicked
-            });
+            var aimer = _flow.Aimer;
+            return $"{_drafts[aimer].Name.ToUpperInvariant()} THE {(aimer == PetSpecies.Cat ? "CAT" : "DOG")}";
         }
 
-        private void HandleStartClicked()
+        private void RefreshNextButton()
         {
-            PetProfileStore.Save(PetSpecies.Cat, _catPanel.CurrentProfile);
-            PetProfileStore.Save(PetSpecies.Dog, _dogPanel.CurrentProfile);
+            _nextButton.SetInteractable(CustomizationFlow.CanAdvance(_drafts[_flow.Edited].Name));
+        }
+
+        private void HandleSpeciesToggled(int index)
+        {
+            _flow.SelectSpecies(index == 0 ? PetSpecies.Cat : PetSpecies.Dog);
+            ShowStep();
+            _panel.Celebrate();
+        }
+
+        private void HandleProfileChanged(PetProfile profile)
+        {
+            _drafts[_flow.Edited] = profile;
+            RefreshNextButton();
+        }
+
+        private void HandleNext()
+        {
+            if (_flow.Step == CustomizationStep.Firer) { StartRun(); return; }
+            _flow.Next();
+            ShowStep();
+        }
+
+        private void HandleBack()
+        {
+            if (_flow.TryStepBack()) ShowStep();
+            else SceneTransition.LoadScene(SceneNames.MainMenu);
+        }
+
+        private void StartRun()
+        {
+            PetProfileStore.Save(PetSpecies.Cat, _drafts[PetSpecies.Cat]);
+            PetProfileStore.Save(PetSpecies.Dog, _drafts[PetSpecies.Dog]);
+            PetProfileStore.SaveAimer(_flow.Aimer);
             SoloRunSave.BeginNewRun();
-            SceneManager.LoadScene(SceneNames.Game);
+            SceneTransition.LoadScene(SceneNames.Game);
         }
-
-        private void RefreshStartButton()
-        {
-            _startButton.interactable = HasName(_catPanel) && HasName(_dogPanel);
-        }
-
-        private static bool HasName(PetEditorPanel panel) => panel.CurrentProfile.Name.Length > 0;
     }
 }

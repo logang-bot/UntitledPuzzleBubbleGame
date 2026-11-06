@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ed403eb00d2854991c32c815a2285e, type: 3}
+  m_Name: transition
+  m_EditorClassIdentifier: Game::Game.Art.SpriteSheetIndex
+  entries:
+  - Id: transition_paw
+    Frames:
+    - {fileID: -209620988, guid: 8292f537c1266f24eba387b820bcd116, type: 3}
+    - {fileID: -1027409640, guid: 8292f537c1266f24eba387b820bcd116, type: 3}
+    - {fileID: -1270396922, guid: 8292f537c1266f24eba387b820bcd116, type: 3}
+    - {fileID: 1076648539, guid: 8292f537c1266f24eba387b820bcd116, type: 3}
+    - {fileID: -631815882, guid: 8292f537c1266f24eba387b820bcd116, type: 3}
+    - {fileID: -978944677, guid: 8292f537c1266f24eba387b820bcd116, type: 3}
+    - {fileID: 468981931, guid: 8292f537c1266f24eba387b820bcd116, type: 3}
+    - {fileID: -1982470973, guid: 8292f537c1266f24eba387b820bcd116, type: 3}
+    - {fileID: 1610760554, guid: 8292f537c1266f24eba387b820bcd116, type: 3}
+    - {fileID: -690695127, guid: 8292f537c1266f24eba387b820bcd116, type: 3}
+    Fps: 20

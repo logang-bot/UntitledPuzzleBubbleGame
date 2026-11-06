@@ -4,6 +4,8 @@ namespace Game.Pets
 {
     public static class PetProfileStore
     {
+        private const string AimerKey = "Pet.Aimer";
+
         public static PetProfile Load(PetSpecies species) => new PetProfile
         {
             Name = PlayerPrefs.GetString(Key(species, "Name"), DefaultName(species)),
@@ -16,6 +18,14 @@ namespace Game.Pets
             PlayerPrefs.SetString(Key(species, "Name"), profile.Name);
             PlayerPrefs.SetInt(Key(species, "Color"), profile.ColorIndex);
             PlayerPrefs.SetInt(Key(species, "Shape"), profile.ShapeIndex);
+            PlayerPrefs.Save();
+        }
+
+        public static PetSpecies LoadAimer() => (PetSpecies)PlayerPrefs.GetInt(AimerKey, (int)PetSpecies.Cat);
+
+        public static void SaveAimer(PetSpecies aimer)
+        {
+            PlayerPrefs.SetInt(AimerKey, (int)aimer);
             PlayerPrefs.Save();
         }
 

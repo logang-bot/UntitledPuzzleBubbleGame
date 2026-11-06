@@ -1,0 +1,2083 @@
+fileFormatVersion: 2
+guid: a62ea78064d369a478a98d4cc153a767
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -456829454812364196
+    second: chars_dog_0
+  - first:
+      213: -9021684641312957149
+    second: chars_dog_1
+  - first:
+      213: 165031761801012865
+    second: chars_dog_2
+  - first:
+      213: -1472839364532927213
+    second: chars_dog_3
+  - first:
+      213: 472402981581553454
+    second: chars_dog_4
+  - first:
+      213: -2548561875458442681
+    second: chars_dog_5
+  - first:
+      213: 6969882247026767288
+    second: chars_dog_6
+  - first:
+      213: 4177337891105514327
+    second: chars_dog_7
+  - first:
+      213: 7075258588364004698
+    second: chars_dog_8
+  - first:
+      213: 8285471410930442192
+    second: chars_dog_9
+  - first:
+      213: -3364899409108783872
+    second: chars_dog_10
+  - first:
+      213: -7609335125740787200
+    second: chars_dog_11
+  - first:
+      213: -6951056213497723447
+    second: chars_dog_12
+  - first:
+      213: -9040659920609982279
+    second: chars_dog_13
+  - first:
+      213: 4170372962162733515
+    second: chars_dog_14
+  - first:
+      213: 2106787467435315741
+    second: chars_dog_15
+  - first:
+      213: 778154954682535001
+    second: chars_dog_16
+  - first:
+      213: -8840009061821107598
+    second: chars_dog_17
+  - first:
+      213: -4233228803681640004
+    second: chars_dog_18
+  - first:
+      213: -2862154434702260364
+    second: chars_dog_19
+  - first:
+      213: -5783481444310269832
+    second: chars_dog_20
+  - first:
+      213: -1491880996622039601
+    second: chars_dog_21
+  - first:
+      213: -557738286789452010
+    second: chars_dog_22
+  - first:
+      213: -6208261963388281684
+    second: chars_dog_23
+  - first:
+      213: 2332972929787291916
+    second: chars_dog_24
+  - first:
+      213: -1934215165554259613
+    second: chars_dog_25
+  - first:
+      213: 5674763176264750658
+    second: chars_dog_26
+  - first:
+      213: 3888420582199393662
+    second: chars_dog_27
+  - first:
+      213: 5247565490500868284
+    second: chars_dog_28
+  - first:
+      213: 4756447083854714968
+    second: chars_dog_29
+  - first:
+      213: 6502643178540359646
+    second: chars_dog_30
+  - first:
+      213: -4492897415405112302
+    second: chars_dog_31
+  - first:
+      213: 2270745863638418337
+    second: chars_dog_32
+  - first:
+      213: 4417981723162717960
+    second: chars_dog_33
+  - first:
+      213: 5492269645961354967
+    second: chars_dog_34
+  - first:
+      213: -7459491051460225024
+    second: chars_dog_35
+  - first:
+      213: 8963423478364368387
+    second: chars_dog_36
+  - first:
+      213: -7783921834540912117
+    second: chars_dog_37
+  - first:
+      213: -6409378241906514634
+    second: chars_dog_38
+  - first:
+      213: 8091664776709900550
+    second: chars_dog_39
+  - first:
+      213: 5318137913409486751
+    second: chars_dog_40
+  - first:
+      213: -962440048817525125
+    second: chars_dog_41
+  - first:
+      213: -2281868861989236601
+    second: chars_dog_42
+  - first:
+      213: -5346714859330492740
+    second: chars_dog_43
+  - first:
+      213: -7165187207902699684
+    second: chars_dog_44
+  - first:
+      213: -503796506079013490
+    second: chars_dog_45
+  - first:
+      213: 3328642403323789117
+    second: chars_dog_46
+  - first:
+      213: 6760490760358828706
+    second: chars_dog_47
+  - first:
+      213: -4710303158636304947
+    second: chars_dog_48
+  - first:
+      213: -861348292222694406
+    second: chars_dog_49
+  - first:
+      213: -1792037441875878949
+    second: chars_dog_50
+  - first:
+      213: -3673449231503104087
+    second: chars_dog_51
+  - first:
+      213: -1903739657039477312
+    second: chars_dog_52
+  - first:
+      213: 4205666162977645711
+    second: chars_dog_53
+  - first:
+      213: -3048922555913177350
+    second: chars_dog_54
+  - first:
+      213: 2210271529448371633
+    second: chars_dog_55
+  - first:
+      213: 6105755718354871677
+    second: chars_dog_56
+  - first:
+      213: 6633405198052135366
+    second: chars_dog_57
+  - first:
+      213: -2019376267816153573
+    second: chars_dog_58
+  - first:
+      213: -4094118715758206972
+    second: chars_dog_59
+  - first:
+      213: 3031997023115060360
+    second: chars_dog_60
+  - first:
+      213: -154190456928002827
+    second: chars_dog_61
+  - first:
+      213: -8096606964098271053
+    second: chars_dog_62
+  - first:
+      213: 2283658659520052518
+    second: chars_dog_63
+  - first:
+      213: 5560637605224633670
+    second: chars_dog_64
+  - first:
+      213: 5326258584316331096
+    second: chars_dog_65
+  - first:
+      213: 8400324317453534239
+    second: chars_dog_66
+  - first:
+      213: 3128214585741289491
+    second: chars_dog_67
+  - first:
+      213: 4402212125180806497
+    second: chars_dog_68
+  - first:
+      213: -5759352869048474860
+    second: chars_dog_69
+  - first:
+      213: -2516097494791016772
+    second: chars_dog_70
+  - first:
+      213: 7689871763228958106
+    second: chars_dog_71
+  - first:
+      213: -6520816988922347061
+    second: chars_dog_72
+  - first:
+      213: 2994392994429217832
+    second: chars_dog_73
+  - first:
+      213: -2312498976855754065
+    second: chars_dog_74
+  - first:
+      213: -9210640278850066883
+    second: chars_dog_75
+  - first:
+      213: 4068680578057849665
+    second: chars_dog_76
+  - first:
+      213: -7172244883451764144
+    second: chars_dog_77
+  - first:
+      213: -5005924618370976221
+    second: chars_dog_78
+  - first:
+      213: 4869600912225321589
+    second: chars_dog_79
+  - first:
+      213: 4283795292636525262
+    second: chars_dog_80
+  - first:
+      213: 2932907810268327240
+    second: chars_dog_81
+  - first:
+      213: -2913424281760924381
+    second: chars_dog_82
+  - first:
+      213: -9184935426312361841
+    second: chars_dog_83
+  - first:
+      213: -5659774808782924315
+    second: chars_dog_84
+  - first:
+      213: -6132738930761043005
+    second: chars_dog_85
+  - first:
+      213: 8110103656232081902
+    second: chars_dog_86
+  - first:
+      213: 3019795159470646311
+    second: chars_dog_87
+  - first:
+      213: 5085643904104865007
+    second: chars_dog_88
+  - first:
+      213: 5425466482125136342
+    second: chars_dog_89
+  - first:
+      213: -73877572099387268
+    second: chars_dog_90
+  - first:
+      213: -8293236857880609716
+    second: chars_dog_91
+  - first:
+      213: -5445816725937957508
+    second: chars_dog_92
+  - first:
+      213: 481792943092226675
+    second: chars_dog_93
+  - first:
+      213: 4892034915467270483
+    second: chars_dog_94
+  - first:
+      213: -5417426193813107342
+    second: chars_dog_95
+  - first:
+      213: -2653531098285582235
+    second: chars_dog_96
+  - first:
+      213: 6286895077512640376
+    second: chars_dog_97
+  - first:
+      213: 4030027494492409715
+    second: chars_dog_98
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dog_floppy_idle_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1232
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7582eb59aed5d9b4b946cd6c40377a1e
+      internalID: 559529242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_floppy_idle_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1232
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4c6106ec060b464da41ce885f787200
+      internalID: 1329965111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_floppy_idle_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 1232
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4216890fbac5474b9cbb508a93c8c40
+      internalID: -508065034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_floppy_idle_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1232
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 845a17153afa8bc49b5b63639573ed0b
+      internalID: 1428234343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_floppy_happy_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1150
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0994927a0e780be418e856fa1de15d46
+      internalID: 1643330284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_floppy_happy_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1150
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8475341288f555b4ba65fed2e6b5b1e3
+      internalID: -2117583263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_floppy_happy_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 1150
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15e23091ac4eb8449b26c852fdec94f4
+      internalID: -788408075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_floppy_happy_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1150
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e30ac51b979f0404f85769d1c8c202ea
+      internalID: -727280992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_floppy_cheer_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1068
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a574bae4ddc538b4089b0a460bcbb9e8
+      internalID: -166549225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_floppy_cheer_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1068
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c990cbb1904b44448dffce8bbb25389
+      internalID: 74914559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_floppy_cheer_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 1068
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87cbcf6b9f2e04a43873ae085afea9b7
+      internalID: 923396659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_floppy_cheer_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1068
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc48a1c70693d2b45b69a44b2b9c612f
+      internalID: 1638079319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_floppy_sad_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 986
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52e254d2f94f16f4aab20f2efbfa69c3
+      internalID: -974367901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_floppy_sad_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 986
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40633d2f7f971a349a4b12755ddf212c
+      internalID: 801958819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_floppy_sad_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 986
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac8079247fbd44c44ba61c105ce39807
+      internalID: 864655620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_floppy_sad_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 986
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8b26d6a5fcb1544fb26abdaef6ab8b9
+      internalID: 296880243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_floppy_draw_0
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 986
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45be720c53c7fea459eda12fe8948237
+      internalID: -537027834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_floppy_draw_1
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 986
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 275be87ebf0886b48b1866fe66d83862
+      internalID: 541515111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_pointy_idle_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 904
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd7eb5c3b9ba734e99482619a3fc1d5
+      internalID: -893922218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_pointy_idle_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 904
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab813387b1811fb4b8d0e7c8601dadf8
+      internalID: 521856448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_pointy_idle_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 904
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a17a5e4572e651d4992be159e7042219
+      internalID: -1344707658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_pointy_idle_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 904
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f31226f67e6f5544b9be74eaec3f08f
+      internalID: 949342797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_pointy_happy_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 822
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11fc89d8b1408ec4db9847d24b5981f9
+      internalID: -531287389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_pointy_happy_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 822
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0458c5765002d141aaca811be7631da
+      internalID: 1770454764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_pointy_happy_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 822
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03a68e2cdf71fe84f8074e19045a0874
+      internalID: -1479546194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_pointy_happy_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 822
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce8e14c616b34914384aa5a6be559e27
+      internalID: -444663463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_pointy_cheer_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 740
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff6ec9d4b9b6ac469ae28ed18e021ad
+      internalID: -560691030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_pointy_cheer_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 740
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8c6f60de90caa34aa22a208481ef5b1
+      internalID: 773053246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_pointy_cheer_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 740
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 714c2602e30ceb94aab759ef2e3efa18
+      internalID: 938759453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_pointy_cheer_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 740
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b345474f7f2377c48a327ae1381939ba
+      internalID: -1596740925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_pointy_sad_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 658
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6113ac4219d8e44449e91e2ae677108f
+      internalID: 950697093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_pointy_sad_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 658
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8d7511fec01d2f469a8715c662a4811
+      internalID: -613815190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_pointy_sad_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 658
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2a89c001edbb2f469624c0226b8ab00
+      internalID: -412672421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_pointy_sad_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 658
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f4262b203b309c46925ec04cac6ced3
+      internalID: 1785972018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_pointy_draw_0
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 658
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 960c540ede1965241bbef22269d1e615
+      internalID: 862104899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_pointy_draw_1
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 658
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21f2c6a58ff9bd646b82caed41610960
+      internalID: 1730787512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_fluffy_idle_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 576
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba50b0487086c047bd5e96658b9af6f
+      internalID: -2053667463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_fluffy_idle_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 576
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 355b0814815b65a41ab8e92a5d00a4c4
+      internalID: -1775447025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_fluffy_idle_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 576
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8be0a3ab414a814fabe445b5f470a7a
+      internalID: -1618735382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_fluffy_idle_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 576
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2258629e59427194b98f3bec26978a53
+      internalID: 1172884090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_fluffy_happy_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 494
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0bd08b0933477b428f4bbb3d7ccd090
+      internalID: -1537528156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_fluffy_happy_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 494
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6460f65f5bcfdc344a4907cb87181a4b
+      internalID: -403067417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_fluffy_happy_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 494
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0639a770d445231408d3e5ce9bb0d712
+      internalID: 1232255500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_fluffy_happy_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 494
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5280765ec6e2ee47a3b1d3f281a6e3e
+      internalID: 177271614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_fluffy_cheer_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 412
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1422ea2724c3d5847ace2f0fb0457763
+      internalID: -832893409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_fluffy_cheer_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 412
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 296f1c7ca413e234b9e9923e3a2ebc3c
+      internalID: 1133283804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_fluffy_cheer_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 412
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84d9614eb76903b4dac650c62f290a1f
+      internalID: -2093962976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_fluffy_cheer_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 412
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e43fa8dd4129464f9d106ef06c97234
+      internalID: 257850662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_fluffy_sad_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 330
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7fa9fa08d4511443a3cc45ed05b1f96
+      internalID: -143940517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_fluffy_sad_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 330
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8670353d60d1854488e93448eb21561
+      internalID: 1070792887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_fluffy_sad_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 330
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3b47e6c01e09aa448da9536c5af1a2e
+      internalID: 818436270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_fluffy_sad_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 330
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 939ae9accce5c1244ad8e2de3c6b7d24
+      internalID: -968764226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_fluffy_draw_0
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 330
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8665a599d2cee404fab6c22b38aa8719
+      internalID: -108689611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_fluffy_draw_1
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 330
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0676ab4bc699ee43a5e9c38d1571f02
+      internalID: -1200214376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_short_idle_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 248
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 758ea843cdc9f9049975c90ef5bb3daa
+      internalID: -562792715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_short_idle_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 248
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b39eb1bde2591df42a2b17d68fcfb37c
+      internalID: 970006859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_short_idle_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 248
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b41828a6ee6ed024c996d4b28c50b6d2
+      internalID: -1612316363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_short_idle_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 248
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dccf105b4d931424e9c946badcb8a541
+      internalID: -1908687082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_short_happy_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 166
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 112577417a08083408cb162504a5273f
+      internalID: -803780918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_short_happy_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 166
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb93b30a96e63d241862b67a3c967912
+      internalID: -1808444327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_short_happy_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 166
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a9dc545d84293b4cac6bcd46988fb75
+      internalID: -1366491894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_short_happy_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 166
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f02299f64c7afb4fae9b1978dd0efab
+      internalID: -975769649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_short_cheer_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 84
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1152b4b438bafef4ab2e53b53b9b2606
+      internalID: 360886655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_short_cheer_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 84
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 487e9417fab4d7e4bb0ba1ccfbc145c7
+      internalID: -152416085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_short_cheer_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 84
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cffc01f843cfcfe4989c9a9158bd0c51
+      internalID: -868800040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_short_cheer_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 84
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5af903d9c52f1cc4a937d71e35171449
+      internalID: 1595783284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_short_sad_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc8beab0fbbcc054b80f686966d8b402
+      internalID: 32585753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_short_sad_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 2
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b96d44e483f4cb6478642825d184f7d9
+      internalID: -562661615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_short_sad_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 2
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87cf765fdfe379447b496100b5bd2033
+      internalID: 1676415173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_short_sad_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 2
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53798ed1b3aa1ef4297bbde237fe2a7d
+      internalID: 246673059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_short_draw_0
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 2
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5051cd4aeb4bab43bf706daff133770
+      internalID: 1379455804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog_short_draw_1
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 2
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5afb5b09b3739ce4d97cb8d4c32f9fba
+      internalID: -928951297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 7516d63abdcb55a4fac878386d6b35d9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      dog_floppy_cheer_0: -166549225
+      dog_floppy_cheer_1: 74914559
+      dog_floppy_cheer_2: 923396659
+      dog_floppy_cheer_3: 1638079319
+      dog_floppy_draw_0: -537027834
+      dog_floppy_draw_1: 541515111
+      dog_floppy_happy_0: 1643330284
+      dog_floppy_happy_1: -2117583263
+      dog_floppy_happy_2: -788408075
+      dog_floppy_happy_3: -727280992
+      dog_floppy_idle_0: 559529242
+      dog_floppy_idle_1: 1329965111
+      dog_floppy_idle_2: -508065034
+      dog_floppy_idle_3: 1428234343
+      dog_floppy_sad_0: -974367901
+      dog_floppy_sad_1: 801958819
+      dog_floppy_sad_2: 864655620
+      dog_floppy_sad_3: 296880243
+      dog_fluffy_cheer_0: -832893409
+      dog_fluffy_cheer_1: 1133283804
+      dog_fluffy_cheer_2: -2093962976
+      dog_fluffy_cheer_3: 257850662
+      dog_fluffy_draw_0: -108689611
+      dog_fluffy_draw_1: -1200214376
+      dog_fluffy_happy_0: -1537528156
+      dog_fluffy_happy_1: -403067417
+      dog_fluffy_happy_2: 1232255500
+      dog_fluffy_happy_3: 177271614
+      dog_fluffy_idle_0: -2053667463
+      dog_fluffy_idle_1: -1775447025
+      dog_fluffy_idle_2: -1618735382
+      dog_fluffy_idle_3: 1172884090
+      dog_fluffy_sad_0: -143940517
+      dog_fluffy_sad_1: 1070792887
+      dog_fluffy_sad_2: 818436270
+      dog_fluffy_sad_3: -968764226
+      dog_pointy_cheer_0: -560691030
+      dog_pointy_cheer_1: 773053246
+      dog_pointy_cheer_2: 938759453
+      dog_pointy_cheer_3: -1596740925
+      dog_pointy_draw_0: 862104899
+      dog_pointy_draw_1: 1730787512
+      dog_pointy_happy_0: -531287389
+      dog_pointy_happy_1: 1770454764
+      dog_pointy_happy_2: -1479546194
+      dog_pointy_happy_3: -444663463
+      dog_pointy_idle_0: -893922218
+      dog_pointy_idle_1: 521856448
+      dog_pointy_idle_2: -1344707658
+      dog_pointy_idle_3: 949342797
+      dog_pointy_sad_0: 950697093
+      dog_pointy_sad_1: -613815190
+      dog_pointy_sad_2: -412672421
+      dog_pointy_sad_3: 1785972018
+      dog_short_cheer_0: 360886655
+      dog_short_cheer_1: -152416085
+      dog_short_cheer_2: -868800040
+      dog_short_cheer_3: 1595783284
+      dog_short_draw_0: 1379455804
+      dog_short_draw_1: -928951297
+      dog_short_happy_0: -803780918
+      dog_short_happy_1: -1808444327
+      dog_short_happy_2: -1366491894
+      dog_short_happy_3: -975769649
+      dog_short_idle_0: -562792715
+      dog_short_idle_1: 970006859
+      dog_short_idle_2: -1612316363
+      dog_short_idle_3: -1908687082
+      dog_short_sad_0: 32585753
+      dog_short_sad_1: -562661615
+      dog_short_sad_2: 1676415173
+      dog_short_sad_3: 246673059
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

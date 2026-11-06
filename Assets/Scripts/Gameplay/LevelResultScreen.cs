@@ -1,36 +1,42 @@
-using System;
+using Game.Art;
 using Game.Flow;
+using Game.Grid;
+using Game.Pets;
+using Game.Results;
+using Game.UI;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Game.Gameplay
 {
     /// <summary>
-    /// One panel handles both win and lose results — structurally identical
-    /// (full-screen dim panel + message + one button), differing only in
-    /// message/label/action. Built at runtime under the Canvas, using the
-    /// project's first UnityEngine.UI.Button (existing input is
-    /// HoldInputZone's custom pointer handlers) since a one-shot tap is
-    /// standard here and the scene already has an EventSystem. See
+    /// Solo results, on their own pixel-art overlay canvas above the HUD.
+    /// A win shows the victory overlay (Continue / Menu). A loss holds the
+    /// knocked-out board for 3 s with input blocked, then the paw iris
+    /// swaps in the retry screen (Retry / Exit). See
+    /// docs/features/game-flow/overview.md and
     /// docs/features/core-gameplay/hud-and-level-flow.md.
     /// </summary>
     public class LevelResultScreen : MonoBehaviour
     {
         [SerializeField] private GameStateManager gameStateManager;
-        [SerializeField] private RectTransform canvasRect;
+        [SerializeField] private ScoreTracker scoreTracker;
+        [SerializeField] private GameBoard gameBoard;
+        [SerializeField] private MenuArtLibrary art;
+        [SerializeField] private PetAppearanceCatalog appearanceCatalog;
 
-        private const float ButtonWidth = 200f;
-        private const float ButtonHeight = 80f;
+        private const int OverlaySortingOrder = 10;
+        private const float KnockoutHoldSeconds = 3f;
 
-        private GameObject _panel;
-        private Text _messageText;
-        private Text _buttonLabel;
-        private Button _actionButton;
+        private VictoryOverlay _victory;
+        private RetryScreen _retry;
+        private Image _inputBlocker;
+        private float _knockoutRemaining = -1f;
 
         private void Start()
         {
-            BuildPanel();
+            SceneTransition.Install(art);
+            BuildScreens(new MenuUiFactory(art), OverlayCanvasFactory.Create("ResultCanvas", OverlaySortingOrder));
             gameStateManager.OnLevelWon += HandleWon;
             gameStateManager.OnLevelLost += HandleLost;
         }
@@ -41,95 +47,51 @@ namespace Game.Gameplay
             gameStateManager.OnLevelLost -= HandleLost;
         }
 
-        private void HandleWon() => ShowResult("Level Complete!", "Continue", gameStateManager.AdvanceToNextLevel);
-        private void HandleLost() => ShowResult("Game Over", "Retry", gameStateManager.RetryLevel);
-
-        private void ShowResult(string message, string buttonLabel, Action onAction)
+        private void BuildScreens(MenuUiFactory ui, RectTransform canvas)
         {
-            _messageText.text = message;
-            _buttonLabel.text = buttonLabel;
-            _actionButton.onClick.RemoveAllListeners();
-            _actionButton.onClick.AddListener(() => HandleActionClicked(onAction));
-            _panel.SetActive(true);
+            _inputBlocker = RuntimeUi.CreateImage(canvas, "KnockoutBlocker", UiPlacement.Fill());
+            _inputBlocker.color = Color.clear;
+            _inputBlocker.gameObject.SetActive(false);
+            _victory = new VictoryOverlay(ui, canvas, new ResultButtonsSpec { PrimaryLabel = "CONTINUE", OnPrimary = HandleContinue, SecondaryLabel = "MENU", OnSecondary = GoToMenu });
+            _retry = new RetryScreen(ui, canvas, new ResultButtonsSpec { PrimaryLabel = "RETRY", OnPrimary = HandleRetry, SecondaryLabel = "EXIT", OnSecondary = GoToMenu });
         }
 
-        private void HandleActionClicked(Action onAction)
+        private void HandleWon() => _victory.Show(gameBoard.LevelNumber, scoreTracker.Score);
+
+        private void HandleLost()
         {
-            _panel.SetActive(false);
-            onAction();
+            _inputBlocker.gameObject.SetActive(true);
+            _knockoutRemaining = KnockoutHoldSeconds;
         }
 
-        private void HandleMenuClicked()
+        private void Update()
         {
-            _panel.SetActive(false);
-            SceneManager.LoadScene(SceneNames.MainMenu);
+            if (_knockoutRemaining < 0f) return;
+            _knockoutRemaining -= Time.unscaledDeltaTime;
+            if (_knockoutRemaining < 0f) SceneTransition.Cover(ShowRetryScreen);
         }
 
-        private void BuildPanel()
+        private void ShowRetryScreen()
         {
-            _panel = new GameObject("LevelResultPanel", typeof(RectTransform));
-            ConfigureStretchRect((RectTransform)_panel.transform, canvasRect, Vector2.zero, Vector2.one);
-            _panel.AddComponent<Image>().color = new Color(0f, 0f, 0f, 0.75f);
-            _messageText = SpawnMessageText();
-            _actionButton = SpawnActionButton(out _buttonLabel);
-            SpawnMenuButton().onClick.AddListener(HandleMenuClicked);
-            _panel.SetActive(false);
+            _inputBlocker.gameObject.SetActive(false);
+            _retry.Show(appearanceCatalog, (gameBoard.LevelNumber, scoreTracker.Score));
         }
 
-        private Button SpawnMenuButton()
+        private void HandleContinue()
         {
-            var buttonObj = new GameObject("MenuButton", typeof(RectTransform));
-            var rect = (RectTransform)buttonObj.transform;
-            rect.SetParent(_panel.transform, worldPositionStays: false);
-            rect.anchorMin = rect.anchorMax = new Vector2(0.5f, 0.22f);
-            rect.sizeDelta = new Vector2(ButtonWidth, ButtonHeight * 0.75f);
-            buttonObj.AddComponent<Image>().color = Color.white;
-            SpawnButtonLabel(buttonObj.transform).text = "Menu";
-            return buttonObj.AddComponent<Button>();
+            _victory.Hide();
+            gameStateManager.AdvanceToNextLevel();
         }
 
-        private Text SpawnMessageText()
+        private void HandleRetry()
         {
-            var textObj = new GameObject("ResultMessage", typeof(RectTransform));
-            ConfigureStretchRect((RectTransform)textObj.transform, (RectTransform)_panel.transform, new Vector2(0.1f, 0.55f), new Vector2(0.9f, 0.75f));
-            return ConfigureLegacyText(textObj.AddComponent<Text>(), fontSize: 48, color: Color.white);
+            SceneTransition.Cover(() =>
+            {
+                _retry.Hide();
+                gameStateManager.RetryLevel();
+            });
         }
 
-        private Button SpawnActionButton(out Text label)
-        {
-            var buttonObj = new GameObject("ResultActionButton", typeof(RectTransform));
-            var rect = (RectTransform)buttonObj.transform;
-            rect.SetParent(_panel.transform, worldPositionStays: false);
-            rect.anchorMin = rect.anchorMax = new Vector2(0.5f, 0.4f);
-            rect.sizeDelta = new Vector2(ButtonWidth, ButtonHeight);
-            buttonObj.AddComponent<Image>().color = Color.white;
-            label = SpawnButtonLabel(buttonObj.transform);
-            return buttonObj.AddComponent<Button>();
-        }
-
-        private Text SpawnButtonLabel(Transform buttonTransform)
-        {
-            var labelObj = new GameObject("Label", typeof(RectTransform));
-            ConfigureStretchRect((RectTransform)labelObj.transform, (RectTransform)buttonTransform, Vector2.zero, Vector2.one);
-            return ConfigureLegacyText(labelObj.AddComponent<Text>(), fontSize: 28, color: Color.black);
-        }
-
-        private static void ConfigureStretchRect(RectTransform rect, RectTransform parent, Vector2 anchorMin, Vector2 anchorMax)
-        {
-            rect.SetParent(parent, worldPositionStays: false);
-            rect.anchorMin = anchorMin;
-            rect.anchorMax = anchorMax;
-            rect.offsetMin = Vector2.zero;
-            rect.offsetMax = Vector2.zero;
-        }
-
-        private static Text ConfigureLegacyText(Text text, int fontSize, Color color)
-        {
-            text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-            text.fontSize = fontSize;
-            text.alignment = TextAnchor.MiddleCenter;
-            text.color = color;
-            return text;
-        }
+        private static void GoToMenu() => SceneTransition.LoadScene(SceneNames.MainMenu);
     }
 }

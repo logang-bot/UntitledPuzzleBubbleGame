@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ed403eb00d2854991c32c815a2285e, type: 3}
+  m_Name: retry
+  m_EditorClassIdentifier: Game::Game.Art.SpriteSheetIndex
+  entries:
+  - Id: retry_nap
+    Frames:
+    - {fileID: 2120628979, guid: 1b1e1f5985af75c41b653516ec24470c, type: 3}
+    - {fileID: -1577064967, guid: 1b1e1f5985af75c41b653516ec24470c, type: 3}
+    - {fileID: 1964046616, guid: 1b1e1f5985af75c41b653516ec24470c, type: 3}
+    - {fileID: -464237944, guid: 1b1e1f5985af75c41b653516ec24470c, type: 3}
+    Fps: 2

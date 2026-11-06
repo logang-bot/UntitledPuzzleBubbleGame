@@ -6,5 +6,6 @@ namespace Game.Pets
     public class PetShapeOption
     {
         public string Name;
+        public string ArtId;
     }
 }

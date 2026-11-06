@@ -1,0 +1,183 @@
+{
+ "exportedAt": "2026-11-06T02:51:25.795Z",
+ "files": [
+  {
+   "path": "Sheets/buttons.png",
+   "width": 478,
+   "height": 42,
+   "sprites": 7,
+   "bytes": 4091
+  },
+  {
+   "path": "Sheets/buttons.json",
+   "width": 478,
+   "height": 42,
+   "sprites": 7,
+   "bytes": 2552
+  },
+  {
+   "path": "Sheets/panels.png",
+   "width": 450,
+   "height": 146,
+   "sprites": 13,
+   "bytes": 7592
+  },
+  {
+   "path": "Sheets/panels.json",
+   "width": 450,
+   "height": 146,
+   "sprites": 13,
+   "bytes": 4192
+  },
+  {
+   "path": "Sheets/picker.png",
+   "width": 490,
+   "height": 58,
+   "sprites": 22,
+   "bytes": 6802
+  },
+  {
+   "path": "Sheets/picker.json",
+   "width": 490,
+   "height": 58,
+   "sprites": 22,
+   "bytes": 6469
+  },
+  {
+   "path": "Sheets/chars_cat.png",
+   "width": 494,
+   "height": 1314,
+   "sprites": 20,
+   "bytes": 101139
+  },
+  {
+   "path": "Sheets/chars_cat.json",
+   "width": 494,
+   "height": 1314,
+   "sprites": 20,
+   "bytes": 6348
+  },
+  {
+   "path": "Sheets/chars_dog.png",
+   "width": 494,
+   "height": 1314,
+   "sprites": 20,
+   "bytes": 101047
+  },
+  {
+   "path": "Sheets/chars_dog.json",
+   "width": 494,
+   "height": 1314,
+   "sprites": 20,
+   "bytes": 6328
+  },
+  {
+   "path": "Sheets/floaters.png",
+   "width": 466,
+   "height": 3122,
+   "sprites": 144,
+   "bytes": 237451
+  },
+  {
+   "path": "Sheets/floaters.json",
+   "width": 466,
+   "height": 3122,
+   "sprites": 144,
+   "bytes": 42808
+  },
+  {
+   "path": "Sheets/space.png",
+   "width": 968,
+   "height": 1330,
+   "sprites": 3,
+   "bytes": 40099
+  },
+  {
+   "path": "Sheets/space.json",
+   "width": 968,
+   "height": 1330,
+   "sprites": 3,
+   "bytes": 1045
+  },
+  {
+   "path": "Sheets/cosmos.png",
+   "width": 501,
+   "height": 928,
+   "sprites": 15,
+   "bytes": 110088
+  },
+  {
+   "path": "Sheets/cosmos.json",
+   "width": 501,
+   "height": 928,
+   "sprites": 15,
+   "bytes": 4316
+  },
+  {
+   "path": "Sheets/fx.png",
+   "width": 312,
+   "height": 193,
+   "sprites": 17,
+   "bytes": 7532
+  },
+  {
+   "path": "Sheets/fx.json",
+   "width": 312,
+   "height": 193,
+   "sprites": 17,
+   "bytes": 4903
+  },
+  {
+   "path": "Sheets/transition.png",
+   "width": 3202,
+   "height": 637,
+   "sprites": 1,
+   "bytes": 98782
+  },
+  {
+   "path": "Sheets/transition.json",
+   "width": 3202,
+   "height": 637,
+   "sprites": 1,
+   "bytes": 440
+  },
+  {
+   "path": "Sheets/logo.png",
+   "width": 328,
+   "height": 98,
+   "sprites": 3,
+   "bytes": 5136
+  },
+  {
+   "path": "Sheets/logo.json",
+   "width": 328,
+   "height": 98,
+   "sprites": 3,
+   "bytes": 939
+  },
+  {
+   "path": "Sheets/retry.png",
+   "width": 970,
+   "height": 154,
+   "sprites": 1,
+   "bytes": 13879
+  },
+  {
+   "path": "Sheets/retry.json",
+   "width": 970,
+   "height": 154,
+   "sprites": 1,
+   "bytes": 447
+  },
+  {
+   "path": "colorways.json",
+   "colorways": 12,
+   "bytes": 1415
+  },
+  {
+   "path": "palette.gpl",
+   "colors": 50,
+   "bytes": 1008
+  }
+ ]
+}

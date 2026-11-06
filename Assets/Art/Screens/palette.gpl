@@ -1,0 +1,54 @@
+GIMP Palette
+Name: Menu dusk town
+Columns: 8
+#
+ 26  20  36	Ink
+ 58  46  74	Shadow
+ 94  84 112	Slate
+142 134 160	Stone
+198 191 208	Mist
+252 252 248	White
+246 226 188	Cream
+255 152 176	Blush
+ 18  14  34	Abyss
+ 28  26  52	Night 0
+ 38  42  68	Night 1
+ 52  58  90	Night 2
+ 70  76 112	Night 3
+ 92  98 134	Night 4
+122 128 160	Night 5
+106  64  96	Dusk 1
+160  96 122	Dusk 2
+216 152 126	Dusk 3
+242 184 128	Ember
+ 74  60  68	Warm 1
+100  82  90	Warm 2
+128 108 112	Warm 3
+160 138 134	Warm 4
+ 30  46  52	Moss 0
+ 46  68  64	Moss 1
+ 64  92  80	Moss 2
+ 88 116 100	Moss 3
+142  30  52	Roof dk
+224  58  78	Roof
+255 138 134	Roof lt
+232 216 144	Lamp
+168 124  24	Gold dk
+246 204  48	Gold
+255 242 148	Gold lt
+228 248 255	Moon
+146 216 255	Sky lt
+ 58 140 234	Blue
+ 31  76 156	Blue dk
+ 90  44 140	Plum
+156  86 220	Violet
+214 166 255	Lilac lt
+ 76 190  74	Leaf
+110  42  20	Cat fur 0
+164  72  26	Cat fur 1
+240 126  34	Cat fur 2
+255 190  92	Cat fur 3
+ 92  52  36	Dog fur 0
+154  96  56	Dog fur 1
+214 164 110	Dog fur 2
+236 200 144	Dog fur 3

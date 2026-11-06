@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ed403eb00d2854991c32c815a2285e, type: 3}
+  m_Name: chars_cat
+  m_EditorClassIdentifier: Game::Game.Art.SpriteSheetIndex
+  entries:
+  - Id: cat_round_idle
+    Frames:
+    - {fileID: -297307435, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 77277733, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: -2135405628, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: -781166851, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    Fps: 6
+  - Id: cat_round_happy
+    Frames:
+    - {fileID: -1754775577, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 2088558263, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 1616277429, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 551621415, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    Fps: 10
+  - Id: cat_round_cheer
+    Frames:
+    - {fileID: 346206229, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: -20687205, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 1108037404, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 516941615, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    Fps: 10
+  - Id: cat_round_sad
+    Frames:
+    - {fileID: 566891676, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: -1353357771, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: -1256709488, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 1421879789, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    Fps: 4
+  - Id: cat_round_draw
+    Frames:
+    - {fileID: 1845657508, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 1645174147, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    Fps: 4
+  - Id: cat_fluffy_idle
+    Frames:
+    - {fileID: -1998706516, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 328908126, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 1639615822, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: -1806653519, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    Fps: 6
+  - Id: cat_fluffy_happy
+    Frames:
+    - {fileID: 329701771, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 2070953897, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: -2031857387, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 2064796966, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    Fps: 10
+  - Id: cat_fluffy_cheer
+    Frames:
+    - {fileID: -495781128, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: -1298535031, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: -1032704238, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 1079848358, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    Fps: 10
+  - Id: cat_fluffy_sad
+    Frames:
+    - {fileID: 1849471918, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 920541552, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 1634144739, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 1448725619, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    Fps: 4
+  - Id: cat_fluffy_draw
+    Frames:
+    - {fileID: -351527727, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 1237481108, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    Fps: 4
+  - Id: cat_slim_idle
+    Frames:
+    - {fileID: 786152884, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 2129306468, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 1076330179, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: -1036442001, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    Fps: 6
+  - Id: cat_slim_happy
+    Frames:
+    - {fileID: 444834005, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: -1522120005, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 883041362, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: -2129530040, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    Fps: 10
+  - Id: cat_slim_cheer
+    Frames:
+    - {fileID: -1580443415, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: -1604456136, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: -1471551539, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 1095237780, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    Fps: 10
+  - Id: cat_slim_sad
+    Frames:
+    - {fileID: 2041511923, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 299845104, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 808509234, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 509506173, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    Fps: 4
+  - Id: cat_slim_draw
+    Frames:
+    - {fileID: 1946019388, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: -796717869, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    Fps: 4
+  - Id: cat_chonk_idle
+    Frames:
+    - {fileID: 1643108409, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: -886090868, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 2040854097, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 1046813021, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    Fps: 6
+  - Id: cat_chonk_happy
+    Frames:
+    - {fileID: -202490021, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 258812480, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: -1186288246, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: -1105752439, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    Fps: 10
+  - Id: cat_chonk_cheer
+    Frames:
+    - {fileID: 1673821283, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 1841464500, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: -1524271402, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 55995494, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    Fps: 10
+  - Id: cat_chonk_sad
+    Frames:
+    - {fileID: 1146317817, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 486314382, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: -767339835, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 70524950, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    Fps: 4
+  - Id: cat_chonk_draw
+    Frames:
+    - {fileID: -431472510, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    - {fileID: 1803103955, guid: 3bee408435d903c4ead744faf0bd2349, type: 3}
+    Fps: 4

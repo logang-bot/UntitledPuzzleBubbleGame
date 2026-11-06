@@ -1,0 +1,962 @@
+fileFormatVersion: 2
+guid: 03907bfcff164ec498124e4cdaa29ff4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -130903942350516654
+    second: picker_0
+  - first:
+      213: -5855406944001508479
+    second: picker_1
+  - first:
+      213: -5890380557538074024
+    second: picker_2
+  - first:
+      213: -1389441544158386341
+    second: picker_3
+  - first:
+      213: -4640246635142638678
+    second: picker_4
+  - first:
+      213: -636759442461294227
+    second: picker_5
+  - first:
+      213: 7801431046050804891
+    second: picker_6
+  - first:
+      213: -5176698692738292327
+    second: picker_7
+  - first:
+      213: 6557923881650636793
+    second: picker_8
+  - first:
+      213: 4487543623926746560
+    second: picker_9
+  - first:
+      213: 3251477380963278802
+    second: picker_10
+  - first:
+      213: -4812780268080682203
+    second: picker_11
+  - first:
+      213: -6222687239167763603
+    second: picker_12
+  - first:
+      213: -6918117047957562286
+    second: picker_13
+  - first:
+      213: 6835965409606246732
+    second: picker_14
+  - first:
+      213: 1003536383794686839
+    second: picker_15
+  - first:
+      213: 3144463563287960312
+    second: picker_16
+  - first:
+      213: -6889880415480218500
+    second: picker_17
+  - first:
+      213: -3468330690480094703
+    second: picker_18
+  - first:
+      213: -3242531386281710983
+    second: picker_19
+  - first:
+      213: -6224425184697641508
+    second: picker_20
+  - first:
+      213: -8520806447913105272
+    second: picker_21
+  - first:
+      213: -8632526715065180832
+    second: picker_22
+  - first:
+      213: 5673059591415978397
+    second: picker_23
+  - first:
+      213: 6745860694782521716
+    second: picker_24
+  - first:
+      213: -7691210417778218401
+    second: picker_25
+  - first:
+      213: 1118261552921397474
+    second: picker_26
+  - first:
+      213: -4573703314788473548
+    second: picker_27
+  - first:
+      213: 5969708538502463300
+    second: picker_28
+  - first:
+      213: -282126820043433378
+    second: picker_29
+  - first:
+      213: -4847146306729625837
+    second: picker_30
+  - first:
+      213: 1818950963482239040
+    second: picker_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: swatch_frame_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 30
+        width: 26
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd7af262ef15b5b48a593d5739cd452f
+      internalID: 850088446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swatch_frame_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 30
+        width: 26
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b147da5343e7e0e4ca26b309b09175f1
+      internalID: 1277215340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swatch_cat_ginger_0
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 38
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89432112e74b2974aae0fcf26eedf404
+      internalID: 1585796274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swatch_cat_cream_0
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 38
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09f2e6b31698acd46b057be64a15ff99
+      internalID: -1380128789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swatch_cat_silver_0
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 38
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eef04d438b1bc54cbba1a3245bfb90a
+      internalID: -1322348938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swatch_cat_midnight_0
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 38
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7ad1aa0e0abd1f4f81fbc18df8419db
+      internalID: -908823517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swatch_cat_cocoa_0
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 38
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e0048c97d6e5e4d9124974e04e21ea
+      internalID: -1393642299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swatch_cat_lilac_0
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 38
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9a9a9527f7331e4a883215f49afcd2e
+      internalID: -694402309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swatch_dog_golden_0
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 38
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e650f634e6d787a469b0c3d7bc010871
+      internalID: 1779775101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swatch_dog_chocolate_0
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 38
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d8bc61c71bc42540978b7d4de8b62ac
+      internalID: 470852602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swatch_dog_cream_0
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 38
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11207bfcc4521a54f8c256f309ff998b
+      internalID: 1436523322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swatch_dog_charcoal_0
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 38
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2103be04f8f0d5642b03dd866f0dab58
+      internalID: -442880639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swatch_dog_rust_0
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 38
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 696df5e8b1ce204408860cdb91ce66bf
+      internalID: -1183314092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swatch_dog_snow_0
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 38
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aec4dfbb331dd445959e3368ee3c276
+      internalID: -512456979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shape_slot_0
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 30
+        width: 22
+        height: 26
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ba9f0884d5e0704c99d97ea8a2ea1bd
+      internalID: 1522168782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shape_slot_1
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 30
+        width: 22
+        height: 26
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa15fd236fd12254f8a97794f1012721
+      internalID: -772682983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shape_cat_round_0
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 30
+        width: 22
+        height: 26
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 824e38831d30ea14b9a7e49d2dfef875
+      internalID: 577975892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shape_cat_round_1
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 30
+        width: 22
+        height: 26
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea95bafa4798bd04aaab80893f3a8966
+      internalID: -1289577309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shape_cat_fluffy_0
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 30
+        width: 22
+        height: 26
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a51ce1631de0b944b8ecc3d9546cb1a
+      internalID: 1578961385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shape_cat_fluffy_1
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 30
+        width: 22
+        height: 26
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 775d5eb71c21cea4485bc2f237963c86
+      internalID: -1644992003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shape_cat_slim_0
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 30
+        width: 22
+        height: 26
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 930d28ff1ddb4e34e855e3f814235e24
+      internalID: 1640305379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shape_cat_slim_1
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 30
+        width: 22
+        height: 26
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 568d0b3c7f613044d8efd86b2c83ad08
+      internalID: 1319570677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shape_cat_chonk_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 22
+        height: 26
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea020fd8ef84e4f4c9487f2433857a91
+      internalID: 1916525751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shape_cat_chonk_1
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 2
+        width: 22
+        height: 26
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7801cbf15fe1e2f47a24924c61170975
+      internalID: -1838106581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shape_dog_floppy_0
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 2
+        width: 22
+        height: 26
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80170f3dc850352408daf67e4fba7832
+      internalID: 523027696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shape_dog_floppy_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 2
+        width: 22
+        height: 26
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305f84273e1e41d4089ff61a6477a240
+      internalID: 1452116258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shape_dog_pointy_0
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 2
+        width: 22
+        height: 26
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb8f1460c89ff09468767969c444a2dc
+      internalID: -959901359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shape_dog_pointy_1
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 2
+        width: 22
+        height: 26
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82bf2549e6d18fc48886decd46274c12
+      internalID: -1578603254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shape_dog_fluffy_0
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 2
+        width: 22
+        height: 26
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd0d290eb201ad84f8b09e00c6cb403c
+      internalID: -367849944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shape_dog_fluffy_1
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 2
+        width: 22
+        height: 26
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39860a300b738924c9ca19d1ebd7161d
+      internalID: -1735216411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shape_dog_short_0
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 2
+        width: 22
+        height: 26
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca864b2f10231444b9e929fe1980a58c
+      internalID: -1692262389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shape_dog_short_1
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 2
+        width: 22
+        height: 26
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a372adefb4535984aae37f4ff6eaf3fd
+      internalID: -521468436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9d822a7072663a34ea7fbb2ebca329dc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      shape_cat_chonk_0: 1916525751
+      shape_cat_chonk_1: -1838106581
+      shape_cat_fluffy_0: 1578961385
+      shape_cat_fluffy_1: -1644992003
+      shape_cat_round_0: 577975892
+      shape_cat_round_1: -1289577309
+      shape_cat_slim_0: 1640305379
+      shape_cat_slim_1: 1319570677
+      shape_dog_floppy_0: 523027696
+      shape_dog_floppy_1: 1452116258
+      shape_dog_fluffy_0: -367849944
+      shape_dog_fluffy_1: -1735216411
+      shape_dog_pointy_0: -959901359
+      shape_dog_pointy_1: -1578603254
+      shape_dog_short_0: -1692262389
+      shape_dog_short_1: -521468436
+      shape_slot_0: 1522168782
+      shape_slot_1: -772682983
+      swatch_cat_cocoa_0: -1393642299
+      swatch_cat_cream_0: -1380128789
+      swatch_cat_ginger_0: 1585796274
+      swatch_cat_lilac_0: -694402309
+      swatch_cat_midnight_0: -908823517
+      swatch_cat_silver_0: -1322348938
+      swatch_dog_charcoal_0: -442880639
+      swatch_dog_chocolate_0: 470852602
+      swatch_dog_cream_0: 1436523322
+      swatch_dog_golden_0: 1779775101
+      swatch_dog_rust_0: -1183314092
+      swatch_dog_snow_0: -512456979
+      swatch_frame_0: 850088446
+      swatch_frame_1: 1277215340
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

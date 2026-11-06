@@ -356,6 +356,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Game::Game.Gameplay.MainMenuController
   canvasRect: {fileID: 893555640}
+  art: {fileID: 11400000, guid: 78e6ef214dedf8c42a5157513b3f9000, type: 2}
+  appearanceCatalog: {fileID: 11400000, guid: 920e9102bd364331824a7d6da080c139, type: 2}
 --- !u!4 &574035471
 Transform:
   m_ObjectHideFlags: 0

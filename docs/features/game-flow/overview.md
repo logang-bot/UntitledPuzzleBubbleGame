@@ -1,8 +1,9 @@
 # Game Flow and Pet Customization
 
-**Status: implemented with placeholder UI** (Phase 4 in `../../ROADMAP.md`).
-The art for these screens is planned in
-[`../art/overview.md`](../art/overview.md), Art Phases 1b and 6b.
+**Status: implemented, with the final screen art** (Phase 4 in
+`../../ROADMAP.md`). The art comes from Art Phases 1b and 6b in
+[`../art/overview.md`](../art/overview.md); see its "Screens: as built"
+section.
 
 ## Screen flow
 
@@ -10,40 +11,61 @@ The art for these screens is planned in
                      ┌──────────────► SettingsMenu ──(Back)──┐
                      │                                       │
  MainMenu ──(New Game)──► PetCustomization ──(Start)──► Game │
-   ▲   │                     │ (Back)                   │    │
+   ▲   │                  (Aimer → Firer)               │    │
+   │   │                     │ (Back on step 1)         │    │
    │   ├──(Continue)─────────┼─────────────────────────►│    │
    │   └──(2 Players)──► BattleMode                     │    │
-   │                         │ (Menu)                   │    │
-   └─────────────────────────┴──────(Menu)──────────────┴────┘
+   │                         │ (Home)                   │    │
+   └─────────────────────────┴──────(Menu / Exit)───────┴────┘
 ```
+
+Every scene change plays the paw-print iris (`Flow/SceneTransition`): it
+closes in 0.5 s, the scene swaps on the fully dark frame, then it opens
+in 0.5 s, with input blocked throughout. The first screen that starts
+installs it (`SceneTransition.Install`) and it persists across loads.
+A scene opened directly in the editor without a `MenuArtLibrary` falls
+back to instant swaps.
 
 | Scene | Controller | Notes |
 |---|---|---|
-| `MainMenu.unity` | `Gameplay/MainMenuController` | Placeholder title plus 4 buttons. Continue is disabled until a solo run exists. |
-| `PetCustomization.unity` | `Pets/PetCustomizationController` | Name, fur color and shape for the cat (top) and the dog (bottom). |
+| `MainMenu.unity` | `Gameplay/MainMenuController` | Space backdrop with drifting cosmos and pets, logo, 4 buttons. Continue is disabled until a solo run exists. |
+| `PetCustomization.unity` | `Pets/PetCustomizationController` | Two steps: the aimer, then the firer. |
 | `Game.unity` (was `SampleScene`) | `GameStateManager`, `LevelResultScreen` | Solo play. Victory and game over, see below. |
-| `BattleMode.unity` | `Battle/BattleMatchController` | Unchanged. |
-| `SettingsMenu.unity` | `Gameplay/SettingsMenuController` | Unchanged. |
+| `BattleMode.unity` | `Battle/BattleMatchController`, `BattleResultScreen` | 2-player result banners, then stats. |
+| `SettingsMenu.unity` | `Gameplay/SettingsMenuController` | Landing-animation toggle. |
 
 Scene names live in `Flow/SceneNames`. The build order is MainMenu,
 PetCustomization, Game, BattleMode, SettingsMenu.
 
 ## New Game vs. Continue
 
-- **New Game** → PetCustomization → **Start**:
-  1. both pets are saved (`PetProfileStore.Save`);
-  2. `SoloRunSave.BeginNewRun()` marks that a run exists, sets the level
-     to 1 and resets `SuperpowerProgress.HighestLevelReached` to 1, so
-     superpower unlocks follow the run;
-  3. the Game scene loads.
-
-  Start is disabled while either pet's name is blank.
+- **New Game** → PetCustomization:
+  - **Step 1, "The aimer":** the CAT/DOG toggle picks which pet aims, and
+    the card below edits that pet's name, fur and shape. **Next** moves
+    on.
+  - **Step 2, "The firer":** the card edits the other pet. The toggle
+    still names the pet shown, so flipping it here swaps the roles.
+    **Start**:
+    1. saves both pets and the aimer (`PetProfileStore.Save`,
+       `SaveAimer`);
+    2. calls `SoloRunSave.BeginNewRun()`, which marks that a run exists,
+       sets the level to 1 and resets
+       `SuperpowerProgress.HighestLevelReached` to 1, so superpower
+       unlocks follow the run;
+    3. loads the Game scene.
+  - Next and Start are disabled while the edited pet's name is blank.
+  - **Back** on step 2 returns to step 1 and keeps the edits. Back on
+    step 1 returns to the menu without saving.
+  - Picking a fur, a shape or the role makes the portrait hop (its happy
+    animation).
+  - Re-entering customization shows the previously saved pets and aimer.
 - **Continue** loads the Game scene directly. `GameBoard` has
   `startAtSavedSoloLevel` ticked in `Game.unity` only, so it opens at
   `SoloRunSave.CurrentLevel`. Battle Mode's boards leave it off and keep
   their random level 1–5.
-- **Back** on customization returns to the menu without saving.
-- Re-entering customization shows the previously saved pets.
+
+The flow logic lives in the pure `Pets/CustomizationFlow`, tested by
+`CustomizationFlowTests`.
 
 `SoloRunRecorder`, which sits on the GameBoard object in `Game.unity`,
 writes `SoloRunSave.CurrentLevel` every time a level loads (Continue,
@@ -52,14 +74,35 @@ including after a game over.
 
 ## Victory and game over
 
-These were already in place before this phase. `GameStateManager` raises
-`OnLevelWon` when the board is cleared and `OnLevelLost` when the ceiling
-reaches the shooter line. `LevelResultScreen` shows one shared panel:
+`GameStateManager` raises `OnLevelWon` when the board is cleared and
+`OnLevelLost` when the ceiling reaches the shooter line.
+`LevelResultScreen` shows the results on its own overlay canvas:
 
-- **Victory:** "Level Complete!", Continue (next level) and Menu.
-- **Game over:** "Game Over", Retry (same level, score reset) and Menu.
+- **Victory:** the board under a 78 % dim, with:
+  - fireworks, confetti and lanterns;
+  - a "LEVEL COMPLETE" banner and a level/score panel;
+  - **Continue** (next level) and **Menu**.
+- **Game over:**
+  1. The knocked-out board stays visible for 3 s with input blocked.
+  2. The paw iris shows the **Retry screen**: "KNOCKED OUT", the napping
+     cat and dog in the saved pets' colors, and the level/score panel.
+  3. **Retry** irises back to the same level with the score reset.
+     **Exit** goes to the menu.
 
-Splitting these into two distinct presentations is Art Phase 6b.
+## 2-player result
+
+`BattleResultScreen`, also on its own overlay canvas:
+
+1. Each half shows YOU WIN (with confetti), YOU LOSE or DRAW for 2.5 s.
+   Player 2's half is on top, rotated 180°.
+2. Then the board dims and each player gets a stats card:
+   - score, bubbles popped, best chain (most bubbles cleared by one
+     shot) and shots;
+   - **Rematch** in the center bar;
+   - **Home** at each player's right.
+
+`Battle/MatchStats` and `MatchStatsTracker` collect the stats from each
+side's board and shooter events. Rematch resets them.
 
 ## Saved data (PlayerPrefs)
 
@@ -71,33 +114,45 @@ Splitting these into two distinct presentations is Art Phase 6b.
 | `Pet.Cat.Name` / `Pet.Dog.Name` | string, default "Mochi" / "Biscuit" | `Pets/PetProfileStore` |
 | `Pet.{Cat,Dog}.Color` | index into the catalog's colors | `Pets/PetProfileStore` |
 | `Pet.{Cat,Dog}.Shape` | index into the catalog's shapes | `Pets/PetProfileStore` |
+| `Pet.Aimer` | int (`PetSpecies`), default Cat | `Pets/PetProfileStore` |
 
 ## Pet appearance data
 
 `ScriptableObjects/DefaultPetAppearanceCatalog.asset`
 (`Pets/PetAppearanceCatalog`) holds, per species, a list of
-`PetColorOption {Name, Color}` and `PetShapeOption {Name}`:
+`PetColorOption {Name, Ramp}` and `PetShapeOption {Name, ArtId}`:
 
-- **Cat:** colors Ginger, Cream, Silver, Midnight, Cocoa, Lilac; shapes
-  Shorthair, Longhair, Slim, Chonky.
-- **Dog:** colors Golden, Chocolate, Cream, Charcoal, Rust, Snow; shapes
-  Floppy Ears, Pointy Ears, Fluffy, Short Legs.
+- **Cat:**
+  - colors Ginger, Cream, Silver, Midnight, Cocoa, Lilac;
+  - shapes Shorthair, Longhair, Slim, Chonky (art ids round, fluffy,
+    slim, chonk).
+- **Dog:**
+  - colors Golden, Chocolate, Cream, Charcoal, Rust, Snow;
+  - shapes Floppy Ears, Pointy Ears, Fluffy, Short Legs (art ids floppy,
+    pointy, fluffy, short).
+
+`Ramp` is the 4-shade fur ramp from Claude Design's `colorways.json`,
+written by Tools ▸ Art ▸ Import Menu Sheets. The art id picks the
+sprites, for example `cat_round_idle` and `shape_dog_short`.
 
 The profile stores **indices**, and `CyclicIndex.Clamp` keeps a stale
-index valid if the catalog shrinks. The art pass adds sprites per shape
-and grows `Color` into a 4-shade fur ramp for the recolor material.
+index valid if the catalog shrinks.
 
 ## UI construction
 
-The menus build their placeholder uGUI at runtime through the shared
-`UI/RuntimeUi` factory (buttons, labels, images and input fields, with
-`UiPlacement`/`UiButtonSpec`/`UiInputSpec` describing each element).
-Customization is composed from `PetEditorPanel` (one per pet) and
-`OptionCycler` (a "< value >" row whose wraparound comes from the
-unit-tested `CyclicIndex.Step`). `SettingsMenuController` and
-`LevelResultScreen` still use their own builder code. Moving them onto
-`RuntimeUi` is a natural step for Art Phase 6b, when every screen gets
-skinned.
+The screens build their uGUI at runtime from the Claude Design sheets:
+
+- `UI/MenuUiFactory`: skinned buttons, sprites, labels, plates and the
+  name field.
+- `UI/SegmentedToggle`: the CAT/DOG and BOUNCE/SQUASH toggles.
+- Each screen's views:
+  - customization: `PetPanelView`, `SwatchRowView`, `ShapePickerView`,
+    `PortraitView`;
+  - results: `VictoryOverlay`, `RetryScreen`, `BattleStatsView`.
+
+`UI/RuntimeUi` remains the unskinned primitive layer underneath.
+Each controller has a serialized `MenuArtLibrary`; that is the only scene
+wiring.
 
 ## Open questions
 
@@ -106,3 +161,5 @@ skinned.
 - Should Battle Mode use the saved pets for P1 and P2 once there's art
   to show them?
 - Should New Game warn before overwriting an existing run?
+- The design's 2-player draw has two options for the launcher pets
+  (puzzled or dozing). Pick one when the launcher art lands.

@@ -1,7 +1,10 @@
 {
     "name": "Game.Editor",
     "rootNamespace": "Game.EditorTools",
-    "references": [],
+    "references": [
+        "Game",
+        "Unity.2D.Sprite.Editor"
+    ],
     "includePlatforms": [
         "Editor"
     ],

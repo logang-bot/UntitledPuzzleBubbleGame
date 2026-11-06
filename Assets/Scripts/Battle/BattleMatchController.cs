@@ -15,6 +15,9 @@ namespace Game.Battle
     [DefaultExecutionOrder(1000)]
     public class BattleMatchController : MonoBehaviour
     {
+        public BattlePlayerSide Player1 => player1;
+        public BattlePlayerSide Player2 => player2;
+
         [SerializeField] private BattlePlayerSide player1;
         [SerializeField] private BattlePlayerSide player2;
         [SerializeField] private int minLevelNumber = 1;

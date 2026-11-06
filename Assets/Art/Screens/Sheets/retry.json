@@ -1,0 +1,22 @@
+{
+ "sheet": "retry",
+ "width": 970,
+ "height": 154,
+ "sprites": [
+  {
+   "id": "retry_nap",
+   "name": "Retry nap illustration",
+   "x": 2,
+   "y": 2,
+   "frameW": 240,
+   "frameH": 150,
+   "frames": 4,
+   "stepX": 242,
+   "fps": 2,
+   "pivot": "top-left",
+   "pivotX": 0,
+   "pivotY": 0,
+   "note": "240×150, 4 frames at 2 fps. Retry screen at (15,112). Fur left in key slots (cat 43–46, dog 47–50): recolor at runtime. Zs baked in"
+  }
+ ]
+}

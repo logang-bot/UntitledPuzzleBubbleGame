@@ -1,0 +1,1023 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ed403eb00d2854991c32c815a2285e, type: 3}
+  m_Name: floaters
+  m_EditorClassIdentifier: Game::Game.Art.SpriteSheetIndex
+  entries:
+  - Id: fl_cat_round_spread_S
+    Frames:
+    - {fileID: -991529947, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 879386, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -442526769, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1154237567, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_round_swim_S
+    Frames:
+    - {fileID: -1413803396, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1634680016, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 149593365, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 129833633, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_round_wave_S
+    Frames:
+    - {fileID: -11189510, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1669917307, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1290480400, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -838193630, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_round_curl_S
+    Frames:
+    - {fileID: -588821152, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -766547115, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1542861404, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1045869352, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_cat_round_star_S
+    Frames:
+    - {fileID: -1104302647, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1592328673, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1737552772, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 77628985, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_round_tumble_S
+    Frames:
+    - {fileID: 765013253, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1826931831, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1260425677, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1067070357, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_cat_round_spread_M
+    Frames:
+    - {fileID: 1014106072, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1279298909, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 760811121, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 489845905, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_round_swim_M
+    Frames:
+    - {fileID: -507560516, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 286866144, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1931710878, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1975649066, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_round_wave_M
+    Frames:
+    - {fileID: 1247638754, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 906314033, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1741201442, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -2116360771, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_round_curl_M
+    Frames:
+    - {fileID: -4038076, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1534994997, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1231363112, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1301553586, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_cat_round_star_M
+    Frames:
+    - {fileID: 1127391340, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 26927909, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 738732855, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1050352624, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_round_tumble_M
+    Frames:
+    - {fileID: -1063311334, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1883390198, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 753473278, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -840521735, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_cat_round_spread_L
+    Frames:
+    - {fileID: 130284087, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -912262509, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 119489615, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 2068176261, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_round_swim_L
+    Frames:
+    - {fileID: 181059148, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -932012281, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1625937788, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1760444267, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_round_wave_L
+    Frames:
+    - {fileID: -1269347884, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1402111771, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 169086464, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1469907998, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_round_curl_L
+    Frames:
+    - {fileID: -1535144233, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 401053274, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1034467754, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 809630663, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_cat_round_star_L
+    Frames:
+    - {fileID: -1654743225, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1977665783, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -390430196, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 496876136, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_round_tumble_L
+    Frames:
+    - {fileID: 617496690, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1751111614, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1998257053, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -756007553, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_cat_fluffy_spread_S
+    Frames:
+    - {fileID: 2044555920, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1173227482, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1673502307, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1242917264, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_fluffy_swim_S
+    Frames:
+    - {fileID: 175867593, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -857054199, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1630185464, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1705043516, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_fluffy_wave_S
+    Frames:
+    - {fileID: 2079549561, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -348814755, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1979179020, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 996906260, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_fluffy_curl_S
+    Frames:
+    - {fileID: -586748744, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -648840578, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 47845441, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -375333438, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_cat_fluffy_star_S
+    Frames:
+    - {fileID: -1959438575, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1323821651, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 197812100, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 26516380, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_fluffy_tumble_S
+    Frames:
+    - {fileID: 1435061818, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1533487341, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1469355754, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1592683184, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_cat_fluffy_spread_M
+    Frames:
+    - {fileID: 1666168602, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 555571767, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -658451372, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -60506373, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_fluffy_swim_M
+    Frames:
+    - {fileID: 1850935790, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 527810839, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -529516201, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1636809122, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_fluffy_wave_M
+    Frames:
+    - {fileID: -22740452, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 116484221, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -129088200, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1983238189, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_fluffy_curl_M
+    Frames:
+    - {fileID: -924275158, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1781736856, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 869727631, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1209903145, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_cat_fluffy_star_M
+    Frames:
+    - {fileID: 1084892131, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1017278690, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1810976964, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -2143002696, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_fluffy_tumble_M
+    Frames:
+    - {fileID: 515582508, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1529623666, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -2125995197, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -2141140426, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_cat_fluffy_spread_L
+    Frames:
+    - {fileID: -1028090920, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 391371570, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1999043143, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 714501798, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_fluffy_swim_L
+    Frames:
+    - {fileID: 1543880763, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -636912844, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1528843899, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 958618091, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_fluffy_wave_L
+    Frames:
+    - {fileID: 2056489264, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1310905245, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 647446693, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -614738572, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_fluffy_curl_L
+    Frames:
+    - {fileID: -1242309935, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 494976018, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1654024108, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1382305800, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_cat_fluffy_star_L
+    Frames:
+    - {fileID: 1233219976, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 648643579, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1815197936, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1290723291, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_fluffy_tumble_L
+    Frames:
+    - {fileID: -1710779567, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -123567069, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 292602483, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1732750980, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_cat_slim_spread_S
+    Frames:
+    - {fileID: 217096448, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 2019817032, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1526179652, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 60059867, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_slim_swim_S
+    Frames:
+    - {fileID: -1498480401, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1844752901, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1569039598, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 2099973789, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_slim_wave_S
+    Frames:
+    - {fileID: -499230949, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -309537642, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1717507747, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 334310698, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_slim_curl_S
+    Frames:
+    - {fileID: -715894860, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -649933717, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1189574052, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -14080763, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_cat_slim_star_S
+    Frames:
+    - {fileID: -1049954140, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1149168750, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1429133289, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 337128318, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_slim_tumble_S
+    Frames:
+    - {fileID: -1112142652, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1883051884, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1892891555, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -671521146, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_cat_slim_spread_M
+    Frames:
+    - {fileID: -865799838, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -412589417, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 813884659, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1504425146, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_slim_swim_M
+    Frames:
+    - {fileID: 648444758, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1548895377, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -794237426, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1908051354, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_slim_wave_M
+    Frames:
+    - {fileID: 1828342837, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1277719250, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1161101613, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 2049012397, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_slim_curl_M
+    Frames:
+    - {fileID: 1114407116, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -2116537633, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -201515069, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 654985736, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_cat_slim_star_M
+    Frames:
+    - {fileID: -1565444053, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1267424196, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -840878581, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -2127818545, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_slim_tumble_M
+    Frames:
+    - {fileID: 171788646, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1934996572, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1720892537, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1300662649, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_cat_slim_spread_L
+    Frames:
+    - {fileID: 1038364622, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 769582923, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1381021774, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -478873303, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_slim_swim_L
+    Frames:
+    - {fileID: 1239898668, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -894453315, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 73624909, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1132529295, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_slim_wave_L
+    Frames:
+    - {fileID: -1769001486, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -826484566, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1347428708, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1776601422, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_slim_curl_L
+    Frames:
+    - {fileID: -84021524, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -2066066819, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1096375664, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -2036180703, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_cat_slim_star_L
+    Frames:
+    - {fileID: 1826405041, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1792004811, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1872871112, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1657158182, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_slim_tumble_L
+    Frames:
+    - {fileID: 614031945, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1055788640, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 476772120, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -435667650, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_cat_chonk_spread_S
+    Frames:
+    - {fileID: -1218440955, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 437159908, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -926014366, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 360553025, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_chonk_swim_S
+    Frames:
+    - {fileID: -867284603, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1522047349, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 651886426, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -763273243, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_chonk_wave_S
+    Frames:
+    - {fileID: -2080613757, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -405272338, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 778351978, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1286591645, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_chonk_curl_S
+    Frames:
+    - {fileID: -718550234, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 722578239, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 2062677108, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 305683624, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_cat_chonk_star_S
+    Frames:
+    - {fileID: -1917444926, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 97690170, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -52132581, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 214777311, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_chonk_tumble_S
+    Frames:
+    - {fileID: 128987489, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1863180513, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1096554581, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 20927402, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_cat_chonk_spread_M
+    Frames:
+    - {fileID: -2006827121, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1146703183, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 615850725, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -305709888, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_chonk_swim_M
+    Frames:
+    - {fileID: 1603486896, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1878506158, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -750564178, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -354338111, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_chonk_wave_M
+    Frames:
+    - {fileID: 2077424468, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -983435875, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 345469453, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1586401104, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_chonk_curl_M
+    Frames:
+    - {fileID: -700883168, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 360852475, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1472445770, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1705142759, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_cat_chonk_star_M
+    Frames:
+    - {fileID: -572792688, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -56019900, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1883312161, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 180467798, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_chonk_tumble_M
+    Frames:
+    - {fileID: 360703026, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -384970615, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1023954696, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -561743374, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_cat_chonk_spread_L
+    Frames:
+    - {fileID: 332360473, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1945275557, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1881054043, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1944822733, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_chonk_swim_L
+    Frames:
+    - {fileID: -1449595412, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -320185480, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -178597771, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1164795888, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_chonk_wave_L
+    Frames:
+    - {fileID: -1751196302, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -111096743, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1644007239, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1701691580, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_cat_chonk_curl_L
+    Frames:
+    - {fileID: -1238883276, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1541206042, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -853507307, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 41556918, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_cat_chonk_star_L
+    Frames:
+    - {fileID: -327399345, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1362120883, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -644793423, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1489081741, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_cat_chonk_tumble_L
+    Frames:
+    - {fileID: 3699362, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -605093507, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1372175629, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 110406199, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_dog_floppy_spread_S
+    Frames:
+    - {fileID: 2118562387, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -141631368, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 929445383, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 789188101, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_floppy_swim_S
+    Frames:
+    - {fileID: -216970426, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1207216777, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1898129203, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1469379126, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_floppy_wave_S
+    Frames:
+    - {fileID: 1304240447, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 825282513, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 649146656, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 686347115, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_floppy_curl_S
+    Frames:
+    - {fileID: -1812036474, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -36100630, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 2143513218, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -2007645590, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_dog_floppy_star_S
+    Frames:
+    - {fileID: 105247068, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -827794826, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1041376277, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -2090207783, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_floppy_tumble_S
+    Frames:
+    - {fileID: 441914892, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 971096608, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 344369877, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -761124016, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_dog_floppy_spread_M
+    Frames:
+    - {fileID: -1441918852, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -134469948, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 784630590, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 2142758264, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_floppy_swim_M
+    Frames:
+    - {fileID: 527692900, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -116317495, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 21866293, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1496162278, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_floppy_wave_M
+    Frames:
+    - {fileID: -48075442, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -2006498563, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1676235892, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1737724516, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_floppy_curl_M
+    Frames:
+    - {fileID: 1951777399, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -2075903394, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1647869009, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1248535335, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_dog_floppy_star_M
+    Frames:
+    - {fileID: -1542353247, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1358497312, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1715876146, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 614751260, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_floppy_tumble_M
+    Frames:
+    - {fileID: -942164742, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1473808750, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1124570982, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1120321402, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_dog_floppy_spread_L
+    Frames:
+    - {fileID: 366847574, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1226891362, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 193056073, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 98226162, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_floppy_swim_L
+    Frames:
+    - {fileID: -1834780375, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 60537588, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 100602723, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 2079875069, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_floppy_wave_L
+    Frames:
+    - {fileID: 1278717901, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1263693768, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -281633975, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -128316818, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_floppy_curl_L
+    Frames:
+    - {fileID: 1700988240, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1706194664, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1996503044, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1820908056, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_dog_floppy_star_L
+    Frames:
+    - {fileID: -1001006592, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 441628122, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1167519509, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1758856050, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_floppy_tumble_L
+    Frames:
+    - {fileID: -1344061982, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 35607130, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1403528825, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -2070572690, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_dog_pointy_spread_S
+    Frames:
+    - {fileID: 1425877872, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1175065932, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -790447801, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 209695712, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_pointy_swim_S
+    Frames:
+    - {fileID: 1433184675, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1172010156, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1575132929, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1550469758, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_pointy_wave_S
+    Frames:
+    - {fileID: -1013140753, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1341941158, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1273756392, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -30737392, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_pointy_curl_S
+    Frames:
+    - {fileID: 1756680878, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 899237598, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 347485413, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 231321607, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_dog_pointy_star_S
+    Frames:
+    - {fileID: -1507776355, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1024628105, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 827214678, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1385755196, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_pointy_tumble_S
+    Frames:
+    - {fileID: 1481922516, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -2049802903, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1495737893, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -2147066953, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_dog_pointy_spread_M
+    Frames:
+    - {fileID: -524257449, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1509182711, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -525959326, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 612305890, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_pointy_swim_M
+    Frames:
+    - {fileID: -721835790, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1589929995, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 248363163, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1942914783, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_pointy_wave_M
+    Frames:
+    - {fileID: -1370692722, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1607955324, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1284677594, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1917822518, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_pointy_curl_M
+    Frames:
+    - {fileID: -253626615, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -336307988, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1999184704, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 639736640, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_dog_pointy_star_M
+    Frames:
+    - {fileID: -509717202, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -682958881, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -923201063, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -2008642649, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_pointy_tumble_M
+    Frames:
+    - {fileID: -981605469, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -325835370, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 2126770373, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -963132595, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_dog_pointy_spread_L
+    Frames:
+    - {fileID: 1734848008, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -389160507, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1991170560, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 418538874, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_pointy_swim_L
+    Frames:
+    - {fileID: -988593847, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -932121578, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1971423929, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -398148460, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_pointy_wave_L
+    Frames:
+    - {fileID: -418174735, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 789097257, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1795686308, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1887780678, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_pointy_curl_L
+    Frames:
+    - {fileID: -1775463218, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 607416692, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 439300728, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1657300290, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_dog_pointy_star_L
+    Frames:
+    - {fileID: -1080627229, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1920565186, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 873258118, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 2131951938, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_pointy_tumble_L
+    Frames:
+    - {fileID: -617182589, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -2035668911, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1414282511, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -560939403, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_dog_fluffy_spread_S
+    Frames:
+    - {fileID: 2070916224, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -284066332, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1859259949, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1595543385, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_fluffy_swim_S
+    Frames:
+    - {fileID: 1527056196, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 249903134, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 28414579, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -577839499, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_fluffy_wave_S
+    Frames:
+    - {fileID: 172864247, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1040956196, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 666732537, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -440947532, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_fluffy_curl_S
+    Frames:
+    - {fileID: -1296255439, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -77382951, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1869725160, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1892026826, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_dog_fluffy_star_S
+    Frames:
+    - {fileID: -1243722488, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1437420933, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1959584887, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1989781950, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_fluffy_tumble_S
+    Frames:
+    - {fileID: 1880481550, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1589241733, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1521120425, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -394071621, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_dog_fluffy_spread_M
+    Frames:
+    - {fileID: -1773212520, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 986634691, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1285065024, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -172409674, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_fluffy_swim_M
+    Frames:
+    - {fileID: 1027871018, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -744316770, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 468242578, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1573098840, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_fluffy_wave_M
+    Frames:
+    - {fileID: 1088683711, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 997580270, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1296583558, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -2060945372, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_fluffy_curl_M
+    Frames:
+    - {fileID: -1455818636, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 944759991, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 2143114128, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1064154221, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_dog_fluffy_star_M
+    Frames:
+    - {fileID: -1141519870, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 254089093, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -2088894981, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -57052340, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_fluffy_tumble_M
+    Frames:
+    - {fileID: -940685794, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1445272530, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1195911294, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 859101392, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_dog_fluffy_spread_L
+    Frames:
+    - {fileID: 1567153828, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -539488733, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 967457385, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -805226869, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_fluffy_swim_L
+    Frames:
+    - {fileID: -764325905, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1603775341, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1092924770, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -380424980, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_fluffy_wave_L
+    Frames:
+    - {fileID: -1843497531, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -661141076, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1781890891, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1532762228, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_fluffy_curl_L
+    Frames:
+    - {fileID: 1346051817, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1535864366, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1413722656, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -772100096, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_dog_fluffy_star_L
+    Frames:
+    - {fileID: 1856023665, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -917766413, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 2133458618, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 863730164, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_fluffy_tumble_L
+    Frames:
+    - {fileID: 23364047, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1909144916, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 643997237, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -368523389, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_dog_short_spread_S
+    Frames:
+    - {fileID: 1350622374, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1445170182, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1549020191, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 984042746, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_short_swim_S
+    Frames:
+    - {fileID: 831970780, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1934546006, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1764752195, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1289141710, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_short_wave_S
+    Frames:
+    - {fileID: -475732021, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 234902343, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1907895906, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1686316311, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_short_curl_S
+    Frames:
+    - {fileID: -1677831163, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1081541554, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 497578952, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1670512005, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_dog_short_star_S
+    Frames:
+    - {fileID: -1217446035, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -166509972, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1441672119, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 62350377, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_short_tumble_S
+    Frames:
+    - {fileID: 1530895427, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -220596144, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1953827139, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 397078729, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_dog_short_spread_M
+    Frames:
+    - {fileID: -74098561, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1608216141, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1509501969, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1013535570, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_short_swim_M
+    Frames:
+    - {fileID: -1597401315, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1206512899, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -49905659, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 862064319, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_short_wave_M
+    Frames:
+    - {fileID: 152809558, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1138143916, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -609752833, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -199889518, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_short_curl_M
+    Frames:
+    - {fileID: -854105838, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -262662994, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1513422906, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -432829460, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_dog_short_star_M
+    Frames:
+    - {fileID: -627310229, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -530151453, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1153467126, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1842833869, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_short_tumble_M
+    Frames:
+    - {fileID: -261032001, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1418262326, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 659827119, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 610843105, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5
+  - Id: fl_dog_short_spread_L
+    Frames:
+    - {fileID: -1219021104, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1038237318, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1260234278, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 712939097, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_short_swim_L
+    Frames:
+    - {fileID: 1782006538, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 168902520, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1605413673, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -341973709, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_short_wave_L
+    Frames:
+    - {fileID: 1864470930, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1152017904, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -955321272, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 704974928, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 6
+  - Id: fl_dog_short_curl_L
+    Frames:
+    - {fileID: -774783610, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1325571138, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -733145726, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1133784862, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 2
+  - Id: fl_dog_short_star_L
+    Frames:
+    - {fileID: 1731193220, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1336202665, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -1722777892, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 2024771134, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 4
+  - Id: fl_dog_short_tumble_L
+    Frames:
+    - {fileID: -501082268, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1170832510, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: 1262306243, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    - {fileID: -843275410, guid: 42bf02685fe5b69468994c4ff2b95173, type: 3}
+    Fps: 5

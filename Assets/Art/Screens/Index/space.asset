@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ed403eb00d2854991c32c815a2285e, type: 3}
+  m_Name: space
+  m_EditorClassIdentifier: Game::Game.Art.SpriteSheetIndex
+  entries:
+  - Id: space_deep
+    Frames:
+    - {fileID: -742262272, guid: da702f89a61543c428892ab5cd1dc571, type: 3}
+    Fps: 0
+  - Id: space_stars
+    Frames:
+    - {fileID: 708745373, guid: da702f89a61543c428892ab5cd1dc571, type: 3}
+    - {fileID: -1347411131, guid: da702f89a61543c428892ab5cd1dc571, type: 3}
+    - {fileID: -215469160, guid: da702f89a61543c428892ab5cd1dc571, type: 3}
+    Fps: 3
+  - Id: bubble
+    Frames:
+    - {fileID: -631119520, guid: da702f89a61543c428892ab5cd1dc571, type: 3}
+    - {fileID: -488193297, guid: da702f89a61543c428892ab5cd1dc571, type: 3}
+    - {fileID: 1491725559, guid: da702f89a61543c428892ab5cd1dc571, type: 3}
+    Fps: 0

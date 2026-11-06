@@ -1,129 +1,97 @@
-using System;
+using Game.Art;
 using Game.Flow;
+using Game.UI;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace Game.Battle
 {
     /// <summary>
-    /// Same runtime-built recipe as LevelResultScreen (full-screen dim
-    /// panel + message + button), with a third draw state and Rematch
-    /// instead of Continue/Retry. See
+    /// 2-player results on their own pixel-art overlay canvas. When the match
+    /// ends, each half shows its YOU WIN / YOU LOSE banner (or DRAW) for
+    /// 2.5 s, then the dimmed stats screen with Rematch and Home. Player 2's
+    /// half is on top, rotated 180°. See
     /// docs/features/battle-mode/specs/2026-09-15-simple-attack-battle-mode-design.md.
     /// </summary>
     public class BattleResultScreen : MonoBehaviour
     {
         [SerializeField] private BattleMatchController matchController;
-        [SerializeField] private RectTransform canvasRect;
+        [SerializeField] private MenuArtLibrary art;
 
-        private const float ButtonWidth = 200f;
-        private const float ButtonHeight = 80f;
+        private const int OverlaySortingOrder = 10;
+        private const float ResultMomentSeconds = 2.5f;
 
-        private GameObject _panel;
-        private Text _messageText;
+        private MatchStatsTracker _player1Stats;
+        private MatchStatsTracker _player2Stats;
+        private GameObject _momentRoot;
+        private BattleResultHalfView _topMoment;
+        private BattleResultHalfView _bottomMoment;
+        private BattleStatsView _statsView;
+        private BattleMatchResult _result;
+        private float _momentRemaining = -1f;
 
         private void Start()
         {
-            BuildPanel();
+            SceneTransition.Install(art);
+            _player1Stats = new MatchStatsTracker(matchController.Player1);
+            _player2Stats = new MatchStatsTracker(matchController.Player2);
+            BuildScreens(new MenuUiFactory(art), OverlayCanvasFactory.Create("BattleResultCanvas", OverlaySortingOrder));
             matchController.OnMatchEnded += HandleMatchEnded;
         }
 
         private void OnDestroy()
         {
             matchController.OnMatchEnded -= HandleMatchEnded;
+            _player1Stats?.Dispose();
+            _player2Stats?.Dispose();
+        }
+
+        private void BuildScreens(MenuUiFactory ui, RectTransform canvas)
+        {
+            var momentRoot = RuntimeUi.CreateRect(canvas, "ResultMoment", UiPlacement.Fill());
+            var stage = NativeStage.Create(momentRoot).Stage;
+            _topMoment = new BattleResultHalfView(ui, BattleHalfFrame.Create(stage, isTop: true));
+            _bottomMoment = new BattleResultHalfView(ui, BattleHalfFrame.Create(stage, isTop: false));
+            _momentRoot = momentRoot.gameObject;
+            _momentRoot.SetActive(false);
+            _statsView = new BattleStatsView(ui, canvas, (HandleRematch, () => SceneTransition.LoadScene(SceneNames.MainMenu)));
         }
 
         private void HandleMatchEnded(BattleMatchResult result)
         {
-            _messageText.text = MessageFor(result);
-            _panel.SetActive(true);
+            _result = result;
+            _topMoment.Show(OutcomeFor(result, BattleMatchResult.Player2Wins));
+            _bottomMoment.Show(OutcomeFor(result, BattleMatchResult.Player1Wins));
+            _momentRoot.SetActive(true);
+            _momentRemaining = ResultMomentSeconds;
         }
 
-        private static string MessageFor(BattleMatchResult result) => result switch
+        private void Update()
         {
-            BattleMatchResult.Player1Wins => "Player 1 Wins!",
-            BattleMatchResult.Player2Wins => "Player 2 Wins!",
-            _ => "Draw!",
-        };
+            if (_momentRemaining < 0f) return;
+            _momentRemaining -= Time.unscaledDeltaTime;
+            if (_momentRemaining < 0f) ShowStats();
+        }
 
-        private void HandleRematchClicked()
+        private void ShowStats()
         {
-            _panel.SetActive(false);
+            _momentRoot.SetActive(false);
+            _statsView.Show(
+                (OutcomeFor(_result, BattleMatchResult.Player2Wins), _player2Stats.Stats),
+                (OutcomeFor(_result, BattleMatchResult.Player1Wins), _player1Stats.Stats));
+        }
+
+        private void HandleRematch()
+        {
+            _statsView.Hide();
+            _player1Stats.Stats.Reset();
+            _player2Stats.Stats.Reset();
             matchController.Rematch();
         }
 
-        private void HandleMenuClicked()
+        private static BattleHalfOutcome OutcomeFor(BattleMatchResult result, BattleMatchResult winForThisHalf)
         {
-            _panel.SetActive(false);
-            SceneManager.LoadScene(SceneNames.MainMenu);
-        }
-
-        private void BuildPanel()
-        {
-            _panel = new GameObject("BattleResultPanel", typeof(RectTransform));
-            ConfigureStretchRect((RectTransform)_panel.transform, canvasRect, Vector2.zero, Vector2.one);
-            _panel.AddComponent<Image>().color = new Color(0f, 0f, 0f, 0.75f);
-            _messageText = SpawnMessageText();
-            SpawnRematchButton().onClick.AddListener(HandleRematchClicked);
-            SpawnMenuButton().onClick.AddListener(HandleMenuClicked);
-            _panel.SetActive(false);
-        }
-
-        private Button SpawnRematchButton()
-        {
-            var buttonObj = new GameObject("RematchButton", typeof(RectTransform));
-            var rect = (RectTransform)buttonObj.transform;
-            rect.SetParent(_panel.transform, worldPositionStays: false);
-            rect.anchorMin = rect.anchorMax = new Vector2(0.5f, 0.4f);
-            rect.sizeDelta = new Vector2(ButtonWidth, ButtonHeight);
-            buttonObj.AddComponent<Image>().color = Color.white;
-            SpawnButtonLabel(buttonObj.transform, "Rematch");
-            return buttonObj.AddComponent<Button>();
-        }
-
-        private Button SpawnMenuButton()
-        {
-            var buttonObj = new GameObject("MenuButton", typeof(RectTransform));
-            var rect = (RectTransform)buttonObj.transform;
-            rect.SetParent(_panel.transform, worldPositionStays: false);
-            rect.anchorMin = rect.anchorMax = new Vector2(0.5f, 0.22f);
-            rect.sizeDelta = new Vector2(ButtonWidth, ButtonHeight * 0.75f);
-            buttonObj.AddComponent<Image>().color = Color.white;
-            SpawnButtonLabel(buttonObj.transform, "Menu");
-            return buttonObj.AddComponent<Button>();
-        }
-
-        private Text SpawnMessageText()
-        {
-            var textObj = new GameObject("ResultMessage", typeof(RectTransform));
-            ConfigureStretchRect((RectTransform)textObj.transform, (RectTransform)_panel.transform, new Vector2(0.1f, 0.55f), new Vector2(0.9f, 0.75f));
-            return ConfigureLegacyText(textObj.AddComponent<Text>(), fontSize: 48, color: Color.white);
-        }
-
-        private static void SpawnButtonLabel(Transform buttonTransform, string text)
-        {
-            var labelObj = new GameObject("Label", typeof(RectTransform));
-            ConfigureStretchRect((RectTransform)labelObj.transform, (RectTransform)buttonTransform, Vector2.zero, Vector2.one);
-            ConfigureLegacyText(labelObj.AddComponent<Text>(), fontSize: 28, color: Color.black).text = text;
-        }
-
-        private static void ConfigureStretchRect(RectTransform rect, RectTransform parent, Vector2 anchorMin, Vector2 anchorMax)
-        {
-            rect.SetParent(parent, worldPositionStays: false);
-            rect.anchorMin = anchorMin;
-            rect.anchorMax = anchorMax;
-            rect.offsetMin = Vector2.zero;
-            rect.offsetMax = Vector2.zero;
-        }
-
-        private static Text ConfigureLegacyText(Text text, int fontSize, Color color)
-        {
-            text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-            text.fontSize = fontSize;
-            text.alignment = TextAnchor.MiddleCenter;
-            text.color = color;
-            return text;
+            if (result == BattleMatchResult.Draw) return BattleHalfOutcome.Draw;
+            return result == winForThisHalf ? BattleHalfOutcome.Win : BattleHalfOutcome.Lose;
         }
     }
 }

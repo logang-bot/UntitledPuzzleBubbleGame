@@ -1,7 +1,11 @@
 # Art Pass — Roadmap
 
-**Status: planned, not started.** This replaces the "Real art pass" bullet
-in `../../ROADMAP.md`'s "Later / not yet scoped" section. It runs in
+**Status: screens done, in-game art not started.** Art Phase 1b (the
+screen art) is generated, and the screen half of Phases 2 and 6b is
+implemented: every pre-game screen and result overlay now uses it (see
+"Screens: as built" below). Phases 1, 3–7 (in-game art) are still
+planned. This replaces the "Real art pass" bullet in
+`../../ROADMAP.md`'s "Later / not yet scoped" section. It runs in
 parallel with playtest/tuning work (see "Working in parallel" below).
 
 ## Art direction
@@ -301,6 +305,89 @@ rather than the other way round.
 - **Level map and meta-progression screens.** They wait on the meta
   progression design.
 - **Audio.** It's a separate pass.
+
+## Screens: as built
+
+The screens follow the **latest Claude Design source** ("Mobile
+bubble-shooter art system", `Menu Art Guide.dc.html` and
+`menus-scenes.js`). Where it differs from the plan above, it wins.
+
+**Import pipeline (screen half of Phase 2)**
+- Claude Design exports a bundle: 1× PNG sheets plus legend JSONs in
+  `Assets/Art/Screens/Sheets/`, and `colorways.json` and `palette.gpl` in
+  `Assets/Art/Screens/`.
+  - Each legend gives every sprite id its frame rect, frame count, fps,
+    a numeric pixel pivot and, for 9-slices, its border.
+- **Tools ▸ Art ▸ Import Menu Sheets** (`Editor/Art/MenuArtImportMenu`)
+  can be re-run after every re-export. It:
+  - slices each sheet into frames named `{id}_{frame}`, with Point
+    filtering, PPU 1, no compression and no mipmaps;
+  - writes one `SpriteSheetIndex` per sheet under
+    `Assets/Art/Screens/Index/`;
+  - builds `Assets/Art/Screens/MenuArtLibrary.asset`, which the screens
+    use to look up sprites by legend id;
+  - copies the colorway ramps and the sprite shape ids into
+    `DefaultPetAppearanceCatalog`.
+- **Fonts:** Pixelify Sans Regular for titles and captions, Silkscreen
+  for small labels, both Hinted Raster. Pixelify Sans Bold was dropped
+  because its "2" reads as an "8" at caption size.
+- **Fur recolor:** the `Game/UI/FurRecolor` shader swaps the 4 cat
+  fur-key colors and the 4 dog fur-key colors for the chosen ramps.
+  - Each recolored Image gets its own material instance (`FurRecolor`).
+  - `PetColorOption` now holds a 4-shade `Ramp` instead of one `Color`.
+  - `PetShapeOption` gained an `ArtId` (round, fluffy, slim, chonk;
+    floppy, pointy, fluffy, short).
+
+**Canvas (Phase 6b)**
+- `PixelCanvas.Configure` sets up every screen canvas:
+  - Scale With Screen Size at a 270×585 reference, so one unit is one
+    art pixel;
+  - match mode **Expand**, so the full native frame always fits and the
+    extra space becomes background;
+  - reference PPU 1.
+
+  This differs from the 1080×2340 + match-width plan: Expand keeps 16:9
+  phones from cropping the 585-tall layout.
+- `NativeStage` gives each screen a full-bleed background and a 270×585
+  stage centered in the safe area (`SafeAreaFitter`). Layout coordinates
+  are the design's native pixels, measured from the top-left
+  (`UiPlacement.TopLeft(RectInt)`).
+- The Game and BattleMode result screens build their own overlay canvas
+  (`OverlayCanvasFactory`), so the HUD canvas and touch zones are still
+  untouched. They change with Phase 6.
+
+**Screens**
+- **Main menu:**
+  - deep space: a static layer plus near stars scrolling at 4 px/s;
+  - drifting cosmos: one big galaxy slot, three small slots and a
+    shooting star;
+  - 15 floating pets in random species, shapes, colorways, sizes and
+    poses;
+  - the logo and four buttons.
+  - The spawn timing (`SpawnSlot`, `CrossingPath`, `FloaterPick`) is
+    ported from `menus-scenes.js`.
+- **Pet customization:** a two-step aimer/firer flow. See
+  `../game-flow/overview.md`. The dusk-town `bg*` layers are no longer
+  used.
+- **Settings:** one panel with the landing-animation toggle.
+- **Victory overlay:** a flat 78 % Abyss dim, the win banner, fireworks,
+  confetti and lanterns, the level/score panel, then Continue and Menu.
+  There's no pet.
+- **Game over:** the board holds for 3 s with input blocked, then the paw
+  iris shows the **Retry screen**. It has the napping cat and dog in the
+  saved pets' fur, the level/score panel, then Retry and Exit.
+- **2-player result:**
+  - YOU WIN / YOU LOSE banners (or a DRAW plate) per half for 2.5 s;
+  - then a dimmed stats card per player (score, popped, best chain,
+    shots), with Rematch in the center bar and Home at each player's
+    right.
+  - The top half is rotated 180°.
+  - The launcher pets in the design wait for Art Phases 4 and 7.
+- **Transition:** `SceneTransition` plays the paw-print iris on every
+  scene change and on the in-scene swap to and from the Retry screen.
+
+Crown, rain cloud, draw badge, dim tiles, petals, snow and the
+customization `stage_*` alternatives are in the sheets but unused for now.
 
 ## Working in parallel with debugging and tuning
 

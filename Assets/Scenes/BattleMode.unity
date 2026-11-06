@@ -1359,6 +1359,7 @@ MonoBehaviour:
   viewportHeightFraction: 0.5
   difficultyCurve: {fileID: 11400000, guid: 4b326b35ef006dd42ba7c7523fc305ec, type: 2}
   patternCatalog: {fileID: 11400000, guid: 834dc0d8eb64812428594d386d1f3e8d, type: 2}
+  startAtSavedSoloLevel: 0
 --- !u!1 &1858251796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1800,6 +1801,7 @@ MonoBehaviour:
   viewportHeightFraction: 0.5
   difficultyCurve: {fileID: 11400000, guid: 4b326b35ef006dd42ba7c7523fc305ec, type: 2}
   patternCatalog: {fileID: 11400000, guid: 834dc0d8eb64812428594d386d1f3e8d, type: 2}
+  startAtSavedSoloLevel: 0
 --- !u!1 &2105322883
 GameObject:
   m_ObjectHideFlags: 0
@@ -1831,7 +1833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Game::Game.Battle.BattleResultScreen
   matchController: {fileID: 2105322885}
-  canvasRect: {fileID: 192032264}
+  art: {fileID: 11400000, guid: 78e6ef214dedf8c42a5157513b3f9000, type: 2}
 --- !u!114 &2105322885
 MonoBehaviour:
   m_ObjectHideFlags: 0
