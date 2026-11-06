@@ -176,6 +176,12 @@ rather than the other way round.
 - **Deliverable:** one mockup per screen at 9:19.5, plus sprite sheets
   for buttons, panels, swatches, icons, portrait characters, background
   layers and the screen transition.
+- **Review the mockups on a real phone** before anything is wired in,
+  just as in Phase 1. Check:
+  - legibility at 4×;
+  - that the safe-area margins clear the notch and gesture bar;
+  - that the screens sit comfortably next to the in-game look when you
+    switch between them.
 
 ### Art Phase 2 — Import pipeline
 - Folder layout under `Assets/Art/`: `Bubbles/`, `Characters/`,
@@ -245,6 +251,24 @@ rather than the other way round.
 - The next-bubble frame.
 
 ### Art Phase 6b — Screens and overlays skin (code)
+- **Canvas scaling first.** All menu scenes (MainMenu, PetCustomization,
+  SettingsMenu), and the overlay canvases in Game and BattleMode, use
+  `CanvasScaler` in **Constant Pixel Size** mode today. For the
+  270×585 native art, switch them to **Scale With Screen Size**:
+  - reference resolution 1080×2340 (the 4× native size);
+  - match width, so the horizontal layout stays fixed and taller phones
+    get more background.
+
+  Every placeholder size in code (button sizes, font sizes) is tuned
+  for constant pixels, so re-check them after the switch. In Game and
+  BattleMode the HUD and touch zones (`HoldInputZone`, 220×220
+  reference px) probably share that canvas. Either give the result
+  overlays their own canvas, or switch the scaler and re-tune the HUD
+  together with Art Phase 6.
+- **Safe-area component.** Add a small `SafeAreaFitter` that insets a
+  root `RectTransform` to `Screen.safeArea`, re-checked when the
+  resolution or orientation changes. All buttons and text go under it;
+  backgrounds stay outside it so they still bleed edge to edge.
 - Replace the placeholder `RuntimeUi` widgets with skinned prefabs from
   Phase 1b. `RuntimeUi` is the single place the menus build their UI,
   so this is mostly one swap point.
@@ -253,6 +277,10 @@ rather than the other way round.
 - Pet customization: the live preview uses the portrait sprite for the
   chosen shape, recolored with the chosen fur. The color cycler becomes
   a swatch row, and the shape cycler becomes silhouette icons.
+- Settings: the panel over the dimmed menu background, and the
+  selected/unselected toggle row. Move `SettingsMenuController` onto
+  `RuntimeUi` (or the skinned prefabs) at the same time, so it stops
+  carrying its own builder code.
 - Split `LevelResultScreen` into distinct **victory** and **game-over**
   presentations (banner, cat pose, particles), keeping its current
   buttons and `GameStateManager` hooks.
