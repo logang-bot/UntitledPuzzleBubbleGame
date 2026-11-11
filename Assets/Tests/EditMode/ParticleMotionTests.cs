@@ -18,15 +18,22 @@ namespace Game.Tests
         }
 
         [Test]
-        public void BurstFrame_DuringBurst_ReturnsFrame()
+        public void Wave_AtQuarterPhase_PeaksAtOne()
         {
-            Assert.AreEqual(2, ParticleMotion.BurstFrame(time: 0.2f, period: 1.6f, frames: (6, 12f)));
+            Assert.AreEqual(1f, ParticleMotion.Wave(time: 0f, period: 2f, phase: 0.25f), 1e-4f);
         }
 
         [Test]
-        public void BurstFrame_AfterBurst_IsHidden()
+        public void BurstFrame_DuringBurst_ReturnsFrame()
         {
-            Assert.AreEqual(-1, ParticleMotion.BurstFrame(time: 1f, period: 1.6f, frames: (6, 12f)));
+            Assert.AreEqual(3, ParticleMotion.BurstFrame(age: 0.2f, frames: (10, 15f)));
+        }
+
+        [Test]
+        public void BurstFrame_AfterOrBeforeBurst_IsHidden()
+        {
+            Assert.AreEqual(-1, ParticleMotion.BurstFrame(age: 1f, frames: (10, 15f)));
+            Assert.AreEqual(-1, ParticleMotion.BurstFrame(age: -0.1f, frames: (10, 15f)));
         }
     }
 }

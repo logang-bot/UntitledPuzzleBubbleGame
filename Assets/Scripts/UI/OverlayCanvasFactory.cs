@@ -15,7 +15,7 @@ namespace Game.UI
             var canvas = canvasObject.GetComponent<Canvas>();
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
             canvas.sortingOrder = sortingOrder;
-            PixelCanvas.Configure(canvas);
+            MenuCanvas.Configure(canvas);
             return (RectTransform)canvasObject.transform;
         }
     }

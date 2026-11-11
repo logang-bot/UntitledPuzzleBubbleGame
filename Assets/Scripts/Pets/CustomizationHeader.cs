@@ -1,30 +1,28 @@
-using Game.Art;
 using Game.UI;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Game.Pets
 {
     /// <summary>
-    /// Title ("THE AIMER" / "THE FIRER"), step counter and the role hint
-    /// under the CAT/DOG toggle.
+    /// Title ("THE AIMER" / "THE FIRER"), step counter, and the role hint
+    /// under the CAT/DOG toggle, at the guide's positions.
     /// </summary>
     public class CustomizationHeader
     {
-        private const int TitleY = 30;
-        private const int StepY = 53;
-        private const int HintY = 110;
+        private static readonly RectInt TitleRect = new RectInt(70, 40, 220, 42);
+        private static readonly RectInt StepRect = new RectInt(70, 82, 220, 18);
+        private static readonly RectInt HintRect = new RectInt(40, 158, 280, 18);
 
-        private readonly Text _title;
-        private readonly Text _step;
-        private readonly Text _hint;
+        private readonly TMP_Text _title;
+        private readonly TMP_Text _step;
+        private readonly TMP_Text _hint;
 
         public CustomizationHeader(MenuUiFactory ui, RectTransform stage)
         {
-            var muted = ui.Styles.Small.WithColor(MenuPalette.Stone);
-            _title = ui.CenteredLabel(stage, "", new LabelLine(TitleY, ui.Styles.Title));
-            _step = ui.CenteredLabel(stage, "", new LabelLine(StepY, muted));
-            _hint = ui.CenteredLabel(stage, "", new LabelLine(HintY, muted));
+            _title = ui.LabelIn(stage, TitleRect, ("Title", TextStyles.Title));
+            _step = ui.LabelIn(stage, StepRect, ("Step", TextStyles.SmallLabel));
+            _hint = ui.LabelIn(stage, HintRect, ("Hint", TextStyles.SmallLabel));
         }
 
         public void Show(CustomizationStep step, string aimerDescription)

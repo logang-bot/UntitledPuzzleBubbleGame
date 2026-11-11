@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Game.Art;
 using Game.Flow;
+using Game.Menu;
 using Game.UI;
 using UnityEngine;
 
@@ -19,10 +20,9 @@ namespace Game.Pets
         [SerializeField] private MenuArtLibrary art;
         [SerializeField] private PetAppearanceCatalog appearanceCatalog;
 
-        private static readonly RectInt BackRect = new RectInt(10, 28, 26, 30);
-        private static readonly RectInt ToggleRect = new RectInt(40, 76, 190, 28);
-        private static readonly RectInt NextRect = new RectInt(35, 504, 200, 38);
-        private const int ToggleSegmentWidth = 91;
+        private static readonly RectInt BackRect = new RectInt(14, 40, 52, 56);
+        private static readonly RectInt ToggleRect = new RectInt(54, 108, 252, 44);
+        private static readonly RectInt NextRect = new RectInt(46, 664, 268, 56);
 
         private readonly Dictionary<PetSpecies, PetProfile> _drafts = new();
         private CustomizationFlow _flow;
@@ -34,11 +34,11 @@ namespace Game.Pets
         private void Start()
         {
             SceneTransition.Install(art);
-            PixelCanvas.Configure(canvasRect.GetComponent<Canvas>());
+            MenuCanvas.Configure(canvasRect.GetComponent<Canvas>());
             LoadDrafts();
             var ui = new MenuUiFactory(art);
             var layers = NativeStage.Create(canvasRect);
-            ui.Fill(layers.Background, "NightFill", MenuPalette.Night0).raycastTarget = false;
+            DuskBackdrop.Build(ui, layers.Background);
             BuildScreen(ui, layers.Stage);
             ShowStep();
         }
@@ -54,7 +54,7 @@ namespace Game.Pets
         {
             ui.Button(stage, new UiSkinButtonSpec { Name = "BackButton", Kind = ButtonKind.Back, Rect = BackRect, OnClick = HandleBack });
             _header = new CustomizationHeader(ui, stage);
-            _roleToggle = new SegmentedToggle(ui, stage, new SegmentedToggleSpec { Name = "RoleToggle", Track = ToggleRect, SegmentWidth = ToggleSegmentWidth, Labels = new[] { "CAT", "DOG" } });
+            _roleToggle = new SegmentedToggle(ui, stage, new SegmentedToggleSpec { Name = "RoleToggle", Track = ToggleRect, Labels = new[] { "CAT", "DOG" } });
             _roleToggle.OnSelected += HandleSpeciesToggled;
             _panel = new PetPanelView(ui, stage, appearanceCatalog);
             _panel.OnProfileChanged += HandleProfileChanged;

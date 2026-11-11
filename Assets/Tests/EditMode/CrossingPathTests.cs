@@ -11,18 +11,29 @@ namespace Game.Tests
         [Test]
         public void Pick_FromLeft_StartsOffLeftEdgeAndEndsOffRightEdge()
         {
-            var path = CrossingPath.Pick(new System.Random(1), HalfSize, CrossingPath.FromLeft);
+            var path = CrossingPath.Pick(new System.Random(1), HalfSize, new CrossingRoute(CrossingPath.FromLeft, CrossingRoute.FullHeight));
             Assert.AreEqual(-10f, path.Start.x);
-            Assert.AreEqual(280f, path.End.x);
+            Assert.AreEqual(370f, path.End.x);
             Assert.IsTrue(path.MovesRight);
         }
 
         [Test]
         public void Pick_FromBottom_RisesOffTopEdge()
         {
-            var path = CrossingPath.Pick(new System.Random(1), HalfSize, CrossingPath.FromBottom);
-            Assert.AreEqual(593f, path.Start.y);
+            var path = CrossingPath.Pick(new System.Random(1), HalfSize, new CrossingRoute(CrossingPath.FromBottom, CrossingRoute.FullHeight));
+            Assert.AreEqual(788f, path.Start.y);
             Assert.AreEqual(-8f, path.End.y);
+        }
+
+        [Test]
+        public void Pick_Horizontal_StaysInsideBand()
+        {
+            for (var seed = 0; seed < 20; seed++)
+            {
+                var path = CrossingPath.Pick(new System.Random(seed), HalfSize, new CrossingRoute(CrossingPath.FromRight, new Vector2(250f, 500f)));
+                Assert.That(path.Start.y, Is.InRange(250f, 500f));
+                Assert.That(path.End.y, Is.InRange(250f, 500f));
+            }
         }
 
         [Test]
@@ -33,14 +44,11 @@ namespace Game.Tests
         }
 
         [Test]
-        public void SquashedIntoBigBand_KeepsStartInsideBand()
+        public void Leveled_KeepsStartHeight()
         {
-            for (var seed = 0; seed < 20; seed++)
-            {
-                var path = CrossingPath.Pick(new System.Random(seed), HalfSize, CrossingPath.FromRight).SquashedIntoBigBand();
-                Assert.That(path.Start.y, Is.InRange(250f, 320f));
-                Assert.That(path.End.y - path.Start.y, Is.InRange(-20f, 20f));
-            }
+            var path = new CrossingPath { Start = new Vector2(-10f, 300f), End = new Vector2(370f, 420f) }.Leveled();
+            Assert.AreEqual(300f, path.End.y);
+            Assert.AreEqual(380f, path.Length);
         }
     }
 }

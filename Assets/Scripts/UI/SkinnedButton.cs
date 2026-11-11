@@ -1,4 +1,6 @@
 using Game.Art;
+using Game.Motion;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -6,33 +8,38 @@ using UnityEngine.UI;
 namespace Game.UI
 {
     /// <summary>
-    /// Companion to a sprite-swap Button: drops the caption 3 px with the
-    /// pressed face and greys it out (Stone) while disabled, matching the
-    /// Claude Design button kit.
+    /// Companion to a sprite-swap Button: drops the caption 4 pt with the
+    /// pressed face, springs the button back (0.96 → 1, btn_press) on release,
+    /// and switches the caption to the disabled style while not interactable.
     /// </summary>
     [RequireComponent(typeof(Button))]
     public class SkinnedButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
     {
-        public const float PressDrop = 3f;
+        public const float PressDrop = 4f;
 
         public Button Button { get; private set; }
-        public Text Caption { get; private set; }
+        public TMP_Text Caption { get; private set; }
 
-        private Color _captionColor;
+        private MenuArtFonts _fonts;
+        private TextStyle _captionStyle;
         private Vector2 _captionRest;
+        private MotionPlayer _release;
+        private bool _pressed;
 
-        public void Bind(Text caption, Color captionColor)
+        public void Bind(TMP_Text caption, (MenuArtFonts Fonts, TextStyle Style) captionLook)
         {
             Button = GetComponent<Button>();
             Caption = caption;
-            _captionColor = captionColor;
+            _fonts = captionLook.Fonts;
+            _captionStyle = captionLook.Style;
+            _release = MotionPlayer.Attach((RectTransform)transform, MenuMotions.ButtonRelease);
             if (caption != null) _captionRest = caption.rectTransform.anchoredPosition;
         }
 
         public void SetInteractable(bool interactable)
         {
             Button.interactable = interactable;
-            if (Caption != null) Caption.color = interactable ? _captionColor : MenuPalette.Stone;
+            if (Caption != null) TextStyleApplier.Apply(Caption, interactable ? _captionStyle : TextStyles.ButtonDisabled, _fonts);
         }
 
         public void SetLabel(string label)
@@ -42,12 +49,22 @@ namespace Game.UI
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            if (Button.IsInteractable()) MoveCaption(-PressDrop);
+            if (!Button.IsInteractable()) return;
+            _pressed = true;
+            MoveCaption(-PressDrop);
         }
 
-        public void OnPointerUp(PointerEventData eventData) => MoveCaption(0f);
+        public void OnPointerUp(PointerEventData eventData) => Release();
 
-        public void OnPointerExit(PointerEventData eventData) => MoveCaption(0f);
+        public void OnPointerExit(PointerEventData eventData) => Release();
+
+        private void Release()
+        {
+            if (!_pressed) return;
+            _pressed = false;
+            MoveCaption(0f);
+            _release.Play();
+        }
 
         private void MoveCaption(float drop)
         {

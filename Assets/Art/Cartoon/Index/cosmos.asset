@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ed403eb00d2854991c32c815a2285e, type: 3}
+  m_Name: cosmos
+  m_EditorClassIdentifier: Game::Game.Art.SpriteSheetIndex
+  entries:
+  - Id: cos_galaxy_hero
+    Frames:
+    - {fileID: -1476758411, guid: 372626b0a98d9a74ab63972934e57b4a, type: 3}
+    Fps: 0
+  - Id: cos_galaxy_rose
+    Frames:
+    - {fileID: -1313142107, guid: 372626b0a98d9a74ab63972934e57b4a, type: 3}
+    Fps: 0
+  - Id: galaxy_glow
+    Frames:
+    - {fileID: -441558585, guid: 372626b0a98d9a74ab63972934e57b4a, type: 3}
+    Fps: 0
+  - Id: cos_galaxy_teal
+    Frames:
+    - {fileID: -1954422249, guid: 372626b0a98d9a74ab63972934e57b4a, type: 3}
+    Fps: 0
+  - Id: planet_ringed
+    Frames:
+    - {fileID: -2021279403, guid: 372626b0a98d9a74ab63972934e57b4a, type: 3}
+    Fps: 0
+  - Id: planet_teal
+    Frames:
+    - {fileID: -693556917, guid: 372626b0a98d9a74ab63972934e57b4a, type: 3}
+    Fps: 0
+  - Id: planet_rose
+    Frames:
+    - {fileID: 29681538, guid: 372626b0a98d9a74ab63972934e57b4a, type: 3}
+    Fps: 0
+  - Id: planet_moon
+    Frames:
+    - {fileID: -227788528, guid: 372626b0a98d9a74ab63972934e57b4a, type: 3}
+    Fps: 0
+  - Id: comet
+    Frames:
+    - {fileID: -708237021, guid: 372626b0a98d9a74ab63972934e57b4a, type: 3}
+    Fps: 0
+  - Id: shooting_star
+    Frames:
+    - {fileID: -1771617378, guid: 372626b0a98d9a74ab63972934e57b4a, type: 3}
+    Fps: 0

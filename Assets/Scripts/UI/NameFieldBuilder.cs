@@ -1,58 +1,59 @@
 using Game.Art;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Game.UI
 {
     /// <summary>
-    /// The pet name field: sliced name_field face, Cream typed text, Stone
-    /// placeholder and a 2 px Cream caret, inset 9 px like the mockup.
+    /// The pet name field: a sliced field_* face (state picked by
+    /// NameFieldSkin), name_text / name_placeholder text inset 18 pt inside a
+    /// masked text area, and an ink caret blinking once a second.
     /// </summary>
     public static class NameFieldBuilder
     {
-        private const int TextInset = 9;
+        private const float TextInset = 18f;
+        private const int CaretWidth = 3;
+        private const float CaretBlinksPerSecond = 1f;
 
-        public static InputField Build(MenuUiFactory ui, RectTransform parent, UiInputSpec spec)
+        public static TMP_InputField Build(MenuUiFactory ui, RectTransform parent, UiInputSpec spec)
         {
-            var face = ui.Sprite(parent, "name_field", spec.Rect);
+            var face = ui.Sprite(parent, "field_empty", spec.Rect);
             face.raycastTarget = true;
-            var field = face.gameObject.AddComponent<InputField>();
-            field.textComponent = CreateText(ui, face.rectTransform, MenuPalette.Cream);
-            field.placeholder = CreatePlaceholder(ui, face.rectTransform, spec.Placeholder);
+            var area = CreateTextArea(face.rectTransform);
+            var field = face.gameObject.AddComponent<TMP_InputField>();
+            field.textViewport = area;
+            field.placeholder = CreateText(ui, area, ("Placeholder", TextStyles.NamePlaceholder));
+            field.textComponent = CreateText(ui, area, ("Text", TextStyles.NameText));
+            ((TMP_Text)field.placeholder).text = spec.Placeholder;
             ConfigureField(field, spec);
-            face.gameObject.AddComponent<NameFieldSkin>().Bind(field, ui.Art.Find("name_field"));
+            face.gameObject.AddComponent<NameFieldSkin>().Bind(field, ui.Art);
             return field;
         }
 
-        private static Text CreateText(MenuUiFactory ui, RectTransform face, Color color)
+        private static RectTransform CreateTextArea(RectTransform face)
         {
-            var text = ui.Label(face, new UiLabelSpec
-            {
-                Name = "Text",
-                Style = ui.Styles.Small.WithColor(color).WithAlignment(TextAnchor.MiddleLeft),
-                Placement = UiPlacement.Fill()
-            });
-            text.rectTransform.offsetMin = new Vector2(TextInset, 0f);
-            text.rectTransform.offsetMax = new Vector2(-TextInset, 0f);
-            text.supportRichText = false;
-            return text;
+            var area = RuntimeUi.CreateRect(face, "TextArea", UiPlacement.Fill());
+            area.offsetMin = new Vector2(TextInset, 0f);
+            area.offsetMax = new Vector2(-TextInset, 0f);
+            area.gameObject.AddComponent<RectMask2D>();
+            return area;
         }
 
-        private static Text CreatePlaceholder(MenuUiFactory ui, RectTransform face, string placeholder)
+        private static TMP_Text CreateText(MenuUiFactory ui, RectTransform area, (string Name, TextStyle Style) text)
         {
-            var text = CreateText(ui, face, MenuPalette.Stone);
-            text.gameObject.name = "Placeholder";
-            text.text = placeholder;
-            return text;
+            return ui.Label(area, new UiLabelSpec { Name = text.Name, Style = text.Style.Aligned(TextAlignmentOptions.Left), Placement = UiPlacement.Fill() });
         }
 
-        private static void ConfigureField(InputField field, UiInputSpec spec)
+        private static void ConfigureField(TMP_InputField field, UiInputSpec spec)
         {
             field.characterLimit = spec.CharacterLimit;
+            field.lineType = TMP_InputField.LineType.SingleLine;
             field.text = spec.InitialText;
-            field.caretColor = MenuPalette.Cream;
             field.customCaretColor = true;
-            field.caretWidth = 2;
+            field.caretColor = MenuColors.Ink;
+            field.caretWidth = CaretWidth;
+            field.caretBlinkRate = CaretBlinksPerSecond;
             field.transition = Selectable.Transition.None;
         }
     }

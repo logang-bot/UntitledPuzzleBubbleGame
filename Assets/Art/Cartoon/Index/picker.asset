@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ed403eb00d2854991c32c815a2285e, type: 3}
+  m_Name: picker
+  m_EditorClassIdentifier: Game::Game.Art.SpriteSheetIndex
+  entries:
+  - Id: shape_slot_normal
+    Frames:
+    - {fileID: 60689188, guid: 636c818c5b265294c897c31a13be4c04, type: 3}
+    Fps: 0
+  - Id: shape_slot_selected
+    Frames:
+    - {fileID: -405436513, guid: 636c818c5b265294c897c31a13be4c04, type: 3}
+    Fps: 0
+  - Id: arrow_left_normal
+    Frames:
+    - {fileID: -610345001, guid: 636c818c5b265294c897c31a13be4c04, type: 3}
+    Fps: 0
+  - Id: arrow_left_pressed
+    Frames:
+    - {fileID: -900885823, guid: 636c818c5b265294c897c31a13be4c04, type: 3}
+    Fps: 0
+  - Id: arrow_right_normal
+    Frames:
+    - {fileID: -1730688982, guid: 636c818c5b265294c897c31a13be4c04, type: 3}
+    Fps: 0
+  - Id: arrow_right_pressed
+    Frames:
+    - {fileID: -2092754325, guid: 636c818c5b265294c897c31a13be4c04, type: 3}
+    Fps: 0
+  - Id: swatch_frame_normal
+    Frames:
+    - {fileID: -1833700360, guid: 636c818c5b265294c897c31a13be4c04, type: 3}
+    Fps: 0
+  - Id: swatch_frame_selected
+    Frames:
+    - {fileID: 1588508223, guid: 636c818c5b265294c897c31a13be4c04, type: 3}
+    Fps: 0
+  - Id: shape_sil_cat_round
+    Frames:
+    - {fileID: -1904324776, guid: 636c818c5b265294c897c31a13be4c04, type: 3}
+    Fps: 0
+  - Id: shape_sil_cat_fluffy
+    Frames:
+    - {fileID: -880549726, guid: 636c818c5b265294c897c31a13be4c04, type: 3}
+    Fps: 0
+  - Id: shape_sil_cat_slim
+    Frames:
+    - {fileID: 1511654307, guid: 636c818c5b265294c897c31a13be4c04, type: 3}
+    Fps: 0
+  - Id: shape_sil_cat_chonk
+    Frames:
+    - {fileID: -434312806, guid: 636c818c5b265294c897c31a13be4c04, type: 3}
+    Fps: 0
+  - Id: shape_sil_dog_floppy
+    Frames:
+    - {fileID: 1631276475, guid: 636c818c5b265294c897c31a13be4c04, type: 3}
+    Fps: 0
+  - Id: shape_sil_dog_pointy
+    Frames:
+    - {fileID: 1530925664, guid: 636c818c5b265294c897c31a13be4c04, type: 3}
+    Fps: 0
+  - Id: shape_sil_dog_fluffy
+    Frames:
+    - {fileID: 2011306327, guid: 636c818c5b265294c897c31a13be4c04, type: 3}
+    Fps: 0
+  - Id: shape_sil_dog_short
+    Frames:
+    - {fileID: -545764402, guid: 636c818c5b265294c897c31a13be4c04, type: 3}
+    Fps: 0

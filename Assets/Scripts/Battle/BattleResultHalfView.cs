@@ -5,42 +5,60 @@ using UnityEngine;
 namespace Game.Battle
 {
     /// <summary>
-    /// One player's half during the 2–3 s result moment: YOU WIN banner with
-    /// confetti, YOU LOSE banner, or a DRAW plate.
+    /// One player's half during the 2–3 s result moment: the gold YOU WIN
+    /// banner under falling confetti, the soft-blue YOU LOSE banner, or the
+    /// DRAW plate, each dropping in (banner_drop). Rects are pt in the half.
     /// </summary>
     public class BattleResultHalfView
     {
-        private static readonly RectInt BannerRect = new RectInt(10, 84, 250, 60);
-        private static readonly RectInt WinTextRect = new RectInt(44, 20, 162, 20);
-        private static readonly RectInt LoseTextRect = new RectInt(44, 22, 162, 20);
-        private static readonly RectInt DrawPlateRect = new RectInt(73, 96, 124, 24);
+        private const int WinConfettiCount = 16;
 
-        private readonly GameObject _win;
-        private readonly GameObject _lose;
-        private readonly GameObject _draw;
+        private static readonly BannerSpec Win = new BannerSpec
+        {
+            SpriteId = "banner_win",
+            Text = "YOU WIN",
+            Style = TextStyles.Title,
+            Rect = new RectInt(10, 116, 340, 104),
+            TextRect = new RectInt(30, 28, 280, 44)
+        };
+
+        private static readonly BannerSpec Lose = new BannerSpec
+        {
+            SpriteId = "banner_lose",
+            Text = "YOU LOSE",
+            Style = TextStyles.TitleSad,
+            Rect = new RectInt(10, 120, 340, 104),
+            TextRect = new RectInt(30, 26, 280, 44)
+        };
+
+        private static readonly BannerSpec Draw = new BannerSpec
+        {
+            SpriteId = "draw_plate",
+            Text = "DRAW",
+            Style = TextStyles.TitlePlate,
+            Rect = new RectInt(70, 150, 220, 60),
+            TextRect = new RectInt(0, 0, 220, 56)
+        };
+
+        private readonly GameObject _confetti;
+        private readonly BannerView _win;
+        private readonly BannerView _lose;
+        private readonly BannerView _draw;
 
         public BattleResultHalfView(MenuUiFactory ui, RectTransform half)
         {
-            _win = SpawnBanner(ui, half, ("banner_win", "YOU WIN", WinTextRect));
-            var confetti = CelebrationParticles.Create(ui, (RectTransform)_win.transform, new CelebrationSpec { ConfettiCount = 18, FieldHeight = 200f });
-            confetti.transform.SetAsFirstSibling();
-            _lose = SpawnBanner(ui, half, ("banner_lose", "YOU LOSE", LoseTextRect));
-            _draw = ui.Plate(half, DrawPlateRect, "DRAW").transform.parent.gameObject;
+            _confetti = ConfettiField.Create(ui, half, (new Vector2(BattleHalfFrame.Width, BattleHalfFrame.HalfHeight), WinConfettiCount)).gameObject;
+            _win = new BannerView(ui, half, Win);
+            _lose = new BannerView(ui, half, Lose);
+            _draw = new BannerView(ui, half, Draw);
         }
 
         public void Show(BattleHalfOutcome outcome)
         {
-            _win.SetActive(outcome == BattleHalfOutcome.Win);
-            _lose.SetActive(outcome == BattleHalfOutcome.Lose);
-            _draw.SetActive(outcome == BattleHalfOutcome.Draw);
-        }
-
-        private static GameObject SpawnBanner(MenuUiFactory ui, RectTransform half, (string SpriteId, string Text, RectInt TextRect) banner)
-        {
-            var group = RuntimeUi.CreateRect(half, banner.Text, UiPlacement.Fill());
-            var image = ui.Sprite(group, banner.SpriteId, BannerRect).rectTransform;
-            ui.Label(image, new UiLabelSpec { Name = "Title", Text = banner.Text, Style = ui.Styles.Title, Placement = UiPlacement.TopLeft(banner.TextRect) });
-            return group.gameObject;
+            _confetti.SetActive(outcome == BattleHalfOutcome.Win);
+            _win.Show(outcome == BattleHalfOutcome.Win);
+            _lose.Show(outcome == BattleHalfOutcome.Lose);
+            _draw.Show(outcome == BattleHalfOutcome.Draw);
         }
     }
 }

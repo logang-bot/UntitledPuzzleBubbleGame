@@ -1,0 +1,1750 @@
+fileFormatVersion: 2
+guid: 59ddaef2c7f3ad447bacd23856aa4043
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2365972085353963818
+    second: fx_0
+  - first:
+      213: -8615172418187671366
+    second: fx_1
+  - first:
+      213: 8502940499986584594
+    second: fx_2
+  - first:
+      213: 868475154485912015
+    second: fx_3
+  - first:
+      213: 9019168858723403695
+    second: fx_4
+  - first:
+      213: 5918981277437141524
+    second: fx_5
+  - first:
+      213: -8501168993080539081
+    second: fx_6
+  - first:
+      213: 4999797890559687518
+    second: fx_7
+  - first:
+      213: 7627190911069243400
+    second: fx_8
+  - first:
+      213: -6572909777802164955
+    second: fx_9
+  - first:
+      213: 7034071591839475305
+    second: fx_10
+  - first:
+      213: 3586343906444140436
+    second: fx_11
+  - first:
+      213: 280489108910019663
+    second: fx_12
+  - first:
+      213: 2073958096182382805
+    second: fx_13
+  - first:
+      213: 5540920658737713580
+    second: fx_14
+  - first:
+      213: 6929987085139406493
+    second: fx_15
+  - first:
+      213: -5180921303063648547
+    second: fx_16
+  - first:
+      213: 3640352928598260837
+    second: fx_17
+  - first:
+      213: 5620114300370646382
+    second: fx_18
+  - first:
+      213: -3223563903424330744
+    second: fx_19
+  - first:
+      213: 7460364466283040083
+    second: fx_20
+  - first:
+      213: 2301174976331350424
+    second: fx_21
+  - first:
+      213: 3233334848041473298
+    second: fx_22
+  - first:
+      213: 9025585648477243055
+    second: fx_23
+  - first:
+      213: 8494290540967676873
+    second: fx_24
+  - first:
+      213: 1626097074747809686
+    second: fx_25
+  - first:
+      213: 8201849190421685818
+    second: fx_26
+  - first:
+      213: -6658684010493618099
+    second: fx_27
+  - first:
+      213: 6111474648574363671
+    second: fx_28
+  - first:
+      213: -5739526352574675750
+    second: fx_29
+  - first:
+      213: -3597362717358808433
+    second: fx_30
+  - first:
+      213: 2210380112091567187
+    second: fx_31
+  - first:
+      213: -2248977600875308518
+    second: fx_32
+  - first:
+      213: 7266372208858320332
+    second: fx_33
+  - first:
+      213: 6053982904172787350
+    second: fx_34
+  - first:
+      213: -5855442167008955179
+    second: fx_35
+  - first:
+      213: 4368182695291623530
+    second: fx_36
+  - first:
+      213: -1555527008698988382
+    second: fx_37
+  - first:
+      213: -6406737103169956364
+    second: fx_38
+  - first:
+      213: 3497253201550547511
+    second: fx_39
+  - first:
+      213: 1695906011423948058
+    second: fx_40
+  - first:
+      213: -965261217721798428
+    second: fx_41
+  - first:
+      213: 3776255779257882721
+    second: fx_42
+  - first:
+      213: -837925929127443007
+    second: fx_43
+  - first:
+      213: 1994897095885375361
+    second: fx_44
+  - first:
+      213: -2719813657454676551
+    second: fx_45
+  - first:
+      213: -2603437754909402575
+    second: fx_46
+  - first:
+      213: 9149945108012427362
+    second: fx_47
+  - first:
+      213: 7961324447511183764
+    second: fx_48
+  - first:
+      213: 740336692567758415
+    second: fx_49
+  - first:
+      213: 569893778617773090
+    second: fx_50
+  - first:
+      213: 5191919770384556425
+    second: fx_51
+  - first:
+      213: 4720781100801527493
+    second: fx_52
+  - first:
+      213: 5952836645231065118
+    second: fx_53
+  - first:
+      213: 2828832611568591749
+    second: fx_54
+  - first:
+      213: 8288085579273080736
+    second: fx_55
+  - first:
+      213: 1180834827341912179
+    second: fx_56
+  - first:
+      213: 5054383491768088017
+    second: fx_57
+  - first:
+      213: 2706751841274613870
+    second: fx_58
+  - first:
+      213: 3750203117497329464
+    second: fx_59
+  - first:
+      213: -4594357130675057692
+    second: fx_60
+  - first:
+      213: 3410858712717049661
+    second: fx_61
+  - first:
+      213: -7645229854917995895
+    second: fx_62
+  - first:
+      213: 9076133101894688079
+    second: fx_63
+  - first:
+      213: -3631913910858615528
+    second: fx_64
+  - first:
+      213: -1993982766854023518
+    second: fx_65
+  - first:
+      213: -5252693666585130885
+    second: fx_66
+  - first:
+      213: -6109480990000467208
+    second: fx_67
+  - first:
+      213: -1730416438292580021
+    second: fx_68
+  - first:
+      213: 8175902914210211893
+    second: fx_69
+  - first:
+      213: -215452902075742840
+    second: fx_70
+  - first:
+      213: -1917818144386876161
+    second: fx_71
+  - first:
+      213: 1089565095582492155
+    second: fx_72
+  - first:
+      213: -783670427616341108
+    second: fx_73
+  - first:
+      213: -4528756716287640596
+    second: fx_74
+  - first:
+      213: -2750822955799429720
+    second: fx_75
+  - first:
+      213: 4110628181752146336
+    second: fx_76
+  - first:
+      213: 8460920386278771625
+    second: fx_77
+  - first:
+      213: -3934673769611741446
+    second: fx_78
+  - first:
+      213: -1803737270032360029
+    second: fx_79
+  - first:
+      213: -7718053744146570123
+    second: fx_80
+  - first:
+      213: 7047469008973898892
+    second: fx_81
+  - first:
+      213: 7548176471092329816
+    second: fx_82
+  - first:
+      213: 2267551048706538782
+    second: fx_83
+  - first:
+      213: 4979169489448909383
+    second: fx_84
+  - first:
+      213: -5400882672252696013
+    second: fx_85
+  - first:
+      213: 194586212465517263
+    second: fx_86
+  - first:
+      213: 105977396115840428
+    second: fx_87
+  - first:
+      213: 3961399835619260294
+    second: fx_88
+  - first:
+      213: 8805720154484712644
+    second: fx_89
+  - first:
+      213: -1732151148181730679
+    second: fx_90
+  - first:
+      213: 5734457947624408547
+    second: fx_91
+  - first:
+      213: 598842767899271218
+    second: fx_92
+  - first:
+      213: -403934687416757103
+    second: fx_93
+  - first:
+      213: -5613903631876179879
+    second: fx_94
+  - first:
+      213: -2758496709120919757
+    second: fx_95
+  - first:
+      213: 1262307855051011656
+    second: fx_96
+  - first:
+      213: -1559484470173780743
+    second: fx_97
+  - first:
+      213: 7209174784934485427
+    second: fx_98
+  - first:
+      213: -6708358569768141787
+    second: fx_99
+  - first:
+      213: -1903103738090802396
+    second: fx_100
+  - first:
+      213: 2680627586000537651
+    second: fx_101
+  - first:
+      213: -7103723218669156244
+    second: fx_102
+  - first:
+      213: -5926501185331523532
+    second: fx_103
+  - first:
+      213: 1734918174632150809
+    second: fx_104
+  - first:
+      213: -3449624960070445361
+    second: fx_105
+  - first:
+      213: -6922395835795110494
+    second: fx_106
+  - first:
+      213: 7407091943642264624
+    second: fx_107
+  - first:
+      213: -4617256445366378200
+    second: fx_108
+  - first:
+      213: 6350990332711795679
+    second: fx_109
+  - first:
+      213: -2649710094540089352
+    second: fx_110
+  - first:
+      213: 5194868999978174776
+    second: fx_111
+  - first:
+      213: -4534711233268570654
+    second: fx_112
+  - first:
+      213: -3281252093658423302
+    second: fx_113
+  - first:
+      213: -3310076019992961603
+    second: fx_114
+  - first:
+      213: -5145484572457510950
+    second: fx_115
+  - first:
+      213: 3265774131789489436
+    second: fx_116
+  - first:
+      213: -1850676075865902102
+    second: fx_117
+  - first:
+      213: 967482568354833706
+    second: fx_118
+  - first:
+      213: 1341414933990486961
+    second: fx_119
+  - first:
+      213: 7401042378405311600
+    second: fx_120
+  - first:
+      213: -9097754879552127038
+    second: fx_121
+  - first:
+      213: -2019433963910379599
+    second: fx_122
+  - first:
+      213: 1891650053768926748
+    second: fx_123
+  - first:
+      213: -8999690179286916368
+    second: fx_124
+  - first:
+      213: 8276859616781745877
+    second: fx_125
+  - first:
+      213: 7539925367296463709
+    second: fx_126
+  - first:
+      213: 8099665522023250025
+    second: fx_127
+  - first:
+      213: 8804170395674573333
+    second: fx_128
+  - first:
+      213: 2273679520725683285
+    second: fx_129
+  - first:
+      213: 7830873002747621278
+    second: fx_130
+  - first:
+      213: 4287746077996382437
+    second: fx_131
+  - first:
+      213: 7945770115466021347
+    second: fx_132
+  - first:
+      213: -8208123473080677818
+    second: fx_133
+  - first:
+      213: 2635912363517091210
+    second: fx_134
+  - first:
+      213: -4919114981204446717
+    second: fx_135
+  - first:
+      213: -4324037545626831055
+    second: fx_136
+  - first:
+      213: -1818188054408512958
+    second: fx_137
+  - first:
+      213: 3058953058058446295
+    second: fx_138
+  - first:
+      213: 1390343511907658151
+    second: fx_139
+  - first:
+      213: -615472928958466585
+    second: fx_140
+  - first:
+      213: 3117021143516318916
+    second: fx_141
+  - first:
+      213: -7319079281491604159
+    second: fx_142
+  - first:
+      213: -8274219844870348034
+    second: fx_143
+  - first:
+      213: 7996489485819686470
+    second: fx_144
+  - first:
+      213: 7652775408311821638
+    second: fx_145
+  - first:
+      213: 492782511100874294
+    second: fx_146
+  - first:
+      213: -4188202447353388330
+    second: fx_147
+  - first:
+      213: 3160640629185452271
+    second: fx_148
+  - first:
+      213: 540679003900449142
+    second: fx_149
+  - first:
+      213: 8859583878466726985
+    second: fx_150
+  - first:
+      213: 1908236857504731948
+    second: fx_151
+  - first:
+      213: 685139040069999816
+    second: fx_152
+  - first:
+      213: -3539263145520579403
+    second: fx_153
+  - first:
+      213: -1640301996019515625
+    second: fx_154
+  - first:
+      213: 7960808028460893462
+    second: fx_155
+  - first:
+      213: -685599188443675357
+    second: fx_156
+  - first:
+      213: -1161392897061734823
+    second: fx_157
+  - first:
+      213: -5571343519726483841
+    second: fx_158
+  - first:
+      213: 5604201988286088309
+    second: fx_159
+  - first:
+      213: 4262192968801248600
+    second: fx_160
+  - first:
+      213: -1217050721907920933
+    second: fx_161
+  - first:
+      213: -4575734311948209556
+    second: fx_162
+  - first:
+      213: 2695220168838811857
+    second: fx_163
+  - first:
+      213: 4842969420267111032
+    second: fx_164
+  - first:
+      213: 6414724452656239075
+    second: fx_165
+  - first:
+      213: -3340775246389908637
+    second: fx_166
+  - first:
+      213: -3548301606882720669
+    second: fx_167
+  - first:
+      213: 1839186239148906714
+    second: fx_168
+  - first:
+      213: -6676869799903921321
+    second: fx_169
+  - first:
+      213: -7072788196143750023
+    second: fx_170
+  - first:
+      213: -8254541456105657535
+    second: fx_171
+  - first:
+      213: -4167517884716924904
+    second: fx_172
+  - first:
+      213: 7440408390028319188
+    second: fx_173
+  - first:
+      213: 5595914386724272140
+    second: fx_174
+  - first:
+      213: -1458857667746047587
+    second: fx_175
+  - first:
+      213: -6883322109117847005
+    second: fx_176
+  - first:
+      213: 508235251456724064
+    second: fx_177
+  - first:
+      213: -8575588448632770849
+    second: fx_178
+  - first:
+      213: 90955896807833886
+    second: fx_179
+  - first:
+      213: -8164004421152644568
+    second: fx_180
+  - first:
+      213: -7842465757727652389
+    second: fx_181
+  - first:
+      213: 6760111447336702010
+    second: fx_182
+  - first:
+      213: 6709044682269348237
+    second: fx_183
+  - first:
+      213: 169111655682217446
+    second: fx_184
+  - first:
+      213: 6776093637332481783
+    second: fx_185
+  - first:
+      213: -1338818842063668780
+    second: fx_186
+  - first:
+      213: 7574415269477625095
+    second: fx_187
+  - first:
+      213: 1542066535383464999
+    second: fx_188
+  - first:
+      213: 5878300296080099975
+    second: fx_189
+  - first:
+      213: 5204595985509770345
+    second: fx_190
+  - first:
+      213: 2421541186650929850
+    second: fx_191
+  - first:
+      213: 4229268242029863763
+    second: fx_192
+  - first:
+      213: -5293768202668013440
+    second: fx_193
+  - first:
+      213: 4501198031176476547
+    second: fx_194
+  - first:
+      213: -3026051863179245684
+    second: fx_195
+  - first:
+      213: -5465290733899007810
+    second: fx_196
+  - first:
+      213: 1617611827544378309
+    second: fx_197
+  - first:
+      213: -5397257915968191639
+    second: fx_198
+  - first:
+      213: -1734492621374452470
+    second: fx_199
+  - first:
+      213: 5793235343061058732
+    second: fx_200
+  - first:
+      213: -1308895331087409477
+    second: fx_201
+  - first:
+      213: -8967756758920590568
+    second: fx_202
+  - first:
+      213: -5862468312682155546
+    second: fx_203
+  - first:
+      213: -1310397162976685651
+    second: fx_204
+  - first:
+      213: -1525975533574044097
+    second: fx_205
+  - first:
+      213: -1389677579822155252
+    second: fx_206
+  - first:
+      213: -6006259332959885304
+    second: fx_207
+  - first:
+      213: -1386109344932915731
+    second: fx_208
+  - first:
+      213: 688697119929217340
+    second: fx_209
+  - first:
+      213: 1320218387246947690
+    second: fx_210
+  - first:
+      213: -3439898215309022758
+    second: fx_211
+  - first:
+      213: 882435908230580730
+    second: fx_212
+  - first:
+      213: -7804615609237647913
+    second: fx_213
+  - first:
+      213: -2943272489257257727
+    second: fx_214
+  - first:
+      213: -6856924196464771918
+    second: fx_215
+  - first:
+      213: 1362791236816922944
+    second: fx_216
+  - first:
+      213: -338948171712832059
+    second: fx_217
+  - first:
+      213: 1993514187111414092
+    second: fx_218
+  - first:
+      213: 6384272040118570561
+    second: fx_219
+  - first:
+      213: 5504096818650667410
+    second: fx_220
+  - first:
+      213: -5502340692112945162
+    second: fx_221
+  - first:
+      213: 5243598466283521052
+    second: fx_222
+  - first:
+      213: 4518072712143170971
+    second: fx_223
+  - first:
+      213: -9024680316607571580
+    second: fx_224
+  - first:
+      213: 4659851656451558371
+    second: fx_225
+  - first:
+      213: -2861010628414945658
+    second: fx_226
+  - first:
+      213: 6705684055783103211
+    second: fx_227
+  - first:
+      213: 6059711973478677279
+    second: fx_228
+  - first:
+      213: -8635526715859764516
+    second: fx_229
+  - first:
+      213: -6527223299501799785
+    second: fx_230
+  - first:
+      213: 205421153239531580
+    second: fx_231
+  - first:
+      213: 5773949629292341223
+    second: fx_232
+  - first:
+      213: -2082859396434081703
+    second: fx_233
+  - first:
+      213: -6078755868200883790
+    second: fx_234
+  - first:
+      213: 4646669490975908665
+    second: fx_235
+  - first:
+      213: 8087029788961978253
+    second: fx_236
+  - first:
+      213: -3460093427773752114
+    second: fx_237
+  - first:
+      213: 8727091310137282612
+    second: fx_238
+  - first:
+      213: -4100109602849052342
+    second: fx_239
+  - first:
+      213: 8113974955644504424
+    second: fx_240
+  - first:
+      213: -2952409518312756756
+    second: fx_241
+  - first:
+      213: -3057342519556108050
+    second: fx_242
+  - first:
+      213: -5113382019370692443
+    second: fx_243
+  - first:
+      213: 7319813321989717979
+    second: fx_244
+  - first:
+      213: -5842103439424758039
+    second: fx_245
+  - first:
+      213: 8691812131100925917
+    second: fx_246
+  - first:
+      213: 1374849153751593939
+    second: fx_247
+  - first:
+      213: 7998353502511140687
+    second: fx_248
+  - first:
+      213: 994358714689514074
+    second: fx_249
+  - first:
+      213: -4986040461775090552
+    second: fx_250
+  - first:
+      213: 1074987798591768679
+    second: fx_251
+  - first:
+      213: -8250521231709655671
+    second: fx_252
+  - first:
+      213: -5928318692699747660
+    second: fx_253
+  - first:
+      213: -7481245537304297313
+    second: fx_254
+  - first:
+      213: -8902242895481355827
+    second: fx_255
+  - first:
+      213: -230973295997246266
+    second: fx_256
+  - first:
+      213: -2085075853429900212
+    second: fx_257
+  - first:
+      213: 6092971897455370506
+    second: fx_258
+  - first:
+      213: 3965072472652435071
+    second: fx_259
+  - first:
+      213: 5758489118911252677
+    second: fx_260
+  - first:
+      213: 5528390450429940354
+    second: fx_261
+  - first:
+      213: -5909195837166522693
+    second: fx_262
+  - first:
+      213: 3686533306645604399
+    second: fx_263
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 3
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: firework_gold_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 910
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 688540ef4cd12db49aba8bc6f3e0d1b1
+      internalID: -365901168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_gold_1
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 910
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64295c5ab63cb69489d1bbb3316f53e2
+      internalID: 29459958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_gold_2
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 910
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b14f3978c6d449246a210da24932aea8
+      internalID: -1082538647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_gold_3
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 910
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a41512aa2342fc4b9b81bbb4cf93519
+      internalID: -526095868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_gold_4
+      rect:
+        serializedVersion: 2
+        x: 1412
+        y: 910
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d586d054624ccd4fb1dcdbdfc877d28
+      internalID: 580451239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_gold_5
+      rect:
+        serializedVersion: 2
+        x: 1764
+        y: 910
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cf202afa5694654680626e7e0384427
+      internalID: -1172067810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_gold_6
+      rect:
+        serializedVersion: 2
+        x: 2116
+        y: 910
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bc2bae2849b6614c920d335851147a4
+      internalID: -1600014716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_gold_7
+      rect:
+        serializedVersion: 2
+        x: 2468
+        y: 910
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d3426c2411218243b1e44b84ad914c0
+      internalID: -396077273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_gold_8
+      rect:
+        serializedVersion: 2
+        x: 2820
+        y: 910
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93a3633c553125842a9f00db4b838322
+      internalID: -1546667234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_gold_9
+      rect:
+        serializedVersion: 2
+        x: 3172
+        y: 910
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6a404f0b7b939f4d91a8f89243170d1
+      internalID: 593903785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_coral_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 558
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a4d841187e6c8a479229be1473c8781
+      internalID: 1482424719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_coral_1
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 558
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30a2a3d04a15b3042a5e36899cb4e1d9
+      internalID: -107666936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_coral_2
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 558
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9f7ec39553fc044894e6145fb7897f
+      internalID: -1619546092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_coral_3
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 558
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f8caaa2caeb6554d867cf186df1a85a
+      internalID: -1907696585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_coral_4
+      rect:
+        serializedVersion: 2
+        x: 1412
+        y: 558
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 402f1eb79636ae24a82c82ce36a3a83f
+      internalID: -2140369676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_coral_5
+      rect:
+        serializedVersion: 2
+        x: 1764
+        y: 558
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b64a1b848f359947b91f7b7f63258c4
+      internalID: 382633826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_coral_6
+      rect:
+        serializedVersion: 2
+        x: 2116
+        y: 558
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 259d7f844eb39194683ffd9e12b5fa60
+      internalID: 639654417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_coral_7
+      rect:
+        serializedVersion: 2
+        x: 2468
+        y: 558
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e4f83f6bd9e1cd4f97be7213769430b
+      internalID: 1465395859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_coral_8
+      rect:
+        serializedVersion: 2
+        x: 2820
+        y: 558
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4008787e0f54f2e4e9563a577444f558
+      internalID: -749191387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_coral_9
+      rect:
+        serializedVersion: 2
+        x: 3172
+        y: 558
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb226ff3e1b795b43bca034da9975930
+      internalID: 1916523176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_teal_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 206
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f481cacb1fbd91e49b89e8616596f4ca
+      internalID: -1752055295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_teal_1
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 206
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c901ebe076ac3b64d867711bf744eaeb
+      internalID: 1291786085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_teal_2
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 206
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abeb96aea241e374c95a4eb983fb7ea7
+      internalID: 1563964332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_teal_3
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 206
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3148458f0e6618940bed0bf06f1acffc
+      internalID: 1780973225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_teal_4
+      rect:
+        serializedVersion: 2
+        x: 1412
+        y: 206
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd0badd250d2be489281cc7548cd2d2
+      internalID: -1425814070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_teal_5
+      rect:
+        serializedVersion: 2
+        x: 1764
+        y: 206
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57545bf0c24ed945b1a7841e00ec31a
+      internalID: -1301913568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_teal_6
+      rect:
+        serializedVersion: 2
+        x: 2116
+        y: 206
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbebac163aa32474a8579e580b5835a4
+      internalID: 312574309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_teal_7
+      rect:
+        serializedVersion: 2
+        x: 2468
+        y: 206
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b12451ed7f80f9d4dbff10f59cad79b0
+      internalID: -280790920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_teal_8
+      rect:
+        serializedVersion: 2
+        x: 2820
+        y: 206
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 366e8071412cdca47a02f66fbda8a6f0
+      internalID: -1957938485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firework_teal_9
+      rect:
+        serializedVersion: 2
+        x: 3172
+        y: 206
+        width: 348
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdd5ef11ffb8dc24c83a924aed22b99d
+      internalID: 727945262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lantern_glow_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 4
+        width: 198
+        height: 198
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef465864309a11343bafed4cacf1db06
+      internalID: 1585718432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lantern_0
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 94
+        width: 84
+        height: 108
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 967044a22cc90e441a5eaed3d52f6ba1
+      internalID: -562498849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: confetti_violet_0
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 148
+        width: 54
+        height: 54
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84ce99faf5c4b3b4380b49992db7f089
+      internalID: 117436218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: confetti_teal_0
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 160
+        width: 42
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 770a4e0e5c8a3a04a8de8e3a84c66b81
+      internalID: -463393532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: confetti_gold_0
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 166
+        width: 48
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcc03d3edd7c09d4db24529180dd1a81
+      internalID: 1995351523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: confetti_coral_0
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 172
+        width: 54
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8604b899fdd8fe4eb5cbd73c6245c7f
+      internalID: 945364400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1471809f26397694487b1326dd6e9dd2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      confetti_coral_0: 945364400
+      confetti_gold_0: 1995351523
+      confetti_teal_0: -463393532
+      confetti_violet_0: 117436218
+      firework_coral_0: 1482424719
+      firework_coral_1: -107666936
+      firework_coral_2: -1619546092
+      firework_coral_3: -1907696585
+      firework_coral_4: -2140369676
+      firework_coral_5: 382633826
+      firework_coral_6: 639654417
+      firework_coral_7: 1465395859
+      firework_coral_8: -749191387
+      firework_coral_9: 1916523176
+      firework_gold_0: -365901168
+      firework_gold_1: 29459958
+      firework_gold_2: -1082538647
+      firework_gold_3: -526095868
+      firework_gold_4: 580451239
+      firework_gold_5: -1172067810
+      firework_gold_6: -1600014716
+      firework_gold_7: -396077273
+      firework_gold_8: -1546667234
+      firework_gold_9: 593903785
+      firework_teal_0: -1752055295
+      firework_teal_1: 1291786085
+      firework_teal_2: 1563964332
+      firework_teal_3: 1780973225
+      firework_teal_4: -1425814070
+      firework_teal_5: -1301913568
+      firework_teal_6: 312574309
+      firework_teal_7: -280790920
+      firework_teal_8: -1957938485
+      firework_teal_9: 727945262
+      lantern_0: -562498849
+      lantern_glow_0: 1585718432
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,4 +1,5 @@
 using Game.Art;
+using Game.Motion;
 using Game.UI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,83 +7,77 @@ using UnityEngine.UI;
 namespace Game.Menu
 {
     /// <summary>
-    /// One space pet on the main menu. Each cycle re-rolls a FloaterPick,
-    /// recolors it with the picked colorway, turns/mirrors it, optionally
-    /// wraps it in a bubble, and floats it across with a ±2 px bob.
+    /// One floating pet on the main menu, following its FloaterSchedule: the
+    /// pixel floater recolored with the flight's colorway, turned in 90° steps
+    /// and mirrored, kept on whole screen pixels (PixelSnap), bobbing ±3 pt,
+    /// optionally inside a wobbling cartoon bubble.
     /// </summary>
     public class FloaterSlotView
     {
-        private const float BobAmplitude = 2f;
-        private const float BobSpeed = 1.4f;
-        private const float EdgeMargin = 6f;
-
         private readonly FloaterContext _context;
-        private readonly SpawnSlot _slot;
+        private readonly FloaterSchedule _schedule;
         private readonly RectTransform _root;
         private readonly Image _pet;
+        private readonly PixelSnap _snap;
         private readonly Image _bubble;
         private readonly Material _fur;
-        private FloaterPick _pick;
+        private FloaterFlight _flight;
         private SpriteAnimEntry _entry;
-        private CrossingPath _path;
-        private int _cycle = int.MinValue;
+        private int _shownFlight = -1;
 
-        public FloaterSlotView(FloaterContext context, SpawnSlot slot)
+        public FloaterSlotView(FloaterContext context, FloaterSchedule schedule)
         {
             _context = context;
-            _slot = slot;
-            _root = RuntimeUi.CreateRect(context.SizeLayers[0], "Floater" + slot.Id, UiPlacement.CenteredAt(Vector2.zero, Vector2.zero));
-            _pet = CreateLayer("Pet");
+            _schedule = schedule;
+            _root = RuntimeUi.CreateRect(context.SizeLayers[0], "Floater", UiPlacement.CenteredAt(Vector2.zero, Vector2.zero));
+            _pet = RuntimeUi.CreateImage(_root, "Pet", UiPlacement.At(new Vector2(0.5f, 0.5f), Vector2.zero));
+            _pet.raycastTarget = false;
             _fur = FurRecolor.CreateInstance(context.Ui.Art.FurRecolorMaterial);
             _pet.material = _fur;
-            _bubble = CreateLayer("Bubble");
+            _snap = PixelSnap.Attach(_pet.rectTransform, Vector2.zero, FloaterSpec.DesignDevicePixels);
+            _bubble = context.Ui.PivotSprite(_root, "bubble", Vector2.zero);
         }
 
         public void Tick(float time)
         {
-            var visible = _slot.TryGetState(time, out var state);
-            _root.gameObject.SetActive(visible);
-            if (!visible) return;
-            if (state.Cycle != _cycle) Repick(state.Cycle);
-            var bob = new Vector2(0f, BobAmplitude * Mathf.Sin(time * BobSpeed + _pick.Phase));
-            _root.anchoredPosition = UiPlacement.NativePosition(_path.At(state.Progress) + bob);
-            _pet.sprite = _entry.Frames[(int)(time * _entry.Fps + _pick.Phase * 3f) % _entry.Frames.Length];
+            var flying = _schedule.TryGetFlight(time, out var flight, out var progress);
+            _root.gameObject.SetActive(flying);
+            if (!flying) return;
+            if (flight.Number != _shownFlight) Show(flight);
+            _root.anchoredPosition = UiPlacement.SmoothPosition(flight.Path.At(progress) + Bob(time));
+            _pet.sprite = _entry.Frames[FrameClock.LoopingFrame(time + _flight.Pick.Phase * 3f, _entry.Fps, _entry.Frames.Length)];
+            if (_flight.Pick.InBubble) Wobble(time);
         }
 
-        private Image CreateLayer(string name)
+        private Vector2 Bob(float time)
         {
-            var image = RuntimeUi.CreateImage(_root, name, UiPlacement.At(new Vector2(0.5f, 0.5f), Vector2.zero));
-            image.raycastTarget = false;
-            return image;
+            return new Vector2(0f, FloaterSpec.BobAmplitude * Mathf.Sin(2f * Mathf.PI * (time / FloaterSpec.BobPeriod + _flight.Pick.Phase)));
         }
 
-        private void Repick(int cycle)
+        private void Show(FloaterFlight flight)
         {
-            _cycle = cycle;
-            var random = _slot.RandomFor(cycle);
-            _pick = FloaterPick.Roll(random);
-            var appearance = _context.Catalog.For(_pick.Species);
-            _entry = _context.Ui.Art.Find(_pick.SpriteId(appearance.Shapes[_pick.ShapeIndex].ArtId));
-            FurRecolor.Apply(_fur, _pick.Species, appearance.Colors[_pick.ColorwayIndex % appearance.Colors.Count].ToRamp());
-            ShowPet(_entry.First.rect.size);
-            _path = CrossingPath.Pick(random, _entry.First.rect.size / 2f + Vector2.one * EdgeMargin, CrossingPath.RandomEdge(random));
+            _flight = flight;
+            _shownFlight = flight.Number;
+            var appearance = _context.Catalog.For(flight.Pick.Species);
+            _entry = _context.Ui.Art.Find(flight.Pick.SpriteId(appearance.Shapes[flight.Pick.ShapeIndex].ArtId));
+            FurRecolor.Apply(_fur, flight.Pick.Species, appearance.Colors[flight.Pick.ColorwayIndex % appearance.Colors.Count].ToRamp());
+            _root.SetParent(_context.SizeLayers[(int)flight.Pick.Size], worldPositionStays: false);
+            ShowPet(flight.Pick);
+            _bubble.gameObject.SetActive(flight.Pick.InBubble);
         }
 
-        private void ShowPet(Vector2 size)
+        private void ShowPet(FloaterPick pick)
         {
-            _root.SetParent(_context.SizeLayers[(int)_pick.Size], worldPositionStays: false);
-            _pet.rectTransform.sizeDelta = size;
-            _pet.rectTransform.localEulerAngles = new Vector3(0f, 0f, -90f * _pick.QuarterTurns);
-            _pet.rectTransform.localScale = new Vector3(_pick.Mirror ? -1f : 1f, 1f, 1f);
-            ShowBubble();
+            _snap.SetArtSize(_entry.First.rect.size);
+            _pet.rectTransform.localEulerAngles = new Vector3(0f, 0f, -90f * pick.QuarterTurns);
+            _pet.rectTransform.localScale = new Vector3(pick.Mirror ? -1f : 1f, 1f, 1f);
         }
 
-        private void ShowBubble()
+        private void Wobble(float time)
         {
-            _bubble.gameObject.SetActive(_pick.InBubble);
-            if (!_pick.InBubble) return;
-            _bubble.sprite = _context.Ui.Art.Frame("bubble", (int)_pick.Size);
-            _bubble.rectTransform.sizeDelta = _bubble.sprite.rect.size;
+            var pose = MenuMotions.BubbleWobble.Evaluate(time + _shownFlight);
+            var scale = FloaterSpec.BubbleRadius(_flight.Pick.Size) / FloaterSpec.BubbleSpriteRadius;
+            _bubble.rectTransform.localScale = new Vector3(pose.Scale.x * scale, pose.Scale.y * scale, 1f);
         }
     }
 }

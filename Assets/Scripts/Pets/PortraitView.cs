@@ -1,30 +1,31 @@
 using Game.Art;
 using Game.UI;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Game.Pets
 {
     /// <summary>
-    /// The 80×80 portrait pet on the customization stage: idles in a loop,
-    /// hops once (happy) whenever the player picks something, recolored with
-    /// the chosen fur through its own material instance.
+    /// The pixel portrait pet standing on the customization stage: its feet
+    /// (legend pivot 40, 79) on the given point at 5 device px per art px,
+    /// kept on whole screen pixels. Idles in a loop, hops once (happy) whenever
+    /// the player picks something, recolored with the chosen fur through its
+    /// own material instance.
     /// </summary>
     public class PortraitView
     {
         private const string Idle = "idle";
         private const string Happy = "happy";
+        private const int DesignDevicePixels = 5;
 
         private readonly MenuUiFactory _ui;
         private readonly SpriteFrameAnimator _animator;
         private readonly Material _fur;
         private PetLook _look;
 
-        public PortraitView(MenuUiFactory ui, RectTransform parent, RectInt rect)
+        public PortraitView(MenuUiFactory ui, RectTransform parent, (PetLook Look, Vector2 Feet) placement)
         {
             _ui = ui;
-            var image = RuntimeUi.CreateImage(parent, "Portrait", UiPlacement.TopLeft(rect));
-            image.raycastTarget = false;
+            var image = ui.PixelSprite(parent, placement.Look.PortraitId(Idle), new PixelPlacement(placement.Feet, DesignDevicePixels));
             _fur = FurRecolor.CreateInstance(ui.Art.FurRecolorMaterial);
             image.material = _fur;
             _animator = image.gameObject.AddComponent<SpriteFrameAnimator>();

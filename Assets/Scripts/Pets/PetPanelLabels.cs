@@ -1,4 +1,5 @@
 using Game.UI;
+using TMPro;
 using UnityEngine;
 
 namespace Game.Pets
@@ -8,20 +9,14 @@ namespace Game.Pets
     {
         private static readonly (string Text, RectInt Rect)[] Rows =
         {
-            ("FUR", new RectInt(14, 161, 48, 11)),
-            ("SHAPE", new RectInt(14, 194, 48, 11))
+            ("FUR", new RectInt(30, 462, 60, 32)),
+            ("SHAPE", new RectInt(30, 520, 60, 32))
         };
 
-        public static void Spawn(MenuUiFactory ui, RectTransform panel)
+        public static void Spawn(MenuUiFactory ui, RectTransform content)
         {
             foreach (var row in Rows)
-                ui.Label(panel, new UiLabelSpec
-                {
-                    Name = row.Text,
-                    Text = row.Text,
-                    Style = ui.Styles.Small.WithAlignment(TextAnchor.MiddleLeft),
-                    Placement = UiPlacement.TopLeft(row.Rect)
-                });
+                ui.LabelIn(content, row.Rect, (row.Text, TextStyles.Label.Aligned(TextAlignmentOptions.Left)));
         }
     }
 }

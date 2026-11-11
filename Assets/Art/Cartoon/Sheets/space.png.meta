@@ -1,0 +1,395 @@
+fileFormatVersion: 2
+guid: 902cb778abef85d43b082beeccab68a0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7253652341725546674
+    second: space_0
+  - first:
+      213: -8640904000706516434
+    second: space_1
+  - first:
+      213: -5416222786248885519
+    second: space_2
+  - first:
+      213: 8515913454031941174
+    second: space_3
+  - first:
+      213: 4882149116565567084
+    second: space_4
+  - first:
+      213: 890426472770691616
+    second: space_5
+  - first:
+      213: -974430472209397013
+    second: space_6
+  - first:
+      213: 3391697891031640757
+    second: space_7
+  - first:
+      213: 4611673593497679581
+    second: space_8
+  - first:
+      213: 5285866453104389021
+    second: space_9
+  - first:
+      213: 4377965126967044060
+    second: space_10
+  - first:
+      213: -5793801899793565772
+    second: space_11
+  - first:
+      213: 5027234458172578886
+    second: space_12
+  - first:
+      213: -3599417956034748360
+    second: space_13
+  - first:
+      213: 6999179517916819572
+    second: space_14
+  - first:
+      213: -2818320699423275279
+    second: space_15
+  - first:
+      213: -2876565055270273792
+    second: space_16
+  - first:
+      213: 2060692398355397058
+    second: space_17
+  - first:
+      213: -802050846172652321
+    second: space_18
+  - first:
+      213: -451265232722292741
+    second: space_19
+  - first:
+      213: -1936707295978947274
+    second: space_20
+  - first:
+      213: 6369995126443384973
+    second: space_21
+  - first:
+      213: -2841352210591402518
+    second: space_22
+  - first:
+      213: 2184268804980804176
+    second: space_23
+  - first:
+      213: -4236145090596946856
+    second: space_24
+  - first:
+      213: -2626591801943168126
+    second: space_25
+  - first:
+      213: 1495452444243738767
+    second: space_26
+  - first:
+      213: -7611955181837027915
+    second: space_27
+  - first:
+      213: -8249214323962848381
+    second: space_28
+  - first:
+      213: 8258201216608235568
+    second: space_29
+  - first:
+      213: 4324021365472291145
+    second: space_30
+  - first:
+      213: 2611984339426903814
+    second: space_31
+  - first:
+      213: -1595305203960907995
+    second: space_32
+  - first:
+      213: -3843490134261412603
+    second: space_33
+  - first:
+      213: 3893616349395927235
+    second: space_34
+  - first:
+      213: 8490663368855174661
+    second: space_35
+  - first:
+      213: -6832476131597525469
+    second: space_36
+  - first:
+      213: 6016525151648558237
+    second: space_37
+  - first:
+      213: -6950036685687448237
+    second: space_38
+  - first:
+      213: 5298054068877470200
+    second: space_39
+  - first:
+      213: -8721488403961711505
+    second: space_40
+  - first:
+      213: -4119671329976144627
+    second: space_41
+  - first:
+      213: 5090839540907948866
+    second: space_42
+  - first:
+      213: 2002811355973247969
+    second: space_43
+  - first:
+      213: 4397390718545608603
+    second: space_44
+  - first:
+      213: 1560995709814455823
+    second: space_45
+  - first:
+      213: 6094955341587932372
+    second: space_46
+  - first:
+      213: 8830776743055284204
+    second: space_47
+  - first:
+      213: -46825443415365409
+    second: space_48
+  - first:
+      213: -7533673058184818372
+    second: space_49
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 3
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: space_deep_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 314
+        width: 1272
+        height: 2532
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 263537afc1cce88448151865951fa650
+      internalID: -1907468933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: space_stars_0
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 314
+        width: 1272
+        height: 2532
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fffd5ec61cc2984fbbaf2195d68d202
+      internalID: 1436802401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_dusk_0
+      rect:
+        serializedVersion: 2
+        x: 2556
+        y: 314
+        width: 1272
+        height: 2532
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf220a11aa6be0408195ca65420173b
+      internalID: 1690955700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubble_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 4
+        width: 306
+        height: 306
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 049a9c1597b67ec48aefd52004ea85d9
+      internalID: -1618373463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sparkle_0
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 238
+        width: 72
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b0de013a050b1f428ec0559d9c171e4
+      internalID: 23546544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e8b2fb0834e9234ab150764943a76d7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      bg_dusk_0: 1690955700
+      bubble_0: -1618373463
+      space_deep_0: -1907468933
+      space_stars_0: 1436802401
+      sparkle_0: 23546544
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

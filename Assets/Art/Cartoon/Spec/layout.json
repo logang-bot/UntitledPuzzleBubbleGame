@@ -1,0 +1,1746 @@
+{
+ "menu": {
+  "name": "Main menu",
+  "size": [
+   360,
+   780
+  ],
+  "safeArea": {
+   "top": 32,
+   "bottom": 22
+  },
+  "elements": [
+   {
+    "id": "space",
+    "type": "sprite",
+    "rect": [
+     -32,
+     -32,
+     424,
+     844
+    ],
+    "sprite": "space_deep"
+   },
+   {
+    "id": "stars",
+    "type": "system",
+    "rect": [
+     0,
+     0,
+     360,
+     780
+    ],
+    "system": "stars"
+   },
+   {
+    "id": "cosmos",
+    "type": "system",
+    "rect": [
+     0,
+     0,
+     360,
+     780
+    ],
+    "system": "cosmos"
+   },
+   {
+    "id": "floaters",
+    "type": "system",
+    "rect": [
+     0,
+     0,
+     360,
+     780
+    ],
+    "system": "floaters"
+   },
+   {
+    "id": "logo",
+    "type": "sprite",
+    "rect": [
+     50,
+     52,
+     260,
+     210
+    ],
+    "sprite": "logo_lockup",
+    "at": [
+     180,
+     52
+    ],
+    "motion": "logo_bob"
+   },
+   {
+    "id": "newGame",
+    "type": "button",
+    "rect": [
+     66,
+     520,
+     228,
+     52
+    ],
+    "kind": "primary",
+    "label": "NEW GAME"
+   },
+   {
+    "id": "continue",
+    "type": "button",
+    "rect": [
+     66,
+     580,
+     228,
+     52
+    ],
+    "kind": "disabled",
+    "label": "CONTINUE"
+   },
+   {
+    "id": "twoPlayers",
+    "type": "button",
+    "rect": [
+     66,
+     640,
+     228,
+     52
+    ],
+    "kind": "secondary",
+    "label": "2 PLAYERS"
+   },
+   {
+    "id": "settings",
+    "type": "button",
+    "rect": [
+     66,
+     700,
+     228,
+     52
+    ],
+    "kind": "secondary",
+    "label": "SETTINGS"
+   }
+  ]
+ },
+ "custom_aimer": {
+  "name": "Customize · step 1, aimer",
+  "size": [
+   360,
+   780
+  ],
+  "safeArea": {
+   "top": 32,
+   "bottom": 22
+  },
+  "elements": [
+   {
+    "id": "bg",
+    "type": "sprite",
+    "rect": [
+     -32,
+     -32,
+     424,
+     844
+    ],
+    "sprite": "bg_dusk"
+   },
+   {
+    "id": "stars",
+    "type": "system",
+    "rect": [
+     0,
+     0,
+     360,
+     780
+    ],
+    "system": "stars"
+   },
+   {
+    "id": "back",
+    "type": "sprite",
+    "rect": [
+     14,
+     40,
+     52,
+     56
+    ],
+    "sprite": "icon_back_normal"
+   },
+   {
+    "id": "title",
+    "type": "text",
+    "rect": [
+     70,
+     40,
+     220,
+     42
+    ],
+    "style": "title",
+    "text": "THE AIMER"
+   },
+   {
+    "id": "step",
+    "type": "text",
+    "rect": [
+     70,
+     82,
+     220,
+     18
+    ],
+    "style": "small_label",
+    "text": "STEP 1 OF 2"
+   },
+   {
+    "id": "role",
+    "type": "toggle",
+    "rect": [
+     54,
+     108,
+     252,
+     44
+    ],
+    "options": [
+     "CAT",
+     "DOG"
+    ],
+    "sel": 0
+   },
+   {
+    "id": "hint",
+    "type": "text",
+    "rect": [
+     40,
+     158,
+     280,
+     18
+    ],
+    "style": "small_label",
+    "text": "THE OTHER PET FIRES"
+   },
+   {
+    "id": "panel",
+    "type": "nine",
+    "rect": [
+     12,
+     186,
+     336,
+     400
+    ],
+    "sprite": "panel"
+   },
+   {
+    "id": "stage",
+    "type": "sprite",
+    "rect": [
+     96,
+     354,
+     168,
+     50
+    ],
+    "sprite": "stage_cushion",
+    "at": [
+     180,
+     370
+    ]
+   },
+   {
+    "id": "pet",
+    "type": "pixpet",
+    "rect": [
+     113,
+     238,
+     134,
+     134
+    ],
+    "shape": 0,
+    "anim": "idle",
+    "shot": {
+     "anim": "happy",
+     "at": 0.6,
+     "every": 3.2
+    },
+    "cw": 0,
+    "species": "cat",
+    "at": [
+     180,
+     370
+    ],
+    "pixelScale": {
+     "devicePxPerArtPx": 5,
+     "note": "existing pixel sheet, point filtering"
+    }
+   },
+   {
+    "id": "name",
+    "type": "field",
+    "rect": [
+     80,
+     396,
+     200,
+     48
+    ],
+    "text": "MOCHI",
+    "state": "focused",
+    "placeholder": "TYPE A NAME"
+   },
+   {
+    "id": "furLabel",
+    "type": "text",
+    "rect": [
+     30,
+     462,
+     60,
+     32
+    ],
+    "style": "label",
+    "text": "FUR"
+   },
+   {
+    "id": "fur",
+    "type": "swatches",
+    "rect": [
+     92,
+     458,
+     236,
+     40
+    ],
+    "sel": 0,
+    "species": "cat",
+    "pitch": 40,
+    "pixelScale": {
+     "devicePxPerArtPx": 5,
+     "note": "existing pixel sheet, point filtering"
+    }
+   },
+   {
+    "id": "shapeLabel",
+    "type": "text",
+    "rect": [
+     30,
+     520,
+     60,
+     32
+    ],
+    "style": "label",
+    "text": "SHAPE"
+   },
+   {
+    "id": "shape",
+    "type": "shapes",
+    "rect": [
+     92,
+     514,
+     240,
+     46
+    ],
+    "sel": 0,
+    "species": "cat",
+    "pixelScale": {
+     "devicePxPerArtPx": 6,
+     "note": "existing pixel sheet, point filtering"
+    }
+   },
+   {
+    "id": "next",
+    "type": "button",
+    "rect": [
+     46,
+     664,
+     268,
+     56
+    ],
+    "kind": "primary",
+    "label": "NEXT"
+   }
+  ]
+ },
+ "custom_firer": {
+  "name": "Customize · step 2, firer",
+  "size": [
+   360,
+   780
+  ],
+  "safeArea": {
+   "top": 32,
+   "bottom": 22
+  },
+  "elements": [
+   {
+    "id": "bg",
+    "type": "sprite",
+    "rect": [
+     -32,
+     -32,
+     424,
+     844
+    ],
+    "sprite": "bg_dusk"
+   },
+   {
+    "id": "stars",
+    "type": "system",
+    "rect": [
+     0,
+     0,
+     360,
+     780
+    ],
+    "system": "stars"
+   },
+   {
+    "id": "back",
+    "type": "sprite",
+    "rect": [
+     14,
+     40,
+     52,
+     56
+    ],
+    "sprite": "icon_back_normal"
+   },
+   {
+    "id": "title",
+    "type": "text",
+    "rect": [
+     70,
+     40,
+     220,
+     42
+    ],
+    "style": "title",
+    "text": "THE FIRER"
+   },
+   {
+    "id": "step",
+    "type": "text",
+    "rect": [
+     70,
+     82,
+     220,
+     18
+    ],
+    "style": "small_label",
+    "text": "STEP 2 OF 2"
+   },
+   {
+    "id": "role",
+    "type": "toggle",
+    "rect": [
+     54,
+     108,
+     252,
+     44
+    ],
+    "options": [
+     "CAT",
+     "DOG"
+    ],
+    "sel": 1
+   },
+   {
+    "id": "hint",
+    "type": "text",
+    "rect": [
+     40,
+     158,
+     280,
+     18
+    ],
+    "style": "small_label",
+    "text": "MOCHI THE CAT AIMS"
+   },
+   {
+    "id": "panel",
+    "type": "nine",
+    "rect": [
+     12,
+     186,
+     336,
+     400
+    ],
+    "sprite": "panel"
+   },
+   {
+    "id": "stage",
+    "type": "sprite",
+    "rect": [
+     96,
+     354,
+     168,
+     50
+    ],
+    "sprite": "stage_mat",
+    "at": [
+     180,
+     370
+    ]
+   },
+   {
+    "id": "pet",
+    "type": "pixpet",
+    "rect": [
+     113,
+     238,
+     134,
+     134
+    ],
+    "shape": 3,
+    "anim": "idle",
+    "cw": 3,
+    "species": "dog",
+    "at": [
+     180,
+     370
+    ],
+    "pixelScale": {
+     "devicePxPerArtPx": 5,
+     "note": "existing pixel sheet, point filtering"
+    }
+   },
+   {
+    "id": "name",
+    "type": "field",
+    "rect": [
+     80,
+     396,
+     200,
+     48
+    ],
+    "text": "",
+    "state": "focused",
+    "placeholder": "TYPE A NAME"
+   },
+   {
+    "id": "furLabel",
+    "type": "text",
+    "rect": [
+     30,
+     462,
+     60,
+     32
+    ],
+    "style": "label",
+    "text": "FUR"
+   },
+   {
+    "id": "fur",
+    "type": "swatches",
+    "rect": [
+     92,
+     458,
+     236,
+     40
+    ],
+    "sel": 3,
+    "species": "dog",
+    "pitch": 40,
+    "pixelScale": {
+     "devicePxPerArtPx": 5,
+     "note": "existing pixel sheet, point filtering"
+    }
+   },
+   {
+    "id": "shapeLabel",
+    "type": "text",
+    "rect": [
+     30,
+     520,
+     60,
+     32
+    ],
+    "style": "label",
+    "text": "SHAPE"
+   },
+   {
+    "id": "shape",
+    "type": "shapes",
+    "rect": [
+     92,
+     514,
+     240,
+     46
+    ],
+    "sel": 3,
+    "species": "dog",
+    "pixelScale": {
+     "devicePxPerArtPx": 6,
+     "note": "existing pixel sheet, point filtering"
+    }
+   },
+   {
+    "id": "next",
+    "type": "button",
+    "rect": [
+     46,
+     664,
+     268,
+     56
+    ],
+    "kind": "disabled",
+    "label": "START"
+   }
+  ]
+ },
+ "settings": {
+  "name": "Settings",
+  "size": [
+   360,
+   780
+  ],
+  "safeArea": {
+   "top": 32,
+   "bottom": 22
+  },
+  "elements": [
+   {
+    "id": "space",
+    "type": "sprite",
+    "rect": [
+     -32,
+     -32,
+     424,
+     844
+    ],
+    "sprite": "space_deep"
+   },
+   {
+    "id": "stars",
+    "type": "system",
+    "rect": [
+     0,
+     0,
+     360,
+     780
+    ],
+    "system": "stars"
+   },
+   {
+    "id": "backdrop",
+    "type": "fill",
+    "rect": [
+     -32,
+     -32,
+     424,
+     844
+    ],
+    "color": "settingsBackdrop"
+   },
+   {
+    "id": "back",
+    "type": "sprite",
+    "rect": [
+     14,
+     40,
+     52,
+     56
+    ],
+    "sprite": "icon_back_normal"
+   },
+   {
+    "id": "panel",
+    "type": "nine",
+    "rect": [
+     26,
+     300,
+     308,
+     132
+    ],
+    "sprite": "panel"
+   },
+   {
+    "id": "plate",
+    "type": "nine",
+    "rect": [
+     90,
+     280,
+     180,
+     44
+    ],
+    "sprite": "title_plate"
+   },
+   {
+    "id": "title",
+    "type": "text",
+    "rect": [
+     90,
+     280,
+     180,
+     40
+    ],
+    "style": "title_plate",
+    "text": "SETTINGS"
+   },
+   {
+    "id": "rowLabel",
+    "type": "text",
+    "rect": [
+     46,
+     344,
+     116,
+     22
+    ],
+    "style": "label",
+    "text": "LANDING"
+   },
+   {
+    "id": "rowSub",
+    "type": "text",
+    "rect": [
+     46,
+     366,
+     116,
+     16
+    ],
+    "style": "small_label",
+    "text": "ANIMATION"
+   },
+   {
+    "id": "landing",
+    "type": "toggle",
+    "rect": [
+     164,
+     342,
+     152,
+     44
+    ],
+    "options": [
+     "BOUNCE",
+     "SQUASH"
+    ],
+    "sel": 0
+   },
+   {
+    "id": "divider",
+    "type": "nine",
+    "rect": [
+     46,
+     404,
+     268,
+     6
+    ],
+    "sprite": "divider"
+   }
+  ]
+ },
+ "victory": {
+  "name": "Victory overlay",
+  "size": [
+   360,
+   780
+  ],
+  "safeArea": {
+   "top": 32,
+   "bottom": 22
+  },
+  "elements": [
+   {
+    "id": "board",
+    "type": "board",
+    "rect": [
+     0,
+     0,
+     360,
+     780
+    ],
+    "frame": "mock1"
+   },
+   {
+    "id": "dim",
+    "type": "fill",
+    "rect": [
+     -32,
+     -32,
+     424,
+     844
+    ],
+    "color": "victoryDim"
+   },
+   {
+    "id": "lanterns",
+    "type": "system",
+    "rect": [
+     0,
+     0,
+     360,
+     780
+    ],
+    "system": "lanterns"
+   },
+   {
+    "id": "fireworks",
+    "type": "system",
+    "rect": [
+     0,
+     0,
+     360,
+     780
+    ],
+    "system": "fireworks"
+   },
+   {
+    "id": "banner",
+    "type": "sprite",
+    "rect": [
+     10,
+     132,
+     340,
+     104
+    ],
+    "sprite": "banner_win",
+    "in": "banner_drop"
+   },
+   {
+    "id": "bannerText",
+    "type": "text",
+    "rect": [
+     40,
+     160,
+     280,
+     44
+    ],
+    "style": "title",
+    "text": "LEVEL COMPLETE",
+    "in": "banner_drop"
+   },
+   {
+    "id": "resultGroup",
+    "type": "group",
+    "rect": [
+     46,
+     372,
+     268,
+     148
+    ],
+    "in": "panel_pop"
+   },
+   {
+    "id": "resultGroup.panel",
+    "type": "nine",
+    "rect": [
+     46,
+     372,
+     268,
+     148
+    ],
+    "sprite": "panel"
+   },
+   {
+    "id": "resultGroup.level",
+    "type": "text",
+    "rect": [
+     46,
+     392,
+     268,
+     22
+    ],
+    "style": "label",
+    "text": "LEVEL 07"
+   },
+   {
+    "id": "resultGroup.scoreLabel",
+    "type": "text",
+    "rect": [
+     46,
+     422,
+     268,
+     16
+    ],
+    "style": "small_label",
+    "text": "SCORE"
+   },
+   {
+    "id": "resultGroup.score",
+    "type": "text",
+    "rect": [
+     46,
+     442,
+     268,
+     46
+    ],
+    "style": "number",
+    "text": "012450"
+   },
+   {
+    "id": "continue",
+    "type": "button",
+    "rect": [
+     60,
+     560,
+     240,
+     56
+    ],
+    "kind": "primary",
+    "label": "CONTINUE"
+   },
+   {
+    "id": "menu",
+    "type": "button",
+    "rect": [
+     60,
+     628,
+     240,
+     56
+    ],
+    "kind": "secondary",
+    "label": "MENU"
+   },
+   {
+    "id": "confetti",
+    "type": "system",
+    "rect": [
+     0,
+     0,
+     360,
+     780
+    ],
+    "system": "confetti"
+   }
+  ]
+ },
+ "retry": {
+  "name": "Retry",
+  "size": [
+   360,
+   780
+  ],
+  "safeArea": {
+   "top": 32,
+   "bottom": 22
+  },
+  "elements": [
+   {
+    "id": "bg",
+    "type": "sprite",
+    "rect": [
+     -32,
+     -32,
+     424,
+     844
+    ],
+    "sprite": "bg_dusk"
+   },
+   {
+    "id": "stars",
+    "type": "system",
+    "rect": [
+     0,
+     0,
+     360,
+     780
+    ],
+    "system": "stars"
+   },
+   {
+    "id": "title",
+    "type": "text",
+    "rect": [
+     30,
+     58,
+     300,
+     44
+    ],
+    "style": "title_sad",
+    "text": "KNOCKED OUT"
+   },
+   {
+    "id": "sub",
+    "type": "text",
+    "rect": [
+     30,
+     104,
+     300,
+     18
+    ],
+    "style": "small_label",
+    "text": "THE PETS NEED A NAP"
+   },
+   {
+    "id": "blanket",
+    "type": "sprite",
+    "rect": [
+     24,
+     300,
+     304,
+     52
+    ],
+    "sprite": "stage_nap",
+    "at": [
+     177,
+     329
+    ]
+   },
+   {
+    "id": "nap",
+    "type": "pixart",
+    "rect": [
+     20,
+     156,
+     320,
+     200
+    ],
+    "sprite": "retry_nap",
+    "swap": [
+     "cat",
+     0,
+     "dog",
+     0
+    ],
+    "pixelScale": {
+     "devicePxPerArtPx": 4,
+     "note": "existing pixel sheet, point filtering"
+    }
+   },
+   {
+    "id": "resultGroup",
+    "type": "group",
+    "rect": [
+     46,
+     372,
+     268,
+     148
+    ],
+    "in": "panel_pop"
+   },
+   {
+    "id": "resultGroup.panel",
+    "type": "nine",
+    "rect": [
+     46,
+     372,
+     268,
+     148
+    ],
+    "sprite": "panel"
+   },
+   {
+    "id": "resultGroup.level",
+    "type": "text",
+    "rect": [
+     46,
+     392,
+     268,
+     22
+    ],
+    "style": "label",
+    "text": "LEVEL 07"
+   },
+   {
+    "id": "resultGroup.scoreLabel",
+    "type": "text",
+    "rect": [
+     46,
+     422,
+     268,
+     16
+    ],
+    "style": "small_label",
+    "text": "SCORE"
+   },
+   {
+    "id": "resultGroup.score",
+    "type": "text",
+    "rect": [
+     46,
+     442,
+     268,
+     46
+    ],
+    "style": "number",
+    "text": "008730"
+   },
+   {
+    "id": "retry",
+    "type": "button",
+    "rect": [
+     60,
+     560,
+     240,
+     56
+    ],
+    "kind": "primary",
+    "label": "RETRY"
+   },
+   {
+    "id": "exit",
+    "type": "button",
+    "rect": [
+     60,
+     628,
+     240,
+     56
+    ],
+    "kind": "secondary",
+    "label": "EXIT"
+   }
+  ]
+ },
+ "twop_win": {
+  "name": "2-player result · bottom wins",
+  "size": [
+   360,
+   780
+  ],
+  "safeArea": {
+   "top": 32,
+   "bottom": 22
+  },
+  "elements": [
+   {
+    "id": "board",
+    "type": "board",
+    "rect": [
+     0,
+     0,
+     360,
+     780
+    ],
+    "frame": "mock2"
+   },
+   {
+    "id": "top",
+    "type": "group",
+    "rect": [
+     0,
+     0,
+     360,
+     390
+    ],
+    "rotatedHalf": true
+   },
+   {
+    "id": "top.banner",
+    "type": "sprite",
+    "rect": [
+     10,
+     120,
+     340,
+     104
+    ],
+    "sprite": "banner_lose",
+    "in": "banner_drop",
+    "rotatedHalf": true
+   },
+   {
+    "id": "top.bannerText",
+    "type": "text",
+    "rect": [
+     40,
+     146,
+     280,
+     44
+    ],
+    "style": "title_sad",
+    "text": "YOU LOSE",
+    "in": "banner_drop",
+    "rotatedHalf": true
+   },
+   {
+    "id": "bottom",
+    "type": "group",
+    "rect": [
+     0,
+     390,
+     360,
+     390
+    ]
+   },
+   {
+    "id": "bottom.confetti",
+    "type": "system",
+    "rect": [
+     0,
+     390,
+     360,
+     390
+    ],
+    "system": "confetti"
+   },
+   {
+    "id": "bottom.banner",
+    "type": "sprite",
+    "rect": [
+     10,
+     506,
+     340,
+     104
+    ],
+    "sprite": "banner_win",
+    "in": "banner_drop"
+   },
+   {
+    "id": "bottom.bannerText",
+    "type": "text",
+    "rect": [
+     40,
+     534,
+     280,
+     44
+    ],
+    "style": "title",
+    "text": "YOU WIN",
+    "in": "banner_drop"
+   }
+  ]
+ },
+ "twop_draw": {
+  "name": "2-player result · draw",
+  "size": [
+   360,
+   780
+  ],
+  "safeArea": {
+   "top": 32,
+   "bottom": 22
+  },
+  "elements": [
+   {
+    "id": "board",
+    "type": "board",
+    "rect": [
+     0,
+     0,
+     360,
+     780
+    ],
+    "frame": "mock2"
+   },
+   {
+    "id": "top",
+    "type": "group",
+    "rect": [
+     0,
+     0,
+     360,
+     390
+    ],
+    "rotatedHalf": true
+   },
+   {
+    "id": "top.plate",
+    "type": "sprite",
+    "rect": [
+     70,
+     150,
+     220,
+     60
+    ],
+    "sprite": "draw_plate",
+    "in": "banner_drop",
+    "rotatedHalf": true
+   },
+   {
+    "id": "top.plateText",
+    "type": "text",
+    "rect": [
+     70,
+     150,
+     220,
+     56
+    ],
+    "style": "title_plate",
+    "text": "DRAW",
+    "in": "banner_drop",
+    "rotatedHalf": true
+   },
+   {
+    "id": "bottom",
+    "type": "group",
+    "rect": [
+     0,
+     390,
+     360,
+     390
+    ]
+   },
+   {
+    "id": "bottom.plate",
+    "type": "sprite",
+    "rect": [
+     70,
+     540,
+     220,
+     60
+    ],
+    "sprite": "draw_plate",
+    "in": "banner_drop"
+   },
+   {
+    "id": "bottom.plateText",
+    "type": "text",
+    "rect": [
+     70,
+     540,
+     220,
+     56
+    ],
+    "style": "title_plate",
+    "text": "DRAW",
+    "in": "banner_drop"
+   }
+  ]
+ },
+ "twop_stats": {
+  "name": "2-player result · match stats",
+  "size": [
+   360,
+   780
+  ],
+  "safeArea": {
+   "top": 32,
+   "bottom": 22
+  },
+  "elements": [
+   {
+    "id": "board",
+    "type": "board",
+    "rect": [
+     0,
+     0,
+     360,
+     780
+    ],
+    "frame": "mock2"
+   },
+   {
+    "id": "dim",
+    "type": "fill",
+    "rect": [
+     -32,
+     -32,
+     424,
+     844
+    ],
+    "color": "statsDim"
+   },
+   {
+    "id": "top",
+    "type": "group",
+    "rect": [
+     0,
+     0,
+     360,
+     390
+    ],
+    "rotatedHalf": true
+   },
+   {
+    "id": "top.card",
+    "type": "nine",
+    "rect": [
+     26,
+     92,
+     308,
+     222
+    ],
+    "sprite": "stats_card",
+    "rotatedHalf": true
+   },
+   {
+    "id": "top.plate",
+    "type": "nine",
+    "rect": [
+     100,
+     72,
+     160,
+     44
+    ],
+    "sprite": "title_plate",
+    "rotatedHalf": true
+   },
+   {
+    "id": "top.cardTitle",
+    "type": "text",
+    "rect": [
+     100,
+     72,
+     160,
+     40
+    ],
+    "style": "title_plate",
+    "text": "LOSE",
+    "rotatedHalf": true
+   },
+   {
+    "id": "top.l0",
+    "type": "text",
+    "rect": [
+     50,
+     128,
+     150,
+     30
+    ],
+    "style": "label",
+    "text": "SCORE",
+    "rotatedHalf": true
+   },
+   {
+    "id": "top.v0",
+    "type": "text",
+    "rect": [
+     200,
+     128,
+     110,
+     30
+    ],
+    "style": "stat_value",
+    "text": "008730",
+    "rotatedHalf": true
+   },
+   {
+    "id": "top.d0",
+    "type": "nine",
+    "rect": [
+     48,
+     161,
+     264,
+     6
+    ],
+    "sprite": "divider",
+    "rotatedHalf": true
+   },
+   {
+    "id": "top.l1",
+    "type": "text",
+    "rect": [
+     50,
+     170,
+     150,
+     30
+    ],
+    "style": "label",
+    "text": "POPPED",
+    "rotatedHalf": true
+   },
+   {
+    "id": "top.v1",
+    "type": "text",
+    "rect": [
+     200,
+     170,
+     110,
+     30
+    ],
+    "style": "stat_value",
+    "text": "61",
+    "rotatedHalf": true
+   },
+   {
+    "id": "top.d1",
+    "type": "nine",
+    "rect": [
+     48,
+     203,
+     264,
+     6
+    ],
+    "sprite": "divider",
+    "rotatedHalf": true
+   },
+   {
+    "id": "top.l2",
+    "type": "text",
+    "rect": [
+     50,
+     212,
+     150,
+     30
+    ],
+    "style": "label",
+    "text": "BEST CHAIN",
+    "rotatedHalf": true
+   },
+   {
+    "id": "top.v2",
+    "type": "text",
+    "rect": [
+     200,
+     212,
+     110,
+     30
+    ],
+    "style": "stat_value",
+    "text": "4",
+    "rotatedHalf": true
+   },
+   {
+    "id": "top.d2",
+    "type": "nine",
+    "rect": [
+     48,
+     245,
+     264,
+     6
+    ],
+    "sprite": "divider",
+    "rotatedHalf": true
+   },
+   {
+    "id": "top.l3",
+    "type": "text",
+    "rect": [
+     50,
+     254,
+     150,
+     30
+    ],
+    "style": "label",
+    "text": "SHOTS",
+    "rotatedHalf": true
+   },
+   {
+    "id": "top.v3",
+    "type": "text",
+    "rect": [
+     200,
+     254,
+     110,
+     30
+    ],
+    "style": "stat_value",
+    "text": "44",
+    "rotatedHalf": true
+   },
+   {
+    "id": "bottom",
+    "type": "group",
+    "rect": [
+     0,
+     390,
+     360,
+     390
+    ]
+   },
+   {
+    "id": "bottom.card",
+    "type": "nine",
+    "rect": [
+     26,
+     482,
+     308,
+     222
+    ],
+    "sprite": "stats_card"
+   },
+   {
+    "id": "bottom.plate",
+    "type": "nine",
+    "rect": [
+     100,
+     462,
+     160,
+     44
+    ],
+    "sprite": "title_plate"
+   },
+   {
+    "id": "bottom.cardTitle",
+    "type": "text",
+    "rect": [
+     100,
+     462,
+     160,
+     40
+    ],
+    "style": "title_plate",
+    "text": "WIN"
+   },
+   {
+    "id": "bottom.l0",
+    "type": "text",
+    "rect": [
+     50,
+     518,
+     150,
+     30
+    ],
+    "style": "label",
+    "text": "SCORE"
+   },
+   {
+    "id": "bottom.v0",
+    "type": "text",
+    "rect": [
+     200,
+     518,
+     110,
+     30
+    ],
+    "style": "stat_value",
+    "text": "012450"
+   },
+   {
+    "id": "bottom.d0",
+    "type": "nine",
+    "rect": [
+     48,
+     551,
+     264,
+     6
+    ],
+    "sprite": "divider"
+   },
+   {
+    "id": "bottom.l1",
+    "type": "text",
+    "rect": [
+     50,
+     560,
+     150,
+     30
+    ],
+    "style": "label",
+    "text": "POPPED"
+   },
+   {
+    "id": "bottom.v1",
+    "type": "text",
+    "rect": [
+     200,
+     560,
+     110,
+     30
+    ],
+    "style": "stat_value",
+    "text": "86"
+   },
+   {
+    "id": "bottom.d1",
+    "type": "nine",
+    "rect": [
+     48,
+     593,
+     264,
+     6
+    ],
+    "sprite": "divider"
+   },
+   {
+    "id": "bottom.l2",
+    "type": "text",
+    "rect": [
+     50,
+     602,
+     150,
+     30
+    ],
+    "style": "label",
+    "text": "BEST CHAIN"
+   },
+   {
+    "id": "bottom.v2",
+    "type": "text",
+    "rect": [
+     200,
+     602,
+     110,
+     30
+    ],
+    "style": "stat_value",
+    "text": "7"
+   },
+   {
+    "id": "bottom.d2",
+    "type": "nine",
+    "rect": [
+     48,
+     635,
+     264,
+     6
+    ],
+    "sprite": "divider"
+   },
+   {
+    "id": "bottom.l3",
+    "type": "text",
+    "rect": [
+     50,
+     644,
+     150,
+     30
+    ],
+    "style": "label",
+    "text": "SHOTS"
+   },
+   {
+    "id": "bottom.v3",
+    "type": "text",
+    "rect": [
+     200,
+     644,
+     110,
+     30
+    ],
+    "style": "stat_value",
+    "text": "41"
+   },
+   {
+    "id": "strip",
+    "type": "fill",
+    "rect": [
+     0,
+     374,
+     360,
+     32
+    ],
+    "color": "strip"
+   },
+   {
+    "id": "rematch",
+    "type": "sprite",
+    "rect": [
+     148,
+     356,
+     64,
+     68
+    ],
+    "sprite": "icon_rematch_normal"
+   },
+   {
+    "id": "homeBottom",
+    "type": "sprite",
+    "rect": [
+     296,
+     362,
+     52,
+     56
+    ],
+    "sprite": "icon_home_normal"
+   },
+   {
+    "id": "homeTop",
+    "type": "sprite",
+    "rect": [
+     12,
+     362,
+     52,
+     56
+    ],
+    "sprite": "icon_home_normal",
+    "rotatedHalf": true
+   }
+  ]
+ },
+ "board_ko": {
+  "name": "Knock-out state (board, in-game art)",
+  "size": [
+   360,
+   780
+  ],
+  "safeArea": {
+   "top": 32,
+   "bottom": 22
+  },
+  "elements": [
+   {
+    "id": "board",
+    "type": "board",
+    "rect": [
+     0,
+     0,
+     360,
+     780
+    ],
+    "frame": "mock1"
+   }
+  ]
+ },
+ "_notes": "Rects in pt on the 360×780 grid. Groups with rotatedHalf draw their children rotated 180° about the group center (top player). Child rects are listed unrotated in screen space offset by the group origin. \"at\" = pivot position for sprites; for pixpet it is the pixel pivot (40, 79) of the existing chars sheets. pixpet / pixart / swatches draw the existing pixel art at pixelScale device px per art px (3 device px = 1 pt)."
+}

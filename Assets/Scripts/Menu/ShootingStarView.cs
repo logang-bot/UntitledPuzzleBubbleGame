@@ -1,4 +1,3 @@
-using Game.Art;
 using Game.UI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,42 +5,43 @@ using UnityEngine.UI;
 namespace Game.Menu
 {
     /// <summary>
-    /// The shooting-star slot: every 6 s it flashes for 0.9 s at a random
-    /// spot, mirrored half the time; its 6 frames follow progress, not fps.
+    /// The shooting star: every 6 s it streaks for 0.7 s at 420 pt/s, 20–35°
+    /// below horizontal, left or right at random, fading in and out (alpha
+    /// follows a half sine). The streak sprite points away from travel.
     /// </summary>
     public class ShootingStarView
     {
-        private static readonly SpawnSlot Slot = new SpawnSlot { Id = 9, Period = 6f, Offset = 0.3f, VisibleShare = 0.15f };
-
-        private readonly SpriteAnimEntry _entry;
         private readonly Image _image;
-        private int _cycle = int.MinValue;
+        private int _flight = int.MinValue;
+        private Vector2 _center;
+        private Vector2 _direction;
 
         public ShootingStarView(MenuUiFactory ui, RectTransform parent)
         {
-            _entry = ui.Art.Find(CosmosSprites.ShootingStar);
-            var size = _entry.First.rect.size;
-            _image = RuntimeUi.CreateImage(parent, "ShootingStar", UiPlacement.CenteredAt(Vector2.zero, size));
-            _image.raycastTarget = false;
+            _image = ui.PivotSprite(parent, CosmosSprites.ShootingStar, Vector2.zero);
         }
 
         public void Tick(float time)
         {
-            var visible = Slot.TryGetState(time, out var state);
-            _image.enabled = visible;
-            if (!visible) return;
-            if (state.Cycle != _cycle) Repick(state.Cycle);
-            var frame = Mathf.Min(_entry.Frames.Length - 1, (int)(state.Progress * _entry.Frames.Length));
-            _image.sprite = _entry.Frames[frame];
+            var flight = Mathf.FloorToInt(time / CosmosSprites.ShootingStarEvery);
+            var age = time - flight * CosmosSprites.ShootingStarEvery;
+            _image.enabled = age < CosmosSprites.ShootingStarLife;
+            if (!_image.enabled) return;
+            if (flight != _flight) Repick(flight);
+            var travel = CosmosSprites.ShootingStarSpeed * (age - CosmosSprites.ShootingStarLife / 2f);
+            _image.rectTransform.anchoredPosition = UiPlacement.SmoothPosition(_center + _direction * travel);
+            _image.color = new Color(1f, 1f, 1f, Mathf.Sin(Mathf.PI * age / CosmosSprites.ShootingStarLife));
         }
 
-        private void Repick(int cycle)
+        private void Repick(int flight)
         {
-            _cycle = cycle;
-            var random = Slot.RandomFor(cycle);
-            var spot = new Vector2(40f + (float)random.NextDouble() * 190f, 40f + (float)random.NextDouble() * 300f);
-            _image.rectTransform.anchoredPosition = UiPlacement.NativePosition(spot);
-            _image.rectTransform.localScale = new Vector3(random.NextDouble() < 0.5 ? -1f : 1f, 1f, 1f);
+            _flight = flight;
+            var random = new System.Random(unchecked(flight * 7919 + 41));
+            var angle = Mathf.Lerp(CosmosSprites.ShootingStarAngles.x, CosmosSprites.ShootingStarAngles.y, (float)random.NextDouble());
+            var sign = random.NextDouble() < 0.5 ? 1f : -1f;
+            _center = new Vector2(60f + (float)random.NextDouble() * 240f, 60f + (float)random.NextDouble() * 260f);
+            _direction = new Vector2(sign * Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
+            _image.rectTransform.localEulerAngles = new Vector3(0f, 0f, sign > 0f ? 180f - angle : angle);
         }
     }
 }

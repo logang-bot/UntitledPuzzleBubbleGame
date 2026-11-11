@@ -6,34 +6,36 @@ namespace Game.Tests
     public class TransitionTimelineTests
     {
         [Test]
-        public void ClosingFrame_AtStart_IsFullyOpenFrame()
+        public void ClosingScale_AtStart_IsFullyOpen()
         {
-            Assert.AreEqual(0, TransitionTimeline.ClosingFrame(0f));
+            Assert.AreEqual(TransitionTimeline.OpenScale, TransitionTimeline.ClosingScale(0f), 1e-4f);
         }
 
         [Test]
-        public void ClosingFrame_AtEndOfHalf_IsFullyDarkFrame()
+        public void ClosingScale_AtEnd_IsShut()
         {
-            Assert.AreEqual(9, TransitionTimeline.ClosingFrame(0.49f));
+            Assert.AreEqual(0f, TransitionTimeline.ClosingScale(TransitionTimeline.CloseSeconds), 1e-4f);
         }
 
         [Test]
-        public void OpeningFrame_AtStart_IsFullyDarkFrame()
+        public void ClosingScale_EasesIn_SoTheHoleShrinksSlowlyAtFirst()
         {
-            Assert.AreEqual(9, TransitionTimeline.OpeningFrame(0f));
+            var halfway = TransitionTimeline.ClosingScale(TransitionTimeline.CloseSeconds / 2f);
+            Assert.Greater(halfway, TransitionTimeline.OpenScale / 2f);
         }
 
         [Test]
-        public void OpeningFrame_PastHalf_ClampsToOpenFrame()
+        public void OpeningScale_RunsFromShutToFullyOpen()
         {
-            Assert.AreEqual(0, TransitionTimeline.OpeningFrame(0.8f));
+            Assert.AreEqual(0f, TransitionTimeline.OpeningScale(0f), 1e-4f);
+            Assert.AreEqual(TransitionTimeline.OpenScale, TransitionTimeline.OpeningScale(TransitionTimeline.OpenSeconds), 1e-4f);
         }
 
         [Test]
-        public void IsHalfDone_AfterHalfASecond_IsTrue()
+        public void Scales_PastTheirPhase_StayClamped()
         {
-            Assert.IsTrue(TransitionTimeline.IsHalfDone(0.5f));
-            Assert.IsFalse(TransitionTimeline.IsHalfDone(0.49f));
+            Assert.AreEqual(0f, TransitionTimeline.ClosingScale(5f), 1e-4f);
+            Assert.AreEqual(TransitionTimeline.OpenScale, TransitionTimeline.OpeningScale(5f), 1e-4f);
         }
     }
 }

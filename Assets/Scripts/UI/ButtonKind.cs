@@ -1,4 +1,4 @@
 namespace Game.UI
 {
-    public enum ButtonKind { Primary, Secondary, Back, Home, Rematch, ArrowLeft, ArrowRight }
+    public enum ButtonKind { Primary, Secondary, Disabled, Back, Home, Rematch, ArrowLeft, ArrowRight }
 }

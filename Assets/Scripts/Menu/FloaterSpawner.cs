@@ -6,12 +6,12 @@ using UnityEngine;
 namespace Game.Menu
 {
     /// <summary>
-    /// The 15 space-pet slots of the main menu (34–56 s cycles, on screen
-    /// for 78 % of each), drawn small to large through three size layers.
+    /// The main menu's floating pets: FloaterSpec.SlotCount slots, each on its
+    /// own pre-warmed FloaterSchedule, drawn small to large through three size
+    /// layers so the nearer, faster pets pass in front.
     /// </summary>
     public class FloaterSpawner : MonoBehaviour
     {
-        private const int SlotCount = 15;
         private const int FirstSlotId = 20;
 
         private readonly List<FloaterSlotView> _slots = new();
@@ -21,8 +21,9 @@ namespace Game.Menu
             var layer = RuntimeUi.CreateRect(parent, "Floaters", UiPlacement.Fill());
             var spawner = layer.gameObject.AddComponent<FloaterSpawner>();
             var context = new FloaterContext { Ui = ui, SizeLayers = CreateSizeLayers(layer), Catalog = catalog };
-            for (var i = 0; i < SlotCount; i++)
-                spawner._slots.Add(new FloaterSlotView(context, SlotFor(i)));
+            var now = Time.realtimeSinceStartup;
+            for (var i = 0; i < FloaterSpec.SlotCount; i++)
+                spawner._slots.Add(new FloaterSlotView(context, new FloaterSchedule(FirstSlotId + i, now)));
             spawner.Update();
             return spawner;
         }
@@ -36,14 +37,6 @@ namespace Game.Menu
                 RuntimeUi.CreateRect(layer, "Large", UiPlacement.Fill())
             };
         }
-
-        private static SpawnSlot SlotFor(int index) => new SpawnSlot
-        {
-            Id = FirstSlotId + index,
-            Period = 34f + index * 7 % 23,
-            Offset = index * 0.37f % 1f,
-            VisibleShare = 0.78f
-        };
 
         private void Update()
         {

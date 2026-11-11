@@ -590,8 +590,10 @@ A proper front end for the game, ahead of the art pass. Details are in
   index clamping.
 
 ### Screen art (Art Phases 1b, 2 and 6b, screens only) ✅
-- Every pre-game screen and result overlay is now skinned with the
-  Claude Design menu art:
+*This pixel-art version was later replaced by the vector cartoon rework
+below. The pixel pets carried over.*
+- Every pre-game screen and result overlay was skinned with the
+  Claude Design pixel menu art:
   - main menu;
   - two-step aimer/firer customization;
   - settings;
@@ -612,12 +614,55 @@ A proper front end for the game, ahead of the art pass. Details are in
   - `MatchStatsTests`
   - `ParticleMotionTests`
 
+### Screen art rework: vector cartoon UI, pixel-art pets ✅
+On a phone, the pixel-art screens felt choppy and their fonts didn't fit
+the art. Claude Design produced a new guide, `Cartoon Menu Guide.dc.html`:
+- the UI, backdrops and effects are vector cartoon;
+- the pets stay pixel art.
+
+See [`features/art/overview.md`](features/art/overview.md), "Screens: as
+built".
+- **Milestone 1 ✅:**
+  - **Foundations:**
+    - a two-profile sheet import;
+    - TMP fonts: Lilita One and Baloo 2;
+    - the 360×780 pt canvas;
+    - text styles with layered outlines and shadows;
+    - a motion system that plays the guide's spec;
+    - pixel pets snapped to whole screen pixels;
+    - 60 fps from app start.
+  - **Main menu:** star field, cosmos, floating pets at constant
+    per-size speeds, logo and buttons.
+  - **Transition:** a stencil paw iris with eased timing.
+- **Milestone 2 ✅:**
+  - pet customization (both steps, on the guide's layout);
+  - settings (space backdrop under a dim, panel with title plate, toggle
+    row with divider).
+- **Milestone 3 ✅:**
+  - **Victory overlay:** the banner drops, the panel and buttons pop,
+    with fireworks, lanterns and confetti.
+  - **Knock-out → Retry:** dusk backdrop, with the pixel nap on a
+    cartoon blanket.
+  - **2-player:** dropping WIN / LOSE / DRAW banners, then the stats
+    cards with a full-bleed center strip.
+  - **Cleanup:** removed the old pixel UI sheets, the pixel fonts,
+    `MenuPalette` and the replaced helpers.
+- New tests:
+  - `MotionClipTests`
+  - `PixelArtScaleTests`
+  - `FloaterScheduleTests`
+  - `TextStyleTests`
+  - `UiPlacementTests`
+
+  Rewritten: `TransitionTimelineTests`, `CrossingPathTests` and
+  `ParticleMotionTests`.
+
 ### Known follow-ups
 - Pet names and appearance aren't shown in-game yet. That waits on the
   in-game art (Art Phases 4 and 7), as do the launcher pets on the
   2-player result.
-- The HUD canvas still uses Constant Pixel Size. It moves to the pixel
-  canvas with Art Phase 6.
+- The HUD canvas still uses Constant Pixel Size. It moves to the menu
+  canvas setup with Art Phase 6.
 
 ## Later / not yet scoped ⏳
 
@@ -625,12 +670,17 @@ A proper front end for the game, ahead of the art pass. Details are in
 - Monetization (ads/IAP) — architecture implications deferred until scope
   is chosen.
 - Real art pass — swap placeholder assets for final art. **Now planned:**
-  chibi cats and dogs in two pixel-art directions: 16-bit arcade for the
-  board and HUD, and a Celeste-inspired atmospheric style for the menus,
-  customization and result overlays. It runs in parallel with tuning.
-  See [`features/art/overview.md`](features/art/overview.md) and the
-  Claude Design prompts in
-  [`features/art/claude-design-prompt.md`](features/art/claude-design-prompt.md)
-  (in-game) and
-  [`features/art/claude-design-prompt-menus.md`](features/art/claude-design-prompt-menus.md)
-  (screens).
+  chibi cats and dogs in pixel art throughout.
+  - The board and HUD use a 16-bit arcade style.
+  - The menus, customization and result overlays use vector cartoon UI
+    around the same pixel pets (see "Screen art rework" above).
+
+  It runs in parallel with tuning. See
+  [`features/art/overview.md`](features/art/overview.md) and the Claude
+  Design prompts:
+  - [`features/art/claude-design-prompt.md`](features/art/claude-design-prompt.md)
+    (in-game);
+  - [`features/art/claude-design-prompt-menus-cartoon.md`](features/art/claude-design-prompt-menus-cartoon.md)
+    (screens);
+  - [`features/art/claude-design-prompt-menus.md`](features/art/claude-design-prompt-menus.md)
+    (the earlier pixel screens).

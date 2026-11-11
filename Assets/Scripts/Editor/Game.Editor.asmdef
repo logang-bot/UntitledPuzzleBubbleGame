@@ -3,7 +3,8 @@
     "rootNamespace": "Game.EditorTools",
     "references": [
         "Game",
-        "Unity.2D.Sprite.Editor"
+        "Unity.2D.Sprite.Editor",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [
         "Editor"

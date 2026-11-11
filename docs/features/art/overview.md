@@ -1,17 +1,20 @@
 # Art Pass — Roadmap
 
-**Status: screens done, in-game art not started.** Art Phase 1b (the
-screen art) is generated, and the screen half of Phases 2 and 6b is
-implemented: every pre-game screen and result overlay now uses it (see
-"Screens: as built" below). Phases 1, 3–7 (in-game art) are still
-planned. This replaces the "Real art pass" bullet in
+**Status: screens done (vector cartoon UI with pixel-art pets), in-game
+art not started.** The pre-game screens were first built in pixel art
+(Art Phases 1b, 2 and 6b). Every pre-game screen, result overlay and the
+transition has since been rebuilt in a **vector cartoon style with
+pixel-art pets** (see "Screens: as built" below).
+
+Phases 1, 3–7 (in-game art) are still planned. This replaces the "Real
+art pass" bullet in
 `../../ROADMAP.md`'s "Later / not yet scoped" section. It runs in
 parallel with playtest/tuning work (see "Working in parallel" below).
 
 ## Art direction
 
-The game uses **two related art directions**. Both are pixel art and share
-the same original cat and dog cast, but they serve different jobs.
+The game uses **two related art directions**. They share the same original
+cat and dog cast, drawn in pixel art in both, but serve different jobs.
 
 ### A. In-game: 16-bit arcade (board, bubbles, HUD, launcher)
 
@@ -24,12 +27,34 @@ the same original cat and dog cast, but they serve different jobs.
   flat colors, hard outlines and a small palette win over atmosphere.
 - **Prompt:** [`claude-design-prompt.md`](claude-design-prompt.md).
 
-### B. Pre-game screens and result overlays: atmospheric indie pixel art
+### B. Pre-game screens and result overlays: vector cartoon UI, pixel-art pets
 
 - **Covers:** the main menu, pet customization, settings, the
   victory and game-over overlays, the 2-player result overlay, and
   screen transitions.
-- **Style:** inspired by modern indie pixel games such as *Celeste*:
+- **Current style** (Claude Design, `Cartoon Menu Guide.dc.html`):
+  - smooth vector cartoon art: chunky ink outlines (#1a1424, the same
+    ink as the pixel art), glossy 3-stop gradient fills with a soft
+    highlight;
+  - a cozy night palette: night grounds, warm gold and coral for the
+    forward action, violet for everything else, soft blue for sad
+    states;
+  - Lilita One for titles, buttons and numbers; Baloo 2 for labels,
+    toggles and the name field.
+- **The pets stay pixel art.** The portraits, the space floaters and the
+  Retry nap are the existing pixel sheets. They are drawn at whole
+  screen-pixel scales, so they match the in-game 16-bit pets. Around
+  them the cartoon art steps down to thinner lines and flatter fills.
+- **Why the change:** on a phone, the pixel screens felt choppy and
+  their runtime fonts never sat on the art's pixel grid. In the cartoon
+  version the engine animates everything at 60 fps, and text and color
+  are designed as part of the style. Prompt:
+  [`claude-design-prompt-menus-cartoon.md`](claude-design-prompt-menus-cartoon.md).
+- **Previous style (superseded):** the atmospheric indie pixel-art
+  direction below. It is kept for reference, since the pixel pets still
+  come from it.
+- **Previous style details:** inspired by modern indie pixel games such
+  as *Celeste*:
   - higher-detail pixel art than the in-game sprites;
   - layered parallax backgrounds with real depth;
   - rich, banded dusk and night palettes (stepped or dithered color
@@ -49,7 +74,8 @@ the same original cat and dog cast, but they serve different jobs.
   palette, and the cat and dog must read as the same characters in both
   styles. The screen versions are larger "portrait" renders of the same
   designs.
-- **Prompt:** [`claude-design-prompt-menus.md`](claude-design-prompt-menus.md).
+- **Prompt (pixel version):**
+  [`claude-design-prompt-menus.md`](claude-design-prompt-menus.md).
 
 ### Shared rules
 
@@ -112,16 +138,26 @@ rather than the other way round.
   bad on a device.
 
 **Pre-game screens**
-- **Native canvas: 270×585 px** (9:19.5), shown at 4× (1080×2340).
-  Other aspect ratios extend the background layers sideways and
-  vertically, so backgrounds need bleed beyond the 270×585 frame and UI
-  anchors to the safe area.
-- **Safe area:** keep the top 24 px and the bottom 16 px native free of
-  critical UI (notches and gesture bars).
-- Buttons and panels are **9-slice**, so the same art serves every label
-  length.
-- Backgrounds come as **separate parallax layers** (sky, far, mid, near,
-  foreground particles), so code can scroll and loop them.
+- **Layout grid: 360×780 pt** (9:19.5). The cartoon sheets are exported
+  at 3×, so a full screen is 1080×2340 px.
+  - Other aspect ratios extend the background sideways or vertically.
+    Backdrops bleed 32 pt beyond the grid (424×844 pt placed at
+    (−32, −32)), and the UI anchors to the safe area.
+- **Safe area:** nothing interactive in the top 32 pt or the bottom
+  22 pt (notches and gesture bars).
+- Buttons, panels, plates, fields and toggles are **9-slice**, so the
+  same art serves every size.
+  - A 9-slice rect must be at least as large as its borders. Smaller
+    rects squash the rounded corners.
+- **Motion is code, not frames.** Drift, twinkle, spin, pulse, pops and
+  drops come from the guide's motion spec. Only the fireworks are baked
+  (10 frames at 15 fps).
+- The pixel pets keep their own sheets. The guide gives their scale in
+  device pixels per art pixel on the 3× reference:
+  - portrait 5;
+  - floater and nap 4;
+  - swatch fill 5;
+  - shape silhouette 6.
 
 **Things on screen today that need art**
 - **Board:** bubbles, the fired bubble in flight, the next-bubble
@@ -255,6 +291,11 @@ rather than the other way round.
 - The next-bubble frame.
 
 ### Art Phase 6b — Screens and overlays skin (code)
+
+*This is the original plan. It was built first in pixel art and is now
+being redone in the cartoon style; see "Screens: as built" for what was
+actually built.*
+
 - **Canvas scaling first.** All menu scenes (MainMenu, PetCustomization,
   SettingsMenu), and the overlay canvases in Game and BattleMode, use
   `CanvasScaler` in **Constant Pixel Size** mode today. For the
@@ -308,86 +349,295 @@ rather than the other way round.
 
 ## Screens: as built
 
-The screens follow the **latest Claude Design source** ("Mobile
-bubble-shooter art system", `Menu Art Guide.dc.html` and
-`menus-scenes.js`). Where it differs from the plan above, it wins.
+The screens follow the **latest Claude Design source** (the "Mobile
+bubble-shooter art system" project). Where it differs from the plan
+above, it wins.
+- **Cartoon UI:** `Cartoon Menu Guide.dc.html`, with `cartoon-art.js` and
+  `cartoon-engine.js`.
+- **Pixel pets:** `Menu Art Guide.dc.html`, with `menus.js` and
+  `menus-scenes.js`.
 
-**Import pipeline (screen half of Phase 2)**
-- Claude Design exports a bundle: 1× PNG sheets plus legend JSONs in
-  `Assets/Art/Screens/Sheets/`, and `colorways.json` and `palette.gpl` in
-  `Assets/Art/Screens/`.
-  - Each legend gives every sprite id its frame rect, frame count, fps,
-    a numeric pixel pivot and, for 9-slices, its border.
+### Rework status (vector cartoon + pixel pets)
+
+| Screen | State |
+|---|---|
+| Main menu | ✅ Rebuilt on the cartoon guide |
+| Pet customization (both steps) | ✅ Rebuilt on the cartoon guide |
+| Paw-print transition | ✅ Rebuilt (stencil iris, eased) |
+| Settings | ✅ Rebuilt on the cartoon guide |
+| Victory, knock-out → Retry | ✅ Rebuilt on the cartoon guide |
+| 2-player banners and stats | ✅ Rebuilt on the cartoon guide |
+
+The old pixel UI has been removed:
+- the sheets `buttons`, `panels`, `space`, `cosmos`, `fx`, `transition`
+  and `logo`, with their indices and `MANIFEST.json`;
+- the Pixelify Sans and Silkscreen fonts;
+- `MenuPalette`, `CelebrationParticles`, `LoopingLayer`,
+  `TransitionIrisBuilder`, `DottedLine` and `LabelLine`.
+
+The importer now reads 13 sheets (280 sprite ids) with no duplicate ids.
+
+### Bundle and import
+
+- **Source files:**
+  - cartoon sheets: Claude Design's "Download Unity bundle" (3× PNGs plus
+    legend JSONs) in `Assets/Art/Cartoon/Sheets/`;
+  - the spec files (`tokens.json`, `motion.json`, `layout.json`,
+    `fonts.txt`, `MANIFEST.json`) in `Assets/Art/Cartoon/Spec/`. Code
+    transcribes them; they're kept so a re-export can be diffed.
+  - The pixel pet sheets (`chars_cat`, `chars_dog`, `floaters`, `retry`,
+    `picker`) and `colorways.json` stay in `Assets/Art/Screens/`.
 - **Tools ▸ Art ▸ Import Menu Sheets** (`Editor/Art/MenuArtImportMenu`)
-  can be re-run after every re-export. It:
-  - slices each sheet into frames named `{id}_{frame}`, with Point
-    filtering, PPU 1, no compression and no mipmaps;
-  - writes one `SpriteSheetIndex` per sheet under
+  can be re-run after every re-export. It imports both folders, each
+  with its own `SheetImportProfile`:
+  - `Pixel`: Point filtering, PPU 1, uncompressed, into
     `Assets/Art/Screens/Index/`;
-  - builds `Assets/Art/Screens/MenuArtLibrary.asset`, which the screens
-    use to look up sprites by legend id;
-  - copies the colorway ramps and the sprite shape ids into
+  - `Cartoon`: Bilinear filtering, PPU 3, CompressedHQ, into
+    `Assets/Art/Cartoon/Index/`.
+
+  Both profiles skip mipmaps. Sprites are sliced into frames named
+  `{id}_{frame}`, with the legend's pivot and 9-slice border (in 3× px).
+  The importer also:
+  - builds `Assets/Art/Screens/MenuArtLibrary.asset` (pixel sheets
+    first, cartoon second);
+  - creates the TMP fonts (`FontAssetWriter`);
+  - creates the shared materials (`UIFurRecolor`, `UIIrisHole`,
+    `UIIrisFill`, `UIIrisRim` in `Assets/Art/Shaders/`);
+  - copies the colorway ramps and shape art ids into
     `DefaultPetAppearanceCatalog`.
-- **Fonts:** Pixelify Sans Regular for titles and captions, Silkscreen
-  for small labels, both Hinted Raster. Pixelify Sans Bold was dropped
-  because its "2" reads as an "8" at caption size.
-- **Fur recolor:** the `Game/UI/FurRecolor` shader swaps the 4 cat
-  fur-key colors and the 4 dog fur-key colors for the chosen ramps.
-  - Each recolored Image gets its own material instance (`FurRecolor`).
-  - `PetColorOption` now holds a 4-shade `Ramp` instead of one `Color`.
-  - `PetShapeOption` gained an `ArtId` (round, fluffy, slim, chonk;
-    floppy, pointy, fluffy, short).
+- **Fonts:**
+  - Lilita One (display) and Baloo 2 SemiBold, Bold and ExtraBold (UI),
+    all SIL OFL. The TTFs and `*-OFL.txt` are in `Assets/Art/Fonts/`.
+  - The SDF font assets (`* SDF.asset`) are sampled at 72 pt with 20 px
+    padding on a 1024×2048 atlas, pre-filled with printable ASCII. They
+    stay dynamic, so typed pet names can add glyphs.
+  - TMP Essential Resources live in `Assets/TextMesh Pro/`.
+- **Fur recolor:** unchanged. The `Game/UI/FurRecolor` shader swaps the
+  pixel pets' 4 fur-key colors for the chosen 4-shade ramp, with one
+  material instance per recolored Image.
 
-**Canvas (Phase 6b)**
-- `PixelCanvas.Configure` sets up every screen canvas:
-  - Scale With Screen Size at a 270×585 reference, so one unit is one
-    art pixel;
-  - match mode **Expand**, so the full native frame always fits and the
-    extra space becomes background;
-  - reference PPU 1.
+### Canvas and placement
 
-  This differs from the 1080×2340 + match-width plan: Expand keeps 16:9
-  phones from cropping the 585-tall layout.
-- `NativeStage` gives each screen a full-bleed background and a 270×585
-  stage centered in the safe area (`SafeAreaFitter`). Layout coordinates
-  are the design's native pixels, measured from the top-left
-  (`UiPlacement.TopLeft(RectInt)`).
+- `MenuCanvas.Configure` sets up every screen canvas:
+  - Scale With Screen Size at a **360×780** reference with match mode
+    Expand, so one canvas unit is one pt and the whole grid always fits;
+  - reference PPU 1. Cartoon sprites at PPU 3 come out one unit per pt,
+    and so do their 9-slice borders.
+  - Pixel-perfect is **off**, so drift stays smooth.
+- `NativeStage` gives each screen a full-bleed background and a 360×780
+  stage centered in the safe area (`SafeAreaFitter`). Layout rects are
+  the guide's pt from the top-left (`UiPlacement.TopLeft(RectInt)`), as
+  listed in `layout.json`.
+- Placement helpers:
+  - `UiPlacement.SmoothPosition` places moving things without rounding;
+  - `UiPlacement.PivotAt` and `MenuUiFactory.PivotSprite` put a sprite's
+    legend pivot on a point;
+  - `UiPlacement.MovePivot` re-pivots a rect in place, so it scales or
+    rotates about its center.
+- `MenuUiFactory.Cover` stretches a static backdrop over the whole
+  screen, bleed included (`AspectRatioFitter`, Envelope Parent).
+- **Pixel pets** use `MenuUiFactory.PixelSprite` with a `PixelPlacement`
+  (pivot point, plus the guide's device px per art px). Its `PixelSnap`
+  component:
+  - sizes the sprite so one art pixel covers a whole number of screen
+    pixels (`PixelArtScale.UnitsPerArtPixel`, rounded per device, at
+    least 1);
+  - snaps the pivot onto the screen-pixel grid every LateUpdate.
 - The Game and BattleMode result screens build their own overlay canvas
-  (`OverlayCanvasFactory`), so the HUD canvas and touch zones are still
+  (`OverlayCanvasFactory`), so the HUD canvas and touch zones are
   untouched. They change with Phase 6.
 
-**Screens**
-- **Main menu:**
-  - deep space: a static layer plus near stars scrolling at 4 px/s;
-  - drifting cosmos: one big galaxy slot, three small slots and a
-    shooting star;
-  - 15 floating pets in random species, shapes, colorways, sizes and
-    poses;
-  - the logo and four buttons.
-  - The spawn timing (`SpawnSlot`, `CrossingPath`, `FloaterPick`) is
-    ported from `menus-scenes.js`.
-- **Pet customization:** a two-step aimer/firer flow. See
-  `../game-flow/overview.md`. The dusk-town `bg*` layers are no longer
-  used.
-- **Settings:** one panel with the landing-animation toggle.
-- **Victory overlay:** a flat 78 % Abyss dim, the win banner, fireworks,
-  confetti and lanterns, the level/score panel, then Continue and Menu.
-  There's no pet.
-- **Game over:** the board holds for 3 s with input blocked, then the paw
-  iris shows the **Retry screen**. It has the napping cat and dog in the
-  saved pets' fur, the level/score panel, then Retry and Exit.
-- **2-player result:**
-  - YOU WIN / YOU LOSE banners (or a DRAW plate) per half for 2.5 s;
-  - then a dimmed stats card per player (score, popped, best chain,
-    shots), with Rematch in the center bar and Home at each player's
-    right.
-  - The top half is rotated 180°.
-  - The launcher pets in the design wait for Art Phases 4 and 7.
-- **Transition:** `SceneTransition` plays the paw-print iris on every
-  scene change and on the in-scene swap to and from the Retry screen.
+### Text
 
-Crown, rain cloud, draw badge, dim tiles, petals, snow and the
-customization `stage_*` alternatives are in the sheets but unused for now.
+- `TextStyles` holds the guide's 14 text tokens:
+  - Title, TitleSad, TitlePlate;
+  - ButtonPrimary, ButtonSecondary, ButtonDisabled;
+  - Label, SmallLabel;
+  - Number, StatValue;
+  - SegmentOn, SegmentOff;
+  - NameText, NamePlaceholder.
+
+  Each `TextStyle` sets the font role, the size in pt, a solid or
+  top-to-bottom gradient fill, the outline, the drop shadow and the
+  letter spacing. It's built fluently (`WithFill`, `Aligned`, …).
+- `TextStyleApplier` puts a style on a `TextMeshProUGUI`:
+  - the face uses the plain font material, with the gradient as a TMP
+    vertex gradient;
+  - letter spacing becomes `characterSpacing` (pt / size × 100).
+- **Outlines and shadows are a second layer.** TMP draws an outline per
+  letter, so a thick outline paints over the previous letter's face (a T
+  loses half its crossbar). `TextOutlineLayer` puts a copy of the text
+  just behind the face:
+  - the copy is dilated out to the outline's edge, in the outline color
+    (`TextStyleMaterials`, one material per font and style);
+  - the shadow is that copy's underlay, offset down;
+  - the layer follows the face's text, rect, enabled state and
+    lifetime.
+
+  This matches the guide, which strokes the whole word before filling
+  it. The SDF unit conversions are documented on
+  `TextStyleMaterials.SdfScale`.
+- Colors used at runtime are in `MenuColors` (from `tokens.json`).
+
+### Motion
+
+- `Scripts/Motion/` is pure and tested:
+  - `Ease` has the guide's 7 curves (linear, inQuad, outQuad, inOutSine,
+    inCubic, outCubic, outBack);
+  - `KeyTrack`, `SineTrack` and `SpinTrack` feed a `MotionClip` with
+    channels x, y and rot (added) and sx, sy and alpha (multiplied),
+    plus an optional delay and duration;
+  - `MenuMotions` transcribes `motion.json`: logo bob, button release,
+    banner drop, panel pop, swatch pick, galaxy glow and spin, bubble
+    wobble, star twinkle.
+- `MotionPlayer` plays a clip on a RectTransform from `Update()`, on
+  unscaled time, relative to its rest pose. It only touches the channels
+  the clip has, and `Play()` re-triggers it.
+- Everything runs at 60 fps. `FrameRateInitializer` also sets the target
+  before the first scene loads, so the menus no longer start at the
+  mobile default of 30 fps.
+
+### UI kit
+
+- **Buttons** (`MenuButtonBuilder`, `SkinnedButton`, `ButtonSkin`):
+  - kinds Primary, Secondary, Disabled, Back, Home, Rematch, ArrowLeft
+    and ArrowRight map to `btn_*`, `icon_*` and `arrow_*` sprites, with
+    sprite-swap pressed states;
+  - the caption sits 1.5 pt from the top and 7.5 pt from the bottom of
+    the face, and drops 4 pt while pressed;
+  - on release the button springs 0.96 → 1;
+  - `SetInteractable(false)` shows the disabled face and caption style.
+- **`SegmentedToggle`:** a `toggle_track` with `seg_on` / `seg_off`
+  segments inset 4 pt. The selected caption is raised 3 pt.
+- **Name field** (`NameFieldBuilder`, `NameFieldSkin`):
+  - a `TMP_InputField` on `field_empty` / `_focused` / `_filled`;
+  - text inset 18 pt, an ink caret blinking once a second;
+  - the customization screen shows names in capitals.
+- **Other widgets:**
+  - `MenuUiFactory.Plate` (title plate plus caption);
+  - `Tiled` (the dotted divider);
+  - `LabelIn` / `Label`.
+
+### Screens
+
+- **Main menu** (`MainMenuController`, `Menu/`):
+  - `SpaceBackdrop`: the deep space covers the screen.
+  - `StarField`: two seamless star layers scrolling left at 6 pt/s
+    (wrapping at 424 pt), plus 14 twinkling sparkles.
+  - `CosmosSpawner`, from `CosmosSprites.Slots`:
+    - a hero slot alternating the hero and rose spirals in y 200–420;
+    - three small slots with planets, the teal spiral and the comet;
+    - galaxies spin at 3°/s over a pulsing glow;
+    - the comet flies sideways, mirrored to trail its tail;
+    - `ShootingStarView`: every 6 s, a 0.7 s streak at 420 pt/s, 20–35°
+      below horizontal.
+  - `FloaterSpawner`: 12 slots, each with a pre-warmed `FloaterSchedule`
+    (see below).
+  - The logo lockup has its pivot at (180, 52) and bobs (`LogoBob`).
+  - Four 228×52 buttons sit at y 520/580/640/700. Continue is disabled
+    without a save.
+- **Floating pets:**
+  - **Speed:** constant per size (S 9, M 15, L 23 pt/s), small to large
+    drawn back to front for depth. This is a deliberate change from the
+    guide, where every crossing took its slot's fixed time.
+  - **Crossings:** horizontal ones stay in y 250–500; each is followed
+    by a 2–8 s rest.
+  - **Seeding:** every flight is seeded from (slot, flight number), and
+    each slot starts at a random point of its first flight, so the sky
+    is busy on the first frame.
+  - **Look:** a pixel floater at 4 device px per art px, recolored, in
+    90° turns (none for the tumble pose) and mirrored. It bobs ±3 pt
+    over 3 s; 20 % sit inside a wobbling cartoon bubble.
+- **Pet customization** (`PetCustomizationController`, `PetPanelView`):
+  - `DuskBackdrop`: the dusk sky with its moon and hills, plus the
+    `StarField`;
+  - the back icon, title, step and hint (`CustomizationHeader`);
+  - the CAT/DOG toggle at (54, 108, 252, 44);
+  - a 336×400 pt panel at (12, 186), holding:
+    - the cushion (cat) or mat (dog), with the pixel portrait's feet at
+      (180, 370), 5 device px per art px (`PortraitView`);
+    - the name field at (80, 396, 200, 48);
+    - FUR and SHAPE labels;
+    - `SwatchRowView`: 40 pt swatches from (92, 458), the pixel fill
+      under a cartoon ring;
+    - `ShapePickerView`: arrows and 40×46 slots with cartoon silhouettes
+      from (92, 514).
+  - Picks pop (`SwatchPick`) and make the pet hop.
+  - Next/Start at (46, 664, 268, 56).
+- **Settings** (`SettingsMenuController`):
+  - the deep space covering the screen and the `StarField`, under the
+    `settingsBackdrop` dim (62 %);
+  - the back icon;
+  - a 308×132 pt panel at (26, 300) under a 180×44 SETTINGS title plate
+    at (90, 280);
+  - one row: LANDING (label) and ANIMATION (small label), the
+    BOUNCE/SQUASH toggle at (164, 342, 152, 44), and a dotted divider at
+    (46, 404, 268, 6).
+  - Further rows stack at a 52 pt pitch.
+- **Shared result pieces** (`Results/`):
+  - `BannerView` (from a `BannerSpec`): a banner or plate with its
+    caption, dropping in with `BannerDrop` each time it is shown;
+  - `ResultPanelView`: the 268×148 pt level/score panel at (46, 372),
+    with LEVEL nn (label), SCORE (small label) and the score (number),
+    popping in with `PanelPop` (0.25 s after the banner);
+  - `ResultButtons`: the 240×56 pt primary/secondary pair at (60, 560)
+    and (60, 628), popping in with the panel.
+- **Particles** (`Results/`, each its own MonoBehaviour on unscaled
+  time, using the pure `ParticleMotion` helpers):
+  - `ConfettiField`: pieces fall at 50–90 pt/s and wrap, sway ±12 pt
+    over 1.6 s, spin 180–420°/s, and flip their x scale over 0.6 s;
+  - `FireworkShow`: a burst every 0.7 s in x 40–320 and y 70–270,
+    scaled 0.7–1.1, cycling gold, coral and teal, each playing its 10
+    frames once at 15 fps;
+  - `LanternField`: 5 lanterns rising at 18–26 pt/s and re-entering
+    below, swaying ±6 pt and rocking ±4°, over a glow pulsing 0.8 ± 0.2.
+- **Victory overlay** (`VictoryOverlay`):
+  - the board under the victoryDim (72 %);
+  - lanterns and fireworks, then the LEVEL COMPLETE win banner at
+    (10, 132);
+  - the panel and Continue/Menu;
+  - 28 confetti pieces over everything.
+- **Retry screen** (`RetryScreen`):
+  - the `DuskBackdrop`;
+  - KNOCKED OUT (title_sad) and THE PETS NEED A NAP;
+  - the cartoon `stage_nap` blanket with its pivot at (177, 329), under
+    the pixel `retry_nap` at (20, 156), 4 device px per art px,
+    recolored as the saved pets;
+  - the panel and Retry/Exit.
+- **2-player result** (`Battle/`):
+  - `BattleHalfFrame` makes two 360×390 pt halves; the top one is
+    rotated 180°.
+  - `BattleResultHalfView` shows, per half, one of:
+    - YOU WIN (`banner_win`, title) under 16 confetti pieces;
+    - YOU LOSE (`banner_lose`, title_sad, soft blue);
+    - the DRAW plate (`draw_plate`, title_plate).
+
+    Each drops in.
+  - `BattleStatsView`:
+    - the statsDim (78 %);
+    - a `BattleStatsPanel` per half: the `stats_card`, a WIN / LOSE /
+      DRAW title plate, and rows every 42 pt (label left, stat_value
+      right) with dotted dividers;
+    - the night center strip at y 374, edged in ink with a panelRim
+      line. It runs full-bleed past the grid, so wider screens are
+      covered too.
+    - Rematch sits on the strip, and there's a Home button at each
+      player's right (the top one rotated).
+- **Transition** (`Flow/SceneTransition`, `PawIris`, `TransitionTimeline`):
+  - It draws three stencil layers:
+    1. `paw_mask` writes stencil bit 128 where its alpha passes 0.5
+       (`Game/UI/StencilWrite`);
+    2. the dark fill draws outside that hole (`Game/UI/StencilOutside`);
+    3. the same paw at 1.06× in gold draws outside it too, as the rim.
+  - The paw's pivot (its main pad) sits on the screen center.
+  - Timing: the hole closes from 24× to 0 in 0.45 s (inCubic), holds
+    0.1 s while the scene swaps, then opens in 0.45 s (outCubic).
+  - The time step is capped at 1/30 s, so a scene-load hitch can't skip
+    the opening.
+
+Every cartoon sprite in the bundle is in use. In the kept pixel `picker`
+sheet, only the `swatch_<species>_<color>` fills are used; its old swatch
+frames and shape tiles are leftovers.
 
 ## Working in parallel with debugging and tuning
 
@@ -405,8 +655,13 @@ customization `stage_*` alternatives are in the sheets but unused for now.
 
 ## Open questions
 
-- Pixel scaling approach: non-integer point filtering vs. Pixel Perfect
-  Camera with crop/pad (Phase 2).
+- In-game pixel scaling: non-integer point filtering vs. Pixel Perfect
+  Camera with crop/pad (Phase 2). The screens already answer this for
+  their pixel pets: they round to whole screen pixels per device
+  (`PixelSnap`).
+- The text outline and shadow factors (`TextStyleMaterials`) are derived
+  from TMP's shader math. Check them on a real phone against the guide's
+  text-token cards.
 - Whether bubbles get a face/expression (cute but busy) or only the
   accessibility glyph.
 - Whether background themes switch per level range or per curated

@@ -6,7 +6,6 @@ namespace Game.UI
     {
         public string Name;
         public RectInt Track;
-        public int SegmentWidth;
         public string[] Labels;
     }
 }

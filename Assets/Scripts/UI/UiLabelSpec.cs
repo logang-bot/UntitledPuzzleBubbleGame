@@ -4,7 +4,7 @@ namespace Game.UI
     {
         public string Name;
         public string Text;
-        public UiTextStyle Style;
+        public TextStyle Style;
         public UiPlacement Placement;
     }
 }

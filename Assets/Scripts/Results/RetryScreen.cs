@@ -1,4 +1,6 @@
 using Game.Art;
+using Game.Menu;
+using Game.Motion;
 using Game.Pets;
 using Game.UI;
 using UnityEngine;
@@ -6,31 +8,34 @@ using UnityEngine;
 namespace Game.Results
 {
     /// <summary>
-    /// Game-over screen, shown after the knock-out hold and the paw iris:
-    /// flat Night 0 background, "KNOCKED OUT", the napping cat and dog
-    /// (recolored as the player's saved pets), the level/score panel, then
-    /// Retry and Exit.
+    /// Game-over screen, shown after the knock-out hold and the paw iris: the
+    /// dusk sky with stars, "KNOCKED OUT", the pixel napping cat and dog
+    /// (recolored as the player's saved pets, 4 device px per art px) on the
+    /// cartoon nap blanket, then the level/score panel and Retry/Exit popping in.
     /// </summary>
     public class RetryScreen
     {
-        private static readonly RectInt NapRect = new RectInt(15, 112, 240, 150);
+        private const int NapDevicePixels = 4;
+        private static readonly RectInt TitleRect = new RectInt(30, 58, 300, 44);
+        private static readonly RectInt SubtitleRect = new RectInt(30, 104, 300, 18);
+        private static readonly Vector2 BlanketPivot = new Vector2(177f, 329f);
+        private static readonly Vector2 NapTopLeft = new Vector2(20f, 156f);
 
         private readonly GameObject _root;
         private readonly ResultPanelView _panel;
+        private readonly MotionPlayer _buttons;
         private readonly Material _fur;
 
         public RetryScreen(MenuUiFactory ui, RectTransform canvas, ResultButtonsSpec buttons)
         {
             var root = RuntimeUi.CreateRect(canvas, "RetryScreen", UiPlacement.Fill());
             var layers = NativeStage.Create(root);
-            ui.Fill(layers.Background, "NightFill", MenuPalette.Night0);
-            ui.CenteredLabel(layers.Stage, "KNOCKED OUT", new LabelLine(38, ui.Styles.Title));
-            ui.CenteredLabel(layers.Stage, "THE PETS NEED A NAP", new LabelLine(63, ui.Styles.Small.WithColor(MenuPalette.Stone)));
-            var nap = ui.AnimatedSprite(layers.Stage, "retry_nap", NapRect);
-            _fur = FurRecolor.CreateInstance(ui.Art.FurRecolorMaterial);
-            nap.GetComponent<UnityEngine.UI.Image>().material = _fur;
+            DuskBackdrop.Build(ui, layers.Background);
+            ui.LabelIn(layers.Stage, TitleRect, ("KNOCKED OUT", TextStyles.TitleSad));
+            ui.LabelIn(layers.Stage, SubtitleRect, ("THE PETS NEED A NAP", TextStyles.SmallLabel));
+            _fur = BuildNap(ui, layers.Stage);
             _panel = new ResultPanelView(ui, layers.Stage);
-            ResultButtons.Spawn(ui, layers.Stage, buttons);
+            _buttons = ResultButtons.Spawn(ui, layers.Stage, buttons);
             _root = root.gameObject;
             Hide();
         }
@@ -38,11 +43,21 @@ namespace Game.Results
         public void Show(PetAppearanceCatalog catalog, (int Level, int Score) result)
         {
             ApplySavedFur(catalog);
-            _panel.Show(result.Level, result.Score);
             _root.SetActive(true);
+            _panel.Show(result.Level, result.Score);
+            _buttons.Play();
         }
 
         public void Hide() => _root.SetActive(false);
+
+        private static Material BuildNap(MenuUiFactory ui, RectTransform stage)
+        {
+            ui.PivotSprite(stage, "stage_nap", BlanketPivot);
+            var nap = ui.PixelSprite(stage, "retry_nap", new PixelPlacement(NapTopLeft, NapDevicePixels));
+            nap.material = FurRecolor.CreateInstance(ui.Art.FurRecolorMaterial);
+            nap.gameObject.AddComponent<SpriteFrameAnimator>().Play(ui.Art.Find("retry_nap"));
+            return nap.material;
+        }
 
         private void ApplySavedFur(PetAppearanceCatalog catalog)
         {

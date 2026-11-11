@@ -5,29 +5,27 @@ namespace Game.Art
 {
     /// <summary>
     /// Single entry point the screens use to reach the menu art: sprite
-    /// animations by legend id, the two pixel fonts and the fur-recolor
-    /// material. See docs/features/art/overview.md.
+    /// animations by legend id (pixel pets and cartoon UI), the TMP menu
+    /// fonts and the fur-recolor material. See docs/features/art/overview.md.
     /// </summary>
     [CreateAssetMenu(menuName = "Game/Menu Art Library")]
     public class MenuArtLibrary : ScriptableObject
     {
-        public Font CaptionFont => captionFont;
-        public Font SmallFont => smallFont;
-        public Material FurRecolorMaterial => furRecolorMaterial;
+        public MenuArtFonts Fonts => fonts;
+        public MenuArtMaterials Materials => materials;
+        public Material FurRecolorMaterial => materials.FurRecolor;
 
         [SerializeField] private SpriteSheetIndex[] sheets = new SpriteSheetIndex[0];
-        [SerializeField] private Font captionFont;
-        [SerializeField] private Font smallFont;
-        [SerializeField] private Material furRecolorMaterial;
+        [SerializeField] private MenuArtFonts fonts;
+        [SerializeField] private MenuArtMaterials materials;
 
         private Dictionary<string, SpriteAnimEntry> _byId;
 
-        public void Configure(SpriteSheetIndex[] newSheets, MenuArtFonts fonts, Material furMaterial)
+        public void Configure(SpriteSheetIndex[] newSheets, MenuArtFonts newFonts, MenuArtMaterials newMaterials)
         {
             sheets = newSheets;
-            captionFont = fonts.Caption;
-            smallFont = fonts.Small;
-            furRecolorMaterial = furMaterial;
+            fonts = newFonts;
+            materials = newMaterials;
             _byId = null;
         }
 

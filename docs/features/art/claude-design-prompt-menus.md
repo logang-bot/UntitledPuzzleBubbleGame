@@ -1,5 +1,10 @@
 # Claude Design prompt — Art Phase 1b (pre-game screens and result overlays)
 
+> **Superseded for the screens.** The UI now follows the vector cartoon
+> guide; see [`claude-design-prompt-menus-cartoon.md`](claude-design-prompt-menus-cartoon.md).
+> This prompt is kept because the pixel pets it produced (portraits,
+> floaters, Retry nap, swatch fills) are still used.
+
 Paste everything below the line into Claude Design. See `overview.md`
 ("Art direction B") for why these screens use a different style from the
 board. Run it **after** the in-game prompt (`claude-design-prompt.md`), and

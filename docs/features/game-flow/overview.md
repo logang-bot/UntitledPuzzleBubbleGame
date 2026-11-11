@@ -1,9 +1,9 @@
 # Game Flow and Pet Customization
 
-**Status: implemented, with the final screen art** (Phase 4 in
-`../../ROADMAP.md`). The art comes from Art Phases 1b and 6b in
-[`../art/overview.md`](../art/overview.md); see its "Screens: as built"
-section.
+**Status: implemented** (Phase 4 in `../../ROADMAP.md`). Every screen
+uses the vector cartoon art with pixel-art pets.
+
+See "Screens: as built" in [`../art/overview.md`](../art/overview.md).
 
 ## Screen flow
 
@@ -19,9 +19,13 @@ section.
    └─────────────────────────┴──────(Menu / Exit)───────┴────┘
 ```
 
-Every scene change plays the paw-print iris (`Flow/SceneTransition`): it
-closes in 0.5 s, the scene swaps on the fully dark frame, then it opens
-in 0.5 s, with input blocked throughout. The first screen that starts
+Every scene change plays the paw-print iris (`Flow/SceneTransition`):
+1. a paw-shaped hole with a gold rim shrinks onto the screen center in
+   0.45 s;
+2. the scene swaps while the screen is dark, during a 0.1 s hold;
+3. the hole grows back in 0.45 s.
+
+Input is blocked throughout. The first screen that starts
 installs it (`SceneTransition.Install`) and it persists across loads.
 A scene opened directly in the editor without a `MenuArtLibrary` falls
 back to instant swaps.
@@ -29,10 +33,10 @@ back to instant swaps.
 | Scene | Controller | Notes |
 |---|---|---|
 | `MainMenu.unity` | `Gameplay/MainMenuController` | Space backdrop with drifting cosmos and pets, logo, 4 buttons. Continue is disabled until a solo run exists. |
-| `PetCustomization.unity` | `Pets/PetCustomizationController` | Two steps: the aimer, then the firer. |
+| `PetCustomization.unity` | `Pets/PetCustomizationController` | Dusk sky with stars. Two steps: the aimer, then the firer. |
 | `Game.unity` (was `SampleScene`) | `GameStateManager`, `LevelResultScreen` | Solo play. Victory and game over, see below. |
 | `BattleMode.unity` | `Battle/BattleMatchController`, `BattleResultScreen` | 2-player result banners, then stats. |
-| `SettingsMenu.unity` | `Gameplay/SettingsMenuController` | Landing-animation toggle. |
+| `SettingsMenu.unity` | `Gameplay/SettingsMenuController` | Dimmed space backdrop, one panel with the landing-animation toggle. |
 
 Scene names live in `Flow/SceneNames`. The build order is MainMenu,
 PetCustomization, Game, BattleMode, SettingsMenu.
@@ -57,7 +61,9 @@ PetCustomization, Game, BattleMode, SettingsMenu.
   - **Back** on step 2 returns to step 1 and keeps the edits. Back on
     step 1 returns to the menu without saving.
   - Picking a fur, a shape or the role makes the portrait hop (its happy
-    animation).
+    animation). The picked swatch or shape slot also pops.
+  - The name field shows the name in capitals, as in the design. The
+    name is saved as typed.
   - Re-entering customization shows the previously saved pets and aimer.
 - **Continue** loads the Game scene directly. `GameBoard` has
   `startAtSavedSoloLevel` ticked in `Game.unity` only, so it opens at
@@ -78,14 +84,18 @@ including after a game over.
 `OnLevelLost` when the ceiling reaches the shooter line.
 `LevelResultScreen` shows the results on its own overlay canvas:
 
-- **Victory:** the board under a 78 % dim, with:
-  - fireworks, confetti and lanterns;
-  - a "LEVEL COMPLETE" banner and a level/score panel;
-  - **Continue** (next level) and **Menu**.
+- **Victory:** the board under a 72 % dim, with:
+  - fireworks, confetti and rising lanterns;
+  - a "LEVEL COMPLETE" banner that drops in, then the level/score panel
+    pops in;
+  - **Continue** (next level) and **Menu**, which pop in with the panel.
 - **Game over:**
   1. The knocked-out board stays visible for 3 s with input blocked.
-  2. The paw iris shows the **Retry screen**: "KNOCKED OUT", the napping
-     cat and dog in the saved pets' colors, and the level/score panel.
+  2. The paw iris shows the **Retry screen**:
+     - the dusk sky and "KNOCKED OUT";
+     - the pixel cat and dog napping on a cartoon blanket, in the saved
+       pets' colors;
+     - the level/score panel.
   3. **Retry** irises back to the same level with the score reset.
      **Exit** goes to the menu.
 
@@ -93,8 +103,9 @@ including after a game over.
 
 `BattleResultScreen`, also on its own overlay canvas:
 
-1. Each half shows YOU WIN (with confetti), YOU LOSE or DRAW for 2.5 s.
-   Player 2's half is on top, rotated 180°.
+1. Each half shows a banner that drops in: YOU WIN (gold, with
+   confetti), YOU LOSE (soft blue), or the DRAW plate. It stays for
+   2.5 s. Player 2's half is on top, rotated 180°.
 2. Then the board dims and each player gets a stats card:
    - score, bubbles popped, best chain (most bubbles cleared by one
      shot) and shots;
@@ -140,19 +151,32 @@ index valid if the catalog shrinks.
 
 ## UI construction
 
-The screens build their uGUI at runtime from the Claude Design sheets:
+The screens build their uGUI at runtime from the Claude Design sheets,
+on a 360×780 pt canvas (`UI/MenuCanvas`, `UI/NativeStage`):
 
-- `UI/MenuUiFactory`: skinned buttons, sprites, labels, plates and the
-  name field.
+- `UI/MenuUiFactory` builds:
+  - cartoon sprites, 9-slices, tiled sprites and full-screen backdrops;
+  - pixel-art sprites kept on whole screen pixels (`PixelSprite`);
+  - TMP labels in the guide's text styles (`UI/Text/TextStyles`);
+  - skinned buttons, plates and the name field.
 - `UI/SegmentedToggle`: the CAT/DOG and BOUNCE/SQUASH toggles.
+- `Motion/MotionPlayer` plays the guide's motion spec (`MenuMotions`) on
+  any rect.
 - Each screen's views:
-  - customization: `PetPanelView`, `SwatchRowView`, `ShapePickerView`,
-    `PortraitView`;
-  - results: `VictoryOverlay`, `RetryScreen`, `BattleStatsView`.
+  - main menu: `SpaceBackdrop`, `StarField`, `CosmosSpawner`,
+    `FloaterSpawner`;
+  - customization: `DuskBackdrop`, `CustomizationHeader`,
+    `PetPanelView`, `SwatchRowView`, `ShapePickerView`, `PortraitView`;
+  - results: `VictoryOverlay`, `RetryScreen`, `ResultPanelView`,
+    `ResultButtons`, `BannerView`, and the particles `ConfettiField`,
+    `FireworkShow` and `LanternField`;
+  - 2-player: `BattleResultHalfView`, `BattleStatsView`,
+    `BattleStatsPanel`;
+  - transition: `PawIris`.
 
 `UI/RuntimeUi` remains the unskinned primitive layer underneath.
 Each controller has a serialized `MenuArtLibrary`; that is the only scene
-wiring.
+wiring. The details are in `../art/overview.md`, "Screens: as built".
 
 ## Open questions
 

@@ -1,0 +1,23 @@
+{
+ "sheet": "transition",
+ "scale": 3,
+ "width": 320,
+ "height": 305,
+ "sprites": [
+  {
+   "id": "paw_mask",
+   "name": "Paw iris mask",
+   "x": 4,
+   "y": 4,
+   "frameW": 312,
+   "frameH": 297,
+   "frames": 1,
+   "stepX": 316,
+   "fps": 0,
+   "pivot": "custom",
+   "pivotX": 156,
+   "pivotY": 225,
+   "note": "One shape, about 100 pt tall, pivot on the main pad so the hole closes on the screen center. Engine scales it as a mask; rim = same shape ×1.06 in transitionRim"
+  }
+ ]
+}

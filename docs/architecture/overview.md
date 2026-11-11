@@ -172,16 +172,37 @@ public API beyond the one additive camera/viewport extension.
   `Scripts/Grid/`, `Scripts/Shooter/`, `Scripts/Gameplay/`,
   `Scripts/Superpowers/`), under a single `Game` assembly
   (`Scripts/Game.asmdef`). The front end adds:
-  - `Scripts/Flow/`: scene names and the solo-run save (Continue);
+  - `Scripts/Flow/`: scene names, the solo-run save (Continue) and the
+    paw-print scene transition;
   - `Scripts/Pets/`: pet profiles, the appearance catalog and the
     customization screen;
-  - `Scripts/UI/`: `RuntimeUi`, the shared placeholder-uGUI factory.
+  - `Scripts/Menu/`: the main menu's backdrops (space, dusk, star field,
+    cosmos, floating pets);
+  - `Scripts/Results/`: the victory and retry screens, plus their shared
+    banner, score panel, button pair and particles;
+  - `Scripts/Art/`: the menu art library, fonts, colors and fur recolor;
+  - `Scripts/Motion/`: pure easing and motion clips for the screens'
+    motion spec, plus `MotionPlayer`;
+  - `Scripts/UI/`: `RuntimeUi` (plain uGUI primitives) and the skinned
+    menu kit on top of it: `MenuUiFactory`, buttons, toggle, name field,
+    `UI/Text/` text styles, pixel snapping, and the canvas and stage
+    setup;
+  - `Scripts/Editor/Art/`: the Tools ▸ Art ▸ Import Menu Sheets pipeline.
 
-  See `features/game-flow/overview.md`.
+  See `features/game-flow/overview.md` and `features/art/overview.md`.
 - `Tests/EditMode/` — Unity Test Framework tests for pure C# logic, under a
   `Game.EditModeTests` assembly that references `Game`. See Testing below.
 - `Prefabs/` — bubble prefab, UI prefabs, etc.
-- `Art/` — placeholder and (later) real sprites.
+- `Art/` — sprites and art data:
+  - `Art/Cartoon/`: the cartoon screen sheets (`Sheets/`, 3×), their
+    sprite indices (`Index/`) and the design spec JSONs (`Spec/`);
+  - `Art/Screens/`: the pixel pet sheets, `colorways.json` and
+    `MenuArtLibrary.asset`;
+  - `Art/Fonts/`: the TTFs, their OFL licenses and the TMP SDF assets;
+  - `Art/Shaders/`: the fur-recolor and iris stencil shaders and
+    materials.
+
+  `TextMesh Pro/` holds the TMP Essential Resources.
 - `ScriptableObjects/` — level generation difficulty configs, color
   palettes, superpower catalogs.
 - `Scenes/` — `MainMenu`, `PetCustomization`, `Game` (solo play),

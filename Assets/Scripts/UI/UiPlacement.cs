@@ -44,16 +44,6 @@ namespace Game.UI
             Position = new Vector2(native.x, -native.y)
         };
 
-        /// <summary>A full-width band whose top edge sits <paramref name="y"/> native pixels below the parent's top.</summary>
-        public static UiPlacement TopBand(int y, int height) => new UiPlacement
-        {
-            AnchorMin = TopLeftCorner,
-            AnchorMax = Vector2.one,
-            SizeDelta = new Vector2(0f, height),
-            Pivot = new Vector2(0.5f, 1f),
-            Position = new Vector2(0f, -y)
-        };
-
         /// <summary>A rect of <paramref name="size"/> centered on a native point (y down from the parent's top-left).</summary>
         public static UiPlacement CenteredAt(Vector2 nativeCenter, Vector2 size) => new UiPlacement
         {
@@ -64,10 +54,37 @@ namespace Game.UI
             Position = NativePosition(nativeCenter)
         };
 
+        /// <summary>A rect of <paramref name="size"/> whose normalized <paramref name="pivot"/> sits on a native point (y down from the parent's top-left).</summary>
+        public static UiPlacement PivotAt(Vector2 nativePoint, Vector2 size, Vector2 pivot) => new UiPlacement
+        {
+            AnchorMin = TopLeftCorner,
+            AnchorMax = TopLeftCorner,
+            SizeDelta = size,
+            Pivot = pivot,
+            Position = SmoothPosition(nativePoint)
+        };
+
         /// <summary>Converts a native y-down point to a whole-pixel anchoredPosition under a top-left anchor.</summary>
         public static Vector2 NativePosition(Vector2 nativePoint)
         {
             return new Vector2(Mathf.Round(nativePoint.x), -Mathf.Round(nativePoint.y));
+        }
+
+        /// <summary>
+        /// Like <see cref="NativePosition"/> but keeps the fraction, so drifting
+        /// sprites glide on the device pixel grid instead of stepping one art pixel at a time.
+        /// </summary>
+        public static Vector2 SmoothPosition(Vector2 nativePoint)
+        {
+            return new Vector2(nativePoint.x, -nativePoint.y);
+        }
+
+        /// <summary>Moves a rect's pivot without moving the rect, so it can scale or rotate about that point.</summary>
+        public static void MovePivot(RectTransform rect, Vector2 pivot)
+        {
+            var delta = pivot - rect.pivot;
+            rect.pivot = pivot;
+            rect.anchoredPosition += new Vector2(delta.x * rect.rect.width, delta.y * rect.rect.height);
         }
 
         public void ApplyTo(RectTransform rect)

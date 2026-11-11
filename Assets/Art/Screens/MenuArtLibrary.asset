@@ -13,18 +13,26 @@ MonoBehaviour:
   m_Name: MenuArtLibrary
   m_EditorClassIdentifier: Game::Game.Art.MenuArtLibrary
   sheets:
-  - {fileID: 11400000, guid: d79652610882d4a4ab14316e3c656558, type: 2}
   - {fileID: 11400000, guid: 9f0cf9d16d08a2d4fa85cb0494bd0048, type: 2}
   - {fileID: 11400000, guid: 7ab0d61f73358fe449a583bbfddb00ac, type: 2}
-  - {fileID: 11400000, guid: 52041ecec80f4d945b429e6a7bb12deb, type: 2}
   - {fileID: 11400000, guid: f531e12e220583a4db7d73df676c12bc, type: 2}
-  - {fileID: 11400000, guid: 850ac926a41b45b44bb9ee7a3e9f21d1, type: 2}
-  - {fileID: 11400000, guid: afe07798e834631409aa92064bb980fc, type: 2}
-  - {fileID: 11400000, guid: 4baf22b94e86eb54f9cfec6e39f82407, type: 2}
   - {fileID: 11400000, guid: f66dbcfdc50111044bc38f876eacfeb7, type: 2}
   - {fileID: 11400000, guid: 1d79a47d82540aa4583e0c49685a7426, type: 2}
-  - {fileID: 11400000, guid: acef7c80ce842ec4b9491054abd88663, type: 2}
-  - {fileID: 11400000, guid: 06ff3a63e94ad8048b77b6adb1bd8174, type: 2}
-  captionFont: {fileID: 12800000, guid: 42979f06255aa6845a10be1a9ca9d2fc, type: 3}
-  smallFont: {fileID: 12800000, guid: 79e092c6af76b05469e626c1214fe456, type: 3}
-  furRecolorMaterial: {fileID: 2100000, guid: d6d94172881d03e409723978f51588fc, type: 2}
+  - {fileID: 11400000, guid: 9df8d777b6fbbaa41a1518c5786e6681, type: 2}
+  - {fileID: 11400000, guid: 99dff3f88afd62f47b09f3af721ca630, type: 2}
+  - {fileID: 11400000, guid: 88fb459fcb9b3d542b514eb19a187507, type: 2}
+  - {fileID: 11400000, guid: c960ec49579902c46a3b683e2421302d, type: 2}
+  - {fileID: 11400000, guid: 4d394676116250b4e9d7a9336f8ce6f6, type: 2}
+  - {fileID: 11400000, guid: f82252463e7ff9246abb4794718326e9, type: 2}
+  - {fileID: 11400000, guid: bf0c710bec82bf149b0a95b803e21f2d, type: 2}
+  - {fileID: 11400000, guid: 8de9eafd2e0d04c499959a01cf09ccc8, type: 2}
+  fonts:
+    Display: {fileID: 11400000, guid: 34b025d600845a74185bc919e7a910f2, type: 2}
+    UiSemiBold: {fileID: 11400000, guid: c06df059fbee6964bb0c002130533d6a, type: 2}
+    UiBold: {fileID: 11400000, guid: bc004be18eb6afd4cb79ca396c76f012, type: 2}
+    UiExtraBold: {fileID: 11400000, guid: 3aa8d6ffc4500274eacf8712d2fb3dcd, type: 2}
+  materials:
+    FurRecolor: {fileID: 2100000, guid: d6d94172881d03e409723978f51588fc, type: 2}
+    IrisHole: {fileID: 2100000, guid: e848fd976fa43804a9f7df49d3b20049, type: 2}
+    IrisFill: {fileID: 2100000, guid: b91a5dfc94f241849909570fd4a3d04a, type: 2}
+    IrisRim: {fileID: 2100000, guid: d9036795d36fddc4b806eea00b505cc8, type: 2}

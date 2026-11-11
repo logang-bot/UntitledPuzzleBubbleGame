@@ -1,52 +1,43 @@
-using Game.Art;
-using UnityEngine;
-
 namespace Game.UI
 {
     /// <summary>
-    /// Which buttons.png frames and caption color a ButtonKind uses. Frame
-    /// order follows the legend notes (normal, pressed, disabled; the arrow
-    /// strip is left normal, left pressed, right normal, right pressed).
+    /// Which cartoon sprites and caption style a ButtonKind uses. Labelled
+    /// buttons share the disabled face; icon buttons have the glyph baked in
+    /// and no disabled state.
     /// </summary>
     public struct ButtonSkin
     {
-        public const int NoFrame = -1;
+        public const string DisabledFace = "btn_disabled_normal";
 
-        public string SpriteId;
-        public int NormalFrame;
-        public int PressedFrame;
-        public int DisabledFrame;
-        public Color CaptionColor;
-
-        public bool HasDisabledFrame => DisabledFrame != NoFrame;
+        public string NormalId;
+        public string PressedId;
+        public bool HasCaption;
+        public TextStyle Caption;
 
         public static ButtonSkin For(ButtonKind kind) => kind switch
         {
-            ButtonKind.Primary => Labelled("btn_primary", MenuPalette.Ink),
-            ButtonKind.Secondary => Labelled("btn_secondary", MenuPalette.Cream),
-            ButtonKind.Back => Icon("btn_back", 0),
-            ButtonKind.Home => Icon("btn_home", 0),
-            ButtonKind.Rematch => Icon("btn_rematch", 0),
-            ButtonKind.ArrowLeft => Icon("btn_arrow", 0),
-            _ => Icon("btn_arrow", 2)
+            ButtonKind.Primary => Labelled("btn_primary", TextStyles.ButtonPrimary),
+            ButtonKind.Secondary => Labelled("btn_secondary", TextStyles.ButtonSecondary),
+            ButtonKind.Disabled => Labelled("btn_disabled", TextStyles.ButtonDisabled),
+            ButtonKind.Back => Icon("icon_back"),
+            ButtonKind.Home => Icon("icon_home"),
+            ButtonKind.Rematch => Icon("icon_rematch"),
+            ButtonKind.ArrowLeft => Icon("arrow_left"),
+            _ => Icon("arrow_right")
         };
 
-        private static ButtonSkin Labelled(string spriteId, Color captionColor) => new ButtonSkin
+        private static ButtonSkin Labelled(string spriteId, TextStyle caption) => new ButtonSkin
         {
-            SpriteId = spriteId,
-            NormalFrame = 0,
-            PressedFrame = 1,
-            DisabledFrame = 2,
-            CaptionColor = captionColor
+            NormalId = spriteId + "_normal",
+            PressedId = spriteId + "_pressed",
+            HasCaption = true,
+            Caption = caption
         };
 
-        private static ButtonSkin Icon(string spriteId, int normalFrame) => new ButtonSkin
+        private static ButtonSkin Icon(string spriteId) => new ButtonSkin
         {
-            SpriteId = spriteId,
-            NormalFrame = normalFrame,
-            PressedFrame = normalFrame + 1,
-            DisabledFrame = NoFrame,
-            CaptionColor = MenuPalette.Cream
+            NormalId = spriteId + "_normal",
+            PressedId = spriteId + "_pressed"
         };
     }
 }

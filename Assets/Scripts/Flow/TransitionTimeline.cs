@@ -1,21 +1,29 @@
+using Game.Motion;
+using UnityEngine;
+
 namespace Game.Flow
 {
     /// <summary>
-    /// Timing of the paw-print iris: frames 0→9 at 20 fps close it (0.5 s),
-    /// the swap happens on the fully dark frame 9, then 9→0 opens it again.
+    /// Timing of the paw-print iris (motion.json paw_close / paw_open): the
+    /// hole shrinks from 24× (the pad covers the whole screen) to nothing in
+    /// 0.45 s easing in, holds shut 0.1 s while the scene swaps, then grows
+    /// back in 0.45 s easing out.
     /// </summary>
     public static class TransitionTimeline
     {
-        public const int FrameCount = 10;
-        public const float Fps = 20f;
-        public const float HalfDuration = FrameCount / Fps;
+        public const float CloseSeconds = 0.45f;
+        public const float HoldSeconds = 0.1f;
+        public const float OpenSeconds = 0.45f;
+        public const float OpenScale = 24f;
 
-        public static int ClosingFrame(float elapsed) => ClampFrame((int)(elapsed * Fps));
+        public static float ClosingScale(float elapsed)
+        {
+            return OpenScale * (1f - Ease.Apply(EaseKind.InCubic, Mathf.Clamp01(elapsed / CloseSeconds)));
+        }
 
-        public static int OpeningFrame(float elapsed) => ClampFrame(FrameCount - 1 - (int)(elapsed * Fps));
-
-        public static bool IsHalfDone(float elapsed) => elapsed >= HalfDuration;
-
-        private static int ClampFrame(int frame) => frame < 0 ? 0 : frame >= FrameCount ? FrameCount - 1 : frame;
+        public static float OpeningScale(float elapsed)
+        {
+            return OpenScale * Ease.Apply(EaseKind.OutCubic, Mathf.Clamp01(elapsed / OpenSeconds));
+        }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Game.Motion;
 using Game.UI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,41 +8,49 @@ using UnityEngine.UI;
 namespace Game.Pets
 {
     /// <summary>
-    /// The fur picker: one 26×26 swatch frame per colorway, 29 px apart,
-    /// with the colorway's fill sprite in its hole at (4, 4).
+    /// The fur picker: one 40×40 pt swatch per colorway, 40 pt apart. Each is
+    /// the colorway's pixel fill (5 device px per art px, centered) under a
+    /// cartoon ring, gold when selected; a newly picked swatch pops (swatch_pick).
     /// </summary>
     public class SwatchRowView
     {
         public event Action<int> OnPicked;
 
-        private const int Pitch = 29;
-        private const int FrameSize = 26;
-        private const int FillInset = 4;
-        private const int FillSize = 18;
+        private const int Size = 40;
+        private const int FillDevicePixels = 5;
 
         private readonly MenuUiFactory _ui;
-        private readonly List<Image> _frames = new();
+        private readonly List<Image> _rings = new();
+        private readonly List<MotionPlayer> _pops = new();
+        private int _selected = -1;
 
         public SwatchRowView(MenuUiFactory ui, RectTransform parent, SwatchRowSpec spec)
         {
             _ui = ui;
             for (var i = 0; i < spec.FillIds.Count; i++)
-                SpawnSwatch(parent, spec, i);
+                SpawnSwatch(parent, new RectInt(spec.Origin.x + i * Size, spec.Origin.y, Size, Size), spec.FillIds[i]);
         }
 
         public void Select(int index)
         {
-            for (var i = 0; i < _frames.Count; i++)
-                _frames[i].sprite = _ui.Art.Frame("swatch_frame", i == index ? 1 : 0);
+            var changed = _selected >= 0 && index != _selected;
+            _selected = index;
+            for (var i = 0; i < _rings.Count; i++)
+                _rings[i].sprite = _ui.Art.Frame(i == index ? "swatch_frame_selected" : "swatch_frame_normal", 0);
+            if (changed) _pops[index].Play();
         }
 
-        private void SpawnSwatch(RectTransform parent, SwatchRowSpec spec, int index)
+        private void SpawnSwatch(RectTransform parent, RectInt rect, string fillId)
         {
-            var frame = _ui.Sprite(parent, "swatch_frame", new RectInt(spec.Origin.x + index * Pitch, spec.Origin.y, FrameSize, FrameSize));
-            frame.raycastTarget = true;
-            frame.gameObject.AddComponent<Button>().onClick.AddListener(() => OnPicked?.Invoke(index));
-            _ui.Sprite(frame.rectTransform, spec.FillIds[index], new RectInt(FillInset, FillInset, FillSize, FillSize));
-            _frames.Add(frame);
+            var index = _rings.Count;
+            var holder = RuntimeUi.CreateRect(parent, "Swatch" + index, UiPlacement.TopLeft(rect));
+            UiPlacement.MovePivot(holder, new Vector2(0.5f, 0.5f));
+            _ui.PixelSprite(holder, fillId, new PixelPlacement(new Vector2(Size / 2f, Size / 2f), FillDevicePixels));
+            var ring = _ui.Sprite(holder, "swatch_frame_normal", new RectInt(0, 0, Size, Size));
+            ring.raycastTarget = true;
+            ring.gameObject.AddComponent<Button>().onClick.AddListener(() => OnPicked?.Invoke(index));
+            _rings.Add(ring);
+            _pops.Add(MotionPlayer.Attach(holder, MenuMotions.SwatchPick));
         }
     }
 }

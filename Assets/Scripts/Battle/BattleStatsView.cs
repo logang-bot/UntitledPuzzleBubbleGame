@@ -6,17 +6,20 @@ using UnityEngine;
 namespace Game.Battle
 {
     /// <summary>
-    /// The 2-player stats screen after the result moment: the board under a
-    /// 78 % Abyss dim, a stats card facing each player, the center bar with
-    /// Rematch, and a Home button at each player's right.
+    /// The 2-player stats screen after the result moment: the board under the
+    /// statsDim (78 %), a stats card facing each player, the night center
+    /// strip edged in ink with Rematch on it, and a Home button at each
+    /// player's right (the top one rotated with its half).
     /// </summary>
     public class BattleStatsView
     {
-        private const float DimAmount = 0.78f;
-        private static readonly RectInt CenterBarRect = new RectInt(0, 284, 270, 17);
-        private static readonly RectInt RematchRect = new RectInt(118, 271, 34, 38);
-        private static readonly RectInt BottomHomeRect = new RectInt(218, 277, 26, 30);
-        private static readonly RectInt TopHomeRect = new RectInt(26, 277, 26, 30);
+        private const int StripBleed = 200;
+        private static readonly RectInt StripRect = FullBleed(374, 32);
+        private static readonly RectInt[] StripInkEdges = { FullBleed(373, 3), FullBleed(405, 3) };
+        private static readonly RectInt StripRimLine = FullBleed(376, 2);
+        private static readonly RectInt RematchRect = new RectInt(148, 356, 64, 68);
+        private static readonly RectInt BottomHomeRect = new RectInt(296, 362, 52, 56);
+        private static readonly RectInt TopHomeRect = new RectInt(12, 362, 52, 56);
 
         private readonly GameObject _root;
         private readonly BattleStatsPanel _top;
@@ -26,10 +29,10 @@ namespace Game.Battle
         {
             var root = RuntimeUi.CreateRect(canvas, "BattleStats", UiPlacement.Fill());
             var layers = NativeStage.Create(root);
-            ui.Fill(layers.Background, "Dim", MenuPalette.AbyssDim(DimAmount));
+            ui.Fill(layers.Background, "Dim", MenuColors.StatsDim);
             _top = new BattleStatsPanel(ui, BattleHalfFrame.Create(layers.Stage, isTop: true));
             _bottom = new BattleStatsPanel(ui, BattleHalfFrame.Create(layers.Stage, isTop: false));
-            SpawnCenterBar(ui, layers.Stage);
+            SpawnStrip(layers.Stage);
             SpawnButtons(ui, layers.Stage, actions);
             _root = root.gameObject;
             Hide();
@@ -44,24 +47,30 @@ namespace Game.Battle
 
         public void Hide() => _root.SetActive(false);
 
-        private static void SpawnCenterBar(MenuUiFactory ui, RectTransform stage)
+        private static void SpawnStrip(RectTransform stage)
         {
-            var bar = RuntimeUi.CreateImage(stage, "CenterBar", UiPlacement.TopLeft(CenterBarRect));
-            bar.color = MenuPalette.Night0;
-            var edgeLength = CenterBarRect.width;
-            RuntimeUi.CreateImage(bar.rectTransform, "TopEdge", UiPlacement.TopLeft(new RectInt(0, 0, edgeLength, 1))).color = MenuPalette.GoldDark;
-            RuntimeUi.CreateImage(bar.rectTransform, "BottomEdge", UiPlacement.TopLeft(new RectInt(0, 16, edgeLength, 1))).color = MenuPalette.GoldDark;
+            Bar(stage, StripRect, MenuColors.Night);
+            foreach (var edge in StripInkEdges)
+                Bar(stage, edge, MenuColors.Ink);
+            Bar(stage, StripRimLine, MenuColors.PanelRim);
         }
+
+        private static void Bar(RectTransform stage, RectInt rect, Color color)
+        {
+            var bar = RuntimeUi.CreateImage(stage, "Strip", UiPlacement.TopLeft(rect));
+            bar.color = color;
+            bar.raycastTarget = false;
+        }
+
+        /// <summary>A horizontal band running past both sides of the 360 pt grid, so it spans wider screens too.</summary>
+        private static RectInt FullBleed(int y, int height) => new RectInt(-StripBleed, y, 360 + 2 * StripBleed, height);
 
         private static void SpawnButtons(MenuUiFactory ui, RectTransform stage, (Action Rematch, Action Home) actions)
         {
             ui.Button(stage, new UiSkinButtonSpec { Name = "RematchButton", Kind = ButtonKind.Rematch, Rect = RematchRect, OnClick = actions.Rematch });
             ui.Button(stage, new UiSkinButtonSpec { Name = "HomeButton", Kind = ButtonKind.Home, Rect = BottomHomeRect, OnClick = actions.Home });
             var topHome = ui.Button(stage, new UiSkinButtonSpec { Name = "TopHomeButton", Kind = ButtonKind.Home, Rect = TopHomeRect, OnClick = actions.Home });
-            var rect = (RectTransform)topHome.transform;
-            rect.pivot = new Vector2(0.5f, 0.5f);
-            rect.anchoredPosition += new Vector2(TopHomeRect.width / 2f, -TopHomeRect.height / 2f);
-            rect.localEulerAngles = new Vector3(0f, 0f, 180f);
+            topHome.transform.localEulerAngles = new Vector3(0f, 0f, 180f);
         }
     }
 }

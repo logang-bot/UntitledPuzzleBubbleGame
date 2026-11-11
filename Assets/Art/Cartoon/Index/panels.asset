@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ed403eb00d2854991c32c815a2285e, type: 3}
+  m_Name: panels
+  m_EditorClassIdentifier: Game::Game.Art.SpriteSheetIndex
+  entries:
+  - Id: panel
+    Frames:
+    - {fileID: -1103488084, guid: 246138dcb6757d1418c05e603e92a219, type: 3}
+    Fps: 0
+  - Id: stats_card
+    Frames:
+    - {fileID: -939389086, guid: 246138dcb6757d1418c05e603e92a219, type: 3}
+    Fps: 0
+  - Id: banner_win
+    Frames:
+    - {fileID: 2080359820, guid: 246138dcb6757d1418c05e603e92a219, type: 3}
+    Fps: 0
+  - Id: banner_lose
+    Frames:
+    - {fileID: -646265689, guid: 246138dcb6757d1418c05e603e92a219, type: 3}
+    Fps: 0
+  - Id: draw_plate
+    Frames:
+    - {fileID: 960187246, guid: 246138dcb6757d1418c05e603e92a219, type: 3}
+    Fps: 0
+  - Id: stage_nap
+    Frames:
+    - {fileID: 643326735, guid: 246138dcb6757d1418c05e603e92a219, type: 3}
+    Fps: 0
+  - Id: field_empty
+    Frames:
+    - {fileID: 109915807, guid: 246138dcb6757d1418c05e603e92a219, type: 3}
+    Fps: 0
+  - Id: field_focused
+    Frames:
+    - {fileID: 810562323, guid: 246138dcb6757d1418c05e603e92a219, type: 3}
+    Fps: 0
+  - Id: field_filled
+    Frames:
+    - {fileID: -171760606, guid: 246138dcb6757d1418c05e603e92a219, type: 3}
+    Fps: 0
+  - Id: stage_cushion
+    Frames:
+    - {fileID: -1007549477, guid: 246138dcb6757d1418c05e603e92a219, type: 3}
+    Fps: 0
+  - Id: title_plate
+    Frames:
+    - {fileID: 766530713, guid: 246138dcb6757d1418c05e603e92a219, type: 3}
+    Fps: 0
+  - Id: toggle_track
+    Frames:
+    - {fileID: 542466294, guid: 246138dcb6757d1418c05e603e92a219, type: 3}
+    Fps: 0
+  - Id: seg_on
+    Frames:
+    - {fileID: -987347539, guid: 246138dcb6757d1418c05e603e92a219, type: 3}
+    Fps: 0
+  - Id: seg_off
+    Frames:
+    - {fileID: -1603765475, guid: 246138dcb6757d1418c05e603e92a219, type: 3}
+    Fps: 0
+  - Id: stage_mat
+    Frames:
+    - {fileID: 637782043, guid: 246138dcb6757d1418c05e603e92a219, type: 3}
+    Fps: 0
+  - Id: caret
+    Frames:
+    - {fileID: 1789823742, guid: 246138dcb6757d1418c05e603e92a219, type: 3}
+    Fps: 0
+  - Id: divider
+    Frames:
+    - {fileID: -1652999161, guid: 246138dcb6757d1418c05e603e92a219, type: 3}
+    Fps: 0

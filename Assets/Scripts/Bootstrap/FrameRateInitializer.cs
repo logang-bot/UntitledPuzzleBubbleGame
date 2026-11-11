@@ -10,11 +10,19 @@ namespace Game.Bootstrap
     /// </summary>
     public class FrameRateInitializer : MonoBehaviour
     {
-        [SerializeField] private int targetFrameRate = 60;
+        private const int DefaultFrameRate = 60;
+
+        [SerializeField] private int targetFrameRate = DefaultFrameRate;
 
         private void Awake()
         {
             Application.targetFrameRate = targetFrameRate;
+        }
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        private static void ApplyDefaultBeforeFirstScene()
+        {
+            Application.targetFrameRate = DefaultFrameRate;
         }
     }
 }

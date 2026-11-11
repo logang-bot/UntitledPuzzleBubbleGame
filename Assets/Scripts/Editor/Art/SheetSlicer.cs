@@ -7,16 +7,16 @@ using UnityEngine;
 namespace Game.EditorTools.Art
 {
     /// <summary>
-    /// Applies the pixel-art import settings (Point, PPU 1, uncompressed,
-    /// no mipmaps) and the legend's sprite rects to one sheet texture.
+    /// Applies a sheet family's import settings (see SheetImportProfile; no
+    /// mipmaps either way) and the legend's sprite rects to one sheet texture.
     /// Existing sprite ids are kept so references survive a re-export.
     /// </summary>
     public static class SheetSlicer
     {
-        public static void Slice(string texturePath, SheetLegend legend)
+        public static void Slice(string texturePath, SheetLegend legend, SheetImportProfile profile)
         {
             var importer = (TextureImporter)AssetImporter.GetAtPath(texturePath);
-            ApplyPixelSettings(importer);
+            ApplySettings(importer, profile);
             var provider = CreateProvider(importer);
             var rects = SheetSpriteRects.Build(legend, ExistingIds(provider));
             provider.SetSpriteRects(rects.ToArray());
@@ -25,13 +25,13 @@ namespace Game.EditorTools.Art
             importer.SaveAndReimport();
         }
 
-        private static void ApplyPixelSettings(TextureImporter importer)
+        private static void ApplySettings(TextureImporter importer, SheetImportProfile profile)
         {
             importer.textureType = TextureImporterType.Sprite;
             importer.spriteImportMode = SpriteImportMode.Multiple;
-            importer.spritePixelsPerUnit = 1f;
-            importer.filterMode = FilterMode.Point;
-            importer.textureCompression = TextureImporterCompression.Uncompressed;
+            importer.spritePixelsPerUnit = profile.PixelsPerUnit;
+            importer.filterMode = profile.Filter;
+            importer.textureCompression = profile.Compression;
             importer.mipmapEnabled = false;
             importer.alphaIsTransparency = true;
             importer.maxTextureSize = 4096;

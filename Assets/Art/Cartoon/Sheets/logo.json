@@ -1,0 +1,53 @@
+{
+ "sheet": "logo",
+ "scale": 3,
+ "width": 1978,
+ "height": 638,
+ "sprites": [
+  {
+   "id": "logo_lockup",
+   "name": "Logo lockup",
+   "x": 4,
+   "y": 4,
+   "frameW": 840,
+   "frameH": 630,
+   "frames": 1,
+   "stepX": 844,
+   "fps": 0,
+   "pivot": "top-center",
+   "pivotX": 420,
+   "pivotY": 0,
+   "note": "Main menu: pivot top-center at (180, 52). Bob per logo_bob"
+  },
+  {
+   "id": "wordmark",
+   "name": "Wordmark (placeholder title)",
+   "x": 848,
+   "y": 4,
+   "frameW": 840,
+   "frameH": 330,
+   "frames": 1,
+   "stepX": 844,
+   "fps": 0,
+   "pivot": "top-center",
+   "pivotX": 420,
+   "pivotY": 0,
+   "note": "The only baked text. Swap when the game is named"
+  },
+  {
+   "id": "logomark",
+   "name": "Logomark",
+   "x": 1692,
+   "y": 4,
+   "frameW": 282,
+   "frameH": 282,
+   "frames": 1,
+   "stepX": 286,
+   "fps": 0,
+   "pivot": "center",
+   "pivotX": 141,
+   "pivotY": 141,
+   "note": "Paw in a bubble. App-icon source"
+  }
+ ]
+}

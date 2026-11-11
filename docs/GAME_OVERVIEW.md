@@ -19,7 +19,9 @@ mode (first variant built).
 - **Main menu:** New Game, Continue, 2 Players and Settings, over a deep
   space sky where galaxies and little cats and dogs drift by. The title
   wordmark is still a placeholder ("Untitled Pet Game").
-- **New Game** opens **pet customization**, in two steps:
+- Screens change with a paw-print iris that closes and reopens.
+- **New Game** opens **pet customization**, under a dusk sky, in two
+  steps:
   1. Choose which pet aims (cat or dog) and style it.
   2. Style the other pet, the firer.
 
@@ -131,10 +133,10 @@ See `features/battle-mode/specs/2026-09-15-simple-attack-battle-mode-design.md`.
 - **Meta progression** — no level-select map, currency, or unlocks beyond
   the superpower level-thresholds above.
 - **Monetization** — no ads or IAP.
-- **Real art** — bubbles and UI are still placeholder shapes generated in
-  code. The art pass is planned in `features/art/overview.md`: 16-bit
-  arcade art for the board, and a Celeste-inspired atmospheric style for
-  the menus and the victory/game-over screens.
+- **Real art (in-game)** — the board's bubbles and the HUD are still
+  placeholder shapes generated in code. 16-bit arcade art is planned in
+  `features/art/overview.md`. The screens around the game have real art:
+  cozy vector cartoon UI with the pixel-art pets.
 
 ## See also
 

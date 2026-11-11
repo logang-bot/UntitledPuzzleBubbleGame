@@ -1,0 +1,623 @@
+{
+ "units": "pt, deg, seconds",
+ "eases": [
+  "linear",
+  "inQuad",
+  "outQuad",
+  "inOutSine",
+  "inCubic",
+  "outCubic",
+  "outBack"
+ ],
+ "channelRules": "x, y, rot add; sx, sy, alpha multiply. const = fixed offset; sine = base + amp·sin(2π(t/period + phase)); keys = piecewise, ease named on the destination key; spin = speed·t.",
+ "entries": {
+  "floaters": {
+   "target": "system",
+   "desc": "Main-menu pet spawner using the pixel floaters fl_<species>_<shape>_<pose>_<size> from the pixel floaters sheet. Each slot repeats on its own cycle: pick species, shape, colorway, size, pose, a 90° turn, mirror and a 20 % bubble, cross the screen in a straight line, wait, pick again. Frames play at the pose fps from the pixel legend",
+   "slots": 12,
+   "cycle": [
+    34,
+    56
+   ],
+   "visibleShare": 0.82,
+   "devicePxPerArtPx": 4,
+   "sizes": {
+    "S": {
+     "speed": 9
+    },
+    "M": {
+     "speed": 15
+    },
+    "L": {
+     "speed": 23
+    }
+   },
+   "poses": [
+    "spread",
+    "swim",
+    "wave",
+    "curl",
+    "star",
+    "tumble"
+   ],
+   "turns": [
+    0,
+    90,
+    180,
+    270
+   ],
+   "bob": {
+    "amp": 3,
+    "period": 3
+   },
+   "bubbleChance": 0.2,
+   "bubbleRadius": "art size × 0.75 device px",
+   "drawOrder": "small to large, after cosmos",
+   "band": [
+    250,
+    500
+   ]
+  },
+  "pixel_happy": {
+   "target": "pixel",
+   "desc": "Customization: on selection play the pixel <pet>_happy strip once (4 frames at 10 fps), then back to <pet>_idle (6 fps)",
+   "once": "happy",
+   "then": "idle"
+  },
+  "bubble_wobble": {
+   "target": "sprite",
+   "loop": true,
+   "desc": "Float bubble jelly wobble",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "sx",
+     "kind": "sine",
+     "amp": 0.04,
+     "period": 1.2,
+     "phase": 0,
+     "base": 1
+    },
+    {
+     "part": "_root",
+     "prop": "sy",
+     "kind": "sine",
+     "amp": -0.04,
+     "period": 1.2,
+     "phase": 0,
+     "base": 1
+    }
+   ]
+  },
+  "stars_scroll": {
+   "target": "layer",
+   "desc": "space_stars scrolls left and tiles at 424 pt",
+   "speed": -6
+  },
+  "star_twinkle": {
+   "target": "sprite",
+   "loop": true,
+   "desc": "14 sparkles at fixed spots, random phase 0–1 and period 1.6–3.2 s",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "alpha",
+     "kind": "sine",
+     "amp": 0.4,
+     "period": 2.4,
+     "phase": 0,
+     "base": 0.6
+    },
+    {
+     "part": "_root",
+     "prop": "sx",
+     "kind": "sine",
+     "amp": 0.15,
+     "period": 2.4,
+     "phase": 0,
+     "base": 0.95
+    },
+    {
+     "part": "_root",
+     "prop": "sy",
+     "kind": "sine",
+     "amp": 0.15,
+     "period": 2.4,
+     "phase": 0,
+     "base": 0.95
+    }
+   ]
+  },
+  "galaxy_spin": {
+   "target": "sprite",
+   "loop": true,
+   "desc": "Galaxies rotate slowly while drifting",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "rot",
+     "kind": "spin",
+     "speed": 3
+    }
+   ]
+  },
+  "galaxy_glow": {
+   "target": "sprite",
+   "loop": true,
+   "desc": "galaxy_glow under each galaxy, scaled to 1.3× its radius",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "alpha",
+     "kind": "sine",
+     "amp": 0.2,
+     "period": 4,
+     "phase": 0,
+     "base": 0.7
+    },
+    {
+     "part": "_root",
+     "prop": "sx",
+     "kind": "sine",
+     "amp": 0.05,
+     "period": 4,
+     "phase": 0,
+     "base": 1
+    },
+    {
+     "part": "_root",
+     "prop": "sy",
+     "kind": "sine",
+     "amp": 0.05,
+     "period": 4,
+     "phase": 0,
+     "base": 1
+    }
+   ]
+  },
+  "cosmos": {
+   "target": "system",
+   "desc": "Drifting cosmos. Slot 0 = hero galaxies, slots 1–3 = small pool. Straight lines edge to edge, then a gap",
+   "slots": [
+    {
+     "cycle": 150,
+     "offset": 0.42,
+     "visibleShare": 0.94,
+     "pool": [
+      "cos_galaxy_hero",
+      "cos_galaxy_rose"
+     ],
+     "band": [
+      200,
+      420
+     ]
+    },
+    {
+     "cycle": 90,
+     "offset": 0.12,
+     "visibleShare": 0.8,
+     "pool": [
+      "planet_ringed",
+      "planet_teal",
+      "planet_rose",
+      "planet_moon",
+      "cos_galaxy_teal",
+      "comet"
+     ]
+    },
+    {
+     "cycle": 110,
+     "offset": 0.6,
+     "visibleShare": 0.8,
+     "pool": [
+      "planet_ringed",
+      "planet_teal",
+      "planet_rose",
+      "planet_moon",
+      "cos_galaxy_teal"
+     ]
+    },
+    {
+     "cycle": 75,
+     "offset": 0.86,
+     "visibleShare": 0.8,
+     "pool": [
+      "planet_moon",
+      "planet_rose",
+      "comet"
+     ]
+    }
+   ],
+   "shootingStar": {
+    "every": 6,
+    "life": 0.7,
+    "speed": 420,
+    "angle": [
+     20,
+     35
+    ]
+   }
+  },
+  "logo_bob": {
+   "target": "sprite",
+   "loop": true,
+   "desc": "Logo lockup floats",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "y",
+     "kind": "sine",
+     "amp": 4,
+     "period": 3.2,
+     "phase": 0,
+     "base": 0
+    },
+    {
+     "part": "_root",
+     "prop": "rot",
+     "kind": "sine",
+     "amp": 1.5,
+     "period": 6.4,
+     "phase": 0,
+     "base": 0
+    }
+   ]
+  },
+  "btn_press": {
+   "target": "ui",
+   "desc": "Swap to the _pressed sprite on touch down; on release scale 0.96→1",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "sx",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0.96
+      ],
+      [
+       0.14,
+       1,
+       "outBack"
+      ]
+     ]
+    },
+    {
+     "part": "_root",
+     "prop": "sy",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0.96
+      ],
+      [
+       0.14,
+       1,
+       "outBack"
+      ]
+     ]
+    }
+   ]
+  },
+  "banner_drop": {
+   "target": "ui",
+   "loop": false,
+   "dur": 0.55,
+   "desc": "Win / lose banner and draw plate enter",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "y",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       -140
+      ],
+      [
+       0.55,
+       0,
+       "outBack"
+      ]
+     ]
+    },
+    {
+     "part": "_root",
+     "prop": "sx",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0.6
+      ],
+      [
+       0.55,
+       1,
+       "outBack"
+      ]
+     ]
+    },
+    {
+     "part": "_root",
+     "prop": "sy",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0.6
+      ],
+      [
+       0.55,
+       1,
+       "outBack"
+      ]
+     ]
+    }
+   ]
+  },
+  "panel_pop": {
+   "target": "ui",
+   "loop": false,
+   "dur": 0.4,
+   "delay": 0.25,
+   "desc": "Result panels and buttons pop in after the banner",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "sx",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0.8
+      ],
+      [
+       0.4,
+       1,
+       "outBack"
+      ]
+     ]
+    },
+    {
+     "part": "_root",
+     "prop": "sy",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0.8
+      ],
+      [
+       0.4,
+       1,
+       "outBack"
+      ]
+     ]
+    },
+    {
+     "part": "_root",
+     "prop": "alpha",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0
+      ],
+      [
+       0.2,
+       1,
+       "outQuad"
+      ]
+     ]
+    }
+   ]
+  },
+  "swatch_pick": {
+   "target": "ui",
+   "loop": false,
+   "dur": 0.3,
+   "desc": "Selected swatch / shape slot pops",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "sx",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       1
+      ],
+      [
+       0.1,
+       1.15,
+       "outQuad"
+      ],
+      [
+       0.3,
+       1,
+       "outBack"
+      ]
+     ]
+    },
+    {
+     "part": "_root",
+     "prop": "sy",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       1
+      ],
+      [
+       0.1,
+       1.15,
+       "outQuad"
+      ],
+      [
+       0.3,
+       1,
+       "outBack"
+      ]
+     ]
+    }
+   ]
+  },
+  "caret_blink": {
+   "target": "ui",
+   "desc": "Caret visible for the first half of every 1.0 s",
+   "period": 1,
+   "duty": 0.5
+  },
+  "confetti": {
+   "target": "system",
+   "desc": "Victory and 2P win. 28 pieces; spin plus a fake 3D flip on sx",
+   "count": 28,
+   "fall": [
+    50,
+    90
+   ],
+   "sway": {
+    "amp": 12,
+    "period": 1.6
+   },
+   "spin": [
+    180,
+    420
+   ],
+   "flip": {
+    "period": 0.6
+   },
+   "sprites": [
+    "confetti_gold",
+    "confetti_coral",
+    "confetti_teal",
+    "confetti_violet"
+   ]
+  },
+  "fireworks": {
+   "target": "system",
+   "desc": "A burst every 0.7 s at a random spot in the top band; plays the 10 baked frames once",
+   "every": 0.7,
+   "area": [
+    40,
+    70,
+    320,
+    270
+   ],
+   "sprites": [
+    "firework_gold",
+    "firework_coral",
+    "firework_teal"
+   ],
+   "scale": [
+    0.7,
+    1.1
+   ]
+  },
+  "lanterns": {
+   "target": "system",
+   "desc": "5 lanterns rise from below the screen",
+   "count": 5,
+   "rise": [
+    18,
+    26
+   ],
+   "sway": {
+    "amp": 6,
+    "period": 3
+   },
+   "glow": {
+    "part": "glow",
+    "prop": "alpha",
+    "kind": "sine",
+    "amp": 0.2,
+    "period": 1.8,
+    "phase": 0,
+    "base": 0.8
+   }
+  },
+  "paw_close": {
+   "target": "transition",
+   "dur": 0.45,
+   "desc": "Mask scale from 24 (pad covers the whole screen) to 0 on the screen center, inCubic. Swap scenes during the 0.1 s hold",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "sx",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       24
+      ],
+      [
+       0.45,
+       0,
+       "inCubic"
+      ]
+     ]
+    },
+    {
+     "part": "_root",
+     "prop": "sy",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       24
+      ],
+      [
+       0.45,
+       0,
+       "inCubic"
+      ]
+     ]
+    }
+   ],
+   "hold": 0.1,
+   "rimScale": 1.06
+  },
+  "paw_open": {
+   "target": "transition",
+   "dur": 0.45,
+   "desc": "Reverse of paw_close, outCubic",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "sx",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0
+      ],
+      [
+       0.45,
+       24,
+       "outCubic"
+      ]
+     ]
+    },
+    {
+     "part": "_root",
+     "prop": "sy",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0
+      ],
+      [
+       0.45,
+       24,
+       "outCubic"
+      ]
+     ]
+    }
+   ],
+   "rimScale": 1.06
+  }
+ }
+}

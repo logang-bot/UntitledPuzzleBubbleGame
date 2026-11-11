@@ -1,48 +1,62 @@
 using Game.Art;
+using Game.Motion;
 using Game.UI;
 using UnityEngine;
 
 namespace Game.Results
 {
     /// <summary>
-    /// Level-complete overlay: the board shows through a flat 78 % Abyss dim,
-    /// fireworks, confetti and lanterns play, and the win banner sits over
-    /// the level/score panel with Continue and Menu. No pet, per the design.
+    /// Level-complete overlay: the board shows through the victoryDim (72 %),
+    /// lanterns rise and fireworks burst behind the win banner, which drops
+    /// in, then the level/score panel and Continue/Menu pop in, with confetti
+    /// falling over everything. No pet, per the design.
     /// </summary>
     public class VictoryOverlay
     {
-        private const float DimAmount = 0.78f;
-        private static readonly RectInt BannerRect = new RectInt(10, 112, 250, 60);
-        private static readonly RectInt BannerTextRect = new RectInt(44, 20, 162, 20);
+        private const int ConfettiCount = 28;
+        private static readonly BannerSpec Banner = new BannerSpec
+        {
+            SpriteId = "banner_win",
+            Text = "LEVEL COMPLETE",
+            Style = TextStyles.Title,
+            Rect = new RectInt(10, 132, 340, 104),
+            TextRect = new RectInt(30, 28, 280, 44)
+        };
 
         private readonly GameObject _root;
+        private readonly BannerView _banner;
         private readonly ResultPanelView _panel;
+        private readonly MotionPlayer _buttons;
 
         public VictoryOverlay(MenuUiFactory ui, RectTransform canvas, ResultButtonsSpec buttons)
         {
             var root = RuntimeUi.CreateRect(canvas, "VictoryOverlay", UiPlacement.Fill());
             var layers = NativeStage.Create(root);
-            ui.Fill(layers.Background, "Dim", MenuPalette.AbyssDim(DimAmount));
-            CelebrationParticles.Create(ui, NativeStage.CreateStageAligned(layers.Background, "Sky"), new CelebrationSpec { ConfettiCount = 26, FieldHeight = 585f, WithFireworksAndLanterns = true });
-            SpawnBanner(ui, layers.Stage);
+            BuildSky(ui, layers.Background);
+            _banner = new BannerView(ui, layers.Stage, Banner);
             _panel = new ResultPanelView(ui, layers.Stage);
-            ResultButtons.Spawn(ui, layers.Stage, buttons);
+            _buttons = ResultButtons.Spawn(ui, layers.Stage, buttons);
+            ConfettiField.Create(ui, NativeStage.CreateStageAligned(root, "ConfettiStage"), (MenuCanvas.NativeSize, ConfettiCount));
             _root = root.gameObject;
             Hide();
         }
 
         public void Show(int level, int score)
         {
-            _panel.Show(level, score);
             _root.SetActive(true);
+            _banner.Show(true);
+            _panel.Show(level, score);
+            _buttons.Play();
         }
 
         public void Hide() => _root.SetActive(false);
 
-        private static void SpawnBanner(MenuUiFactory ui, RectTransform stage)
+        private static void BuildSky(MenuUiFactory ui, RectTransform background)
         {
-            var banner = ui.Sprite(stage, "banner_win", BannerRect).rectTransform;
-            ui.Label(banner, new UiLabelSpec { Name = "Title", Text = "LEVEL COMPLETE", Style = ui.Styles.Title, Placement = UiPlacement.TopLeft(BannerTextRect) });
+            ui.Fill(background, "Dim", MenuColors.VictoryDim).raycastTarget = false;
+            var sky = NativeStage.CreateStageAligned(background, "Sky");
+            LanternField.Create(ui, sky);
+            FireworkShow.Create(ui, sky);
         }
     }
 }

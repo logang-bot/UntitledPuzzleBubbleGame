@@ -3,30 +3,31 @@ using Game.Art;
 using Game.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace Game.Flow
 {
     /// <summary>
-    /// The paw-print iris between screens. Lives across scene loads on its
-    /// own top-most canvas and swallows input while it plays. Created on
-    /// first use from the MenuArtLibrary a screen hands it; without one
-    /// (e.g. a scene opened directly in the editor) it falls back to an
-    /// instant swap. See docs/features/game-flow/overview.md.
+    /// The paw-print iris between screens (TransitionTimeline, PawIris). Lives
+    /// across scene loads on its own top-most canvas and swallows input while
+    /// it plays: it closes, runs the covered action (e.g. a scene load) once
+    /// the screen is dark, holds briefly, then opens. Created on first use from
+    /// the MenuArtLibrary a screen hands it; without one (e.g. a scene opened
+    /// directly in the editor) it falls back to an instant swap. See
+    /// docs/features/game-flow/overview.md.
     /// </summary>
     public class SceneTransition : MonoBehaviour
     {
         private const int SortingOrder = 1000;
+        private const float MaxFrameStep = 1f / 30f;
         private static SceneTransition _instance;
 
-        private SpriteAnimEntry _frames;
-        private Image _paw;
-        private GameObject _outerFill;
-        private Image _blocker;
+        private enum Phase { Idle, Closing, Holding, Opening }
+
+        private GameObject _root;
+        private PawIris _iris;
         private Action _onCovered;
+        private Phase _phase;
         private float _elapsed;
-        private bool _closing;
-        private bool _playing;
 
         public static void Install(MenuArtLibrary art)
         {
@@ -46,54 +47,57 @@ namespace Game.Flow
 
         private void Build(MenuArtLibrary art)
         {
-            _frames = art.Find("transition_paw");
             var canvas = OverlayCanvasFactory.Create("TransitionCanvas", SortingOrder);
             canvas.SetParent(transform, worldPositionStays: false);
-            _blocker = RuntimeUi.CreateImage(canvas, "InputBlocker", UiPlacement.Fill());
-            _blocker.color = Color.clear;
-            var parts = TransitionIrisBuilder.Build(canvas);
-            _paw = parts.Paw;
-            _outerFill = parts.OuterFill;
-            Show(false);
+            RuntimeUi.CreateImage(canvas, "InputBlocker", UiPlacement.Fill()).color = Color.clear;
+            _iris = new PawIris(new MenuUiFactory(art), canvas);
+            _root = canvas.gameObject;
+            _root.SetActive(false);
         }
 
         private void Play(Action onCovered)
         {
-            if (_playing) return;
+            if (_phase != Phase.Idle) return;
             _onCovered = onCovered;
-            _elapsed = 0f;
-            _closing = true;
-            _playing = true;
-            Show(true);
+            Enter(Phase.Closing);
+            _root.SetActive(true);
+            _iris.SetScale(TransitionTimeline.OpenScale);
         }
 
         private void Update()
         {
-            if (!_playing) return;
-            _elapsed += Time.unscaledDeltaTime;
-            ShowFrame(_closing ? TransitionTimeline.ClosingFrame(_elapsed) : TransitionTimeline.OpeningFrame(_elapsed));
-            if (TransitionTimeline.IsHalfDone(_elapsed)) AdvancePhase();
+            if (_phase == Phase.Idle) return;
+            _elapsed += Mathf.Min(Time.unscaledDeltaTime, MaxFrameStep);
+            if (_phase == Phase.Closing) Close();
+            else if (_phase == Phase.Holding) Hold();
+            else Open();
         }
 
-        private void ShowFrame(int frame)
+        private void Close()
         {
-            _paw.sprite = _frames.Frames[frame];
-            _outerFill.SetActive(frame >= TransitionTimeline.FrameCount - 2);
+            _iris.SetScale(TransitionTimeline.ClosingScale(_elapsed));
+            if (_elapsed < TransitionTimeline.CloseSeconds) return;
+            Enter(Phase.Holding);
+            _onCovered?.Invoke();
         }
 
-        private void AdvancePhase()
+        private void Hold()
         {
+            if (_elapsed >= TransitionTimeline.HoldSeconds) Enter(Phase.Opening);
+        }
+
+        private void Open()
+        {
+            _iris.SetScale(TransitionTimeline.OpeningScale(_elapsed));
+            if (_elapsed < TransitionTimeline.OpenSeconds) return;
+            Enter(Phase.Idle);
+            _root.SetActive(false);
+        }
+
+        private void Enter(Phase phase)
+        {
+            _phase = phase;
             _elapsed = 0f;
-            if (_closing) { _closing = false; _onCovered?.Invoke(); return; }
-            _playing = false;
-            Show(false);
-        }
-
-        private void Show(bool visible)
-        {
-            _blocker.gameObject.SetActive(visible);
-            _paw.gameObject.SetActive(visible);
-            if (!visible) _outerFill.SetActive(false);
         }
     }
 }

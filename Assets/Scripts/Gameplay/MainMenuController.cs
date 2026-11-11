@@ -1,6 +1,7 @@
 using Game.Art;
 using Game.Flow;
 using Game.Menu;
+using Game.Motion;
 using Game.Pets;
 using Game.UI;
 using UnityEngine;
@@ -20,22 +21,22 @@ namespace Game.Gameplay
         [SerializeField] private MenuArtLibrary art;
         [SerializeField] private PetAppearanceCatalog appearanceCatalog;
 
-        private static readonly RectInt LogoRect = new RectInt(67, 32, 136, 94);
-        private const int ButtonX = 50;
-        private const int FirstButtonY = 390;
-        private const int ButtonPitch = 42;
-        private static readonly Vector2Int ButtonSize = new Vector2Int(170, 36);
+        private static readonly Vector2 LogoPivot = new Vector2(180f, 52f);
+        private const int ButtonX = 66;
+        private const int FirstButtonY = 520;
+        private const int ButtonPitch = 60;
+        private static readonly Vector2Int ButtonSize = new Vector2Int(228, 52);
 
         private MenuUiFactory _ui;
 
         private void Start()
         {
             SceneTransition.Install(art);
-            PixelCanvas.Configure(canvasRect.GetComponent<Canvas>());
+            MenuCanvas.Configure(canvasRect.GetComponent<Canvas>());
             _ui = new MenuUiFactory(art);
             var layers = NativeStage.Create(canvasRect);
             SpaceBackdrop.Build(_ui, layers.Background, appearanceCatalog);
-            _ui.Sprite(layers.Stage, "logo_lockup", LogoRect);
+            MotionPlayer.AttachAndPlay(_ui.PivotSprite(layers.Stage, "logo_lockup", LogoPivot).rectTransform, MenuMotions.LogoBob);
             SpawnButtons(layers.Stage);
         }
 

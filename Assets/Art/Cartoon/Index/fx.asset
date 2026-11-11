@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ed403eb00d2854991c32c815a2285e, type: 3}
+  m_Name: fx
+  m_EditorClassIdentifier: Game::Game.Art.SpriteSheetIndex
+  entries:
+  - Id: firework_gold
+    Frames:
+    - {fileID: -365901168, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: 29459958, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: -1082538647, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: -526095868, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: 580451239, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: -1172067810, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: -1600014716, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: -396077273, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: -1546667234, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: 593903785, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    Fps: 15
+  - Id: firework_coral
+    Frames:
+    - {fileID: 1482424719, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: -107666936, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: -1619546092, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: -1907696585, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: -2140369676, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: 382633826, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: 639654417, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: 1465395859, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: -749191387, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: 1916523176, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    Fps: 15
+  - Id: firework_teal
+    Frames:
+    - {fileID: -1752055295, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: 1291786085, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: 1563964332, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: 1780973225, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: -1425814070, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: -1301913568, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: 312574309, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: -280790920, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: -1957938485, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    - {fileID: 727945262, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    Fps: 15
+  - Id: lantern_glow
+    Frames:
+    - {fileID: 1585718432, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    Fps: 0
+  - Id: lantern
+    Frames:
+    - {fileID: -562498849, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    Fps: 0
+  - Id: confetti_violet
+    Frames:
+    - {fileID: 117436218, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    Fps: 0
+  - Id: confetti_teal
+    Frames:
+    - {fileID: -463393532, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    Fps: 0
+  - Id: confetti_gold
+    Frames:
+    - {fileID: 1995351523, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    Fps: 0
+  - Id: confetti_coral
+    Frames:
+    - {fileID: 945364400, guid: 59ddaef2c7f3ad447bacd23856aa4043, type: 3}
+    Fps: 0

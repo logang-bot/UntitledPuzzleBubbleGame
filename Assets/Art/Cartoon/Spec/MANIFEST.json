@@ -1,0 +1,114 @@
+{
+ "exportedAt": "2026-11-11T19:26:17.658Z",
+ "grid": [
+  360,
+  780
+ ],
+ "scale": 3,
+ "files": [
+  {
+   "path": "Sheets/buttons.png",
+   "width": 1852,
+   "height": 384,
+   "sprites": 12,
+   "bytes": 144081
+  },
+  {
+   "path": "Sheets/buttons.json",
+   "bytes": 4150
+  },
+  {
+   "path": "Sheets/panels.png",
+   "width": 1896,
+   "height": 1113,
+   "sprites": 17,
+   "bytes": 311382
+  },
+  {
+   "path": "Sheets/panels.json",
+   "bytes": 5616
+  },
+  {
+   "path": "Sheets/picker.png",
+   "width": 1676,
+   "height": 146,
+   "sprites": 16,
+   "bytes": 39989
+  },
+  {
+   "path": "Sheets/picker.json",
+   "bytes": 5268
+  },
+  {
+   "path": "Sheets/space.png",
+   "width": 3832,
+   "height": 2850,
+   "sprites": 5,
+   "bytes": 3709035
+  },
+  {
+   "path": "Sheets/space.json",
+   "bytes": 1531
+  },
+  {
+   "path": "Sheets/cosmos.png",
+   "width": 1846,
+   "height": 960,
+   "sprites": 10,
+   "bytes": 966926
+  },
+  {
+   "path": "Sheets/cosmos.json",
+   "bytes": 2807
+  },
+  {
+   "path": "Sheets/fx.png",
+   "width": 3524,
+   "height": 1262,
+   "sprites": 9,
+   "bytes": 542910
+  },
+  {
+   "path": "Sheets/fx.json",
+   "bytes": 2610
+  },
+  {
+   "path": "Sheets/transition.png",
+   "width": 320,
+   "height": 305,
+   "sprites": 1,
+   "bytes": 11142
+  },
+  {
+   "path": "Sheets/transition.json",
+   "bytes": 482
+  },
+  {
+   "path": "Sheets/logo.png",
+   "width": 1978,
+   "height": 638,
+   "sprites": 3,
+   "bytes": 345776
+  },
+  {
+   "path": "Sheets/logo.json",
+   "bytes": 942
+  },
+  {
+   "path": "motion.json",
+   "bytes": 9954
+  },
+  {
+   "path": "tokens.json",
+   "bytes": 6132
+  },
+  {
+   "path": "layout.json",
+   "bytes": 23211
+  },
+  {
+   "path": "fonts.txt",
+   "bytes": 191
+  }
+ ]
+}

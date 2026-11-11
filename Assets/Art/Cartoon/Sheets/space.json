@@ -1,0 +1,83 @@
+{
+ "sheet": "space",
+ "scale": 3,
+ "width": 3832,
+ "height": 2850,
+ "sprites": [
+  {
+   "id": "space_deep",
+   "name": "Deep space",
+   "x": 4,
+   "y": 4,
+   "frameW": 1272,
+   "frameH": 2532,
+   "frames": 1,
+   "stepX": 1276,
+   "fps": 0,
+   "pivot": "top-left",
+   "pivotX": 0,
+   "pivotY": 0,
+   "note": "Static. 424×844 pt incl. 32 pt bleed; place at (−32, −32)"
+  },
+  {
+   "id": "space_stars",
+   "name": "Star layer",
+   "x": 1280,
+   "y": 4,
+   "frameW": 1272,
+   "frameH": 2532,
+   "frames": 1,
+   "stepX": 1276,
+   "fps": 0,
+   "pivot": "top-left",
+   "pivotX": 0,
+   "pivotY": 0,
+   "note": "Seamless in x (424 pt period). Scroll per spec stars_scroll"
+  },
+  {
+   "id": "bg_dusk",
+   "name": "Dusk backdrop",
+   "x": 2556,
+   "y": 4,
+   "frameW": 1272,
+   "frameH": 2532,
+   "frames": 1,
+   "stepX": 1276,
+   "fps": 0,
+   "pivot": "top-left",
+   "pivotX": 0,
+   "pivotY": 0,
+   "note": "Static. Customize and Retry. Place at (−32, −32)"
+  },
+  {
+   "id": "bubble",
+   "name": "Float bubble",
+   "x": 4,
+   "y": 2540,
+   "frameW": 306,
+   "frameH": 306,
+   "frames": 1,
+   "stepX": 310,
+   "fps": 0,
+   "pivot": "center",
+   "pivotX": 153,
+   "pivotY": 153,
+   "note": "Radius 48 pt. Scale to the floater; wobble per bubble_wobble"
+  },
+  {
+   "id": "sparkle",
+   "name": "Twinkle star",
+   "x": 314,
+   "y": 2540,
+   "frameW": 72,
+   "frameH": 72,
+   "frames": 1,
+   "stepX": 76,
+   "fps": 0,
+   "pivot": "center",
+   "pivotX": 36,
+   "pivotY": 36,
+   "note": "Spec star_twinkle: alpha and scale only"
+  }
+ ]
+}

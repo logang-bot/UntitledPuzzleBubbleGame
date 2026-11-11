@@ -28,12 +28,12 @@ split-screen 2-player battle mode.
 - `features/battle-mode/` — first variant **fully implemented** (Phase 3).
   See `features/battle-mode/specs/` for the design spec and
   `features/battle-mode/plans/` for the implementation plan.
-- `features/game-flow/` — implemented with the final screen art
-  (Phase 4). The scene flow (main menu, two-step pet customization,
-  game, results), New Game vs. Continue, and saved data.
-- `features/art/` — screens done, in-game art planned. The art roadmap
-  (two pixel-art directions), the Claude Design prompts, and how the
-  screen art is imported and built.
+- `features/game-flow/` — implemented (Phase 4). The scene flow (main
+  menu, two-step pet customization, game, results), New Game vs.
+  Continue, and saved data, on the cartoon screen art.
+- `features/art/` — screens done (vector cartoon UI with pixel-art
+  pets), in-game art planned. The art roadmap, the Claude
+  Design prompts, and how the screen art is imported and built.
 
 ## How these docs work
 
