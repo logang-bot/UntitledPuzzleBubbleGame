@@ -1,5 +1,12 @@
 # HUD + Level-Complete/Game-Over Flow
 
+> **Updated by the game screen art (2026-11-12):** the HUD (score, shots,
+> level) and the superpower buttons now live in the launcher deck
+> (`Scripts/Deck`: `HudView`, `SuperpowerButtonsView`), and the shot
+> countdown is the timer pips plus the hurry burst (`TimerPipsView`,
+> `HurryBurstView`). `HudDisplay`, `ShotTimerDisplay` and `SuperpowerHud`
+> were removed. See `../art/overview.md` ("Game screen: as built").
+
 ## Decision
 
 - **HUD placement**: a bottom bar grouped with the existing fire/rotate-zone

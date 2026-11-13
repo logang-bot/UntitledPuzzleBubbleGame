@@ -14,9 +14,15 @@ namespace Game.Grid
             return boardWidth * screenHeight / (2f * screenWidth);
         }
 
-        public static int RowsForWorldHeight(float worldHeight, float cellWidth)
+        /// <summary>
+        /// Whole rows that fit in a band of the given height: row r spans
+        /// r * rowHeight down to r * rowHeight + cellWidth, so the first row
+        /// takes a full cell and each further row adds one row height.
+        /// </summary>
+        public static int RowsFitting(float bandHeight, float cellWidth)
         {
-            return Mathf.FloorToInt(worldHeight / HexGridMath.RowHeight(cellWidth));
+            var extraRows = Mathf.FloorToInt((bandHeight - cellWidth) / HexGridMath.RowHeight(cellWidth));
+            return Mathf.Max(0, extraRows + 1);
         }
     }
 }

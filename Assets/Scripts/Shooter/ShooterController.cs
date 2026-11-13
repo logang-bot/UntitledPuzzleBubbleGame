@@ -1,5 +1,5 @@
 using System;
-using System.Collections.Generic;
+using Game.BoardArt;
 using Game.Grid;
 using UnityEngine;
 
@@ -8,52 +8,51 @@ namespace Game.Shooter
     /// <summary>
     /// Fixed-speed rotating gun (arcade Puzzle Bobble-style): holding the
     /// rotate zones turns the aim angle at a constant rate; the fire zone
-    /// raises OnFireRequested, consumed by FiredBubbleController. The preview
-    /// line is always the raw, occupancy-unaware kinematic path - a direct,
-    /// zero-lag function of the aim angle - and relies on opaque bubble
-    /// sprites (sortingOrder above the line's) to visually occlude it where a
-    /// shot would actually stop. LandingIndicator separately shows the
-    /// occupancy-truncated, fire-time-accurate landing cell. See
+    /// raises OnFireRequested, consumed by FiredBubbleController. The aim
+    /// dots follow the occupancy-truncated path, so they end where the shot
+    /// would stop (the guide has no separate landing ghost). See
     /// docs/features/core-gameplay/shooter-and-trajectory.md.
     /// </summary>
-    [RequireComponent(typeof(LineRenderer))]
     public class ShooterController : MonoBehaviour
     {
-        [SerializeField] private GameBoard gameBoard;
-        [SerializeField] private float maxAimAngleDegrees = 60f;
-        [SerializeField] private float rotateSpeedDegreesPerSecond = 25f;
-        [SerializeField] private int maxBounces = 10;
-        [SerializeField] private float lineWidth = 0.08f;
-        [SerializeField] private Material lineMaterial;
-        [SerializeField] private HoldInputZone rotateLeftZone;
-        [SerializeField] private HoldInputZone rotateRightZone;
-        [SerializeField] private HoldInputZone fireZone;
-
         public event Action<Vector2, float> OnFireRequested;
         public int MaxBounces => maxBounces;
+        public float AimAngleDegrees => _aimAngleDegrees;
+        public int RotateDirection { get; private set; }
+        public bool IsFirePressed => fireZone.IsPressed;
 
         // Blocks every fire path (manual press and external auto-fire timers
         // calling Fire()) while aiming stays live - kept separate from
         // `enabled`, which game-over/match-end flows already own.
         public bool IsFireLocked { get; set; }
 
-        private LineRenderer _lineRenderer;
+        [SerializeField] private GameBoard gameBoard;
+        [SerializeField] private BoardView boardView;
+        [SerializeField] private float maxAimAngleDegrees = 60f;
+        [SerializeField] private float rotateSpeedDegreesPerSecond = 25f;
+        [SerializeField] private int maxBounces = 10;
+        [SerializeField] private HoldInputZone rotateLeftZone;
+        [SerializeField] private HoldInputZone rotateRightZone;
+        [SerializeField] private HoldInputZone fireZone;
+
         private TrajectoryPredictor _predictor;
-        private LandingIndicator _landingIndicator;
+        private AimDotsView _aimDots;
         private Vector2 _shooterOrigin;
         private float _aimAngleDegrees;
         private bool _firePressedLastFrame;
 
-        private void Awake()
+        public void BindControls(HoldInputZone rotateLeft, HoldInputZone rotateRight, HoldInputZone fire)
         {
-            ConfigureLineRenderer();
+            rotateLeftZone = rotateLeft;
+            rotateRightZone = rotateRight;
+            fireZone = fire;
         }
 
         private void Start()
         {
             _shooterOrigin = gameBoard.ShooterOrigin;
             RebuildPredictor();
-            _landingIndicator = new LandingIndicator();
+            _aimDots = AimDotsView.Create(transform, boardView.Art, gameBoard.Frame.WorldPerPt);
             gameBoard.OnRowPushedDown += HandleBoardChanged;
             gameBoard.OnLevelLoaded += HandleBoardChanged;
         }
@@ -62,7 +61,6 @@ namespace Game.Shooter
         {
             gameBoard.OnRowPushedDown -= HandleBoardChanged;
             gameBoard.OnLevelLoaded -= HandleBoardChanged;
-            _landingIndicator.Destroy();
         }
 
         // gameBoard.Bounds.CeilingY advances with the wall (see
@@ -84,24 +82,10 @@ namespace Game.Shooter
             DrawPreview();
         }
 
-        /// <summary>
-        /// sortingOrder -1 puts the line behind bubbles (implicit order 0,
-        /// same convention as CeilingRenderer), so opaque bubble sprites
-        /// occlude it exactly where a shot would stop, with no truncation math.
-        /// </summary>
-        private void ConfigureLineRenderer()
-        {
-            _lineRenderer = GetComponent<LineRenderer>();
-            _lineRenderer.material = lineMaterial != null ? lineMaterial : new Material(Shader.Find("Universal Render Pipeline/Unlit"));
-            _lineRenderer.widthMultiplier = lineWidth;
-            _lineRenderer.useWorldSpace = true;
-            _lineRenderer.sortingOrder = -1;
-        }
-
         private void UpdateAimAngle()
         {
-            var direction = (rotateRightZone.IsPressed ? 1 : 0) - (rotateLeftZone.IsPressed ? 1 : 0);
-            _aimAngleDegrees += direction * rotateSpeedDegreesPerSecond * Time.deltaTime;
+            RotateDirection = (rotateRightZone.IsPressed ? 1 : 0) - (rotateLeftZone.IsPressed ? 1 : 0);
+            _aimAngleDegrees += RotateDirection * rotateSpeedDegreesPerSecond * Time.deltaTime;
             _aimAngleDegrees = Mathf.Clamp(_aimAngleDegrees, -maxAimAngleDegrees, maxAimAngleDegrees);
         }
 
@@ -121,24 +105,13 @@ namespace Game.Shooter
         private void DrawPreview()
         {
             var rawPoints = _predictor.Simulate(_shooterOrigin, _aimAngleDegrees, maxBounces);
-            SetLineRendererPoints(rawPoints);
-            UpdateLandingIndicator(rawPoints);
-        }
-
-        private void SetLineRendererPoints(List<Vector2> points)
-        {
-            _lineRenderer.positionCount = points.Count;
-            for (var i = 0; i < points.Count; i++)
-                _lineRenderer.SetPosition(i, points[i]);
-        }
-
-        private void UpdateLandingIndicator(List<Vector2> rawPoints)
-        {
             var board = (gameBoard.Grid, Origin: (Vector2)gameBoard.transform.position);
-            var truncated = OccupancyCollision.Truncate(rawPoints, board, gameBoard.CellWidth);
-            var landingCell = BubbleLandingResolver.ResolveLandingCell(board, truncated.Points[^1], truncated.StruckCell, gameBoard.CellWidth);
-            if (landingCell == null) { _landingIndicator.Hide(); return; }
-            _landingIndicator.Show(gameBoard.Grid.GetWorldPosition(landingCell.Value.Row, landingCell.Value.Col) + board.Origin);
+            _aimDots.Show(OccupancyCollision.Truncate(rawPoints, board, gameBoard.CellWidth).Points);
+        }
+
+        private void OnDisable()
+        {
+            if (_aimDots != null) _aimDots.Hide();
         }
     }
 }

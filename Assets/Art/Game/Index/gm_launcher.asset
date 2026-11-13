@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ed403eb00d2854991c32c815a2285e, type: 3}
+  m_Name: gm_launcher
+  m_EditorClassIdentifier: Game::Game.Art.SpriteSheetIndex
+  entries:
+  - Id: mech_pipes
+    Frames:
+    - {fileID: 554162674, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: gear_24
+    Frames:
+    - {fileID: 801776402, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: rotate_left_up
+    Frames:
+    - {fileID: -539603262, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: rotate_left_held
+    Frames:
+    - {fileID: 96490074, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: rotate_right_up
+    Frames:
+    - {fileID: 2069914954, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: rotate_right_held
+    Frames:
+    - {fileID: 589011525, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: hurry_burst
+    Frames:
+    - {fileID: 776749550, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    - {fileID: 1171160607, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 6
+  - Id: pointer_ring
+    Frames:
+    - {fileID: -55618393, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: next_ring
+    Frames:
+    - {fileID: -1248030883, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: pointer_arrow
+    Frames:
+    - {fileID: 1487822028, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: gear_11
+    Frames:
+    - {fileID: 326468182, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: crank_gear
+    Frames:
+    - {fileID: 343441784, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: steer_wheel
+    Frames:
+    - {fileID: 1295942483, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: gear_9
+    Frames:
+    - {fileID: 1896846648, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: gear_8
+    Frames:
+    - {fileID: -1998374356, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: fire_lever_arm
+    Frames:
+    - {fileID: -269201654, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: gear_7
+    Frames:
+    - {fileID: 1021406159, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: next_sign
+    Frames:
+    - {fileID: 86826088, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: fire_button_up
+    Frames:
+    - {fileID: 704759948, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: fire_button_down
+    Frames:
+    - {fileID: -747752891, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: timer_pip
+    Frames:
+    - {fileID: 33624742, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: aim_dot
+    Frames:
+    - {fileID: 1740966106, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: crank_knob
+    Frames:
+    - {fileID: 1142620187, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0
+  - Id: fire_lever_base
+    Frames:
+    - {fileID: 1483774785, guid: bbdc7e10d167e9e4eb4fc5777554c6cc, type: 3}
+    Fps: 0

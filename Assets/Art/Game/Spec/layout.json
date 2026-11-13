@@ -1,0 +1,1941 @@
+{
+ "units": "pt on the 360 × 780 grid; 1 pt = 3 px in the sheets",
+ "mechanism": {
+  "artPxToPt": 1.6667,
+  "note": "The pixel rig geometry (216 × 84 art px) at 5/3 pt per art px. Left-hand layout = art coordinates; right-hand mirrors x. Mechanism A when the dog aims (crank + fire lever), B when the cat aims (wheel + fire button)"
+ },
+ "game_solo_right": {
+  "name": "Solo, right-hand layout, mechanism A (dog aims, cat fires)",
+  "size": [
+   360,
+   780
+  ],
+  "safeArea": {
+   "top": 32,
+   "bottom": 22,
+   "note": "Only the ceiling band sits behind the top safe area"
+  },
+  "board": {
+   "x0": 4,
+   "innerWidth": 352,
+   "cols": 8,
+   "oddRowOffset": 20.706,
+   "cellPt": 41.412,
+   "rowHeight": 35.864,
+   "firstRowTop": 40,
+   "dangerY": 611,
+   "bubbleSpriteScale": 0.986
+  },
+  "elements": [
+   {
+    "id": "background",
+    "sprite": "bg_<theme>",
+    "rect": [
+     -32,
+     -32,
+     424,
+     844
+    ]
+   },
+   {
+    "id": "ceilingBand",
+    "sprite": "ceiling_<theme>_tile",
+    "rect": [
+     0,
+     0,
+     360,
+     34
+    ],
+    "tile": "xy",
+    "tileOrigin": [
+     0,
+     0
+    ],
+    "grows": "rowHeight per push"
+   },
+   {
+    "id": "ceilingEdge",
+    "sprite": "ceiling_<theme>_edge",
+    "rect": [
+     0,
+     34,
+     360,
+     14
+    ],
+    "tile": "x"
+   },
+   {
+    "id": "railL",
+    "sprite": "rail",
+    "rect": [
+     0,
+     0,
+     4,
+     780
+    ],
+    "tile": "y"
+   },
+   {
+    "id": "railR",
+    "sprite": "rail",
+    "rect": [
+     356,
+     0,
+     4,
+     780
+    ],
+    "tile": "y",
+    "flipX": true
+   },
+   {
+    "id": "dangerGlow",
+    "sprite": "danger_glow",
+    "rect": [
+     0,
+     583,
+     360,
+     28
+    ]
+   },
+   {
+    "id": "dangerLine",
+    "sprite": "danger_line",
+    "rect": [
+     0,
+     607,
+     360,
+     8
+    ],
+    "tile": "x"
+   },
+   {
+    "id": "deck",
+    "rect": [
+     0,
+     611,
+     360,
+     169
+    ],
+    "note": "Board ends at the deck top (danger line). HUD + superpower row 4, 613, 296, 44 sits opposite the rotate slabs, above the mechanism plate"
+   },
+   {
+    "id": "hudBar",
+    "sprite": "toggle_track (menu bundle)",
+    "rect": [
+     196,
+     613,
+     104,
+     44
+    ],
+    "nineSlice": true
+   },
+   {
+    "id": "scoreIcon",
+    "sprite": "hud_icon_score",
+    "at": [
+     212,
+     624
+    ]
+   },
+   {
+    "id": "scoreValue",
+    "type": "text",
+    "style": "hud_value",
+    "rect": [
+     223,
+     612,
+     72,
+     24
+    ],
+    "align": "left"
+   },
+   {
+    "id": "shotsIcon",
+    "sprite": "hud_icon_shots",
+    "at": [
+     212,
+     646
+    ]
+   },
+   {
+    "id": "shotsValue",
+    "type": "text",
+    "style": "hud_value",
+    "rect": [
+     223,
+     634,
+     26,
+     24
+    ],
+    "align": "left"
+   },
+   {
+    "id": "levelIcon",
+    "sprite": "hud_icon_level",
+    "at": [
+     256,
+     646
+    ]
+   },
+   {
+    "id": "levelValue",
+    "type": "text",
+    "style": "hud_value",
+    "rect": [
+     267,
+     634,
+     28,
+     24
+    ],
+    "align": "left"
+   },
+   {
+    "id": "pow_freeze",
+    "sprite": "pow_freeze_<state>",
+    "rect": [
+     4,
+     613,
+     44,
+     44
+    ],
+    "input": "tap"
+   },
+   {
+    "id": "pow_freezeBadge",
+    "sprite": "charge_badge",
+    "text": {
+     "style": "charge_count",
+     "rect": [
+      31,
+      610,
+      20,
+      20
+     ]
+    },
+    "at": [
+     41,
+     620
+    ]
+   },
+   {
+    "id": "pow_bomb",
+    "sprite": "pow_bomb_<state>",
+    "rect": [
+     52,
+     613,
+     44,
+     44
+    ],
+    "input": "tap"
+   },
+   {
+    "id": "pow_bombBadge",
+    "sprite": "charge_badge",
+    "text": {
+     "style": "charge_count",
+     "rect": [
+      79,
+      610,
+      20,
+      20
+     ]
+    },
+    "at": [
+     89,
+     620
+    ]
+   },
+   {
+    "id": "pow_rowclear",
+    "sprite": "pow_rowclear_<state>",
+    "rect": [
+     100,
+     613,
+     44,
+     44
+    ],
+    "input": "tap"
+   },
+   {
+    "id": "pow_rowclearBadge",
+    "sprite": "charge_badge",
+    "text": {
+     "style": "charge_count",
+     "rect": [
+      127,
+      610,
+      20,
+      20
+     ]
+    },
+    "at": [
+     137,
+     620
+    ]
+   },
+   {
+    "id": "pow_rainbow",
+    "sprite": "pow_rainbow_<state>",
+    "rect": [
+     148,
+     613,
+     44,
+     44
+    ],
+    "input": "tap"
+   },
+   {
+    "id": "pow_rainbowBadge",
+    "sprite": "charge_badge",
+    "text": {
+     "style": "charge_count",
+     "rect": [
+      175,
+      610,
+      20,
+      20
+     ]
+    },
+    "at": [
+     185,
+     620
+    ]
+   },
+   {
+    "id": "plate",
+    "note": "mechanism plate, 360 × 140 pt, right-hand layout",
+    "rect": [
+     0,
+     640,
+     360,
+     140
+    ]
+   },
+   {
+    "id": "pipes",
+    "sprite": "mech_pipes",
+    "rect": [
+     0,
+     640,
+     360,
+     140
+    ],
+    "flipX": true
+   },
+   {
+    "id": "gear0",
+    "sprite": "gear_24",
+    "at": [
+     200,
+     736.67
+    ],
+    "rect": [
+     156,
+     692.67,
+     88,
+     88
+    ],
+    "teeth": 14,
+    "turn": -1
+   },
+   {
+    "id": "gear1",
+    "sprite": "gear_9",
+    "at": [
+     250,
+     710
+    ],
+    "rect": [
+     231,
+     691,
+     38,
+     38
+    ],
+    "teeth": 8,
+    "turn": 1
+   },
+   {
+    "id": "gear2",
+    "sprite": "gear_8",
+    "at": [
+     240,
+     766.67
+    ],
+    "rect": [
+     222,
+     748.67,
+     36,
+     36
+    ],
+    "teeth": 8,
+    "turn": 1
+   },
+   {
+    "id": "gear3",
+    "sprite": "gear_8",
+    "at": [
+     146.67,
+     700
+    ],
+    "rect": [
+     128.67,
+     682,
+     36,
+     36
+    ],
+    "teeth": 8,
+    "turn": 1
+   },
+   {
+    "id": "gear4",
+    "sprite": "gear_11",
+    "at": [
+     133.33,
+     743.33
+    ],
+    "rect": [
+     110.33,
+     721.33,
+     46,
+     44
+    ],
+    "teeth": 10,
+    "turn": 1
+   },
+   {
+    "id": "gear5",
+    "sprite": "gear_7",
+    "at": [
+     163.33,
+     770
+    ],
+    "rect": [
+     147.33,
+     754,
+     32,
+     32
+    ],
+    "teeth": 8,
+    "turn": -1
+   },
+   {
+    "id": "gear6",
+    "sprite": "gear_8",
+    "at": [
+     96.67,
+     713.33
+    ],
+    "rect": [
+     78.67,
+     695.33,
+     36,
+     36
+    ],
+    "teeth": 8,
+    "turn": -1
+   },
+   {
+    "id": "pointer",
+    "sprite": "pointer_ring",
+    "at": [
+     180,
+     716.67
+    ],
+    "rect": [
+     148,
+     684.67,
+     68,
+     64
+    ],
+    "input": "tap = fire",
+    "hitRadius": 27.5
+   },
+   {
+    "id": "pointerArrow",
+    "sprite": "pointer_arrow",
+    "at": [
+     180,
+     716.67
+    ],
+    "rect": [
+     160,
+     652.67,
+     40,
+     45
+    ],
+    "rotates": true
+   },
+   {
+    "id": "loadedBubble",
+    "at": [
+     180,
+     716.67
+    ]
+   },
+   {
+    "id": "timerPip0",
+    "sprite": "timer_pip",
+    "at": [
+     180,
+     680
+    ]
+   },
+   {
+    "id": "timerPip1",
+    "sprite": "timer_pip",
+    "at": [
+     198.33,
+     684.92
+    ]
+   },
+   {
+    "id": "timerPip2",
+    "sprite": "timer_pip",
+    "at": [
+     211.75,
+     698.34
+    ]
+   },
+   {
+    "id": "timerPip3",
+    "sprite": "timer_pip",
+    "at": [
+     216.67,
+     716.67
+    ]
+   },
+   {
+    "id": "timerPip4",
+    "sprite": "timer_pip",
+    "at": [
+     211.75,
+     735
+    ]
+   },
+   {
+    "id": "timerPip5",
+    "sprite": "timer_pip",
+    "at": [
+     198.33,
+     748.42
+    ]
+   },
+   {
+    "id": "timerPip6",
+    "sprite": "timer_pip",
+    "at": [
+     180,
+     753.34
+    ]
+   },
+   {
+    "id": "timerPip7",
+    "sprite": "timer_pip",
+    "at": [
+     161.67,
+     748.42
+    ]
+   },
+   {
+    "id": "timerPip8",
+    "sprite": "timer_pip",
+    "at": [
+     148.25,
+     735
+    ]
+   },
+   {
+    "id": "timerPip9",
+    "sprite": "timer_pip",
+    "at": [
+     143.33,
+     716.67
+    ]
+   },
+   {
+    "id": "timerPip10",
+    "sprite": "timer_pip",
+    "at": [
+     148.25,
+     698.34
+    ]
+   },
+   {
+    "id": "timerPip11",
+    "sprite": "timer_pip",
+    "at": [
+     161.67,
+     684.92
+    ]
+   },
+   {
+    "id": "nextRing",
+    "sprite": "next_ring",
+    "at": [
+     60,
+     741.67
+    ],
+    "rect": [
+     32,
+     713.67,
+     56,
+     56
+    ]
+   },
+   {
+    "id": "nextBubble",
+    "at": [
+     60,
+     741.67
+    ]
+   },
+   {
+    "id": "nextSign",
+    "sprite": "next_sign",
+    "rect": [
+     40,
+     693.33,
+     40,
+     26
+    ],
+    "text": {
+     "style": "sign_label",
+     "text": "NEXT",
+     "rect": [
+      40,
+      694.33,
+      40,
+      16
+     ]
+    }
+   },
+   {
+    "id": "rotateLeft",
+    "sprite": "rotate_left_<up|held>",
+    "rect": [
+     273.33,
+     668,
+     43.33,
+     76
+    ],
+    "input": "hold"
+   },
+   {
+    "id": "rotateRight",
+    "sprite": "rotate_right_<up|held>",
+    "rect": [
+     316.67,
+     668,
+     43.33,
+     76
+    ],
+    "input": "hold"
+   },
+   {
+    "id": "hurryBurst",
+    "sprite": "hurry_burst",
+    "at": [
+     180,
+     567
+    ],
+    "text": {
+     "style": "countdown_digit",
+     "rect": [
+      140,
+      541,
+      80,
+      50
+     ]
+    },
+    "shows": "last 4 s of the shot clock"
+   },
+   {
+    "id": "crank",
+    "sprite": "crank_gear",
+    "at": [
+     233.33,
+     756.67
+    ],
+    "rect": [
+     211.33,
+     734.67,
+     44,
+     44
+    ],
+    "orbitKnob": "crank_knob, r 3.3 pt"
+   },
+   {
+    "id": "aimer",
+    "type": "pixpet",
+    "species": "dog",
+    "rect": [
+     210,
+     726.67,
+     66.67,
+     53.33
+    ],
+    "flipX": true,
+    "pixelScale": {
+     "devicePxPerArtPx": 5,
+     "ptPerArtPx": 1.6667,
+     "filter": "point",
+     "anchor": "top-left of the 40 × 32 frame (front poses 40 × 44, 12 art px higher)"
+    }
+   },
+   {
+    "id": "firer",
+    "type": "pixpet",
+    "species": "cat",
+    "rect": [
+     86.67,
+     726.67,
+     66.67,
+     53.33
+    ],
+    "flipX": false,
+    "pixelScale": {
+     "devicePxPerArtPx": 5,
+     "ptPerArtPx": 1.6667,
+     "filter": "point",
+     "anchor": "top-left of the 40 × 32 frame (front poses 40 × 44, 12 art px higher)"
+    }
+   },
+   {
+    "id": "fireLever",
+    "sprite": "fire_lever_arm",
+    "at": [
+     131.67,
+     775
+    ],
+    "rect": [
+     122.67,
+     746,
+     18,
+     33
+    ],
+    "base": "fire_lever_base",
+    "angles": [
+     0.5,
+     0.15,
+     -0.25
+    ]
+   },
+   {
+    "id": "freezeFrame",
+    "sprite": "freeze_frame",
+    "rect": [
+     -8,
+     -8,
+     376,
+     796
+    ],
+    "nineSlice": true
+   }
+  ]
+ },
+ "game_solo_left": {
+  "name": "Solo, left-hand layout, mechanism B (cat aims, dog fires)",
+  "size": [
+   360,
+   780
+  ],
+  "safeArea": {
+   "top": 32,
+   "bottom": 22
+  },
+  "board": {
+   "x0": 4,
+   "innerWidth": 352,
+   "cols": 8,
+   "oddRowOffset": 20.706,
+   "cellPt": 41.412,
+   "rowHeight": 35.864,
+   "firstRowTop": 40,
+   "dangerY": 611,
+   "bubbleSpriteScale": 0.986
+  },
+  "elements": [
+   {
+    "id": "background",
+    "sprite": "bg_<theme>",
+    "rect": [
+     -32,
+     -32,
+     424,
+     844
+    ]
+   },
+   {
+    "id": "ceilingBand",
+    "sprite": "ceiling_<theme>_tile",
+    "rect": [
+     0,
+     0,
+     360,
+     34
+    ],
+    "tile": "xy",
+    "tileOrigin": [
+     0,
+     0
+    ],
+    "grows": "rowHeight per push"
+   },
+   {
+    "id": "ceilingEdge",
+    "sprite": "ceiling_<theme>_edge",
+    "rect": [
+     0,
+     34,
+     360,
+     14
+    ],
+    "tile": "x"
+   },
+   {
+    "id": "railL",
+    "sprite": "rail",
+    "rect": [
+     0,
+     0,
+     4,
+     780
+    ],
+    "tile": "y"
+   },
+   {
+    "id": "railR",
+    "sprite": "rail",
+    "rect": [
+     356,
+     0,
+     4,
+     780
+    ],
+    "tile": "y",
+    "flipX": true
+   },
+   {
+    "id": "dangerGlow",
+    "sprite": "danger_glow",
+    "rect": [
+     0,
+     583,
+     360,
+     28
+    ]
+   },
+   {
+    "id": "dangerLine",
+    "sprite": "danger_line",
+    "rect": [
+     0,
+     607,
+     360,
+     8
+    ],
+    "tile": "x"
+   },
+   {
+    "id": "deck",
+    "rect": [
+     0,
+     611,
+     360,
+     169
+    ],
+    "note": "Board ends at the deck top (danger line). HUD + superpower row 60, 613, 296, 44 sits opposite the rotate slabs, above the mechanism plate"
+   },
+   {
+    "id": "hudBar",
+    "sprite": "toggle_track (menu bundle)",
+    "rect": [
+     60,
+     613,
+     104,
+     44
+    ],
+    "nineSlice": true
+   },
+   {
+    "id": "scoreIcon",
+    "sprite": "hud_icon_score",
+    "at": [
+     76,
+     624
+    ]
+   },
+   {
+    "id": "scoreValue",
+    "type": "text",
+    "style": "hud_value",
+    "rect": [
+     87,
+     612,
+     72,
+     24
+    ],
+    "align": "left"
+   },
+   {
+    "id": "shotsIcon",
+    "sprite": "hud_icon_shots",
+    "at": [
+     76,
+     646
+    ]
+   },
+   {
+    "id": "shotsValue",
+    "type": "text",
+    "style": "hud_value",
+    "rect": [
+     87,
+     634,
+     26,
+     24
+    ],
+    "align": "left"
+   },
+   {
+    "id": "levelIcon",
+    "sprite": "hud_icon_level",
+    "at": [
+     120,
+     646
+    ]
+   },
+   {
+    "id": "levelValue",
+    "type": "text",
+    "style": "hud_value",
+    "rect": [
+     131,
+     634,
+     28,
+     24
+    ],
+    "align": "left"
+   },
+   {
+    "id": "pow_freeze",
+    "sprite": "pow_freeze_<state>",
+    "rect": [
+     168,
+     613,
+     44,
+     44
+    ],
+    "input": "tap"
+   },
+   {
+    "id": "pow_freezeBadge",
+    "sprite": "charge_badge",
+    "text": {
+     "style": "charge_count",
+     "rect": [
+      195,
+      610,
+      20,
+      20
+     ]
+    },
+    "at": [
+     205,
+     620
+    ]
+   },
+   {
+    "id": "pow_bomb",
+    "sprite": "pow_bomb_<state>",
+    "rect": [
+     216,
+     613,
+     44,
+     44
+    ],
+    "input": "tap"
+   },
+   {
+    "id": "pow_bombBadge",
+    "sprite": "charge_badge",
+    "text": {
+     "style": "charge_count",
+     "rect": [
+      243,
+      610,
+      20,
+      20
+     ]
+    },
+    "at": [
+     253,
+     620
+    ]
+   },
+   {
+    "id": "pow_rowclear",
+    "sprite": "pow_rowclear_<state>",
+    "rect": [
+     264,
+     613,
+     44,
+     44
+    ],
+    "input": "tap"
+   },
+   {
+    "id": "pow_rowclearBadge",
+    "sprite": "charge_badge",
+    "text": {
+     "style": "charge_count",
+     "rect": [
+      291,
+      610,
+      20,
+      20
+     ]
+    },
+    "at": [
+     301,
+     620
+    ]
+   },
+   {
+    "id": "pow_rainbow",
+    "sprite": "pow_rainbow_<state>",
+    "rect": [
+     312,
+     613,
+     44,
+     44
+    ],
+    "input": "tap"
+   },
+   {
+    "id": "pow_rainbowBadge",
+    "sprite": "charge_badge",
+    "text": {
+     "style": "charge_count",
+     "rect": [
+      339,
+      610,
+      20,
+      20
+     ]
+    },
+    "at": [
+     349,
+     620
+    ]
+   },
+   {
+    "id": "plate",
+    "note": "mechanism plate, 360 × 140 pt, left-hand layout",
+    "rect": [
+     0,
+     640,
+     360,
+     140
+    ]
+   },
+   {
+    "id": "pipes",
+    "sprite": "mech_pipes",
+    "rect": [
+     0,
+     640,
+     360,
+     140
+    ],
+    "flipX": false
+   },
+   {
+    "id": "gear0",
+    "sprite": "gear_24",
+    "at": [
+     160,
+     736.67
+    ],
+    "rect": [
+     116,
+     692.67,
+     88,
+     88
+    ],
+    "teeth": 14,
+    "turn": 1
+   },
+   {
+    "id": "gear1",
+    "sprite": "gear_9",
+    "at": [
+     110,
+     710
+    ],
+    "rect": [
+     91,
+     691,
+     38,
+     38
+    ],
+    "teeth": 8,
+    "turn": -1
+   },
+   {
+    "id": "gear2",
+    "sprite": "gear_8",
+    "at": [
+     120,
+     766.67
+    ],
+    "rect": [
+     102,
+     748.67,
+     36,
+     36
+    ],
+    "teeth": 8,
+    "turn": -1
+   },
+   {
+    "id": "gear3",
+    "sprite": "gear_8",
+    "at": [
+     213.33,
+     700
+    ],
+    "rect": [
+     195.33,
+     682,
+     36,
+     36
+    ],
+    "teeth": 8,
+    "turn": -1
+   },
+   {
+    "id": "gear4",
+    "sprite": "gear_11",
+    "at": [
+     226.67,
+     743.33
+    ],
+    "rect": [
+     203.67,
+     721.33,
+     46,
+     44
+    ],
+    "teeth": 10,
+    "turn": -1
+   },
+   {
+    "id": "gear5",
+    "sprite": "gear_7",
+    "at": [
+     196.67,
+     770
+    ],
+    "rect": [
+     180.67,
+     754,
+     32,
+     32
+    ],
+    "teeth": 8,
+    "turn": 1
+   },
+   {
+    "id": "gear6",
+    "sprite": "gear_8",
+    "at": [
+     263.33,
+     713.33
+    ],
+    "rect": [
+     245.33,
+     695.33,
+     36,
+     36
+    ],
+    "teeth": 8,
+    "turn": 1
+   },
+   {
+    "id": "pointer",
+    "sprite": "pointer_ring",
+    "at": [
+     180,
+     716.67
+    ],
+    "rect": [
+     148,
+     684.67,
+     68,
+     64
+    ],
+    "input": "tap = fire",
+    "hitRadius": 27.5
+   },
+   {
+    "id": "pointerArrow",
+    "sprite": "pointer_arrow",
+    "at": [
+     180,
+     716.67
+    ],
+    "rect": [
+     160,
+     652.67,
+     40,
+     45
+    ],
+    "rotates": true
+   },
+   {
+    "id": "loadedBubble",
+    "at": [
+     180,
+     716.67
+    ]
+   },
+   {
+    "id": "timerPip0",
+    "sprite": "timer_pip",
+    "at": [
+     180,
+     680
+    ]
+   },
+   {
+    "id": "timerPip1",
+    "sprite": "timer_pip",
+    "at": [
+     198.33,
+     684.92
+    ]
+   },
+   {
+    "id": "timerPip2",
+    "sprite": "timer_pip",
+    "at": [
+     211.75,
+     698.34
+    ]
+   },
+   {
+    "id": "timerPip3",
+    "sprite": "timer_pip",
+    "at": [
+     216.67,
+     716.67
+    ]
+   },
+   {
+    "id": "timerPip4",
+    "sprite": "timer_pip",
+    "at": [
+     211.75,
+     735
+    ]
+   },
+   {
+    "id": "timerPip5",
+    "sprite": "timer_pip",
+    "at": [
+     198.33,
+     748.42
+    ]
+   },
+   {
+    "id": "timerPip6",
+    "sprite": "timer_pip",
+    "at": [
+     180,
+     753.34
+    ]
+   },
+   {
+    "id": "timerPip7",
+    "sprite": "timer_pip",
+    "at": [
+     161.67,
+     748.42
+    ]
+   },
+   {
+    "id": "timerPip8",
+    "sprite": "timer_pip",
+    "at": [
+     148.25,
+     735
+    ]
+   },
+   {
+    "id": "timerPip9",
+    "sprite": "timer_pip",
+    "at": [
+     143.33,
+     716.67
+    ]
+   },
+   {
+    "id": "timerPip10",
+    "sprite": "timer_pip",
+    "at": [
+     148.25,
+     698.34
+    ]
+   },
+   {
+    "id": "timerPip11",
+    "sprite": "timer_pip",
+    "at": [
+     161.67,
+     684.92
+    ]
+   },
+   {
+    "id": "nextRing",
+    "sprite": "next_ring",
+    "at": [
+     300,
+     741.67
+    ],
+    "rect": [
+     272,
+     713.67,
+     56,
+     56
+    ]
+   },
+   {
+    "id": "nextBubble",
+    "at": [
+     300,
+     741.67
+    ]
+   },
+   {
+    "id": "nextSign",
+    "sprite": "next_sign",
+    "rect": [
+     280,
+     693.33,
+     40,
+     26
+    ],
+    "text": {
+     "style": "sign_label",
+     "text": "NEXT",
+     "rect": [
+      280,
+      694.33,
+      40,
+      16
+     ]
+    }
+   },
+   {
+    "id": "rotateLeft",
+    "sprite": "rotate_left_<up|held>",
+    "rect": [
+     0,
+     668,
+     43.33,
+     76
+    ],
+    "input": "hold"
+   },
+   {
+    "id": "rotateRight",
+    "sprite": "rotate_right_<up|held>",
+    "rect": [
+     43.33,
+     668,
+     43.33,
+     76
+    ],
+    "input": "hold"
+   },
+   {
+    "id": "hurryBurst",
+    "sprite": "hurry_burst",
+    "at": [
+     180,
+     567
+    ],
+    "text": {
+     "style": "countdown_digit",
+     "rect": [
+      140,
+      541,
+      80,
+      50
+     ]
+    },
+    "shows": "last 4 s of the shot clock"
+   },
+   {
+    "id": "wheel",
+    "sprite": "steer_wheel",
+    "at": [
+     143.33,
+     763.33
+    ],
+    "rect": [
+     121.33,
+     741.33,
+     44,
+     44
+    ]
+   },
+   {
+    "id": "aimer",
+    "type": "pixpet",
+    "species": "cat",
+    "rect": [
+     83.33,
+     726.67,
+     66.67,
+     53.33
+    ],
+    "flipX": false,
+    "pixelScale": {
+     "devicePxPerArtPx": 5,
+     "ptPerArtPx": 1.6667,
+     "filter": "point",
+     "anchor": "top-left of the 40 × 32 frame (front poses 40 × 44, 12 art px higher)"
+    }
+   },
+   {
+    "id": "firer",
+    "type": "pixpet",
+    "species": "dog",
+    "rect": [
+     206.67,
+     726.67,
+     66.67,
+     53.33
+    ],
+    "flipX": true,
+    "pixelScale": {
+     "devicePxPerArtPx": 5,
+     "ptPerArtPx": 1.6667,
+     "filter": "point",
+     "anchor": "top-left of the 40 × 32 frame (front poses 40 × 44, 12 art px higher)"
+    }
+   },
+   {
+    "id": "fireButton",
+    "sprite": "fire_button_<up|down>",
+    "rect": [
+     208.33,
+     756.67,
+     33.33,
+     23.33
+    ]
+   }
+  ]
+ },
+ "game_battle_half": {
+  "name": "Battle half (bottom player, cat, mechanism B without a firer). The top half is the same rotated 180° about (180, 195), with the dog and mechanism A",
+  "size": [
+   360,
+   390
+  ],
+  "board": {
+   "x0": 4,
+   "innerWidth": 352,
+   "cols": 8,
+   "oddRowOffset": 20.706,
+   "cellPt": 41.412,
+   "rowHeight": 35.864,
+   "firstRowTop": 13,
+   "dangerY": 277,
+   "bubbleSpriteScale": 0.986
+  },
+  "elements": [
+   {
+    "id": "background",
+    "sprite": "bg_<theme>",
+    "rect": [
+     -32,
+     -422,
+     424,
+     844
+    ]
+   },
+   {
+    "id": "ceilingBand",
+    "sprite": "ceiling_<theme>_tile",
+    "rect": [
+     0,
+     -32,
+     360,
+     39
+    ],
+    "tile": "xy",
+    "tileOrigin": [
+     0,
+     -32
+    ],
+    "grows": "rowHeight per push"
+   },
+   {
+    "id": "ceilingEdge",
+    "sprite": "ceiling_<theme>_edge",
+    "rect": [
+     0,
+     7,
+     360,
+     14
+    ],
+    "tile": "x"
+   },
+   {
+    "id": "railL",
+    "sprite": "rail",
+    "rect": [
+     0,
+     0,
+     4,
+     390
+    ],
+    "tile": "y"
+   },
+   {
+    "id": "railR",
+    "sprite": "rail",
+    "rect": [
+     356,
+     0,
+     4,
+     390
+    ],
+    "tile": "y",
+    "flipX": true
+   },
+   {
+    "id": "dangerGlow",
+    "sprite": "danger_glow",
+    "rect": [
+     0,
+     249,
+     360,
+     28
+    ]
+   },
+   {
+    "id": "dangerLine",
+    "sprite": "danger_line",
+    "rect": [
+     0,
+     273,
+     360,
+     8
+    ],
+    "tile": "x"
+   },
+   {
+    "id": "incoming",
+    "sprite": "incoming_tray",
+    "rect": [
+     8,
+     254,
+     100,
+     20
+    ],
+    "pips": {
+     "sprite": "incoming_pip",
+     "first": [
+      24,
+      264
+     ],
+     "pitch": 18
+    }
+   },
+   {
+    "id": "plate",
+    "note": "mechanism plate, 360 × 140 pt, right-hand layout",
+    "rect": [
+     0,
+     250,
+     360,
+     140
+    ]
+   },
+   {
+    "id": "pipes",
+    "sprite": "mech_pipes",
+    "rect": [
+     0,
+     250,
+     360,
+     140
+    ],
+    "flipX": true
+   },
+   {
+    "id": "gear0",
+    "sprite": "gear_24",
+    "at": [
+     200,
+     346.67
+    ],
+    "rect": [
+     156,
+     302.67,
+     88,
+     88
+    ],
+    "teeth": 14,
+    "turn": -1
+   },
+   {
+    "id": "gear1",
+    "sprite": "gear_9",
+    "at": [
+     250,
+     320
+    ],
+    "rect": [
+     231,
+     301,
+     38,
+     38
+    ],
+    "teeth": 8,
+    "turn": 1
+   },
+   {
+    "id": "gear2",
+    "sprite": "gear_8",
+    "at": [
+     240,
+     376.67
+    ],
+    "rect": [
+     222,
+     358.67,
+     36,
+     36
+    ],
+    "teeth": 8,
+    "turn": 1
+   },
+   {
+    "id": "gear3",
+    "sprite": "gear_8",
+    "at": [
+     146.67,
+     310
+    ],
+    "rect": [
+     128.67,
+     292,
+     36,
+     36
+    ],
+    "teeth": 8,
+    "turn": 1
+   },
+   {
+    "id": "gear4",
+    "sprite": "gear_11",
+    "at": [
+     133.33,
+     353.33
+    ],
+    "rect": [
+     110.33,
+     331.33,
+     46,
+     44
+    ],
+    "teeth": 10,
+    "turn": 1
+   },
+   {
+    "id": "gear5",
+    "sprite": "gear_7",
+    "at": [
+     163.33,
+     380
+    ],
+    "rect": [
+     147.33,
+     364,
+     32,
+     32
+    ],
+    "teeth": 8,
+    "turn": -1
+   },
+   {
+    "id": "gear6",
+    "sprite": "gear_8",
+    "at": [
+     96.67,
+     323.33
+    ],
+    "rect": [
+     78.67,
+     305.33,
+     36,
+     36
+    ],
+    "teeth": 8,
+    "turn": -1
+   },
+   {
+    "id": "pointer",
+    "sprite": "pointer_ring",
+    "at": [
+     180,
+     326.67
+    ],
+    "rect": [
+     148,
+     294.67,
+     68,
+     64
+    ],
+    "input": "tap = fire",
+    "hitRadius": 27.5
+   },
+   {
+    "id": "pointerArrow",
+    "sprite": "pointer_arrow",
+    "at": [
+     180,
+     326.67
+    ],
+    "rect": [
+     160,
+     262.67,
+     40,
+     45
+    ],
+    "rotates": true
+   },
+   {
+    "id": "loadedBubble",
+    "at": [
+     180,
+     326.67
+    ]
+   },
+   {
+    "id": "timerPip0",
+    "sprite": "timer_pip",
+    "at": [
+     180,
+     290
+    ]
+   },
+   {
+    "id": "timerPip1",
+    "sprite": "timer_pip",
+    "at": [
+     198.33,
+     294.92
+    ]
+   },
+   {
+    "id": "timerPip2",
+    "sprite": "timer_pip",
+    "at": [
+     211.75,
+     308.34
+    ]
+   },
+   {
+    "id": "timerPip3",
+    "sprite": "timer_pip",
+    "at": [
+     216.67,
+     326.67
+    ]
+   },
+   {
+    "id": "timerPip4",
+    "sprite": "timer_pip",
+    "at": [
+     211.75,
+     345
+    ]
+   },
+   {
+    "id": "timerPip5",
+    "sprite": "timer_pip",
+    "at": [
+     198.33,
+     358.42
+    ]
+   },
+   {
+    "id": "timerPip6",
+    "sprite": "timer_pip",
+    "at": [
+     180,
+     363.34
+    ]
+   },
+   {
+    "id": "timerPip7",
+    "sprite": "timer_pip",
+    "at": [
+     161.67,
+     358.42
+    ]
+   },
+   {
+    "id": "timerPip8",
+    "sprite": "timer_pip",
+    "at": [
+     148.25,
+     345
+    ]
+   },
+   {
+    "id": "timerPip9",
+    "sprite": "timer_pip",
+    "at": [
+     143.33,
+     326.67
+    ]
+   },
+   {
+    "id": "timerPip10",
+    "sprite": "timer_pip",
+    "at": [
+     148.25,
+     308.34
+    ]
+   },
+   {
+    "id": "timerPip11",
+    "sprite": "timer_pip",
+    "at": [
+     161.67,
+     294.92
+    ]
+   },
+   {
+    "id": "nextRing",
+    "sprite": "next_ring",
+    "at": [
+     60,
+     351.67
+    ],
+    "rect": [
+     32,
+     323.67,
+     56,
+     56
+    ]
+   },
+   {
+    "id": "nextBubble",
+    "at": [
+     60,
+     351.67
+    ]
+   },
+   {
+    "id": "nextSign",
+    "sprite": "next_sign",
+    "rect": [
+     40,
+     303.33,
+     40,
+     26
+    ],
+    "text": {
+     "style": "sign_label",
+     "text": "NEXT",
+     "rect": [
+      40,
+      304.33,
+      40,
+      16
+     ]
+    }
+   },
+   {
+    "id": "rotateLeft",
+    "sprite": "rotate_left_<up|held>",
+    "rect": [
+     273.33,
+     278,
+     43.33,
+     76
+    ],
+    "input": "hold"
+   },
+   {
+    "id": "rotateRight",
+    "sprite": "rotate_right_<up|held>",
+    "rect": [
+     316.67,
+     278,
+     43.33,
+     76
+    ],
+    "input": "hold"
+   },
+   {
+    "id": "hurryBurst",
+    "sprite": "hurry_burst",
+    "at": [
+     180,
+     233.33
+    ],
+    "text": {
+     "style": "countdown_digit",
+     "rect": [
+      140,
+      207.33,
+      80,
+      50
+     ]
+    },
+    "shows": "last 4 s of the shot clock"
+   },
+   {
+    "id": "wheel",
+    "sprite": "steer_wheel",
+    "at": [
+     216.67,
+     373.33
+    ],
+    "rect": [
+     194.67,
+     351.33,
+     44,
+     44
+    ]
+   },
+   {
+    "id": "aimer",
+    "type": "pixpet",
+    "species": "cat",
+    "rect": [
+     210,
+     336.67,
+     66.67,
+     53.33
+    ],
+    "flipX": true,
+    "pixelScale": {
+     "devicePxPerArtPx": 5,
+     "ptPerArtPx": 1.6667,
+     "filter": "point",
+     "anchor": "top-left of the 40 × 32 frame (front poses 40 × 44, 12 art px higher)"
+    }
+   }
+  ]
+ }
+}

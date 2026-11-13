@@ -1,5 +1,16 @@
 # Firing and Snapping
 
+> **Updated by the game screen art (2026-11-12):** the history below still
+> describes the placeholder visuals. Since then: `GridDebugRenderer` became
+> `BoardView` (`Scripts/BoardArt`); the `LineRenderer` preview and the
+> `LandingIndicator` ghost were replaced by aim dots along the
+> occupancy-truncated path (`AimDotsView`); the flying bubble is drawn by
+> `BoardView`'s skin; the next-bubble indicator became the deck's loaded
+> and next bubbles (`LoadedBubbleView`); and `BubbleSettleMotion` was
+> replaced by a 0.07 s slide plus the guide's settle clips
+> (`GameMotions.Settle`, bounce or squash) played on the placed bubble.
+> See `../art/overview.md` ("Game screen: as built").
+
 **Status: implemented.** `GameBoard`, `OccupancyCollision`,
 `BubbleLandingResolver`, `FiredBubbleController`, and (added later, see
 "Redesign" below) `LandingIndicator` live at `Assets/Scripts/Grid/` and

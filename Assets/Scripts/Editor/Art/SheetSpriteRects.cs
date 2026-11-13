@@ -7,8 +7,8 @@ namespace Game.EditorTools.Art
 {
     /// <summary>
     /// Turns a legend into Sprite Editor rects, one per frame, named
-    /// "{id}_{frame}". Unity rects start at the bottom-left, so the
-    /// legend's top-left y is flipped against the sheet height.
+    /// "{id}_{frame}". Geometry (bottom-up flip, rounding, pivots) comes
+    /// from LegendGeometry.
     /// </summary>
     public static class SheetSpriteRects
     {
@@ -16,7 +16,7 @@ namespace Game.EditorTools.Art
         {
             public SheetLegendSprite Sprite;
             public int Index;
-            public int SheetHeight;
+            public float SheetHeight;
         }
 
         public static List<SpriteRect> Build(SheetLegend legend, IReadOnlyDictionary<string, GUID> existingIds)
@@ -37,23 +37,11 @@ namespace Game.EditorTools.Art
             {
                 name = name,
                 spriteID = existingIds.TryGetValue(name, out var id) ? id : GUID.Generate(),
-                rect = FrameRect(frame),
+                rect = LegendGeometry.FrameRect(frame.Sprite, frame.Index, frame.SheetHeight),
                 alignment = SpriteAlignment.Custom,
-                pivot = NormalizedPivot(frame.Sprite),
+                pivot = LegendGeometry.NormalizedPivot(frame.Sprite),
                 border = BorderOf(frame.Sprite.border)
             };
-        }
-
-        private static Rect FrameRect(LegendFrame frame)
-        {
-            var sprite = frame.Sprite;
-            var x = sprite.x + frame.Index * sprite.stepX;
-            return new Rect(x, frame.SheetHeight - sprite.y - sprite.frameH, sprite.frameW, sprite.frameH);
-        }
-
-        private static Vector2 NormalizedPivot(SheetLegendSprite sprite)
-        {
-            return new Vector2(sprite.pivotX / sprite.frameW, 1f - sprite.pivotY / sprite.frameH);
         }
 
         private static Vector4 BorderOf(SheetLegendBorder border)

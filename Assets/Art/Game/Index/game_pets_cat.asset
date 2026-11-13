@@ -1,0 +1,555 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ed403eb00d2854991c32c815a2285e, type: 3}
+  m_Name: game_pets_cat
+  m_EditorClassIdentifier: Game::Game.Art.SpriteSheetIndex
+  entries:
+  - Id: game_cat_round_idle
+    Frames:
+    - {fileID: 558559202, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1673811914, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1339184657, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1503645361, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_round_cheer
+    Frames:
+    - {fileID: -1136936970, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -228766640, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -146373779, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1565556608, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 10
+  - Id: game_cat_round_panic
+    Frames:
+    - {fileID: 1153055776, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1863652270, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1740535161, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 817725914, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_round_win
+    Frames:
+    - {fileID: -1698150652, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 915101521, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 4
+  - Id: game_cat_round_lose
+    Frames:
+    - {fileID: 1972629898, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1572383911, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 3
+  - Id: game_cat_round_sleepy
+    Frames:
+    - {fileID: 309853463, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -997428200, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 2
+  - Id: game_cat_round_puzzled
+    Frames:
+    - {fileID: 1485196390, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -357625560, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 3
+  - Id: game_cat_round_aim_right
+    Frames:
+    - {fileID: 1047378250, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1573813046, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1683252154, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -919736915, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_round_aim_left
+    Frames:
+    - {fileID: 341714029, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1961790865, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 486299073, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -260079691, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_round_aim_hold
+    Frames:
+    - {fileID: -637298807, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1972457839, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1540602639, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 32308916, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_round_pull
+    Frames:
+    - {fileID: -272700723, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 92816384, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1810111074, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1440806261, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_round_fire_hold
+    Frames:
+    - {fileID: -966825791, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1805460967, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1749935903, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1141186317, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_round_hurry_aimer
+    Frames:
+    - {fileID: 1131983910, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 86899065, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 2141978735, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -2029606692, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_round_hurry_firer
+    Frames:
+    - {fileID: -601127244, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -511986336, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1601508251, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1264660199, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_round_ko_aimer
+    Frames:
+    - {fileID: 1394635280, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1241706319, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_round_ko_firer
+    Frames:
+    - {fileID: -1598852946, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1487450345, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_round_ko_jump
+    Frames:
+    - {fileID: -1369134641, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -50844469, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_round_ko_tap
+    Frames:
+    - {fileID: 1122111297, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -2051282367, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_round_knock_aimer
+    Frames:
+    - {fileID: 1512932206, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1428500420, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1224574498, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -42590345, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1852746383, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 10
+  - Id: game_cat_round_knock_firer
+    Frames:
+    - {fileID: 23522534, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1004165633, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1397127195, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -48206136, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1230708292, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 10
+  - Id: game_cat_round_expr
+    Frames:
+    - {fileID: 1758157161, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1946510268, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 147456169, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -2135366570, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 201174896, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -914379882, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 0
+  - Id: game_cat_fluffy_idle
+    Frames:
+    - {fileID: 1261361316, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 971954625, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1456404238, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1084924658, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_fluffy_cheer
+    Frames:
+    - {fileID: -1206907582, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1138686629, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 698214527, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 937949353, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 10
+  - Id: game_cat_fluffy_panic
+    Frames:
+    - {fileID: 1089015239, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1138114127, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1003086262, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1448203065, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_fluffy_win
+    Frames:
+    - {fileID: 539176128, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1561937111, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 4
+  - Id: game_cat_fluffy_lose
+    Frames:
+    - {fileID: -720367267, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1362804628, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 3
+  - Id: game_cat_fluffy_sleepy
+    Frames:
+    - {fileID: -1269798319, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1214976591, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 2
+  - Id: game_cat_fluffy_puzzled
+    Frames:
+    - {fileID: -671308628, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1088385458, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 3
+  - Id: game_cat_fluffy_aim_right
+    Frames:
+    - {fileID: 778618624, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1930656724, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -910020498, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -345130691, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_fluffy_aim_left
+    Frames:
+    - {fileID: 1344449996, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1523234038, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -740287403, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 345894633, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_fluffy_aim_hold
+    Frames:
+    - {fileID: 2126190333, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1164882840, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1177898568, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1288926498, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_fluffy_pull
+    Frames:
+    - {fileID: 1882984774, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1525244525, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -405745568, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1591557890, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_fluffy_fire_hold
+    Frames:
+    - {fileID: 2062813494, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1150619100, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1916884380, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -2022424869, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_fluffy_hurry_aimer
+    Frames:
+    - {fileID: -1260218472, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1109693463, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1441502476, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1929880375, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_fluffy_hurry_firer
+    Frames:
+    - {fileID: -792424225, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 239254898, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 441174316, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -485888946, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_fluffy_ko_aimer
+    Frames:
+    - {fileID: 1784499001, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -448907163, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_fluffy_ko_firer
+    Frames:
+    - {fileID: 1624851838, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -614591648, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_fluffy_ko_jump
+    Frames:
+    - {fileID: 260915861, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -425730201, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_fluffy_ko_tap
+    Frames:
+    - {fileID: -1977870396, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1357155381, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_fluffy_knock_aimer
+    Frames:
+    - {fileID: -421792589, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1341968149, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 398193645, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1159145897, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -327828404, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 10
+  - Id: game_cat_fluffy_knock_firer
+    Frames:
+    - {fileID: 1621167530, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 2080143290, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -2002879028, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 844396333, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1962486120, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 10
+  - Id: game_cat_fluffy_expr
+    Frames:
+    - {fileID: 556652284, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1888893720, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1645253213, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 707132707, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1750506919, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1628005682, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 0
+  - Id: game_cat_slim_idle
+    Frames:
+    - {fileID: 2117734002, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -6644091, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 2137499758, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -209753041, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_slim_cheer
+    Frames:
+    - {fileID: -1317025691, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 427021838, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1765086610, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -771791676, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 10
+  - Id: game_cat_slim_panic
+    Frames:
+    - {fileID: 1987678373, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1213921776, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 380532960, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -2109384313, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_slim_win
+    Frames:
+    - {fileID: 879587760, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1091969309, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 4
+  - Id: game_cat_slim_lose
+    Frames:
+    - {fileID: -1969271644, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1988998522, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 3
+  - Id: game_cat_slim_sleepy
+    Frames:
+    - {fileID: -1674093830, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 134099513, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 2
+  - Id: game_cat_slim_puzzled
+    Frames:
+    - {fileID: -2083001468, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 520328990, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 3
+  - Id: game_cat_slim_aim_right
+    Frames:
+    - {fileID: -412603937, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1630108719, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 35333477, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -2114592323, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_slim_aim_left
+    Frames:
+    - {fileID: 663490990, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1012933140, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -949948031, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 578375765, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_slim_aim_hold
+    Frames:
+    - {fileID: 584613508, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -693100479, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1433464903, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1891940480, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_slim_pull
+    Frames:
+    - {fileID: -727659127, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -14439869, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1643454382, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1219076831, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_slim_fire_hold
+    Frames:
+    - {fileID: -1395852834, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1136243505, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -516789241, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1682013911, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_slim_hurry_aimer
+    Frames:
+    - {fileID: -806761604, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1746769035, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1774373881, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -95534941, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_slim_hurry_firer
+    Frames:
+    - {fileID: 1883510886, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -257447359, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 576769273, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1940161740, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_slim_ko_aimer
+    Frames:
+    - {fileID: 203611862, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 2084367471, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_slim_ko_firer
+    Frames:
+    - {fileID: -1624906619, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1261258238, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_slim_ko_jump
+    Frames:
+    - {fileID: 1408863723, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1200933833, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_slim_ko_tap
+    Frames:
+    - {fileID: 384376594, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -876608141, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_slim_knock_aimer
+    Frames:
+    - {fileID: -319631798, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1943785787, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 2097677243, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -2115161147, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -390151008, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 10
+  - Id: game_cat_slim_knock_firer
+    Frames:
+    - {fileID: 1757582813, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1073331941, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1208387044, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1131270728, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -184233154, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 10
+  - Id: game_cat_slim_expr
+    Frames:
+    - {fileID: 1537175247, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1080430389, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -858925879, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 65171351, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 287631831, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1453788099, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 0
+  - Id: game_cat_chonk_idle
+    Frames:
+    - {fileID: -1158660750, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -2094397885, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -44938447, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -554970681, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_chonk_cheer
+    Frames:
+    - {fileID: 196683768, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 300517811, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1085397370, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -425495027, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 10
+  - Id: game_cat_chonk_panic
+    Frames:
+    - {fileID: -1423054210, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1445710138, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 808842808, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1269283773, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_chonk_win
+    Frames:
+    - {fileID: -571838223, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1591317567, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 4
+  - Id: game_cat_chonk_lose
+    Frames:
+    - {fileID: 395877672, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1752469339, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 3
+  - Id: game_cat_chonk_sleepy
+    Frames:
+    - {fileID: -1753692124, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1919252860, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 2
+  - Id: game_cat_chonk_puzzled
+    Frames:
+    - {fileID: 271859285, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 2038217186, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 3
+  - Id: game_cat_chonk_aim_right
+    Frames:
+    - {fileID: 1322216102, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1125881907, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 680815978, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1139516527, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_chonk_aim_left
+    Frames:
+    - {fileID: -1437232342, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -401405286, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1066766666, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 870617274, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_chonk_aim_hold
+    Frames:
+    - {fileID: -1618316961, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1795130172, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1274422990, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1054939242, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_chonk_pull
+    Frames:
+    - {fileID: -1536007906, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1575040748, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 2023626509, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -435455066, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_chonk_fire_hold
+    Frames:
+    - {fileID: 280586664, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 181563632, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1179762304, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1444660403, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_chonk_hurry_aimer
+    Frames:
+    - {fileID: -1727694249, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -650458484, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -553981201, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 154240776, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_chonk_hurry_firer
+    Frames:
+    - {fileID: 947023665, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1708015184, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -122944185, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1772610465, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 12
+  - Id: game_cat_chonk_ko_aimer
+    Frames:
+    - {fileID: -439615937, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1638796439, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_chonk_ko_firer
+    Frames:
+    - {fileID: 852638025, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 886294931, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_chonk_ko_jump
+    Frames:
+    - {fileID: -55345042, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1963457088, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_chonk_ko_tap
+    Frames:
+    - {fileID: 1749021708, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 103125890, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 6
+  - Id: game_cat_chonk_knock_aimer
+    Frames:
+    - {fileID: -1910086895, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 616459219, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 283955724, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1697019967, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1514667756, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 10
+  - Id: game_cat_chonk_knock_firer
+    Frames:
+    - {fileID: -1678983921, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -143912027, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 1871590786, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1044605216, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 300534891, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 10
+  - Id: game_cat_chonk_expr
+    Frames:
+    - {fileID: -640999204, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -411905210, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -2094404009, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: 535436109, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -314628630, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    - {fileID: -1816651567, guid: d21de10f1777a8847a5e36dfb7f4c4fd, type: 3}
+    Fps: 0

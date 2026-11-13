@@ -33,31 +33,43 @@ mode (first variant built).
 - **Results:** clearing a level shows a celebration overlay. Losing knocks
   the pets out: after a short pause, a Retry screen shows them napping.
   Battle Mode shows win/lose banners, then each player's match stats.
-- The pets appear on the menus, customization and the Retry screen. The
-  in-game board doesn't show them yet; that comes with the in-game art
-  pass.
+- The pets appear on the menus, customization and the Retry screen, and
+  they work the launcher in game: the aimer turns it (the dog cranks, the
+  cat steers a wheel) and the firer pulls a lever or presses a button. They
+  react to play: hurrying when time runs short, cheering on big pops,
+  panicking before a ceiling push and getting knocked out on a loss, in
+  their saved fur color and shape.
 
 ## Core gameplay loop
 
-- **The board** is a hex grid that fills the entire phone screen, width
-  and height, with no letterbox bars — the exact row count is computed
-  per device so difficulty stays consistent across screen sizes.
-- **Aiming and firing**: an arcade-style rotating gun at the bottom of the
-  screen. Hold the left/right zones to rotate the aim at a fixed speed
-  (not drag-to-angle), see a live trajectory preview line (including wall
-  bounces), and tap the fire zone to shoot. A "next bubble" indicator
-  shows the color of the upcoming shot before you fire.
+- **The board** is a hex grid that fills the phone's full width and runs
+  from the top of the screen down to the danger line on top of the
+  launcher deck (the bottom 169 pt of the guide's 360 pt-wide layout).
+  The row count is computed per device: 15 rows on a 9:19.5 phone, 11 on
+  9:16. The empty "headroom" rows each level starts with are a share of
+  the board (45% at level 1, down to 15% by level 10), so every phone
+  starts about equally full. The look changes every 5 levels: living room, garden, rooftop at
+  dusk, park at night.
+- **Aiming and firing**: a gear-driven launcher at the bottom of the
+  screen. Hold one of the two rotate slabs (side by side on your thumb's
+  side; Settings picks left or right) to turn the aim at a fixed speed
+  (not drag-to-angle), follow the dotted aim line (including wall
+  bounces, ending where the shot will land), and tap the launcher's
+  pointer to shoot. The loaded bubble sits in the pointer and the next
+  one waits in its ring; after each shot it feeds up the tube.
 - **Landing**: the fired bubble snaps into the nearest empty grid cell at
   its point of contact, with a short slide-and-settle animation on arrival
   (two visual styles available, see Settings below).
 - **Matching**: connecting 3 or more same-color bubbles pops them. Any
   bubbles left disconnected from the ceiling after a pop fall away too.
-- **Shot timer**: a 12-second countdown runs each turn. If you don't fire
-  in time, the game auto-fires at your current aim. A numeric countdown
-  only appears in the last 4 seconds.
+- **Shot timer**: a 12-second countdown runs each turn, shown as 12 pips
+  around the pointer. If you don't fire in time, the game auto-fires at
+  your current aim. In the last 4 seconds the pips flash and a shout
+  bubble counts down 4 → 1.
 - **Ceiling descent**: on a separate, fixed interval (which shortens as
   levels get harder), the entire board pushes down one row — a screen
-  shake warns you just before it happens.
+  shake and a flashing glow under the ceiling warn you first, and the
+  board slides down with the growing ceiling band.
 - **Winning and losing**: clear the whole board to win a level; if the
   descending ceiling reaches your shooter line, you lose.
 - **Levels**: the first five levels have hand-curated bubble patterns —
@@ -72,12 +84,14 @@ mode (first variant built).
 - **Level transitions**: bubbles build in with a staggered top-to-bottom
   pop-in animation when a new level loads, instead of appearing all at
   once. Mid-level ceiling pushes still happen instantly, on purpose.
-- **HUD**: score, shots fired, and current level shown in a bottom bar.
-  Score rewards bigger matches and cascade drops more. A win/loss screen
-  lets you retry the same level or advance to the next one.
+- **HUD**: score, shots fired and level sit in the deck beside the
+  superpower buttons, opposite the rotate slabs. Score rewards bigger
+  matches and cascade drops more. A win/loss screen lets you retry the
+  same level or advance to the next one.
 - **Settings**: a menu (reachable from the main menu) lets you pick
   between two landing-animation styles ("overshoot bounce" vs.
-  "squash/pop"), saved between sessions.
+  "squash/pop") and which thumb works the rotate slabs (left or right),
+  both saved between sessions.
 
 ## Superpowers
 
@@ -101,7 +115,10 @@ Bomb at 6, Row Clear at 9, Rainbow at 12 — untuned placeholder values).
 Once unlocked, an ability is available every level with a small, fixed
 number of charges (currently 1) that refill each level — press its button
 in the HUD to use a charge. Only one aimed ability (Bomb/Row Clear/
-Rainbow) can be armed at a time.
+Rainbow) can be armed at a time. An armed ability sits in the launcher's
+pointer as its own bubble (a bomb with a lit fuse, a row-clear bubble, a
+spinning rainbow), and each has its own effect: an explosion, a sweep
+across the row, or a frosty frame and snowflakes while frozen.
 
 ## Battle Mode
 
@@ -125,6 +142,11 @@ several planned variants), reachable via "2 Players" on the main menu:
   result screen offers "Rematch" (both boards regenerate with fresh,
   matching content) or a return to the main menu.
 - **Superpowers are disabled** in this first variant.
+- **Each half has its own launcher deck** with one pet: the cat at the
+  bottom, the dog at the top. Each player taps their own pointer to fire.
+  The halves are short (7 rows on a 9:19.5 phone, 5 on 9:16), so Battle
+  uses the procedural level generator instead of the curated patterns:
+  both boards still get the same content.
 
 See `features/battle-mode/specs/2026-09-15-simple-attack-battle-mode-design.md`.
 
@@ -133,10 +155,6 @@ See `features/battle-mode/specs/2026-09-15-simple-attack-battle-mode-design.md`.
 - **Meta progression** — no level-select map, currency, or unlocks beyond
   the superpower level-thresholds above.
 - **Monetization** — no ads or IAP.
-- **Real art (in-game)** — the board's bubbles and the HUD are still
-  placeholder shapes generated in code. 16-bit arcade art is planned in
-  `features/art/overview.md`. The screens around the game have real art:
-  cozy vector cartoon UI with the pixel-art pets.
 
 ## See also
 

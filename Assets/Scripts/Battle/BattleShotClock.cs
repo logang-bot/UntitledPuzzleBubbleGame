@@ -11,10 +11,12 @@ namespace Game.Battle
     /// expiry, same 12s default as solo mode. See
     /// docs/features/battle-mode/specs/2026-09-15-simple-attack-battle-mode-design.md.
     /// </summary>
-    public class BattleShotClock : MonoBehaviour
+    public class BattleShotClock : MonoBehaviour, IShotClock
     {
         [SerializeField] private ShooterController shooterController;
         [SerializeField] private float shotTimeSeconds = 12f;
+
+        public float ShotTimeRemaining => _shotTimer.TimeRemaining;
 
         private ShotTimer _shotTimer;
 

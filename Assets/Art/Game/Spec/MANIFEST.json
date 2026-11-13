@@ -1,0 +1,112 @@
+{
+ "exportedAt": "2026-11-12T20:35:09.969Z",
+ "grid": [
+  360,
+  780
+ ],
+ "scale": 3,
+ "fonts": "Lilita One, Baloo 2 (menu bundle fonts.txt)",
+ "dependsOn": "menu-cartoon-unity.zip: toggle_track and sparkle sprites; btn_press and star_twinkle motion; colorways.json ramps for the pet fur",
+ "files": [
+  {
+   "path": "Sheets/gm_bubbles.png",
+   "width": 2043,
+   "height": 819,
+   "sprites": 24,
+   "bytes": 344429
+  },
+  {
+   "path": "Sheets/gm_bubbles.json",
+   "bytes": 8903
+  },
+  {
+   "path": "Sheets/gm_board.png",
+   "width": 1576,
+   "height": 152,
+   "sprites": 12,
+   "bytes": 24826
+  },
+  {
+   "path": "Sheets/gm_board.json",
+   "bytes": 4579
+  },
+  {
+   "path": "Sheets/gm_bg.png",
+   "width": 3832,
+   "height": 5076,
+   "sprites": 7,
+   "bytes": 2106087
+  },
+  {
+   "path": "Sheets/gm_bg.json",
+   "bytes": 2343
+  },
+  {
+   "path": "Sheets/gm_launcher.png",
+   "width": 1994,
+   "height": 733.99,
+   "sprites": 24,
+   "bytes": 178600
+  },
+  {
+   "path": "Sheets/gm_launcher.json",
+   "bytes": 9201
+  },
+  {
+   "path": "Sheets/gm_deck.png",
+   "width": 2046,
+   "height": 192,
+   "sprites": 18,
+   "bytes": 102309
+  },
+  {
+   "path": "Sheets/gm_deck.json",
+   "bytes": 5917
+  },
+  {
+   "path": "Sheets/gm_fx.png",
+   "width": 3764,
+   "height": 744,
+   "sprites": 5,
+   "bytes": 365172
+  },
+  {
+   "path": "Sheets/gm_fx.json",
+   "bytes": 1668
+  },
+  {
+   "path": "PixelSheets/game_pets_cat.png",
+   "width": 506,
+   "height": 1094,
+   "sprites": 84,
+   "bytes": 136852
+  },
+  {
+   "path": "PixelSheets/game_pets_cat.json",
+   "bytes": 27818
+  },
+  {
+   "path": "PixelSheets/game_pets_dog.png",
+   "width": 506,
+   "height": 1282,
+   "sprites": 80,
+   "bytes": 154663
+  },
+  {
+   "path": "PixelSheets/game_pets_dog.json",
+   "bytes": 26018
+  },
+  {
+   "path": "motion.json",
+   "bytes": 14670
+  },
+  {
+   "path": "tokens.json",
+   "bytes": 3584
+  },
+  {
+   "path": "layout.json",
+   "bytes": 26256
+  }
+ ]
+}

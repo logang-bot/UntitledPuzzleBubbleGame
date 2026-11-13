@@ -7,13 +7,14 @@ namespace Game.Tests
     public class DifficultyCurveConfigTests
     {
         private const float Tolerance = 0.0001f;
+        private const int ReferenceRows = 20;
 
         [Test]
         public void ForLevel_Level1_ReturnsFirstKeyframeValues()
         {
             var curve = ScriptableObject.CreateInstance<DifficultyCurveConfig>();
 
-            var config = curve.ForLevel(1);
+            var config = curve.ForLevel(1, ReferenceRows);
 
             Assert.That(config.ColorCount, Is.EqualTo(3));
             Assert.That(config.Density, Is.EqualTo(0.35f).Within(Tolerance));
@@ -26,7 +27,7 @@ namespace Game.Tests
         {
             var curve = ScriptableObject.CreateInstance<DifficultyCurveConfig>();
 
-            var config = curve.ForLevel(2);
+            var config = curve.ForLevel(2, ReferenceRows);
 
             Assert.That(config.Density, Is.EqualTo(0.55f).Within(Tolerance));
         }
@@ -36,7 +37,7 @@ namespace Game.Tests
         {
             var curve = ScriptableObject.CreateInstance<DifficultyCurveConfig>();
 
-            var config = curve.ForLevel(6);
+            var config = curve.ForLevel(6, ReferenceRows);
 
             Assert.That(config.Density, Is.EqualTo(0.8f).Within(Tolerance));
         }
@@ -46,7 +47,7 @@ namespace Game.Tests
         {
             var curve = ScriptableObject.CreateInstance<DifficultyCurveConfig>();
 
-            var config = curve.ForLevel(30);
+            var config = curve.ForLevel(30, ReferenceRows);
 
             Assert.That(config.ColorCount, Is.EqualTo(6));
         }
@@ -56,9 +57,19 @@ namespace Game.Tests
         {
             var curve = ScriptableObject.CreateInstance<DifficultyCurveConfig>();
 
-            var config = curve.ForLevel(1000);
+            var config = curve.ForLevel(1000, ReferenceRows);
 
             Assert.That(config.ColorCount, Is.EqualTo(6));
+        }
+
+        [Test]
+        public void ForLevel_ShorterBoard_KeepsTheSameShareOfHeadroom()
+        {
+            var curve = ScriptableObject.CreateInstance<DifficultyCurveConfig>();
+
+            var config = curve.ForLevel(1, boardRows: 15);
+
+            Assert.That(config.HeadroomRows, Is.EqualTo(7));
         }
 
         [Test]
@@ -66,7 +77,7 @@ namespace Game.Tests
         {
             var curve = ScriptableObject.CreateInstance<DifficultyCurveConfig>();
 
-            var config = curve.ForLevel(1000);
+            var config = curve.ForLevel(1000, ReferenceRows);
 
             Assert.That(config.HeadroomRows, Is.EqualTo(3));
         }
@@ -76,7 +87,7 @@ namespace Game.Tests
         {
             var curve = ScriptableObject.CreateInstance<DifficultyCurveConfig>();
 
-            var config = curve.ForLevel(1000);
+            var config = curve.ForLevel(1000, ReferenceRows);
 
             Assert.That(config.CeilingDropIntervalSeconds, Is.EqualTo(8f).Within(Tolerance));
         }

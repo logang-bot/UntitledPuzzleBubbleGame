@@ -26,6 +26,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f82252463e7ff9246abb4794718326e9, type: 2}
   - {fileID: 11400000, guid: bf0c710bec82bf149b0a95b803e21f2d, type: 2}
   - {fileID: 11400000, guid: 8de9eafd2e0d04c499959a01cf09ccc8, type: 2}
+  - {fileID: 11400000, guid: abb2d06d730c50c4abd5c5ad46ac7a7e, type: 2}
+  - {fileID: 11400000, guid: b6dc82bb28511b7418aa67bead609306, type: 2}
+  - {fileID: 11400000, guid: a23046a15709a314a95ebcf01e9ef606, type: 2}
+  - {fileID: 11400000, guid: d65a4576425ef614ba4d1521b5e941e9, type: 2}
+  - {fileID: 11400000, guid: c7643ca20dd4feb4c930c7c361f9bd6c, type: 2}
+  - {fileID: 11400000, guid: 722b81dd3a26085408db4b35b251b905, type: 2}
+  - {fileID: 11400000, guid: 152158f009cdf7d4889ae97a1b7d6149, type: 2}
+  - {fileID: 11400000, guid: 141041c566575d54a81cbac97c942d2b, type: 2}
   fonts:
     Display: {fileID: 11400000, guid: 34b025d600845a74185bc919e7a910f2, type: 2}
     UiSemiBold: {fileID: 11400000, guid: c06df059fbee6964bb0c002130533d6a, type: 2}

@@ -1,0 +1,583 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ed403eb00d2854991c32c815a2285e, type: 3}
+  m_Name: game_pets_dog
+  m_EditorClassIdentifier: Game::Game.Art.SpriteSheetIndex
+  entries:
+  - Id: game_dog_floppy_idle
+    Frames:
+    - {fileID: -1277467609, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1552594337, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 763411794, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1496110345, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_floppy_cheer
+    Frames:
+    - {fileID: -759564098, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1438434120, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 447378781, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 435432471, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 10
+  - Id: game_dog_floppy_panic
+    Frames:
+    - {fileID: 14249090, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1543495421, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1529142842, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 2070078291, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_floppy_win
+    Frames:
+    - {fileID: -1997627013, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1716728807, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 4
+  - Id: game_dog_floppy_lose
+    Frames:
+    - {fileID: -323057757, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -204481496, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 3
+  - Id: game_dog_floppy_sleepy
+    Frames:
+    - {fileID: 333308857, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1674769130, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 2
+  - Id: game_dog_floppy_puzzled
+    Frames:
+    - {fileID: -457144759, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1322625779, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 3
+  - Id: game_dog_floppy_aim_right
+    Frames:
+    - {fileID: -690919259, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1172881303, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -611962109, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1806724072, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -591411372, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 819329193, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 325327508, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -555777337, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_floppy_aim_left
+    Frames:
+    - {fileID: 1832175926, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -2112980075, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 191875356, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 994368919, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -443133701, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 304834692, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 796717584, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 2102497803, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_floppy_aim_hold
+    Frames:
+    - {fileID: 1046828515, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 778261961, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -604638108, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1430683731, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_floppy_press
+    Frames:
+    - {fileID: -616720412, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1654646717, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1450435481, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1380790051, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_floppy_fire_hold
+    Frames:
+    - {fileID: -2144975375, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1979929325, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -634511727, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 505457160, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_floppy_hurry_aimer
+    Frames:
+    - {fileID: 901416515, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 377361837, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1919037185, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 447922540, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1747467190, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1411346105, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -2066940822, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 275058890, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_floppy_hurry_firer
+    Frames:
+    - {fileID: 932274351, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 792685056, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -695467750, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1422572076, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_floppy_ko_aimer
+    Frames:
+    - {fileID: -1310444031, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -478088749, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_floppy_ko_firer
+    Frames:
+    - {fileID: 1782043214, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 80912279, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_floppy_ko_cower
+    Frames:
+    - {fileID: 1717513564, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1915029756, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_floppy_knock_aimer
+    Frames:
+    - {fileID: -654882590, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -452897460, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1991786064, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -569003962, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -809576102, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 10
+  - Id: game_dog_floppy_knock_firer
+    Frames:
+    - {fileID: -1678357506, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -2057755689, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -254680425, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 2036534707, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -2073757788, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 10
+  - Id: game_dog_floppy_expr
+    Frames:
+    - {fileID: -410556507, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 146606052, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1767114369, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1854059123, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1555145167, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -765933622, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 0
+  - Id: game_dog_pointy_idle
+    Frames:
+    - {fileID: -668124333, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 326333224, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1894573703, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 6867283, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_pointy_cheer
+    Frames:
+    - {fileID: 1961324483, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1108382055, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1252901937, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1005934683, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 10
+  - Id: game_dog_pointy_panic
+    Frames:
+    - {fileID: -1220094831, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 2074012512, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -2104374808, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1847859857, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_pointy_win
+    Frames:
+    - {fileID: -410766441, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -137376452, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 4
+  - Id: game_dog_pointy_lose
+    Frames:
+    - {fileID: -1042209247, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 534249797, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 3
+  - Id: game_dog_pointy_sleepy
+    Frames:
+    - {fileID: -1168262073, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -2058861438, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 2
+  - Id: game_dog_pointy_puzzled
+    Frames:
+    - {fileID: 2044317900, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1439247401, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 3
+  - Id: game_dog_pointy_aim_right
+    Frames:
+    - {fileID: 423052727, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -778809610, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 2101951277, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -984855265, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1892128467, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1730909464, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1003334623, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1056898018, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_pointy_aim_left
+    Frames:
+    - {fileID: 1148715477, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -218641754, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1317329704, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -720901188, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -370901192, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 31399551, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 2109582734, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -365687621, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_pointy_aim_hold
+    Frames:
+    - {fileID: 587385346, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 767410203, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -878313893, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -573854649, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_pointy_press
+    Frames:
+    - {fileID: -1237538657, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1112855894, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1314620289, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -761008712, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_pointy_fire_hold
+    Frames:
+    - {fileID: -1863528401, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1322765612, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1173531311, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1077149964, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_pointy_hurry_aimer
+    Frames:
+    - {fileID: -1110732225, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 513938049, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1314055962, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 237384967, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1278551566, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 107528615, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1393540304, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1515051445, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_pointy_hurry_firer
+    Frames:
+    - {fileID: 338410757, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1901460547, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -195265183, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -28971989, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_pointy_ko_aimer
+    Frames:
+    - {fileID: 670015857, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -444667080, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_pointy_ko_firer
+    Frames:
+    - {fileID: -600232282, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1695523654, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_pointy_ko_cower
+    Frames:
+    - {fileID: -1164360724, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1068347098, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_pointy_knock_aimer
+    Frames:
+    - {fileID: -1662324904, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1064460219, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1390121027, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1079770409, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 202509912, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 10
+  - Id: game_dog_pointy_knock_firer
+    Frames:
+    - {fileID: 1293917596, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 86615366, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1808156958, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 271476290, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1778230345, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 10
+  - Id: game_dog_pointy_expr
+    Frames:
+    - {fileID: -1136086297, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -2055115150, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -546188120, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1114416584, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1940521412, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1067773068, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 0
+  - Id: game_dog_fluffy_idle
+    Frames:
+    - {fileID: 234327622, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1885863686, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1614345773, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 102912329, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_fluffy_cheer
+    Frames:
+    - {fileID: -976618451, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1593003308, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1332225577, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1966402518, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 10
+  - Id: game_dog_fluffy_panic
+    Frames:
+    - {fileID: -1114183976, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -195838381, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1702830037, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1400344912, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_fluffy_win
+    Frames:
+    - {fileID: 731875352, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 105278091, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 4
+  - Id: game_dog_fluffy_lose
+    Frames:
+    - {fileID: 508227312, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -792444604, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 3
+  - Id: game_dog_fluffy_sleepy
+    Frames:
+    - {fileID: 943233530, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 957688556, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 2
+  - Id: game_dog_fluffy_puzzled
+    Frames:
+    - {fileID: -276044392, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -140786474, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 3
+  - Id: game_dog_fluffy_aim_right
+    Frames:
+    - {fileID: 1388105861, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -2093949766, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1402976214, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -22664838, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -475839518, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1207966039, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 773949325, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1565815725, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_fluffy_aim_left
+    Frames:
+    - {fileID: 242665291, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 735884966, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -391717945, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1091339296, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1050744245, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -996065022, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1563076554, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -2003721873, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_fluffy_aim_hold
+    Frames:
+    - {fileID: 684680282, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -204713552, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 938903580, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1810649306, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_fluffy_press
+    Frames:
+    - {fileID: -2032023909, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1912200151, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 634069886, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1295178458, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_fluffy_fire_hold
+    Frames:
+    - {fileID: 1620370288, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1577424038, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 2016151336, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 719114083, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_fluffy_hurry_aimer
+    Frames:
+    - {fileID: 1099909068, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1176451439, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1885974047, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1853692624, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -389797847, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1263061660, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1135156259, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1089495246, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_fluffy_hurry_firer
+    Frames:
+    - {fileID: -2020729965, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -358261645, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1812197168, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -414738495, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_fluffy_ko_aimer
+    Frames:
+    - {fileID: -1365244058, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1416548233, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_fluffy_ko_firer
+    Frames:
+    - {fileID: 69689669, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1953105703, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_fluffy_ko_cower
+    Frames:
+    - {fileID: 2122533951, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 409683322, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_fluffy_knock_aimer
+    Frames:
+    - {fileID: 973391097, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 851863305, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1276935533, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1166769249, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -274528442, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 10
+  - Id: game_dog_fluffy_knock_firer
+    Frames:
+    - {fileID: 1573971221, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 348379732, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1141929079, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1884540905, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 530356898, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 10
+  - Id: game_dog_fluffy_expr
+    Frames:
+    - {fileID: 1543939700, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -355680617, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1702178868, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1129447869, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 498268512, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 101431949, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 0
+  - Id: game_dog_short_idle
+    Frames:
+    - {fileID: -1367143899, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -167504049, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -932232186, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1494022428, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_short_cheer
+    Frames:
+    - {fileID: 885973524, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -290371342, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 622608548, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1285249410, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 10
+  - Id: game_dog_short_panic
+    Frames:
+    - {fileID: 802317847, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1070542594, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 2010748992, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -489650886, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_short_win
+    Frames:
+    - {fileID: -354145204, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -891170400, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 4
+  - Id: game_dog_short_lose
+    Frames:
+    - {fileID: -849588467, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1819382387, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 3
+  - Id: game_dog_short_sleepy
+    Frames:
+    - {fileID: -1008275527, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1615730251, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 2
+  - Id: game_dog_short_puzzled
+    Frames:
+    - {fileID: -1178737010, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -280109044, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 3
+  - Id: game_dog_short_aim_right
+    Frames:
+    - {fileID: -1032925988, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -406904369, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1002656271, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1413886162, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1799084829, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1208790400, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 2090545643, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1327002012, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_short_aim_left
+    Frames:
+    - {fileID: -565736429, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 240710544, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -911100908, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1366623795, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1982046403, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1650678091, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1924818880, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1386816787, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_short_aim_hold
+    Frames:
+    - {fileID: 1541120171, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1392098873, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 806963697, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1599180061, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_short_press
+    Frames:
+    - {fileID: 1441674434, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -248927531, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 711442027, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -95935091, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_short_fire_hold
+    Frames:
+    - {fileID: 650144924, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 2126320610, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -23215047, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1340000658, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_short_hurry_aimer
+    Frames:
+    - {fileID: -462206936, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 175118459, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 2134781103, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1322644531, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1166131449, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -546642610, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1361951433, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1536065587, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_short_hurry_firer
+    Frames:
+    - {fileID: -673654308, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 825760707, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -631223925, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -987185492, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 12
+  - Id: game_dog_short_ko_aimer
+    Frames:
+    - {fileID: 1077916143, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1483250100, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_short_ko_firer
+    Frames:
+    - {fileID: -147087627, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 605489293, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_short_ko_cower
+    Frames:
+    - {fileID: -1446727137, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1761709392, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 6
+  - Id: game_dog_short_knock_aimer
+    Frames:
+    - {fileID: 831818181, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 81454331, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1406655131, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1916382588, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -287115853, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 10
+  - Id: game_dog_short_knock_firer
+    Frames:
+    - {fileID: -1751999016, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 441892272, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1442033483, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -538077914, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1986338820, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 10
+  - Id: game_dog_short_expr
+    Frames:
+    - {fileID: 1021321259, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1854784114, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -1666712948, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: -2088302611, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 1523237564, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    - {fileID: 794831409, guid: c663c5385ae233f439a7b5b380586d64, type: 3}
+    Fps: 0

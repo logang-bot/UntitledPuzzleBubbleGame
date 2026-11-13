@@ -1,0 +1,7003 @@
+fileFormatVersion: 2
+guid: d21de10f1777a8847a5e36dfb7f4c4fd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6567125762533147124
+    second: game_pets_cat_0
+  - first:
+      213: 8009858634945890095
+    second: game_pets_cat_1
+  - first:
+      213: -3170321067057461711
+    second: game_pets_cat_2
+  - first:
+      213: -8118210756078658859
+    second: game_pets_cat_3
+  - first:
+      213: -7827855453779326613
+    second: game_pets_cat_4
+  - first:
+      213: 7600821021821369015
+    second: game_pets_cat_5
+  - first:
+      213: -2440608763617178460
+    second: game_pets_cat_6
+  - first:
+      213: 3119549845118162288
+    second: game_pets_cat_7
+  - first:
+      213: 7866305415478491742
+    second: game_pets_cat_8
+  - first:
+      213: 8254783642660040876
+    second: game_pets_cat_9
+  - first:
+      213: -7315480027510116659
+    second: game_pets_cat_10
+  - first:
+      213: 5213408394420994658
+    second: game_pets_cat_11
+  - first:
+      213: -2178968569778478691
+    second: game_pets_cat_12
+  - first:
+      213: -3572911894973651109
+    second: game_pets_cat_13
+  - first:
+      213: -1541624763292320510
+    second: game_pets_cat_14
+  - first:
+      213: -7848388578375864949
+    second: game_pets_cat_15
+  - first:
+      213: -989566273530684561
+    second: game_pets_cat_16
+  - first:
+      213: -4686100274958954399
+    second: game_pets_cat_17
+  - first:
+      213: -3407364252329909389
+    second: game_pets_cat_18
+  - first:
+      213: 5152664024543456058
+    second: game_pets_cat_19
+  - first:
+      213: 1160116957611028107
+    second: game_pets_cat_20
+  - first:
+      213: -7396579759663225544
+    second: game_pets_cat_21
+  - first:
+      213: -805352221623922425
+    second: game_pets_cat_22
+  - first:
+      213: -1809316664222022693
+    second: game_pets_cat_23
+  - first:
+      213: 9006900745079248476
+    second: game_pets_cat_24
+  - first:
+      213: -8096856108237769123
+    second: game_pets_cat_25
+  - first:
+      213: -2514238159147564544
+    second: game_pets_cat_26
+  - first:
+      213: -7419144893647626471
+    second: game_pets_cat_27
+  - first:
+      213: -7342223212396858729
+    second: game_pets_cat_28
+  - first:
+      213: 3044789235599597384
+    second: game_pets_cat_29
+  - first:
+      213: -8797742598241355816
+    second: game_pets_cat_30
+  - first:
+      213: -1522204051359012057
+    second: game_pets_cat_31
+  - first:
+      213: 2861612912074616332
+    second: game_pets_cat_32
+  - first:
+      213: -7970770844437400286
+    second: game_pets_cat_33
+  - first:
+      213: 7488845488839119333
+    second: game_pets_cat_34
+  - first:
+      213: -5063660596875388124
+    second: game_pets_cat_35
+  - first:
+      213: 4390497693397023013
+    second: game_pets_cat_36
+  - first:
+      213: 194326004872236781
+    second: game_pets_cat_37
+  - first:
+      213: -7568418064853672379
+    second: game_pets_cat_38
+  - first:
+      213: -3858435460484432143
+    second: game_pets_cat_39
+  - first:
+      213: -6435590924188007197
+    second: game_pets_cat_40
+  - first:
+      213: -3001182247963005809
+    second: game_pets_cat_41
+  - first:
+      213: 760627798018533476
+    second: game_pets_cat_42
+  - first:
+      213: -4640664646289507285
+    second: game_pets_cat_43
+  - first:
+      213: 5632488550703470259
+    second: game_pets_cat_44
+  - first:
+      213: -6167168668744443524
+    second: game_pets_cat_45
+  - first:
+      213: 3883125800471857858
+    second: game_pets_cat_46
+  - first:
+      213: 6280136620137477613
+    second: game_pets_cat_47
+  - first:
+      213: -1993690265659344649
+    second: game_pets_cat_48
+  - first:
+      213: 4650712831726062190
+    second: game_pets_cat_49
+  - first:
+      213: 3659567664901935746
+    second: game_pets_cat_50
+  - first:
+      213: -123595001061188494
+    second: game_pets_cat_51
+  - first:
+      213: -4116787960295792886
+    second: game_pets_cat_52
+  - first:
+      213: 3381660276673794365
+    second: game_pets_cat_53
+  - first:
+      213: -3238857157066926206
+    second: game_pets_cat_54
+  - first:
+      213: 774694152616023579
+    second: game_pets_cat_55
+  - first:
+      213: -2133563491233597332
+    second: game_pets_cat_56
+  - first:
+      213: 3446944334731958730
+    second: game_pets_cat_57
+  - first:
+      213: 6074261987960983686
+    second: game_pets_cat_58
+  - first:
+      213: 7947180671349943349
+    second: game_pets_cat_59
+  - first:
+      213: -6887287507971497856
+    second: game_pets_cat_60
+  - first:
+      213: -3585578567591095287
+    second: game_pets_cat_61
+  - first:
+      213: 6539500484620741880
+    second: game_pets_cat_62
+  - first:
+      213: -1391980000282697558
+    second: game_pets_cat_63
+  - first:
+      213: 776292888987044947
+    second: game_pets_cat_64
+  - first:
+      213: 4987007805977520262
+    second: game_pets_cat_65
+  - first:
+      213: 4827610669357758284
+    second: game_pets_cat_66
+  - first:
+      213: 712551963069619435
+    second: game_pets_cat_67
+  - first:
+      213: -2811758701556263748
+    second: game_pets_cat_68
+  - first:
+      213: -4141935807849445834
+    second: game_pets_cat_69
+  - first:
+      213: -1367157767495746407
+    second: game_pets_cat_70
+  - first:
+      213: -4528374828254648772
+    second: game_pets_cat_71
+  - first:
+      213: 2946961424153021138
+    second: game_pets_cat_72
+  - first:
+      213: 1346990484390357151
+    second: game_pets_cat_73
+  - first:
+      213: -7267258670525550313
+    second: game_pets_cat_74
+  - first:
+      213: 3420030453732409267
+    second: game_pets_cat_75
+  - first:
+      213: -1236306551005597433
+    second: game_pets_cat_76
+  - first:
+      213: 3019513577822071330
+    second: game_pets_cat_77
+  - first:
+      213: 8063812871033888578
+    second: game_pets_cat_78
+  - first:
+      213: -2248963518319260521
+    second: game_pets_cat_79
+  - first:
+      213: 5152697997004425144
+    second: game_pets_cat_80
+  - first:
+      213: 6700527244642219973
+    second: game_pets_cat_81
+  - first:
+      213: 4779916974153456761
+    second: game_pets_cat_82
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: game_cat_round_idle_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1048
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ec0177408844b049af11195cbeb28af
+      internalID: 558559202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_idle_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 1048
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e084bcc1dd24b2c479b46baae29db841
+      internalID: -1673811914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_idle_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 1048
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3693a07d5f360bf489959d99b3973ae2
+      internalID: 1339184657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_idle_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1048
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e82732cf7e84964d8e991d4f1e4e9d1
+      internalID: -1503645361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_cheer_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1048
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 764e7b6f7ae9c1c46a4d42db4bee9fbb
+      internalID: -1136936970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_cheer_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 1048
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f5ce40074da90941835111f740454af
+      internalID: -228766640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_cheer_2
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 1048
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ed9001615eec844892e7e9cccced214
+      internalID: -146373779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_cheer_3
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1048
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76da8d4517bb8a4438fecb39dc14e6d6
+      internalID: 1565556608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_panic_0
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 1048
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e873e7c13b30c8a4a90f172cfb14fb2a
+      internalID: 1153055776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_panic_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 1048
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62413cb3f405a1b40bd2c8ba7557fc65
+      internalID: 1863652270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_panic_2
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 1048
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f29db9ef9b65e6b458fe9231c2e6a46b
+      internalID: -1740535161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_panic_3
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 1048
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f0dc57fd4c4bf94396b7643814cf224
+      internalID: 817725914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_win_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1002
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4f8c98de66225942bcaad9e680faeb1
+      internalID: -1698150652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_win_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 1002
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2579979ae267124ab2cd253fe907b4f
+      internalID: 915101521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_lose_0
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 1002
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d09a404b71d1d1b4984728729ee473d8
+      internalID: 1972629898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_lose_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1002
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46fd99ac4140dea4bbe7f5558512197d
+      internalID: 1572383911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_sleepy_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1002
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf68ffad677757c4da78d028fa8327e2
+      internalID: 309853463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_sleepy_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 1002
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9997e21c48de8c346a154de577b9b9d6
+      internalID: -997428200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_puzzled_0
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 1002
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20f3ea5e7c3f3754d85cb3cc2c6f7077
+      internalID: 1485196390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_puzzled_1
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1002
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ca5047aa24213419cc0e6e881bb6db
+      internalID: -357625560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_aim_right_0
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 1014
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3253cfe701ac45a419cb246987da2af4
+      internalID: 1047378250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_aim_right_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 1014
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9510f6e74453f864cbaf22ab7f7c2689
+      internalID: -1573813046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_aim_right_2
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 1014
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2432cfce727101a499651b2160894aa7
+      internalID: -1683252154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_aim_right_3
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 1014
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae7d0b1a44559d14cbf65341706b0929
+      internalID: -919736915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_aim_left_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 968
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d93e1d39f815274f91cbda926008e02
+      internalID: 341714029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_aim_left_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 968
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8e5bbcb2053f484dbf314aeee370e9e
+      internalID: 1961790865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_aim_left_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 968
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5211c2ff4d0180a4a929ae33e637cf5a
+      internalID: 486299073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_aim_left_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 968
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de4024422bae3a488f3cac6552fa1d6
+      internalID: -260079691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_aim_hold_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 968
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0534df33ba5579b4ea31bfd941e427ce
+      internalID: -637298807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_aim_hold_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 968
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e4863489f125734bbfbb50ff7191ed1
+      internalID: 1972457839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_aim_hold_2
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 968
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c6c38b9b546276438ba69302370f7e3
+      internalID: -1540602639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_aim_hold_3
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 968
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c6c1ba551a4a664a8bd1f6c61996085
+      internalID: 32308916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_pull_0
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 968
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e021cec273b31094a96555c76e624f66
+      internalID: -272700723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_pull_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 968
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dda7cef0bbd9261418377775f5f6200b
+      internalID: 92816384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_pull_2
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 968
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c48ddbd55a93dcc4d9aef47664207408
+      internalID: -1810111074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_pull_3
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 968
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4056564b0268faa40baeca13faf80e62
+      internalID: -1440806261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_fire_hold_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 934
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae7e7922bc6869748b3cb29180e276c6
+      internalID: -966825791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_fire_hold_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 934
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7dd69519315fdd4ebfa37069ad4017d
+      internalID: -1805460967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_fire_hold_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 934
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb5f2eb41c3d7c4e9523f9cd9f80fa2
+      internalID: 1749935903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_fire_hold_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 934
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 071c0396c7f63a44ea18691874cce9c2
+      internalID: 1141186317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_hurry_aimer_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 934
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c9a0bf5986ab5041889d26cf816dfdb
+      internalID: 1131983910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_hurry_aimer_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 934
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eab87f4ecaa94be459437b1b28c41991
+      internalID: 86899065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_hurry_aimer_2
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 934
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17be3f6855ae1664d852519dee1db43b
+      internalID: 2141978735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_hurry_aimer_3
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 934
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5ac388a1d06588449110a82a6cae700
+      internalID: -2029606692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_hurry_firer_0
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 934
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29a09bb3e2a1a4741ba55dd3534c40ec
+      internalID: -601127244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_hurry_firer_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 934
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 350a9a8612f376d4c9e20997a716347a
+      internalID: -511986336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_hurry_firer_2
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 934
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aecd825453b98b478f0d303aec154d8
+      internalID: 1601508251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_hurry_firer_3
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 934
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b035fdb745a34df42bd54e7705fdb0bd
+      internalID: -1264660199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_ko_aimer_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 900
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 277c37a937dc2fd4493555e4d209f878
+      internalID: 1394635280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_ko_aimer_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 900
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad377a8c81e84b14a93b188e98a9664a
+      internalID: -1241706319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_ko_firer_0
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 900
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 166f8ef280e20404298ed27d9bd0c683
+      internalID: -1598852946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_ko_firer_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 900
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bd39136e80015d45bdf77e846974fe7
+      internalID: 1487450345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_ko_jump_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 900
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9d8ef80b2729b04d962b76ba670d5f6
+      internalID: -1369134641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_ko_jump_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 900
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de4ae247d0b3dc444a106ae9b1597dad
+      internalID: -50844469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_ko_tap_0
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 892
+        width: 40
+        height: 40
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 691c32fa6f8b24d4b9dde2b667d7b88e
+      internalID: 1122111297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_ko_tap_1
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 892
+        width: 40
+        height: 40
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3750f1591c51d694d99211126ed56ca7
+      internalID: -2051282367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_knock_aimer_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 846
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0e04e3e9ca510b4882118f21d6d3f5b
+      internalID: 1512932206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_knock_aimer_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 846
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d2461aa5749134e84b9d6a386e4eff
+      internalID: -1428500420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_knock_aimer_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 846
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcddc61bfa590f34b966723cd9494206
+      internalID: 1224574498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_knock_aimer_3
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 846
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed7c08913e66fc14dab9837cbab14e8e
+      internalID: -42590345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_knock_aimer_4
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 846
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aee5fd4d11a47b4d8975bac57221f28
+      internalID: -1852746383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_knock_firer_0
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 846
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de77c48f8331a74a80f78499851608e
+      internalID: 23522534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_knock_firer_1
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 846
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b104a3f9f3805114da1e6cc58e8874a3
+      internalID: 1004165633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_knock_firer_2
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 846
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 223e54770e66de2429a807085e17d1b7
+      internalID: -1397127195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_knock_firer_3
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 846
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3ea13d15ea1422469e6393ccbe2a0d3
+      internalID: -48206136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_knock_firer_4
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 846
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b59a148b3ae3b48b792f1af91787e0
+      internalID: -1230708292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_expr_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 800
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b0fab91ee335604e89a9cd2b3076f8e
+      internalID: 1758157161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_expr_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 800
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1850ebad9ed8f3b46b5618a460700130
+      internalID: 1946510268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_expr_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 800
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ee9664f31e81747a35ad4d17eb51cc
+      internalID: 147456169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_expr_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 800
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 216b0636fd2d9e343adfef32c3aa4abb
+      internalID: -2135366570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_expr_4
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 800
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f35c93401a2bca44bb2d1e55ded08ba7
+      internalID: 201174896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_round_expr_5
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 800
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad9c29973e110a143832ddff0bbf3cb7
+      internalID: -914379882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_idle_0
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 800
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d3e457e91a741c4d8eff46e4493d3d0
+      internalID: 1261361316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_idle_1
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 800
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a39e7cfabc729f542918ee4fac28032c
+      internalID: 971954625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_idle_2
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 800
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d04ea171b73e14c4a88cd8bee21bfe51
+      internalID: 1456404238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_idle_3
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 800
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a228bb33a118f2649a0fda0333ab144c
+      internalID: -1084924658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_cheer_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 754
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db73061660eb36640b7a53a958483787
+      internalID: -1206907582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_cheer_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 754
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40fba2698bf882438fb8b7e70f406b3
+      internalID: -1138686629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_cheer_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 754
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ceebdf007dc7f47a711aa0557d2bda
+      internalID: 698214527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_cheer_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 754
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac921eac25ae944418a0d7ca433d4c4c
+      internalID: 937949353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_panic_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 754
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc92dc691bec1924791b145346e7fab0
+      internalID: 1089015239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_panic_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 754
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de87616c60bc3e4b8c0a11ff5b7df06
+      internalID: 1138114127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_panic_2
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 754
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd42ffc2f0428764a965469c4f82542c
+      internalID: 1003086262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_panic_3
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 754
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8b46bb91ce6c8c4dae8cf397546c463
+      internalID: 1448203065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_win_0
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 754
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb8286218ea94cc459249903dc670319
+      internalID: 539176128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_win_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 754
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c3a8ef30eb879b4c9669374681f83ed
+      internalID: 1561937111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_lose_0
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 754
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71d690aa2e891584f9db3fbeffe1483b
+      internalID: -720367267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_lose_1
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 754
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9442e245d3d4d84aada9bc38b3408ed
+      internalID: -1362804628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_sleepy_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 708
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1277307d3b51da49bd996d663785e5b
+      internalID: -1269798319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_sleepy_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 708
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b8f9b5193ee2f4c96a2a3129c884d7
+      internalID: 1214976591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_puzzled_0
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 708
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e3f383e5ef7db1429e211eb6548fbdd
+      internalID: -671308628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_puzzled_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 708
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3f55f909143dd746abfdd7cc5773a29
+      internalID: 1088385458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_aim_right_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 720
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fea4c9026be8e574b810c81e258de4fd
+      internalID: 778618624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_aim_right_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 720
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdf134f3f313e884cb725063c64f6035
+      internalID: -1930656724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_aim_right_2
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 720
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17a5c030eb6275c4997395818c397909
+      internalID: -910020498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_aim_right_3
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 720
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb941e8f58badde499d4141f21195ecf
+      internalID: -345130691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_aim_left_0
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 720
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62934ffdd3a346640bc810c379885bb2
+      internalID: 1344449996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_aim_left_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 720
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18947c61285f3db408abfa9f11e64ce9
+      internalID: 1523234038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_aim_left_2
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 720
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b998308ef506ced49aa3643b0495304c
+      internalID: -740287403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_aim_left_3
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 720
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a752fb98373a4e4bb4326f88cddaa62
+      internalID: 345894633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_aim_hold_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 674
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 063b35634d671cc4082b7c0a920a170d
+      internalID: 2126190333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_aim_hold_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 674
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dfce1d398b16324ea18a4226cdfa545
+      internalID: 1164882840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_aim_hold_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 674
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc5c64c16fe05b2448f1bdd56a901417
+      internalID: 1177898568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_aim_hold_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 674
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9db347e11effc7a41aabccdff6f1e529
+      internalID: -1288926498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_pull_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 674
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39dd076c43a49ab41b2e770b8907a8c6
+      internalID: 1882984774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_pull_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 674
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75814789d92b3b14ebae5a2f3d62ba4b
+      internalID: -1525244525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_pull_2
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 674
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa63851f13dd1ea43b0dbf65418efe18
+      internalID: -405745568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_pull_3
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 674
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b2f00dbe6a4b674b8b34a9b06618b16
+      internalID: 1591557890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_fire_hold_0
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 674
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad92d451a8259c74291a06ee413d7511
+      internalID: 2062813494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_fire_hold_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 674
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b58a639c997f114db7b0f140cf206d3
+      internalID: -1150619100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_fire_hold_2
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 674
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf827e81500a4f94887cce41eab82f5e
+      internalID: 1916884380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_fire_hold_3
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 674
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d1894801981c9e4d85e3fc82b29b44d
+      internalID: -2022424869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_hurry_aimer_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 640
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7039dfc0b2b45ae48aeff3760248c4e1
+      internalID: -1260218472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_hurry_aimer_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 640
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 089f2909256fc114b8ebc14e4c8dbf4c
+      internalID: -1109693463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_hurry_aimer_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 640
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f889ae276f972a4aa42fff405acdeac
+      internalID: -1441502476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_hurry_aimer_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 640
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afe52fff4a8ec6c4c8706e403a65f7da
+      internalID: -1929880375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_hurry_firer_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 640
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31b30278a00496c4f91939f71582830a
+      internalID: -792424225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_hurry_firer_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 640
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8725ee0884be7cb498e542317376cb91
+      internalID: 239254898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_hurry_firer_2
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 640
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15a2cacb2a83dfb46b421852de6df174
+      internalID: 441174316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_hurry_firer_3
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 640
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dc6e6d1f367a8744b0b84fe0410757a
+      internalID: -485888946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_ko_aimer_0
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 640
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c343e7d56eef9974aab62b4a196e77ee
+      internalID: 1784499001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_ko_aimer_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 640
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8fcc70696eb267448af93b749471a07
+      internalID: -448907163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_ko_firer_0
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 640
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f963eb147c039fe41b37b228f89366f1
+      internalID: 1624851838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_ko_firer_1
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 640
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f62807d0828f34fa24dcce9333013b
+      internalID: -614591648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_ko_jump_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 606
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df9eb1b73a1c05644b42386abda99892
+      internalID: 260915861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_ko_jump_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 606
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9800e3c848090b429f4f9c620b7c928
+      internalID: -425730201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_ko_tap_0
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 598
+        width: 40
+        height: 40
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dac38e0574a89244a8b69b3b8c677179
+      internalID: -1977870396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_ko_tap_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 598
+        width: 40
+        height: 40
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95d78f5751b34ae43a4446a4c9500d31
+      internalID: -1357155381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_knock_aimer_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 594
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2d54086825d98f40a3025f5adbabd02
+      internalID: -421792589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_knock_aimer_1
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 594
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51a2072098ee18349bcc711d6e1ac831
+      internalID: -1341968149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_knock_aimer_2
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 594
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e0676d3c5ec74d44a601d9cbf7912c2
+      internalID: 398193645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_knock_aimer_3
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 594
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382eb0142641bc8469bfafc5288ed49c
+      internalID: 1159145897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_knock_aimer_4
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 594
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 803366cc0a216694284a315aeee8bea9
+      internalID: -327828404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_knock_firer_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 548
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d292b54e362f89448c84c8f8aa8c1db
+      internalID: 1621167530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_knock_firer_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 548
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f3d8028baccdb74c855de3c0dab2c73
+      internalID: 2080143290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_knock_firer_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 548
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6607a3479150dd4bbc41c9fe0553259
+      internalID: -2002879028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_knock_firer_3
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 548
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 800adf87441dcec44825b07557750b29
+      internalID: 844396333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_knock_firer_4
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 548
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b64b7720d4adc204788a42ef17e1afc0
+      internalID: 1962486120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_expr_0
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 548
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a560dbc16955c6a4090c3ce68aea6d03
+      internalID: 556652284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_expr_1
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 548
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4e1383b7ef93a54bb0087d5a0d8a828
+      internalID: 1888893720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_expr_2
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 548
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5431070a001829e46bf070bacdbdfa75
+      internalID: -1645253213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_expr_3
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 548
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecf8b6fcd9211db49930d61fd5dc688a
+      internalID: 707132707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_expr_4
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 548
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba1d7726e5e4e7a4a8692e37c651eff4
+      internalID: 1750506919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_fluffy_expr_5
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 548
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e6cfaa335095034684138438b6f140b
+      internalID: -1628005682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_idle_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 502
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 204d408c226854b4caa0551d69649e17
+      internalID: 2117734002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_idle_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 502
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2ac7990a8969fa458b97f875989e32a
+      internalID: -6644091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_idle_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 502
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f61df3b84811fc4da542003ca3578f8
+      internalID: 2137499758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_idle_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 502
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2b4604e54381046bc936efdd0aad1e
+      internalID: -209753041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_cheer_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 502
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5524ff858daa8ed4fbb67ef77a18cd8a
+      internalID: -1317025691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_cheer_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 502
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ce9060e6a7396b4abf5cadce5b367e8
+      internalID: 427021838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_cheer_2
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 502
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a26615bb55aa134b9a331e0b3d0c3cc
+      internalID: -1765086610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_cheer_3
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 502
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a24d44fec9fcc36469c39ba44bae7956
+      internalID: -771791676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_panic_0
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 502
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 975d857d2f0ef4f47bec380a90af215c
+      internalID: 1987678373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_panic_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 502
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5800f191cba3144f8b55c20824e98e4
+      internalID: 1213921776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_panic_2
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 502
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 379132826f7dd67419c9c41ece6e46ba
+      internalID: 380532960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_panic_3
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 502
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af7a06fc4cb4cd543ab57a40eb5488d5
+      internalID: -2109384313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_win_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 456
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ded9e13d6cf891b439749cc40639ba06
+      internalID: 879587760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_win_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 456
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 441e9cde5c3a3ad43920b234b0fd9041
+      internalID: 1091969309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_lose_0
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 456
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7367f6325fa51c845b8619803d83a3fe
+      internalID: -1969271644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_lose_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 456
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1012d42066b5f7f469b0ac013aa2aae7
+      internalID: -1988998522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_sleepy_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 456
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02383d95bcc31564988684dd4d1e1ae0
+      internalID: -1674093830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_sleepy_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 456
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0ffe590a9ea67a43823c93aa0a1dd5f
+      internalID: 134099513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_puzzled_0
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 456
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 287e17fc1f4277a42803baebd81f7445
+      internalID: -2083001468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_puzzled_1
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 456
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c89fa33e00dac714795eaec4127f5290
+      internalID: 520328990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_aim_right_0
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 468
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d694b8102cbeb684082f01fec569f77e
+      internalID: -412603937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_aim_right_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 468
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f162a9acfee83884cabc298013e07305
+      internalID: -1630108719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_aim_right_2
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 468
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c49bb0d60f54946be0ac5c2107497c
+      internalID: 35333477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_aim_right_3
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 468
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e48de1060f11af945a3af6712dc5c926
+      internalID: -2114592323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_aim_left_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 422
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ac61aef85b32747a207b7bfb1e0f59
+      internalID: 663490990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_aim_left_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 422
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7343d0e833d79754bacb0d9338d9f5c5
+      internalID: 1012933140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_aim_left_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 422
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bcd89ea00707fa48837665dd277774e
+      internalID: -949948031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_aim_left_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 422
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b916746a266b3cc4b9c772bbf40d13ef
+      internalID: 578375765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_aim_hold_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 422
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81bc1eb569efd954fa7d93ea12d4052a
+      internalID: 584613508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_aim_hold_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 422
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644c6d6e8677cdf498ab7d88a3dc0e5c
+      internalID: -693100479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_aim_hold_2
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 422
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39df4d37ab1c6264c8b52d7b66209c48
+      internalID: 1433464903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_aim_hold_3
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 422
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b03eea06feb9b4441a403491dc14abd5
+      internalID: 1891940480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_pull_0
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 422
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e1460655f514714692dcd159e30c851
+      internalID: -727659127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_pull_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 422
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 912a886d4c198a34da076c6a3ed0a763
+      internalID: -14439869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_pull_2
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 422
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b018a133618f44441b5f01466b00f2fb
+      internalID: -1643454382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_pull_3
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 422
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b93b0dfb02c577e42992d6632baf6729
+      internalID: 1219076831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_fire_hold_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 388
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 105b48d52f8a5b9419cd085b42023e5a
+      internalID: -1395852834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_fire_hold_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 388
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae41e625eff804b4899d71e1bab8ecc3
+      internalID: -1136243505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_fire_hold_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 388
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86bc1ca4f88de244298b0e032fd2fc68
+      internalID: -516789241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_fire_hold_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 388
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e8b8a364b17443479b92d46dbc47067
+      internalID: 1682013911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_hurry_aimer_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 388
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a24c076de681b114f999eb9db99ab68e
+      internalID: -806761604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_hurry_aimer_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 388
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec7d32015f666664c9bcb74ba8670731
+      internalID: -1746769035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_hurry_aimer_2
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 388
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5843aaef15b1b2a43b0ca28ee79a4f22
+      internalID: 1774373881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_hurry_aimer_3
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 388
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30fc62d202b3c2d40bb98704ccab7f3b
+      internalID: -95534941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_hurry_firer_0
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 388
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b589fa23dcded148953b72bdcf80da0
+      internalID: 1883510886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_hurry_firer_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 388
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87585f7a0a46ede4db3ea970060bfc93
+      internalID: -257447359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_hurry_firer_2
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 388
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 963d15367c311f64cbd98f647a984d66
+      internalID: 576769273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_hurry_firer_3
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 388
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bcfe919c0c241744988c8adc45d5405
+      internalID: -1940161740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_ko_aimer_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 354
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b55f1195f9b24ab499f4848b310c2ca1
+      internalID: 203611862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_ko_aimer_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 354
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf1064c4a8e46e04fb3e0a4f9dc729d0
+      internalID: 2084367471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_ko_firer_0
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 354
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fea9a8d53caad142a58a3f274ebb70a
+      internalID: -1624906619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_ko_firer_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 354
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e882fdbc6e80c85449bd7d6763d94c50
+      internalID: -1261258238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_ko_jump_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 354
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4939b7f86c2c54d488aead4014e11a3c
+      internalID: 1408863723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_ko_jump_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 354
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c09ed48f70dfecb438bd38d4b1e2b452
+      internalID: -1200933833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_ko_tap_0
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 346
+        width: 40
+        height: 40
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7ee83d0083f0454bb88d7f5a7f47b9b
+      internalID: 384376594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_ko_tap_1
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 346
+        width: 40
+        height: 40
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 377d26dcfb8a5f049bcfaf24e4647d85
+      internalID: -876608141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_knock_aimer_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 300
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d36ab13d6c24e94f97221aa226f766a
+      internalID: -319631798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_knock_aimer_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 300
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b268be0b5f4b34e499fc5d9543030701
+      internalID: 1943785787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_knock_aimer_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 300
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8098eccce8500084c8a475f110d52104
+      internalID: 2097677243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_knock_aimer_3
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 300
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab77a66383fb34142af475e152ac5f75
+      internalID: -2115161147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_knock_aimer_4
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 300
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a825df5d0691e3b4fa9567dc17082b0f
+      internalID: -390151008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_knock_firer_0
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 300
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb3483a7ed9d58d479675f0a4c07269e
+      internalID: 1757582813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_knock_firer_1
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 300
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f744135e8fdbda14c9b94842216254f2
+      internalID: 1073331941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_knock_firer_2
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 300
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48da0c08ad01b6844a527f7ae66c08cb
+      internalID: 1208387044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_knock_firer_3
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 300
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d1f5f64cef1f945abce13f985847a5
+      internalID: 1131270728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_knock_firer_4
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 300
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aba3b59b305cfa40af44f873083232b
+      internalID: -184233154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_expr_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 254
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d338d58463e7514fbf1d361a7e28a12
+      internalID: 1537175247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_expr_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 254
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d4663259b561d84bb9015755348abaa
+      internalID: -1080430389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_expr_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 254
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16a2e877d852a7d418a3071f426a6b47
+      internalID: -858925879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_expr_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 254
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a58c37b91bce2d478a1765e7572bd06
+      internalID: 65171351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_expr_4
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 254
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d635ae1913af4b84cabdcb8c33363052
+      internalID: 287631831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_slim_expr_5
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 254
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7ba2cfbb27001f4a871746ee30f26fe
+      internalID: 1453788099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_idle_0
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 254
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 532d8663535111e44a064a8222369e95
+      internalID: -1158660750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_idle_1
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 254
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eb875ef32cf16548879015d5a46394d
+      internalID: -2094397885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_idle_2
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 254
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71d51c05ab0ebe84f8777835b99212ac
+      internalID: -44938447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_idle_3
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 254
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73be7c0fe78d2f1488943049228f8766
+      internalID: -554970681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_cheer_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 208
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87caf5b6fb9e5c64ea47d6b3927556a9
+      internalID: 196683768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_cheer_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 208
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4e9f4b80b28bbd4c8700d209af3e691
+      internalID: 300517811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_cheer_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 208
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2afdadfdb1fea2c49b7c1e48206cdeb4
+      internalID: -1085397370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_cheer_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 208
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa400fe4eac69824f94a08403fc1ed63
+      internalID: -425495027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_panic_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 208
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 733434ba86c1d904195a6a3c0a841a2b
+      internalID: -1423054210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_panic_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 208
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a93ba8700c3bd504a873263962c9bfae
+      internalID: -1445710138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_panic_2
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 208
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2296d838fd74e04fbddfff9c7e1bc02
+      internalID: 808842808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_panic_3
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 208
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8376df22eda1eeb4083ce30753a96b6a
+      internalID: -1269283773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_win_0
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 208
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8688b251b93211e4b91cbd05d4269fb3
+      internalID: -571838223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_win_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 208
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e0d5811f19da314f87549bca0fcb85e
+      internalID: -1591317567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_lose_0
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 208
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cb6293e2657531489df2a17bbfc4e3b
+      internalID: 395877672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_lose_1
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 208
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66a87c8549609ca4f8244a62cf498a9e
+      internalID: -1752469339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_sleepy_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 162
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abdd84caeb9fc5746b8fa3aa6c6f8dc6
+      internalID: -1753692124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_sleepy_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 162
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c3fa12976eb9a44692350fca17534d5
+      internalID: -1919252860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_puzzled_0
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 162
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a2550be4f397724ea9ba476dac7c1f4
+      internalID: 271859285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_puzzled_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 162
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a255b54c035f4478790eb4f0338724
+      internalID: 2038217186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_aim_right_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 174
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29849f9f857b658489d79563c4013136
+      internalID: 1322216102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_aim_right_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 174
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4419cd350173e164294589c4df374671
+      internalID: 1125881907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_aim_right_2
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 174
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7aebe26082edc244957c5252464253c
+      internalID: 680815978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_aim_right_3
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 174
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de8c397873d08b54f97d26eca0f9705c
+      internalID: 1139516527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_aim_left_0
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 174
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b24e79b11db831468dd18d944c77823
+      internalID: -1437232342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_aim_left_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 174
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35d85e199415994182640ef97482953
+      internalID: -401405286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_aim_left_2
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 174
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2696a25820993824aa80d8280c36c13b
+      internalID: 1066766666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_aim_left_3
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 174
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f85a3c3e6ec3e74082d3d7eb1aafc31
+      internalID: 870617274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_aim_hold_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 128
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e0a7b145e97ef848a68aca7727e6f84
+      internalID: -1618316961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_aim_hold_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 128
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c044b223b018c464a9a1be7a9b99ea8a
+      internalID: -1795130172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_aim_hold_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 128
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4674c1e12f8223a4f8ccc4303e78db78
+      internalID: 1274422990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_aim_hold_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60ad47acf8dd28448a4b2f067bbe06ac
+      internalID: -1054939242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_pull_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 128
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0e1120affa68c94dbe17680a0cd7a0b
+      internalID: -1536007906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_pull_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 128
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5e0fa632030119419c7af5f955e3260
+      internalID: -1575040748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_pull_2
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 128
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f119aebe088d4c4ea16317e8617fa14
+      internalID: 2023626509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_pull_3
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 128
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eb6e9e09f1388942994580cdc51e430
+      internalID: -435455066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_fire_hold_0
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 128
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb53ece58e9bb0f4086185c370f9beb9
+      internalID: 280586664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_fire_hold_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 128
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae830ea0b332385448ba21bdd7f64830
+      internalID: 181563632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_fire_hold_2
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 128
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1169ba3dc298e8a4f8065c45a8ec0dd4
+      internalID: 1179762304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_fire_hold_3
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 128
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4d155378410f724a9decd7ab08faf07
+      internalID: 1444660403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_hurry_aimer_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 94
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4d9ad83f9f52e24ab37094d985b23a8
+      internalID: -1727694249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_hurry_aimer_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 94
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 821daccb829622f41843c3031ac3c620
+      internalID: -650458484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_hurry_aimer_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 94
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 412c5d8d0eda65b4fa02e1d009670fd6
+      internalID: -553981201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_hurry_aimer_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 94
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e120ad7854b565e4588ba523270d0b5c
+      internalID: 154240776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_hurry_firer_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 94
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a824c2b5c877e439f93f4350f9476d
+      internalID: 947023665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_hurry_firer_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 94
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b488dc5327a5ce42a6874d0e7fbe006
+      internalID: -1708015184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_hurry_firer_2
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 94
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 546c52f867db60d4cae8bb62c33fdccd
+      internalID: -122944185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_hurry_firer_3
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 94
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5847f95e9c5e1844988767c423b016ec
+      internalID: -1772610465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_ko_aimer_0
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 94
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db32089f67410bf4eae8f68b6926eea5
+      internalID: -439615937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_ko_aimer_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 94
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c16ec6af7ba565241b4fcf8bf3e8b037
+      internalID: -1638796439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_ko_firer_0
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 94
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed6fd48d1daa4d041abf4098b4688b62
+      internalID: 852638025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_ko_firer_1
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 94
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15d146699b91f204dbf09a6764ab02e6
+      internalID: 886294931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_ko_jump_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 60
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0986d07c11bfd8b4989bc078a1e715cb
+      internalID: -55345042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_ko_jump_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 60
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6718d8c33d039634fa609556ee5f800f
+      internalID: -1963457088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_ko_tap_0
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 52
+        width: 40
+        height: 40
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 947ad3af379e2204ca964c1a6bcdf1bd
+      internalID: 1749021708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_ko_tap_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 52
+        width: 40
+        height: 40
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 832a747bad2c0c648a0fca6d88e513b6
+      internalID: 103125890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_knock_aimer_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 48
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3eb4e3787259ab4a92724789a791985
+      internalID: -1910086895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_knock_aimer_1
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 48
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc0f357420d0a6141bcc3a8bba744432
+      internalID: 616459219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_knock_aimer_2
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 48
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ad58eaa0f311aa4ab9b4690a12b72cd
+      internalID: 283955724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_knock_aimer_3
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 48
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a52a3daa587d64992a32fdb7d0a363
+      internalID: 1697019967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_knock_aimer_4
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 48
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ee7597f9eaee624b8b7ca78d60dcafd
+      internalID: -1514667756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_knock_firer_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ee9cd7328ca77f42a34914780aa0842
+      internalID: -1678983921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_knock_firer_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 2
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69380a883d9a3834ab2f6f6a291e2a81
+      internalID: -143912027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_knock_firer_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 2
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e937091d31a37f4282664d8ed40ab1f
+      internalID: 1871590786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_knock_firer_3
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 2
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68e542994ce1f9645827eec3b3094e77
+      internalID: -1044605216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_knock_firer_4
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 2
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62cac94aa6d98b64bb86731c8228f937
+      internalID: 300534891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_expr_0
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 2
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c29ceef4d8a054dbb19cbc8d13e3f8
+      internalID: -640999204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_expr_1
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 2
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bca562144d748b94c8569c1a1faed1d3
+      internalID: -411905210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_expr_2
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 2
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d16cf182783a14da8c9f35867ada30
+      internalID: -2094404009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_expr_3
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 2
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 744742ba92540654c83c845d30398ce7
+      internalID: 535436109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_expr_4
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 2
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01aa9e3ec80c3b94ba94364213a5445c
+      internalID: -314628630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_cat_chonk_expr_5
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 2
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e6da21091637bd4ca5814d3e705295a
+      internalID: -1816651567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b8e9a6dccc986764f9019fb47789f291
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      game_cat_chonk_aim_hold_0: -1618316961
+      game_cat_chonk_aim_hold_1: -1795130172
+      game_cat_chonk_aim_hold_2: 1274422990
+      game_cat_chonk_aim_hold_3: -1054939242
+      game_cat_chonk_aim_left_0: -1437232342
+      game_cat_chonk_aim_left_1: -401405286
+      game_cat_chonk_aim_left_2: 1066766666
+      game_cat_chonk_aim_left_3: 870617274
+      game_cat_chonk_aim_right_0: 1322216102
+      game_cat_chonk_aim_right_1: 1125881907
+      game_cat_chonk_aim_right_2: 680815978
+      game_cat_chonk_aim_right_3: 1139516527
+      game_cat_chonk_cheer_0: 196683768
+      game_cat_chonk_cheer_1: 300517811
+      game_cat_chonk_cheer_2: -1085397370
+      game_cat_chonk_cheer_3: -425495027
+      game_cat_chonk_expr_0: -640999204
+      game_cat_chonk_expr_1: -411905210
+      game_cat_chonk_expr_2: -2094404009
+      game_cat_chonk_expr_3: 535436109
+      game_cat_chonk_expr_4: -314628630
+      game_cat_chonk_expr_5: -1816651567
+      game_cat_chonk_fire_hold_0: 280586664
+      game_cat_chonk_fire_hold_1: 181563632
+      game_cat_chonk_fire_hold_2: 1179762304
+      game_cat_chonk_fire_hold_3: 1444660403
+      game_cat_chonk_hurry_aimer_0: -1727694249
+      game_cat_chonk_hurry_aimer_1: -650458484
+      game_cat_chonk_hurry_aimer_2: -553981201
+      game_cat_chonk_hurry_aimer_3: 154240776
+      game_cat_chonk_hurry_firer_0: 947023665
+      game_cat_chonk_hurry_firer_1: -1708015184
+      game_cat_chonk_hurry_firer_2: -122944185
+      game_cat_chonk_hurry_firer_3: -1772610465
+      game_cat_chonk_idle_0: -1158660750
+      game_cat_chonk_idle_1: -2094397885
+      game_cat_chonk_idle_2: -44938447
+      game_cat_chonk_idle_3: -554970681
+      game_cat_chonk_knock_aimer_0: -1910086895
+      game_cat_chonk_knock_aimer_1: 616459219
+      game_cat_chonk_knock_aimer_2: 283955724
+      game_cat_chonk_knock_aimer_3: 1697019967
+      game_cat_chonk_knock_aimer_4: -1514667756
+      game_cat_chonk_knock_firer_0: -1678983921
+      game_cat_chonk_knock_firer_1: -143912027
+      game_cat_chonk_knock_firer_2: 1871590786
+      game_cat_chonk_knock_firer_3: -1044605216
+      game_cat_chonk_knock_firer_4: 300534891
+      game_cat_chonk_ko_aimer_0: -439615937
+      game_cat_chonk_ko_aimer_1: -1638796439
+      game_cat_chonk_ko_firer_0: 852638025
+      game_cat_chonk_ko_firer_1: 886294931
+      game_cat_chonk_ko_jump_0: -55345042
+      game_cat_chonk_ko_jump_1: -1963457088
+      game_cat_chonk_ko_tap_0: 1749021708
+      game_cat_chonk_ko_tap_1: 103125890
+      game_cat_chonk_lose_0: 395877672
+      game_cat_chonk_lose_1: -1752469339
+      game_cat_chonk_panic_0: -1423054210
+      game_cat_chonk_panic_1: -1445710138
+      game_cat_chonk_panic_2: 808842808
+      game_cat_chonk_panic_3: -1269283773
+      game_cat_chonk_pull_0: -1536007906
+      game_cat_chonk_pull_1: -1575040748
+      game_cat_chonk_pull_2: 2023626509
+      game_cat_chonk_pull_3: -435455066
+      game_cat_chonk_puzzled_0: 271859285
+      game_cat_chonk_puzzled_1: 2038217186
+      game_cat_chonk_sleepy_0: -1753692124
+      game_cat_chonk_sleepy_1: -1919252860
+      game_cat_chonk_win_0: -571838223
+      game_cat_chonk_win_1: -1591317567
+      game_cat_fluffy_aim_hold_0: 2126190333
+      game_cat_fluffy_aim_hold_1: 1164882840
+      game_cat_fluffy_aim_hold_2: 1177898568
+      game_cat_fluffy_aim_hold_3: -1288926498
+      game_cat_fluffy_aim_left_0: 1344449996
+      game_cat_fluffy_aim_left_1: 1523234038
+      game_cat_fluffy_aim_left_2: -740287403
+      game_cat_fluffy_aim_left_3: 345894633
+      game_cat_fluffy_aim_right_0: 778618624
+      game_cat_fluffy_aim_right_1: -1930656724
+      game_cat_fluffy_aim_right_2: -910020498
+      game_cat_fluffy_aim_right_3: -345130691
+      game_cat_fluffy_cheer_0: -1206907582
+      game_cat_fluffy_cheer_1: -1138686629
+      game_cat_fluffy_cheer_2: 698214527
+      game_cat_fluffy_cheer_3: 937949353
+      game_cat_fluffy_expr_0: 556652284
+      game_cat_fluffy_expr_1: 1888893720
+      game_cat_fluffy_expr_2: -1645253213
+      game_cat_fluffy_expr_3: 707132707
+      game_cat_fluffy_expr_4: 1750506919
+      game_cat_fluffy_expr_5: -1628005682
+      game_cat_fluffy_fire_hold_0: 2062813494
+      game_cat_fluffy_fire_hold_1: -1150619100
+      game_cat_fluffy_fire_hold_2: 1916884380
+      game_cat_fluffy_fire_hold_3: -2022424869
+      game_cat_fluffy_hurry_aimer_0: -1260218472
+      game_cat_fluffy_hurry_aimer_1: -1109693463
+      game_cat_fluffy_hurry_aimer_2: -1441502476
+      game_cat_fluffy_hurry_aimer_3: -1929880375
+      game_cat_fluffy_hurry_firer_0: -792424225
+      game_cat_fluffy_hurry_firer_1: 239254898
+      game_cat_fluffy_hurry_firer_2: 441174316
+      game_cat_fluffy_hurry_firer_3: -485888946
+      game_cat_fluffy_idle_0: 1261361316
+      game_cat_fluffy_idle_1: 971954625
+      game_cat_fluffy_idle_2: 1456404238
+      game_cat_fluffy_idle_3: -1084924658
+      game_cat_fluffy_knock_aimer_0: -421792589
+      game_cat_fluffy_knock_aimer_1: -1341968149
+      game_cat_fluffy_knock_aimer_2: 398193645
+      game_cat_fluffy_knock_aimer_3: 1159145897
+      game_cat_fluffy_knock_aimer_4: -327828404
+      game_cat_fluffy_knock_firer_0: 1621167530
+      game_cat_fluffy_knock_firer_1: 2080143290
+      game_cat_fluffy_knock_firer_2: -2002879028
+      game_cat_fluffy_knock_firer_3: 844396333
+      game_cat_fluffy_knock_firer_4: 1962486120
+      game_cat_fluffy_ko_aimer_0: 1784499001
+      game_cat_fluffy_ko_aimer_1: -448907163
+      game_cat_fluffy_ko_firer_0: 1624851838
+      game_cat_fluffy_ko_firer_1: -614591648
+      game_cat_fluffy_ko_jump_0: 260915861
+      game_cat_fluffy_ko_jump_1: -425730201
+      game_cat_fluffy_ko_tap_0: -1977870396
+      game_cat_fluffy_ko_tap_1: -1357155381
+      game_cat_fluffy_lose_0: -720367267
+      game_cat_fluffy_lose_1: -1362804628
+      game_cat_fluffy_panic_0: 1089015239
+      game_cat_fluffy_panic_1: 1138114127
+      game_cat_fluffy_panic_2: 1003086262
+      game_cat_fluffy_panic_3: 1448203065
+      game_cat_fluffy_pull_0: 1882984774
+      game_cat_fluffy_pull_1: -1525244525
+      game_cat_fluffy_pull_2: -405745568
+      game_cat_fluffy_pull_3: 1591557890
+      game_cat_fluffy_puzzled_0: -671308628
+      game_cat_fluffy_puzzled_1: 1088385458
+      game_cat_fluffy_sleepy_0: -1269798319
+      game_cat_fluffy_sleepy_1: 1214976591
+      game_cat_fluffy_win_0: 539176128
+      game_cat_fluffy_win_1: 1561937111
+      game_cat_round_aim_hold_0: -637298807
+      game_cat_round_aim_hold_1: 1972457839
+      game_cat_round_aim_hold_2: -1540602639
+      game_cat_round_aim_hold_3: 32308916
+      game_cat_round_aim_left_0: 341714029
+      game_cat_round_aim_left_1: 1961790865
+      game_cat_round_aim_left_2: 486299073
+      game_cat_round_aim_left_3: -260079691
+      game_cat_round_aim_right_0: 1047378250
+      game_cat_round_aim_right_1: -1573813046
+      game_cat_round_aim_right_2: -1683252154
+      game_cat_round_aim_right_3: -919736915
+      game_cat_round_cheer_0: -1136936970
+      game_cat_round_cheer_1: -228766640
+      game_cat_round_cheer_2: -146373779
+      game_cat_round_cheer_3: 1565556608
+      game_cat_round_expr_0: 1758157161
+      game_cat_round_expr_1: 1946510268
+      game_cat_round_expr_2: 147456169
+      game_cat_round_expr_3: -2135366570
+      game_cat_round_expr_4: 201174896
+      game_cat_round_expr_5: -914379882
+      game_cat_round_fire_hold_0: -966825791
+      game_cat_round_fire_hold_1: -1805460967
+      game_cat_round_fire_hold_2: 1749935903
+      game_cat_round_fire_hold_3: 1141186317
+      game_cat_round_hurry_aimer_0: 1131983910
+      game_cat_round_hurry_aimer_1: 86899065
+      game_cat_round_hurry_aimer_2: 2141978735
+      game_cat_round_hurry_aimer_3: -2029606692
+      game_cat_round_hurry_firer_0: -601127244
+      game_cat_round_hurry_firer_1: -511986336
+      game_cat_round_hurry_firer_2: 1601508251
+      game_cat_round_hurry_firer_3: -1264660199
+      game_cat_round_idle_0: 558559202
+      game_cat_round_idle_1: -1673811914
+      game_cat_round_idle_2: 1339184657
+      game_cat_round_idle_3: -1503645361
+      game_cat_round_knock_aimer_0: 1512932206
+      game_cat_round_knock_aimer_1: -1428500420
+      game_cat_round_knock_aimer_2: 1224574498
+      game_cat_round_knock_aimer_3: -42590345
+      game_cat_round_knock_aimer_4: -1852746383
+      game_cat_round_knock_firer_0: 23522534
+      game_cat_round_knock_firer_1: 1004165633
+      game_cat_round_knock_firer_2: -1397127195
+      game_cat_round_knock_firer_3: -48206136
+      game_cat_round_knock_firer_4: -1230708292
+      game_cat_round_ko_aimer_0: 1394635280
+      game_cat_round_ko_aimer_1: -1241706319
+      game_cat_round_ko_firer_0: -1598852946
+      game_cat_round_ko_firer_1: 1487450345
+      game_cat_round_ko_jump_0: -1369134641
+      game_cat_round_ko_jump_1: -50844469
+      game_cat_round_ko_tap_0: 1122111297
+      game_cat_round_ko_tap_1: -2051282367
+      game_cat_round_lose_0: 1972629898
+      game_cat_round_lose_1: 1572383911
+      game_cat_round_panic_0: 1153055776
+      game_cat_round_panic_1: 1863652270
+      game_cat_round_panic_2: -1740535161
+      game_cat_round_panic_3: 817725914
+      game_cat_round_pull_0: -272700723
+      game_cat_round_pull_1: 92816384
+      game_cat_round_pull_2: -1810111074
+      game_cat_round_pull_3: -1440806261
+      game_cat_round_puzzled_0: 1485196390
+      game_cat_round_puzzled_1: -357625560
+      game_cat_round_sleepy_0: 309853463
+      game_cat_round_sleepy_1: -997428200
+      game_cat_round_win_0: -1698150652
+      game_cat_round_win_1: 915101521
+      game_cat_slim_aim_hold_0: 584613508
+      game_cat_slim_aim_hold_1: -693100479
+      game_cat_slim_aim_hold_2: 1433464903
+      game_cat_slim_aim_hold_3: 1891940480
+      game_cat_slim_aim_left_0: 663490990
+      game_cat_slim_aim_left_1: 1012933140
+      game_cat_slim_aim_left_2: -949948031
+      game_cat_slim_aim_left_3: 578375765
+      game_cat_slim_aim_right_0: -412603937
+      game_cat_slim_aim_right_1: -1630108719
+      game_cat_slim_aim_right_2: 35333477
+      game_cat_slim_aim_right_3: -2114592323
+      game_cat_slim_cheer_0: -1317025691
+      game_cat_slim_cheer_1: 427021838
+      game_cat_slim_cheer_2: -1765086610
+      game_cat_slim_cheer_3: -771791676
+      game_cat_slim_expr_0: 1537175247
+      game_cat_slim_expr_1: -1080430389
+      game_cat_slim_expr_2: -858925879
+      game_cat_slim_expr_3: 65171351
+      game_cat_slim_expr_4: 287631831
+      game_cat_slim_expr_5: 1453788099
+      game_cat_slim_fire_hold_0: -1395852834
+      game_cat_slim_fire_hold_1: -1136243505
+      game_cat_slim_fire_hold_2: -516789241
+      game_cat_slim_fire_hold_3: 1682013911
+      game_cat_slim_hurry_aimer_0: -806761604
+      game_cat_slim_hurry_aimer_1: -1746769035
+      game_cat_slim_hurry_aimer_2: 1774373881
+      game_cat_slim_hurry_aimer_3: -95534941
+      game_cat_slim_hurry_firer_0: 1883510886
+      game_cat_slim_hurry_firer_1: -257447359
+      game_cat_slim_hurry_firer_2: 576769273
+      game_cat_slim_hurry_firer_3: -1940161740
+      game_cat_slim_idle_0: 2117734002
+      game_cat_slim_idle_1: -6644091
+      game_cat_slim_idle_2: 2137499758
+      game_cat_slim_idle_3: -209753041
+      game_cat_slim_knock_aimer_0: -319631798
+      game_cat_slim_knock_aimer_1: 1943785787
+      game_cat_slim_knock_aimer_2: 2097677243
+      game_cat_slim_knock_aimer_3: -2115161147
+      game_cat_slim_knock_aimer_4: -390151008
+      game_cat_slim_knock_firer_0: 1757582813
+      game_cat_slim_knock_firer_1: 1073331941
+      game_cat_slim_knock_firer_2: 1208387044
+      game_cat_slim_knock_firer_3: 1131270728
+      game_cat_slim_knock_firer_4: -184233154
+      game_cat_slim_ko_aimer_0: 203611862
+      game_cat_slim_ko_aimer_1: 2084367471
+      game_cat_slim_ko_firer_0: -1624906619
+      game_cat_slim_ko_firer_1: -1261258238
+      game_cat_slim_ko_jump_0: 1408863723
+      game_cat_slim_ko_jump_1: -1200933833
+      game_cat_slim_ko_tap_0: 384376594
+      game_cat_slim_ko_tap_1: -876608141
+      game_cat_slim_lose_0: -1969271644
+      game_cat_slim_lose_1: -1988998522
+      game_cat_slim_panic_0: 1987678373
+      game_cat_slim_panic_1: 1213921776
+      game_cat_slim_panic_2: 380532960
+      game_cat_slim_panic_3: -2109384313
+      game_cat_slim_pull_0: -727659127
+      game_cat_slim_pull_1: -14439869
+      game_cat_slim_pull_2: -1643454382
+      game_cat_slim_pull_3: 1219076831
+      game_cat_slim_puzzled_0: -2083001468
+      game_cat_slim_puzzled_1: 520328990
+      game_cat_slim_sleepy_0: -1674093830
+      game_cat_slim_sleepy_1: 134099513
+      game_cat_slim_win_0: 879587760
+      game_cat_slim_win_1: 1091969309
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

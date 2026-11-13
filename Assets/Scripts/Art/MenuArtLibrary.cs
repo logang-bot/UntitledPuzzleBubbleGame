@@ -33,7 +33,7 @@ namespace Game.Art
         {
             _byId ??= BuildLookup();
             if (_byId.TryGetValue(id, out var entry)) return entry;
-            Debug.LogError($"MenuArtLibrary: no sprite '{id}'. Re-run Tools > Art > Import Menu Sheets.");
+            Debug.LogError($"MenuArtLibrary: no sprite '{id}'. Re-run Tools > Art > Import Art Sheets.");
             return new SpriteAnimEntry { Id = id };
         }
 

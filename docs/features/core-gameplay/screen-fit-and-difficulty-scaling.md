@@ -1,5 +1,14 @@
 # Screen Fit & Device-Independent Difficulty Scaling
 
+> **Updated by the game screen art (2026-11-12):** the camera now fits the
+> board plus its two 4 pt rails to the screen width, and the rows stop at
+> the danger line on top of the launcher deck instead of the screen
+> bottom (`PlayfieldSpec`, `PlayfieldFrame`, `PlayfieldSizer.RowsFitting`).
+> That is 15 rows on a 9:19.5 phone and 11 on 9:16; Battle halves get 7
+> and 5. Headroom is now a share of those rows (see `level-generation.md`),
+> so every phone starts about equally full. See `../art/overview.md`
+> ("Game screen: as built").
+
 **Status: implemented.** `PlayfieldSizer` and `HexGridMath` live at
 `Assets/Scripts/Grid/`, covered by EditMode tests in
 `Assets/Tests/EditMode/PlayfieldSizerTests.cs`. `GameBoard` uses them to

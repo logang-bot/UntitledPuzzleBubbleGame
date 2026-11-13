@@ -1,0 +1,442 @@
+fileFormatVersion: 2
+guid: 9f0fda15dea2de241b487993d0690b4b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6417376696851140132
+    second: gm_board_0
+  - first:
+      213: -636950977141090688
+    second: gm_board_1
+  - first:
+      213: 528511564441769788
+    second: gm_board_2
+  - first:
+      213: 5607113641835747546
+    second: gm_board_3
+  - first:
+      213: 5324987425115344168
+    second: gm_board_4
+  - first:
+      213: -3131172983417689082
+    second: gm_board_5
+  - first:
+      213: -8064608491338068369
+    second: gm_board_6
+  - first:
+      213: -6818453013453748656
+    second: gm_board_7
+  - first:
+      213: -696956826861100638
+    second: gm_board_8
+  - first:
+      213: -6631858175790679191
+    second: gm_board_9
+  - first:
+      213: 1519487494366954134
+    second: gm_board_10
+  - first:
+      213: 3905233067816000677
+    second: gm_board_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 3
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ceiling_living_tile_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 4
+        width: 144
+        height: 144
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcaf76fb05406a149b00fc5437fe9280
+      internalID: 50923601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ceiling_garden_tile_0
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 4
+        width: 144
+        height: 144
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd9425754b76e3449bc52768eeba0b18
+      internalID: -1757933378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ceiling_rooftop_tile_0
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 4
+        width: 144
+        height: 144
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca85bb7d980d0a743872828d7394c433
+      internalID: -1262650819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ceiling_park_tile_0
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 4
+        width: 144
+        height: 144
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ee8b095cbb14e45981d555939cee03
+      internalID: 2073665276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rail_0
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 4
+        width: 12
+        height: 144
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f41379f6eebb6eb48beda92a94397b75
+      internalID: 644031028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: danger_glow_0
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 64
+        width: 144
+        height: 84
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d9e1baaa87bd14a82693426b756bc1
+      internalID: 621019686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ceiling_warn_glow_0
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 70
+        width: 144
+        height: 78
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06c5adadda9b68c4cb167a87638188dc
+      internalID: -342639769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ceiling_living_edge_0
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 106
+        width: 144
+        height: 42
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f43230dd066a98e4fba88b40ab1dd0cc
+      internalID: 102181858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ceiling_garden_edge_0
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 106
+        width: 144
+        height: 42
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 697b8c1f2108ee04ca032cb90efbd798
+      internalID: -918786288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ceiling_rooftop_edge_0
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 106
+        width: 144
+        height: 42
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5309287a0fbd114db6bd39cb6705f79
+      internalID: 347411401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ceiling_park_edge_0
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 106
+        width: 144
+        height: 42
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058fe5a3ec0efe842bfb22817baa079f
+      internalID: -951874605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: danger_line_0
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 124
+        width: 72
+        height: 24
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31ba65b1d77eab644b8973c810213165
+      internalID: 820106175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b61711397af83ad49bc3fa17abd0b051
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ceiling_garden_edge_0: -918786288
+      ceiling_garden_tile_0: -1757933378
+      ceiling_living_edge_0: 102181858
+      ceiling_living_tile_0: 50923601
+      ceiling_park_edge_0: -951874605
+      ceiling_park_tile_0: 2073665276
+      ceiling_rooftop_edge_0: 347411401
+      ceiling_rooftop_tile_0: -1262650819
+      ceiling_warn_glow_0: -342639769
+      danger_glow_0: 621019686
+      danger_line_0: 820106175
+      rail_0: 644031028
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

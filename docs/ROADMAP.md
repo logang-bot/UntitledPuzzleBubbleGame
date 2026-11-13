@@ -657,29 +657,59 @@ built".
   Rewritten: `TransitionTimelineTests`, `CrossingPathTests` and
   `ParticleMotionTests`.
 
+### Game screen art: vector cartoon, pixel-art pets ✅
+Claude Design's `Cartoon Game Guide.dc.html` and its Unity bundle
+(`Assets/Art/Game`), built in phases on `main`:
+- **Import:** the importer handles fractional legend sizes, named pivots,
+  big sheets and full-rect meshes (`LegendGeometry`).
+- **Playfield:** the board runs from the top down to the danger line on
+  the launcher deck; shots start at the pointer (`PlayfieldSpec`,
+  `PlayfieldFrame`). 15 rows on 9:19.5 (20 before), 11 on 9:16.
+- **Board:** `BoardView` (was `GridDebugRenderer`) with glass bubbles and
+  glyphs, build-in, settle and nudge, ordered pops, scared falls, the
+  ceiling band that slides on pushes and glows on warnings, rails, danger
+  line, four themes changing every 5 levels, and aim dots replacing the
+  preview line and the landing ghost.
+- **Deck:** `GameDeck` builds the launcher mechanism, the rotate slabs and
+  the tap-to-fire pointer, timer pips, the hurry countdown, loaded and
+  next bubbles, the HUD and the superpower buttons. A Left/Right thumb
+  setting mirrors it. `HudDisplay`, `ShotTimerDisplay`, `SuperpowerHud`,
+  `CeilingRenderer`, `LandingIndicator`, `BubbleSpawnAnimator` and the
+  scene's touch-zone canvas were removed.
+- **Pets:** the saved pets work the launcher in pixel art, reacting to
+  play (`PetAnimSelector`).
+- **Superpowers:** armed bubbles, the bomb explosion, the row sweep and the
+  freeze frame with snowflakes.
+- **Battle Mode:** a deck per half (cat at the bottom, dog at the top).
+- New tests: `LegendGeometryTests`, `PlayfieldFrameTests`,
+  `BoardArtScheduleTests`, `AimDotPlacerTests`, `DeckRulesTests`,
+  `PetAnimSelectorTests`; `PlayfieldSizerTests` updated,
+  `BubbleSpawnMotionTests` removed.
+
+- **Follow-up:** the pet sheets were re-exported with all four shapes per
+  species, and the launcher pets use the saved shape. Headroom became a
+  share of the board's rows (45% → 15% solo, 11% Battle), and Battle
+  switched to procedural levels, after the shorter boards left solo
+  levels sparse and Battle's curated levels empty.
+
 ### Known follow-ups
-- Pet names and appearance aren't shown in-game yet. That waits on the
-  in-game art (Art Phases 4 and 7), as do the launcher pets on the
-  2-player result.
-- The HUD canvas still uses Constant Pixel Size. It moves to the menu
-  canvas setup with Art Phase 6.
+- Pet names aren't shown in-game.
+- Re-check the difficulty feel on real phones with the shorter boards.
 
 ## Later / not yet scoped ⏳
 
 - Meta progression (level select map, currency, unlocks).
 - Monetization (ads/IAP) — architecture implications deferred until scope
   is chosen.
-- Real art pass — swap placeholder assets for final art. **Now planned:**
-  chibi cats and dogs in pixel art throughout.
-  - The board and HUD use a 16-bit arcade style.
-  - The menus, customization and result overlays use vector cartoon UI
-    around the same pixel pets (see "Screen art rework" above).
-
-  It runs in parallel with tuning. See
+- Real art pass — **done** for the screens and the game screen: vector
+  cartoon UI and board around pixel-art chibi cats and dogs (see "Screen
+  art rework" and "Game screen art" above). See
   [`features/art/overview.md`](features/art/overview.md) and the Claude
   Design prompts:
-  - [`features/art/claude-design-prompt.md`](features/art/claude-design-prompt.md)
+  - [`features/art/claude-design-prompt-game-cartoon.md`](features/art/claude-design-prompt-game-cartoon.md)
     (in-game);
+  - [`features/art/claude-design-prompt.md`](features/art/claude-design-prompt.md)
+    (the earlier 16-bit in-game plan);
   - [`features/art/claude-design-prompt-menus-cartoon.md`](features/art/claude-design-prompt-menus-cartoon.md)
     (screens);
   - [`features/art/claude-design-prompt-menus.md`](features/art/claude-design-prompt-menus.md)

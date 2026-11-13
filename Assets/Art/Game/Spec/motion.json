@@ -1,0 +1,769 @@
+{
+ "units": "pt, deg, seconds",
+ "eases": [
+  "linear",
+  "inQuad",
+  "outQuad",
+  "inOutSine",
+  "inCubic",
+  "outCubic",
+  "outBack"
+ ],
+ "channelRules": "Same as the menu motion.json: x, y, rot add; sx, sy, alpha multiply. const, sine, keys (ease on the destination key), spin. \"d\" = distance along a given direction. target \"code\" = numbers for engine logic",
+ "entries": {
+  "launcher_rotate": {
+   "target": "code",
+   "desc": "Held rotate button turns the barrel at a fixed speed between the limits",
+   "speed": 25,
+   "limits": [
+    -75,
+    75
+   ],
+   "units": "deg/s, deg from vertical"
+  },
+  "shot_flight": {
+   "target": "code",
+   "desc": "Shot travels the traced path at a constant speed and reflects off the rail lines (x 4 + r and 356 − r)",
+   "speed": 1150
+  },
+  "pointer_tap": {
+   "target": "pointer_ring",
+   "dur": 0.16,
+   "desc": "Fire touch: the pointer container presses in and springs back (normal shots; auto-fire skips it)",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "sx",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0.92
+      ],
+      [
+       0.16,
+       1,
+       "outBack"
+      ]
+     ]
+    },
+    {
+     "part": "_root",
+     "prop": "sy",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0.92
+      ],
+      [
+       0.16,
+       1,
+       "outBack"
+      ]
+     ]
+    }
+   ]
+  },
+  "settle_bounce": {
+   "target": "bubble",
+   "dur": 0.32,
+   "desc": "Landing style BOUNCE: overshoot into the cell, then settle. Direct neighbours nudge 2 pt away and back (neighbor_nudge)",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "y",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0
+      ],
+      [
+       0.07,
+       4,
+       "outQuad"
+      ],
+      [
+       0.19,
+       -1.4,
+       "inOutSine"
+      ],
+      [
+       0.32,
+       0,
+       "inOutSine"
+      ]
+     ]
+    }
+   ]
+  },
+  "settle_squash": {
+   "target": "bubble",
+   "dur": 0.3,
+   "desc": "Landing style SQUASH: flatten on contact and pop back",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "sx",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       1
+      ],
+      [
+       0.06,
+       1.2,
+       "outQuad"
+      ],
+      [
+       0.16,
+       0.94,
+       "inOutSine"
+      ],
+      [
+       0.3,
+       1,
+       "outBack"
+      ]
+     ]
+    },
+    {
+     "part": "_root",
+     "prop": "sy",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       1
+      ],
+      [
+       0.06,
+       0.8,
+       "outQuad"
+      ],
+      [
+       0.16,
+       1.06,
+       "inOutSine"
+      ],
+      [
+       0.3,
+       1,
+       "outBack"
+      ]
+     ]
+    }
+   ]
+  },
+  "neighbor_nudge": {
+   "target": "bubble",
+   "dur": 0.24,
+   "desc": "Neighbours of the landing cell, offset away from it",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "d",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0
+      ],
+      [
+       0.06,
+       2,
+       "outQuad"
+      ],
+      [
+       0.24,
+       0,
+       "outBack"
+      ]
+     ]
+    }
+   ]
+  },
+  "pop": {
+   "target": "pop_<color>",
+   "desc": "Cluster pops in BFS order from the landing cell, 0.035 s per step, starting 0.12 s after landing. The bubble is replaced by its baked pop (5 frames at 20 fps), scaled like the bubble",
+   "stepDelay": 0.035,
+   "startDelay": 0.12,
+   "fps": 20,
+   "frames": 5
+  },
+  "fall_scared": {
+   "target": "bubble",
+   "desc": "Disconnected bubbles: bubble_scared overlay, 0.14 s jitter, then gravity. Remove below y 800. Drawn under the deck",
+   "jitter": {
+    "amp": 1.2,
+    "hz": 30,
+    "dur": 0.14
+   },
+   "gravity": 1400,
+   "vx": [
+    -50,
+    50
+   ],
+   "vy": [
+    -160,
+    -60
+   ],
+   "spin": [
+    -80,
+    80
+   ],
+   "stagger": 0.02
+  },
+  "build_in": {
+   "target": "bubble",
+   "dur": 0.36,
+   "desc": "Level start: each bubble scales in, staggered top to bottom (0.07 s per row, 0.012 s per column)",
+   "perRow": 0.07,
+   "perCol": 0.012,
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "sx",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0
+      ],
+      [
+       0.36,
+       1,
+       "outBack"
+      ]
+     ]
+    },
+    {
+     "part": "_root",
+     "prop": "sy",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0
+      ],
+      [
+       0.36,
+       1,
+       "outBack"
+      ]
+     ]
+    },
+    {
+     "part": "_root",
+     "prop": "alpha",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0
+      ],
+      [
+       0.12,
+       1,
+       "outQuad"
+      ]
+     ]
+    }
+   ]
+  },
+  "aim_dots": {
+   "target": "code",
+   "desc": "Dots along the traced path from 23 pt past the pointer center up to the landing cell, including wall bounces. Scroll forward and wrap. Alpha falls off toward the end. No ghost bubble",
+   "spacing": 20,
+   "speed": 30,
+   "start": 23,
+   "alpha": [
+    1,
+    0.35
+   ],
+   "fadeIn": 0.15
+  },
+  "next_feed": {
+   "target": "bubble",
+   "dur": 0.32,
+   "desc": "After a shot the next bubble travels from the next holder through the feed tube to the pointer (outCubic); a new next bubble pops in at the holder 0.12 s later (next_pop)",
+   "ease": "outCubic"
+  },
+  "next_pop": {
+   "target": "bubble",
+   "dur": 0.22,
+   "delay": 0.12,
+   "desc": "New next bubble",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "sx",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0
+      ],
+      [
+       0.22,
+       1,
+       "outBack"
+      ]
+     ]
+    },
+    {
+     "part": "_root",
+     "prop": "sy",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0
+      ],
+      [
+       0.22,
+       1,
+       "outBack"
+      ]
+     ]
+    }
+   ]
+  },
+  "ceiling_warn": {
+   "target": "code",
+   "dur": 0.7,
+   "desc": "Before a push: the board and ceiling (not the deck) shake in x; ceiling_warn_glow flashes under the edge 3 times; pets play panic",
+   "shake": {
+    "amp": 3,
+    "hz": 16,
+    "decay": "linear"
+   },
+   "flash": {
+    "part": "glow",
+    "prop": "alpha",
+    "kind": "sine",
+    "amp": 0.5,
+    "period": 0.233,
+    "phase": 0,
+    "base": 0.5
+   }
+  },
+  "ceiling_push": {
+   "target": "code",
+   "dur": 0.35,
+   "desc": "Band grows by one row height (35.86 pt); the whole board moves with it, outCubic. Tiles stay anchored at the top",
+   "ease": "outCubic"
+  },
+  "danger_pulse": {
+   "target": "danger_glow",
+   "loop": true,
+   "dur": 0.8,
+   "desc": "Only while a bubble is within one row of the danger line",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "alpha",
+     "kind": "sine",
+     "amp": 0.35,
+     "period": 0.8,
+     "phase": 0,
+     "base": 0.55
+    }
+   ]
+  },
+  "countdown_pop": {
+   "target": "hurry_burst",
+   "dur": 0.3,
+   "desc": "Last 4 s: the shout bubble pops in on 4 and the digit re-pops each second. Peak scale grows with urgency: 4 → 1, 3 → 1.08, 2 → 1.16, 1 → 1.26 (+ wobble). Spike frames alternate at 6 fps; the burst bobs 1.7 pt",
+   "urgency": {
+    "1": 1.26,
+    "2": 1.16,
+    "3": 1.08,
+    "4": 1
+   },
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "sx",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0.4
+      ],
+      [
+       0.18,
+       1.12,
+       "outBack"
+      ],
+      [
+       0.3,
+       1,
+       "inOutSine"
+      ]
+     ]
+    },
+    {
+     "part": "_root",
+     "prop": "sy",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0.4
+      ],
+      [
+       0.18,
+       1.12,
+       "outBack"
+      ],
+      [
+       0.3,
+       1,
+       "inOutSine"
+      ]
+     ]
+    },
+    {
+     "part": "_root",
+     "prop": "alpha",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0
+      ],
+      [
+       0.08,
+       1,
+       "outQuad"
+      ]
+     ]
+    }
+   ],
+   "wobble": {
+    "part": "_root",
+    "prop": "rot",
+    "kind": "sine",
+    "amp": 6,
+    "period": 0.25,
+    "phase": 0,
+    "base": 0
+   }
+  },
+  "shot_clock": {
+   "target": "code",
+   "desc": "Seconds per shot, shown by the timer pips; paused while frozen. At 0, auto_fire",
+   "solo": 12,
+   "battle": 12,
+   "units": "s"
+  },
+  "auto_fire": {
+   "target": "code",
+   "desc": "At 0 the game fires along the current aim. No fire-button press is shown"
+  },
+  "freeze_in": {
+   "target": "freeze_frame",
+   "dur": 0.25,
+   "desc": "Freeze: frame and freezeTint fade in, hold while frozen (5 s; shot timer and push timer paused), fade out over 0.4 s",
+   "hold": 5,
+   "out": 0.4,
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "alpha",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0
+      ],
+      [
+       0.25,
+       1,
+       "outQuad"
+      ]
+     ]
+    },
+    {
+     "part": "_root",
+     "prop": "sx",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       1.04
+      ],
+      [
+       0.25,
+       1,
+       "outCubic"
+      ]
+     ]
+    },
+    {
+     "part": "_root",
+     "prop": "sy",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       1.04
+      ],
+      [
+       0.25,
+       1,
+       "outCubic"
+      ]
+     ]
+    }
+   ]
+  },
+  "freeze_snow": {
+   "target": "system",
+   "desc": "14 snowflakes burst from the launcher, radial speed 160–280 pt/s with drag, spin ±180°/s, scale 0.6–1.2, life 1.1 s, fade over the last 0.4 s",
+   "count": 14,
+   "speed": [
+    160,
+    280
+   ],
+   "drag": 2.2,
+   "spin": 180,
+   "scale": [
+    0.6,
+    1.2
+   ],
+   "life": 1.1
+  },
+  "bomb_fuse": {
+   "target": "bomb_spark",
+   "loop": true,
+   "dur": 0.12,
+   "desc": "Spark at the fuse tip while the bomb is loaded and for 0.45 s after it lands, then explosion",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "sx",
+     "kind": "sine",
+     "amp": 0.25,
+     "period": 0.12,
+     "phase": 0,
+     "base": 1
+    },
+    {
+     "part": "_root",
+     "prop": "sy",
+     "kind": "sine",
+     "amp": 0.25,
+     "period": 0.12,
+     "phase": 0,
+     "base": 1
+    },
+    {
+     "part": "_root",
+     "prop": "rot",
+     "kind": "spin",
+     "speed": 400
+    }
+   ],
+   "fuseAfterLand": 0.45
+  },
+  "bomb_explode": {
+   "target": "explosion",
+   "desc": "Baked 10 frames at 15 fps. Cells within 2 cell widths pop from the center outward (0.02 s per pt / 41.4); board shake 4 pt for 0.3 s",
+   "radius": 2,
+   "shake": {
+    "amp": 4,
+    "hz": 20,
+    "dur": 0.3
+   }
+  },
+  "row_sweep": {
+   "target": "row_sweep",
+   "desc": "Head crosses the landing row left to right at 900 pt/s; each bubble pops as the head passes it",
+   "speed": 900
+  },
+  "rainbow_cycle": {
+   "target": "rainbow_swirl",
+   "loop": true,
+   "dur": 2.571,
+   "desc": "Swirl spins under the static gloss. On landing it takes the neighbour color that makes the biggest cluster",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "rot",
+     "kind": "spin",
+     "speed": 140
+    }
+   ]
+  },
+  "power_arm": {
+   "target": "bubble",
+   "dur": 0.3,
+   "desc": "Superpower pressed: the loaded bubble shrinks out and the power bubble pops in",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "sx",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0
+      ],
+      [
+       0.3,
+       0.9,
+       "outBack"
+      ]
+     ]
+    },
+    {
+     "part": "_root",
+     "prop": "sy",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0
+      ],
+      [
+       0.3,
+       0.9,
+       "outBack"
+      ]
+     ]
+    }
+   ]
+  },
+  "btn_hold": {
+   "target": "rotate_<dir>",
+   "desc": "Rotate slabs swap to _held while touched; the aimer plays its aim strip and the mechanism turns"
+  },
+  "btn_tap": {
+   "target": "ui",
+   "desc": "Superpower buttons: _pressed on touch down, btn_press (menu bundle) on release",
+   "reuse": "btn_press"
+  },
+  "incoming_add": {
+   "target": "incoming_pip",
+   "dur": 0.26,
+   "desc": "Battle: a row queued against this player",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "sx",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0
+      ],
+      [
+       0.26,
+       1,
+       "outBack"
+      ]
+     ]
+    },
+    {
+     "part": "_root",
+     "prop": "sy",
+     "kind": "keys",
+     "keys": [
+      [
+       0,
+       0
+      ],
+      [
+       0.26,
+       1,
+       "outBack"
+      ]
+     ]
+    }
+   ]
+  },
+  "mech_gears": {
+   "target": "gear_*",
+   "desc": "Back gears turn only while a rotate button is held: 90/n° per 1/12 s (n = teeth), sign per MECH.GEARS (neighbours counter-rotate), reversed when aiming the other way; mirrored for right-hand",
+   "stepFps": 12
+  },
+  "mech_aim": {
+   "target": "crank_gear | steer_wheel",
+   "desc": "A: the crank turns 45° per 1/12 s with dog_aim_* (frame = crank step), knob orbits 3.3 pt. B: the wheel turns 15° per 1/12 s with cat_aim_right / _left. Both hold still when no rotate button is held",
+   "fps": 12,
+   "crankStep": 45,
+   "wheelStep": 15
+  },
+  "mech_fire": {
+   "target": "fire_lever_arm | fire_button_*",
+   "desc": "A: cat_pull plays once at 12 fps; lever angle per frame LA[LEVER_F] = −0.5, −0.15, 0.25, −0.5 rad. B: dog_press plays once; button down on frame 2. Auto-fire plays the same",
+   "fps": 12
+  },
+  "timer_pips": {
+   "target": "timer_pip",
+   "desc": "One pip per second left, clockwise from the top; pipHot from 4 s, flashing white at 4 fps",
+   "flashFps": 4
+  },
+  "pixel_pets": {
+   "target": "pixel",
+   "desc": "Aimer: <sp>_aim_hold idle, <sp>_aim_right / _left while a rotate button is held, <sp>_hurry_aimer (2× speed) under 3 s. Firer: <sp>_fire_hold idle, cat_pull / dog_press on fire, <sp>_hurry_firer under 3 s (front view, never flipped). Both: <sp>_cheer for 1.4 s after 5+ bubbles, <sp>_panic from ceiling_warn to the push. Left-hand layout: aimer unflipped, firer flipped; right-hand mirrors"
+  },
+  "bg_lamp_flicker": {
+   "target": "bg_lamp_glow",
+   "loop": true,
+   "dur": 3.1,
+   "desc": "Living room and park lamp glow",
+   "ch": [
+    {
+     "part": "_root",
+     "prop": "alpha",
+     "kind": "sine",
+     "amp": 0.12,
+     "period": 3.1,
+     "phase": 0,
+     "base": 0.85
+    },
+    {
+     "part": "_root",
+     "prop": "sx",
+     "kind": "sine",
+     "amp": 0.03,
+     "period": 3.1,
+     "phase": 0,
+     "base": 1
+    }
+   ]
+  },
+  "bg_fireflies": {
+   "target": "system",
+   "desc": "Garden and park: 7 fireflies on slow Lissajous paths (x 8 pt / 7 s, y 6 pt / 5 s) with a blink every 2–4 s; only in y 120–560",
+   "count": 7,
+   "path": {
+    "ax": 8,
+    "px": 7,
+    "ay": 6,
+    "py": 5
+   },
+   "blink": [
+    2,
+    4
+   ]
+  },
+  "bg_clouds": {
+   "target": "bg_cloud",
+   "desc": "Rooftop: 3 clouds drift right at 4 pt/s and wrap at 424 pt",
+   "count": 3,
+   "speed": 4
+  },
+  "bg_twinkle": {
+   "target": "sparkle",
+   "desc": "Rooftop and park: 6 sparkles (menu sprite) with star_twinkle (menu spec)",
+   "count": 6,
+   "reuse": "star_twinkle"
+  }
+ }
+}

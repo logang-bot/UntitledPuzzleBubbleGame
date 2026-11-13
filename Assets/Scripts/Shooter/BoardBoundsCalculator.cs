@@ -10,7 +10,7 @@ namespace Game.Shooter
     public static class BoardBoundsCalculator
     {
         // ceilingHeight is the band reserved at the screen's top edge for the
-        // ceiling visual (see CeilingRenderer) - a shot's ceiling boundary is
+        // ceiling visual (see BoardArt.CeilingBand) - a shot's ceiling boundary is
         // row 0's top edge, which sits that much below the screen's actual top.
         public static BoardBounds Compute(Vector2 cameraPosition, float boardWidth, float orthographicSize, float ceilingHeight)
         {

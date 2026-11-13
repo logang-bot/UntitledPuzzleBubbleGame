@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: bbdc7e10d167e9e4eb4fc5777554c6cc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2644031625771689245
+    second: gm_launcher_0
+  - first:
+      213: -6831064740629469959
+    second: gm_launcher_1
+  - first:
+      213: -1027742058000654412
+    second: gm_launcher_2
+  - first:
+      213: 6319858517605124134
+    second: gm_launcher_3
+  - first:
+      213: -2714135747575924089
+    second: gm_launcher_4
+  - first:
+      213: -472054230653010001
+    second: gm_launcher_5
+  - first:
+      213: 245274049599807148
+    second: gm_launcher_6
+  - first:
+      213: -2930926931939613687
+    second: gm_launcher_7
+  - first:
+      213: 8845307365345371792
+    second: gm_launcher_8
+  - first:
+      213: 354550637035897551
+    second: gm_launcher_9
+  - first:
+      213: 7748446469264595469
+    second: gm_launcher_10
+  - first:
+      213: -4876459180257950965
+    second: gm_launcher_11
+  - first:
+      213: -4049893832471896398
+    second: gm_launcher_12
+  - first:
+      213: -7405715136602637450
+    second: gm_launcher_13
+  - first:
+      213: 7669846224954771944
+    second: gm_launcher_14
+  - first:
+      213: -2702760324630855765
+    second: gm_launcher_15
+  - first:
+      213: -2926542820245089091
+    second: gm_launcher_16
+  - first:
+      213: -6889498951446558092
+    second: gm_launcher_17
+  - first:
+      213: -2839343083190869248
+    second: gm_launcher_18
+  - first:
+      213: 348253045976218750
+    second: gm_launcher_19
+  - first:
+      213: -934848312085262123
+    second: gm_launcher_20
+  - first:
+      213: 2624309012228370139
+    second: gm_launcher_21
+  - first:
+      213: -3920427852559353487
+    second: gm_launcher_22
+  - first:
+      213: 2826644116303824240
+    second: gm_launcher_23
+  - first:
+      213: -7176388047856688494
+    second: gm_launcher_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 3
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: mech_pipes_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 309
+        width: 1080
+        height: 420
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03caed0c97270884fbc380d2032813d8
+      internalID: 554162674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gear_24_0
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 465
+        width: 264
+        height: 264
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2ab6ea85f7ec7b459cc9712759b7a6e
+      internalID: 801776402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotate_left_up_0
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 501
+        width: 130
+        height: 228
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d7b65656ce84ab4799f3c0c1ada7c44
+      internalID: -539603262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotate_left_held_0
+      rect:
+        serializedVersion: 2
+        x: 1490
+        y: 501
+        width: 130
+        height: 228
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4cc82837cb744b4780718b0225d03b3
+      internalID: 96490074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotate_right_up_0
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 501
+        width: 130
+        height: 228
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a7d7ad2b95f6754aab737be3ffb0f88
+      internalID: 2069914954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotate_right_held_0
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 501
+        width: 130
+        height: 228
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0417bcdfcc2f68143b527c5862765166
+      internalID: 589011525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hurry_burst_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 77
+        width: 276
+        height: 228
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8df9b4b65ebb2644585a88482aed9d7d
+      internalID: 776749550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hurry_burst_1
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 77
+        width: 276
+        height: 228
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a310a5392ca6d64ea9875727487de1a
+      internalID: 1171160607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pointer_ring_0
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 113
+        width: 204
+        height: 192
+      alignment: 9
+      pivot: {x: 0.47058824, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae23d02b65464364e8fc5a7150bd05f5
+      internalID: -55618393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: next_ring_0
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 137
+        width: 168
+        height: 168
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fd9f67211ebb8040a6fbe5a718376d1
+      internalID: -1248030883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pointer_arrow_0
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 170
+        width: 120
+        height: 135
+      alignment: 9
+      pivot: {x: 0.5, y: -0.42222223}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4ad999c52129e741beff7cabf8eb1ed
+      internalID: 1487822028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gear_11_0
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 173
+        width: 138
+        height: 132
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eae71beab84dbab46a9a59485c23099c
+      internalID: 326468182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crank_gear_0
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 173
+        width: 132
+        height: 132
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aa7072b7305df14aaa1d8c9c9c6ad20
+      internalID: 343441784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steer_wheel_0
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 173
+        width: 132
+        height: 132
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de3fe64424c03cb4dab978ba9a1d752f
+      internalID: 1295942483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gear_9_0
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 191
+        width: 114
+        height: 114
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dde72c6a7b2bbd749b2efbc2b793b547
+      internalID: 1896846648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gear_8_0
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 197
+        width: 108
+        height: 108
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5193adfd54a3a041abd1bb8613b52f0
+      internalID: -1998374356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_lever_arm_0
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 206
+        width: 54
+        height: 99
+      alignment: 9
+      pivot: {x: 0.5, y: 0.121212125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ae74b1fd39da424b88f7680a110baa5
+      internalID: -269201654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gear_7_0
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 209
+        width: 96
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a109a08847211d7499ac438e44d77488
+      internalID: 1021406159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: next_sign_0
+      rect:
+        serializedVersion: 2
+        x: 1870
+        y: 227
+        width: 120
+        height: 78
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10b2ef16a5eba71429fa35c4d42eadcd
+      internalID: 86826088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_button_up_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 3
+        width: 100
+        height: 70
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5da5493f4f8736742a1db2afb69c2af7
+      internalID: 704759948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_button_down_0
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 3
+        width: 100
+        height: 70
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435b6d8dd73f9a3478ea49c1f559c920
+      internalID: -747752891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timer_pip_0
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 19
+        width: 54
+        height: 54
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa521d6aabfcce74e93d39528cac75dd
+      internalID: 33624742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aim_dot_0
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 19
+        width: 54
+        height: 54
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb4ed9b50897a924b85d47b3b7882b42
+      internalID: 1740966106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crank_knob_0
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 25
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b196448abff28a489f2e224cb3b0f20
+      internalID: 1142620187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_lever_base_0
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 25
+        width: 84
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7843950b15756fe4fb225a0b8d6595be
+      internalID: 1483774785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ce97f142d9d707f4797dc0475fe99a9f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      aim_dot_0: 1740966106
+      crank_gear_0: 343441784
+      crank_knob_0: 1142620187
+      fire_button_down_0: -747752891
+      fire_button_up_0: 704759948
+      fire_lever_arm_0: -269201654
+      fire_lever_base_0: 1483774785
+      gear_11_0: 326468182
+      gear_24_0: 801776402
+      gear_7_0: 1021406159
+      gear_8_0: -1998374356
+      gear_9_0: 1896846648
+      hurry_burst_0: 776749550
+      hurry_burst_1: 1171160607
+      mech_pipes_0: 554162674
+      next_ring_0: -1248030883
+      next_sign_0: 86826088
+      pointer_arrow_0: 1487822028
+      pointer_ring_0: -55618393
+      rotate_left_held_0: 96490074
+      rotate_left_up_0: -539603262
+      rotate_right_held_0: 589011525
+      rotate_right_up_0: 2069914954
+      steer_wheel_0: 1295942483
+      timer_pip_0: 33624742
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

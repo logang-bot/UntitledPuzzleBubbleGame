@@ -1,5 +1,13 @@
 # Shooter & Trajectory
 
+> **Updated by the game screen art (2026-11-12):** the controls are now
+> two rotate slabs on the player's thumb side and the launcher pointer as
+> the fire button (`Scripts/Deck/DeckControls`, bound through
+> `ShooterController.BindControls`); the preview line and the landing
+> indicator were replaced by aim dots along the occupancy-truncated path
+> (`AimDotsView`). The shooter origin is the pointer. See
+> `../art/overview.md` ("Game screen: as built").
+
 **Status: implemented (Milestone 2 scope).** `TrajectoryPredictor`,
 `BoardBounds`, `BoardBoundsCalculator`, `HoldInputZone`, and
 `ShooterController` live at `Assets/Scripts/Shooter/`, with the pure-math

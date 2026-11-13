@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
+using Game.BoardArt;
 using Game.Grid;
-using Game.Settings;
+using Game.Motion;
 using Game.Superpowers;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Game.Shooter
 {
@@ -18,20 +18,17 @@ namespace Game.Shooter
     public class FiredBubbleController : MonoBehaviour
     {
         [SerializeField] private GameBoard gameBoard;
+        [SerializeField] private BoardView boardView;
         [SerializeField] private ShooterController shooterController;
-        [SerializeField] private RectTransform fireZoneRect;
-        [SerializeField] private RectTransform rotateLeftZoneRect;
         [SerializeField] private float bubbleSpeed = 8f;
 
         public event Action<SuperpowerId, (int Row, int Col)> OnSuperpowerLanded;
+        public event Action OnQueueAdvanced;
 
         public bool HasArmedOrInFlightSuperpower => _armedAbility.HasValue || _firedAbility.HasValue;
-
-        // The indicator is a UI element (not a world-space sprite) so it can be anchored
-        // directly to the left of the fire-zone square, at the same height, on the same Canvas.
-        private const float IndicatorSize = 60f;
-        private const float IndicatorMargin = 15f;
-        private const float SettleDurationSeconds = 0.18f;
+        public BubbleColor LoadedColor => _nextColor;
+        public BubbleColor QueuedColor => _queuedColor;
+        public SuperpowerId? ArmedAbility => _armedAbility;
 
         private TrajectoryPredictor _predictor;
         private List<Vector2> _path;
@@ -40,9 +37,9 @@ namespace Game.Shooter
         private GameObject _flyingBubble;
         private BubbleColor _color;
         private BubbleColor _nextColor;
+        private BubbleColor _queuedColor;
         private SuperpowerId? _armedAbility;
         private SuperpowerId? _firedAbility;
-        private GameObject _nextBubbleIndicator;
         private Vector2 _settleFrom;
         private Vector2 _settleTo;
         private (int Row, int Col)? _settleCell;
@@ -50,14 +47,18 @@ namespace Game.Shooter
 
         public void ArmSuperpower(SuperpowerId ability) => _armedAbility = ability;
 
+        private void Awake()
+        {
+            _nextColor = BubbleColorPalette.Random();
+            _queuedColor = BubbleColorPalette.Random();
+        }
+
         private void Start()
         {
             RebuildPredictor();
             shooterController.OnFireRequested += HandleFireRequested;
             gameBoard.OnRowPushedDown += HandleBoardChanged;
             gameBoard.OnLevelLoaded += HandleBoardChanged;
-            _nextColor = BubbleColorPalette.Random();
-            _nextBubbleIndicator = SpawnIndicator();
         }
 
         // gameBoard.Bounds.CeilingY advances with the wall (see
@@ -70,40 +71,6 @@ namespace Game.Shooter
         private void RebuildPredictor()
         {
             _predictor = new TrajectoryPredictor(gameBoard.Bounds);
-        }
-
-        private GameObject SpawnIndicator()
-        {
-            var indicator = new GameObject("NextBubbleIndicator", typeof(RectTransform));
-            var rect = (RectTransform)indicator.transform;
-            ConfigureIndicatorRect(rect);
-            var image = indicator.AddComponent<Image>();
-            image.sprite = CircleSpriteFactory.CreateWhiteCircle();
-            image.color = BubbleColorPalette.ToColor(_nextColor);
-            return indicator;
-        }
-
-        private void ConfigureIndicatorRect(RectTransform rect)
-        {
-            rect.SetParent(fireZoneRect.parent, worldPositionStays: false);
-            rect.anchorMin = fireZoneRect.anchorMin;
-            rect.anchorMax = fireZoneRect.anchorMax;
-            rect.pivot = fireZoneRect.pivot;
-            rect.sizeDelta = new Vector2(IndicatorSize, IndicatorSize);
-            rect.anchoredPosition = fireZoneRect.anchoredPosition + new Vector2(-LeftOffset(), 0f);
-        }
-
-        // A bigger offset moves the indicator closer to the rotate-left zone, so
-        // it's capped at whatever clears that zone, not floored by it - Constant
-        // Pixel Size means a fixed margin tuned for one screen width isn't safe
-        // on a narrower one once either zone's size changes.
-        private float LeftOffset()
-        {
-            var fireZoneOffset = fireZoneRect.sizeDelta.x * 0.5f + IndicatorSize * 0.5f + IndicatorMargin;
-            var canvasHalfWidth = ((RectTransform)fireZoneRect.parent).rect.width * 0.5f;
-            var rotateZoneInnerEdge = canvasHalfWidth - rotateLeftZoneRect.sizeDelta.x - Mathf.Abs(rotateLeftZoneRect.anchoredPosition.x);
-            var maxSafeOffset = rotateZoneInnerEdge - IndicatorSize * 0.5f - IndicatorMargin;
-            return Mathf.Min(fireZoneOffset, maxSafeOffset);
         }
 
         private void OnDestroy()
@@ -122,11 +89,8 @@ namespace Game.Shooter
         private void AdvanceSettle()
         {
             _settleElapsed += Time.deltaTime;
-            var t = Mathf.Clamp01(_settleElapsed / SettleDurationSeconds);
-            var style = GameSettings.LandingAnimationStyle;
-            _flyingBubble.transform.position = Vector2.LerpUnclamped(_settleFrom, _settleTo, BubbleSettleMotion.Ease(style, t));
-            var scale = BubbleSettleMotion.SquashScale(style, t);
-            _flyingBubble.transform.localScale = new Vector3(scale.x, scale.y, 1f);
+            var t = Mathf.Clamp01(_settleElapsed / GameMotions.SettleSlideSeconds);
+            _flyingBubble.transform.position = Vector2.Lerp(_settleFrom, _settleTo, Ease.Apply(EaseKind.OutQuad, t));
             if (t >= 1f) Land(_settleCell);
         }
 
@@ -137,12 +101,10 @@ namespace Game.Shooter
                 ClearFlyingBubble();
                 OnSuperpowerLanded?.Invoke(_firedAbility.Value, landingCell.Value);
                 _firedAbility = null;
-                PrepareNextBubble();
                 return;
             }
             ClearFlyingBubble();
             if (landingCell != null) gameBoard.PlaceBubble(landingCell.Value.Row, landingCell.Value.Col, _color);
-            PrepareNextBubble();
         }
 
         private void ClearFlyingBubble()
@@ -150,13 +112,6 @@ namespace Game.Shooter
             Destroy(_flyingBubble);
             _flyingBubble = null;
             _settleCell = null;
-        }
-
-        private void PrepareNextBubble()
-        {
-            _nextColor = BubbleColorPalette.Random();
-            _nextBubbleIndicator.GetComponent<Image>().color = BubbleColorPalette.ToColor(_nextColor);
-            _nextBubbleIndicator.SetActive(true);
         }
 
         private void HandleFireRequested(Vector2 origin, float angleDegrees)
@@ -169,17 +124,22 @@ namespace Game.Shooter
             _color = _nextColor;
             _firedAbility = _armedAbility;
             _armedAbility = null;
-            _nextBubbleIndicator.SetActive(false);
             _flyingBubble = SpawnFlyingBubble(origin);
+            AdvanceQueue();
+        }
+
+        private void AdvanceQueue()
+        {
+            _nextColor = _queuedColor;
+            _queuedColor = BubbleColorPalette.Random();
+            OnQueueAdvanced?.Invoke();
         }
 
         private GameObject SpawnFlyingBubble(Vector2 origin)
         {
-            var bubble = new GameObject("FlyingBubble");
+            var bubble = _firedAbility.HasValue ? boardView.Skin.CreateSuperpower(_firedAbility.Value, null) : boardView.Skin.Create(_color, null);
+            bubble.name = "FlyingBubble";
             bubble.transform.position = origin;
-            var spriteRenderer = bubble.AddComponent<SpriteRenderer>();
-            spriteRenderer.sprite = CircleSpriteFactory.CreateWhiteCircle();
-            spriteRenderer.color = BubbleColorPalette.ToColor(_color);
             return bubble;
         }
 

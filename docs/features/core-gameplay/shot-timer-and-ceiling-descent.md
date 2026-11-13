@@ -1,5 +1,12 @@
 # Shot Timer & Ceiling Descent
 
+> **Updated by the game screen art (2026-11-12):** the countdown is now the
+> deck's timer pips and hurry burst (`TimerPipsView`, `HurryBurstView`,
+> reading `IShotClock`), replacing `ShotTimerDisplay`; `CeilingRenderer`
+> is now `CeilingBand`, which also flashes a glow under the ceiling during
+> the warning (`GameStateManager.IsCeilingWarning`). The timer and push
+> logic are unchanged. See `../art/overview.md` ("Game screen: as built").
+
 These are two **independent** timers, both owned by `GameStateManager`.
 They were initially discussed as one mechanic during brainstorming but are
 deliberately separate systems with different triggers.

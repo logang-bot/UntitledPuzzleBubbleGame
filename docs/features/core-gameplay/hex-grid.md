@@ -1,5 +1,12 @@
 # Hex Grid
 
+> **Updated by the game screen art (2026-11-12):** `GridDebugRenderer` became
+> `BoardView` (`Scripts/BoardArt`, cartoon bubbles with a debug-circle
+> toggle) and `CeilingRenderer` became `CeilingBand` (the theme's tiled
+> band, still growing one row height per push, now sliding down with the
+> bubbles). The grid geometry below is unchanged. See `../art/overview.md`
+> ("Game screen: as built").
+
 **Status: implemented.** `GridModel` lives at
 `Assets/Scripts/Grid/GridModel.cs`, covered by EditMode tests in
 `Assets/Tests/EditMode/GridModelOccupancyTests.cs` and

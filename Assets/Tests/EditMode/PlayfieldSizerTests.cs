@@ -17,19 +17,23 @@ namespace Game.Tests
         }
 
         [Test]
-        public void RowsForWorldHeight_ExactFit_ReturnsWholeRowCount()
+        public void RowsFitting_OneCellTall_FitsOneRow()
         {
-            var rows = PlayfieldSizer.RowsForWorldHeight(worldHeight: 10f, cellWidth: 1f);
-
-            Assert.That(rows, Is.EqualTo(11));
+            Assert.That(PlayfieldSizer.RowsFitting(bandHeight: 1f, cellWidth: 1f), Is.EqualTo(1));
         }
 
         [Test]
-        public void RowsForWorldHeight_PartialRow_FloorsDownToLastFullRow()
+        public void RowsFitting_ShorterThanOneCell_FitsNoRows()
         {
-            var rows = PlayfieldSizer.RowsForWorldHeight(worldHeight: 4.5f, cellWidth: 1f);
+            Assert.That(PlayfieldSizer.RowsFitting(bandHeight: 0.9f, cellWidth: 1f), Is.EqualTo(0));
+        }
 
-            Assert.That(rows, Is.EqualTo(5));
+        [Test]
+        public void RowsFitting_SoloGuideBoard_FitsFifteenRows()
+        {
+            var band = (611f - 40f) / PlayfieldSpec.CellPt;
+
+            Assert.That(PlayfieldSizer.RowsFitting(band, cellWidth: 1f), Is.EqualTo(15));
         }
     }
 }

@@ -14,7 +14,7 @@ Claude Design project, so it can read `Menu Art Guide.dc.html`,
 `menus-scenes.js` and the `Knocked Out Cartoon Style.dc.html` study. Review the
 mockups, ideally on a phone. Then click "Download Unity bundle". Put the
 sheets in `Assets/Art/Cartoon/Sheets/` and the JSON spec files in
-`Assets/Art/Cartoon/Spec/`, then run Tools ▸ Art ▸ Import Menu Sheets. If
+`Assets/Art/Cartoon/Spec/`, then run Tools ▸ Art ▸ Import Art Sheets (then called Import Menu Sheets). If
 the bundle doesn't include the fonts, download the TTFs it names from
 Google Fonts into `Assets/Art/Fonts/`.
 

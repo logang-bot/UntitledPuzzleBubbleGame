@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ed403eb00d2854991c32c815a2285e, type: 3}
+  m_Name: gm_board
+  m_EditorClassIdentifier: Game::Game.Art.SpriteSheetIndex
+  entries:
+  - Id: ceiling_living_tile
+    Frames:
+    - {fileID: 50923601, guid: 9f0fda15dea2de241b487993d0690b4b, type: 3}
+    Fps: 0
+  - Id: ceiling_garden_tile
+    Frames:
+    - {fileID: -1757933378, guid: 9f0fda15dea2de241b487993d0690b4b, type: 3}
+    Fps: 0
+  - Id: ceiling_rooftop_tile
+    Frames:
+    - {fileID: -1262650819, guid: 9f0fda15dea2de241b487993d0690b4b, type: 3}
+    Fps: 0
+  - Id: ceiling_park_tile
+    Frames:
+    - {fileID: 2073665276, guid: 9f0fda15dea2de241b487993d0690b4b, type: 3}
+    Fps: 0
+  - Id: rail
+    Frames:
+    - {fileID: 644031028, guid: 9f0fda15dea2de241b487993d0690b4b, type: 3}
+    Fps: 0
+  - Id: danger_glow
+    Frames:
+    - {fileID: 621019686, guid: 9f0fda15dea2de241b487993d0690b4b, type: 3}
+    Fps: 0
+  - Id: ceiling_warn_glow
+    Frames:
+    - {fileID: -342639769, guid: 9f0fda15dea2de241b487993d0690b4b, type: 3}
+    Fps: 0
+  - Id: ceiling_living_edge
+    Frames:
+    - {fileID: 102181858, guid: 9f0fda15dea2de241b487993d0690b4b, type: 3}
+    Fps: 0
+  - Id: ceiling_garden_edge
+    Frames:
+    - {fileID: -918786288, guid: 9f0fda15dea2de241b487993d0690b4b, type: 3}
+    Fps: 0
+  - Id: ceiling_rooftop_edge
+    Frames:
+    - {fileID: 347411401, guid: 9f0fda15dea2de241b487993d0690b4b, type: 3}
+    Fps: 0
+  - Id: ceiling_park_edge
+    Frames:
+    - {fileID: -951874605, guid: 9f0fda15dea2de241b487993d0690b4b, type: 3}
+    Fps: 0
+  - Id: danger_line
+    Frames:
+    - {fileID: 820106175, guid: 9f0fda15dea2de241b487993d0690b4b, type: 3}
+    Fps: 0

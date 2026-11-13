@@ -18,25 +18,28 @@ popped") without editing the core systems themselves.
 | Component | Responsibility |
 |---|---|
 | `GridModel` | Owns the hex grid data (which cell holds which color, empty vs. occupied). No rendering, no Unity physics — pure data + queries (neighbors, flood fill, occupied-cell enumeration). |
-| `GameBoard` | Single shared owner of the `GridModel` instance, camera-fit board geometry, and `BoardBounds` — everything else (shooter, renderer, fired-bubble logic) reads board state through this rather than computing its own. Raises `OnBubblePlaced`, (via `PopCells`/`DropCells`) `OnBubblesPopped`/`OnClusterDropped`, and (via `PushRowDown`) `OnRowPushedDown`. |
-| `ShooterController` | Rotates the aim angle at a fixed speed while an on-screen rotate zone is held (arcade-style, not drag-to-angle — see `features/core-gameplay/shooter-and-trajectory.md`), tells `TrajectoryPredictor` to simulate for the preview, and raises `OnFireRequested` on a fire-zone press. |
-| `TrajectoryPredictor` | Given a start point and aim angle, simulates the kinematic path (straight line + wall-bounce reflections only — no occupancy) and returns points for both the preview line and the actual fired bubble to follow. |
-| `OccupancyCollision` | Truncates a raw `TrajectoryPredictor` path at the first occupied cell it touches; used by `LandingIndicator` and `FiredBubbleController` so the shown landing cell and the fired bubble both stop at the same point. The preview *line* itself is drawn unoccupancy-truncated (see `features/core-gameplay/firing-and-snapping.md`). |
-| `LandingIndicator` | Ghost-bubble `SpriteRenderer` shown during aiming at the cell a shot would land in, resolved via `OccupancyCollision` + `BubbleLandingResolver` every frame — allowed to pop discretely between cells, unlike the (always smooth, occupancy-unaware) preview line. See `features/core-gameplay/firing-and-snapping.md`. |
+| `GameBoard` | Single shared owner of the `GridModel` instance, camera-fit board geometry, and `BoardBounds` — everything else (shooter, renderer, fired-bubble logic) reads board state through this rather than computing its own. Fits the camera to the board plus its rails, stops the rows at the danger line on top of the launcher deck and puts the shooter origin at the deck's pointer (`PlayfieldSpec`/`PlayfieldFrame`, per `PlayfieldLayout`: solo or Battle half). Raises `OnBubblePlaced`, (via `PopCells`/`DropCells`) `OnBubblesPopped`/`OnClusterDropped`, and (via `PushRowDown`) `OnRowPushedDown`. |
+| `PlayfieldSpec` / `PlayfieldFrame` | Pure: the cartoon game guide's playfield numbers in pt (first row top, danger line, pointer) and their placement in world space for a camera view, including the lift over tall gesture bars. See `features/art/overview.md` ("Game screen: as built"). |
+| `ShooterController` | Rotates the aim angle at a fixed speed while a rotate slab is held (arcade-style, not drag-to-angle — see `features/core-gameplay/shooter-and-trajectory.md`), tells `TrajectoryPredictor` to simulate for the aim dots, and raises `OnFireRequested` when the launcher pointer is tapped. Its three `HoldInputZone`s are bound at runtime by the deck (`BindControls`). |
+| `TrajectoryPredictor` | Given a start point and aim angle, simulates the kinematic path (straight line + wall-bounce reflections only — no occupancy) and returns points for both the aim dots and the actual fired bubble to follow. |
+| `OccupancyCollision` | Truncates a raw `TrajectoryPredictor` path at the first occupied cell it touches; used by the aim dots and `FiredBubbleController`, so the dots end exactly where the fired bubble stops. |
+| `AimDotsView` / `AimDotPlacer` | The aim line as pooled dot sprites along the truncated path (every 20 pt from 23 pt past the pointer, scrolling, fading toward the end). Replaced the `LineRenderer` preview and the `LandingIndicator` ghost bubble. |
 | `BubbleLandingResolver` | Picks the nearest empty cell to a truncated path's contact point for a fired bubble to snap into, excluding any cell behind the wall's current advance (`GridModel.RowsPushed`). |
-| `FiredBubbleController` | Subscribes to `OnFireRequested`, animates the fired bubble along the truncated path, places it on `GameBoard` when it lands, and shows the upcoming shot's color via a "next bubble" UI indicator next to the fire zone. |
+| `FiredBubbleController` | Subscribes to `OnFireRequested`, animates the fired bubble (drawn by `BoardView`'s skin) along the truncated path with a short settle slide, and places it on `GameBoard` when it lands. Keeps the loaded and next colors (`LoadedColor`, `QueuedColor`, `OnQueueAdvanced`) that the deck shows in the pointer and its NEXT ring. |
 | `FloodFill` | Generic BFS over `GridModel` from any number of seed cells, expanding only through cells satisfying a caller-supplied predicate. Shared by both of `MatchResolver`'s checks. |
 | `MatchResolver` | Pure query class (no mutation): given a newly-placed bubble's cell, flood-fills same-color neighbors to find what pops (`FindMatchGroup`); separately finds bubbles disconnected from the wall row, `GridModel.RowsPushed` (`FindFloatingCells`). |
 | `MatchProcessor` | Subscribes to `GameBoard.OnBubblePlaced`, calls `MatchResolver`, and drives `GameBoard.PopCells` then `GameBoard.DropFloatingCells()` — see `features/core-gameplay/matching-and-popping.md`. |
-| `LevelGenerator` | ✅ Implemented (Milestone 9). Static pure-logic class: fills an existing `GridModel` for a given level/difficulty (color count, density, headroom-row knobs from `DifficultyCurveConfig`), seeded by level number for determinism, then clears anything left disconnected from the ceiling. See `features/core-gameplay/level-generation.md`. |
+| `LevelGenerator` | ✅ Implemented (Milestone 9). Static pure-logic class: fills an existing `GridModel` for a given level/difficulty (color count, density, headroom knobs from `DifficultyCurveConfig`), seeded by level number for determinism, then clears anything left disconnected from the ceiling. See `features/core-gameplay/level-generation.md`. |
 | `GameStateManager` | Owns the shot timer and ceiling descent timer, and the win/loss checks (✅ all implemented) — the "referee" that ties the other systems together and raises `OnLevelWon` / `OnLevelLost`. Also runs the ceiling-push warning state machine (camera shake, gated on the next landed bubble rather than firing the instant the timer expires). |
 | `CameraShake` | Hand-rolled camera jitter, started/stopped by `GameStateManager` as the ceiling-push warning. See `features/core-gameplay/shot-timer-and-ceiling-descent.md`. |
-| `CeilingRenderer` | Draws the solid ceiling/wall band and grows it by one row height on every push, so the wall's visual footprint actually advances instead of only the bubbles moving. See `features/core-gameplay/hex-grid.md`. |
+| `BoardView` (`Scripts/BoardArt`) | Draws the board from `GameBoard`'s events in the cartoon game art: bubbles (`BubbleLayer`), the ceiling band that grows a row per push and slides down with the bubbles (`CeilingBand`, `BoardPushSlide`), rails and danger line (`PlayfieldEdges`), the theme backdrop (`BackgroundView`) and the superpower bursts. Its debug toggle swaps in plain circles. Was `GridDebugRenderer` + `CeilingRenderer`. |
+| `GameDeck` (`Scripts/Deck`) | The launcher deck on its own overlay canvas: mechanism, rotate slabs and pointer (bound to `ShooterController`), timer pips and hurry countdown, loaded and next bubbles, HUD, superpower buttons, freeze overlay, and the pixel pets (`PetStage`). One in Game, one per Battle half. |
 | `FrameRateInitializer` | Pins `Application.targetFrameRate` at startup so frame pacing is deterministic across Android devices instead of left to platform defaults. See "Frame pacing" below. |
 
-Rendering (turning `GridModel` cells into actual bubble sprites/prefabs) is a
-separate, thin layer that listens to grid-change events rather than being
-part of the model — keeps the data model testable without needing a scene.
+Rendering (turning `GridModel` cells into actual bubble sprites) is a
+separate layer (`BoardView`) that listens to grid-change events rather than
+being part of the model — keeps the data model testable without needing a
+scene.
 
 ## Superpowers components (Phase 2) ✅ implemented
 
@@ -57,7 +60,7 @@ full design and implementation account.
 | `SuperpowerEffectResolver` | Pure query class (no mutation, same shape as `MatchResolver`): given a landing cell, resolves the affected cell set per ability (Bomb radius, Row Clear, Rainbow same-color neighbor group via `FloodFill`). |
 | `SuperpowerController` | Owns charge state for unlocked abilities, resets on `GameBoard.OnLevelLoaded`, updates `SuperpowerProgress` on `GameStateManager.OnLevelWon`. `TryActivate(id)` either calls `GameStateManager.Freeze(duration)` (Freeze) or `FiredBubbleController.ArmSuperpower(id)` (the other three), guarded so a second aimed ability can't be armed while one is already armed or in flight. Raises `OnAbilitiesChanged` whenever unlocked/charge state changes. |
 | `SuperpowerEffectController` | Subscribes to `FiredBubbleController.OnSuperpowerLanded`, calls `SuperpowerEffectResolver`, groups the resolved cells by color, and calls `GameBoard.PopCells` once per color group, then `GameBoard.DropFloatingCells()` — so `GameStateManager`'s win-check, `ScoreTracker`, and rendering all react through the exact same pipeline a normal match uses. |
-| `SuperpowerHud` | Builds one button per unlocked ability at runtime (same code-built pattern as `HudDisplay`), showing charge count and disabling at 0 charges; rebuilds on `SuperpowerController.OnAbilitiesChanged` (not just once in `Start()`, since Unity doesn't guarantee cross-component `Start()` ordering). |
+| `SuperpowerButtonsView` (`Scripts/Deck`) | The four fixed superpower buttons in the deck (normal, pressed and disabled faces, charge badge); a button is pressable while its ability is unlocked with charges left. Refreshes its unlocked set on `SuperpowerController.OnAbilitiesChanged`. Replaced `SuperpowerHud`. |
 
 Small, additive extensions to existing Phase 1 files: `ShotTimer` gained
 `Pause()`/`Resume()`/`IsPaused`; `GameStateManager` gained
@@ -85,20 +88,21 @@ for the full design and implementation account.
 | `PatternLevelGenerator` | Orchestrates `HexBlobPlacer`/`StripePlacer` across a `LevelPatternPlan`'s row bands, then bridges (not deletes) anything `MatchResolver.FindFloatingCells` finds disconnected — gap-separated blobs/bands are disconnected by design here, unlike `LevelGenerator`'s rare accidental case. |
 | `PatternLevelCatalog` | `ScriptableObject` holding the ordered `LevelPatternPlan` list (levels 1-5) and the shared `PatternGenerationSettings` tunables — the per-pattern equivalent of `DifficultyCurveConfig`. Default asset: `Assets/ScriptableObjects/DefaultPatternLevelCatalog.asset`. |
 | `LevelContentGenerator` | Routes to `PatternLevelGenerator` when the catalog has a plan for the level, otherwise falls through to the unmodified `LevelGenerator` — the single seam `GameBoard.GenerateGrid()` calls into. |
-| `BubbleSpawnMotion` | Pure ease-out-cubic scale-in function for the level-load build-in animation. |
-| `BubbleSpawnAnimator` | Small self-contained `MonoBehaviour`, added per spawned bubble on level load — same `Update()`-driven elapsed-time pattern as `FallingBubble`/`FiredBubbleController`'s settle motion, no tweening library. `GridDebugRenderer` times the whole build-in (`IsBuildingIn`) so `ShooterBuildInGate` can lock `ShooterController.IsFireLocked` until it ends. |
+| `BuildInSchedule` | Pure: each bubble's build-in delay (0.07 s per row, 0.012 s per column) and the total build-in time. The scale-in itself is `GameMotions.BuildIn` (0.36 s outBack plus a fade) played by `TransformMotionPlayer` — `Update()`-driven, no tweening library. `BoardView` times the whole build-in (`IsBuildingIn`) so `ShooterBuildInGate` can lock `ShooterController.IsFireLocked` until it ends. |
 
 `DifficultyCurveConfig`'s four knobs (`ColorCount`, `Density`,
-`HeadroomRows`, `CeilingDropIntervalSeconds`) changed from independent
+headroom, `CeilingDropIntervalSeconds`) changed from independent
 linear-ramp formulas to Inspector-editable `AnimationCurve`s, each
 evaluated at the level number and clamped to a safe range — the old
-level-1 special case is now just each curve's first keyframe. See
+level-1 special case is now just each curve's first keyframe. Headroom is
+a share of the board's rows (`ForLevel(level, boardRows)`), so taller
+and shorter boards start equally full. See
 `features/core-gameplay/level-generation.md`.
 
-`GridDebugRenderer`'s single `RebuildAll()` split into an instant path
-(kept for `OnRowPushedDown`, which should still read as abrupt) and an
-animated path (for `OnLevelLoaded`) that attaches a `BubbleSpawnAnimator`
-to each spawned bubble, delayed by its row.
+The board renderer (now `BoardView`) rebuilds instantly on
+`OnRowPushedDown` and plays the staggered build-in on `OnLevelLoaded`.
+The cartoon art pass added a 0.35 s slide to the push, so it no longer
+reads as abrupt.
 
 ## Battle mode components (Phase 3, simple attack variant) ✅ implemented
 
@@ -153,11 +157,13 @@ zones) achieves the full visual/input mirror for free.
 - `OnSuperpowerLanded(SuperpowerId, (int Row, int Col) cell)` — ✅
   implemented, on `FiredBubbleController` (Phase 2). Raised in place of
   normal color placement when an armed superpower shot lands;
-  `SuperpowerEffectController` is the only subscriber.
+  `SuperpowerEffectController` resolves and pops the cells, and
+  `SuperpowerBursts` (subscribed first, in Awake) plays the explosion or
+  sweep and plans the pops' timing.
 - `OnAbilitiesChanged()` — ✅ implemented, on `SuperpowerController`
   (Phase 2). Raised whenever unlocked/charge state changes (level load,
-  activation); `SuperpowerHud` subscribes to know when to rebuild its
-  buttons.
+  activation); `SuperpowerButtonsView` subscribes to refresh which of its
+  four fixed buttons are unlocked.
 
 Phase 2 (superpowers) and Phase 3 (battle mode) both demonstrate this
 pattern working as intended: Phase 3 in particular hooks in via
@@ -187,11 +193,18 @@ public API beyond the one additive camera/viewport extension.
     menu kit on top of it: `MenuUiFactory`, buttons, toggle, name field,
     `UI/Text/` text styles, pixel snapping, and the canvas and stage
     setup;
-  - `Scripts/Editor/Art/`: the Tools ▸ Art ▸ Import Menu Sheets pipeline.
+  - `Scripts/Editor/Art/`: the Tools ▸ Art ▸ Import Art Sheets pipeline.
+  - `Scripts/BoardArt/`: the in-game board drawn in world space from
+    `GameBoard` events (`BoardView`, bubbles, ceiling, rails, backdrops,
+    superpower bursts);
+  - `Scripts/Deck/`: the launcher deck on its own overlay canvas
+    (`GameDeck`, mechanism, controls, timer, HUD, superpower buttons,
+    the launcher pets).
 
   See `features/game-flow/overview.md` and `features/art/overview.md`.
 - `Tests/EditMode/` — Unity Test Framework tests for pure C# logic, under a
-  `Game.EditModeTests` assembly that references `Game`. See Testing below.
+  `Game.EditModeTests` assembly that references `Game` (and `Game.Editor`,
+  for the art import geometry). See Testing below.
 - `Prefabs/` — bubble prefab, UI prefabs, etc.
 - `Art/` — sprites and art data:
   - `Art/Cartoon/`: the cartoon screen sheets (`Sheets/`, 3×), their
@@ -223,7 +236,7 @@ that workflow too.
 
 The shooter does **not** use Unity's Rigidbody2D/real physics for the fired
 bubble. Instead, `TrajectoryPredictor` computes the path itself (straight
-line, reflect off side walls) using the same math for both the preview line
+line, reflect off side walls) using the same math for both the aim dots
 and the actual shot. This guarantees the preview the player sees always
 matches exactly where the bubble goes — real physics engines have enough
 non-determinism (fixed timestep quantization, collision resolution order)

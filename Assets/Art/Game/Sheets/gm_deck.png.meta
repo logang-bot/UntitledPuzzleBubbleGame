@@ -1,0 +1,598 @@
+fileFormatVersion: 2
+guid: 082ff836aac78c1458734222661a448e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7875034346307776495
+    second: gm_deck_0
+  - first:
+      213: 5233556140146695489
+    second: gm_deck_1
+  - first:
+      213: 6718890434291039699
+    second: gm_deck_2
+  - first:
+      213: 6832341229202600441
+    second: gm_deck_3
+  - first:
+      213: 73310719604730048
+    second: gm_deck_4
+  - first:
+      213: -4530403963899737456
+    second: gm_deck_5
+  - first:
+      213: -6200294772712552149
+    second: gm_deck_6
+  - first:
+      213: 3039861321575726565
+    second: gm_deck_7
+  - first:
+      213: 6551862525544239918
+    second: gm_deck_8
+  - first:
+      213: 3225803517571795807
+    second: gm_deck_9
+  - first:
+      213: -5243047121722934875
+    second: gm_deck_10
+  - first:
+      213: -4917958988350255286
+    second: gm_deck_11
+  - first:
+      213: 7133651104971207831
+    second: gm_deck_12
+  - first:
+      213: -6890058151828273779
+    second: gm_deck_13
+  - first:
+      213: -2055654079820425907
+    second: gm_deck_14
+  - first:
+      213: -8469661220371068619
+    second: gm_deck_15
+  - first:
+      213: 6605833412805960671
+    second: gm_deck_16
+  - first:
+      213: -2037109385188321674
+    second: gm_deck_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 3
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pow_freeze_normal_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 56
+        width: 132
+        height: 132
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 468860356d0a8184ea3557545c48272f
+      internalID: -1544169695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pow_freeze_pressed_0
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 56
+        width: 132
+        height: 132
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 700f85f9948186340bae0ecc5d464b7b
+      internalID: -233229113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pow_freeze_disabled_0
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 56
+        width: 132
+        height: 132
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6df097b781ac8574d820baba94fa4d3c
+      internalID: -562822290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pow_bomb_normal_0
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 56
+        width: 132
+        height: 132
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dde2bd05632ef14a9fed3261b6dcd28
+      internalID: 2071443294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pow_bomb_pressed_0
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 56
+        width: 132
+        height: 132
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a7bd22cd1fa1e5418422f8897fe0f7d
+      internalID: -1748325465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pow_bomb_disabled_0
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 56
+        width: 132
+        height: 132
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff13b3770a1770344b25bcc1d647dd9d
+      internalID: -1552382646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pow_rowclear_normal_0
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 56
+        width: 132
+        height: 132
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2484db56cf9a39b44bdcd9465c4c4aef
+      internalID: -1965978665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pow_rowclear_pressed_0
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 56
+        width: 132
+        height: 132
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ee2358c9de08d8459ff8346b9defd2f
+      internalID: -569927651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pow_rowclear_disabled_0
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 56
+        width: 132
+        height: 132
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05917c608b57c824e9e634c1644357cf
+      internalID: -1810758568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pow_rainbow_normal_0
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 56
+        width: 132
+        height: 132
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3972677823f174092975c7f61f1949
+      internalID: -148196793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pow_rainbow_pressed_0
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 56
+        width: 132
+        height: 132
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fecd88135db404a42b2cd6301c916853
+      internalID: -1008996579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pow_rainbow_disabled_0
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 56
+        width: 132
+        height: 132
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d371c00a0e164874c96210b021dcfb1e
+      internalID: 1381725303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charge_badge_0
+      rect:
+        serializedVersion: 2
+        x: 1636
+        y: 104
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3775a93147533d14a949224c7af271c4
+      internalID: -1711188194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hud_icon_shots_0
+      rect:
+        serializedVersion: 2
+        x: 1724
+        y: 113
+        width: 54
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.48}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60fa524f723db7a4c8c48463046c0a2d
+      internalID: -146798267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hud_icon_score_0
+      rect:
+        serializedVersion: 2
+        x: 1782
+        y: 122
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b3c15825d5e6b44ae43b8e381d2c84
+      internalID: -1385769649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hud_icon_level_0
+      rect:
+        serializedVersion: 2
+        x: 1852
+        y: 122
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b59f5d5e392bb4bb166efc861c3fe0
+      internalID: 860096135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: incoming_tray_0
+      rect:
+        serializedVersion: 2
+        x: 1922
+        y: 128
+        width: 120
+        height: 60
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 30, y: 27, z: 30, w: 27}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ab795bcb7de1f443bb9020cb82f8a9d
+      internalID: -1594146504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: incoming_pip_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 4
+        width: 66
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae32a6bcda615742ad53b1bd6c8a1d5
+      internalID: 82399668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 681080834bdbc974480e0e1e84a67783
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      charge_badge_0: -1711188194
+      hud_icon_level_0: 860096135
+      hud_icon_score_0: -1385769649
+      hud_icon_shots_0: -146798267
+      incoming_pip_0: 82399668
+      incoming_tray_0: -1594146504
+      pow_bomb_disabled_0: -1552382646
+      pow_bomb_normal_0: 2071443294
+      pow_bomb_pressed_0: -1748325465
+      pow_freeze_disabled_0: -562822290
+      pow_freeze_normal_0: -1544169695
+      pow_freeze_pressed_0: -233229113
+      pow_rainbow_disabled_0: 1381725303
+      pow_rainbow_normal_0: -148196793
+      pow_rainbow_pressed_0: -1008996579
+      pow_rowclear_disabled_0: -1810758568
+      pow_rowclear_normal_0: -1965978665
+      pow_rowclear_pressed_0: -569927651
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

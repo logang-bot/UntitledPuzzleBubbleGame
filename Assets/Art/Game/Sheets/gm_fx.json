@@ -1,0 +1,89 @@
+{
+ "sheet": "gm_fx",
+ "scale": 3,
+ "width": 3764,
+ "height": 744,
+ "sprites": [
+  {
+   "id": "explosion",
+   "name": "Bomb · explosion",
+   "x": 4,
+   "y": 4,
+   "frameW": 372,
+   "frameH": 372,
+   "frames": 10,
+   "stepX": 376,
+   "fps": 15,
+   "pivot": "center",
+   "pivotX": 186,
+   "pivotY": 186,
+   "note": "Baked: 10 frames at 15 fps, centered on the landing cell. Clears radius 2 cells"
+  },
+  {
+   "id": "freeze_frame",
+   "name": "Freeze · icy frame",
+   "x": 4,
+   "y": 380,
+   "frameW": 360,
+   "frameH": 360,
+   "frames": 1,
+   "stepX": 364,
+   "fps": 0,
+   "pivot": "top-left",
+   "pivotX": 0,
+   "pivotY": 0,
+   "border": {
+    "l": 120,
+    "t": 120,
+    "r": 120,
+    "b": 120
+   },
+   "note": "9-slice over the whole screen (−8, −8, 376, 796). freezeTint fill under it. In/out per freeze_in"
+  },
+  {
+   "id": "row_sweep",
+   "name": "Row Clear · sweep",
+   "x": 368,
+   "y": 380,
+   "frameW": 552,
+   "frameH": 108,
+   "frames": 1,
+   "stepX": 556,
+   "fps": 0,
+   "pivot": "custom",
+   "pivotX": 504,
+   "pivotY": 54,
+   "note": "Pivot at the head. Crosses the row left to right per row_sweep"
+  },
+  {
+   "id": "snowflake",
+   "name": "Freeze · snowflake",
+   "x": 924,
+   "y": 380,
+   "frameW": 78,
+   "frameH": 72,
+   "frames": 1,
+   "stepX": 82,
+   "fps": 0,
+   "pivot": "center",
+   "pivotX": 39,
+   "pivotY": 36,
+   "note": "Burst per freeze_snow"
+  },
+  {
+   "id": "bomb_spark",
+   "name": "Bomb · fuse spark",
+   "x": 1006,
+   "y": 380,
+   "frameW": 66,
+   "frameH": 66,
+   "frames": 1,
+   "stepX": 70,
+   "fps": 0,
+   "pivot": "center",
+   "pivotX": 33,
+   "pivotY": 33,
+   "note": "At the fuse tip. Flicker per bomb_fuse"
+  }
+ ]
+}

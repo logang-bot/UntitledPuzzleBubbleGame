@@ -36,7 +36,7 @@ back to instant swaps.
 | `PetCustomization.unity` | `Pets/PetCustomizationController` | Dusk sky with stars. Two steps: the aimer, then the firer. |
 | `Game.unity` (was `SampleScene`) | `GameStateManager`, `LevelResultScreen` | Solo play. Victory and game over, see below. |
 | `BattleMode.unity` | `Battle/BattleMatchController`, `BattleResultScreen` | 2-player result banners, then stats. |
-| `SettingsMenu.unity` | `Gameplay/SettingsMenuController` | Dimmed space backdrop, one panel with the landing-animation toggle. |
+| `SettingsMenu.unity` | `Gameplay/SettingsMenuController` | Dimmed space backdrop, one panel with two toggle rows: landing animation and thumb side (which side of the deck the rotate slabs sit on). |
 
 Scene names live in `Flow/SceneNames`. The build order is MainMenu,
 PetCustomization, Game, BattleMode, SettingsMenu.
@@ -125,7 +125,9 @@ side's board and shooter events. Rematch resets them.
 | `Pet.Cat.Name` / `Pet.Dog.Name` | string, default "Mochi" / "Biscuit" | `Pets/PetProfileStore` |
 | `Pet.{Cat,Dog}.Color` | index into the catalog's colors | `Pets/PetProfileStore` |
 | `Pet.{Cat,Dog}.Shape` | index into the catalog's shapes | `Pets/PetProfileStore` |
-| `Pet.Aimer` | int (`PetSpecies`), default Cat | `Pets/PetProfileStore` |
+| `Pet.Aimer` | int (`PetSpecies`), default Cat; picks the in-game launcher (crank and lever when the dog aims, wheel and button when the cat aims) | `Pets/PetProfileStore` |
+| `LandingAnimationStyle` | int (`LandingAnimationStyle`), default bounce | `Settings/GameSettings` |
+| `Handedness` | int (`Handedness`), default Right | `Settings/GameSettings` |
 
 ## Pet appearance data
 
@@ -143,7 +145,7 @@ side's board and shooter events. Rematch resets them.
     pointy, fluffy, short).
 
 `Ramp` is the 4-shade fur ramp from Claude Design's `colorways.json`,
-written by Tools ▸ Art ▸ Import Menu Sheets. The art id picks the
+written by Tools ▸ Art ▸ Import Art Sheets. The art id picks the
 sprites, for example `cat_round_idle` and `shape_dog_short`.
 
 The profile stores **indices**, and `CyclicIndex.Clamp` keeps a stale

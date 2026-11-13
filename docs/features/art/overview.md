@@ -1,13 +1,15 @@
 # Art Pass — Roadmap
 
-**Status: screens done (vector cartoon UI with pixel-art pets), in-game
-art not started.** The pre-game screens were first built in pixel art
+**Status: screens and game screen done, both in vector cartoon with
+pixel-art pets** (see "Screens: as built" and "Game screen: as built"
+below). The pre-game screens were first built in pixel art
 (Art Phases 1b, 2 and 6b). Every pre-game screen, result overlay and the
 transition has since been rebuilt in a **vector cartoon style with
 pixel-art pets** (see "Screens: as built" below).
 
-Phases 1, 3–7 (in-game art) are still planned. This replaces the "Real
-art pass" bullet in
+The in-game Phases 1–7 below are the original 16-bit plan, kept for
+reference; the game screen was built from the cartoon game guide instead.
+This replaces the "Real art pass" bullet in
 `../../ROADMAP.md`'s "Later / not yet scoped" section. It runs in
 parallel with playtest/tuning work (see "Working in parallel" below).
 
@@ -17,6 +19,13 @@ The game uses **two related art directions**. They share the same original
 cat and dog cast, drawn in pixel art in both, but serve different jobs.
 
 ### A. In-game: 16-bit arcade (board, bubbles, HUD, launcher)
+
+> **Replaced (2026-11-12):** the game screen is now vector cartoon like
+> the menus, with the pets kept in pixel art (Claude Design's
+> `Cartoon Game Guide.dc.html`, prompt:
+> [`claude-design-prompt-game-cartoon.md`](claude-design-prompt-game-cartoon.md)).
+> See "Game screen: as built". The 16-bit description below is kept for
+> reference only.
 
 - **Style:** 16-bit pixel art, evoking 1990s arcade puzzle games in
   general: chunky outlines, limited palettes, bouncy and cheerful
@@ -121,21 +130,17 @@ rather than the other way round.
 - Bubble colors are a fixed 6-entry enum (`BubbleColor`: Red, Orange,
   Yellow, Green, Blue, Purple). Difficulty uses the first N. Art may
   restyle the hues but needs exactly 6 bubble kinds.
-- **Proposed base bubble size: 24×24 px.** The board then works out to
-  about 216 px of native width including walls, which upscales cleanly
-  to phone widths and feels like 16-bit. Even sizes keep the half-cell
-  hex offset on whole pixels.
-- **Pixel scaling:** the camera fits the board to the screen width, so
-  the upscale factor isn't a whole number on most phones. Options:
-  1. point filtering with non-integer scaling (simplest, with slight
-     pixel unevenness);
-  2. Unity's Pixel Perfect Camera with integer scaling and cropped or
-     padded edges (crisper, but conflicts with
-     `screen-fit-and-difficulty-scaling.md`'s "board fills the full
-     screen, no letterbox" decision).
-
-  To be decided in Art Phase 2. Option 1 is the default unless it looks
-  bad on a device.
+- **Bubble size (cartoon game guide):** 42 pt sprites (126 px at 3×)
+  drawn one cell wide: 352 pt / 8.5 = 41.4 pt on the 360 pt grid, with
+  4 pt rails on each side. The camera fits that width to the screen, and
+  the cartoon art scales smoothly, so there is no pixel-scaling problem.
+  Only the pixel pets snap to whole screen pixels (`PixelSnap`, 5 device
+  px per art px).
+- **Height:** the board runs from the ceiling band down to the danger
+  line on top of the launcher deck, so its row count depends on the
+  phone (`PlayfieldSpec`/`PlayfieldFrame`).
+- *Superseded:* the 16-bit plan proposed 24×24 px bubbles and chose
+  between non-integer point filtering and a Pixel Perfect Camera.
 
 **Pre-game screens**
 - **Layout grid: 360×780 pt** (9:19.5). The cartoon sheets are exported
@@ -159,19 +164,24 @@ rather than the other way round.
   - swatch fill 5;
   - shape silhouette 6.
 
-**Things on screen today that need art**
+**What needed art before the art pass** (all now done; see "Screens: as
+built" and "Game screen: as built" for what replaced each placeholder)
 - **Board:** bubbles, the fired bubble in flight, the next-bubble
-  indicator, the ghost landing indicator (`LandingIndicator`), the aim
-  line (`ShooterController`'s `LineRenderer`), and the advancing
-  ceiling/wall band (`CeilingRenderer`, which grows one row per push).
+  indicator, the ghost landing indicator (`LandingIndicator`, since
+  removed for aim dots), the aim line (a `LineRenderer`, now
+  `AimDotsView`), and the advancing ceiling/wall band (`CeilingRenderer`,
+  now `CeilingBand`).
 - **Motion:** pop, fall (`FallingBubble`), landing settle (two styles,
-  see Settings), the level build-in scale-in (`BubbleSpawnAnimator`),
-  and the ceiling-warning camera shake.
+  see Settings), the level build-in scale-in (`BubbleSpawnAnimator`, now
+  `BuildInSchedule` with `GameMotions.BuildIn`), and the ceiling-warning
+  camera shake.
 - **Touch controls:** rotate-left, rotate-right and fire zones
-  (`HoldInputZone`, 220×220 reference px).
+  (`HoldInputZone`, 220×220 reference px; now the deck's rotate slabs and
+  pointer).
 - **In-game UI:** the HUD bottom bar (score, shots, level), the shot
   countdown (`ShotTimerDisplay`) and the superpower buttons with charge
-  counts (`SuperpowerHud`).
+  counts (`SuperpowerHud`); now `HudView`, `TimerPipsView`/`HurryBurstView`
+  and `SuperpowerButtonsView` in the deck.
 - **Screens and overlays (direction B):**
   - the main menu (`MainMenuController`: New Game, Continue, 2 Players,
     Settings);
@@ -179,8 +189,8 @@ rather than the other way round.
     `PetEditorPanel`: a name field, fur-color and shape pickers, and a
     preview per pet);
   - the settings menu (`SettingsMenuController`);
-  - the victory and game-over overlays (`LevelResultScreen`, which today
-    is one shared panel and will become two distinct looks);
+  - the victory and game-over overlays (`LevelResultScreen`, now the
+    victory overlay and the Retry screen);
   - the battle result screen (`BattleResultScreen`).
 - **Battle Mode:** Player 2's half is rendered rotated 180°. Every
   sprite must read correctly upside-down, so text is never baked into
@@ -387,7 +397,7 @@ The importer now reads 13 sheets (280 sprite ids) with no duplicate ids.
     transcribes them; they're kept so a re-export can be diffed.
   - The pixel pet sheets (`chars_cat`, `chars_dog`, `floaters`, `retry`,
     `picker`) and `colorways.json` stay in `Assets/Art/Screens/`.
-- **Tools ▸ Art ▸ Import Menu Sheets** (`Editor/Art/MenuArtImportMenu`)
+- **Tools ▸ Art ▸ Import Art Sheets** (`Editor/Art/ArtSheetImportMenu`)
   can be re-run after every re-export. It imports both folders, each
   with its own `SheetImportProfile`:
   - `Pixel`: Point filtering, PPU 1, uncompressed, into
@@ -639,6 +649,91 @@ Every cartoon sprite in the bundle is in use. In the kept pixel `picker`
 sheet, only the `swatch_<species>_<color>` fills are used; its old swatch
 frames and shape tiles are leftovers.
 
+## Game screen: as built
+
+Built from `Cartoon Game Guide.dc.html` (with `game-art.js` and
+`game-engine.js`) and its Unity bundle. Decisions made with the user:
+the HUD stays in the bottom deck (the guide first put it at the top); the
+guide's controls with a Left/Right thumb setting; our gameplay tuning, not
+the guide's numbers; no ghost landing bubble; themes change every 5
+levels; no incoming-rows tray in Battle.
+
+### Bundle and import
+
+- `Assets/Art/Game/Sheets` (6 cartoon `gm_*` sheets, 3×, Cartoon profile),
+  `Assets/Art/Game/PixelSheets` (`game_pets_cat`/`_dog`, 1×, Pixel profile),
+  `Assets/Art/Game/Spec` (`layout.json`, `motion.json`, `tokens.json`,
+  `MANIFEST.json`; transcribed into code, kept for diffing re-exports).
+  All are indexed into the same `MenuArtLibrary`.
+- The importer (`Editor/Art`) now reads fractional legend sizes and
+  rounds them (`LegendGeometry`), flips y against the PNG's real height,
+  derives named pivots (`"center"`, `"bottom-center"`), raises the max
+  texture size for big sheets (`gm_bg` is 3832×5076) and imports full-rect
+  sprite meshes so tiled sprites work.
+- New tokens: `GameTextStyles` (hud_value, sign_label, countdown_digit,
+  charge_count) and `GameColors` (pips, freeze tint).
+
+### Playfield
+
+- `PlayfieldSpec` holds the guide's pt numbers per layout (solo: first row
+  at 40, danger line at 611, pointer at (180, 716.67); Battle half: 13,
+  277, (180, 326.67)). `PlayfieldFrame` places them for a camera view.
+- `GameBoard` fits the camera to the board plus the 4 pt rails, stops the
+  rows at the danger line (`PlayfieldSizer.RowsFitting`) and starts shots
+  at the pointer. Solo raises the deck over gesture bars taller than 22 pt.
+- Rows: 15 on a 9:19.5 phone (20 before), 11 on 9:16. Battle halves: 7
+  and 5.
+
+### Board (world space, `Scripts/BoardArt`)
+
+- `BoardView` (was `GridDebugRenderer`, same GUID) draws the board from
+  `GameBoard` events. Its debug toggle swaps in the old plain circles
+  (`DebugCircleSkin`).
+- `BubbleLayer`: glass bubbles with glyphs (`CartoonBubbleSkin`), the
+  build-in (0.36 s outBack, 0.07 s per row, 0.012 s per column), the
+  landing settle (bounce or squash clip after a 0.07 s slide) and the
+  neighbor nudge, pops in breadth-first order (`PopSchedule`) with the
+  baked pop frames, and scared falling bubbles (`FallingBubble`).
+- `CeilingBand`: the theme's tiled band and edge; pushes slide the band
+  and bubbles down over 0.35 s (`BoardPushSlide`); the warning glow
+  flashes while `GameStateManager.IsCeilingWarning`.
+- `ViewAnchor` follows the camera's position (not rotation) and carries
+  `PlayfieldEdges` (rails, danger line, its glow when a bubble is within a
+  row) and `BackgroundView` (theme backdrop, `ThemeForLevel`) with
+  `BackgroundAmbience` (lamp glow, fireflies, clouds, sparkles).
+- `AimDotsView`/`AimDotPlacer` replace the line renderer and the landing
+  indicator: dots every 20 pt from 23 pt past the pointer, scrolling at
+  30 pt/s, fading to 0.35, ending where the shot stops.
+- `SuperpowerBursts`: the bomb's explosion (pops outward 0.02 s per cell)
+  and the row sweep (pops as the head passes at 900 pt/s).
+
+### Deck (UI, `Scripts/Deck`)
+
+- `GameDeck` (one in Game, one per Battle half) builds an overlay canvas
+  matched to the screen width (`DeckCanvas`), so pt line up with the
+  board, and binds the controls to the `ShooterController` in Awake.
+- `DeckLayout` is the guide's left-hand layout; `DeckGeometry` mirrors it
+  for the right hand. `DeckSetup` picks the mechanism: crank and lever
+  when the dog aims, wheel and button when the cat aims.
+- `MechanismBuilder`/`MechanismAnimator`: pipes, gears that step while a
+  slab is held, crank or wheel, pointer arrow, pointer tap, lever or
+  button on every shot. `DeckControls`: two rotate slabs and the pointer
+  as the fire button (`CircleHitFilter`, 27.5 pt).
+- `LoadedBubbleView` (loaded and next bubbles, the feed, armed
+  superpowers), `TimerPipsView`, `HurryBurstView`, `HudView`,
+  `SuperpowerButtonsView`, `FreezeOverlayView` with `SnowBurst`.
+- `PetStage`/`PetRigView`/`PetAnimSelector`: the pixel pets at 5 device px
+  per art px, recolored, in their saved shape, picking their strip from
+  play (idle, crank or steer, pull or press, hurry, cheer, panic,
+  knock-out, win). The game pet sheets have all four shapes per species
+  (`<species>_<shape>_<anim>`); the importer prefixes them `game_`
+  because their idle and cheer names clash with the menu portraits.
+- Level fill: headroom is a share of the board's rows
+  (`DifficultyCurveConfig.headroomShareCurve`: 0.45 → 0.15 solo, 0.11
+  Battle), and Battle uses procedural levels (no pattern catalog), since
+  its curated bands came out empty on 5–7 row halves.
+- Settings has a CONTROLS / THUMB SIDE row (`GameSettings.Handedness`).
+
 ## Working in parallel with debugging and tuning
 
 - **Branch and worktree.** Art code (Phase 3+) goes on its own branch,
@@ -655,21 +750,15 @@ frames and shape tiles are leftovers.
 
 ## Open questions
 
-- In-game pixel scaling: non-integer point filtering vs. Pixel Perfect
-  Camera with crop/pad (Phase 2). The screens already answer this for
-  their pixel pets: they round to whole screen pixels per device
-  (`PixelSnap`).
 - The text outline and shadow factors (`TextStyleMaterials`) are derived
   from TMP's shader math. Check them on a real phone against the guide's
   text-token cards.
-- Whether bubbles get a face/expression (cute but busy) or only the
-  accessibility glyph.
-- Whether background themes switch per level range or per curated
-  pattern level.
+- Bubble faces: the guide offers tiny faces (`bubble_face`) as an
+  option; the game uses glyphs only for now.
 - Asset source: whether everything comes from Claude Design, or some is
   hand-touched afterwards in a pixel editor (e.g. Aseprite or Pixelorama)
   for animation frames.
 - Whether pet names appear in-game (e.g. on the victory overlay: "Mochi
   cleared the board!") or only on the menus.
-- Whether the in-game 16-bit palette borrows any of the screens' dusk
-  hues to make the jump between the two directions feel smaller.
+- Readability of the see-through glass bubbles on all four themes, on a
+  real phone.

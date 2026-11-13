@@ -5,7 +5,7 @@ namespace Game.Art
 {
     /// <summary>
     /// One exported Claude Design sheet: every sprite id with its ordered
-    /// frames and fps. Written by Tools > Art > Import Menu Sheets.
+    /// frames and fps. Written by Tools > Art > Import Art Sheets.
     /// </summary>
     public class SpriteSheetIndex : ScriptableObject
     {

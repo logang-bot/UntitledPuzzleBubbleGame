@@ -1,5 +1,12 @@
 # Matching & Popping
 
+> **Updated by the game screen art (2026-11-12):** the renderer named below
+> (`GridDebugRenderer`) is now `BoardView`/`BubbleLayer`: pops burst in
+> breadth-first order with the baked pop frames (`PopSchedule`), and
+> dropped bubbles get a scared face and a toss (`FallingBubble`). The
+> matching logic is unchanged. See `../art/overview.md` ("Game screen: as
+> built").
+
 **Status: implemented.** Covers Milestones 4 and 5 together — built in one
 pass, since both center on the same flood-fill traversal. `FloodFill` and
 `MatchResolver` live at `Assets/Scripts/Grid/`, fully unit-tested

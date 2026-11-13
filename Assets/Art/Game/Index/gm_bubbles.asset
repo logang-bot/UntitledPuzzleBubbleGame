@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ed403eb00d2854991c32c815a2285e, type: 3}
+  m_Name: gm_bubbles
+  m_EditorClassIdentifier: Game::Game.Art.SpriteSheetIndex
+  entries:
+  - Id: pop_red
+    Frames:
+    - {fileID: -1190084362, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: 1511354090, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: -1408823566, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: -1413284162, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: 1054698915, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 20
+  - Id: pop_orange
+    Frames:
+    - {fileID: 788926112, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: 1668732359, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: 887902638, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: 1519178809, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: -1056153627, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 20
+  - Id: pop_yellow
+    Frames:
+    - {fileID: -799364821, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: 1181408753, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: -1826883523, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: -825699347, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: 1965408355, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 20
+  - Id: pop_green
+    Frames:
+    - {fileID: 1767740010, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: 310063008, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: 1627503193, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: 158541509, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: -1373891556, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 20
+  - Id: pop_blue
+    Frames:
+    - {fileID: -1072908419, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: -524090723, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: 203633074, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: 98846333, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: 364984755, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 20
+  - Id: pop_purple
+    Frames:
+    - {fileID: -1479643374, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: 121132084, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: -1552326446, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: -1851479156, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    - {fileID: -1445776889, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 20
+  - Id: bubble_bomb
+    Frames:
+    - {fileID: -1403372998, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 0
+  - Id: bubble_red
+    Frames:
+    - {fileID: 759699056, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 0
+  - Id: bubble_orange
+    Frames:
+    - {fileID: 929207410, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 0
+  - Id: bubble_yellow
+    Frames:
+    - {fileID: -761407625, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 0
+  - Id: bubble_green
+    Frames:
+    - {fileID: -940726991, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 0
+  - Id: bubble_blue
+    Frames:
+    - {fileID: 454627018, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 0
+  - Id: bubble_purple
+    Frames:
+    - {fileID: -1468310814, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 0
+  - Id: bubble_face
+    Frames:
+    - {fileID: 1027440664, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 0
+  - Id: bubble_scared
+    Frames:
+    - {fileID: -1161591698, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 0
+  - Id: bubble_rowclear
+    Frames:
+    - {fileID: 67253510, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 0
+  - Id: rainbow_swirl
+    Frames:
+    - {fileID: -1231378579, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 0
+  - Id: rainbow_gloss
+    Frames:
+    - {fileID: -434450054, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 0
+  - Id: glyph_bone
+    Frames:
+    - {fileID: 77424865, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 0
+  - Id: glyph_paw
+    Frames:
+    - {fileID: 654627538, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 0
+  - Id: glyph_star
+    Frames:
+    - {fileID: 1862627286, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 0
+  - Id: glyph_heart
+    Frames:
+    - {fileID: -630654002, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 0
+  - Id: glyph_yarn
+    Frames:
+    - {fileID: 392424539, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 0
+  - Id: glyph_fish
+    Frames:
+    - {fileID: -1238793234, guid: a1ed4d91f72539e45853b34cfaa45401, type: 3}
+    Fps: 0

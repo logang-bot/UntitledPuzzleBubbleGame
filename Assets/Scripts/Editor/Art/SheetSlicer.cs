@@ -9,20 +9,31 @@ namespace Game.EditorTools.Art
     /// <summary>
     /// Applies a sheet family's import settings (see SheetImportProfile; no
     /// mipmaps either way) and the legend's sprite rects to one sheet texture.
-    /// Existing sprite ids are kept so references survive a re-export.
+    /// Existing sprite ids are kept so references survive a re-export. The
+    /// legend is flipped against the PNG's real size, since some exports
+    /// round their stated height differently.
     /// </summary>
     public static class SheetSlicer
     {
         public static void Slice(string texturePath, SheetLegend legend, SheetImportProfile profile)
         {
             var importer = (TextureImporter)AssetImporter.GetAtPath(texturePath);
+            MatchLegendToSource(importer, legend);
             ApplySettings(importer, profile);
+            ApplySheetLayout(importer, legend);
             var provider = CreateProvider(importer);
             var rects = SheetSpriteRects.Build(legend, ExistingIds(provider));
             provider.SetSpriteRects(rects.ToArray());
             WriteNameFileIds(provider, rects);
             provider.Apply();
             importer.SaveAndReimport();
+        }
+
+        private static void MatchLegendToSource(TextureImporter importer, SheetLegend legend)
+        {
+            importer.GetSourceTextureWidthAndHeight(out var width, out var height);
+            legend.width = width;
+            legend.height = height;
         }
 
         private static void ApplySettings(TextureImporter importer, SheetImportProfile profile)
@@ -34,7 +45,20 @@ namespace Game.EditorTools.Art
             importer.textureCompression = profile.Compression;
             importer.mipmapEnabled = false;
             importer.alphaIsTransparency = true;
-            importer.maxTextureSize = 4096;
+        }
+
+        private static void ApplySheetLayout(TextureImporter importer, SheetLegend legend)
+        {
+            importer.maxTextureSize = LegendGeometry.MaxTextureSize(legend);
+            UseFullRectMeshes(importer);
+        }
+
+        private static void UseFullRectMeshes(TextureImporter importer)
+        {
+            var settings = new TextureImporterSettings();
+            importer.ReadTextureSettings(settings);
+            settings.spriteMeshType = SpriteMeshType.FullRect;
+            importer.SetTextureSettings(settings);
         }
 
         private static ISpriteEditorDataProvider CreateProvider(TextureImporter importer)

@@ -1,5 +1,11 @@
 # Level Generation
 
+> **Updated (2026-11-12):** headroom is now a share of the board's rows
+> (`headroomShareCurve`, resolved by `DifficultyCurveConfig.ForLevel(level,
+> boardRows)`), not a fixed row count: 45% at level 1 down to 15% by level
+> 10 in solo, 11% in Battle. Battle boards no longer use the curated
+> pattern catalog; they are generated procedurally.
+
 ## Decision
 
 Levels are **procedurally generated**, not hand-authored. A generator

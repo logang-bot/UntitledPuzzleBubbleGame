@@ -17,7 +17,7 @@ namespace Game.Gameplay
     /// docs/features/core-gameplay/shot-timer-and-ceiling-descent.md and
     /// docs/features/core-gameplay/win-loss-conditions.md.
     /// </summary>
-    public class GameStateManager : MonoBehaviour
+    public class GameStateManager : MonoBehaviour, IShotClock
     {
         private enum CeilingState { Countdown, Warning }
 
@@ -32,6 +32,8 @@ namespace Game.Gameplay
         public event Action OnLevelLost;
 
         public float ShotTimeRemaining => _shotTimer.TimeRemaining;
+        public bool IsCeilingWarning => _ceilingState == CeilingState.Warning;
+        public bool IsFrozen => _freezeTimeRemaining > 0f;
 
         private ShotTimer _shotTimer;
         private ShotTimer _ceilingTimer;

@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ed403eb00d2854991c32c815a2285e, type: 3}
+  m_Name: gm_fx
+  m_EditorClassIdentifier: Game::Game.Art.SpriteSheetIndex
+  entries:
+  - Id: explosion
+    Frames:
+    - {fileID: 1192003465, guid: 0a194ee491923324499ce4b3f63bae99, type: 3}
+    - {fileID: 1548549772, guid: 0a194ee491923324499ce4b3f63bae99, type: 3}
+    - {fileID: 858123493, guid: 0a194ee491923324499ce4b3f63bae99, type: 3}
+    - {fileID: -1945528003, guid: 0a194ee491923324499ce4b3f63bae99, type: 3}
+    - {fileID: -1658602947, guid: 0a194ee491923324499ce4b3f63bae99, type: 3}
+    - {fileID: -1262837041, guid: 0a194ee491923324499ce4b3f63bae99, type: 3}
+    - {fileID: -1654528407, guid: 0a194ee491923324499ce4b3f63bae99, type: 3}
+    - {fileID: -1428252526, guid: 0a194ee491923324499ce4b3f63bae99, type: 3}
+    - {fileID: 1659347268, guid: 0a194ee491923324499ce4b3f63bae99, type: 3}
+    - {fileID: 621708342, guid: 0a194ee491923324499ce4b3f63bae99, type: 3}
+    Fps: 15
+  - Id: freeze_frame
+    Frames:
+    - {fileID: -1455361435, guid: 0a194ee491923324499ce4b3f63bae99, type: 3}
+    Fps: 0
+  - Id: row_sweep
+    Frames:
+    - {fileID: 799573857, guid: 0a194ee491923324499ce4b3f63bae99, type: 3}
+    Fps: 0
+  - Id: snowflake
+    Frames:
+    - {fileID: -96968509, guid: 0a194ee491923324499ce4b3f63bae99, type: 3}
+    Fps: 0
+  - Id: bomb_spark
+    Frames:
+    - {fileID: -2102536207, guid: 0a194ee491923324499ce4b3f63bae99, type: 3}
+    Fps: 0
